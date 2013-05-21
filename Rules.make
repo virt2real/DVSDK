@@ -1,8 +1,11 @@
+MOD_DIR=.
+
 # Define target platform.
 PLATFORM=dm365
 
 # The installation directory of the DVSDK.
-DVSDK_INSTALL_DIR=/usr/local/dvsdk
+#DVSDK_INSTALL_DIR=/usr/local/dvsdk
+DVSDK_INSTALL_DIR=.
 
 # For backwards compatibility
 DVEVM_INSTALL_DIR=$(DVSDK_INSTALL_DIR)
@@ -32,7 +35,8 @@ DM365MM_MODULE_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/dm365mm-module_01_00_03
 PSP_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/psp
 
 # Where the MFC Linux Utils package is installed.
-LINUXUTILS_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/linuxutils_2_26_01_02
+#LINUXUTILS_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/linuxutils_2_26_01_02
+LINUXUTILS_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/linuxutils_2_26_03_06
 CMEM_INSTALL_DIR=$(LINUXUTILS_INSTALL_DIR)
 
 # Where the XDAIS package is installed.
@@ -42,18 +46,20 @@ XDAIS_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/xdais_6_26_01_03
 XDC_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/xdctools_3_16_03_36
 
 # The directory that points to your kernel source directory.
-LINUXKERNEL_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/psp/linux-2.6.32.17-psp03.01.01.39
+#LINUXKERNEL_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/psp/linux-2.6.32.17-psp03.01.01.39
+LINUXKERNEL_INSTALL_DIR=/opt/GIT/3.9/linux-davinci
 
 # Where temporary Linux headers and libs are installed.
 LINUXLIBS_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/linux-devkit/arm-none-linux-gnueabi/usr
 
 # The prefix to be added before the GNU compiler tools (optionally including # path), i.e. "arm_v5t_le-" or "/opt/bin/arm_v5t_le-".
-CSTOOL_DIR=/opt/codesourcery/arm-2009q1/
+#CSTOOL_DIR=/opt/codesourcery/arm-2009q1/
+CSTOOL_DIR=/opt/codesourcery/arm-2010q1/
 CSTOOL_PREFIX=$(CSTOOL_DIR)/bin/arm-none-linux-gnueabi-
 
 MVTOOL_DIR=$(CSTOOL_DIR)
 MVTOOL_PREFIX=$(CSTOOL_PREFIX)
 
 # Where to copy the resulting executables
-EXEC_DIR=$(HOME)/install/$(PLATFORM)
+EXEC_DIR=$(MOD_DIR)/install/$(PLATFORM)
 
