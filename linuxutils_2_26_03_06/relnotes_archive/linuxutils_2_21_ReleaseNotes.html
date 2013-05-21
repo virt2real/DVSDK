@@ -1,0 +1,632 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- 
+ *  Copyright (c) 2009, Texas Instruments Incorporated
+ *  All rights reserved.
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *
+ *  *  Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *  *  Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in the
+ *     documentation and/or other materials provided with the distribution.
+ *
+ *  *  Neither the name of Texas Instruments Incorporated nor the names of
+ *     its contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ *  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ *  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ *  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ *  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ *  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ *  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ *  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ *  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ *  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+-->
+<html>
+<head>
+    <title>Linux Utils 2.21 Release Notes </title>
+    <!-- For now, we use the doxygen style sheet -->
+    <link type="text/css" rel="stylesheet" href="../docs/html/doxygen.css">
+</head>
+<body>
+<table width="100%">
+  <tbody>
+    <tr>
+      <td bgcolor="black" width="1">
+        <a href="http://www.ti.com">
+          <img border=0 src="../docs/html/tilogo.gif" alt="Texas Instruments">
+        </a>
+      </td>
+      <td bgcolor="red">
+        <img src="../docs/html/titagline.gif" alt="Technology for Innovators(tm)">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 align="center">Linux Utils 2.21 Release Notes </h1>
+<h2 align="center">November 2008</h2>
+
+<p>
+This Linux Utils Release is targetted for the DaVinci and OMAP35x
+platforms running Linux, but is generally usable for any Linux-based system.
+</p>
+<p align="center">
+<a href="#Introduction">Introduction</a>,
+<a href="#Documentation">Documentation</a>,
+<a href="#Whats_New">What's New</a>,
+<a href="#Upgrade_Info">Upgrade Info</a>,
+<a href="#Compatibility">Compatibility Information</a>,
+<a href="#Device_Support">Device Support</a>,
+<a href="#Validation">Validation Info</a>,
+<a href="#Known_Issues">Known Issues</a>,
+<a href="#Examples">Examples</a>,
+<a href="#Version">Version Information</a>,
+<a href="#Support">Technical Support</a>.
+</p>
+
+<hr>
+
+<h2><a name="Introduction">Introduction</a></h2>
+
+<p>
+The Linux Utils utility package provides the ability for user-mode
+applications to access the CMEM, SDMA, and VICP utility libraries.
+</p>
+
+<p>
+The CMEM (Contiguous Memory) utility library provides the ability for
+user-mode applications to allocate and free blocks of physically contiguous
+memory.  This is typically done to manage multimedia data buffers which
+will be worked on by multimedia algorithms, but the memory provided by this
+library can be used for any purpose.
+</p>
+
+<p>
+The reason multimedia algorithms often require physically contiguous
+memory is that sometimes they're on another processor which may not
+contain an MMU (e.g. the C64P processor on a DM644x device), and/or
+Linux-based algorithms utilize hardware accelerators (e.g. DMA, image
+co-processors, etc) which don't access memory through an MMU.
+</p>
+
+<p>
+The CMEM module consists of the following packages:
+</p>
+
+<ul>
+  <li><b><tt>ti.sdo.linuxutils.cmem</tt></b> - The CMEM user-mode library and
+  kernel mode driver.</li>
+</ul>
+
+<p>
+The CMEM module supports the following devices:
+</p>
+
+<ul>
+  <li><b><tt>DM6446</tt></b></li>
+  <li><b><tt>DM6467</tt></b></li>
+  <li><b><tt>DM355</tt></b></li>
+  <li><b><tt>OMAP2530</tt></b></li>
+  <li><b><tt>OMAP3530</tt></b></li>
+</ul>
+
+<p>
+SDMA refers to the "System DMA" incorporated on the OMAP35x family of devices.
+</p>
+
+<p>
+The SDMA utility library provides the ability for user-mode
+applications to request SDMA channels and operate on a channel using direct,
+memory-mapped access to the channel's DMA registers (Framework Components
+contains a layer named SCPY to manage this direct access).  It also provides
+"blocking" support for waiting for the completion of a transfer on a
+particular channel.
+</p>
+
+<p>
+Performing direct DMA register access helps to alleviate the overhead of
+initiating, and checking completion of, DMA transfers, since the usual method
+involves calling down into the Linux kernel somehow.  Transfer completion
+checking is achieved by first querying an application status flag, and only
+when it is known that the transfer is NOT complete will a blocking kernel
+module call be made.
+</p>
+
+<p>
+The SDMA module consists of the following packages:
+</p>
+
+<ul>
+  <li><b><tt>ti.sdo.linuxutils.sdma</tt></b> - The SDMA user-mode library and
+  kernel mode driver.</li>
+</ul>
+
+<p>
+The SDMA module supports the following devices:
+</p>
+
+<ul>
+  <li><b><tt>OMAP3530</tt></b></li>
+</ul>
+
+<p>
+VICP refers to the "Video Image CoProcessing" subsystem incorporated on the
+Davinci family of devices.
+</p>
+
+<p>
+The VICP utility library provides the ability for user-mode
+applications to request VICP channels and operate on a channel using direct,
+memory-mapped access to the channel's registers (Framework Components
+contains a layer named VICPSYNC to manage this direct access).  It also
+provides "blocking" support for waiting for the completion of a transfer on a
+particular channel.
+</p>
+
+<p>
+The main functionality of the VICP utility library is to provide access to
+the completion interrupts of various coprocessor resources.  The VICP utility
+library provides access to specific "resources" that include:
+  <li>IMX0</li>
+  <li>IMX1</li>
+  <li>NSF</li>
+  <li>MJCP</li>
+  <li>HDVICP0</li>
+  <li>HDVICP1</li>
+Access to these resources is typically achieved by way of a Framework
+Components resource manager that makes function calls into the VICP library.
+Functional operation of the various resources is *not* part of the Linux Utils
+VICP component.
+</p>
+
+<p>
+The VICP module consists of the following packages:
+</p>
+
+<ul>
+  <li><b><tt>ti.sdo.linuxutils.vicp</tt></b> - The VICP user-mode library.</li>
+  <li><b><tt>ti.sdo.linuxutils.irq</tt></b> - The VICP kernel-mode driver.</li>
+</ul>
+
+<p>
+The VICP module supports the following devices:
+</p>
+
+<ul>
+  <li><b><tt>DM355</tt></b></li>
+</ul>
+
+<hr>
+
+<h2><a name="Documentation">Documentation</a></h2>
+<p>
+The following documentation is available:
+</p>
+<ul>
+  <li>
+    <b>Linux Utils Application Programming Interface (API) Reference
+    Guide</b> (HTML | CHM)
+  </li>
+  <li>A description of all the packages
+  in this product.</li>
+</ul>
+
+<p>
+Release notes from previous releases are also available in the <a
+href="relnotes_archive">relnotes_archive</a> directory.
+</p>
+
+<hr>
+<h2><a name="Whats_New">What's New</a></h2>
+<p>The following significant changes have been made since Linux Utils 2.20</p>
+
+<div class="memitem">
+<h3>2.21  (This Release)</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Added VICP module</li>
+      <li>Added IRQ module</li>
+      <li>Temporarily removed EDMA module - will restore in a future
+        release.</li>
+    </ul>
+  </li>
+
+  <li>The following defects were resolved:
+<table width="100%">
+  <colgroup width="15%">
+  <tbody>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+    <tr>
+      <td>SDOCM00046164</td>
+      <td>Multiple definition of 'memfd'</td>
+    </tr>
+  </tbody>
+</table>
+</li>
+
+</li>
+</ul>
+</div>
+
+<br />
+
+<div class="memitem">
+<h3>2.20</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Added SDMA module</li>
+      <li>Added EDMA module</li>
+      <li>Added 2nd memory block support to CMEM</li>
+    </ul>
+  </li>
+
+  <li>The following defects were resolved:
+<table width="100%">
+  <colgroup width="15%">
+  <tbody>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+    <tr>
+      <td>SDSCM00019164</td>
+      <td>Failure to insmod cmem results in misleading Codec Engine error
+          messages</td>
+    </tr>
+  </tbody>
+</table>
+</li>
+
+</li>
+</ul>
+</div>
+
+<br />
+
+<div class="memitem">
+<h3>2.10</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Added allowOverlap insmod command line argument</li>
+      <li>Added CMEM_getBlock() for retrieving CMEM memory block bounds</li>
+    </ul>
+  </li>
+
+  <li>The following defects were resolved:
+<table width="100%">
+  <colgroup width="15%">
+  <tbody>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+    <tr>
+      <td>SDSCM00019818</td>
+      <td>cat /proc/cmem needs more than one page of memory to avoid buffer
+        overflow
+      </td>
+    </tr>
+  </tbody>
+</table>
+</li>
+
+  <li>The following enhancements were resolved:
+<table width="100%">
+  <colgroup width="15%">
+  <tbody>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+    <tr>
+      <td>SDSCM00023295</td>
+      <td>CMEM needs insmod config parameter to support allowing kernel memory
+        & CMEM memory to overlap
+    </tr>
+  </tbody>
+</table>
+
+</li>
+</ul>
+</div>
+
+<br />
+
+<div class="memitem">
+<h3>2.00</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Added cached buffer support</li>
+      <li>Added heap-based allocation in addition to pool based allocation</li>
+      <li>Added overlap detection for kernel memory and CMEM memory, as well
+        as an 'insmod' parameter for allowing this overlap</li>
+      <li>Added support for building for DM355</li>
+      <li>Modified licensing.  The CMEM kernel driver is now licensed under
+        the GPL 2 license.  The CMEM user-mode library is now licensed under
+        the LGPL 2 license.
+      </li>
+    </ul>
+  </li>
+
+  <li>The following defects were resolved:
+<table width="100%">
+  <colgroup width="15%">
+  <tbody>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+    <tr>
+      <td>SDSCM00019947</td>
+      <td>CMEM causes Linux kernel Oops when insufficient memory exists for
+        specified pools
+      </td>
+    </tr>
+  </tbody>
+</table>
+</li>
+
+  <li>The following enhancements were resolved:
+<table width="100%">
+  <colgroup width="15%">
+  <tbody>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+    <tr>
+      <td>SDSCM00018886</td>
+      <td>CMEM should allow an option not to partition its area into pools but
+        to use it for allocation of arbitrarily-sized buffers</td>
+    </tr>
+  </tbody>
+</table>
+</li>
+
+</ul>
+</div>
+
+<br />
+
+
+<hr>
+<h2><a name="Upgrade_Info">Upgrade Information</a></h2>
+<p>
+The Linux Utils packages are available in the "packages/"
+subdirectory of the product.  If you have a previous release of the
+CMEM product, you can install this release next to it, and
+modify your application and/or server builds to use this newer release.</p>
+<p>
+If you're using the DVSDK, this can be done by setting the
+<b>CMEM_INSTALL_DIR</b> variable in the <tt>Rules.make</tt> file at the
+top of the DVEVM distribution directory.</p>
+
+<h2><font color="red">Compatibility Breaks!</font></h2>
+<ul>
+  <li>Linux Utils 2.21 requires system integrators using the XDCtools to
+  upgrade to XDCtools 3.10.03 (or newer).
+  </li>
+</ul>
+
+<hr>
+<h2><a name="Compatibility">Compatibility Information</a></h2>
+<p>
+The details provided below describe each package's compatibility with the
+previous release (Linux Utils 2.20).
+</p>
+<p>
+Note, the Configuration Reference Guide contains
+further details about each package.
+</p>
+<ul>
+    <li>
+        <b><tt>ti.sdo.linuxutils.cmem</tt></b> - This package is compatible
+        with the previous release.
+	(Compatibility key: <i>2,2,0</i> -> 2,2,0)
+    </li>
+    <li>
+        <b><tt>ti.sdo.linuxutils.sdma</tt></b> - This package is compatible
+        with the previous release.
+	(Compatibility key: <i>1,0,0</i> -> 1,0,0)
+    </li>
+    <li>
+        <b><tt>ti.sdo.linuxutils.vicp</tt></b> - Initial release, no previous
+        release.
+	(Compatibility key: <i>n/a</i> -> 1,0,0)
+    </li>
+</ul>
+
+<p>
+If migrating from a release prior to Linux Utils 2.21, consult previous
+releases available in the relnotes_archive directory.
+</p>
+
+<h3>Compatibility Key Definitions</h3>
+<p>
+Compatibility keys are intentionally independent of Marketing product
+numbers and are intended to:
+<ol>
+  <li>Enable tooling to identify incompatibilities between components,
+  and</li>
+  <li>Convey a level of compatibility between different releases to
+  set end user expectations.</li>
+</ol>
+</p>
+
+<p>
+Compatibility keys are composed of 3 comma-delimited numbers - M,S,R
+- where:
+<ul>
+  <li><b>M = Major</b>.  A difference in M indicates a break in
+  compatibility.</li>
+  <li><b>S = Source</b>.  A difference in S indicates source
+  compability.  That is, the user's source doesn't require change, but
+  <i>does</i> require rebuilding.</li>
+  <li><b>R = Radix</b>.  A difference in R indicates an introduction
+  of new features, but compatibility with previous interfaces has not
+  broken.  If libraries are provided by the package, an application
+  must re-link with the new libraries, but not rebuild from source.</li>
+</ul>
+</p>
+
+
+<hr>
+<h2><a name="Device_Support">Device Support</a></h2>
+
+<p>
+This release supports the following devices:
+<ul>
+  <li>DM644x EVM:
+    <ul>
+      <li>dual-processor configuration, running ARM9 MV Linux (gcclib)</li>
+      <li>dual-processor configuration, running ARM9 MV Linux (uClibc)</li>
+    </ul>
+  </li>
+  <li>DM6467 EVM:
+    <ul>
+      <li>dual-processor configuration, running ARM9 MV Linux (gcclib)</li>
+      <li>dual-processor configuration, running ARM9 MV Linux (uClibc)</li>
+    </ul>
+  </li>
+  <li>DM355 EVM:
+    <ul>
+      <li>single-processor configuration, running ARM9 MV Linux (gcclib)</li>
+      <li>single-processor configuration, running ARM9 MV Linux (uClibc)</li>
+    </ul>
+  </li>
+  <li>OMAP2530:
+    <ul>
+      <li>dual-processor configuration, running ARM9 Linux 2.6.23 (gcclib)</li>
+    </ul>
+  </li>
+  <li>OMAP3530:
+    <ul>
+      <li>dual-processor configuration, running ARM9 Linux 2.6.22 (gcclib)</li>
+    </ul>
+  </li>
+</ul>
+
+</p>
+
+
+<hr>
+<h2><a name="Validation">Validation</a></h2>
+<p>
+This release was validated against using the following components:
+</p>
+
+<ul>
+    <li>XDCtools 3.10.03</li>
+    <li>MontaVista Linux v4.0 (for DaVinci)</li>
+    <li>MontaVista Linux v5.0 (for DaVinci)</li>
+    <li>Linux release 2.6.22 (for OMAP35x)</li>
+    <li>Linux release 2.6.23 (for OMAP25x)</li>
+</ul>
+
+<p>
+This release was validated in the following configurations:
+<ul>
+  <li>DM6446 EVM:
+    <ul>
+      <li>dual-processor configuration, running ARM9 MV 4 Linux (gcclib)</li>
+      <li>dual-processor configuration, running ARM9 MV 4 Linux (uClibc)</li>
+      <li>dual-processor configuration, running ARM9 MV 5 Linux (gcclib)</li>
+      <li>dual-processor configuration, running ARM9 MV 5 Linux (uClibc)</li>
+    </ul>
+  </li>
+  <li>DM6467 EVM:
+    <ul>
+      <li>dual-processor configuration, running ARM9 MV 4 Linux (gcclib)</li>
+      <li>dual-processor configuration, running ARM9 MV 4 Linux (uClibc)</li>
+    </ul>
+  </li>
+  <li>DM355 EVM:
+    <ul>
+      <li>single-processor configuration, running ARM9 MV 4 Linux (gcclib)</li>
+      <li>single-processor configuration, running ARM9 MV 4 Linux (uClibc)</li>
+      <li>single-processor configuration, running ARM9 MV 5 Linux (gcclib)</li>
+      <li>single-processor configuration, running ARM9 MV 5 Linux (uClibc)</li>
+    </ul>
+  </li>
+  <li>OMAP2530:
+    <ul>
+      <li>dual-processor configuration, running ARM9 Linux 2.6.23 (gcclib)</li>
+    </ul>
+  </li>
+  <li>OMAP3530:
+    <ul>
+      <li>dual-processor configuration, running ARM9 Linux 2.6.22 (gcclib)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+<h2><a name="Known_Issues">Known Issues</a></h2>
+<p>None</p>
+
+<hr>
+<h2><a name="Examples">Examples</a></h2>
+<p>Linux Utils example apps and tests are provided in the
+ti/sdo/linuxutils/*/apps directory.
+</p>
+<!--
+<ul>
+  <li><a href="examples/build_instructions.html">Example Build
+  Instructions</a></li>
+</ul>
+-->
+
+<hr>
+<h2><a name="Version">Version Information</a></h2>
+<p>
+This product's version follows a version format, <b>M.mm.pp.bb</b>,
+where <b>M</b> is a single digit Major number, <b>mm</b> is 2 digit
+minor number, <b>pp</b> is a 2 digit patch number, and <b>b</b> is an
+unrestricted set of digits used as an incrementing build counter.
+</p>
+
+<p>
+To support multiple side-by-side installations of the product, the
+product version is encoded in the top level directory,
+ex. <b>linuxutils_2_21</b>.
+</p>
+
+<p>
+Subsequent releases of patch upgrades will be identified by the patch
+number, ex. Linux Utils 2.21.02 with directory <b>linuxutils_2_21_02</b>.
+Typically, these patches only include critical bug fixes.
+</p>
+
+<hr>
+<h2><a name="Support">Technical Support</a></h2>
+<p>For technical support, contact <a href="mailto:softwaresupport@ti.com">softwaresupport@ti.com</a></p>
+
+<!-- TBD
+<p>
+Check the following web site for updates: <a href="https://www-a.ti.com/downloads/sds_support/targetcontent/CE/index.html">https://www-a.ti.com/downloads/sds_support/targetcontent/CMEM/index.html</a>
+</p>
+-->
+
+<hr>
+<p>
+Last updated: November 11, 2008
+</p>
+</body>
+</html>

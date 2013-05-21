@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.linuxutils.cmem" version="2, 2, 0" producerId="undefined">
+    <units>
+        <module name="CMEM"/>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_sdo_linuxutils_cmem,til.tar.dep" src="package/rel/ti_sdo_linuxutils_cmem,til.xdc.inc"/>
+        <srcFile name="package/rel/ti_sdo_linuxutils_cmem.tar.dep" src="package/rel/ti_sdo_linuxutils_cmem.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_linuxutils_cmem,til"
+        pname="ti_sdo_linuxutils_cmem,til.tar"
+        label="TI license"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="apps/multi_process/multi_process.c"/>
+        <file name="Rules.make"/>
+        <file name="src/interface/cmem.h"/>
+        <file name="package/package.ext.xml"/>
+        <file name="apps/apitest/apitest.c"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="apps/insmod_rmmod/Makefile"/>
+        <file name="readme.txt"/>
+        <file name="apps/translate/Makefile"/>
+        <file name="package/package.rel.dot"/>
+        <file name="apps/multi_process/Makefile"/>
+        <file name="apps/Makefile"/>
+        <file name="src/interface/Makefile"/>
+        <file name="include/cmem.h"/>
+        <file name="Makefile"/>
+        <file name="src/module/Makefile"/>
+        <file name="lib"/>
+        <file name="apps/translate/translate.c"/>
+        <file name="src/module/cmemk.c"/>
+        <file name="apps/apitest/Makefile"/>
+        <file name="package/build.cfg"/>
+        <file name="src/Makefile"/>
+        <file name="apps/insmod_rmmod/insmod_rmmod_omapL137.sh"/>
+        <file name="package/package.bld.xml"/>
+        <file name="apps/insmod_rmmod/insmod_rmmod.sh"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="src/interface/cmem.c"/>
+    </release>
+    <release name="ti_sdo_linuxutils_cmem"
+        pname="ti_sdo_linuxutils_cmem.tar"
+        label="default"
+        relScript="ti/sdo/linuxutils/buildutils/copyright.rel">
+        <file name="apps/multi_process/multi_process.c"/>
+        <file name="Rules.make"/>
+        <file name="src/interface/cmem.h"/>
+        <file name="package/package.ext.xml"/>
+        <file name="apps/apitest/apitest.c"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="apps/insmod_rmmod/Makefile"/>
+        <file name="readme.txt"/>
+        <file name="apps/translate/Makefile"/>
+        <file name="package/package.rel.dot"/>
+        <file name="apps/multi_process/Makefile"/>
+        <file name="apps/Makefile"/>
+        <file name="src/interface/Makefile"/>
+        <file name="include/cmem.h"/>
+        <file name="Makefile"/>
+        <file name="src/module/Makefile"/>
+        <file name="lib"/>
+        <file name="apps/translate/translate.c"/>
+        <file name="src/module/cmemk.c"/>
+        <file name="apps/apitest/Makefile"/>
+        <file name="package/build.cfg"/>
+        <file name="src/Makefile"/>
+        <file name="apps/insmod_rmmod/insmod_rmmod_omapL137.sh"/>
+        <file name="package/package.bld.xml"/>
+        <file name="apps/insmod_rmmod/insmod_rmmod.sh"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="src/interface/cmem.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

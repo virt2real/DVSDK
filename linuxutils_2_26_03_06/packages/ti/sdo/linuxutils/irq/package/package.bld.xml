@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.linuxutils.irq" version="1, 0, 0" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_sdo_linuxutils_irq.tar.dep" src="package/rel/ti_sdo_linuxutils_irq.xdc.inc"/>
+        <srcFile name="package/rel/ti_sdo_linuxutils_irq,til.tar.dep" src="package/rel/ti_sdo_linuxutils_irq,til.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_linuxutils_irq"
+        pname="ti_sdo_linuxutils_irq.tar"
+        label="default"
+        relScript="ti/sdo/linuxutils/buildutils/copyright.rel">
+        <file name="src/Makefile"/>
+        <file name="include/irqk.h"/>
+        <file name="Rules.make"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="readme.txt"/>
+        <file name="package/package.bld.xml"/>
+        <file name="src/module/irqk.c"/>
+        <file name="Makefile"/>
+        <file name="package/package.ext.xml"/>
+        <file name="src/module/Makefile"/>
+        <file name="package/build.cfg"/>
+        <file name="src/module/irqk.h"/>
+    </release>
+    <release name="ti_sdo_linuxutils_irq,til"
+        pname="ti_sdo_linuxutils_irq,til.tar"
+        label="TI license"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="src/Makefile"/>
+        <file name="include/irqk.h"/>
+        <file name="Rules.make"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="readme.txt"/>
+        <file name="package/package.bld.xml"/>
+        <file name="src/module/irqk.c"/>
+        <file name="Makefile"/>
+        <file name="package/package.ext.xml"/>
+        <file name="src/module/Makefile"/>
+        <file name="package/build.cfg"/>
+        <file name="src/module/irqk.h"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

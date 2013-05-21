@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.linuxutils.sdma" version="1, 0, 0" producerId="undefined">
+    <units>
+        <module name="SDMA"/>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_sdo_linuxutils_sdma.tar.dep" src="package/rel/ti_sdo_linuxutils_sdma.xdc.inc"/>
+        <srcFile name="package/rel/ti_sdo_linuxutils_sdma,til.tar.dep" src="package/rel/ti_sdo_linuxutils_sdma,til.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_linuxutils_sdma"
+        pname="ti_sdo_linuxutils_sdma.tar"
+        label="default"
+        relScript="ti/sdo/linuxutils/buildutils/copyright.rel">
+        <file name="src/Makefile"/>
+        <file name="src/module/sdmak.c"/>
+        <file name="Rules.make"/>
+        <file name="src/interface/sdma.h"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib"/>
+        <file name="readme.txt"/>
+        <file name="src/interface/Makefile"/>
+        <file name="package/package.bld.xml"/>
+        <file name="Makefile"/>
+        <file name="package/package.ext.xml"/>
+        <file name="src/interface/sdma.c"/>
+        <file name="src/module/Makefile"/>
+        <file name="package/build.cfg"/>
+        <file name="include/sdma.h"/>
+    </release>
+    <release name="ti_sdo_linuxutils_sdma,til"
+        pname="ti_sdo_linuxutils_sdma,til.tar"
+        label="TI license"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="src/Makefile"/>
+        <file name="src/module/sdmak.c"/>
+        <file name="Rules.make"/>
+        <file name="src/interface/sdma.h"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib"/>
+        <file name="readme.txt"/>
+        <file name="src/interface/Makefile"/>
+        <file name="package/package.bld.xml"/>
+        <file name="Makefile"/>
+        <file name="package/package.ext.xml"/>
+        <file name="src/interface/sdma.c"/>
+        <file name="src/module/Makefile"/>
+        <file name="package/build.cfg"/>
+        <file name="include/sdma.h"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>
