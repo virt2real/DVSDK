@@ -33,6 +33,7 @@
 #include <linux/cdev.h>
 #include <linux/mm.h>
 #include <linux/interrupt.h>
+#include <linux/slab.h>
 
 #include <asm/io.h>
 #include <asm/memory.h>
@@ -347,7 +348,8 @@ static int ioctl(struct inode *inode, struct file *filp,
 
                 __D("REQUESTIRQ: ... got it\n");
 
-                init_MUTEX_LOCKED(&channelp->completion_sem);
+                //init_MUTEX_LOCKED(&channelp->completion_sem);
+                sema_init(&channelp->completion_sem, 0);
                 channelp->transfer_complete = 0;
                 channelp->resource = req.resource;
 
@@ -860,7 +862,8 @@ static int __init irqk_init(void)
 
     for (i = 0; i < IRQK_NUMCHANNELS; i++) {
         channelp = &channels[i];
-        init_MUTEX(&channelp->resource_sem);
+        //init_MUTEX(&channelp->resource_sem);
+        sema_init(&channelp->resource_sem, 1);
         channelp->transfer_complete = 0;
         channelp->resource = IRQK_NONE;
         INIT_LIST_HEAD(&channelp->users);
