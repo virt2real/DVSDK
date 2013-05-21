@@ -1,0 +1,33 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\c2\trunk\JHMP\CCS\NANDWriter\"
+ProjectType=Executable
+CPUFamily=TMS470R2X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\Common\ccs\src\debug.c"
+Source="..\..\..\Common\drivers\src\nand.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\Common\src\device.c"
+Source="..\..\Common\src\device_nand.c"
+Source="src\nanderaser.c"
+Source="NANDEraser.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\ccs\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"_DEBUG" -d"SKIP_LOW_LEVEL_INIT" -me -mv5e --abi=eabi
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\ccs\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"SKIP_LOW_LEVEL_INIT" -me -mv5e --abi=eabi
+
+["Linker" Settings: "Debug"]
+Options=--abi=eabi -cr -m".\Debug\NANDEraser_DM36x.map" -o".\Debug\NANDEraser_DM36x.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\NANDEraser_DM36x.map" -o".\Release\NANDEraser_DM36x.out" -w -x
+

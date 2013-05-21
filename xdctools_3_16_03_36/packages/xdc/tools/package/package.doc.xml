@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='xdc.tools' nodoc='0' root='../../' summary='Command+line+tool+support'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc.tools%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+0%2C+0%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='ICmd' kind='interface' nodoc='0' metaonly='1' summary='Generic+xdc-script+%28xs%29+command'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2Fpackage.html%22+title%3D%22xdc.tools%22%3Exdc.tools%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EICmd%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EICmd%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='usage' anchor='usage' altext='xdc.tools.ICmd.usage' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Usage+for+this+command'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eusage%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%3D+%255B%2B%255D%3B'/>
+                </synopSpec>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='exec' anchor='exec' altext='xdc.tools.ICmd.exec' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='%27xs%27+script+entry+point'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Eexec%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+            </decl>
+            <decl kind='fxn' name='main' anchor='main' altext='xdc.tools.ICmd.main' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='%27xs%27+shell+entry+point'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Emain%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+            </decl>
+        </group>
+        <group name='$instance'>
+            <synopSpec>
+                <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A'/>
+                <line blank='1' always='0'/>
+            </synopSpec>
+        </group>
+        <group name='per-instance config parameters'>
+            <synopMeta>
+                <line tab='0' comment='Instance+config-params+object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+ICmd.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+            </synopMeta>
+            <decl spacer='1'/>
+        </group>
+        <group name='per-instance creation'/>
+        <group name='per-instance functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='run' anchor='run' altext='xdc.tools.ICmd.run' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Underlying+implementation'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erun%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FCmdr.html%23.Instance%22+title%3D%22xdc.tools.Cmdr.Instance%22%3ECmdr.Instance%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecmdr%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%29%3B'/>
+                </synopSpec>
+            </decl>
+        </group>
+    </unit>
+    <unit name='IProductView' kind='interface' nodoc='1' metaonly='1' summary=''>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2Fpackage.html%22+title%3D%22xdc.tools%22%3Exdc.tools%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIProductView%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIProductView%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='ProductElemDesc' anchor='.Product.Elem.Desc' altext='xdc.tools.IProductView.ProductElemDesc' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Structure+that+should+be+filled+up+recursively+by+the+implementor+to%0A++define+the+logical+tree+view+of+the+product.+The+product+view+is+%0A++essentially+composed+of+elements+that+are+either+modules+or+groups.%0A++Groups+can+contain+other+groups+or+modules.+The+implementor+will+%0A++typically+start+with+a+root+node+and+then+logically+build+a+tree%0A++comprising+of+groups+and+modules'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EProductElemDesc%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EelemName%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmoduleName%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EiconFileName%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.tools.IProductView.ProductElemDesc%22%3EIProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EelemArray%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <docSect name='FIELDS'>
+                    <docChild name='elemName' summary='Name+of+element.+Elements+can+be+groups+or%0A++++++++++++++++++++++++++modules'>
+                    </docChild>
+                    <docChild name='moduleName' summary='In+case+of+a+leaf+node+this+field+will%0A++++++++++++++++++++++++++contain+the+module+name.+For+intermediate%0A++++++++++++++++++++++++++tree+nodes+the+module+name+will+be+set+to+null'>
+                    </docChild>
+                    <docChild name='iconFileName' summary='The+name+of+the+icon+file+that+is+associated%0A++++++++++++++++++++++++++with+this+element'>
+                    </docChild>
+                    <docChild name='elemArray' summary='Array+of+%27ProductElemDesc%27+that+allows+to%0A++++++++++++++++++++++++++recursively+build+up+a+tree+of+ProductElemDesc'>
+                    </docChild>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='getProductDescriptor' anchor='get.Product.Descriptor' altext='xdc.tools.IProductView.getProductDescriptor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Return+product+descriptor'>
+                <synopSpec>
+                    <line tab='0' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.tools.IProductView.ProductElemDesc%22%3EIProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgetProductDescriptor%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+function+returns+the+root+node+of+the+tree+of+%27ProductElemDesc%27%0A++structures+built+by+the+implementation.'/>
+                </docSect>
+            </decl>
+        </group>
+    </unit>
+    <unit name='IRtscProductTemplate' kind='interface' nodoc='1' metaonly='1' summary=''>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2Fpackage.html%22+title%3D%22xdc.tools%22%3Exdc.tools%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIRtscProductTemplate%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIRtscProductTemplate%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='TemplateInfo' anchor='.Template.Info' altext='xdc.tools.IRtscProductTemplate.TemplateInfo' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Structure+providing+information+on+the+available+configurations'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETemplateInfo%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etitle%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EfileList%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edescription%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIRtscProductTemplate.html%23.Template.Info%22+title%3D%22xdc.tools.IRtscProductTemplate.TemplateInfo%22%3EIRtscProductTemplate.TemplateInfo%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etemplate%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <docSect name='FIELDS'>
+                    <docChild name='title' summary='String+containing+the+title+of+the+template'>
+                    </docChild>
+                    <docChild name='fileList' summary='Array+of+file+paths+relative+to+the+template%0A++++++++++++++++++++++package+folder'>
+                    </docChild>
+                    <docChild name='description' summary='String+containing+the+description+of+the+template'>
+                    </docChild>
+                    <docChild name='template' summary='Array+containing+one+%27TemplateInfo%27+object'>
+                    </docChild>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='appTemplates' anchor='app.Templates' altext='xdc.tools.IRtscProductTemplate.appTemplates' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIRtscProductTemplate.html%23.Template.Info%22+title%3D%22xdc.tools.IRtscProductTemplate.TemplateInfo%22%3EIRtscProductTemplate.TemplateInfo%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EappTemplates%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+            </decl>
+            <decl kind='config' name='configTemplates' anchor='config.Templates' altext='xdc.tools.IRtscProductTemplate.configTemplates' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIRtscProductTemplate.html%23.Template.Info%22+title%3D%22xdc.tools.IRtscProductTemplate.TemplateInfo%22%3EIRtscProductTemplate.TemplateInfo%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EconfigTemplates%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='Cmdr' kind='module' nodoc='0' metaonly='1' summary='Command+line+tool+context'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2Fpackage.html%22+title%3D%22xdc.tools%22%3Exdc.tools%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECmdr%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECmdr%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Cmdr+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27xdc.tools.Cmdr%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='Context' anchor='.Context' altext='xdc.tools.Cmdr.Context' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <decl kind='enumval' name='SHELL' anchor='.S.H.E.L.L'/>
+                <decl kind='enumval' name='SCRIPT' anchor='.S.C.R.I.P.T'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EContext%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ESHELL%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ESCRIPT%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ECmdr.%3Cspan+class%3D%22xdoc-id%22%3EContext%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ECmdr.%3Cspan+class%3D%22xdoc-id%22%3ESHELL%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ECmdr.%3Cspan+class%3D%22xdoc-id%22%3ESCRIPT%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+        <group name='$instance'>
+            <synopSpec>
+                <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A'/>
+                <line blank='1' always='0'/>
+            </synopSpec>
+        </group>
+        <group name='per-instance config parameters'>
+            <synopMeta>
+                <line tab='0' comment='Instance+config-params+object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Cmdr.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                <line tab='1' comment='' anchor='context' altext='xdc.tools.Cmdr.context' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Econtext%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FCmdr.html%23.Context%22+title%3D%22xdc.tools.Cmdr.Context%22%3ECmdr.Context%3C%2Fa%3E%3C%2Fi%3E+%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252Fxdc%252Ftools%252FCmdr.html%2523.S.H.E.L.L%2522%2Btitle%253D%2522xdc.tools.Cmdr.SHELL%2522%253ECmdr.SHELL%253C%252Fa%253E%3B'/>
+                <line tab='1' comment='' anchor='socket' altext='xdc.tools.Cmdr.socket' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esocket%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='' anchor='tid' altext='xdc.tools.Cmdr.tid' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etid%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E+0%3B'/>
+            </synopMeta>
+            <decl spacer='1'/>
+            <decl kind='config' name='context' anchor='context' altext='xdc.tools.Cmdr.context' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FCmdr.html%23.Context%22+title%3D%22xdc.tools.Cmdr.Context%22%3ECmdr.Context%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Econtext%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252Fxdc%252Ftools%252FCmdr.html%2523.S.H.E.L.L%2522%2Btitle%253D%2522xdc.tools.Cmdr.SHELL%2522%253ECmdr.SHELL%253C%252Fa%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Cmdr.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Econtext%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FCmdr.html%23.Context%22+title%3D%22xdc.tools.Cmdr.Context%22%3ECmdr.Context%3C%2Fa%3E%3C%2Fi%3E+%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252Fxdc%252Ftools%252FCmdr.html%2523.S.H.E.L.L%2522%2Btitle%253D%2522xdc.tools.Cmdr.SHELL%2522%253ECmdr.SHELL%253C%252Fa%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='socket' anchor='socket' altext='xdc.tools.Cmdr.socket' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esocket%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Cmdr.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Esocket%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='tid' anchor='tid' altext='xdc.tools.Cmdr.tid' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etid%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Cmdr.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Etid%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E+0%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='per-instance creation'>
+            <synopSpec>
+                <line tab='0' comment='Create+an+instance-object' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecreate%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecmdmod%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+            </synopSpec>
+            <synopMeta>
+                <line elem='1'/>
+                <line tab='0' comment='Allocate+instance+config-params' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Cmdr.%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FCmdr.html%23per-instance_config_parameters%22+title%3D%22xdc.tools.Cmdr.Params%22%3EParams%3C%2Fa%3E%3B'/>
+                <line tab='0' comment='Assign+individual+configs' content='params.%3Ci%3Econfig%3C%2Fi%3E+%3D+%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                <line blank='1' always='0'/>
+                <line elem='0'/>
+                <line tab='0' comment='Create+an+instance-object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+inst+%3D+Cmdr.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecreate%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecmdmod%3C%2Fspan%3E%3C%2Fgo%3E%2C+params+%29%3B'/>
+            </synopMeta>
+        </group>
+        <group name='per-instance functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='error' anchor='error' altext='xdc.tools.Cmdr.error' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Eerror%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emsg%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Eerror%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emsg%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='getopts' anchor='getopts' altext='xdc.tools.Cmdr.getopts' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Parse+command-line+arguments+into+config+params'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Egetopts%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Einst%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Egetopts%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Einst%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='inst' summary='instance+with+config+parameters+to+set'>
+                    </docChild>
+                    <docChild name='args' summary='an+array+of+command-line+arguments'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+function+accepts+an+array+of+command-line+arguments%2C+and%0A+uses+them+to+set+the+values+of+config+parameters+in+a+module%0A+instance.+Parsing+is+controlled+by+the+XDC+declarations+of+the%0A+instance+config+params.'/>
+                </docSect>
+                <docSect name='Usage'>
+                    <docPara content='The+following+command-line+argument+syntaxes+are+supported%2C%0A+following+the+syntax+supported+by+GNU+getopt%28%29+and+getopt_long%28%29%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E+++-f++++++++++++++++a+boolean+flag+with+short+name%0A+++-f+value++++++++++a+number+or+string+with+short+name%0A+++-fvalue%0A+++-f%3Dvalue%0A+++--longname++++++++a+boolean+flag+with+long+name%0A+++--longname+value++a+number+or+string+with+long+name%0A+++--longname%3Dvalue++a+number+or+string+with+long+name%0A%3C%2FPRE%3E'/>
+                    <docPara content='In+addition+the+following+non-standard+syntaxes+are+supported%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E+++-f%3Avalue%0A+++--longnamevalue%0A+++--longname%3Avalue%0A%3C%2FPRE%3E'/>
+                </docSect>
+                <docSect name='Declaration'>
+                    <docPara content='The+long+and+short+names+of+the+config+parameter+are+declared%0A+by+the+%40CommandOption%28%29+attribute+of+the+XDC+spec+language.+For%0A+example+to+declare+a+boolean+flag+with+a+short+name+of+%22-f%22+and%0A+a+long+name+of+%22--flag%22%2C+and+a+default+value+of+false%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++%40+CommandOption%28%22f%2Cflag%22%29%0A++++config+Bool+myFlag+%3D+false%3B%0A%3C%2FPRE%3E'/>
+                    <docPara content='Options+of+type+Bool+with+no+argument+are+assigned+the+value%0A+%22true%22.+The+types+String+and+Int+can+also+be+used%2C+and+always%0A+require+an+argument+to+be+given+on+the+command+line.'/>
+                </docSect>
+                <docSect name='Combining Short Flags'>
+                    <docPara content='Short-name+options+can+be+combined+on+the+command+line+where+there%0A+is+no+ambiguity%2C+for+example+the+following+usages+are+equivalent%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E+++-a+-b+-c+-f+filename%0A+++-abcf+filename%0A%3C%2FPRE%3E'/>
+                </docSect>
+                <docSect name='Multiple Occurrences'>
+                    <docPara content='If+the+config+param+is+declared+as+an+array%2C+the+option+may%0A+be+used+multiple+times+on+the+command+line+and+each+occurence%0A+will+be+recorded.+For+example+the+following+records+all+-I%0A+options%2C+in+order%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E+++%40+CommandOption%28%22I%22%29%0A+++config+String+includeDirs%5B%5D+%3D+%5B%5D%3B%0A%3C%2FPRE%3E'/>
+                </docSect>
+                <docSect name='Required Options'>
+                    <docPara content='If+the+config+param+has+no+default+value+declared%2C+then+it%0A+is+required+on+the+command+line%2C+and+a+Javascript+exception+will%0A+be+raised+if+it+is+omitted.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='info' anchor='info' altext='xdc.tools.Cmdr.info' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Einfo%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emsg%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Einfo%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emsg%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='read' anchor='read' altext='xdc.tools.Cmdr.read' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Eread%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Eread%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='time' anchor='time' altext='xdc.tools.Cmdr.time' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Etime%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emsg%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Etime%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emsg%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='usage' anchor='usage' altext='xdc.tools.Cmdr.usage' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Eusage%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Eusage%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='verbose' anchor='verbose' altext='xdc.tools.Cmdr.verbose' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Everbose%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eflag%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Everbose%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eflag%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='warning' anchor='warning' altext='xdc.tools.Cmdr.warning' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Ewarning%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emsg%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Ewarning%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emsg%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='write' anchor='write' altext='xdc.tools.Cmdr.write' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Ewrite%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Es%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Ewrite%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Es%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+    </unit>
+    <unit name='ResourceBundle' kind='module' nodoc='1' metaonly='1' summary=''>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2Fpackage.html%22+title%3D%22xdc.tools%22%3Exdc.tools%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EResourceBundle%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EResourceBundle%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+ResourceBundle+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27xdc.tools.ResourceBundle%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='getResourceBundle' anchor='get.Resource.Bundle' altext='xdc.tools.ResourceBundle.getResourceBundle' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='getResourceBundle%28%29+-+Convenience+function+to+create+an+instance'>
+                <synopSpec>
+                    <line tab='0' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FResourceBundle.html%23.Instance%22+title%3D%22xdc.tools.ResourceBundle.Instance%22%3EResourceBundle.Instance%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgetResourceBundle%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpkgName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elang%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EResourceBundle.%3Cspan+class%3D%22xdoc-id%22%3EgetResourceBundle%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpkgName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elang%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FResourceBundle.html%23.Instance%22+title%3D%22xdc.tools.ResourceBundle.Instance%22%3EResourceBundle.Instance%3C%2Fa%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='pkgName' summary='Qualified+package+name'>
+                    </docChild>
+                    <docChild name='lang' summary='Locale+indicator'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='Create+ResourceBundle+Instance+using+the+properties+file+found%0A+in+the+specified+package+localized+to+the+stated+language.'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='ResourceBundle.Instance'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='$instance'>
+            <synopSpec>
+                <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A'/>
+                <line blank='1' always='0'/>
+            </synopSpec>
+        </group>
+        <group name='per-instance config parameters'>
+            <synopMeta>
+                <line tab='0' comment='Instance+config-params+object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+ResourceBundle.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+            </synopMeta>
+            <decl spacer='1'/>
+        </group>
+        <group name='per-instance creation'>
+            <synopSpec>
+                <line tab='0' comment='Create+an+instance-object' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecreate%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpkgName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elang%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+            </synopSpec>
+            <synopMeta>
+                <line elem='1'/>
+                <line tab='0' comment='Allocate+instance+config-params' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+ResourceBundle.%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FResourceBundle.html%23per-instance_config_parameters%22+title%3D%22xdc.tools.ResourceBundle.Params%22%3EParams%3C%2Fa%3E%3B'/>
+                <line tab='0' comment='Assign+individual+configs' content='params.%3Ci%3Econfig%3C%2Fi%3E+%3D+%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                <line blank='1' always='0'/>
+                <line elem='0'/>
+                <line tab='0' comment='Create+an+instance-object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+inst+%3D+ResourceBundle.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecreate%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpkgName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elang%3C%2Fspan%3E%3C%2Fgo%3E%2C+params+%29%3B'/>
+            </synopMeta>
+            <docSect name='ARGUMENTS'>
+                <docChild name='pkgName' summary='Qualified+package+name'>
+                </docChild>
+                <docChild name='lang' summary='Locale+indicator'>
+                </docChild>
+            </docSect>
+            <docSect name='details'>
+                <docPara content='Create+ResourceBundle+Instance+using+the+properties+file+found%0A+in+the+specified+package+localized+to+the+stated+language.'/>
+            </docSect>
+            <docSect name='returns'>
+                <docPara content='ResourceBundle.Instance'/>
+            </docSect>
+        </group>
+        <group name='per-instance functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='formatMessage' anchor='format.Message' altext='xdc.tools.ResourceBundle.formatMessage' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='formatMessage%28%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EformatMessage%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ekey%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3EformatMessage%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ekey%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='key' summary='resource+string+key'>
+                    </docChild>
+                    <docChild name='args' summary='array+of+positional+string+arguments'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='Format+a+string+specified+by+the+key+and+using+the%0A+declared+arguments+from+the+underlying+properties+file.'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='specified+string'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fjava%2Futil%2FPropertyResourceBundle.html%23get.String%22+title%3D%22java.util.PropertyResourceBundle.getString%22%3Ejava.util.PropertyResourceBundle.getString%3C%2Fa%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fjava%2Ftext%2FMessageFormat.html%23format.Message%22+title%3D%22java.text.MessageFormat.formatMessage%22%3Ejava.text.MessageFormat.formatMessage%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='getString' anchor='get.String' altext='xdc.tools.ResourceBundle.getString' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='getString%28%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgetString%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ekey%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3EgetString%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ekey%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='key' summary='resource+string+key'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='Get+the+string+specified+by+the+key+from+the+underlying%0A+properties+file.'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='specified+string'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fjava%2Futil%2FPropertyResourceBundle.html%23get.String%22+title%3D%22java.util.PropertyResourceBundle.getString%22%3Ejava.util.PropertyResourceBundle.getString%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+        </group>
+    </unit>
+</package>

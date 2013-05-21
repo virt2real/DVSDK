@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="ti_targets_omf_elf" label="default" date="1266972076248" buildCount="38" producerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/">
+<package name="ti.targets.omf.elf"
+    version=""/>
+<imports>
+</imports>
+<references>
+    <package name="ti.targets"
+        version="1, 0, 3, 1266971046000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="ITarget.xs"/>
+        <file name="MSP430.xs"/>
+        <file name="MSP430_large_code.xs"/>
+        <file name="MSP430_large_data.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/arm/4.5.0/Linux/"
+        trgs="ti.targets.arm.R4t_big_endian,ti.targets.arm.Arm11_big_endian,ti.targets.arm.Arm7,ti.targets.arm.Arm9,ti.targets.arm.Arm11,ti.targets.arm.M3_big_endian,ti.targets.arm.Arm7_big_endian,ti.targets.TMS470,ti.targets.arm.R4_big_endian,ti.targets.arm.R4t,ti.targets.TMS470_big_endian,ti.targets.arm.R4,ti.targets.arm.Arm9t,ti.targets.arm.M3">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="gnu.targets"
+        version="1, 0, 1, 1266971035000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="ITarget.xs"/>
+        <file name="Linux86.h"/>
+        <file name="Linux86.xs"/>
+        <file name="MVArm9.h"/>
+        <file name="MVArm9.xs"/>
+        <file name="Mingw.xs"/>
+        <file name="UCArm9.h"/>
+        <file name="UCArm9.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0, 1266863629976"
+        providerId="xdccore">
+        <file name="Clock.xs"/>
+        <file name="Trace.xs"/>
+        <file name="java/package.jar"/>
+    </package>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0, 1266863640796"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0, 1266863661115"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/cs/arm/arm-2008q3/"
+        trgs="gnu.targets.arm.GCArmv6,gnu.targets.arm.GCArmv7A">
+        <file name="arm-none-linux-gnueabi/libc/usr/include/_G_config.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/alloca.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/endian.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/predefs.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/pthreadtypes.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/select.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/sigset.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/stdio.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/stdio_lim.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/string.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/string2.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/sys_errlist.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/time.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/types.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/typesizes.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/wordsize.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/endian.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/features.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/gnu/stubs.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/libio.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/stdio.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/stdlib.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/string.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/sys/cdefs.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/sys/select.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/sys/sysmacros.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/sys/types.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/time.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/wchar.h"/>
+        <file name="lib/gcc/arm-none-linux-gnueabi/4.3.2/include/stdarg.h"/>
+        <file name="lib/gcc/arm-none-linux-gnueabi/4.3.2/include/stddef.h"/>
+    </targetRoot>
+    <package name="microsoft.targets"
+        version="1, 0, 2, 0, 1266971036000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="ITarget.xs"/>
+        <file name="Win32.xs"/>
+        <file name="_utils.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c55/lead3v3.3.2/Linux/"
+        trgs="ti.targets.C55,ti.targets.C55_huge,ti.targets.C55_large">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 1266863682375"
+        providerId="xdccore">
+        <file name="java/antlr.jar"/>
+        <file name="java/ecj.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/jsr173_api.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.2/i686-unknown-linux-gnu/"
+        trgs="gnu.targets.Linux86">
+        <file name="i686-unknown-linux-gnu/sys-include/_G_config.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/alloca.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/endian.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/pthreadtypes.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/sched.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/select.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/sigset.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/stdio.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/stdio_lim.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/string.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/string2.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/sys_errlist.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/time.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/types.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/typesizes.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/wchar.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/wordsize.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/endian.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/features.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/gconv.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/gnu/stubs.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/libio.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/stdio.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/stdlib.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/string.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/sys/cdefs.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/sys/select.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/sys/sysmacros.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/sys/types.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/time.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/wchar.h"/>
+        <file name="lib/gcc/i686-unknown-linux-gnu/4.1.0/include/stdarg.h"/>
+        <file name="lib/gcc/i686-unknown-linux-gnu/4.1.0/include/stddef.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/msvc/8.0/"
+        trgs="microsoft.targets.Win32">
+        <file name="VC/include/crtassem.h"/>
+        <file name="VC/include/crtdefs.h"/>
+        <file name="VC/include/limits.h"/>
+        <file name="VC/include/sal.h"/>
+        <file name="VC/include/stdarg.h"/>
+        <file name="VC/include/stddef.h"/>
+        <file name="VC/include/stdio.h"/>
+        <file name="VC/include/stdlib.h"/>
+        <file name="VC/include/string.h"/>
+        <file name="VC/include/swprintf.inl"/>
+        <file name="VC/include/vadefs.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/7.0.0/Linux/"
+        trgs="ti.targets.elf.C674,ti.targets.elf.C674_big_endian,ti.targets.C64T_big_endian,ti.targets.elf.C67P,ti.targets.elf.C64T_big_endian,ti.targets.C64T,ti.targets.elf.C64P_big_endian,ti.targets.elf.C64P,ti.targets.elf.C64T">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="microsoft.targets.arm"
+        version="1, 0, 0, 0, 1266971047000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="WinCE.xs"/>
+    </package>
+    <package name="xdc.bld"
+        version="1, 0, 2, 1266863600174"
+        providerId="xdccore">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c5xx/c5xxcc-4.2.0/Linux/"
+        trgs="ti.targets.C54,ti.targets.C54_far">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0, 1266863637790"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/arm/4.6.0/Linux/"
+        trgs="ti.targets.arm.elf.Arm9t,ti.targets.arm.elf.R4t_big_endian,ti.targets.arm.elf.M3,ti.targets.elf.TMS470,ti.targets.arm.elf.M3_big_endian,ti.targets.arm.elf.Arm7_big_endian,ti.targets.arm.elf.Arm7,ti.targets.arm.elf.Arm9,ti.targets.arm.elf.R4F_big_endian,ti.targets.arm.elf.R4Ft,ti.targets.arm.elf.R4_big_endian,ti.targets.arm.elf.R4Ft_big_endian,ti.targets.arm.elf.R4,ti.targets.arm.elf.R4t">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="gnu.targets.arm"
+        version="1, 0, 0, 0, 1266971036000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="GCArmv5T.h"/>
+        <file name="GCArmv6.h"/>
+        <file name="GCArmv6.xs"/>
+        <file name="GCArmv7A.h"/>
+        <file name="GCArmv7A.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="ti.targets.arm"
+        version="2, 0, 1, 0, 1266971047000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/6.1.9/Linux/"
+        trgs="ti.targets.C674_big_endian,ti.targets.C674">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c55/Ryujin/lead3v4.0.0A05249/Linux/"
+        trgs="ti.targets.C55P_byte,ti.targets.C55P_word">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="ti.targets.elf"
+        version="1, 0, 0, 1266971055000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="ITarget.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/msvc/6.0sp3/"
+        trgs="microsoft.targets.VC98">
+        <file name="vc98/include/stdarg.h"/>
+        <file name="vc98/include/stddef.h"/>
+        <file name="vc98/include/stdio.h"/>
+        <file name="vc98/include/stdlib.h"/>
+        <file name="vc98/include/string.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c28/5.2.1/Linux/"
+        trgs="ti.targets.C28_large,ti.targets.C28,ti.targets.C28_float">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/stdlibf.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/MSP430/3.2.1/Linux/"
+        trgs="ti.targets.MSP430,ti.targets.MSP430_large_code,ti.targets.MSP430_large_data">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/mvl/arm/mvl4.0/Linux/montavista/pro/devkit/arm/v5t_le/"
+        trgs="gnu.targets.arm.GCArmv5T,gnu.targets.MVArm9">
+        <file name="lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stdarg.h"/>
+        <file name="lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stddef.h"/>
+        <file name="target/usr/include/_G_config.h"/>
+        <file name="target/usr/include/alloca.h"/>
+        <file name="target/usr/include/bits/endian.h"/>
+        <file name="target/usr/include/bits/pthreadtypes.h"/>
+        <file name="target/usr/include/bits/sched.h"/>
+        <file name="target/usr/include/bits/select.h"/>
+        <file name="target/usr/include/bits/sigset.h"/>
+        <file name="target/usr/include/bits/stdio.h"/>
+        <file name="target/usr/include/bits/stdio_lim.h"/>
+        <file name="target/usr/include/bits/string.h"/>
+        <file name="target/usr/include/bits/string2.h"/>
+        <file name="target/usr/include/bits/sys_errlist.h"/>
+        <file name="target/usr/include/bits/time.h"/>
+        <file name="target/usr/include/bits/types.h"/>
+        <file name="target/usr/include/bits/typesizes.h"/>
+        <file name="target/usr/include/bits/wchar.h"/>
+        <file name="target/usr/include/bits/wordsize.h"/>
+        <file name="target/usr/include/endian.h"/>
+        <file name="target/usr/include/features.h"/>
+        <file name="target/usr/include/gconv.h"/>
+        <file name="target/usr/include/gnu/stubs.h"/>
+        <file name="target/usr/include/libio.h"/>
+        <file name="target/usr/include/stdint.h"/>
+        <file name="target/usr/include/stdio.h"/>
+        <file name="target/usr/include/stdlib.h"/>
+        <file name="target/usr/include/string.h"/>
+        <file name="target/usr/include/sys/cdefs.h"/>
+        <file name="target/usr/include/sys/select.h"/>
+        <file name="target/usr/include/sys/sysmacros.h"/>
+        <file name="target/usr/include/sys/types.h"/>
+        <file name="target/usr/include/time.h"/>
+        <file name="target/usr/include/wchar.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/msvc/msvctk2003/"
+        trgs="microsoft.targets.Net32">
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/6.0.16/Linux/"
+        trgs="ti.targets.C67P,ti.targets.C67_big_endian,ti.targets.C62,ti.targets.C64,ti.targets.C62_big_endian,ti.targets.C67,ti.targets.C64P,ti.targets.C64_big_endian,ti.targets.C64P_big_endian">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/opensource/buildroot/10122007/build_arm/staging_dir/usr/"
+        trgs="gnu.targets.UCArm9">
+        <file name="include/alloca.h"/>
+        <file name="include/bits/endian.h"/>
+        <file name="include/bits/initspin.h"/>
+        <file name="include/bits/kernel_types.h"/>
+        <file name="include/bits/pthreadtypes.h"/>
+        <file name="include/bits/sched.h"/>
+        <file name="include/bits/select.h"/>
+        <file name="include/bits/sigset.h"/>
+        <file name="include/bits/sigthread.h"/>
+        <file name="include/bits/stdio_lim.h"/>
+        <file name="include/bits/time.h"/>
+        <file name="include/bits/types.h"/>
+        <file name="include/bits/typesizes.h"/>
+        <file name="include/bits/uClibc_arch_features.h"/>
+        <file name="include/bits/uClibc_clk_tck.h"/>
+        <file name="include/bits/uClibc_config.h"/>
+        <file name="include/bits/uClibc_mutex.h"/>
+        <file name="include/bits/uClibc_pthread.h"/>
+        <file name="include/bits/uClibc_stdio.h"/>
+        <file name="include/bits/wordsize.h"/>
+        <file name="include/endian.h"/>
+        <file name="include/features.h"/>
+        <file name="include/pthread.h"/>
+        <file name="include/sched.h"/>
+        <file name="include/signal.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+        <file name="include/sys/cdefs.h"/>
+        <file name="include/sys/select.h"/>
+        <file name="include/sys/sysmacros.h"/>
+        <file name="include/sys/types.h"/>
+        <file name="include/time.h"/>
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stdarg.h"/>
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stddef.h"/>
+    </targetRoot>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0, 1266863644657"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.targets.arm.elf"
+        version="1, 0, 0, 1266971048000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="IArm.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 1, 1266863565961"
+        providerId="xdccore">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+        <file name="xmlgen2.xs"/>
+    </package>
+    <package name="ti.targets.omf.elf"
+        version=""
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="elf.h"/>
+    </package>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod/xdcprod-l34/product/Linux/xdctools_3_16_03_34_eng/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include/utils.tci"/>
+        <xdcCorePkg version="16, 0, 1, 0, 1266863587840" producerId="ndefined" buildCount="224" releaseName="xdc_corevers" label="default" date="1266863587840"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/common.bld"/>
+    <file name="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/config.bld"/>
+</orphans>
+</release>

@@ -1,0 +1,36 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== C6474.tci ========
+ *
+ */
+
+utils.importFile("ti/catalog/c6000/CTCI6488.tci");
+
+/*
+ *  ======== C6474 ========
+ */
+function C6474(name, parent)
+{
+    /* Since 6474 and TCI6488 are same from the configuration point of view,
+     * instead of duplicating code, the 6474 device is configured using the
+     * code for TCI6488 and then only deviceName is changed.
+     */
+
+    CTCI6488.apply(this, [name, parent]);
+    this.deviceName = "6474";
+}
+/*
+ *  @(#) ti.catalog.c6000; 1, 0, 0, 0,226; 2-23-2010 16:50:34; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

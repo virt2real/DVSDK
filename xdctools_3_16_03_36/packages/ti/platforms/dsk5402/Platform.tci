@@ -1,0 +1,118 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+
+/*
+ * The board has a 20 Mhz oscillator and runs at 100 Mhz
+ * This value makes clkmd a multiplier of 5.
+ * Specify the default pmst value which does have an effect on
+ * the memory map.  MP/MC = 1, OVLY = 1, DROM = 0.
+ * The registers swwsr, swcr, and bscr deal with memory wait states.
+ * See SPRU131F 10-6, 10-9 for details.
+ */
+var device_regs = {
+    pmst:  0xffe0,
+    clkmd: 0x4007,
+    swwsr: 0x1208,
+    swcr:  0x0,
+    bscr:  0x8806,
+};
+
+var mem_ext = [];
+var MPMCBITMASK = 0x40;
+if (environment["ti.bios.oldMemoryNames"] == undefined ||
+    environment["ti.bios.oldMemoryNames"] == 'false' ||
+    environment["ti.bios.oldMemoryNames"] == '0') {
+
+    /* If MP/nMC bit in PMST is 0, EPROG.len is 0x7000, and VECT isn't a part
+     * of the memory map.
+     */
+    var eproglen = 0x7f80;
+    if (~device_regs.pmst & MPMCBITMASK) {
+        eproglen = 0x7000;
+    }
+
+    mem_ext[0] = {
+        comment: "External Program Memory",
+        name: "EPROG",
+        base: 0x8000,
+        len:  eproglen,
+        space: "code"
+    };
+
+    /*
+     * Note:  There is a memory hole on the Dsk5402 data memory space
+     *        between the addresses of 0x4000 and 0x8000.
+     */
+    mem_ext[1] = {
+        comment: "External Data Memory",
+        name: "EDATA",
+        base: 0x8000,
+        len:  0x7000,
+        space: "data"
+    };
+
+    if (device_regs.pmst & MPMCBITMASK) {
+        mem_ext[2] = {
+            comment: "Interrupt Vectors",
+            name: "VECT",
+            base: 0xff80,
+            len:  0x0080,
+            space: "code"
+        };
+    }
+}
+else {
+    mem_ext[0] = {
+        comment: "External Data Memory",
+        name: "EDATA",
+        base: 0x8000,
+        len:  0x8000,
+        space: "data"
+    };
+
+    mem_ext[1] = {
+        comment: "External Program Memory",
+        name: "EPROG",
+        base: 0x8000,
+        len:  0x7f80,
+        space: "code"
+    };
+}
+
+var params = {
+    clockRate: 100,
+    catalogName: "ti.catalog.c5400",
+    deviceName: "5402",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+
+print("Warning: dsk5402 platform has been deprecated.")
+print("It will not be supported in later releases of DSP/BIOS.");
+/*
+ *  @(#) ti.platforms.dsk5402; 1, 0, 0,277; 2-23-2010 16:53:13; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

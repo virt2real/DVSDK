@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.hdintc" version="1, 0, 4" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="HDINTC"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.fc.hdintc.c"/>
+        <srcFile name="hdintc.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug_trace/hdintc_fc.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/hdintc_fc/package/package_ti.sdo.fc.hdintc.o64P.dep" src="package/package_ti.sdo.fc.hdintc.c"/>
+        <srcFile name="package/lib/lib/debug_trace/hdintc_fc/hdintc.o64P.dep" src="hdintc.c"/>
+        <srcFile name="lib/debug/hdintc_fc.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/hdintc_fc/package/package_ti.sdo.fc.hdintc.o64P.dep" src="package/package_ti.sdo.fc.hdintc.c"/>
+        <srcFile name="package/lib/lib/debug/hdintc_fc/hdintc.o64P.dep" src="hdintc.c"/>
+        <srcFile name="lib/trace/hdintc_fc.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/hdintc_fc/package/package_ti.sdo.fc.hdintc.o64P.dep" src="package/package_ti.sdo.fc.hdintc.c"/>
+        <srcFile name="package/lib/lib/trace/hdintc_fc/hdintc.o64P.dep" src="hdintc.c"/>
+        <srcFile name="lib/debug/hdintc_spinloop_fc.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/hdintc_spinloop_fc/package/package_ti.sdo.fc.hdintc.o64P.dep" src="package/package_ti.sdo.fc.hdintc.c"/>
+        <srcFile name="package/lib/lib/debug/hdintc_spinloop_fc/hdintc.o64P.dep" src="hdintc.c"/>
+        <srcFile name="lib/release/hdintc_fc.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/hdintc_fc/package/package_ti.sdo.fc.hdintc.o64P.dep" src="package/package_ti.sdo.fc.hdintc.c"/>
+        <srcFile name="package/lib/lib/release/hdintc_fc/hdintc.o64P.dep" src="hdintc.c"/>
+        <srcFile name="lib/trace/hdintc_spinloop_fc.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/hdintc_spinloop_fc/package/package_ti.sdo.fc.hdintc.o64P.dep" src="package/package_ti.sdo.fc.hdintc.c"/>
+        <srcFile name="package/lib/lib/trace/hdintc_spinloop_fc/hdintc.o64P.dep" src="hdintc.c"/>
+        <srcFile name="lib/debug_trace/hdintc_spinloop_fc.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/hdintc_spinloop_fc/package/package_ti.sdo.fc.hdintc.o64P.dep" src="package/package_ti.sdo.fc.hdintc.c"/>
+        <srcFile name="package/lib/lib/debug_trace/hdintc_spinloop_fc/hdintc.o64P.dep" src="hdintc.c"/>
+        <srcFile name="lib/release/hdintc_spinloop_fc.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/hdintc_spinloop_fc/package/package_ti.sdo.fc.hdintc.o64P.dep" src="package/package_ti.sdo.fc.hdintc.c"/>
+        <srcFile name="package/lib/lib/release/hdintc_spinloop_fc/hdintc.o64P.dep" src="hdintc.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_hdintc.tar.dep" src="package/rel/ti_sdo_fc_hdintc.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug_trace/hdintc_fc"
+        pname="lib/debug_trace/hdintc_fc.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/hdintc_fc"
+        pname="lib/debug/hdintc_fc.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/hdintc_fc"
+        pname="lib/trace/hdintc_fc.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/hdintc_spinloop_fc"
+        pname="lib/debug/hdintc_spinloop_fc.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/hdintc_fc"
+        pname="lib/release/hdintc_fc.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/hdintc_spinloop_fc"
+        pname="lib/trace/hdintc_spinloop_fc.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/hdintc_spinloop_fc"
+        pname="lib/debug_trace/hdintc_spinloop_fc.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/hdintc_spinloop_fc"
+        pname="lib/release/hdintc_spinloop_fc.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_hdintc"
+        pname="ti_sdo_fc_hdintc.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/trace/hdintc_fc.a64P"/>
+        <file name="lib/debug/hdintc_spinloop_fc.a64P"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="hdintc.c"/>
+        <file name="package/package_ti.sdo.fc.hdintc.c"/>
+        <file name="lib/debug_trace/hdintc_fc.a64P"/>
+        <file name="hdintc.h"/>
+        <file name="lib/debug_trace/hdintc_spinloop_fc.a64P"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/debug/hdintc_fc.a64P"/>
+        <file name="lib/release/hdintc_spinloop_fc.a64P"/>
+        <file name="lib/trace/hdintc_spinloop_fc.a64P"/>
+        <file name="lib/release/hdintc_fc.a64P"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package.bld"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

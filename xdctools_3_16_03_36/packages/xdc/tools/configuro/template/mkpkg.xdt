@@ -1,0 +1,123 @@
+%%{ --COPYRIGHT--,EPL
+/*
+ *Copyright (c) 2008 Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * --/COPYRIGHT--
+*/
+%%}
+%%{
+    var OPTIONS = [
+        "target",
+        "profile",
+        "platform",
+        "rootdir",
+        "xdcpath",
+        "configbld",
+        "exclude",
+        "warn",
+        "compileOptions",
+        "compilerOptionsFile",
+        "linkerCommandFile",
+        "defines",
+        "bios5Incs",
+        "rtsName",
+        "cfgArgs",
+        "linkTemplate"
+    ];
+    this.cfg = this.arguments[0];
+    var opts = this.arguments[1];
+
+    for (var i = 0; i < OPTIONS.length; i++) {
+        this[OPTIONS[i]] = opts[OPTIONS[i]];
+    }
+
+    var keywords = [
+        "any", "Any", "as", "Bits16", "Bits32", "Bits8", "bool", "Bool",
+        "char", "Char", "config", "const", "create", "delegates", "double",
+        "Double", "enum", "extern", "false", "final", "float", "Float",
+        "function", "Fxn", "IArg", "import", "inherits", "instance", "int",
+        "Int", "Int16", "Int32", "Int8", "interface", "internal", "LDouble",
+        "length", "LLong", "long", "Long", "metaonly", "module", "null",
+        "override", "package", "proxy", "Ptr", "readonly", "requires",
+        "short", "Short", "size_t", "SizeT", "string", "String", "struct",
+        "true", "typedef", "UArg", "UChar", "UInt", "UInt16", "UInt32",
+        "UInt8", "ULLong", "ULong", "undefined", "union", "unsigned",
+        "UShort", "va_list", "VaList", "void", "Void", "volatile"
+    ];
+
+    /* function to make a pathname absolute */
+    this.mkAbsolute = function(name) {
+        return xdc.module('xdc.services.io.File').getCanonicalPath(name);
+    }
+    
+    /* extract the base directory name and use it as the package name */
+    this.pkgName = this.output.replace(/^.*[\/\\]/, '');
+
+    /* validate the package name */
+    var pkgNameArr = this.pkgName.split('.');
+    for (var i = 0; i < pkgNameArr.length; i++) {
+        for (var j = 0; j < keywords.length; j++) {
+            if (pkgNameArr[i].equals(keywords[j])) {
+                throw new Error('reserved word "' + keywords[j] +
+                    '" cannot be used in a package name');
+            }
+        }
+    }
+
+    /* get the enclosing directory */
+    var dir = this.output.substr(0, this.output.length - this.pkgName.length);
+
+    /* if the package name has dots, create subdirs */
+    this.outputPath = dir + this.pkgName.replace(/\./g, '/');
+    
+    /* create the an absolute pathname to the output directory */
+    this.outputPath = this.mkAbsolute(this.outputPath);
+
+    /* indicate whether this config step includes a legacy TCF */
+    this.legacyTcf = !!this.cfg.match(/\.tcf$/i);
+    if (this.legacyTcf) {
+        this.tcfCfgName = this.cfg.replace(/\.tcf$/, '.cfg');
+    }
+
+    /* validate the platform package, if specified */
+    if (this.platform) {
+        var platPkg = this.platform.replace(/:.*$/,'');
+        var path = this.xdcpath + ';' + environment["xdc.root"] + "/packages";
+        var b = Packages.xdc.services.spec.BrowserSession(path.split(';'));
+
+        /* check that we've really found a platform */
+        var plat = b.findPkg(platPkg);
+        if (!plat) {
+            throw new Error("Can't find platform package " + platPkg);
+        }
+    }
+
+    /* validate the exclude check regular expression, if specified */
+    if (this.exclude) {
+        try {
+            var regex = new RegExp(this.exclude);
+            regex.compile()
+        }
+        catch (e) {
+            e.message += " in regexp '" + this.exclude + "'";
+            throw e;
+        }
+    }
+
+    /* strip off the directory to get the name of the internal config */
+    this.cfgName = this.cfg.replace(/^.*[\/\\]/, '');
+
+    /* set the name of the executable to the basename of the config script */
+    this.exeName = this.cfgName.replace(/\.[^\.]*$/, '');
+%%}
+
+package.bld.xdt -> package.bld
+package.xdc.xdt -> package.xdc
+config.bld.xdt  -> config.bld

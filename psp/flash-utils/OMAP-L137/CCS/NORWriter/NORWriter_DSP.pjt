@@ -1,0 +1,40 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="U:\GForge\cat_flashutils\trunk\OMAP-L137\CCS\NORWriter\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\Common\ccs\src\debug.c"
+Source="..\..\..\Common\drivers\src\nor.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\Common\src\device.c"
+Source="src\norwriter.c"
+Source="NORWriter_DSP.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\ccs\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"_DEBUG" -d"SKIP_LOW_LEVEL_INIT" -ms1 -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\ccs\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"SKIP_LOW_LEVEL_INIT" -mv6400+
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\NORWriter_DSP.map" -o".\Debug\NORWriter_DSP.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\NORWriter_DSP.map" -o".\Release\NORWriter_DSP.out" -w -x
+
+["NORWriter_DSP.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["NORWriter_DSP.cmd" Settings: "Release"]
+LinkOrder=1
+

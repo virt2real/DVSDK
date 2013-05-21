@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.rman.examples.shmbuf" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="shmbuf_test1.c"/>
+        <srcFile name="shmbuf_util.c"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test0_x86U.c"/>
+        <srcFile name="shmbuf_test0.c"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test1_x86U.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="test.cfg"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test0_x86U.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test0/shmbuf_util.o86U.dep" src="shmbuf_util.c"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test0_x86U.o86U.dep" src="package/cfg/bin/PC/shmbuf_test0_x86U.c"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test0/shmbuf_test0.o86U.dep" src="shmbuf_test0.c"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test0_x86U.dep" src="package/cfg/bin/PC/shmbuf_test0_x86U.cfg"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test1_x86U.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test1/shmbuf_util.o86U.dep" src="shmbuf_util.c"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test1_x86U.o86U.dep" src="package/cfg/bin/PC/shmbuf_test1_x86U.c"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test1/shmbuf_test1.o86U.dep" src="shmbuf_test1.c"/>
+        <srcFile name="package/cfg/bin/PC/shmbuf_test1_x86U.dep" src="package/cfg/bin/PC/shmbuf_test1_x86U.cfg"/>
+        <srcFile name="package/rel/ti_sdo_fc_rman_examples_shmbuf.tar.dep" src="package/rel/ti_sdo_fc_rman_examples_shmbuf.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="bin/PC/shmbuf_test0"
+        pname="bin/PC/shmbuf_test0.x86U"
+        target="gnu.targets.Linux86"
+        platform="host.platforms.PC"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/PC/shmbuf_test0_x86U.cfg"
+        xCfgPrefix="package/cfg/bin/PC/shmbuf_test0_x86U"
+        cfgScript="test.cfg"
+        cfgArgs="%7BchipType%3A%20%22PC%22%7D"
+        />
+    <executable name="bin/PC/shmbuf_test1"
+        pname="bin/PC/shmbuf_test1.x86U"
+        target="gnu.targets.Linux86"
+        platform="host.platforms.PC"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/PC/shmbuf_test1_x86U.cfg"
+        xCfgPrefix="package/cfg/bin/PC/shmbuf_test1_x86U"
+        cfgScript="test.cfg"
+        cfgArgs="%7BchipType%3A%20%22PC%22%7D"
+        />
+    </executables>
+    <tests>
+    <test exeName="bin/PC/shmbuf_test0.x86U"
+        args=""
+        groupName="bin/PC/shmbuf_test0.x86U"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/PC/shmbuf_test1.x86U"
+        args=""
+        groupName="bin/PC/shmbuf_test1.x86U"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_rman_examples_shmbuf"
+        pname="ti_sdo_fc_rman_examples_shmbuf.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

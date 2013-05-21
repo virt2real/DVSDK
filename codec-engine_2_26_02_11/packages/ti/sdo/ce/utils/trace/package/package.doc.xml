@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='ti.sdo.ce.utils.trace' nodoc='0' root='../../../../../' summary='Simplified+interface+towards+Tracing+and+Logging'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eti.sdo.ce.utils.trace%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+1%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='TraceUtil' kind='module' nodoc='0' metaonly='1' summary='TraceUtil+Configuration+interface'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Futils%2Ftrace%2Fpackage.html%22+title%3D%22ti.sdo.ce.utils.trace%22%3Eti.sdo.ce.utils.trace%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETraceUtil%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETraceUtil%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+TraceUtil+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.ce.utils.trace.TraceUtil%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl kind='const' name='DEFAULT_TRACING' anchor='.D.E.F.A.U.L.T_.T.R.A.C.I.N.G' altext='ti.sdo.ce.utils.trace.TraceUtil.DEFAULT_TRACING' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Tracing+that+prints+warnings+and+errors+on+the+standard+output'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Futils%2Ftrace%2FTraceUtil.html%23.Attrs%22+title%3D%22ti.sdo.ce.utils.trace.TraceUtil.Attrs%22%3ETraceUtil.Attrs%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EDEFAULT_TRACING%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETraceUtil.%3Cspan+class%3D%22xdoc-id%22%3EDEFAULT_TRACING%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='const' name='FULL_TRACING' anchor='.F.U.L.L_.T.R.A.C.I.N.G' altext='ti.sdo.ce.utils.trace.TraceUtil.FULL_TRACING' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+all+tracing'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Futils%2Ftrace%2FTraceUtil.html%23.Attrs%22+title%3D%22ti.sdo.ce.utils.trace.TraceUtil.Attrs%22%3ETraceUtil.Attrs%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EFULL_TRACING%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETraceUtil.%3Cspan+class%3D%22xdoc-id%22%3EFULL_TRACING%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='const' name='NO_TRACING' anchor='.N.O_.T.R.A.C.I.N.G' altext='ti.sdo.ce.utils.trace.TraceUtil.NO_TRACING' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='No+tracing+or+logging+of+any+kind'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Futils%2Ftrace%2FTraceUtil.html%23.Attrs%22+title%3D%22ti.sdo.ce.utils.trace.TraceUtil.Attrs%22%3ETraceUtil.Attrs%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ENO_TRACING%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETraceUtil.%3Cspan+class%3D%22xdoc-id%22%3ENO_TRACING%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='const' name='SOCRATES_TRACING' anchor='.S.O.C.R.A.T.E.S_.T.R.A.C.I.N.G' altext='ti.sdo.ce.utils.trace.TraceUtil.SOCRATES_TRACING' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Tracing+appropriate+for+the+SoC+Analyzer+data+collection+tool'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Futils%2Ftrace%2FTraceUtil.html%23.Attrs%22+title%3D%22ti.sdo.ce.utils.trace.TraceUtil.Attrs%22%3ETraceUtil.Attrs%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ESOCRATES_TRACING%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETraceUtil.%3Cspan+class%3D%22xdoc-id%22%3ESOCRATES_TRACING%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+default+settings+here+place+data+files+into+the+%3Ctt%3E%2Ftmp%3C%2Ftt%3E+directory.%0A++%3Ctt%3E%2Ftmp%3C%2Ftt%3E+typically+provides+faster+write+access+than+other+file%0A++system+files%2C+so+it+is+used+to+lower+the+overhead+of+tracing.'/>
+                    <docPara content='Using+these+default+settings%2C+the+GPP+and+DSP+generate+approximately%0A++400+characters+of+trace+in+*each*+the+localTraceFile+and%0A++dsp0TraceFile%2C+for+each+round+trip+to%2Ffrom+the+DSP.++This+includes+the%0A++typical+%3Ctt%3Eprocess%28%29%3C%2Ftt%3E+and+%3Ctt%3Econtrol%28%29%3C%2Ftt%3E+calls+to+each+codec.'/>
+                    <docPara content='Using+that+figure%2C+the+user+is+encouraged+to+configure+the%0A++refreshPeriod+and+System+trace+buffers+appropriately%2C+so+as+to+reduce%0A++the+likelyhood+of+data+loss+due+to+wrapping.'/>
+                    <docPara content='For+example%2C+consider+an+application+which+utilizes+a+30%0A++frame-per-second+video+codec+in+parallel+with+a+50+frame-per-second%0A++audio+codec.++Additionally%2C+the+audio+codec+requires+calling+%3Ctt%3Eprocess%28%29%3C%2Ftt%3E%0A++*and*+%3Ctt%3Econtrol%28%29%3C%2Ftt%3E+for+each+frame+-+the+video+only+requires+a+single%0A++process%28%29+call.++This+application+alone+will+generate+approximately%0A++%28%2850+*+2%29+%2B+30%29+*+400+%3D+52000+bytes+of+trace+data+each+second.++If+the%0A++default+System+trace+buffer+size+is+used+%2832768+bytes%29%2C+the+application%0A++needs+to+ensure+the+refresh+period+is+less+than+650+milliseconds%0A++*not+including+I%2FO+overhead+or+potential+for+pre-emption*.'/>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='Attrs' anchor='.Attrs' altext='ti.sdo.ce.utils.trace.TraceUtil.Attrs' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Configuration+attributes'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EAttrs%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='local+tracing+mask' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElocalTraceMask%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='local+tracing+file' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElocalTraceFile%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='server%27s+tracing+mask' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edsp0TraceMask%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='server%27s+tracing+file' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edsp0TraceFile%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='server%27s+BIOS+tracing+file' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edsp0BiosFile%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='flags+for+fopen%28%29ing+trace+files' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EtraceFileFlags%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='number+of+ms+before+two+DSP+data+gets' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErefreshPeriod%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='named+pipe+to+read+commands+from' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcmdPipeFile%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='any+aliases+for+the+pipe+commands' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Futils%2Ftrace%2FTraceUtil.html%23.Pipe.Cmd.Alias%22+title%3D%22ti.sdo.ce.utils.trace.TraceUtil.PipeCmdAlias%22%3ETraceUtil.PipeCmdAlias%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcmdAliases%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3ETraceUtil.%3Cspan+class%3D%22xdoc-id%22%3EAttrs%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='local+tracing+mask' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElocalTraceMask%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='local+tracing+file' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElocalTraceFile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='server%27s+tracing+mask' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edsp0TraceMask%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='server%27s+tracing+file' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edsp0TraceFile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='server%27s+BIOS+tracing+file' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edsp0BiosFile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='flags+for+fopen%28%29ing+trace+files' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EtraceFileFlags%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='number+of+ms+before+two+DSP+data+gets' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErefreshPeriod%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='named+pipe+to+read+commands+from' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcmdPipeFile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='any+aliases+for+the+pipe+commands' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcmdAliases%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Futils%2Ftrace%2FTraceUtil.html%23.Pipe.Cmd.Alias%22+title%3D%22ti.sdo.ce.utils.trace.TraceUtil.PipeCmdAlias%22%3ETraceUtil.PipeCmdAlias%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='FIELDS'>
+                    <docChild name='localTraceMask' summary='The+trace+mask+to+be+used+on+the+%22local%22%2C%0A++++++++++++++++++++++++++or+application+processor.'>
+                    </docChild>
+                    <docChild name='localTraceFile' summary='The+name+of+the+file+into+which+trace+output%0A++++++++++++++++++++++++++will+be+generated.++This+can+be+a+full+path%0A++++++++++++++++++++++++++%28e.g.+%3Ctt%3E%2Ftmp%2Flocal.txt%3C%2Ftt%3E%29%2C+or+a+path+relative%0A++++++++++++++++++++++++++to+the+executing+application.'>
+                    </docChild>
+                    <docChild name='dsp0TraceMask' summary='The+trace+mask+to+be+used+on+the+%22remote%22%0A++++++++++++++++++++++++++server.'>
+                    </docChild>
+                    <docChild name='dsp0TraceFile' summary='The+name+of+the+file+into+which+trace+output%0A++++++++++++++++++++++++++will+be+generated.++This+can+be+a+full+path%0A++++++++++++++++++++++++++%28e.g.+%3Ctt%3E%2Ftmp%2Fdsp0.txt%3C%2Ftt%3E%29%2C+or+a+path+relative%0A++++++++++++++++++++++++++to+the+executing+application.'>
+                    </docChild>
+                    <docChild name='dsp0BiosFile' summary='The+name+of+the+file+into+which+DSP%2FBIOS+log%0A++++++++++++++++++++++++++output+will+be+generated.++This+can+be+a%0A++++++++++++++++++++++++++full+path+%28e.g.+%3Ctt%3E%2Ftmp%2Fdspbios.dat%3C%2Ftt%3E%29%2C+or+a%0A++++++++++++++++++++++++++path+relative+to+the+executing+application.'>
+                    </docChild>
+                    <docChild name='traceFileFlags' summary='fopen+flags+used+when+opening+the+various%0A++++++++++++++++++++++++++trace%2Flog+files.++See+fopen%28%29+documentation%0A++++++++++++++++++++++++++for+details.++For+example%2C+to+open+the+files%0A++++++++++++++++++++++++++in+%22append%22+mode+%28i.e.+add+to+existing+file%0A++++++++++++++++++++++++++content%29%2C+use+%22a%22%3B+to+open+in+%22over-write%22%0A++++++++++++++++++++++++++mode%2C+use+%22w%22.'>
+                    </docChild>
+                    <docChild name='refreshPeriod' summary='The+number+of+milliseconds+to+sleep+before%0A++++++++++++++++++++++++++reading+the+content+off+the+remote+servers.%0A++++++++++++++++++++++++++This+will+vary+based+on+the+amount+of+trace%0A++++++++++++++++++++++++++generated%2C+and+the+size+of+the+trace+logs.%0A++++++++++++++++++++++++++Failure+to+set+this+low+enough+will+result%0A++++++++++++++++++++++++++in+data+loss.'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+structure+describes+the+initialization+settings+for+the%0A++TraceUtil+module%3B+see+TraceUtil.attrs.'/>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='PipeCmdAlias' anchor='.Pipe.Cmd.Alias' altext='ti.sdo.ce.utils.trace.TraceUtil.PipeCmdAlias' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Alias%27+to+use+for+the+cmd+pipe'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EPipeCmdAlias%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='alias+for+a+group+of+pipe+commands' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ealias%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='list+of+pipe+commands+for+this+alias' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecmds%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3ETraceUtil.%3Cspan+class%3D%22xdoc-id%22%3EPipeCmdAlias%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='alias+for+a+group+of+pipe+commands' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ealias%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='list+of+pipe+commands+for+this+alias' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecmds%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='attrs' anchor='attrs' altext='ti.sdo.ce.utils.trace.TraceUtil.attrs' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Tracing+configuration%3B+by+default+set+to+some+very+basic+tracing'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Futils%2Ftrace%2FTraceUtil.html%23.Attrs%22+title%3D%22ti.sdo.ce.utils.trace.TraceUtil.Attrs%22%3ETraceUtil.Attrs%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eattrs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Futils%252Ftrace%252FTraceUtil.html%2523.D.E.F.A.U.L.T_.T.R.A.C.I.N.G%2522%2Btitle%253D%2522ti.sdo.ce.utils.trace.TraceUtil.DEFAULT_TRACING%2522%253ETraceUtil.DEFAULT_TRACING%253C%252Fa%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETraceUtil.%3Cspan+class%3D%22xdoc-id%22%3Eattrs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Futils%2Ftrace%2FTraceUtil.html%23.Attrs%22+title%3D%22ti.sdo.ce.utils.trace.TraceUtil.Attrs%22%3ETraceUtil.Attrs%3C%2Fa%3E%3C%2Fi%3E+%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Futils%252Ftrace%252FTraceUtil.html%2523.D.E.F.A.U.L.T_.T.R.A.C.I.N.G%2522%2Btitle%253D%2522ti.sdo.ce.utils.trace.TraceUtil.DEFAULT_TRACING%2522%253ETraceUtil.DEFAULT_TRACING%253C%252Fa%253E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+</package>

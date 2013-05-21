@@ -1,0 +1,323 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    /*
+     *  ======== Engine.xdt ========
+     *  Generate the tables necessary for the Engine module
+     *
+     *  These tables are used by the Engine module to properly construct
+     *  and destruct algorithm instances supported by an engine.
+     */
+
+    var Engine = this;
+    var engines = Engine.$instances;
+    var algRecs = {};
+
+    var freeLocalGroupIds = new Array(engines.length);
+    var freeRemoteGroupIds = new Array(engines.length);
+
+    for (var i = 0; i < engines.length; i++) {
+        var eng = engines[i];
+        var algs = eng.algs;
+
+        /* create, and init, this engine's "free group id's" arrays */
+        freeLocalGroupIds[i] = new Array(this.MAXGROUPID);
+        freeRemoteGroupIds[i] = new Array(this.MAXGROUPID);
+
+        for (var k = 0; k < this.MAXGROUPID; k++) {
+            freeLocalGroupIds[i][k] = true;
+            freeRemoteGroupIds[i][k] = true;
+        }
+
+        for (var j = 0; j < algs.length; j++) {
+            var alg = algs[j];
+            var rec = mkAlgRec(alg);
+            algRecs[alg.mod.ialgFxns] = rec;
+
+            if (alg.groupId != undefined) {
+                /*
+                 * NOTE that we don't have to validate the range here, since
+                 * we do it in Engine.xs.
+                 */
+
+                /* Then remove it from the free list. */
+                if (alg.local) {
+                    freeLocalGroupIds[i][alg.groupId] = false;
+                }
+                else {
+                    freeRemoteGroupIds[i][alg.groupId] = false;
+                }
+            }
+        }
+    }
+
+    /*
+     *  ======== mkAlgRec ========
+     *  construct typetable for each algorithm.  This table is used to
+     *  ensure that client apps can't inadvertently bind a video algorithm to
+     *  a speech API, for example.
+     */
+    function mkAlgRec(alg)
+    {
+        var mod = alg.mod;
+        var typeTab = [];
+        var result = {};
+        for (var obj = mod.$orig.$super; obj != null; obj = obj.$super) {
+            var type = "" + obj.$type;
+            if (type == "ti.sdo.ce.ICodec.Module") {
+                break;
+            }
+            type = type.substr(0, type.lastIndexOf('.'));
+            typeTab.push(type);
+        }
+        typeTab.reverse();
+
+        result.typeTab = typeTab;
+        result.types = typeTab.join(";");
+        return (result);
+    }
+
+    function getFreeGroupId(theEngine, engIndex, alg) {
+        /* find the first free group id, mark it used and return it */
+        for (var i = 0; i < theEngine.MAXGROUPID; i++) {
+            if (alg.local) {
+                if (freeLocalGroupIds[engIndex][i] == true) {
+                    freeLocalGroupIds[engIndex][i] = false;
+                    return (i);
+                }
+            }
+            else {
+                if (freeRemoteGroupIds[engIndex][i] == true) {
+                    freeRemoteGroupIds[engIndex][i] = false;
+                    return (i);
+                }
+            }
+        }
+
+        /* if we get here, there aren't any free group id's! */
+        /* Note, we print here as a workaround to bugzilla 1058 */
+        print("ERROR:  Exceeded maximum group id's (" + theEngine.MAXGROUPID +
+            ") for Engine " + engIndex + "!\n" +
+            "See Engine.AlgDesc.groupId documentation for more information.");
+
+        throw new Error("Exceeded maximum group id's (" + theEngine.MAXGROUPID +
+            ") for Engine " + engIndex + "!\n" +
+            "See Engine.AlgDesc.groupId documentation for more information.");
+    }
+
+%%}
+/*
+ *  ======== Engine Configuration ========
+ *  Do not modify following; it is automatically generated from the template
+ *  Engine.xdt in the ti.sdo.ce package and will be overwritten next time the
+ *  executable is configured
+ */
+#include <ti/sdo/ce/Engine.h>
+#include <ti/xdais/ialg.h>
+
+#include <ti/xdais/idma3.h>
+
+#include <ti/xdais/ires.h>
+
+/* type tables for algorithms */
+%for (var fname in algRecs) {
+%    var rec = algRecs[fname];
+extern IALG_Fxns `fname`;
+static String typeTab_`fname`[] = {
+%    var tab = rec.typeTab;
+%    for (var i = 0; i < tab.length; i++) {
+    "`tab[i]`",
+%    }
+    NULL
+};
+
+%}
+
+/* tables of engine algorithms */
+%for (var i = 0; i < engines.length; i++) {
+%    var eng = engines[i];
+%    var algs = eng.algs;
+%    for (var j = 0; j < algs.length; j++) {
+%	var alg = algs[j];
+extern IALG_Fxns `alg.local ? alg.mod.ialgFxns : alg.mod.stubFxns`;
+%       if (alg.mod.idma3Fxns != null && alg.mod.idma3Fxns != "") {
+%           var idma3FxnsDcl = "extern IDMA3_Fxns " + alg.mod.idma3Fxns + ";";
+`idma3FxnsDcl`
+%       }
+%       if (alg.mod.iresFxns != null && alg.mod.iresFxns != "") {
+%           var iresFxnsDcl = "extern IRES_Fxns " + alg.mod.iresFxns + ";";
+`iresFxnsDcl`
+%       }
+%    }
+%}
+
+/* algorithm-specific stub/skeleton config data objects */
+% for (var i = 0; i < engines.length; i++) {
+%     var eng = engines[i];
+%     var algs = eng.algs;
+%     for (var j = 0; j < algs.length; j++) {
+%         var alg = algs[j];
+%         var codecClassConfigurable = false;
+%         try {
+%               codecClassConfigurable = alg.mod.codecClassConfigurable;
+%         } catch (e) {}
+%         if (!codecClassConfigurable) {
+%             continue;
+%         }
+%         var name = alg.mod.$name.replace( /\./g, "_" ); // use full mod. name
+extern struct `name`_CodecClassConfig `name`_codecClassConfig;
+%     }
+% }
+
+%for (var i = 0; i < engines.length; i++) {
+%    var eng = engines[i];
+%    var algs = eng.algs;
+static Engine_AlgDesc engineAlgs`i`[] = {
+%    for (var j = 0; j < algs.length; j++) {
+%        var alg = algs[j];
+%        var types = algRecs[alg.mod.ialgFxns].types;
+%        var fxns;
+%        var iresFxns;
+%        var isLocal;
+%        var myGroupId;
+%        if (alg.local) {
+%            isLocal = "TRUE";
+%            fxns = "&" + alg.mod.ialgFxns;
+%        }
+%        else {
+%            isLocal = "FALSE";
+%            fxns = "&" + alg.mod.stubFxns;
+%        }
+%
+%        if (!alg.local
+%                || alg.mod.idma3Fxns == null || alg.mod.idma3Fxns == "") {
+%            idma3Fxns = "NULL";
+%        }
+%        else {
+%            idma3Fxns = "&" + alg.mod.idma3Fxns;
+%        }
+%
+%        if (!alg.local
+%                || alg.mod.iresFxns == null || alg.mod.iresFxns == "") {
+%            iresFxns = "NULL";
+%        }
+%        else {
+%            iresFxns = "&" + alg.mod.iresFxns;
+%        }
+%
+%        var tab  = "typeTab_" + alg.mod.ialgFxns;
+%
+%        if (alg.groupId == undefined) {
+%            myGroupId = getFreeGroupId(this, i, alg);
+%        }
+%        else {
+%            myGroupId = alg.groupId;
+%        }
+%        var protocolVer = alg.mod.rpcProtocolVersion == undefined ?
+%                -1 : alg.mod.rpcProtocolVersion;
+    {
+        "`alg.name`",       /* name */
+        {`alg.mod.getUUID()`U},   /* uuid */
+        `fxns`,             /* fxns */
+        `idma3Fxns`,        /* idma3Fxns */
+        `tab`,              /* typeTab */
+        `isLocal`,          /* isLocal */
+        `myGroupId`,        /* groupId */
+        `protocolVer`,      /* protocol */
+        `iresFxns`,         /* iresFxns */
+%       var codecClassConfigurable = false;
+%       try {
+%           codecClassConfigurable = alg.mod.codecClassConfigurable;
+%       } catch (e) {}
+%       if (codecClassConfigurable) {
+        &`alg.mod.$name.replace( /\./g, "_" )`_codecClassConfig, /* stub/skel config params */
+%       } else {
+        NULL,               /* stub/skel config params  */
+%       }
+%       // Codecs may have been built with an older version of ICodec
+%       // that does not have 'useCache'. Not sure we need the try/catch,
+%       // but that was done for 'codecClassConfigurable', so we'll do the
+%       // same for 'useCache'.
+%       var useCache = undefined;
+%       try {
+%           useCache = alg.mod.useCache;
+%       } catch (e) {
+%       }
+%       if (useCache == undefined) {
+        Engine_USECACHEDMEM_DEFAULT,    /* memType */
+%       }
+%       else if (useCache) {
+        Engine_USECACHEDMEM_CACHED,    /* memType */
+%       }
+%       else {
+        Engine_USECACHEDMEM_NONCACHED,    /* memType */
+%       }
+        "`types`",
+    },
+%    }
+    {NULL},
+};
+%}
+
+/* table of all engines available in this application */
+static Engine_Desc engineTab[] = {
+%for (var i = 0; i < engines.length; i++) {
+%    var eng = engines[i];
+%    var algs = eng.algs;
+%    var server  = eng.server  == null ? "NULL" : ('"' + eng.server  + '"');
+%    var linkcfg = eng.linkCfg == null ? "NULL" : ('"' + eng.linkCfg + '"');
+    {"`eng.name`",	/* engine name */
+      engineAlgs`i`,	/* alg table */
+      `server`,		/* (optional) server name */
+      `linkcfg`,        /* (optional) Link config ID */
+      `algs.length` /* number of algs in alg table */
+    },
+%}
+    {NULL, NULL, NULL, 0}	/* NULL-terminate the engine table */
+};
+
+Engine_Config Engine_config = {
+    engineTab,		    /* table of all engines */
+    "`Engine.local.name`"   /* local RMS engine name */
+};
+
+Bool ti_sdo_ce_Engine_noCommName = `Engine.noCommName ? "TRUE" : "FALSE"`;
+%%{
+/*
+ * @(#) ti.sdo.ce; 1, 0, 6,432; 12-2-2010 21:19:07; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

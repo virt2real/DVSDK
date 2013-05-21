@@ -1,0 +1,13 @@
+Package: perl
+Version: 5.10.1-r22.6
+Description: Perl is a popular scripting language.
+Section: devel/perl
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: Artistic|GPLv1+
+Architecture: armv5te
+OE: perl
+Homepage: http://www.perl.org/
+Build: install/afa4844
+Depends: libperl5, libc6, libc6, libgcc1
+Source: ftp://ftp.funet.fi/pub/CPAN/src/perl-5.10.1.tar.gz;name=perl-5.10.1 file://arm_thread_stress_timeout.diff file://cpan_config_path.diff file://cpan_definstalldirs.diff file://db_file_ver.diff file://doc_info.diff file://enc2xs_inc.diff file://errno_ver.diff file://extutils_hacks.diff file://fakeroot.diff file://instmodsh_doc.diff file://ld_run_path.diff file://libnet_config_path.diff file://m68k_thread_stress.diff file://mod_paths.diff file://module_build_man_extensions.diff file://perl_synopsis.diff file://prune_libs.diff file://use_gdbm.diff file://assorted_docs.diff file://net_smtp_docs.diff file://processPL.diff file://perlivp.diff file://pod2man-index-backslash.diff file://disable-zlib-bundling.diff file://kfreebsd_cppsymbols.diff file://cpanplus_definstalldirs.diff file://cpanplus_config_path.diff file://kfreebsd-filecopy-pipes.diff file://anon-tmpfile-dir.diff file://abstract-sockets.diff file://hurd_cppsymbols.diff file://autodie-flock.diff file://archive-tar-instance-error.diff file://positive-gpos.diff file://devel-ppport-ia64-optim.diff file://trie-logic-match.diff file://hppa-thread-eagain.diff file://crash-on-undefined-destroy.diff file://tainted-errno.diff file://safe-upgrade.diff file://tell-crash.diff file://format-write-crash.diff file://arm-alignment.diff file://fcgi-test.diff file://hurd-ccflags.diff file://perl-time-hires-fix-cross-compilation.patch file://Makefile.patch file://Makefile.SH.patch file://installperl.patch file://perl-dynloader.patch file://perl-moreconfig.patch file://letgcc-find-errno.patch file://generate-sh.patch file://shared-ldflags.patch file://cross-generate_uudmap.patch file://config.sh file://config.sh-32 file://config.sh-32-le file://config.sh-32-be file://config.sh-64 file://config.sh-64-le file://config.sh-64-be

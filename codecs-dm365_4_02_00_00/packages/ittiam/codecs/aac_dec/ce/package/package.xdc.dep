@@ -1,0 +1,85 @@
+clean::
+	$(RM) package/ittiam.codecs.aac_dec.ce.sch
+	$(RM) package/.vers_g150
+	$(RM) package/.vers_r160
+	$(RM) package/.vers_b150
+	$(RM) package/.vers_c150
+	$(RM) package/.xdc-t50
+	$(RM) package/ittiam_codecs_aac_dec_ce.java
+	$(RM) package/ittiam_codecs_aac_dec_ce.class
+	$(RM) package/package_ittiam.codecs.aac_dec.ce.c
+	$(RM) package/package.defs.h
+	$(RM) package/package.doc.xml
+	$(RM) package/ittiam.codecs.aac_dec.ce.ccs
+
+.interfaces: package/ittiam.codecs.aac_dec.ce.sch package/.vers_g150 package/.vers_r160 package/.vers_b150 package/.vers_c150 package/.xdc-t50 package/ittiam_codecs_aac_dec_ce.java package/ittiam_codecs_aac_dec_ce.class package/package_ittiam.codecs.aac_dec.ce.c package/package.defs.h package/package.doc.xml package/ittiam.codecs.aac_dec.ce.ccs 
+package/package.xdc.inc: package/.vers_g150
+package/.vers_g150:
+package/package.xdc.inc: package/.vers_r160
+package/.vers_r160:
+package/package.xdc.inc: package/.vers_b150
+package/.vers_b150:
+package/package.xdc.inc: package/.vers_c150
+package/.vers_c150:
+
+.interfaces: AAC_DEC.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+AAC_DEC.xs:
+package/package.xdc.inc: AAC_DEC.xs
+
+# schema update dependencies
+package/package.xdc.inc: AAC_DEC.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ce/audio1/IAUDDEC1.xdc
+ti/sdo/ce/audio1/IAUDDEC1.xdc:
+vpath ti/sdo/ce/audio1/IAUDDEC1.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ce/ICodec.xdc
+ti/sdo/ce/ICodec.xdc:
+vpath ti/sdo/ce/ICodec.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/cfg/Program.xdc
+xdc/cfg/Program.xdc:
+vpath xdc/cfg/Program.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/platform/IExeContext.xdc
+xdc/platform/IExeContext.xdc:
+vpath xdc/platform/IExeContext.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/platform/IPlatform.xdc
+xdc/platform/IPlatform.xdc:
+vpath xdc/platform/IPlatform.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/platform/ICpuDataSheet.xdc
+xdc/platform/ICpuDataSheet.xdc:
+vpath xdc/platform/ICpuDataSheet.xdc $(XPKGVPATH)
+package/package.xdc.inc: ittiam/codecs/aac_dec/AAC_DEC.xdc
+ittiam/codecs/aac_dec/AAC_DEC.xdc:
+vpath ittiam/codecs/aac_dec/AAC_DEC.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/js.jar
+/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/services/spec/java/package.jar
+/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/services/intern/cmd/java/package.jar
+/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/antlr.jar
+/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/services/intern/xsr/java/package.jar
+/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/xbean.jar:
+package/package.xdc.inc: /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/xbean.jar
+/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/jsr173_api.jar:
+package/package.xdc.inc: /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/jsr173_api.jar
+/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/ecj.jar
+/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/tar.jar
+/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/services/intern/gen/java/package.jar
+/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/services/global/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+

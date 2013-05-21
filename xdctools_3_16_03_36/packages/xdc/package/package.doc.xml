@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='xdc' nodoc='0' root='../' summary='Core+interfaces+and+modules+necessary+for+the+XDC+runtime'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+1%2C+1%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='IPackage' kind='interface' nodoc='0' metaonly='1' summary='Base+interface+implemented+by+all+packages'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fpackage.html%22+title%3D%22xdc%22%3Exdc%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIPackage%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIPackage%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <docSect name='details'>
+            <docPara content='If+a+package+does+not+specify+a+function+declared+in%0A++%3Ctt%3EIPackage%3C%2Ftt%3E%2C+the+default+defined+in+this+package+is+used.'/>
+            <docPara content='Packages+must+implement+%3Ctt%3EIPackage%3C%2Ftt%3E+functions+in+the+package%27s+%3Ctt%3Epackage.xs%3C%2Ftt%3E%0A++file.++This+file+simply+defines+a+function+with+the+same+name+as+that%0A++declared+in+the+the+this+specification.++For+example%2C+to+implement+the%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22IPackage.html%23get.Libs%22+title%3D%22getLibs%22%3EgetLibs%28%29%3C%2Fa%3E%3C%2Ftt%3E+function+the+following+must+appear+in+the+package%27s%0A++%3Ctt%3Epackage.xs%3C%2Ftt%3E+file%3A'/>
+            <docPara content='%3CPRE+class%3D%22Example%22%3E++++++function+getLibs%28prog%29%0A++++++%7B%0A+++++++++++...%0A++++++%7D%0A%3C%2FPRE%3E'/>
+        </docSect>
+        <docSect name='Note'>
+            <docPara content='Since+most+%3Ctt%3EIPackage%3C%2Ftt%3E+functions+can+be+called+in+any+model%2C+any+access+to%0A++global+variables+specific+to+a+particular+object+model+should+happen+only%0A++if+the+function+is+called+in+the+context+of+that+model.+For+example%2C+the%0A++variable+%3Ctt%3EProgram%3C%2Ftt%3E+is+a+global+variable+in+the+Configuration+Model%0A++%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fcfg%2FProgram.html%22+title%3D%22xdc.cfg.Program%22%3Exdc.cfg.Program%3C%2Fa%3E%3C%2Ftt%3E%29.+Any+access+to+it+should+happen+after+a+check%0A++that+the+current+model+is+the+Configuration+Model%3A'/>
+            <docPara content='%3CPRE+class%3D%22Example%22%3E++++++if+%28xdc.om.%24name+%3D%3D+%22cfg%22%29+%7B%0A++++++++++print%28Program.build.target.name%29%3B%0A++++++%7D%0A%3C%2FPRE%3E'/>
+            <docPara content='For+additional+information+about+%3Ctt%3Exdc.om%3C%2Ftt%3E%2C+see%0A++%3Ca+class%3D%22xdoc-linkExt%22+href%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_-_xdc.om%22+title%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_-_xdc.om%22%3Exdc.om%3C%2Fa%3E+in+the%0A++%3Ca+class%3D%22xdoc-linkExt%22+href%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_Language_Reference%22+title%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_Language_Reference%22%3EXDCscript+Language+Reference%3C%2Fa%3E.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='BuildAttrs' anchor='.Build.Attrs' altext='xdc.IPackage.BuildAttrs' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Package-level+attributes+from+the+Build+Object+Model+%28BOM%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EBuildAttrs%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='array+of+archive+names+produced+by+this+pkg' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elibraries%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='1' comment='desriptors+for+elements+in+%3Ctt%3Elibraries%3C%2Ftt%3E' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2FIPackage.html%23.Lib.Desc%22+title%3D%22xdc.IPackage.LibDesc%22%3EIPackage.LibDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElibDesc%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='1' comment='%3Ctt%3EgetLibs%3C%2Ftt%3E+function+defined+by+build+script' content='%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgetLibs%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <docSect name='FIELDS'>
+                    <docChild name='getLibs' summary='the+JavaScript+function+that+should+be+used+when%0A++++++++++++++++++++the+package+participates+in+a+program+configuration%0A++++++++++++++++++++script.++This+field+contains+the+function+specified%0A++++++++++++++++++++by+a+package%27s+build+script'>
+                    </docChild>
+                    <docChild name='libraries' summary='an+array+of+archive+names+created+by+this+package.%0A++++++++++++++++++++Each+name+is+a+package-relative+file+name+of+an%0A++++++++++++++++++++archive+within+the+package.'>
+                    </docChild>
+                    <docChild name='libDesc' summary='a+map+of+library+descriptors.++This+map+is+indexed%0A++++++++++++++++++++by+names+that+appear+in+the+%3Ctt%3Elibraries%3C%2Ftt%3E+array.'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+structure+defines+a+set+of+package-level+attributes+that+are%0A++carried+forward+from+the+Build+Model+into+the+Configuration+Model.'/>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='LibDesc' anchor='.Lib.Desc' altext='xdc.IPackage.LibDesc' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Library+properties+from+the+Build+Object+Model+%28BOM%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ELibDesc%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='target+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etarget%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='suffix+property+of+the+named+target' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esuffix%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <docSect name='FIELDS'>
+                    <docChild name='target' summary='target+for+which+the+library+was+built.'>
+                    </docChild>
+                    <docChild name='suffix' summary='the+suffix+associated+with+the+named+target.'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+structure+defines+library+properties+that+are%0A++carried+forward+from+the+Build+Model+into+the+Configuration+Model.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='build' anchor='build' altext='xdc.IPackage.build' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+package+information+from+the+Build+Object+Model+%28BOM%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2FIPackage.html%23.Build.Attrs%22+title%3D%22xdc.IPackage.BuildAttrs%22%3EIPackage.BuildAttrs%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ebuild%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+when+the+package+is+first+loaded%0A++and+should+not+be+modified+by+any+other+script.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='packageBase' anchor='package.Base' altext='xdc.IPackage.packageBase' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+absolute+path+to+the+package%27s+%22base%22+directory'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpackageBase%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+parameter+contains+an+absolute+path+to+the+directory%0A++containing+the+package%27s+build+script+%28%3Ctt%3Epackage.bld%3C%2Ftt%3E%29.+For+example%2C%0A++if+the+package+%3Ctt%3Eti.bios%3C%2Ftt%3E+is+located+in+%3Ctt%3Ec%3A%2Fpackages%2Fti%2Fbios%3C%2Ftt%3E%2C+then%0A++%3Ctt%3EpackageBase%3C%2Ftt%3E+equals+%3Ctt%3Ec%3A%2Fpackages%2Fti%2Fbios%2F%3C%2Ftt%3E.'/>
+                    <docPara content='To+be+robust%2C+clients+should+not+assume+that+this+string+ends+with+a%0A++directory+separator.'/>
+                </docSect>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+when+the+package+is+first+loaded%0A++and+should+not+be+modified+by+any+other+script.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='packageRepository' anchor='package.Repository' altext='xdc.IPackage.packageRepository' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+absolute+path+to+the+repository+containing+the+package'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpackageRepository%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+parameter+contains+an+absolute+path+to+the+directory%0A++containing+the+full+directory+namespace+of+the+package.++For%0A++example%2C+if+the+package+%3Ctt%3Eti.bios%3C%2Ftt%3E+is+located+in+%3Ctt%3Ec%3A%2Fpackages%2Fti%2Fbios%3C%2Ftt%3E%2C%0A++then+%3Ctt%3EpackageRepository%3C%2Ftt%3E+equals+%3Ctt%3Ec%3A%2Fpackages%2F%3C%2Ftt%3E.'/>
+                    <docPara content='To+be+robust%2C+clients+should+not+assume+that+this+string+ends+with+a%0A++directory+separator.'/>
+                </docSect>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+when+the+package+is+first+loaded%0A++and+should+not+be+modified+by+any+other+script.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='profile' anchor='profile' altext='xdc.IPackage.profile' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+profile+requested+by+a+configuration+script'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprofile%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+set+by+configuration+scripts+to+convey+additional%0A++information+to+the+package+about+the+libraries+being+requested+from%0A++this+package%3B+in+particular%2C+it+names+a+specific+profile+supported+by%0A++this+package+%28see+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fbld%2FITarget.html%23profiles%22+title%3D%22xdc.bld.ITarget.profiles%22%3Exdc.bld.ITarget.profiles%3C%2Fa%3E%29.'/>
+                    <docPara content='Package+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22IPackage.html%23get.Libs%22+title%3D%22getLibs%22%3EgetLibs%28%29%3C%2Fa%3E%3C%2Ftt%3E+functions+should+refer+to+this+parameter%0A++in+lieu+of+the+program%27s+%3Ctt%3Ebuild.profile%3C%2Ftt%3E.++This+allows+configuration%0A++scripts+to+selectively+request+debug+or+release+libraries+on+a+per%0A++package+basis%2C+for+example.'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++function+getLibs%28prog%29%0A++%7B%0A++++++if+%28this.profile+%3D%3D+%22debug%22%29+%7B%0A++++++++++...%0A++++++%7D%0A++%7D%0A%3C%2FPRE%3E'/>
+                    <docPara content='If+this+parameter+is+not+set+by+the+configuration+script%2C+it+is%0A++initialized+to+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fcfg%2FProgram.html%23build%22+title%3D%22xdc.cfg.Program.build%22%3Exdc.cfg.Program.build.profile%3C%2Fa%3E%3C%2Ftt%3E+prior+to%0A++generating+and+configuration+files%3B+i.e.%2C+the+package%27s%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22IPackage.html%23get.Libs%22+title%3D%22getLibs%22%3EgetLibs%28%29%3C%2Fa%3E%3C%2Ftt%3E+function+can+assume+that+this+field+is+always%0A++set+and+defaults+to+the+profile+used+to+build+the+executable.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='close' anchor='close' altext='xdc.IPackage.close' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Close+this+package+after+user+scripts+complete'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Eclose%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+function+is+called+to+allow+the+package+to+modify+its+state%0A++based+on+the+results+of+the+user%27s+script.++It+can+optionally+%0A++redefine+configuration+parameters+or+even+throw+exceptions+to%0A++prevent+the+configuration+step+from+completing%2C+for+example.'/>
+                    <docPara content='Other+packages+and+modules%2C+including+the+modules+in+the+package%2C+can%0A++change+the+configuration+parameters+of+any+module+in+the+package%2C+after%0A++this+function+was+called.+Therefore%2C+this+function+cannot+be+used+to%0A++validate+state+of+the+package+and+of+the+whole+configuration.%0A++Validation+should+be+done+in+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22IPackage.html%23validate%22+title%3D%22validate%22%3Evalidate%28%29%3C%2Fa%3E%3C%2Ftt%3E.'/>
+                    <docPara content='For+all+packages+A+and+B%2C+if+A+requires+B%2C+then+package+A+is+%0A++closed+before+package+B.'/>
+                    <docPara content='The+default+implementation+of+this+function+is+a+nop.'/>
+                </docSect>
+                <docSect name='context'>
+                    <docPara content=''/>
+                    <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Ethis%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++The+current+package%27s+%3Ctt%3Exdc.IPackage.Module%3C%2Ftt%3E+object%0A++++++++++immediately+after+the+program%27s+configuration+script%0A++++++++++has+completed+and+before+validation+is+started.%0A%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='Returns+nothing.'/>
+                </docSect>
+                <docSect name='throws'>
+                    <docPara content='%3Ctt%3EError%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.'/>
+                </docSect>
+                <docSect name='Note'>
+                    <docPara content='This+function+can+be+called+in+any+model%2C+so+any+access+to%0A++global+variables+specific+to+a+particular+object+model+should+happen%0A++only+if+the+function+is+called+in+the+context+of+that+model.+For%0A++example%2C+the+variable+%3Ctt%3EProgram%3C%2Ftt%3E+is+a+global+variable+in+the%0A++Configuration+Model+%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fcfg%2FProgram.html%22+title%3D%22xdc.cfg.Program%22%3Exdc.cfg.Program%3C%2Fa%3E%3C%2Ftt%3E%29.+Any+access+to+it%0A++should+happen+after+a+check+that+the+current+model+is+the%0A++Configuration+Model%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++if+%28xdc.om.%24name+%3D%3D+%22cfg%22%29+%7B%0A++++++++++print%28Program.build.target.name%29%3B%0A++++++%7D%0A%3C%2FPRE%3E'/>
+                    <docPara content='For+additional+information+about+%3Ctt%3Exdc.om%3C%2Ftt%3E%2C+see%0A++%3Ca+class%3D%22xdoc-linkExt%22+href%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_-_xdc.om%22+title%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_-_xdc.om%22%3Exdc.om%3C%2Fa%3E%0A++in+the%0A++%3Ca+class%3D%22xdoc-linkExt%22+href%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_Language_Reference%22+title%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_Language_Reference%22%3EXDCscript+Language+Reference%3C%2Fa%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='exit' anchor='exit' altext='xdc.IPackage.exit' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Exit+this+package+after+the+model+has+been+successfully+validated'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Eexit%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='The+default+implementation+of+this+function+is+a+nop.'/>
+                </docSect>
+                <docSect name='context'>
+                    <docPara content=''/>
+                    <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Ethis%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++The+current+package%27s+%3Ctt%3Exdc.IPackage.Module%3C%2Ftt%3E+object%0A++++++++++immediately+after+the+program%27s+configuration+script%0A++++++++++has+completed+and+after+generation+has+completed.%0A%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='Returns+nothing.'/>
+                </docSect>
+                <docSect name='throws'>
+                    <docPara content='%3Ctt%3EError%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.'/>
+                </docSect>
+                <docSect name='Note'>
+                    <docPara content='This+function+can+be+called+in+any+model%2C+so+any+access+to%0A++global+variables+specific+to+a+particular+object+model+should+happen%0A++only+if+the+function+is+called+in+the+context+of+that+model.+For%0A++example%2C+the+variable+%3Ctt%3EProgram%3C%2Ftt%3E+is+a+global+variable+in+the%0A++Configuration+Model+%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fcfg%2FProgram.html%22+title%3D%22xdc.cfg.Program%22%3Exdc.cfg.Program%3C%2Fa%3E%3C%2Ftt%3E%29.+Any+access+to+it%0A++should+happen+after+a+check+that+the+current+model+is+the%0A++Configuration+Model%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++if+%28xdc.om.%24name+%3D%3D+%22cfg%22%29+%7B%0A++++++++++print%28Program.build.target.name%29%3B%0A++++++%7D%0A%3C%2FPRE%3E'/>
+                    <docPara content='For+additional+information+about+%3Ctt%3Exdc.om%3C%2Ftt%3E%2C+see%0A++%3Ca+class%3D%22xdoc-linkExt%22+href%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_-_xdc.om%22+title%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_-_xdc.om%22%3Exdc.om%3C%2Fa%3E%0A++in+the%0A++%3Ca+class%3D%22xdoc-linkExt%22+href%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_Language_Reference%22+title%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_Language_Reference%22%3EXDCscript+Language+Reference%3C%2Fa%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='getLibs' anchor='get.Libs' altext='xdc.IPackage.getLibs' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Get+the+libraries+necessary+to+use+this+package'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EgetLibs%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprog%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='prog' summary='the+configuration+model+program+object%0A++++++++++++++%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fcfg%2FProgram.html%22+title%3D%22xdc.cfg.Program%22%3Exdc.cfg.Program%3C%2Fa%3E%3C%2Ftt%3E%29+after+the+program%27s%0A++++++++++++++configuration+script+has+completed.'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+function+is+called+during+the+configuration+model%27s+generation%0A++phase+%28after+a+program%27s+configuration+script+completes+and+all%0A++imported+packages+are+closed%29+and+is+responsible+for+returning+a+list%0A++of+libraries+%28or+object+files%29+that+are+needed+to+link+the+program%0A++being+configured.'/>
+                    <docPara content='If+the+package+produces+one+%28or+no%29+library+for+the+target+for+which%0A++the+executable+is+being+built%2C+the+default+implementation+of+this%0A++function+simply+returns+the+name+of+this+library+%28or+%3Ctt%3Enull%3C%2Ftt%3E%29.'/>
+                    <docPara content='If+the+package+produces+more+than+one+library+for+the+given+target%2C+the%0A++default+implementation+of+this+function+returns+the+following+library%0A++name%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++++++lib%2F%26lt%3Bpackage_name%26gt%3B.a%26lt%3Btarget_suffix%26gt%3B%0A%3C%2FPRE%3E'/>
+                    <docPara content='where+%3Ctt%3E%26lt%3Bpackage_name%26gt%3B%3C%2Ftt%3E+is+the+name+of+the+package+%28e.g.%2C+%22ti.bios%22%29%0A++and+%3Ctt%3E%26lt%3Btarget_suffix%26gt%3B%3C%2Ftt%3E+is+the++%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fbld%2FITarget.html%23suffix%22+title%3D%22xdc.bld.ITarget.suffix%22%3Exdc.bld.ITarget.suffix%3C%2Fa%3E+property%0A++of+the+target+used+to+build+the+executable.'/>
+                </docSect>
+                <docSect name='context'>
+                    <docPara content=''/>
+                    <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Ethis%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++The+current+package%27s+%3Ctt%3Exdc.IPackage.Module%3C%2Ftt%3E+object%0A++++++++++after+the+program%27s+configuration+script+has+completed.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EProgram%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++The+Configuration+model+program+object%0A++++++++++%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fcfg%2FProgram.html%22+title%3D%22xdc.cfg.Program%22%3Exdc.cfg.Program%3C%2Fa%3E%3C%2Ftt%3E%29+after+the+program%27s+configuration%0A++++++++++script+has+completed.%0A%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='Returns+a+string+of+%27%3B%27+delimited+object+%28or+library%29+file%0A++++++++++++++names+that+are+added+to+the+list+of+things+to+link+to%0A++++++++++++++create+the+program.++The+file+names+are+absolute+or%0A++++++++++++++relative+to+the+package%27s+base.++All+white+space+is%0A++++++++++++++treated+as+part+of+the+file+name.++If+the+files+named+do%0A++++++++++++++not+exist%2C+a+fatal+error+occurs+and+configuration%0A++++++++++++++terminates.'/>
+                    <docPara content='If+%3Ctt%3Enull%3C%2Ftt%3E+or+empty+%28%22%22%29%2C+then+no+libraries+or+objects+are%0A++++++++++++++required+for+this+package.'/>
+                </docSect>
+                <docSect name='throws'>
+                    <docPara content='%3Ctt%3EError%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='getSects' anchor='get.Sects' altext='xdc.IPackage.getSects' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Get+package-specific+linker+section+data'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EgetSects%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+function+is+called+during+the+configuration+model%27s++generation%0A++phase+%28after+a+program%27s+configuration+script+completes%29+and+is%0A++responsible+for+returning+a+template+file+name+that+is+used+to%0A++generate+package-specific+linker+command+file+statements.'/>
+                </docSect>
+                <docSect name='context'>
+                    <docPara content=''/>
+                    <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Ethis%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++The+current+package%27s+%3Ctt%3Exdc.IPackage.Module%3C%2Ftt%3E+object%0A++++++++++after+the+program%27s+configuration+script+has+completed.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EProgram%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++The+Configuration+model+program+object%0A++++++++++%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fcfg%2FProgram.html%22+title%3D%22xdc.cfg.Program%22%3Exdc.cfg.Program%3C%2Fa%3E%3C%2Ftt%3E%29+after+program%27s+configuration%0A++++++++++script+has+completed+and+all+packages+have+validated+the%0A++++++++++correctness+of+the+configuration.%0A%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='Returns+the+path+name+of+template+file.++The+path+name%0A++++++++++++++must+relative+to+the+package+path+or+an+absolute+path.'/>
+                    <docPara content='If+%3Ctt%3Enull%3C%2Ftt%3E+is+returned%2C+no+data+is+generated.'/>
+                    <docPara content='The+template+is+evaluated+in+a+context+where+the+%3Ctt%3Ethis%3C%2Ftt%3E%0A++++++++++++++pointer+is+the+package+object.'/>
+                </docSect>
+                <docSect name='throws'>
+                    <docPara content='%3Ctt%3EError%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='init' anchor='init' altext='xdc.IPackage.init' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Initialize+this+package+when+first+imported'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Einit%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+function+is+called+to+initialize+the+package+within+any+%0A++model.++It+is+called+just+once+%28when+the+package+is+first+imported%29%0A++so+there+is+no+need+to+explicitly+check+for+prior+invocation.'/>
+                    <docPara content='The+default+implementation+of+this+function+is+a+nop.'/>
+                </docSect>
+                <docSect name='context'>
+                    <docPara content=''/>
+                    <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Ethis%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++The+current+package%27s+%3Ctt%3Exdc.IPackage.Module%3C%2Ftt%3E+object%0A++++++++++before+any+model-specific+user+script+runs+%28e.g.+a+program%27s%0A++++++++++configuration+script%29%2C%0A++++++++++after+the+package%27s+%3Ctt%3Epackage.xs%3C%2Ftt%3E+script+is+run+and+all%0A++++++++++the+package%27s+modules+are+created%2C+and+before+the%0A++++++++++package+is+added+to+%3Ctt%3Exdc.om.%24packages%3C%2Ftt%3E+%28the+Object+Model%27s%0A++++++++++package+array%29%0A%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='Returns+nothing.'/>
+                </docSect>
+                <docSect name='throws'>
+                    <docPara content='%3Ctt%3EError%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.'/>
+                </docSect>
+                <docSect name='Note'>
+                    <docPara content='This+function+can+be+called+in+any+model%2C+so+any+access+to%0A++global+variables+specific+to+a+particular+object+model+should+happen%0A++only+if+the+function+is+called+in+the+context+of+that+model.+For%0A++example%2C+the+variable+%3Ctt%3EProgram%3C%2Ftt%3E+is+a+global+variable+in+the%0A++Configuration+Model+%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fcfg%2FProgram.html%22+title%3D%22xdc.cfg.Program%22%3Exdc.cfg.Program%3C%2Fa%3E%3C%2Ftt%3E%29.+Any+access+to+it%0A++should+happen+after+a+check+that+the+current+model+is+the%0A++Configuration+Model%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++if+%28xdc.om.%24name+%3D%3D+%22cfg%22%29+%7B%0A++++++++++print%28Program.build.target.name%29%3B%0A++++++%7D%0A%3C%2FPRE%3E'/>
+                    <docPara content='For+additional+information+about+%3Ctt%3Exdc.om%3C%2Ftt%3E%2C+see%0A++%3Ca+class%3D%22xdoc-linkExt%22+href%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_-_xdc.om%22+title%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_-_xdc.om%22%3Exdc.om%3C%2Fa%3E%0A++in+the%0A++%3Ca+class%3D%22xdoc-linkExt%22+href%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_Language_Reference%22+title%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_Language_Reference%22%3EXDCscript+Language+Reference%3C%2Fa%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='validate' anchor='validate' altext='xdc.IPackage.validate' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Validate+this+package+after+the+model%27s+state+is+%22sealed%22'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Evalidate%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+function+is+called+to+validate+the+package%27s+state+in+the+%0A++curent+model.++It+can+verify+semantic+constraints+and+optionally+%0A++throw+exceptions+to+prevent+the+configuration+step+from+completing.'/>
+                    <docPara content='For+example%2C+a+package+that+needs+to+assert+incompatibility+with%0A++certain+versions+of+prerequisite+packages+can+check+the+versions+in%0A++this+function+and+throw+an+exception+if+they+are+known+to+be%0A++incompatible+with+the+current+package.'/>
+                    <docPara content='This+method+must+not+modify+the+model.'/>
+                    <docPara content='The+default+implementation+of+this+function+is+a+nop.'/>
+                </docSect>
+                <docSect name='context'>
+                    <docPara content=''/>
+                    <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Ethis%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++The+current+package%27s+%3Ctt%3Exdc.IPackage.Module%3C%2Ftt%3E+object%0A++++++++++immediately+after+the+program%27s+configuration+script%0A++++++++++has+completed+and+before+generation+started.%0A%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='Returns+nothing.'/>
+                </docSect>
+                <docSect name='throws'>
+                    <docPara content='%3Ctt%3EError%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.'/>
+                </docSect>
+                <docSect name='Note'>
+                    <docPara content='This+function+can+be+called+in+any+model%2C+so+any+access+to%0A++global+variables+specific+to+a+particular+object+model+should+happen%0A++only+if+the+function+is+called+in+the+context+of+that+model.+For%0A++example%2C+the+variable+%3Ctt%3EProgram%3C%2Ftt%3E+is+a+global+variable+in+the%0A++Configuration+Model+%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fcfg%2FProgram.html%22+title%3D%22xdc.cfg.Program%22%3Exdc.cfg.Program%3C%2Fa%3E%3C%2Ftt%3E%29.+Any+access+to+it%0A++should+happen+after+a+check+that+the+current+model+is+the%0A++Configuration+Model%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++if+%28xdc.om.%24name+%3D%3D+%22cfg%22%29+%7B%0A++++++++++print%28Program.build.target.name%29%3B%0A++++++%7D%0A%3C%2FPRE%3E'/>
+                    <docPara content='For+additional+information+about+%3Ctt%3Exdc.om%3C%2Ftt%3E%2C+see%0A++%3Ca+class%3D%22xdoc-linkExt%22+href%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_-_xdc.om%22+title%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_-_xdc.om%22%3Exdc.om%3C%2Fa%3E%0A++in+the%0A++%3Ca+class%3D%22xdoc-linkExt%22+href%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_Language_Reference%22+title%3D%22http%3A%2F%2Frtsc.eclipse.org%2Fdocs-tip%2FXDCscript_Language_Reference%22%3EXDCscript+Language+Reference%3C%2Fa%3E.'/>
+                </docSect>
+            </decl>
+        </group>
+    </unit>
+    <docSect name='details'>
+        <docPara content='In+addition+to+the+interfaces+specified+below%2C+this+package+also+supplies%0A++a+C%2FC%2B%2B+header%2C+%3Ctt%3Estd.h%3C%2Ftt%3E+that+facilitates+the+creation+of+portable+sources.%0A++This+header+defines+a+set+of+%22base%22+types+that+enable+the+creation%0A++of+C-code+that+is+portable+between+any+two+targets.++C+source+code+that%0A++relies+exclusively+on+these+types+is+portable+to+all+targets+and%0A++platforms.++Where+appropriate%2C+the+types+defined+below+are+related+to+the%0A++types+defined+in+the+library+headers+perscribed+by+the+C99+standard%0A++%28ISO%2FIEC+9899%3A1999%29.'/>
+        <docPara content='Why+not+simply+use+the+C99+types%3F++Having+a%0A++unique+set+of+names+provides+a+layer+of+insulation+between+a+portable+code%0A++base+and+a+particular+compiler%3B+e.g.%2C+even+if+a+compiler+does+not+support%0A++the+C99+types+or+defines+them+inappropriately+for+a+particular+device%2C+it%0A++is+possible+to+use+the+compiler+without+changing+the+code+base.++Thus%2C+the%0A++developer+is+not+forced+to+choose+the+lesser+of+two+evils%3A+waiting+for+a%0A++change+to+the+compiler+or+forking+the+code+base+for+a+particular+compiler%0A++device+combination.'/>
+        <docPara content='There+are+several+situations+where+a+small+separate+set+of+portable+types%0A++can+help+the+maintainability+of+a+code+base.'/>
+        <docPara content='%3CUL%3E%3CLI%3E+not+all+of+the+types+described+in+the+C99+standard+are+required+to+%0A++++++++be+defined+by+conformant+implementations+nor+is+it+possible+for+all%0A++++++++devices+to+implement+some+of+the+types+specified+%28e.g.%2C+%3Ctt%3Eint8_t%3C%2Ftt%3E+is%0A++++++++not+implemented+on+C54+devices%29%3B+so+it+is+difficult+to+identify%0A++++++++non-portable+source+code.%0A%3C%2FLI%3E%3CLI%3E+not+all+compilers+provide+C99+type+support%3B+if+XDC+supplies+the+type%0A++++++++definition+and+the+compiler+is+updated+to+include+C99+types%2C+a%0A++++++++compilation+error+will+occur+if+the+source+includes+the+C99%0A++++++++headers.%0A%3C%2FLI%3E%3CLI%3E+not+all+compiler+and+device+combinations+are+conformant%3B+even+high%0A++++++++quality+compilers+may+not+properly+define+the+types+for+each+device%0A++++++++supported+by+compiler.%0A%0A%3C%2FLI%3E%3C%2FUL%3E'/>
+    </docSect>
+    <docSect name='Usage'>
+        <docPara content=''/>
+        <docPara content='%3CPRE+class%3D%22Example%22%3E++++++%23include+%26lt%3Bxdc%2Fstd.h%26gt%3B%0A%3C%2FPRE%3E'/>
+        <docPara content='To+compile+sources+that+include+%3Ctt%3Exdc%2Fstd.h%3C%2Ftt%3E%2C+two+symbols+must+be+defined%0A++before+including+this+header%3A'/>
+        <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Exdc_target_types__%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++the+package+qualified+path+of+the+target%27s+standard+types+header%3B%0A++++++++++e.g.%2C+%3Ctt%3Eti%2Ftargets%2Fstd.h%3C%2Ftt%3E.++This+value+is+specified+in+the+target%27s%0A++++++++++%3Ctt%3EstdInclude%3C%2Ftt%3E+config+parameter%3B+see%0A++++++++++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fbld%2FITarget.html%23std.Include%22+title%3D%22xdc.bld.ITarget.stdInclude%22%3Exdc.bld.ITarget.stdInclude%3C%2Fa%3E%3C%2Ftt%3E%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc_target_name__%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++the+target%27s+module+name+without+the+package+prefix%3B+e.g.%2C+%3Ctt%3EC64%3C%2Ftt%3E%0A++++++++++rather+than+%3Ctt%3Eti.targets.C64%3C%2Ftt%3E.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='For+example%2C+to+compile+sources+for+the+%3Ctt%3Eti.targets.C64%3C%2Ftt%3E+target+using+TI%27s%0A++%3Ctt%3Ecl6x%3C%2Ftt%3E+compiler%2C+the+following+command+line+is+sufficient%3A'/>
+        <docPara content='%3CPRE+class%3D%22Example%22%3E++++++cl6x+-Dxdc_target_types__%3Dti%2Ftargets%2Fstd.h+-Dxdc_target_name__%3DC64%0A%3C%2FPRE%3E'/>
+        <docPara content='Each+of+the+type+names+below+has+an+equivalent+%22long+name%22%3B+i.e.%2C+a+name%0A++that+has+an+%22%3Ctt%3Exdc_%3C%2Ftt%3E%22+prefix.++For+example%2C+the+type+%3Ctt%3EBool%3C%2Ftt%3E+can+also+be%0A++written+as+%22%3Ctt%3Exdc_Bool%3C%2Ftt%3E%22.++Long+names+exist+to+avoid+conflicts+with%0A++names+defined+or+used+by+existing+code+bases.'/>
+        <docPara content='In+the+event+that+one+of+the+short+type+names+below+conflicts+with+another%0A++type+name+%28that+can+not+be+changed%29%2C+it+is+possble+to+disable+the+short%0A++names+by+defining+the+symbol+%3Ctt%3Exdc__nolocalnames%3C%2Ftt%3E+before+including%0A++%3Ctt%3Exdc%2Fstd.h%3C%2Ftt%3E.'/>
+        <docPara content='%3CPRE+class%3D%22Example%22%3E++++++%23define+xdc__nolocalnames%0A++++++%23include+%26lt%3Bxdc%2Fstd.h%26gt%3B%0A%3C%2FPRE%3E'/>
+    </docSect>
+    <docSect name='Standard Types'>
+        <docPara content='This+header+may+be+included+multiple+times+and+defines+the+following%0A++target-dependent+types%3A'/>
+        <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3EBool%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++this+type+is+large+enough+to+hold+the+values+%3Ctt%3E0%3C%2Ftt%3E+or+%3Ctt%3E1%3C%2Ftt%3E.++The%0A++++++++++constants+TRUE+and+FALSE+are+of+this+type%3B+see+below.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EString%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++this+type+is+defined+to+be+a+%3Ctt%3Echar+*%3C%2Ftt%3E+and+exists+to+allow+code%0A++++++++++to+distinguish+between+pointers+to+buffers+of+raw+data+and%0A++++++++++%27%5C0%27+terminated+strings.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EInt%3C%2Ftt%3En%2C+where+n+%3D+8%2C+16%2C+or+32%3C%2FDT%3E%3CDD%3E%0A++++++++++signed+integer+type+that+is+large+enough+to+hold+n+bits%3B+the%0A++++++++++actual+target+type+may+by+be+larger+than+n.++This+type+is%0A++++++++++equivalent+to+one+of+the+C99+types+%3Ctt%3Eint_least%3C%2Ftt%3En%3Ctt%3E_t%3C%2Ftt%3E+or%0A++++++++++%3Ctt%3Eint_fast%3C%2Ftt%3En%3Ctt%3E_t%3C%2Ftt%3E%3B+see++Section+7.18.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EUInt%3C%2Ftt%3En%2C+where+n+%3D+8%2C+16%2C+or+32%3C%2FDT%3E%3CDD%3E%0A++++++++++unsigned+integer+type+that+is+large+enough+to+hold+n+bits%3B+the%0A++++++++++actual+target+type+may+by+be+larger+than+n.++This+type+is%0A++++++++++equivalent+to+one+of+the+C99+types+%3Ctt%3Euint_least%3C%2Ftt%3En%3Ctt%3E_t%3C%2Ftt%3E+or%0A++++++++++%3Ctt%3Euint_fast%3C%2Ftt%3En%3Ctt%3E_t%3C%2Ftt%3E%3B+see+ISO%2FIEC+9899%3A1999+Section+7.18.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EBits%3C%2Ftt%3En%2C+where+n+%3D+8%2C+16%2C+or+32%3C%2FDT%3E%3CDD%3E%0A++++++++++unsigned+integer+type+that+is+precisely+n+bits.+Not+all+targets%0A++++++++++support+all+values+of+n%3B+if+the+target+does+not+support+an+exact%0A++++++++++size+the+corresponding+type+is+not+defined.++This+type+is%0A++++++++++equivalent+to+the+corresponding+C99+type+%3Ctt%3Euint%3C%2Ftt%3En%3Ctt%3E_t%3C%2Ftt%3E%3B+see+ISO%2FIEC%0A++++++++++9899%3A1999+Section+7.18.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EFxn%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++this+type+is+a+pointer+to+code%3B+it+can+hold+a+pointer+to+any%0A++++++++++function.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EPtr%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++this+type+is+a+pointer+to+data%3B+it+can+hold+a+pointer+to+any%0A++++++++++data+structure.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EIArg%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++this+integer+type+is+large+enough+to+hold+a+%3Ctt%3EFxn%3C%2Ftt%3E%2C+%3Ctt%3EPtr%3C%2Ftt%3E%2C+or%0A++++++++++%3Ctt%3EInt%3C%2Ftt%3E.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EUArg%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++this+unsigned+integer+type+is+large+enough+to+hold+a+%3Ctt%3EFxn%3C%2Ftt%3E%2C%0A++++++++++%3Ctt%3EPtr%3C%2Ftt%3E%2C+or+%3Ctt%3EInt%3C%2Ftt%3E.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3ELLong%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++this+long+integer+type+is+large+enough+to+hold+a+%3Ctt%3ELong%3C%2Ftt%3E+and+is%0A++++++++++defined+as+a+%27long+long%27+type+on+targets+that+support+this+type%3B%0A++++++++++otherwise%2C+it+is+simply+a+%3Ctt%3ELong%3C%2Ftt%3E.%0A%0A++++++++++Note+that+C99+requires+the+%3Ctt%3Elong+long%3C%2Ftt%3E+type+to+be+at+least+64-bits%0A++++++++++wide+%28See+ISO%2FIEC+9899%3A1999+Section+5.2.4.2.1%29.++But+some%0A++++++++++compilers+do+not+support+64-bit+integral+types+and+some+don%27t%0A++++++++++support+the+%3Ctt%3Elong+long%3C%2Ftt%3E+even+though+they+do+support+64-bit%0A++++++++++integral+types.++Since+these+variations+limit+the+portability+of%0A++++++++++valid+C+sources%2C+the+LLong+type+is+always+defined%2C+is+always+at%0A++++++++++least+as+wide+as+the+%3Ctt%3ELong%3C%2Ftt%3E+type%2C+and+is+at+least+64-bits+wide+for%0A++++++++++targets+that+support+64-bit+integral+types.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EULLong%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++this+unsigned+long+integer+type+is+large+enough+to+hold+a+%3Ctt%3EULong%3C%2Ftt%3E%0A++++++++++and+is+defined+as+a+%27unsigned+long+long%27+type+on+targets+that%0A++++++++++support+this+type%3B+otherwise%2C+it+is+simply+a+%3Ctt%3EULong%3C%2Ftt%3E.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='The+%3Ctt%3Exdc%2Fstd.h%3C%2Ftt%3E+header+also+defines+the+following+aliases+for+the+base+C%0A++types.++These+aliases+exist+so+that+C+sources+can+consistently+follow%0A++a+naming+convention+in+which+all+type+names+are+written+in+camel-case.'/>
+        <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3EChar%3C%2Ftt%3E+and+%3Ctt%3EUChar%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++aliases+for+%3Ctt%3Echar%3C%2Ftt%3E+and+%3Ctt%3Eunsigned+char%3C%2Ftt%3E%2C+respectively%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EShort%3C%2Ftt%3E+and+%3Ctt%3EUShort%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++aliases+for+%3Ctt%3Eshort%3C%2Ftt%3E+and+%3Ctt%3Eunsigned+short%3C%2Ftt%3E%2C+respectively%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EInt%3C%2Ftt%3E+and+%3Ctt%3EUInt%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++aliases+for+%3Ctt%3Eint%3C%2Ftt%3E+and+%3Ctt%3Eunsigned+int%3C%2Ftt%3E%2C+respectively%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3ELong%3C%2Ftt%3E+and+%3Ctt%3EULong%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++aliases+for+%3Ctt%3Elong%3C%2Ftt%3E+and+%3Ctt%3Eunsigned+long%3C%2Ftt%3E%2C+respectively%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EDouble%3C%2Ftt%3E+and+%3Ctt%3ELDouble%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++aliases+for+%3Ctt%3Edouble%3C%2Ftt%3E+and+%3Ctt%3Elong+double%3C%2Ftt%3E%2C+respectively%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3ESizeT%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++alias+for+%3Ctt%3Esize_t%3C%2Ftt%3E%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EVaList%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++alias+for+%3Ctt%3Eva_list%3C%2Ftt%3E%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='The+types+above+are+defined+for+all+targets.++Some+targets+can+support%0A++the+following+additional+types.++Since+these+types+are+not+always%0A++supported+by+a+target%2C+these+types+should+only+be+used+when+no+other%0A++type+sufficies.'/>
+        <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3EBits%3C%2Ftt%3En%2C+where+n+%3D+8%2C+16%2C+or+32%3C%2FDT%3E%3CDD%3E%0A++++++++++this+unsigned+integer+type+is+precisely+n-bits+wide.++This+type+is%0A++++++++++equivalent+to+the+optional+C99+type+%3Ctt%3Euint%3C%2Ftt%3En%3Ctt%3E_t%3C%2Ftt%3E%3B+see+ISO%2FIEC%0A++++++++++9899%3A1999+Section+7.18.1.1.++This+type+is+defined+if+and%0A++++++++++only+if+the+preprocessor+macro+%3Ctt%3Exdc__BITS%3C%2Ftt%3En%3Ctt%3E__%3C%2Ftt%3E+is+defined.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+    </docSect>
+    <docSect name=''>
+        <docPara content='%2864-Bit+Types%29%0A++Although+the+C99+standard+requires+support+for+64-bit+types%2C+not+all%0A++compiler%2Fdevice+combinations+can+usefully+support+them.++As+a+result%2C%0A++the+64-bit+types+described+here+may+not+be+defined+for+all+targets.++For%0A++each+type+there+is+a+corresponding+pre-processor+macro+which+is%0A++defined+if+and+only+if+the+type+is+supported.'/>
+        <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3EInt64%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++signed+integer+type+that+is+large+enough+to+hold+64+bits%3B+the%0A++++++++++actual+target+type+may+by+be+wider+than+64+bits.++This+type+is%0A++++++++++equivalent+to+one+of+the+C99+types+%3Ctt%3Eint_least64_t%3C%2Ftt%3E+or%0A++++++++++%3Ctt%3Eint_fast64_t%3C%2Ftt%3E%3B+see++Section+7.18.++This+type+is+defined+if+and%0A++++++++++only+if+the+preprocessor+macro+%3Ctt%3Exdc__INT64__%3C%2Ftt%3E+is+defined.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EUInt64%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++unsigned+integer+type+that+is+large+enough+to+hold+n+bits%3B+the%0A++++++++++actual+target+type+may+by+be+wider+than+64+bits.++This+type+is%0A++++++++++equivalent+to+one+of+the+C99+types+%3Ctt%3Euint_least64_t%3C%2Ftt%3E+or%0A++++++++++%3Ctt%3Euint_fast64_t%3C%2Ftt%3E%3B+see+ISO%2FIEC+9899%3A1999+Section+7.18.++This+type%0A++++++++++is+defined+if+and+only+if+the+preprocessor+macro%0A++++++++++%3Ctt%3Exdc__INT64__%3C%2Ftt%3E+is+defined.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EBits64%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++unsigned+integer+type+that+is+precisely+64+bits+wide.+If+the+target%0A++++++++++does+not+support+an+exact+64-bit+size%2C+this+type+is+not+defined.%0A++++++++++This+type+is+equivalent+to+the+corresponding+C99+type%0A++++++++++%3Ctt%3Euint64_t%3C%2Ftt%3E%3B+see+ISO%2FIEC+9899%3A1999+Section+7.18.++This+type+is%0A++++++++++defined+if+and+only+if+the+preprocessor+macro+%3Ctt%3Exdc__BITS64__%3C%2Ftt%3E+is%0A++++++++++defined.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+    </docSect>
+    <docSect name='Predefined Macros'>
+        <docPara content='In+addition+to+the+type+definitions+above%2C+%3Ctt%3Exdc%2Fstd.h%3C%2Ftt%3E+also+defines+the%0A++following+commonly+used+constants'/>
+        <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3ENULL%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++defined+as+%3Ctt%3E0%3C%2Ftt%3E%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3ETRUE%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++defined+as+%3Ctt%3E%28%28Bool%291%29%3C%2Ftt%3E%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3EFALSE%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++defined+as+%3Ctt%3E%28%28Bool%290%29%3C%2Ftt%3E%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='Finally%2C+%3Ctt%3Exdc%2Fstd.h%3C%2Ftt%3E+defines+the+following+target-independent+symbols%0A++that+have+target-dependent+values%3B+these+predefined+macros+enable%0A++conditional+compilation+of+source+files+based+on+target-specific%0A++attributes.'/>
+        <docPara content='%3CDL%3E%3CDT%3E+%7Bc_target_name%7D%3C%2FDT%3E%3CDD%3E%0A++++++++++this+symbol+%28the+target%27s+fully+qualified+name+with+all+%27.%27s%0A++++++++++replaced+with+%27_%27%29+is+always+defined+and+allows+one+to+easily%0A++++++++++include+target-specific+headers+or+define+symbols+with%0A++++++++++target-specific+values.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc_target__isaCompatible_%3C%2Ftt%3E%7Bisa_name%7D%3C%2FDT%3E%3CDD%3E%0A++++++++++for+every+ISA+named+in+the+array+returned+by+this+target%27s%0A++++++++++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fbld%2FITarget.html%23get.I.S.A.Chain%22+title%3D%22xdc.bld.ITarget.getISAChain%22%3Exdc.bld.ITarget.getISAChain%28%29%3C%2Fa%3E%3C%2Ftt%3E+method%2C+a+symbol+of+this%0A++++++++++name+is+defined.++In+addition+to+enabling+one+to+create+code%0A++++++++++specific+to+a+particular+ISA%2C+this+allows+one+to+create+code+that%0A++++++++++depends+on+TI%27s+C6x+architecture+without+being+dependent%0A++++++++++on+a+particular+member+of+the+C6x+family%2C+for+example.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc_target__isa_%3C%2Ftt%3E%7Bisa%7D%3C%2FDT%3E%3CDD%3E%0A++++++++++this+symbol+is+always+defined++and+%7Bisa%7D+is+the%0A++++++++++target%27s+%3Ctt%3Eisa%3C%2Ftt%3E+%28see+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fbld%2FITarget.html%23isa%22+title%3D%22xdc.bld.ITarget.isa%22%3Exdc.bld.ITarget.isa%3C%2Fa%3E%3C%2Ftt%3E%29.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc_target__%3C%2Ftt%3E%7Blittle%2Cbig%7D%3Ctt%3EEndian%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++if+this+target%27s+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fbld%2FITarget.html%23model%22+title%3D%22xdc.bld.ITarget.model%22%3Exdc.bld.ITarget.model%3C%2Fa%3E.endian%3C%2Ftt%3E+property+is%0A++++++++++specified%2C+this+symbol+is+defined+and+%7Blittle%2Cbig%7D+is+replaced%0A++++++++++by+%3Ctt%3Emodel.endian%3C%2Ftt%3E.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc_target__%3C%2Ftt%3E%7Bcode_model_name%7D%3Ctt%3ECode%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++if+this+target%27s+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fbld%2FITarget.html%23model%22+title%3D%22xdc.bld.ITarget.model%22%3Exdc.bld.ITarget.model%3C%2Fa%3E.codeModel%3C%2Ftt%3E+is%0A++++++++++specified%2C+this+symbol+is+defined+and+%7Bcode_model_name%7D+is%0A++++++++++replaced+by+%3Ctt%3Emodel.codeModel%3C%2Ftt%3E.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc_target__%3C%2Ftt%3E%7Bdata_model_name%7D%3Ctt%3EData%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++if+this+target%27s+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fbld%2FITarget.html%23model%22+title%3D%22xdc.bld.ITarget.model%22%3Exdc.bld.ITarget.model%3C%2Fa%3E.dataModel%3C%2Ftt%3E+is%0A++++++++++specified%2C+this+symbol+is+defined+and+%7Bdata_model_name%7D+is%0A++++++++++replaced+by+%3Ctt%3Emodel.dataModel%3C%2Ftt%3E.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc_target__os_%3C%2Ftt%3E%7Bos_name%7D%3C%2FDT%3E%3CDD%3E%0A++++++++++this+symbol+is+always+defined++and+%7Bos_name%7D+is+the%0A++++++++++target%27s+os+name+%28see+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fbld%2FITarget.html%23os%22+title%3D%22xdc.bld.ITarget.os%22%3Exdc.bld.ITarget.os%3C%2Fa%3E%3C%2Ftt%3E%29.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc_target__sizeof_%3C%2Ftt%3E%7Btype_name%7D%3C%2FDT%3E%3CDD%3E%0A++++++++++this+symbol+is+defined+for+each+type+name+supported+in+the+target%27s%0A++++++++++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fbld%2FITarget.html%23std.Types%22+title%3D%22xdc.bld.ITarget.stdTypes%22%3Exdc.bld.ITarget.stdTypes%3C%2Fa%3E%3C%2Ftt%3E+structure%2C+%7Btype_name%7D+is+the%0A++++++++++name+of+one+of+the+standard+types+supported+above%2C+and+the+%0A++++++++++value+is+%3Ctt%3Esizeof%28type_name%29%3C%2Ftt%3E.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc_target__alignof_%3C%2Ftt%3E%7Btype_name%7D%3C%2FDT%3E%3CDD%3E%0A++++++++++this+symbol+is+defined+for+each+type+name+supported+in+the+target%27s%0A++++++++++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2Fxdc%2Fbld%2FITarget.html%23std.Types%22+title%3D%22xdc.bld.ITarget.stdTypes%22%3Exdc.bld.ITarget.stdTypes%3C%2Fa%3E%3C%2Ftt%3E+structure%2C+%7Btype_name%7D+is+the%0A++++++++++name+of+one+of+the+standard+types+supported+above%2C+and+the%0A++++++++++value+is+the+alignment+required+by+the+compiler+for+%7Btype_name%7D.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc_target__bitPerChar%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++this+symbol+is+always+defined+and+specifies+the+number+of+bits+%0A++++++++++in+the+target%27s+%3Ctt%3Echar%3C%2Ftt%3E.++This+value+combined+with+the%0A++++++++++%3Ctt%3Exdc_target__sizeof_%3C%2Ftt%3E+values+allows+C+code+to+determine+the%0A++++++++++precise+number+of+bits+in+any+of+the+standard+types.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+    </docSect>
+    <docSect name='See'>
+        <docPara content='%3Ca+class%3D%22xdoc-linkExt%22+href%3D%22http%3A%2F%2Fwww.open-std.org%2Fjtc1%2Fsc22%2Fwg14%2Fwww%2Fstandards%22+title%3D%22http%3A%2F%2Fwww.open-std.org%2Fjtc1%2Fsc22%2Fwg14%2Fwww%2Fstandards%22%3EISO-IEC+JTC1-SC22-WG14+-+C+Approved+standards%3C%2Fa%3E'/>
+    </docSect>
+    <docSect name='Throws'>
+        <docPara content='%3Ctt%3EXDCException%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.+The+following%0A++error+codes+are+reported+in+the+exception+message%3A'/>
+        <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Exdc.PACKAGE_NOT_FOUND%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A+++++++++++This+error+is+reported+whenever+a+specified+package+is+not+found%0A+++++++++++This+may+happen+for+the+following+reasons%3A%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='%3CUL%3E%3CLI%3E++Ensure+that+the+package+in+question+is+contained+in+one+of%0A+++++++++++++++the+repositories+named+in+the+package+path.++%0A%3C%2FLI%3E%3CLI%3E++The+package+has+not+been+built+by+the+%3Ctt%3Exdc%3C%2Ftt%3E+tool+even+though%0A+++++++++++++++the+physical+package+directory+may+be+present+along+the%0A+++++++++++++++package+path%0A%3C%2FLI%3E%3C%2FUL%3E'/>
+        <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Exdc.FILE_NOT_FOUND%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++++This+error+is+reported+when+a+specified+file+is+not+found.+%0A++++++++++++Ensure+that+any+directory+name+prefix+in+the+name+is+a+package%0A++++++++++++directory+contained+in+one+of+the+repositories+named+in+the%0A++++++++++++package+path.++For+example%2C+if+%22ti%2Ftargets%2Flinkcmd.xdt%22+can%27t%0A++++++++++++be+found%2C+make+sure+the+directory+%3Ctt%3Eti%2Ftargets%2F%3C%2Ftt%3E+is+contained+in%0A++++++++++++at+least+one+repository+named+in+the+package+path.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc.MODULE_NOT_FOUND%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++++This+error+is+reported+when+a+specified+module+can%27t+be%0A++++++++++++found.+Ensure+that+the+package+containing+the+module+in%0A++++++++++++question+is+contained+in+at+least+one+repository+named+in%0A++++++++++++the+package+path.%0A++++++++++++Also+ensure+that+the+module+name+is+qualified+with+the%0A++++++++++++package+name.+For+example%2C+to+refer+to+the+module+%3Ctt%3EEngine%3C%2Ftt%3E%0A++++++++++++in+the+package+%3Ctt%3Eti.sdo.ce%3C%2Ftt%3E%2C+the+module+name+should+be%0A++++++++++++specified+as+%3Ctt%3Eti.sdo.ce.Engine%3C%2Ftt%3E.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc.TOOL_USAGE_ERROR%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++++This+error+may+happen+when+the+%3Ctt%3Exs%3C%2Ftt%3E+tool+is+not+passed+the%0A++++++++++++expected+command+line+arguments.+%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc.MODULE_UNDEFINED_MAIN_FUNCTION%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++++This+error+is+reported+when+the+%3Ctt%3Exs%3C%2Ftt%3E+tool+is+passed+a+module%0A++++++++++++that+does+not+define+a+%3Ctt%3Emain%3C%2Ftt%3E+function.+Ensure+that+the%0A++++++++++++meta-domain+implementation+of+the+module+has+a+%3Ctt%3Emain%3C%2Ftt%3E+function.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc.SPEC_FILE_ERROR%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++++This+error+is+reported+when+there+is+a+parsing+error+in+a%0A++++++++++++specification+file.+Check+the+spec.+file+for+syntax+errors.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc.DEPRECATED_FUNCTION%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++++This+error+is+reported+whenever+a+deprecated+function+is+called.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc.STATIC_INSTANCE%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++++This+error+is+reported+when+a+function+create%28%29+is+called+at+the%0A++++++++++++configuration+time+for+a+module+that+does+not+implement+the%0A++++++++++++function+instance%24static%24init+and+therefore+does+not+support%0A++++++++++++static+instances.+%0A+%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+    </docSect>
+</package>

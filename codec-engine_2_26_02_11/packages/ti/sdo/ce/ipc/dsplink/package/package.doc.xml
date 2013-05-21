@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='ti.sdo.ce.ipc.dsplink' nodoc='0' root='../../../../../' summary='Process%2C+Comm%2C+Power+modules+implemeted+on+DspLink'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eti.sdo.ce.ipc.dsplink%3C%2Fspan%3E%3C%2Fgo%3E+%5B2%2C+0%2C+1%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='IDspLinkCfg' kind='interface' nodoc='0' metaonly='1' summary='DspLink+interface'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2Fdsplink%2Fpackage.html%22+title%3D%22ti.sdo.ce.ipc.dsplink%22%3Eti.sdo.ce.ipc.dsplink%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIDspLinkCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIDspLinkCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='DEFAULT_ARMDSPLINKCONFIG' anchor='.D.E.F.A.U.L.T_.A.R.M.D.S.P.L.I.N.K.C.O.N.F.I.G' altext='ti.sdo.ce.ipc.dsplink.IDspLinkCfg.DEFAULT_ARMDSPLINKCONFIG' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc.ArmDspLinkConfig%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EDEFAULT_ARMDSPLINKCONFIG%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='DspLinkCfg' kind='module' nodoc='0' metaonly='1' summary='Dsplink+ipc+Settings' inherits='ti.sdo.ce.ipc.dsplink.IDspLinkCfg'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2Fdsplink%2Fpackage.html%22+title%3D%22ti.sdo.ce.ipc.dsplink%22%3Eti.sdo.ce.ipc.dsplink%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EDspLinkCfg%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2Fdsplink%2FIDspLinkCfg.html%22+title%3D%22ti.sdo.ce.ipc.dsplink.IDspLinkCfg%22%3EIDspLinkCfg%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EDspLinkCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2Fdsplink%2FIDspLinkCfg.html%22+title%3D%22ti.sdo.ce.ipc.dsplink.IDspLinkCfg%22%3Eti.sdo.ce.ipc.dsplink.IDspLinkCfg%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+DspLinkCfg+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.ce.ipc.dsplink.DspLinkCfg%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='DEFAULT_ARMDSPLINKCONFIG' anchor='.D.E.F.A.U.L.T_.A.R.M.D.S.P.L.I.N.K.C.O.N.F.I.G' altext='ti.sdo.ce.ipc.dsplink.DspLinkCfg.DEFAULT_ARMDSPLINKCONFIG' nodoc='0' external='1' overrides='1' readonly='1' instance='0' summary='' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2Fdsplink%2FIDspLinkCfg.html%23.D.E.F.A.U.L.T_.A.R.M.D.S.P.L.I.N.K.C.O.N.F.I.G%22+title%3D%22ti.sdo.ce.ipc.dsplink.IDspLinkCfg.DEFAULT_ARMDSPLINKCONFIG%22%3EIDspLinkCfg%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eoverride+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc.ArmDspLinkConfig%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EDEFAULT_ARMDSPLINKCONFIG%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D+%3D+%255B'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522TMS320CDM6446%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x88000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x07A00000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FA00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00400000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FE00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FF00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00000080%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522TMS320DM357%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x88000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x07A00000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FA00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00400000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FE00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FF00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00000080%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522TMS320CDM6467%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x88000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x07A00000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FA00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00400000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FE00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FF00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00000080%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522TMS320C3430%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4CORE%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x48000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4PER%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x49000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522CMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x85000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x86000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87800000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00600000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87E00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522OMAP3530%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4CORE%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x48000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4PER%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x49000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522CMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x85000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x86000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87800000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00600000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87E00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522OMAP2530%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4CORE%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x48000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4WAKEUP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x49000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522CMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x82400000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x82C00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00300000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x82F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x000FF000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x82FFF000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x83000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522TMS320C2430%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4CORE%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x48000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4WAKEUP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x49000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522CMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x85800000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x86000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87800000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00600000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87E00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522OMAPL137%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC3000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2C00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00300000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2F01000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522OMAPL138%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC3000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2C00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00300000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2F01000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EDspLinkCfg.%3Cspan+class%3D%22xdoc-id%22%3EDEFAULT_ARMDSPLINKCONFIG%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc.ArmDspLinkConfig%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522TMS320CDM6446%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x88000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x07A00000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FA00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00400000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FE00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FF00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00000080%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522TMS320DM357%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x88000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x07A00000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FA00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00400000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FE00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FF00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00000080%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522TMS320CDM6467%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x88000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x07A00000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FA00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00400000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FE00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x8FF00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00000080%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522TMS320C3430%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4CORE%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x48000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4PER%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x49000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522CMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x85000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x86000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87800000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00600000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87E00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522OMAP3530%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4CORE%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x48000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4PER%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x49000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522CMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x85000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x86000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87800000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00600000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87E00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522OMAP2530%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4CORE%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x48000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4WAKEUP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x49000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522CMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x82400000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x82C00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00300000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x82F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x000FF000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x82FFF000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x83000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522TMS320C2430%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4CORE%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x48000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522L4WAKEUP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x49000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522CMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x85800000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x86000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01800000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87800000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00600000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87E00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0x87F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522OMAPL137%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC3000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2C00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00300000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2F01000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D%252C'/>
+                    <line tab='1' content='%255B'/>
+                    <line tab='2' content='%2522OMAPL138%2522%252C'/>
+                    <line tab='2' content='%257B'/>
+                    <line tab='3' content='memTable%253A%2B%255B'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDRALGHEAP%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC3000000%252C'/>
+                    <line tab='6' content='size%253A%2B0x01000000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522other%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DDR2%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2C00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00300000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522main%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522DSPLINKMEM%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2F01000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00100000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522link%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D%252C'/>
+                    <line tab='4' content='%255B'/>
+                    <line tab='5' content='%2522RESETCTRL%2522%252C'/>
+                    <line tab='5' content='%257B'/>
+                    <line tab='6' content='addr%253A%2B0xC2F00000%252C'/>
+                    <line tab='6' content='size%253A%2B0x00001000%252C'/>
+                    <line tab='6' content='type%253A%2B%2522reset%2522'/>
+                    <line tab='5' content='%257D'/>
+                    <line tab='4' content='%255D'/>
+                    <line tab='3' content='%255D%252C'/>
+                    <line tab='3' content='doPowerControl%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%252C'/>
+                    <line tab='3' content='dspManagement%253A%2B%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252F..%252Fti%252Fsdo%252Fce%252Fipc%252FIIpc.html%2523.Boot.And.Load.Dsp%2522%2Btitle%253D%2522ti.sdo.ce.ipc.IIpc.BootAndLoadDsp%2522%253EIIpc.BootAndLoadDsp%253C%252Fa%253E'/>
+                    <line tab='2' content='%257D'/>
+                    <line tab='1' content='%255D'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='Ipc' kind='module' nodoc='0' metaonly='1' summary='Dsplink+ipc+Settings' inherits='ti.sdo.ce.ipc.IIpc'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2Fdsplink%2Fpackage.html%22+title%3D%22ti.sdo.ce.ipc.dsplink%22%3Eti.sdo.ce.ipc.dsplink%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIpc%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%22+title%3D%22ti.sdo.ce.ipc.IIpc%22%3EIIpc%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIpc%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%22+title%3D%22ti.sdo.ce.ipc.IIpc%22%3Eti.sdo.ce.ipc.IIpc%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Ipc+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.ce.ipc.dsplink.Ipc%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='DspManagement' anchor='.Dsp.Management' altext='ti.sdo.ce.ipc.dsplink.Ipc.DspManagement' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Value+for+controlling+DSP+from+ARM+w%2F+DspLink' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Dsp.Management%22+title%3D%22ti.sdo.ce.ipc.IIpc.DspManagement%22%3EIIpc%3C%2Fa%3E'>
+                <decl kind='enumval' name='BootAndLoadDsp' anchor='.Boot.And.Load.Dsp'/>
+                <decl kind='enumval' name='BootDspAutonomously' anchor='.Boot.Dsp.Autonomously'/>
+                <decl kind='enumval' name='None' anchor='.None'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EDspManagement%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EBootAndLoadDsp%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EBootDspAutonomously%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ENone%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EDspManagement%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EBootAndLoadDsp%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EBootDspAutonomously%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3ENone%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+                <docSect name='VALUES'>
+                    <docChild name='BootAndLoadDsp' summary='DspLink+boots+DSP+and+loads+executable'>
+                    </docChild>
+                    <docChild name='BootDspAutonomously' summary='DspLink+boots+DSP+w%2Fo+loading+executable'>
+                    </docChild>
+                    <docChild name='None' summary='DspLink+neither+boots+DSP+nor+loads+executable'>
+                    </docChild>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='ArmDspLinkConfig' anchor='.Arm.Dsp.Link.Config' altext='ti.sdo.ce.ipc.dsplink.Ipc.ArmDspLinkConfig' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Configuration+for+the+DspLink+on+the+Arm+side' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EArmDspLinkConfig%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config.Mem.Table.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfigMemTableEntry%22%3EIIpc.ArmDspLinkConfigMemTableEntry%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmemTable%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdoPowerControl%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Dsp.Management%22+title%3D%22ti.sdo.ce.ipc.IIpc.DspManagement%22%3EIIpc.DspManagement%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspManagement%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EArmDspLinkConfig%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmemTable%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config.Mem.Table.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfigMemTableEntry%22%3EIIpc.ArmDspLinkConfigMemTableEntry%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdoPowerControl%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspManagement%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Dsp.Management%22+title%3D%22ti.sdo.ce.ipc.IIpc.DspManagement%22%3EIIpc.DspManagement%3C%2Fa%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='FIELDS'>
+                    <docChild name='memTable' summary='Memory+table%2C+describing+all+DSP+segments.%0A++++++++++++++++++++++NOTE%3A+segments+%22DDR2%22+%28or+whatever+is+the+name+of%0A++++++++++++++++++++++the+main+segment%29%2C+%22DSPLINKMEM%22%2C+and%0A++++++++++++++++++++++%22RESETCTRL%22+must+be+present'>
+                    </docChild>
+                    <docChild name='doPowerControl' summary='Flag+indicating+if+Link+should+implement%0A++++++++++++++++++++++power+control+of+DSP.'>
+                    </docChild>
+                    <docChild name='dspManagement' summary='Flag+indicating+how+Link+should+boot%2Fload+DSP'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='Of+the+many+fields+that+Link+exposes+for+configuration%2C%0A++selected+ones+are+exposed+through+this+interface.'/>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='ArmDspLinkConfigMemTableEntry' anchor='.Arm.Dsp.Link.Config.Mem.Table.Entry' altext='ti.sdo.ce.ipc.dsplink.Ipc.ArmDspLinkConfigMemTableEntry' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Description+of+one+DSP+memory+segment+entry' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config.Mem.Table.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfigMemTableEntry%22%3EIIpc%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EArmDspLinkConfigMemTableEntry%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eaddr%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgppAddr%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esize%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etype%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EArmDspLinkConfigMemTableEntry%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eaddr%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgppAddr%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etype%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='FIELDS'>
+                    <docChild name='addr' summary='The+beginning+address+of+the+segment'>
+                    </docChild>
+                    <docChild name='gppAddr' summary='The+GPP+physical+address+of+the+segment+%28when+needed%29'>
+                    </docChild>
+                    <docChild name='size' summary='Size+of+the+segment+in+bytes'>
+                    </docChild>
+                    <docChild name='type' summary='One+of+the+following+types%3A%0A+++++++++++++++++%22main%22+++++--+main+code%2Fdata+segment+%28i.e.+DDR2%29%0A+++++++++++++++++%22link%22+++++--+DSPLINKMEM+segment%0A+++++++++++++++++%22reset%22++++--+RESETCTRL+segment%0A+++++++++++++++++%22poolmem%22++--+POOLMEM+segment%0A+++++++++++++++++%22code%22+++++--+dsp+code%2Fdata%2C+must+map+into+GPP+space%0A+++++++++++++++++%22other%22++++--+anything+else'>
+                    </docChild>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='LinkConfigEntry' anchor='.Link.Config.Entry' altext='ti.sdo.ce.ipc.dsplink.Ipc.LinkConfigEntry' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='This+structure+associates+a+sever+executable+with+an+ipc+link%0A++configuration.+The+type+of+the+linkCfg+field+is+left+as+%22Any%22%2C%0A++since+it+will+depend+on+the+module+that+implements+the+IIpc%0A++interface.+This+is+an+internal+field+used+only+by+codec+engine%0A++scripting' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Link.Config.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.LinkConfigEntry%22%3EIIpc%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ELinkConfigEntry%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverName%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc.ArmDspLinkConfig%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkCfg%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3ELinkConfigEntry%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkCfg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc.ArmDspLinkConfig%3C%2Fa%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='armCommMsgSize' anchor='arm.Comm.Msg.Size' altext='ti.sdo.ce.ipc.dsplink.Ipc.armCommMsgSize' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Default+size+for+the+Arm-DSP+communication+messages+%28MSGQ+messages%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EarmCommMsgSize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+4%2B*%2B1024%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EarmCommMsgSize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+4%2B*%2B1024%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='armCommNumMsgs' anchor='arm.Comm.Num.Msgs' altext='ti.sdo.ce.ipc.dsplink.Ipc.armCommNumMsgs' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Number+of+%26lt%3BcommMsgSize%26gt%3B-sized+messages+used+for+Arm-DSP+communication'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EarmCommNumMsgs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+64%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EarmCommNumMsgs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+64%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='commLocateRetries' anchor='comm.Locate.Retries' altext='ti.sdo.ce.ipc.dsplink.Ipc.commLocateRetries' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='number+of+times+to+retry+Comm_locate%28%29+--+to+find+DSP+server%27s+MSGQ+--%0A++before+giving+up'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcommLocateRetries%3C%2Fspan%3E%3C%2Fgo%3E+%3D+20%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EcommLocateRetries%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E+20%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='debug' anchor='debug' altext='ti.sdo.ce.ipc.dsplink.Ipc.debug' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+the+debug+profile+of+the+dsplink+ipc+module'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edebug%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3Edebug%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='dspLinkCfg' anchor='dsp.Link.Cfg' altext='ti.sdo.ce.ipc.dsplink.Ipc.dspLinkCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Use+a+specific+DspLink+configuration.+This+parameter+does+not+need%0A++to+be+set+if+using+the+DspLinkCfg+provided+with+Codec+Engine.%0A++This+parameter+provides+a+default+memory+map+and+power+control%0A++settings+for+supported+platforms'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2Fdsplink%2FIDspLinkCfg.html%23.Module%22+title%3D%22ti.sdo.ce.ipc.dsplink.IDspLinkCfg.Module%22%3EIDspLinkCfg.Module%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspLinkCfg%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EdspLinkCfg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2Fdsplink%2FIDspLinkCfg.html%23.Module%22+title%3D%22ti.sdo.ce.ipc.dsplink.IDspLinkCfg.Module%22%3EIDspLinkCfg.Module%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='linkConfigs' anchor='link.Configs' altext='ti.sdo.ce.ipc.dsplink.Ipc.linkConfigs' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Link+configurations+per+server%3B+if+left+undefined+will+be%0A++set+to+DEFAULT_ARMDSPLINKCONFIG%2C+but+with+a+warning.+This+is+an%0A++internal+field%2C+set+by+the+Engine+scripting' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23link.Configs%22+title%3D%22ti.sdo.ce.ipc.IIpc.linkConfigs%22%3EIIpc%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Link.Config.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.LinkConfigEntry%22%3EIIpc.LinkConfigEntry%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkConfigs%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3ElinkConfigs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Link.Config.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.LinkConfigEntry%22%3EIIpc.LinkConfigEntry%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='maxTimeout' anchor='max.Timeout' altext='ti.sdo.ce.ipc.dsplink.Ipc.maxTimeout' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Maximum+timeout+allowed'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmaxTimeout%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0xffffffff%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EmaxTimeout%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+0xffffffff%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Users+can+specify+a+value+here+to+indicate+a+%27cap%27+on+the+time%0A++which+the+IPC+APIs+in+this+package+will+wait+before+timing+out.%0A++If+the+%27maxTimeout%27+value+is+encountered+in+a+running+system%2C+it%0A++is+treated+as+a+system+error.++Resources+will+be+unlocked+%28e.g.%0A++MSGQ_pend%28%29+will+return%2C+releasing+any+DSP+Link+resources%29%2C+and%0A++the+thread+that+exceeded+its+maxTimeout+will+spin+forever%2C+never%0A++returning.++It+will+need+to+be+deleted+by+another+%22monitor+process%22.'/>
+                    <docPara content='This+can+be+used+in+a+system+to+detect+if+a+remote+processor+has%0A++become+unresponsive.'/>
+                    <docPara content='The+default+is+0xffffffff%2C+which+indicates+that+there+is+no+cap+and%0A++the+underyling+APIs+can+wait+forever+if+so+instructed.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='useLinkArbiter' anchor='use.Link.Arbiter' altext='ti.sdo.ce.ipc.dsplink.Ipc.useLinkArbiter' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Control+flag+to+indicate+if+Codec+Engine+should+use+the+Link+Arbiter%0A++Daemon+%28LAD%29+to+arbitrate+DSPLINK+APIs+that+need+arbitration.++Set+to%0A++false+means+LAD+should+not+be+used%3B+set+to+true+means+LAD+should+be%0A++used'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseLinkArbiter%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EuseLinkArbiter%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+feature+may+not+be+available+on+all+devices.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='usePowerManagement' anchor='use.Power.Management' altext='ti.sdo.ce.ipc.dsplink.Ipc.usePowerManagement' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='If+set+to+true%2C+will+attempt+to+include+power-management+code%0A++where+applicable.+If+left+undefined%2C+an+appropriate+default+value%0A++will+be+assigned+based+on+the+device+type'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EusePowerManagement%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EusePowerManagement%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+feature+may+not+be+available+on+all+devices.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+</package>

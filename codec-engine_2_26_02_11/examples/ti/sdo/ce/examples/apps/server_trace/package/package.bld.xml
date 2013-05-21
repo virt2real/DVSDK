@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.examples.apps.server_trace" version="1, 0, 0" producerId="codec_engine_2_26_02_11">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote_xv5T.c"/>
+        <srcFile name="trace.c"/>
+        <srcFile name="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote_x470uC.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="remote.cfg"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM6446/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote/trace.o470uC.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote/main_native.o470uC.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM6446/app_remote_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote/trace.o470uC.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote/main_native.o470uC.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM6467/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM6467/app_remote_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote/trace.o470uC.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote/main_native.o470uC.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM357/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM357/app_remote_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote/trace.o470uC.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote/main_native.o470uC.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evm2530/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote_x470uC.dep" src="package/cfg/bin/ti_platforms_evm2530/app_remote_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote/trace.o470uC.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote/main_native.o470uC.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote_x470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/app_remote_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote/trace.o470uC.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote/main_native.o470uC.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_x470uC.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote/trace.o470uC.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote/main_native.o470uC.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_x470uC.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote/trace.ov5T.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote/main_native.ov5T.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM6446/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/app_remote_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM6446/app_remote_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote/trace.ov5T.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote/main_native.ov5T.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM6467/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/app_remote_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM6467/app_remote_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM357/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote/trace.ov5T.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote/main_native.ov5T.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/app_remote_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM357/app_remote_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote/trace.ov5T.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote/main_native.ov5T.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evm2530/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/app_remote_xv5T.dep" src="package/cfg/bin/ti_platforms_evm2530/app_remote_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote/trace.ov5T.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote/main_native.ov5T.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evm3530/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/app_remote_xv5T.dep" src="package/cfg/bin/ti_platforms_evm3530/app_remote_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote/trace.ov5T.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote/main_native.ov5T.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_xv5T.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote/trace.ov5T.dep" src="trace.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote/main_native.ov5T.dep" src="main_native.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_xv5T.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_xv5T.cfg"/>
+        <srcFile name="package/rel/ti_sdo_ce_examples_apps_server_trace.tar.dep" src="package/rel/ti_sdo_ce_examples_apps_server_trace.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="bin/ti_platforms_evmDM6446/app_remote"
+        pname="bin/ti_platforms_evmDM6446/app_remote.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM6446"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6446/app_remote_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6446/app_remote_x470uC"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM6467/app_remote"
+        pname="bin/ti_platforms_evmDM6467/app_remote.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM6467"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6467/app_remote_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6467/app_remote_x470uC"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM357/app_remote"
+        pname="bin/ti_platforms_evmDM357/app_remote.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM357"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM357/app_remote_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM357/app_remote_x470uC"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evm2530/app_remote"
+        pname="bin/ti_platforms_evm2530/app_remote.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evm2530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm2530/app_remote_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm2530/app_remote_x470uC"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/app_remote"
+        pname="bin/ti_platforms_evm3530/app_remote.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evm3530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/app_remote_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/app_remote_x470uC"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evmOMAPL137/app_remote"
+        pname="bin/ti_platforms_evmOMAPL137/app_remote.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmOMAPL137"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_x470uC"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evmOMAPL138/app_remote"
+        pname="bin/ti_platforms_evmOMAPL138/app_remote.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmOMAPL138"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_x470uC"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM6446/app_remote"
+        pname="bin/ti_platforms_evmDM6446/app_remote.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM6446"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6446/app_remote_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6446/app_remote_xv5T"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM6467/app_remote"
+        pname="bin/ti_platforms_evmDM6467/app_remote.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM6467"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6467/app_remote_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6467/app_remote_xv5T"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM357/app_remote"
+        pname="bin/ti_platforms_evmDM357/app_remote.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM357"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM357/app_remote_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM357/app_remote_xv5T"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evm2530/app_remote"
+        pname="bin/ti_platforms_evm2530/app_remote.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evm2530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm2530/app_remote_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm2530/app_remote_xv5T"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/app_remote"
+        pname="bin/ti_platforms_evm3530/app_remote.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evm3530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/app_remote_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/app_remote_xv5T"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evmOMAPL137/app_remote"
+        pname="bin/ti_platforms_evmOMAPL137/app_remote.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmOMAPL137"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmOMAPL137/app_remote_xv5T"
+        cfgScript="remote.cfg"
+        />
+    <executable name="bin/ti_platforms_evmOMAPL138/app_remote"
+        pname="bin/ti_platforms_evmOMAPL138/app_remote.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmOMAPL138"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmOMAPL138/app_remote_xv5T"
+        cfgScript="remote.cfg"
+        />
+    </executables>
+    <tests>
+    <test exeName="bin/ti_platforms_evmDM6446/app_remote.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM6446/app_remote.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM6467/app_remote.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM6467/app_remote.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM357/app_remote.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM357/app_remote.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm2530/app_remote.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evm2530/app_remote.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/app_remote.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evm3530/app_remote.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmOMAPL137/app_remote.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmOMAPL137/app_remote.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmOMAPL138/app_remote.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmOMAPL138/app_remote.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM6446/app_remote.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM6446/app_remote.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM6467/app_remote.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM6467/app_remote.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM357/app_remote.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM357/app_remote.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm2530/app_remote.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evm2530/app_remote.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/app_remote.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evm3530/app_remote.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmOMAPL137/app_remote.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmOMAPL137/app_remote.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmOMAPL138/app_remote.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmOMAPL138/app_remote.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_examples_apps_server_trace"
+        pname="ti_sdo_ce_examples_apps_server_trace.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,83 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== DA700.tci ========
+ *  The chip configuration settings are based on document
+ *  Antara Chip Integration Specification
+ *
+ */
+
+/*
+ *  Load C67P.tci arch file
+ */
+utils.loadArch("67P", "ti.catalog.c6000");
+
+/*
+ *  ======== CDA700 ========
+ */
+function CDA700(name, parent)
+{
+    /*
+     * The 'this' refers to the cpu object created in the platform file.
+     * The apply function is a way to execute a function with a specific
+     * 'this' pointer. Its used to initialize C67P00 base on a C67P.
+     */
+    C67P.apply(this, [name, parent]);
+
+    /*
+     * This field is used to include bios settings for this device.
+     * If csl is available for this device, it will also be used to specify
+     * the csl name in the bios config file (*.cdb).
+     * The csl name will be "csl" + this.deviceName + ".lib"
+     */
+    this.deviceName = "DA700";
+
+    /* cpu registers */
+    this.registers = [];
+
+    /*
+     * This associative array defines the on-chip physical memory segments
+     * indexed by the segment name.  
+     */
+    this.memBlock = [];
+
+    this.memBlock["IRAM"] = {
+        comment: "Internal memory",
+        name: "IRAM",
+        base: 0x10000000,
+        len:  0x00040000,
+        space: "code/data"
+    };
+
+
+    /* Define on-chip Memory Map */
+    this.mem = [];
+
+    this.mem[0] = [
+        this.memBlock["IRAM"]
+    ];
+
+/*
+ * ======== getMemoryMap ========
+ * This method returns the on-chip memory map
+ */
+this.getMemoryMap = function ()
+{
+    return(this.mem[0]);
+};
+
+}
+/*
+ *  @(#) ti.catalog.c6000; 1, 0, 0, 0,226; 2-23-2010 16:50:35; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

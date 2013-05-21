@@ -1,0 +1,124 @@
+/* 
+ *  Copyright (c) 2008 Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ * 
+ * */
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+
+/* Specify the Memory Mapped Registers default values */
+var device_regs = {
+    pmst:  0xffe0
+};
+
+var mem_ext = [];
+var MPMCBITMASK = 0x40;
+
+if (environment["ti.bios.oldMemoryNames"] == undefined ||
+    environment["ti.bios.oldMemoryNames"] == 'false' ||
+    environment["ti.bios.oldMemoryNames"] == '0') {
+
+    /* If MP/nMC bit in PMST is 0, EPROG.len is 0xb000, and VECT
+     * isn't a part of the memory map.
+     */
+    var eproglen = 0xbf80;
+    if (~device_regs.pmst & MPMCBITMASK) {
+        eproglen = 0xb000;
+    }
+
+    mem_ext[0] = {
+        comment: "External Program Memory",
+        name: "EPROG",
+        base: 0x4000,
+        len:  eproglen,
+        space: "code"
+    };
+        
+    mem_ext[2] = {
+        comment: "External Data Memory",
+        name: "EDATA",
+        base: 0x4000,
+        len:  0xb000,
+        space: "data"
+    };
+    
+    if (device_regs.pmst & MPMCBITMASK) {
+        mem_ext[1] = {
+            comment: "Interrupt Vectors",
+            name: "VECT",
+            base: 0xff80,
+            len:  0x0080,
+            space: "code"
+        };
+    }
+}
+else {
+    mem_ext[0] = {
+        comment: "External Program Memory",
+        name: "EPROG",
+        space: "code",
+        base: 0xc000,
+        len:  0x3f80
+    };
+    
+    mem_ext[1] = {
+        comment: "External Data Memory",
+        name: "EDATA",
+        space: "data",
+        base: 0x8000,
+        len:  0x4000
+    };
+}
+
+var params = {
+    clockRate: 100,
+    catalogName: "ti.catalog.c5400",
+    deviceName: "5402",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/* override the defaults with anything specified by client */
+if (utils.loadPlatform.params != null) {
+    var overrides = utils.loadPlatform.params;
+    for (var i in params) {
+        if (i in overrides) {
+            params[i] = overrides[i];
+        }
+    }
+}
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+
+/* Set RTXD.MODE to simulator and then disable RTDX, so if a user chooses to
+ * have it enabled, MODE would be set correctly already.
+ */
+bios.RTDX.ENABLERTDX = 1;
+bios.RTDX.MODE = "Simulator";
+bios.RTDX.ENABLERTDX = 0;
+
+print("remark:Sim54xx platform is configured for " + params.deviceName + 
+      " device. To change the configuration to another 54xx device, please add " +
+      "that device as a parameter to utils.loadPlatform() call in your TCF file. Ex:\n" +
+      "utils.loadPlatform('ti.platforms.sim54xx', {deviceName: '###'});\n"); 
+print("For more information, please refer to Chapter 4 of the Tconf User's " +
+      "Guide \n(SPRU007G)");
+/*
+ *  @(#) ti.platforms.sim54xx; 1, 0, 1, 1,25; 2-23-2010 17:01:46; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

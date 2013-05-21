@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.rman.examples.nonrtscexample" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/nonRtscExample_3530_x64P.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446_x64Pcfg_c.c"/>
+        <srcFile name="ires_algorithm.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3530_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467_x64P.c"/>
+        <srcFile name="FC_config.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3430_x64P.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446_x64Pcfg.s62"/>
+        <srcFile name="app.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3530_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467_x64Pcfg.s62"/>
+        <srcFile name="mySem.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3430_x64Pcfg.s62"/>
+    </sources>
+    <configurations>
+        <srcFile name="ires_algorithm.tcf"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446_x64P.o64P.dep" src="package/cfg/nonRtscExample_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446_x64Pcfg.o64P.dep" src="package/cfg/nonRtscExample_dm6446_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446_x64Pcfg_c.o64P.dep" src="package/cfg/nonRtscExample_dm6446_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446/FC_config.o64P.dep" src="FC_config.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6446_x64P.dep" src="package/cfg/nonRtscExample_dm6446_x64P.cfg"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467_x64P.o64P.dep" src="package/cfg/nonRtscExample_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467_x64Pcfg_c.o64P.dep" src="package/cfg/nonRtscExample_dm6467_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467/FC_config.o64P.dep" src="FC_config.c"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467_x64Pcfg.o64P.dep" src="package/cfg/nonRtscExample_dm6467_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/nonRtscExample_dm6467_x64P.dep" src="package/cfg/nonRtscExample_dm6467_x64P.cfg"/>
+        <srcFile name="package/cfg/nonRtscExample_3430_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/nonRtscExample_3430/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3430_x64Pcfg_c.o64P.dep" src="package/cfg/nonRtscExample_3430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3430/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3430_x64Pcfg.o64P.dep" src="package/cfg/nonRtscExample_3430_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/nonRtscExample_3430/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3430_x64P.o64P.dep" src="package/cfg/nonRtscExample_3430_x64P.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3430/FC_config.o64P.dep" src="FC_config.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3430_x64P.dep" src="package/cfg/nonRtscExample_3430_x64P.cfg"/>
+        <srcFile name="package/cfg/nonRtscExample_3530_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/nonRtscExample_3530/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3530/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3530/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3530_x64P.o64P.dep" src="package/cfg/nonRtscExample_3530_x64P.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3530_x64Pcfg_c.o64P.dep" src="package/cfg/nonRtscExample_3530_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3530/FC_config.o64P.dep" src="FC_config.c"/>
+        <srcFile name="package/cfg/nonRtscExample_3530_x64Pcfg.o64P.dep" src="package/cfg/nonRtscExample_3530_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/nonRtscExample_3530_x64P.dep" src="package/cfg/nonRtscExample_3530_x64P.cfg"/>
+        <srcFile name="package/rel/ti_sdo_fc_rman_examples_nonrtscexample.tar.dep" src="package/rel/ti_sdo_fc_rman_examples_nonrtscexample.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="nonRtscExample_dm6446"
+        pname="nonRtscExample_dm6446.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6446"
+        profile="debug_trace"
+        xCfgScript="package/cfg/nonRtscExample_dm6446_x64P.cfg"
+        xCfgPrefix="package/cfg/nonRtscExample_dm6446_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6446%22%7D"
+        />
+    <executable name="nonRtscExample_dm6467"
+        pname="nonRtscExample_dm6467.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="debug_trace"
+        xCfgScript="package/cfg/nonRtscExample_dm6467_x64P.cfg"
+        xCfgPrefix="package/cfg/nonRtscExample_dm6467_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6467%22%7D"
+        />
+    <executable name="nonRtscExample_3430"
+        pname="nonRtscExample_3430.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.sdp3430"
+        profile="debug_trace"
+        xCfgScript="package/cfg/nonRtscExample_3430_x64P.cfg"
+        xCfgPrefix="package/cfg/nonRtscExample_3430_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%223430%22%7D"
+        />
+    <executable name="nonRtscExample_3530"
+        pname="nonRtscExample_3530.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evm3530"
+        profile="debug_trace"
+        xCfgScript="package/cfg/nonRtscExample_3530_x64P.cfg"
+        xCfgPrefix="package/cfg/nonRtscExample_3530_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%223530%22%7D"
+        />
+    </executables>
+    <tests>
+    <test exeName="nonRtscExample_dm6446.x64P"
+        args=""
+        groupName="nonRtscExample_dm6446.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="nonRtscExample_dm6467.x64P"
+        args=""
+        groupName="nonRtscExample_dm6467.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="nonRtscExample_3430.x64P"
+        args=""
+        groupName="nonRtscExample_3430.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="nonRtscExample_3530.x64P"
+        args=""
+        groupName="nonRtscExample_3530.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_rman_examples_nonrtscexample"
+        pname="ti_sdo_fc_rman_examples_nonrtscexample.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

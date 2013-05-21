@@ -1,0 +1,65 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\PSP301_PHASE3FINAL\trunk\DM35x_Rev_C\CCS\UBL\"
+ProjectType=Executable
+CPUFamily=TMS470R2X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="DM355_216MHz"
+Config="DM355_216MHz_LEGACY"
+Config="DM355_270MHz"
+Config="DM355_270MHz_LEGACY"
+
+[Source Files]
+Source="..\..\..\Common\arch\arm926ejs\src\boot.c"
+Source="..\..\..\Common\arch\arm926ejs\src\selfcopy.c"
+Source="..\..\..\Common\drivers\src\nand.c"
+Source="..\..\..\Common\gnu\src\debug.c"
+Source="..\..\..\Common\gnu\src\uart.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\..\Common\ubl\src\NANDboot.c"
+Source="..\..\..\Common\ubl\src\uartboot.c"
+Source="..\..\..\Common\ubl\src\ubl.c"
+Source="..\..\Common\src\device.c"
+Source="..\..\Common\src\device_nand.c"
+Source="UBL.cmd"
+
+["DM355_216MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM355_NAND_216.bin $(Proj_dir)\NAND\UBL_DM355_NAND_216.out;Run=Always
+
+["DM355_216MHz_LEGACY" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM355_NAND_216_LEGACY.bin $(Proj_dir)\NAND_LEGACY\UBL_DM355_NAND_216_LEGACY.out;Run=Always
+
+["DM355_270MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM355_NAND_270.bin $(Proj_dir)\NAND\UBL_DM355_NAND_270.out;Run=Always
+
+["DM355_270MHz_LEGACY" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM355_NAND_270_LEGACY.bin $(Proj_dir)\NAND_LEGACY\UBL_DM355_NAND_270_LEGACY.out;Run=Always
+
+["Compiler" Settings: "DM355_216MHz"]
+Options=-o3 -fr"$(Proj_dir)\NAND" -fs"$(Proj_dir)\NAND" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM355_216MHz" -d"DM35X_STANDARD" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "DM355_216MHz_LEGACY"]
+Options=-o3 -fr"$(Proj_dir)\NAND_LEGACY" -fs"$(Proj_dir)\NAND_LEGACY" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM355_216MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "DM355_270MHz"]
+Options=-o3 -fr"$(Proj_dir)\NAND" -fs"$(Proj_dir)\NAND" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM355_270MHz" -d"DM35X_STANDARD" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "DM355_270MHz_LEGACY"]
+Options=-o3 -fr"$(Proj_dir)\NAND_LEGACY" -fs"$(Proj_dir)\NAND_LEGACY" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM355_270MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Linker" Settings: "DM355_216MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND\UBL_DM355_NAND_216.map" -o"$(Proj_dir)\NAND\UBL_DM355_NAND_216.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "DM355_216MHz_LEGACY"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND_LEGACY\UBL_DM355_NAND_216_LEGACY.map" -o"$(Proj_dir)\NAND_LEGACY\UBL_DM355_NAND_216_LEGACY.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "DM355_270MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND\UBL_DM355_NAND_270.map" -o"$(Proj_dir)\NAND\UBL_DM355_NAND_270.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "DM355_270MHz_LEGACY"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND_LEGACY\UBL_DM355_NAND_270_LEGACY.map" -o"$(Proj_dir)\NAND_LEGACY\UBL_DM355_NAND_270_LEGACY.out" -x --retain="*(.selfcopy)"
+

@@ -1,0 +1,81 @@
+/* 
+ * Copyright (c) 2009, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ *  ======== config.bld ========
+ */
+/* location of the Codec Sourcery Arm9 tools */
+var GCArmv5T = xdc.useModule('gnu.targets.arm.GCArmv5T');
+GCArmv5T.LONGNAME = 'bin/arm-none-linux-gnueabi-gcc';
+/*GCArmv5T.platform = "ti.platforms.evm3530";*/
+GCArmv5T.rootDir = "/opt/arm-2009q1";
+
+/*
+ *  ======== Build.targets ========
+ * list of targets (ISAs + compilers) to build for
+ */
+Build.targets = [
+];
+
+/* use the target and configure it as necessary. */
+/*var GCArmv5T = xdc.module('gnu.targets.arm.GCArmv5T');
+
+var V5T_rootdir = "";
+var CC_V5T = "";
+*/
+/* initialize local vars with those set in xdcpaths.mak (via XDCARGS) */
+/*for (x = 0; x < arguments.length; x++) {
+    if (arguments[x].match(/^CGTOOLS_V5T=/)) {
+        V5T_rootdir = arguments[x].split("=")[1];
+    } else if(arguments[x].match(/^CC_V5T=/)) {
+        CC_V5T = arguments[x].split("=")[1];
+    }
+}
+*/
+/*
+ * Often these are hard-coded by users, and then this messy arg 'if' check and
+ * arg passing above can be removed.
+ */
+
+/*
+if (V5T_rootdir != "") {
+    GCArmv5T.rootDir = V5T_rootdir;
+    GCArmv5T.LONGNAME = CC_V5T;
+
+    var Build = xdc.useModule('xdc.bld.BuildEnvironment');
+    Build.targets.$add(GCArmv5T);
+}
+*/
+/*
+ *  @(#) ti.sdo.ce.examples.apps.video_copy; 1, 0, 0,34; 12-18-2009 17:41:13; /db/atree/library/trees/ce/ce-o06x/src/
+ */
+

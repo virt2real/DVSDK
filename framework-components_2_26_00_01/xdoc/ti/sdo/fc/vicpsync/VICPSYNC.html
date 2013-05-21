@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>module ti.sdo.fc.vicpsync.VICPSYNC</title>
+<meta name="description" content="Interrupt management support for the DM360/DM355">
+<link rel="stylesheet" type="text/css" href="../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.sdo.fc.vicpsync.</span><span class="xdoc-id">VICPSYNC</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/fc/vicpsync/package.html" title="package ti.sdo.fc.vicpsync"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/fc/vicpsync/VICPSYNC.html">index URL</a></div>
+<p class="xdocHdrSummary">Interrupt management support for the DM360/DM355</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/fc/vicpsync/VICPSYNC-src.html"><span class="xdocLabelFile">ti/sdo/fc/vicpsync/VICPSYNC.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">VICPSYNC</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> VICPSYNC = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.sdo.fc.vicpsync.VICPSYNC'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#debug">VICPSYNC.<span class="xdoc-id">debug</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Enable the debug profile of the library</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#trace">VICPSYNC.<span class="xdoc-id">trace</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Enable trace in the library</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/fc/vicpsync/VICPSYNC-src.html"><span class="xdocLabelFile">ti/sdo/fc/vicpsync/VICPSYNC.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../../ti/sdo/fc/vicpsync/package.html" title="ti.sdo.fc.vicpsync">ti.sdo.fc.vicpsync</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">VICPSYNC</span></go> {
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#debug"><span class="xdoc-id">debug</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Enable the debug profile of the library</span></span></a> = <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#trace"><span class="xdoc-id">trace</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Enable trace in the library</span></span></a> = <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="debug"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">VICPSYNC.</span><span class="xdoc-id">debug</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/fc/vicpsync/VICPSYNC.html" title="module VICPSYNC"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/fc/vicpsync/VICPSYNC.html#debug">index URL</a></div>
+<p class="xdocHdrSummary">Enable the debug profile of the library</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>VICPSYNC.<span class="xdoc-id">debug</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This will likely result in a larger and slower library being linked in.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="trace"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">VICPSYNC.</span><span class="xdoc-id">trace</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/fc/vicpsync/VICPSYNC.html" title="module VICPSYNC"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/fc/vicpsync/VICPSYNC.html#trace">index URL</a></div>
+<p class="xdocHdrSummary">Enable trace in the library</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>VICPSYNC.<span class="xdoc-id">trace</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This will result in a larger and slower library being linked in,
+  but it will provide trace statements for debugging purposes.</div>
+</div>
+<div id="xdocDate">generated on Wed, 01 Dec 2010 01:28:44 GMT</div>
+</div></div></body>
+</html>

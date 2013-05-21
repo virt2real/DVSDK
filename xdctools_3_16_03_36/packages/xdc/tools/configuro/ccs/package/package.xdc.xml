@@ -1,0 +1,181 @@
+<?xml version='1.0'?>
+<package name='xdc.tools.configuro.ccs' release='1, 0, 0, 0' xmlns='xdc/services/spec'>
+    <imports name='xdc.tools.configuro' version=''/>
+    <imports name='xdc.tools'/>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++Command-line+configuration+tool+adapter+for+Code+Composer+Studio'/>
+    </autodoc>
+    <autodoc tag='a' arg='INSTALLING_ON_WINDOWS'>
+    </autodoc>
+    <autodoc tag='a' arg='INSTALLING_ON_WINDOWS'>
+        <comment line='-1' text='++The+XDC+interface+to+Code+Composer+Studio+requires+some+Windows+registry'/>
+        <comment line='-1' text='++entries+for+correct+operation.+By+default+the+XDC+product+Windows+installer'/>
+        <comment line='-1' text='++takes+care+of+this+transparently+to+the+user.+You+need+only+read+this'/>
+        <comment line='-1' text='++section+if+you+have+installed+or+upgraded+the+XDC+product+on+Windows+without'/>
+        <comment line='-1' text='++having+used+the+installer%2C+for+example+if+you+are+accessing+XDC+from+a'/>
+        <comment line='-1' text='++shared+network+drive.'/>
+    </autodoc>
+    <autodoc tag='a' arg='INSTALLING_ON_WINDOWS'>
+        <comment line='-1' text='++To+update+the+required+registry+entries%2C+do+the+following+steps%3A'/>
+    </autodoc>
+    <autodoc tag='a' arg='INSTALLING_ON_WINDOWS' mode='nlist'>
+        <comment line='-1' text='++-+open+a+Windows+command+window%2C+for+example+by+typing+%60cmd%60+from+the'/>
+        <comment line='-1' text='++++%22Run...%22+menu+item+located+in+the+Windows+%22Start%22+menu.'/>
+        <comment line='-1' text='++-+type+%60cd+%25XDCROOT%25%60'/>
+        <comment line='-1' text='++-+type+%60cd+packages%5Cxdc%5Ctools%5Cconfiguro%5Cccs%60'/>
+        <comment line='-1' text='++-+type+%60regsvr32+btiXdc%60'/>
+        <comment line='-1' text='++-+click+OK+on+the+dialog+box%3A'/>
+    </autodoc>
+    <autodoc tag='a' arg='INSTALLING_ON_WINDOWS' mode='html'>
+        <comment line='-1' text='+++++%3Cdiv+style%3D%22text-align%3A+center%3B%22%3E'/>
+        <comment line='-1' text='+++++++%3Cimg+src%3D%22.%2Fdoc-files%2FRegSvr32.png%22%2F%3E'/>
+        <comment line='-1' text='+++++%3C%2Fdiv%3E'/>
+    </autodoc>
+    <autodoc tag='a' arg='INSTALLING_ON_WINDOWS'>
+        <comment line='-1' text='++If+you+have+not+installed+XDC+using+the+installer%2C+it+is+possible+that+you'/>
+        <comment line='-1' text='++also+do+not+have+an+%60%25XDCROOT%25%60+environment+variable.+In+this+case+in+step'/>
+        <comment line='-1' text='++2+above%2C+cd+to+your+own+XDC+product+installation+directory.'/>
+    </autodoc>
+    <module name='Main' extends='xdc.tools.ICmd' hostonly='1' instance='1'>
+        <autodoc tag='summary'>
+            <comment line='-1' text='++Command-line+configuration+tool+adapter+for+Code+Composer+Studio'/>
+        </autodoc>
+        <autodoc tag='details'>
+            <comment line='-1' text='++This+command+is+a+wrapper+for+%7B%40link+xdc.tools.configuro+Configuro%7D'/>
+            <comment line='-1' text='++that+adapts+it+for+use+inside+Code+Composer+Studio.+It+is+not'/>
+            <comment line='-1' text='++intended+to+be+called+directly+by+users.'/>
+        </autodoc>
+        <config name='usage' line='-1' hostonly='1' override='1' type='K%21String%21%24%5BK%21%21%5D' code='As' init='%5B%24%2B%27%5B-v%7C--help%5D%27%2C%24%3D%27%5B-%40+optionsfile%5D+%5B--xp+xdcpath%5D%27%2C%24%3D%27%5B-b+config_bld+%7C+-c+codegen_dir+%7C+--cb%5D%27%2C%24%3D%27%5B-t+target%5D+%5B-p+platform%5B%3Ainstance%5D%5D+%5B-r+profile%5D%27%2C%24%3D%27%5B-Dname%3Dvalue%5D+%5B--tcf%5D+%5B--bios5%5D%27%2C%24%3D%27%5B-w%7C-x+regexp%5D%27%2C%24%3D%27%5B-o+outdir%5D+infile.cfg%27%24-%5D'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+usage+help+message'/>
+            </autodoc>
+        </config>
+        <config name='xdcPath' line='-1' hostonly='1' type='K%21String%21%24%5BK%21%21%5D' code='As' init='%5B+%5D' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+XDC+path'/>
+            </autodoc>
+        </config>
+        <config name='xdcPathsFile' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%24Knull' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+name+of+the+text+file+containing+xdc+paths'/>
+            </autodoc>
+            <autodoc tag='_nodoc'>
+            </autodoc>
+            <autodoc tag='_nodoc'>
+                <comment line='-1' text='+Both+plain+directory+listing+and+javascript+syntax+are+supported%3B+'/>
+                <comment line='-1' text='+for+javascript%2C+the+file+must+start+with+double+slashes+--+%22%2F%2F%22+--+and+'/>
+                <comment line='-1' text='+it+must+define+a+variable+called+xdcpaths.'/>
+            </autodoc>
+        </config>
+        <config name='hasTconf' line='-1' hostonly='1' type='K%21Bool%21%24' code='b' init='%24Kfalse' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+Process+infile.tcf+in+addition+to+infile.cfg'/>
+            </autodoc>
+        </config>
+        <config name='bios5Incs' line='-1' hostonly='1' type='K%21Bool%21%24' code='b' init='%24Kfalse' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+Add+%22include%22+directory+from+pacakge+%22ti.bios%22+to+compiler+options'/>
+            </autodoc>
+        </config>
+        <config name='output' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%24Knull' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+name+of+the+output+directory'/>
+            </autodoc>
+        </config>
+        <config name='configbld' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%24Knull' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+config.bld+file+name'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='+The+path+to+the+user%27s+config.bld.+Replaces+ROOTDIR.'/>
+            </autodoc>
+        </config>
+        <config name='searchForConfigBld' line='-1' hostonly='1' type='K%21Bool%21%24' code='b' init='%24Kfalse' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+Use+a+config.bld+found+along+the+package+path'/>
+            </autodoc>
+        </config>
+        <config name='target' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%24Knull' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+target+module'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='+The+name+of+an+XDC+build+target+module+to+use%2C+for+example'/>
+                <comment line='-1' text='+%60ti.targets.C64P%60.+If+no+target+is+named%2C+the+target+used+is'/>
+                <comment line='-1' text='+%60Build.targets%5B0%5D%60%2C+from+%60config.bld%60.'/>
+            </autodoc>
+        </config>
+        <config name='profile' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%27release%27' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+build+profile+to+use'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='+The+name+of+the+build+profile+to+use+for+the+XDC+content%2C+for'/>
+                <comment line='-1' text='+example+%27release%27+or+%27debug%27.+The+list+of+allowed+profiles+is'/>
+                <comment line='-1' text='+determined+by+the+XDC+build+target+named.'/>
+            </autodoc>
+        </config>
+        <config name='platform' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%24Knull' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+the+platform+to+use'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='+If+undefined%2C+the+default+platform+for+the+XDC+build+target'/>
+                <comment line='-1' text='+named.'/>
+            </autodoc>
+        </config>
+        <config name='rootdir' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%24Knull' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+root+directory+of+the+code+generation+tools'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='+The+path+to+the+installation+directory+of+the+compiler+and+linker.'/>
+            </autodoc>
+        </config>
+        <config name='verbose' line='-1' hostonly='1' type='K%21Bool%21%24' code='b' init='%24Kfalse' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+show+details+during+build'/>
+            </autodoc>
+        </config>
+        <config name='exclude' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%24Knull' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+exclude+packages+from+compatibility+checking'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='+A+list+of+regular+expressions+used+to+select+packages+that+should'/>
+                <comment line='-1' text='+be+excluded+from+the+set+of+packages+checked+during+configuration.'/>
+            </autodoc>
+            <autodoc tag='see'>
+                <comment line='-1' text='+xdc.cfg'/>
+            </autodoc>
+        </config>
+        <config name='warn' line='-1' hostonly='1' type='K%21Bool%21%24' code='b' init='%24Kfalse' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+incompatibilites+are+treated+only+as+warnings'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='+If+set+to+%22%60true%60%22%2C+force+any+incompatibilities+detected+to+be'/>
+                <comment line='-1' text='+treated+as+warnings+only%3B+otherwise+incompatibilities+are+fatal.'/>
+            </autodoc>
+            <autodoc tag='see'>
+                <comment line='-1' text='+xdc.cfg'/>
+            </autodoc>
+        </config>
+        <config name='defines' line='-1' hostonly='1' type='K%21String%21%24%5BK%21%21%5D' code='As' init='%5B+%5D' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+set+Java+properties+in+the+configuration+environment'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='+-Dconfig.importPath+is+treated+specially+--+these+directories+are'/>
+                <comment line='-1' text='+added+to+the+end+of+the+package+path.'/>
+            </autodoc>
+        </config>
+        <fxn name='gen' line='-1' hostonly='1' type='K%21Int%21%24' code='n' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+Generate+and+build+the+configuration+package.'/>
+            </autodoc>
+            <arg name='infile' line='-1' hostonly='1' type='K%21String%21%24' code='s' init=''>
+            </arg>
+        </fxn>
+    </module>
+</package>

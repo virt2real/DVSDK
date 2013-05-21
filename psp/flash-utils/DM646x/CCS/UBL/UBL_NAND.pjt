@@ -1,0 +1,95 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="D:\Projects\DM6467T\flash-utils-r37-modified\DM646x\CCS\UBL\"
+ProjectType=Executable
+CPUFamily=TMS470R2X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="DM6467_27MHz_594MHz"
+Config="DM6467_27MHz_675MHz"
+Config="DM6467_27MHz_729MHz"
+Config="DM6467_33MHz_1000MHz"
+Config="DM6467_33MHz_594MHz"
+Config="DM6467_33MHz_729MHz"
+Config="DM6467_33MHz_900MHz"
+
+[Source Files]
+Source="..\..\..\Common\arch\arm926ejs\src\boot.c"
+Source="..\..\..\Common\arch\arm926ejs\src\selfcopy.c"
+Source="..\..\..\Common\drivers\src\nand.c"
+Source="..\..\..\Common\gnu\src\debug.c"
+Source="..\..\..\Common\gnu\src\uart.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\..\Common\ubl\src\nandboot.c"
+Source="..\..\..\Common\ubl\src\uartboot.c"
+Source="..\..\..\Common\ubl\src\ubl.c"
+Source="..\..\Common\src\device.c"
+Source="..\..\Common\src\device_nand.c"
+Source="UBL.cmd"
+
+["DM6467_27MHz_594MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NAND_27_594.bin $(Proj_dir)\NAND\UBL_DM646x_NAND_27_594.out;Run=Always
+
+["DM6467_27MHz_675MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NAND_27_675.bin $(Proj_dir)\NAND\UBL_DM646x_NAND_27_675.out;Run=Always
+
+["DM6467_27MHz_729MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NAND_27_729.bin $(Proj_dir)\NAND\UBL_DM646x_NAND_27_729.out;Run=Always
+
+["DM6467_33MHz_1000MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NAND_33_1000.bin $(Proj_dir)\NAND\UBL_DM646x_NAND_33_1000.out;Run=Always
+
+["DM6467_33MHz_594MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NAND_33_594.bin $(Proj_dir)\NAND\UBL_DM646x_NAND_33_594.out;Run=Always
+
+["DM6467_33MHz_729MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NAND_33_729.bin $(Proj_dir)\NAND\UBL_DM646x_NAND_33_729.out;Run=Always
+
+["DM6467_33MHz_900MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NAND_33_900.bin $(Proj_dir)\NAND\UBL_DM646x_NAND_33_900.out;Run=Always
+
+["Compiler" Settings: "DM6467_27MHz_594MHz"]
+Options=-o3 -fr"$(Proj_dir)\NAND" -fs"$(Proj_dir)\NAND" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM6467_27MHz_594MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "DM6467_27MHz_675MHz"]
+Options=-o3 -fr"$(Proj_dir)\NAND" -fs"$(Proj_dir)\NAND" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM6467_27MHz_675MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "DM6467_27MHz_729MHz"]
+Options=-o3 -fr"$(Proj_dir)\NAND" -fs"$(Proj_dir)\NAND" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM6467_27MHz_729MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "DM6467_33MHz_1000MHz"]
+Options=-o3 -fr"$(Proj_dir)\NAND" -fs"$(Proj_dir)\NAND" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM6467_33MHz_1000MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "DM6467_33MHz_594MHz"]
+Options=-o3 -fr"$(Proj_dir)\NAND" -fs"$(Proj_dir)\NAND" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM6467_33MHz_594MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "DM6467_33MHz_729MHz"]
+Options=-o3 -fr"$(Proj_dir)\NAND" -fs"$(Proj_dir)\NAND" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM6467_33MHz_729MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "DM6467_33MHz_900MHz"]
+Options=-o3 -fr"$(Proj_dir)\NAND" -fs"$(Proj_dir)\NAND" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM6467_33MHz_900MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Linker" Settings: "DM6467_27MHz_594MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND\UBL_DM646x_NAND_27_594.map" -o"$(Proj_dir)\NAND\UBL_DM646x_NAND_27_594.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "DM6467_27MHz_675MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND\UBL_DM646x_NAND_27_675.map" -o"$(Proj_dir)\NAND\UBL_DM646x_NAND_27_675.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "DM6467_27MHz_729MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND\UBL_DM646x_NAND_27_729.map" -o"$(Proj_dir)\NAND\UBL_DM646x_NAND_27_729.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "DM6467_33MHz_1000MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND\UBL_DM646x_NAND_33_1000.map" -o"$(Proj_dir)\NAND\UBL_DM646x_NAND_33_1000.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "DM6467_33MHz_594MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND\UBL_DM646x_NAND_33_594.map" -o"$(Proj_dir)\NAND\UBL_DM646x_NAND_33_594.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "DM6467_33MHz_729MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND\UBL_DM646x_NAND_33_729.map" -o"$(Proj_dir)\NAND\UBL_DM646x_NAND_33_729.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "DM6467_33MHz_900MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND\UBL_DM646x_NAND_33_900.map" -o"$(Proj_dir)\NAND\UBL_DM646x_NAND_33_900.out" -x --retain="*(.selfcopy)"
+

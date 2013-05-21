@@ -1,0 +1,12 @@
+Package: gst-plugins-ugly
+Version: 0.10.16-r11.1-arago2.6
+Description: Plugins for GStreamer
+Section: multimedia
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: gst-plugins-ugly
+Homepage: http://www.gstreamer.net/
+Build: install/afa4844
+Source: http://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-0.10.16.tar.bz2;name=archive file://gstmad_16bit.patch file://gstsid_autofoo_HACK.patch

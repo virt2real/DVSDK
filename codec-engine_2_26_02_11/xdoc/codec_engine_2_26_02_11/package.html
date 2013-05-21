@@ -1,0 +1,317 @@
+<html>
+<head>
+<title>package codec_engine_2_26_02_11</title>
+<meta name="description" content="The Codec Engine product package">
+<link rel="stylesheet" type="text/css" href="../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">package</span> <span class="xdoc-id">codec_engine_2_26_02_11</span></td>
+<td class="xdocHdrArrow">&nbsp;&nbsp;&nbsp;</td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../index.html#codec_engine_2_26_02_11/package.html">index URL</a></div>
+<p class="xdocHdrSummary">The Codec Engine product package</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+</ul>
+<div class="xdocBrief">
+This package is a "bundle" of packages required to use the Codec Engine
+  API's to run algorithms.  It also includes packages required to add new
+  algorithms to a system using the Codec Engine.
+</div>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../codec_engine_2_26_02_11/package-src.html"><span class="xdocLabelFile">codec_engine_2_26_02_11/package.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/package.html" title="ti.sdo.ce">ti.sdo.ce</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/node/package.html" title="ti.sdo.ce.node">ti.sdo.ce.node</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/ipc/package.html" title="ti.sdo.ce.ipc">ti.sdo.ce.ipc</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/ipc/bios/package.html" title="ti.sdo.ce.ipc.bios">ti.sdo.ce.ipc.bios</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/ipc/dsplink/package.html" title="ti.sdo.ce.ipc.dsplink">ti.sdo.ce.ipc.dsplink</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/ipc/dsplink/dsp/package.html" title="ti.sdo.ce.ipc.dsplink.dsp">ti.sdo.ce.ipc.dsplink.dsp</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/ipc/linux/package.html" title="ti.sdo.ce.ipc.linux">ti.sdo.ce.ipc.linux</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/ipc/noOS/package.html" title="ti.sdo.ce.ipc.noOS">ti.sdo.ce.ipc.noOS</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/osal/package.html" title="ti.sdo.ce.osal">ti.sdo.ce.osal</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/osal/bios/package.html" title="ti.sdo.ce.osal.bios">ti.sdo.ce.osal.bios</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/osal/linux/package.html" title="ti.sdo.ce.osal.linux">ti.sdo.ce.osal.linux</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/osal/wince/package.html" title="ti.sdo.ce.osal.wince">ti.sdo.ce.osal.wince</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/osal/wince/utils/package.html" title="ti.sdo.ce.osal.wince.utils">ti.sdo.ce.osal.wince.utils</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/osal/noOS/package.html" title="ti.sdo.ce.osal.noOS">ti.sdo.ce.osal.noOS</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/alg/package.html" title="ti.sdo.ce.alg">ti.sdo.ce.alg</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/trace/package.html" title="ti.sdo.ce.trace">ti.sdo.ce.trace</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/speech/package.html" title="ti.sdo.ce.speech">ti.sdo.ce.speech</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/speech1/package.html" title="ti.sdo.ce.speech1">ti.sdo.ce.speech1</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/video/package.html" title="ti.sdo.ce.video">ti.sdo.ce.video</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/video1/package.html" title="ti.sdo.ce.video1">ti.sdo.ce.video1</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/video2/package.html" title="ti.sdo.ce.video2">ti.sdo.ce.video2</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/audio/package.html" title="ti.sdo.ce.audio">ti.sdo.ce.audio</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/audio1/package.html" title="ti.sdo.ce.audio1">ti.sdo.ce.audio1</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/global/package.html" title="ti.sdo.ce.global">ti.sdo.ce.global</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/image/package.html" title="ti.sdo.ce.image">ti.sdo.ce.image</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/image1/package.html" title="ti.sdo.ce.image1">ti.sdo.ce.image1</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/universal/package.html" title="ti.sdo.ce.universal">ti.sdo.ce.universal</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/vidtranscode/package.html" title="ti.sdo.ce.vidtranscode">ti.sdo.ce.vidtranscode</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/vidanalytics/package.html" title="ti.sdo.ce.vidanalytics">ti.sdo.ce.vidanalytics</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/video2/split/package.html" title="ti.sdo.ce.video2.split">ti.sdo.ce.video2.split</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/bioslog/package.html" title="ti.sdo.ce.bioslog">ti.sdo.ce.bioslog</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/utils/package.html" title="ti.sdo.ce.utils">ti.sdo.ce.utils</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/utils/rtcfg/package.html" title="ti.sdo.ce.utils.rtcfg">ti.sdo.ce.utils.rtcfg</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/utils/trace/package.html" title="ti.sdo.ce.utils.trace">ti.sdo.ce.utils.trace</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/utils/xdm/package.html" title="ti.sdo.ce.utils.xdm">ti.sdo.ce.utils.xdm</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/dsplink/utils/lad/package.html" title="ti.dsplink.utils.lad">ti.dsplink.utils.lad</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/dsplink/utils/ladclient/package.html" title="ti.dsplink.utils.ladclient">ti.dsplink.utils.ladclient</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/package.html" title="ti.sdo.ce.examples.codecs">ti.sdo.ce.examples.codecs</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/viddec1_copy/package.html" title="ti.sdo.ce.examples.codecs.viddec1_copy">ti.sdo.ce.examples.codecs.viddec1_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/videnc1_copy/package.html" title="ti.sdo.ce.examples.codecs.videnc1_copy">ti.sdo.ce.examples.codecs.videnc1_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/imgdec1_copy/package.html" title="ti.sdo.ce.examples.codecs.imgdec1_copy">ti.sdo.ce.examples.codecs.imgdec1_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/imgenc1_copy/package.html" title="ti.sdo.ce.examples.codecs.imgenc1_copy">ti.sdo.ce.examples.codecs.imgenc1_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/sphdec1_copy/package.html" title="ti.sdo.ce.examples.codecs.sphdec1_copy">ti.sdo.ce.examples.codecs.sphdec1_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/sphenc1_copy/package.html" title="ti.sdo.ce.examples.codecs.sphenc1_copy">ti.sdo.ce.examples.codecs.sphenc1_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/auddec1_copy/package.html" title="ti.sdo.ce.examples.codecs.auddec1_copy">ti.sdo.ce.examples.codecs.auddec1_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/audenc1_copy/package.html" title="ti.sdo.ce.examples.codecs.audenc1_copy">ti.sdo.ce.examples.codecs.audenc1_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/auddec1_ires/package.html" title="ti.sdo.ce.examples.codecs.auddec1_ires">ti.sdo.ce.examples.codecs.auddec1_ires</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/viddec2_copy/package.html" title="ti.sdo.ce.examples.codecs.viddec2_copy">ti.sdo.ce.examples.codecs.viddec2_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/viddec_copy/package.html" title="ti.sdo.ce.examples.codecs.viddec_copy">ti.sdo.ce.examples.codecs.viddec_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/videnc_copy/package.html" title="ti.sdo.ce.examples.codecs.videnc_copy">ti.sdo.ce.examples.codecs.videnc_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/imgdec_copy/package.html" title="ti.sdo.ce.examples.codecs.imgdec_copy">ti.sdo.ce.examples.codecs.imgdec_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/imgenc_copy/package.html" title="ti.sdo.ce.examples.codecs.imgenc_copy">ti.sdo.ce.examples.codecs.imgenc_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/sphdec_copy/package.html" title="ti.sdo.ce.examples.codecs.sphdec_copy">ti.sdo.ce.examples.codecs.sphdec_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/sphenc_copy/package.html" title="ti.sdo.ce.examples.codecs.sphenc_copy">ti.sdo.ce.examples.codecs.sphenc_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/auddec_copy/package.html" title="ti.sdo.ce.examples.codecs.auddec_copy">ti.sdo.ce.examples.codecs.auddec_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/audenc_copy/package.html" title="ti.sdo.ce.examples.codecs.audenc_copy">ti.sdo.ce.examples.codecs.audenc_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/g711/package.html" title="ti.sdo.ce.examples.codecs.g711">ti.sdo.ce.examples.codecs.g711</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/scale/package.html" title="ti.sdo.ce.examples.codecs.scale">ti.sdo.ce.examples.codecs.scale</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/vidtranscode_copy/package.html" title="ti.sdo.ce.examples.codecs.vidtranscode_copy">ti.sdo.ce.examples.codecs.vidtranscode_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/vidanalytics_copy/package.html" title="ti.sdo.ce.examples.codecs.vidanalytics_copy">ti.sdo.ce.examples.codecs.vidanalytics_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/viddec2split_copy/package.html" title="ti.sdo.ce.examples.codecs.viddec2split_copy">ti.sdo.ce.examples.codecs.viddec2split_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/codecs/universal_copy/package.html" title="ti.sdo.ce.examples.codecs.universal_copy">ti.sdo.ce.examples.codecs.universal_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/extensions/package.html" title="ti.sdo.ce.examples.extensions">ti.sdo.ce.examples.extensions</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/extensions/scale/package.html" title="ti.sdo.ce.examples.extensions.scale">ti.sdo.ce.examples.extensions.scale</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/servers/package.html" title="ti.sdo.ce.examples.servers">ti.sdo.ce.examples.servers</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/servers/all_codecs/package.html" title="ti.sdo.ce.examples.servers.all_codecs">ti.sdo.ce.examples.servers.all_codecs</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/servers/all_codecs_new_config/package.html" title="ti.sdo.ce.examples.servers.all_codecs_new_config">ti.sdo.ce.examples.servers.all_codecs_new_config</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/servers/server_api_example/package.html" title="ti.sdo.ce.examples.servers.server_api_example">ti.sdo.ce.examples.servers.server_api_example</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/servers/audio1_ires/package.html" title="ti.sdo.ce.examples.servers.audio1_ires">ti.sdo.ce.examples.servers.audio1_ires</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/buildutils/package.html" title="ti.sdo.ce.examples.buildutils">ti.sdo.ce.examples.buildutils</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/package.html" title="ti.sdo.ce.examples.apps">ti.sdo.ce.examples.apps</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/video_copy/package.html" title="ti.sdo.ce.examples.apps.video_copy">ti.sdo.ce.examples.apps.video_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/image_copy/package.html" title="ti.sdo.ce.examples.apps.image_copy">ti.sdo.ce.examples.apps.image_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/speech_copy/package.html" title="ti.sdo.ce.examples.apps.speech_copy">ti.sdo.ce.examples.apps.speech_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/audio_copy/package.html" title="ti.sdo.ce.examples.apps.audio_copy">ti.sdo.ce.examples.apps.audio_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/server_api_example/package.html" title="ti.sdo.ce.examples.apps.server_api_example">ti.sdo.ce.examples.apps.server_api_example</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/server_trace/package.html" title="ti.sdo.ce.examples.apps.server_trace">ti.sdo.ce.examples.apps.server_trace</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/video2_copy/package.html" title="ti.sdo.ce.examples.apps.video2_copy">ti.sdo.ce.examples.apps.video2_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/video1_copy/package.html" title="ti.sdo.ce.examples.apps.video1_copy">ti.sdo.ce.examples.apps.video1_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/image1_copy/package.html" title="ti.sdo.ce.examples.apps.image1_copy">ti.sdo.ce.examples.apps.image1_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/speech1_copy/package.html" title="ti.sdo.ce.examples.apps.speech1_copy">ti.sdo.ce.examples.apps.speech1_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/audio1_copy/sync/package.html" title="ti.sdo.ce.examples.apps.audio1_copy.sync">ti.sdo.ce.examples.apps.audio1_copy.sync</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/audio1_copy/async/package.html" title="ti.sdo.ce.examples.apps.audio1_copy.async">ti.sdo.ce.examples.apps.audio1_copy.async</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/audio1_ires/package.html" title="ti.sdo.ce.examples.apps.audio1_ires">ti.sdo.ce.examples.apps.audio1_ires</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/video2split_copy/package.html" title="ti.sdo.ce.examples.apps.video2split_copy">ti.sdo.ce.examples.apps.video2split_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/vidtranscode/package.html" title="ti.sdo.ce.examples.apps.vidtranscode">ti.sdo.ce.examples.apps.vidtranscode</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/vidanalytics/package.html" title="ti.sdo.ce.examples.apps.vidanalytics">ti.sdo.ce.examples.apps.vidanalytics</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/universal_copy/package.html" title="ti.sdo.ce.examples.apps.universal_copy">ti.sdo.ce.examples.apps.universal_copy</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/scale/package.html" title="ti.sdo.ce.examples.apps.scale">ti.sdo.ce.examples.apps.scale</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/speech/package.html" title="ti.sdo.ce.examples.apps.speech">ti.sdo.ce.examples.apps.speech</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/examples/apps/speech_copy_LAD/package.html" title="ti.sdo.ce.examples.apps.speech_copy_LAD">ti.sdo.ce.examples.apps.speech_copy_LAD</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/wizards/genserver/package.html" title="ti.sdo.ce.wizards.genserver">ti.sdo.ce.wizards.genserver</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../ti/sdo/ce/wizards/gencodecpkg/package.html" title="ti.sdo.ce.wizards.gencodecpkg">ti.sdo.ce.wizards.gencodecpkg</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <go><span class="xdoc-id">codec_engine_2_26_02_11</span></go> [1, 0, 0] {
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:44 GMT</div>
+</div></div></body>
+</html>

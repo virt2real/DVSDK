@@ -1,0 +1,15 @@
+package.bld
+g711_dec_app.cfg
+g711_dec_app.x470MV
+package/package.xdc.inc
+package/package.rel.dot
+package.xdc
+package/package.bld.xml
+app.c
+ig711dec.h
+arm9e_linux_test_utility.c
+package/package.ext.xml
+ceapp.c
+package/build.cfg
+g711dec_ittiam.h
+test_utility.h

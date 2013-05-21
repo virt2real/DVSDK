@@ -1,0 +1,302 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    /*
+     *  ======== Settings.xdt ========
+     *  Generate the config structure for ce.ipc module
+     */
+    var settings = this;
+%%}
+
+/* Max timeout for MSGQ_get() allowed. */
+UInt32 ti_sdo_ce_ipc_dsplink_Ipc_maxTimeout = `this.maxTimeout`UL;
+
+Void IPC_generatedInit()
+{
+}
+
+/* configuration for interprocessor communication */
+
+/* size of the communication message */
+UInt32 Comm_MSGSIZE = `settings.armCommMsgSize`;
+
+/* number of Comm_MSGSIZE-sized messages in the system */
+UInt32 Comm_NUMMSGS = `settings.armCommNumMsgs`;
+
+/* configure number of retries Comm_locate should do before giving up */
+UInt32 Comm_LOCATERETRIES = `this.commLocateRetries`;
+
+
+/* Arm-side DSPLINK configuration
+ * ==============================
+ */
+
+%%{
+    function toHex(d) {
+        var hD="0123456789ABCDEF";
+        var h = hD.substr(d&15,1);
+        while(d>15) {d=Math.floor( d/16 );h=hD.substr(d&15,1)+h;}
+        while(h.length < 8) h = "0" + h;
+        return "0x" + h;
+    }
+%%}
+
+#include <ti/sdo/ce/osal/Global.h>
+
+/* Arm-side DspLink configuration tables { */
+%%{
+    var serverNames = [], serverNamesClean = [];
+//  print("*** IPC.linkConfigs.length = " + settings.linkConfigs.length);
+    for (var iserver = 0; iserver < settings.linkConfigs.length; iserver++ ) {
+        var linkConfig = settings.linkConfigs[ iserver ];
+        //print("*** ipc.Settings.xdt: linkConfigs[" + iserver +
+        //      "] = " + linkConfig + "");
+
+        // Remove everything up to /', then remove ', eg
+        // ti.sdo.ce.osal.settings/linkConfigs/'./all.x64P' becomes
+        // all.x64P
+        //var serverName = (linkConfig + "").replace(/.*\/'/, "")
+        //        .replace("'",""); // "
+        var serverName = linkConfig.serverName;
+
+        // Replace anything that is not a-zA-z0-9 with "_"
+        var serverNameClean = serverName.replace( /[^a-zA-Z0-9]/g, "_" );
+        //print("*** settings.xdt: serverNameClean = " + serverNameClean);
+        serverNames[ serverNames.length ] = serverName;
+        serverNamesClean[ serverNamesClean.length ] = serverNameClean;
+
+        /* first verify "main", "link", and "reset" segments are there,
+         * and rearrange them so "main" is first and "link" is second;
+         * DSPLINK config requires that.
+         */
+        var usrMemTable = linkConfig.linkCfg.memTable;
+        var tmpMemTable = [];
+        var segCount, i;
+        //print("ipc.dsplink.Ipc.xdt: usrMemTable.length = "
+        //        + usrMemTable.length);
+        for (segCount = 0, i = 0; i < usrMemTable.length; i++) {
+            //print("ipc.dsplink.Ipc.xdt: usrMemTable[" + i + "].type = " +
+            //      usrMemTable[i].type);
+            //print("ipc.dsplink.Ipc.xdt: usrMemTable[" + i + "].addr = " +
+            //        utils.toHex(usrMemTable[i].addr));
+            //print("ipc.dsplink.Ipc.xdt: usrMemTable[" + i + "].size = " +
+            //      utils.toHex(usrMemTable[i].size));
+            if (usrMemTable[i].type == "main") {
+                tmpMemTable[0] = usrMemTable[i];
+                ++segCount;
+            }
+        }
+        if (segCount != 1) {
+            throw "Error: 'armDspLinkConfig' setting for server '" +
+                  serverName + "' " +
+                  "in your application .cfg file is incorrect: " +
+                  "You must have exactly one segment of type 'main' " +
+                  "(typically the DDR2 segment).";
+        }
+        for (segCount = 0, i = 0; i < usrMemTable.length; i++) {
+            if (usrMemTable[i].type == "link") {
+                tmpMemTable[1] = usrMemTable[i];
+                ++segCount;
+            }
+        }
+        if (segCount != 1) {
+            throw "Error: 'armDspLinkConfig' setting for server '" +
+            serverName + "' " +
+                  "in your application .cfg file is incorrect: " +
+                  "You must have exactly one segment of type 'link' " +
+                  "(typically the DSPLINKMEM segment).";
+        }
+        for (segCount = 0, i = 0; i < usrMemTable.length; i++) {
+            if (usrMemTable[i].type == "reset") {
+                tmpMemTable[2] = usrMemTable[i];
+                ++segCount;
+            }
+        }
+        if (segCount != 1) {
+            throw "Error: 'armDspLinkConfig' setting for server '" +
+                  serverName + "' " +
+                  "in your application .cfg file is incorrect: " +
+                  "You must have exactly one segment of type 'reset' " +
+                  "(typically the RESETCTRL segment).";
+        }
+        for (segCount = 0, i = 0; i < usrMemTable.length; i++) {
+            if (usrMemTable[i].type == "poolmem") {
+                tmpMemTable[3] = usrMemTable[i];
+                ++segCount;
+            }
+        }
+        if (segCount > 1) {
+            throw "Error: 'armDspLinkConfig' setting for server '" +
+                  serverName + "' " +
+                  "in your application .cfg file is incorrect: " +
+                  "You must have at most one segment of type 'poolmem' " +
+                  "(typically the POOLMEM segment).";
+        }
+        for (i = 0; i < usrMemTable.length; i++) {
+            if (usrMemTable[i].type.match(/other|code/)) {
+                tmpMemTable[ tmpMemTable.length ] = usrMemTable[i];
+            }
+        }
+        if (usrMemTable.length != tmpMemTable.length) {
+            throw "Error: 'armDspLinkConfig' setting for server '" +
+            serverName + "' " +
+                  "in your application .cfg file is incorrect: " +
+                  "only allowed segment types are " +
+                  "'main','link','reset','other'.";
+        }
+%%}
+
+
+/* Arm-side DspLink memory map for server "`serverName`":
+ *
+ * table entry format (osal/Global.h), used by DSP/BIOS Link
+ *     name of the memory section
+ *     DSP virtual address (start of memory section)
+ *     physical address (start of memory section)
+ *     size in bytes of the memory region
+ *     shared access memory
+ *     synchronized
+ */
+static Global_ArmDspLinkConfigMemTableEntry armDspLinkConfigMemTable_`serverNameClean`[] = {
+%       for (var i = 0; i < tmpMemTable.length; i++) {
+%           var e = tmpMemTable[i];
+%           var name = (e + "").replace(/.*\/'/, "").replace("'","");
+%           var shared = e.type.match(/main|link|reset|poolmem|code/) ? 1 : 0;
+%           var syncd = 0;
+%           var gppAddr = (e.gppAddr != undefined ? e.gppAddr : e.addr);
+    { "`name`", `toHex(e.addr)`, `toHex(gppAddr)`, `toHex(e.size)`, `shared`, `syncd` },
+%           if (i == tmpMemTable.length - 1) {
+    { NULL, 0, 0, 0, 0, 0 }
+%           }
+%       } // end for loop for this server's mem table
+};
+
+%%{
+    var bootMode;
+    if (linkConfig.linkCfg.doPowerControl) {
+
+	if (linkConfig.linkCfg.dspManagement == settings.BootAndLoadDsp) {
+	    bootMode = "BootPwr";
+	}
+	else if (linkConfig.linkCfg.dspManagement == settings.BootDspAutonomously) {
+	    bootMode = "NoLoadPwr";
+	}
+	else if (linkConfig.linkCfg.dspManagement == settings.None) {
+	    /* NoBoot w/ doPowerControl invalid */
+            throw "Error: invalid combination of armDspLinkConfig.doPowerControl and armDspLinkConfig.dspManagement: doPowerControl=" + linkConfig.linkCfg.doPowerControl + ", dspManagement=" + linkConfig.linkCfg.dspManagement;
+	}
+	else {
+	    throw "Error: armDspLinkConfig.dspManagement undefined";
+	}
+    }
+    else if (!linkConfig.linkCfg.doPowerControl) {
+        if (linkConfig.linkCfg.dspManagement == settings.BootAndLoadDsp) {
+	        bootMode = "BootNoPwr";
+	    }
+	    else if (linkConfig.linkCfg.dspManagement ==
+                 settings.BootDspAutonomously) {
+	        bootMode = "NoLoadNoPwr";
+	    }
+	    else if (linkConfig.linkCfg.dspManagement == settings.None) {
+	        bootMode = "NoBoot";
+	    }
+	    else {
+	        throw "Error: armDspLinkConfig.dspManagement is invalid";
+	    }
+    }
+    else {
+        throw "Error: armDspLinkConfig.doPowerControl is invalid";
+    }
+%%}
+
+/* Arm-side DspLink configuration table for server "`serverName`": */
+static Global_ArmDspLinkConfig ti_sdo_ce_ipc_armDspLinkConfig_`serverNameClean` = {
+    armDspLinkConfigMemTable_`serverNameClean`,
+    `bootMode`
+};
+%%{
+    } // end for loop for all servers
+%%}
+
+/* List of server names for all DspLink configuration tables */
+String ti_sdo_ce_ipc_armDspLinkConfigServerNames[] = {
+% for (var i = 0; i < serverNames.length; i++) {
+    "`serverNames[i]`",
+%     if (i == serverNames.length - 1) {
+    NULL
+%     }
+% }
+};
+
+/* List of matching-positions-by-name DspLink configuration tables for all servers */
+Global_ArmDspLinkConfig *ti_sdo_ce_ipc_armDspLinkConfigs[] = {
+% for (var i = 0; i < serverNames.length; i++) {
+    &ti_sdo_ce_ipc_armDspLinkConfig_`serverNamesClean[i]`,
+%     if (i == serverNames.length - 1) {
+    NULL
+%     }
+% }
+};
+/* } end of arm-side DspLink configuration tables. */
+
+%     /* 'use LAD' control flag */
+Int Global_useLinkArbiter = `this.useLinkArbiter == true ? "TRUE" : "FALSE"`;
+
+%     if (!settings.useLinkArbiter) {
+%        // define empty LAD functions when LAD is not used
+Int LAD_connect(String clientName, Int * id) { return 0; }
+Int LAD_disconnect(Int id) { return 0; }
+Int LAD_getDspStatus(Int cpuId, Int * statusInfo) { return 0; }
+Int LAD_releaseDsp(Int id) { return 0; }
+Int LAD_startupDsp(Int id, Int cpuId, Int linkId, String image) { return 0; }
+%    } // otherwise they'll be linked from the ladclient library
+
+
+%    if (settings.usePowerManagement == false) {
+%        // power mngmnt not used -- define empty power functions
+Void Power_init() {}
+Int Power_on(Ptr handle) { return 0; }
+Int Power_off(Ptr handle) { return 0; }
+Int Power_connect(Ptr handle) { return 0; }
+Int Power_disconnect(Ptr handle) { return 0; }
+%    } // otherwise they'll come from the library
+
+%%{
+/*
+ * @(#) ti.sdo.ce.ipc.dsplink; 2, 0, 1,182; 12-2-2010 21:24:21; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>module ti.sdo.ce.node.NODE</title>
+<meta name="description" content="NODE Configuration">
+<link rel="stylesheet" type="text/css" href="../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.sdo.ce.node.</span><span class="xdoc-id">NODE</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/node/package.html" title="package ti.sdo.ce.node"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/node/NODE.html">index URL</a></div>
+<p class="xdocHdrSummary">NODE Configuration</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/node/NODE-src.html"><span class="xdocLabelFile">ti/sdo/ce/node/NODE.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">NODE</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> NODE = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.sdo.ce.node.NODE'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#.F.I.X.E.D.M.S.G.S.I.Z.E">NODE.<span class="xdoc-id">FIXEDMSGSIZE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of message to use during remote communication</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 0;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#.M.S.G.Q.P.O.O.L.I.D">NODE.<span class="xdoc-id">MSGQPOOLID</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Segment to allocate message frames</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 0;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#.O.B.J.S.E.G">NODE.<span class="xdoc-id">OBJSEG</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Allocate node instances from this MEM seg id</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 0;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/node/NODE-src.html"><span class="xdocLabelFile">ti/sdo/ce/node/NODE.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../../ti/sdo/ce/node/package.html" title="ti.sdo.ce.node">ti.sdo.ce.node</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">NODE</span></go> {
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.F.I.X.E.D.M.S.G.S.I.Z.E"><span class="xdoc-id">FIXEDMSGSIZE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of message to use during remote communication</span></span></a> = 0;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.M.S.G.Q.P.O.O.L.I.D"><span class="xdoc-id">MSGQPOOLID</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Segment to allocate message frames</span></span></a> = 0;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.O.B.J.S.E.G"><span class="xdoc-id">OBJSEG</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Allocate node instances from this MEM seg id</span></span></a> = 0;
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".F.I.X.E.D.M.S.G.S.I.Z.E"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">NODE.</span><span class="xdoc-id">FIXEDMSGSIZE</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/node/NODE.html" title="module NODE"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/node/NODE.html#.F.I.X.E.D.M.S.G.S.I.Z.E">index URL</a></div>
+<p class="xdocHdrSummary">Size of message to use during remote communication</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>NODE.<span class="xdoc-id">FIXEDMSGSIZE</span> = <i><span class="xdoc-kw2">Int</span></i> 0;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">if &gt; 0, it is the size NODE must use with MSGQ_alloc; otherwise no
+  fixed size is required.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".M.S.G.Q.P.O.O.L.I.D"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">NODE.</span><span class="xdoc-id">MSGQPOOLID</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/node/NODE.html" title="module NODE"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/node/NODE.html#.M.S.G.Q.P.O.O.L.I.D">index URL</a></div>
+<p class="xdocHdrSummary">Segment to allocate message frames</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>NODE.<span class="xdoc-id">MSGQPOOLID</span> = <i><span class="xdoc-kw2">Int</span></i> 0;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".O.B.J.S.E.G"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">NODE.</span><span class="xdoc-id">OBJSEG</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/node/NODE.html" title="module NODE"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/node/NODE.html#.O.B.J.S.E.G">index URL</a></div>
+<p class="xdocHdrSummary">Allocate node instances from this MEM seg id</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>NODE.<span class="xdoc-id">OBJSEG</span> = <i><span class="xdoc-kw2">Int</span></i> 0;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:37 GMT</div>
+</div></div></body>
+</html>

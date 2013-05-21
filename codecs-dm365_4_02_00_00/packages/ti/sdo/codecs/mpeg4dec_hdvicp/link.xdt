@@ -1,0 +1,7 @@
+SECTIONS
+{
+% if (this.MPEG4DEC_HDVICP.dataSection) { 
+    .data  > `this.MPEG4DEC_HDVICP.dataSection`
+    .rodata  > `this.MPEG4DEC_HDVICP.dataSection`
+%}
+}

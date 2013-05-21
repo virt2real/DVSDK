@@ -1,0 +1,308 @@
+<html><head><title>module ti.sdo.ce.Engine</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* 
+</span>     2    <span class="comment"> * Copyright (c) 2010, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> * 
+</span>    32    <span class="comment"> */</span>
+    33    <span class="xdoc">/*!
+</span>    34    <span class="xdoc"> *  ======== Engine ========
+</span>    35    <span class="xdoc"> *  Engine Configuration interface
+</span>    36    <span class="xdoc"> */</span>
+    37    @Template(<span class="string">"./Engine.xdt"</span>)
+    38    
+    39    <span class=key>metaonly</span> <span class=key>module</span> Engine {
+    40    
+    41        <span class="xdoc">/*!
+</span>    42    <span class="xdoc">     *  ======== local ========
+</span>    43    <span class="xdoc">     *  Default engine used by clients of the VISA API's that pass NULL for
+</span>    44    <span class="xdoc">     *  the engine handle
+</span>    45    <span class="xdoc">     *
+</span>    46    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>    47    <span class="xdoc">     */</span>
+    48        <span class=key>config</span> Engine.Instance local;
+    49    
+    50        <span class="xdoc">/*!
+</span>    51    <span class="xdoc">     *  ======== MAXGROUPID ========
+</span>    52    <span class="xdoc">     *  Maximum group id.
+</span>    53    <span class="xdoc">     */</span>
+    54        <span class=key>const</span> Int MAXGROUPID = 20;
+    55    
+    56        <span class="xdoc">/*!
+</span>    57    <span class="xdoc">     *  ======== noCommName ========
+</span>    58    <span class="xdoc">     *  Create a Comm which doesn't pollute the Comm namespace.
+</span>    59    <span class="xdoc">     *
+</span>    60    <span class="xdoc">     *  Some ipc implementations (not all!) support creating an unnamed
+</span>    61    <span class="xdoc">     *  Comm.  DSP Link is adding support for this, the WinCE port will have
+</span>    62    <span class="xdoc">     *  support before the Linux port.  To help bridge the gap until all
+</span>    63    <span class="xdoc">     *  Link ports have this feature, and so we continue to work with Link
+</span>    64    <span class="xdoc">     *  releases that don't have this feature, CE is temporarily introducing
+</span>    65    <span class="xdoc">     *  this `noCommName` boolean.
+</span>    66    <span class="xdoc">     *
+</span>    67    <span class="xdoc">     *  The default behavior is "as before", but for users that require
+</span>    68    <span class="xdoc">     *  unnamed Comm creates (e.g. kernel mode WinCE users), they can set
+</span>    69    <span class="xdoc">     *  this config param to `true` - on ipc ports that support it(!).
+</span>    70    <span class="xdoc">     *
+</span>    71    <span class="xdoc">     *  The intent is to remove this `noCommName config param as soon as
+</span>    72    <span class="xdoc">     *  all Link ports support it, so don't get attached to it!
+</span>    73    <span class="xdoc">     *
+</span>    74    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>    75    <span class="xdoc">     */</span>
+    76        <span class=key>config</span> Bool noCommName = <span class=key>false</span>;
+    77    
+    78        <span class="xdoc">/*!
+</span>    79    <span class="xdoc">     *  ======== AlgDesc ========
+</span>    80    <span class="xdoc">     *  Algorithm descriptor
+</span>    81    <span class="xdoc">     *
+</span>    82    <span class="xdoc">     *  Each engine "contains" multiple algorithms described by AlgDesc
+</span>    83    <span class="xdoc">     *  structures.
+</span>    84    <span class="xdoc">     *
+</span>    85    <span class="xdoc">     *  <b>@field(name)</b>    This string specifies the "local" name used by the
+</span>    86    <span class="xdoc">     *                  application to identify the algorithm to instantiate
+</span>    87    <span class="xdoc">     *  <b>@field(mod)</b>     This field is a module reference that identifies the
+</span>    88    <span class="xdoc">     *                  actual module implementing the algorithm to instantiate
+</span>    89    <span class="xdoc">     *  <b>@field(local)</b>   If true, the algorithm should be instantiated on the
+</span>    90    <span class="xdoc">     *                  "local" CPU; otherwise the server will create an
+</span>    91    <span class="xdoc">     *                  instance of the algorithm identifed by `mod`.
+</span>    92    <span class="xdoc">     *  <b>@field(groupId)</b> This id specifies which resource sharing group
+</span>    93    <span class="xdoc">     *                  this codec will be placed into.  This 'group' concept
+</span>    94    <span class="xdoc">     *                  is used by the framework to ensure algorithms in the
+</span>    95    <span class="xdoc">     *                  same group don't pre-empt each other and corrupt the
+</span>    96    <span class="xdoc">     *                  shared resources.
+</span>    97    <span class="xdoc">     *
+</span>    98    <span class="xdoc">     *                  Note that this parameter is ignored if `local` is not
+</span>    99    <span class="xdoc">     *                  TRUE.
+</span>   100    <span class="xdoc">     */</span>
+   101        <span class=key>struct</span> AlgDesc {
+   102            String          name;       <span class="xdoc">/*! Alg nick-name */</span>
+   103            ICodec.Module   mod;        <span class="xdoc">/*! The alg implementation */</span>
+   104            Bool            local;      <span class="xdoc">/*! Run algorithm locally */</span>
+   105            Int             groupId;    <span class="xdoc">/*! Alg group ID for sharing resources */</span>
+   106        };
+   107    
+   108        <span class="xdoc">/*!
+</span>   109    <span class="xdoc">     *  ======== createFromServer ========
+</span>   110    <span class="xdoc">     *  Create an Engine from a Server package
+</span>   111    <span class="xdoc">     *
+</span>   112    <span class="xdoc">     *  Given a Server package and an executable in that package, this method
+</span>   113    <span class="xdoc">     *  creates an Engine instance and initializes it from details in the
+</span>   114    <span class="xdoc">     *  Server provided.
+</span>   115    <span class="xdoc">     *
+</span>   116    <span class="xdoc">     *  An Engine instance created this way has all the codecs that exist
+</span>   117    <span class="xdoc">     *  in the Server executable - with codec names matching the names
+</span>   118    <span class="xdoc">     *  configured into the Server, and is configured to use an appropriate
+</span>   119    <span class="xdoc">     *  memory map and other DSP-specific info.
+</span>   120    <span class="xdoc">     *
+</span>   121    <span class="xdoc">     *  Example usage:
+</span>   122    <span class="xdoc">     *  <b>@p(code)</b>
+</span>   123    <span class="xdoc">     *  var myEngine = Engine.createFromServer("video_copy",
+</span>   124    <span class="xdoc">     *                     "./video_copy.x64P",
+</span>   125    <span class="xdoc">     *                     "ti.sdo.ce.examples.servers.video_copy");
+</span>   126    <span class="xdoc">     *
+</span>   127    <span class="xdoc">     *  <b>@param(engineName)</b>        Name to be used for the engine created
+</span>   128    <span class="xdoc">     *  <b>@param(serverExecutable)</b>  Path to the server executable (including the
+</span>   129    <span class="xdoc">     *                            executable), relative from server package
+</span>   130    <span class="xdoc">     *  <b>@param(serverPackage)</b>     Name of the server package
+</span>   131    <span class="xdoc">     *
+</span>   132    <span class="xdoc">     *  <b>@a(returns)</b>               An Engine instance of the same type as
+</span>   133    <span class="xdoc">     *                            if {<b>@link</b> #create create()} were called.
+</span>   134    <span class="xdoc">     */</span>
+   135        <span class=key>function</span> createFromServer(engineName, serverExecutable, serverPackage);
+   136    
+   137    
+   138        <span class="xdoc">/*!
+</span>   139    <span class="xdoc">     *  ======== getDspMemTableFromServer ========
+</span>   140    <span class="xdoc">     *  Get a remote processor's memory table from a Server package
+</span>   141    <span class="xdoc">     *
+</span>   142    <span class="xdoc">     *  Given a Server package and an executable in that package, this method
+</span>   143    <span class="xdoc">     *  returns an object that contains the Server's memory map details.
+</span>   144    <span class="xdoc">     *
+</span>   145    <span class="xdoc">     *  For example:
+</span>   146    <span class="xdoc">     *  <b>@p(code)</b>
+</span>   147    <span class="xdoc">     *  myEngine.armDspLinkConfig.memTable =
+</span>   148    <span class="xdoc">     *      Engine.getDspMemTableFromServer(
+</span>   149    <span class="xdoc">     *                     "./video_copy.x64P",
+</span>   150    <span class="xdoc">     *                     "ti.sdo.ce.examples.servers.video_copy" );
+</span>   151    <span class="xdoc">     *
+</span>   152    <span class="xdoc">     *  <b>@p</b>
+</span>   153    <span class="xdoc">     *  There is no need to use this method when the preferred
+</span>   154    <span class="xdoc">     *  {<b>@link</b> #createFromServer createFromServer()} method is used first.
+</span>   155    <span class="xdoc">     *
+</span>   156    <span class="xdoc">     *  <b>@param(serverExecutable)</b>  Path to the server executable (including the
+</span>   157    <span class="xdoc">     *                            executable), relative from server package
+</span>   158    <span class="xdoc">     *  <b>@param(serverPackage)</b>     Name of the server package
+</span>   159    <span class="xdoc">     *
+</span>   160    <span class="xdoc">     *  <b>@a(returns)</b>               A DSP memory table "map" object, of type
+</span>   161    <span class="xdoc">     *                            ti.sdo.ce.osal.Global.
+</span>   162    <span class="xdoc">     *                            ArmDspLinkConfigMemTableEntry[string]
+</span>   163    <span class="xdoc">     *
+</span>   164    <span class="xdoc">     *  <b>@see</b> createFromServer
+</span>   165    <span class="xdoc">     */</span>
+   166        <span class=key>function</span> getDspMemTableFromServer(serverExecutable, serverPackage);
+   167    
+   168        <span class="xdoc">/*!
+</span>   169    <span class="xdoc">     *  ======== close ========
+</span>   170    <span class="xdoc">     *  Internal close method (see package.xs)
+</span>   171    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   172    <span class="xdoc">     */</span>
+   173        <span class=key>function</span> close();
+   174    
+   175        <span class="xdoc">/*!
+</span>   176    <span class="xdoc">     *  ======== validate ========
+</span>   177    <span class="xdoc">     *  Internal validate method (see package.xs)
+</span>   178    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   179    <span class="xdoc">     */</span>
+   180        <span class=key>function</span> validate();
+   181    
+   182        <span class="xdoc">/*!
+</span>   183    <span class="xdoc">     * ======== usesIDMA3 ========
+</span>   184    <span class="xdoc">     * Returns true if there is an engine with a local alg that implements
+</span>   185    <span class="xdoc">     * idma3Fxns. This function is used to determine whether or not DMAN3
+</span>   186    <span class="xdoc">     * library needs to be linked in.
+</span>   187    <span class="xdoc">     *
+</span>   188    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   189    <span class="xdoc">     */</span>
+   190        <span class=key>bool</span> usesIDMA3();
+   191    
+   192        <span class="xdoc">/*!
+</span>   193    <span class="xdoc">     * ======== usesIRES ========
+</span>   194    <span class="xdoc">     * Returns true if there is an engine with a local alg that implements
+</span>   195    <span class="xdoc">     * iresFxns. This function is used to determine whether or not RMAN
+</span>   196    <span class="xdoc">     * library needs to be linked in.
+</span>   197    <span class="xdoc">     *
+</span>   198    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   199    <span class="xdoc">     */</span>
+   200        <span class=key>bool</span> usesIRES();
+   201    
+   202        <span class="xdoc">/*!
+</span>   203    <span class="xdoc">     *  ======== hasServer ========
+</span>   204    <span class="xdoc">     *  Returns true if there is an engine with a remote alg, or an engine
+</span>   205    <span class="xdoc">     *  that uses a server.
+</span>   206    <span class="xdoc">     *
+</span>   207    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   208    <span class="xdoc">     */</span>
+   209        <span class=key>bool</span> hasServer();
+   210    
+   211    <span class=key>instance</span>:
+   212    
+   213        <span class="xdoc">/*!
+</span>   214    <span class="xdoc">     *  ======== create ========
+</span>   215    <span class="xdoc">     *  Create Engine instance
+</span>   216    <span class="xdoc">     *
+</span>   217    <span class="xdoc">     *  Parameters:
+</span>   218    <span class="xdoc">     *  <b>@p(dlist)</b>
+</span>   219    <span class="xdoc">     *      - `name`
+</span>   220    <span class="xdoc">     *          Name of this engine; this name is used by clients via the
+</span>   221    <span class="xdoc">     *          `Engine_open()` API to identify the collection of algorithms
+</span>   222    <span class="xdoc">     *          available.
+</span>   223    <span class="xdoc">     *
+</span>   224    <span class="xdoc">     *      - `algs`
+</span>   225    <span class="xdoc">     *          Array of algorithms this engine supports
+</span>   226    <span class="xdoc">     *
+</span>   227    <span class="xdoc">     *      - `server`
+</span>   228    <span class="xdoc">     *          Optional name of the DSP Server; this name is used (if
+</span>   229    <span class="xdoc">     *          necessary) to load and start any associated DSP CPUs required
+</span>   230    <span class="xdoc">     *          to support this Engine instance
+</span>   231    <span class="xdoc">     */</span>
+   232        create(String name, AlgDesc algs[]);
+   233    
+   234        <span class="xdoc">/*!
+</span>   235    <span class="xdoc">     *  ======== name ========
+</span>   236    <span class="xdoc">     *  Name of this engine.
+</span>   237    <span class="xdoc">     *
+</span>   238    <span class="xdoc">     *  This string provided by the application in the `Engine_open()` call.
+</span>   239    <span class="xdoc">     */</span>
+   240        <span class=key>config</span> String name;
+   241    
+   242        <span class="xdoc">/*!
+</span>   243    <span class="xdoc">     *  ======== algs ========
+</span>   244    <span class="xdoc">     *  Array of algorithms available in an Engine
+</span>   245    <span class="xdoc">     *
+</span>   246    <span class="xdoc">     *  An array of algorithms which this Engine instance provides.  A mix
+</span>   247    <span class="xdoc">     *  of local and remote algorithms can be specified in this array.
+</span>   248    <span class="xdoc">     *
+</span>   249    <span class="xdoc">     *  {<b>@link</b> #createFromServer createFromServer()} can be used to populate
+</span>   250    <span class="xdoc">     *  this array with algorithms configured into a remote Server.
+</span>   251    <span class="xdoc">     *
+</span>   252    <span class="xdoc">     *  <b>@see</b> createFromServer
+</span>   253    <span class="xdoc">     */</span>
+   254        <span class=key>config</span> AlgDesc algs[];
+   255    
+   256        <span class="xdoc">/*!
+</span>   257    <span class="xdoc">     *  ======== server ========
+</span>   258    <span class="xdoc">     *  Optional name of the remote server.
+</span>   259    <span class="xdoc">     *
+</span>   260    <span class="xdoc">     *  This parameter is only necessary when there are algorithms configured
+</span>   261    <span class="xdoc">     *  to run remotely - i.e., their `local` field is set to false.
+</span>   262    <span class="xdoc">     *
+</span>   263    <span class="xdoc">     *  Engines containing these remote algorithms will need to set
+</span>   264    <span class="xdoc">     *  this `server` parameter to the name of the binary which should
+</span>   265    <span class="xdoc">     *  be loaded on the remote processor.
+</span>   266    <span class="xdoc">     */</span>
+   267        <span class=key>config</span> String server;
+   268    
+   269        <span class="xdoc">/*!
+</span>   270    <span class="xdoc">     *  ======== armDspLinkConfig ========
+</span>   271    <span class="xdoc">     *  ARM-side DSP Link configuration
+</span>   272    <span class="xdoc">     *
+</span>   273    <span class="xdoc">     *  The ARM-side DSP Link configuration.  If left undefined will revert to
+</span>   274    <span class="xdoc">     *  ti.sdo.ce.ipc.DEFAULT_ARMDSPLINKCONFIG, but with a warning
+</span>   275    <span class="xdoc">     *
+</span>   276    <span class="xdoc">     *  Applies only to CE configurations where
+</span>   277    <span class="xdoc">     *  osal.Global.runtimeEnv == DSPLINK_LINUX
+</span>   278    <span class="xdoc">     *
+</span>   279    <span class="xdoc">     *  <b>@p</b>
+</span>   280    <span class="xdoc">     *  There is no need to use this method when the preferred
+</span>   281    <span class="xdoc">     *  {<b>@link</b> #createFromServer createFromServer()} method is used first.
+</span>   282    <span class="xdoc">     *
+</span>   283    <span class="xdoc">     *  <b>@see</b> createFromServer
+</span>   284    <span class="xdoc">     */</span>
+   285        <span class=key>config</span> ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig armDspLinkConfig;
+   286    
+   287       <span class="xdoc">/*!
+</span>   288    <span class="xdoc">     *  ======== linkCfg ========
+</span>   289    <span class="xdoc">     *  Optional name of DSP Link configuration.
+</span>   290    <span class="xdoc">     *
+</span>   291    <span class="xdoc">     *  This parameter is only needed when LAD is used to
+</span>   292    <span class="xdoc">     *  arbitrate control of the DSP server
+</span>   293    <span class="xdoc">     */</span>
+   294        <span class=key>config</span> String linkCfg;
+   295    }
+   296    <span class="comment">/*
+</span>   297    <span class="comment"> *  @(#) ti.sdo.ce; 1, 0, 6,432; 12-2-2010 21:19:07; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+</span>   298    <span class="comment">
+</span>   299    <span class="comment"> */</span>
+   300    
+</pre>
+</body></html>

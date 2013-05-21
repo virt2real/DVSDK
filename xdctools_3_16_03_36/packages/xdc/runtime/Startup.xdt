@@ -1,0 +1,69 @@
+%%{
+/* --COPYRIGHT--,ESD
+ *  Copyright (c) 2008 Texas Instruments. All rights reserved. 
+ *  This program and the accompanying materials are made available under the 
+ *  terms of the Eclipse Public License v1.0 and Eclipse Distribution License
+ *  v. 1.0 which accompanies this distribution. The Eclipse Public License is
+ *  available at http://www.eclipse.org/legal/epl-v10.html and the Eclipse
+ *  Distribution License is available at 
+ *  http://www.eclipse.org/org/documents/edl-v10.php.
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ * --/COPYRIGHT--*/
+
+    /*
+     * ======== Startup.xdt ========
+     */
+
+    var mcnt = 0;
+    var mobj = '(&xdc_runtime_Startup_Module__state__V)';
+    var Startup = xdc.module('xdc.runtime.Startup');
+%%}
+/*
+ *  ======== MODULE STARTUP DONE FUNCTIONS ========
+ */
+%for each (var mod in Program.targetModules()) {
+%   if (!mod.MODULE_STARTUP$) continue;
+%   if (mod.$$scope != -1) {
+%       var mn = mod.$name.replace(/\./g, '_');
+xdc_Bool `mn`_Module__startupDone__F(void) {
+    return `mobj`->stateTab == 0 || `mobj`->stateTab[`mcnt`] < 0;
+}
+%   }
+%   mcnt++;
+%}
+%/* if ROM we're done */
+%if (Program.$$isrom) return;
+
+/* 
+ * Startup_exec__I is an internal entry point called by target/platform
+ * boot code. Boot code is not brought into a partial-link assembly. So,
+ * without this pragma, whole program optimizers would otherwise optimize-out
+ * this function.
+ */
+#ifdef __ti__
+#pragma FUNC_EXT_CALLED(xdc_runtime_Startup_exec__I);
+#endif
+
+#ifdef __GNUC__
+#if __GNUC__ >= 4
+xdc_Void xdc_runtime_Startup_exec__I(void) __attribute__ ((externally_visible));
+#endif
+#endif
+
+/*
+ *  ======== xdc_runtime_Startup_exec__I ========
+ *  Initialize all used modules that have startup functions
+ */
+xdc_Void xdc_runtime_Startup_exec__I(void)
+{
+    xdc_Int state[`mcnt + 1`];
+    xdc_runtime_Startup_startModsFxn__C(state, `mcnt`);
+}
+%%{
+/*
+ * @(#) xdc.runtime; 2, 0, 0, 0,237; 2-22-2010 10:33:58; /db/ztree/library/trees/xdc/xdc-u17x/src/packages/
+ */
+
+%%}

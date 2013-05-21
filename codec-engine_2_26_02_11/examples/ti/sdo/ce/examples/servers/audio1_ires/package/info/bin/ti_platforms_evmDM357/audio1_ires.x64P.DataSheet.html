@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>DSP Server Data Sheet for bin/ti_platforms_evmDM357/audio1_ires.x64P</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<font face="Helvetica, Arial, sans-serif">
+<blockquote>
+</blockquote>
+<blockquote>
+  <h1>Data Sheet for the DSP server image</h1>
+</blockquote>
+<blockquote>
+  <table border="1" cellpadding="10" cellspacing="0">
+    <font face="Helvetica, Arial, sans-serif">
+    <small>
+    <tbody>
+      <tr>
+        <td valign="top">Server DSP image name</td>
+        <td valign="top"><b>bin/ti_platforms_evmDM357/audio1_ires.x64P</b></td>
+      </tr>
+      <tr>
+        <td valign="top">BIOS-related Configuration</td>
+        <td align="left" valign="top">
+          <table border="1" cellpadding="2" cellspacing="0" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="220">defaultMemSegId</td><td valign="top">DDR2</td></tr>
+              <tr><td valign="top" width="220">enableLogging</td><td valign="top">true</td></tr>
+              <tr><td valign="top" width="220">traceBufferSize</td><td valign="top">0x00008000</td></tr>
+              <tr><td valign="top" width="220">logName</td><td valign="top">ti_sdo_ce_osal_LOG_Buffer</td></tr>
+              <tr><td valign="top" width="220">logSize</td><td valign="top">0x00000100</td></tr>
+              <tr><td valign="top" width="220">logType</td><td valign="top">circular</td></tr>
+              <tr><td valign="top" width="220">logSeg</td><td valign="top">DDR2</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Server Algorithms</td>
+        <td align="left" valign="top">
+
+        <table border="1" cellpadding="2" cellspacing="0" width="90%" bgcolor="#ffffc0">
+          <tbody>
+            <tr><td valign="top" width="220">Codec name (alias)</td><td valign="top"><b>auddec1_ires</b></td></tr>
+            <tr><td valign="top" width="220">Codec type</td><td valign="top"><b>XDM audio decoder</b> (ti.sdo.ce.audio1.IAUDDEC1)<b></b></td></tr>
+            <tr><td valign="top" width="220">Package</td><td valign="top">ti.sdo.ce.examples.codecs.auddec1_ires</td></tr>
+            <tr><td valign="top" width="220">Module</td><td valign="top">AUDDEC1_IRES</td></tr>
+            <tr><td valign="top" width="220">Codec package location at server build time</td><td valign="top">/db/atree/library/trees/ce/ce-r11x/src/</td></tr>
+            <tr><td valign="top" width="220">Package version</td><td valign="top">[&nbsp;1, 0, 0&nbsp;]</td></tr>
+              <td valign="top" width="220">RPC protocol version</td>
+              <td valign="top">1<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" width="220">Thread attributes</td>
+              <td valign="top">
+              <table border="1" cellpadding="2" cellspacing="0">
+                <tbody>
+                  <tr>
+                    <td valign="top" width="105">Priority<br>
+                    </td>
+                    <td valign="top">2<br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" width="105">Stack Size<br>
+                    </td>
+                    <td valign="top">default for the alg (<b>1024</b> bytes) + <b>8192</b> bytes padding<br>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" width="220"><a href="http://tiexpressdsp.com/index.php/Codec_Engine_GroupIds">Group ID number</a></td>
+              <td valign="top">0 (auto-assigned value)<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br>
+        <table border="1" cellpadding="2" cellspacing="0" width="90%" bgcolor="#ffffffd0">
+          <tbody>
+            <tr><td valign="top" width="220">Codec name (alias)</td><td valign="top"><b>audenc1_copy</b></td></tr>
+            <tr><td valign="top" width="220">Codec type</td><td valign="top"><b>XDM audio encoder</b> (ti.sdo.ce.audio1.IAUDENC1)<b></b></td></tr>
+            <tr><td valign="top" width="220">Package</td><td valign="top">ti.sdo.ce.examples.codecs.audenc1_copy</td></tr>
+            <tr><td valign="top" width="220">Module</td><td valign="top">AUDENC1_COPY</td></tr>
+            <tr><td valign="top" width="220">Codec package location at server build time</td><td valign="top">/db/atree/library/trees/ce/ce-r11x/src/</td></tr>
+            <tr><td valign="top" width="220">Package version</td><td valign="top">[&nbsp;1, 0, 0&nbsp;]</td></tr>
+              <td valign="top" width="220">RPC protocol version</td>
+              <td valign="top">1<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" width="220">Thread attributes</td>
+              <td valign="top">
+              <table border="1" cellpadding="2" cellspacing="0">
+                <tbody>
+                  <tr>
+                    <td valign="top" width="105">Priority<br>
+                    </td>
+                    <td valign="top">2<br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" width="105">Stack Size<br>
+                    </td>
+                    <td valign="top">default for the alg (<b>1024</b> bytes) + <b>8192</b> bytes padding<br>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" width="220"><a href="http://tiexpressdsp.com/index.php/Codec_Engine_GroupIds">Group ID number</a></td>
+              <td valign="top">0 (auto-assigned value)<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Server DMA (DMAN3)<br>config</td>
+        <td align="left" valign="top">
+          <table border="1" cellpadding="2" cellspacing="0" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="220">MAXGROUPS</td><td valign="top">0x00000014</td></tr>
+              <tr><td valign="top" width="220">customDmaLib</td><td valign="top">false</td></tr>
+              <tr><td valign="top" width="220">heapInternal</td><td valign="top">L1DHEAP</td></tr>
+              <tr><td valign="top" width="220">heapExternal</td><td valign="top">DDR2</td></tr>
+              <tr><td valign="top" width="220">scratchAllocFxn</td><td valign="top">undefined</td></tr>
+              <tr><td valign="top" width="220">scratchFreeFxn</td><td valign="top">undefined</td></tr>
+              <tr><td valign="top" width="220">idma3Internal</td><td valign="top">true</td></tr>
+              <tr><td valign="top" width="220">cpu</td><td valign="top">false</td></tr>
+              <tr><td valign="top" width="220">useExternalRM</td><td valign="top">false</td></tr>
+              <tr><td valign="top" width="220">numQdmaChannels</td><td valign="top">0x00000004</td></tr>
+              <tr><td valign="top" width="220">qdmaPaRamBase</td><td valign="top">0x01C04000</td></tr>
+              <tr><td valign="top" width="220">maxPaRamEntries</td><td valign="top">0x00000080</td></tr>
+              <tr><td valign="top" width="220">maxQdmaChannels</td><td valign="top">0x00000008</td></tr>
+              <tr><td valign="top" width="220">maxTCs</td><td valign="top">0x00000008</td></tr>
+              <tr><td valign="top" width="220">paRamBaseIndex</td><td valign="top">0x00000060</td></tr>
+              <tr><td valign="top" width="220">numPaRamEntries</td><td valign="top">0x00000020</td></tr>
+              <tr><td valign="top" width="220">nullPaRamIndex</td><td valign="top">0x00000000</td></tr>
+              <tr><td valign="top" width="220">qdmaChannels</td><td valign="top">[ 0, 1, 2, 3 ]</td></tr>
+              <tr><td valign="top" width="220">tccAllocationMaskH</td><td valign="top">0xFFFFFFFF</td></tr>
+              <tr><td valign="top" width="220">tccAllocationMaskL</td><td valign="top">0x00000000</td></tr>
+              <tr><td valign="top" width="220">qdmaQueueMap</td><td valign="top">[ 1, 1, 1, 1, 1, 1, 1, 1 ]</td></tr>
+              <tr><td valign="top" width="220">queueTCMap</td><td valign="top">[ 0, 1, 2, 3, 4, 5, 6, 7 ]</td></tr>
+              <tr><td valign="top" width="220">queuePri</td><td valign="top">[ 3, 7, 0, 0, 0, 0, 0, 0 ]</td></tr>
+              <tr><td valign="top" width="220">numTccGroup</td><td valign="top">[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]</td></tr>
+              <tr><td valign="top" width="220">numPaRamGroup</td><td valign="top">[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]</td></tr>
+              <tr><td valign="top" width="220">numQdmaGroup</td><td valign="top">[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]</td></tr>
+              <tr><td valign="top" width="220">ipcKeyBase</td><td valign="top">0x4E414D44</td></tr>
+              <tr><td valign="top" width="220">allowUnshared</td><td valign="top">true</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Algorithm memory<br>allocation (DSKT2)<br>config</td>
+        <td align="left" valign="top">
+          <table border="1" cellpadding="2" cellspacing="0" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="220">DEFAULTSEG</td><td valign="top">IRAM</td></tr>
+              <tr><td valign="top" width="220">DARAM0</td><td valign="top">L1DHEAP</td></tr>
+              <tr><td valign="top" width="220">DARAM1</td><td valign="top">L1DHEAP</td></tr>
+              <tr><td valign="top" width="220">DARAM2</td><td valign="top">L1DHEAP</td></tr>
+              <tr><td valign="top" width="220">SARAM0</td><td valign="top">L1DHEAP</td></tr>
+              <tr><td valign="top" width="220">SARAM1</td><td valign="top">L1DHEAP</td></tr>
+              <tr><td valign="top" width="220">SARAM2</td><td valign="top">L1DHEAP</td></tr>
+              <tr><td valign="top" width="220">ESDATA</td><td valign="top">DDRALGHEAP</td></tr>
+              <tr><td valign="top" width="220">IPROG</td><td valign="top">L1DHEAP</td></tr>
+              <tr><td valign="top" width="220">EPROG</td><td valign="top">DDRALGHEAP</td></tr>
+              <tr><td valign="top" width="220">DSKT2_HEAP</td><td valign="top">DDR2</td></tr>
+              <tr><td valign="top" width="220">ALLOW_EXTERNAL_SCRATCH</td><td valign="top">true</td></tr>
+              <tr><td valign="top" width="220">DARAM_SCRATCH_SIZES</td><td valign="top">[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]</td></tr>
+              <tr><td valign="top" width="220">SARAM_SCRATCH_SIZES</td><td valign="top">[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]</td></tr>
+              <tr><td valign="top" width="220">cacheWritebackInvalidateFxn</td><td valign="top">BCACHE_wbInv</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td valign="top">DSP memory map</td>
+        <td align="left" valign="top">
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">MEM_NULL</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">0x00000000</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">0x00000000</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">Place holder segment which allows user to disable heaps</td></tr>
+            </tbody>
+          </table>
+          <br>
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">CACHE_L1D</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">0x11F10000</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">0x00008000</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">Do not delete, in use by cache</td></tr>
+            </tbody>
+          </table>
+          <br>
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">ARM_RAM</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">0x10008000</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">0x00004000</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">Internal ARM RAM Memory</td></tr>
+            </tbody>
+          </table>
+          <br>
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">DDR2</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">0x8FA00000</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">0x00400000</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">DDR2: off-chip memory for application code and data</td></tr>
+            </tbody>
+          </table>
+          <br>
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">BUFMEM</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">0x11F0FB00</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">0x00000500</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top"><add comments here></td></tr>
+            </tbody>
+          </table>
+          <br>
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">CACHE_L2</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">0x11800000</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">0x00010000</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">Do not delete, in use by cache</td></tr>
+            </tbody>
+          </table>
+          <br>
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">L1DSRAM</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">0x11F04000</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">0x0000BB00</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">Internal 48K RAM L1 Data Memory in Region 0</td></tr>
+            </tbody>
+          </table>
+          <br>
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">CACHE_L1P</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">0x11E08000</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">0x00008000</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">Do not delete, in use by cache</td></tr>
+            </tbody>
+          </table>
+          <br>
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">RESET_VECTOR</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">0x8FF00000</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">0x00000080</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">RESET_VECTOR: off-chip memory for the reset vector table</td></tr>
+            </tbody>
+          </table>
+          <br>
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">DDRALGHEAP</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">0x88000000</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">0x07A00000</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">DDRALGHEAP: off-chip memory for dynamic algmem allocation</td></tr>
+            </tbody>
+          </table>
+          <br>
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">DSPLINKMEM</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">0x8FE00000</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">0x00100000</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">DSPLINK: off-chip memory reserved for DSPLINK code and data</td></tr>
+            </tbody>
+          </table>
+          
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Misc settings</td>
+        <td align="left" valign="top">
+          <table border="1" cellpadding="2" cellspacing="0" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="220">Server thread priority</td><td valign="top">1</td></tr>
+              <tr><td valign="top" width="220">Server thread stack size</td><td valign="top"><b>2048</b> bytes</td></tr>
+              <tr><td valign="top" width="220">autoGenScratchSizeArrays</td><td valign="top">true</td></tr>
+              <tr><td valign="top" width="220">Skeleton Caching Policy</td><td valign="top">LOCALBUFFERINVWB (default)</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td valign="top">Configured DSP clock speed</td>
+        <td align="left" valign="top">567 MHz <font size="-1">(set in the GBL.CLKOUT TCF field; may or may not match the actual DSP clock speed)</font></td>
+      </tr>
+
+      <tr>
+        <td valign="top">Configuration example</td>
+        <td align="left" valign="top"> Add the following code to your Arm-side application configuration file (.cfg) to create an Engine from this server: <br>
+<pre>
+var Engine = xdc.useModule('ti.sdo.ce.Engine');
+var myEngine = Engine.createFromServer(
+    "bin/ti_platforms_evmDM357/audio1_ires",  // Engine name (as referred to in the C app)
+    "bin/ti_platforms_evmDM357/audio1_ires.x64P", // path to server exe, relative to its package dir
+    "ti.sdo.ce.examples.servers.audio1_ires" // full server package name
+);
+</pre>
+<!-- don't want to support configuro server builds due to complexity consuming them with Engine.createFromServer()...
+     (note: if the server was built with "Configuro", replace the shown package name with the actual server package name)
+-->
+        </td>
+      </tr>
+
+    </tbody>
+    </font>
+    </small>
+  </table>
+  <br>
+</blockquote>
+</font>
+</body>
+</html>

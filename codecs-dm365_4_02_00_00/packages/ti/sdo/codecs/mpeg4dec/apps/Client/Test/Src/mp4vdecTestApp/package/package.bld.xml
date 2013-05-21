@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="mp4vdecTestApp" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/mp4vdecTestApp_x470MV.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="/db/swcoe_asp/DM360/Kaleido/dm360/mpeg4_decoder/Client/Test/Src/mp4vdecTestApp.cfg"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/mp4vdecTestApp_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/mp4vdecTestApp_x470MV.o470MV.dep" src="package/cfg/mp4vdecTestApp_x470MV.c"/>
+        <srcFile name="package/cfg/mp4vdecTestApp_x470MV.dep" src="package/cfg/mp4vdecTestApp_x470MV.cfg"/>
+        <srcFile name="package/rel/mp4vdecTestApp.tar.dep" src="package/rel/mp4vdecTestApp.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/opt/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="mp4vdecTestApp"
+        pname="mp4vdecTestApp.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM365"
+        profile="release"
+        xCfgScript="package/cfg/mp4vdecTestApp_x470MV.cfg"
+        xCfgPrefix="package/cfg/mp4vdecTestApp_x470MV"
+        cfgScript="/db/swcoe_asp/DM360/Kaleido/dm360/mpeg4_decoder/Client/Test/Src/mp4vdecTestApp.cfg"
+        cfgArgs="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="mp4vdecTestApp.x470MV"
+        args=""
+        groupName="mp4vdecTestApp.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="mp4vdecTestApp"
+        pname="mp4vdecTestApp.tar"
+        label="default"
+    >
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,5 @@
+depmod -a
+modprobe uio_pru
+modprobe edmautils
+cd /usr/share/ti/ti-pru-eg
+./PRU_edmaConfig

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.utils.trace" version="1, 0, 1" producerId="codec_engine_2_26_02_11">
+    <units>
+        <module name="TraceUtil"/>
+    </units>
+    <sources>
+        <srcFile name="TraceUtil.c"/>
+        <srcFile name="package/package_ti.sdo.ce.utils.trace.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/TraceUtil.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/TraceUtil/TraceUtil.o86U.dep" src="TraceUtil.c"/>
+        <srcFile name="package/lib/lib/debug/TraceUtil/package/package_ti.sdo.ce.utils.trace.o86U.dep" src="package/package_ti.sdo.ce.utils.trace.c"/>
+        <srcFile name="lib/release/TraceUtil.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/TraceUtil/TraceUtil.o86U.dep" src="TraceUtil.c"/>
+        <srcFile name="package/lib/lib/release/TraceUtil/package/package_ti.sdo.ce.utils.trace.o86U.dep" src="package/package_ti.sdo.ce.utils.trace.c"/>
+        <srcFile name="lib/release/TraceUtil.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/TraceUtil/TraceUtil.o470uC.dep" src="TraceUtil.c"/>
+        <srcFile name="package/lib/lib/release/TraceUtil/package/package_ti.sdo.ce.utils.trace.o470uC.dep" src="package/package_ti.sdo.ce.utils.trace.c"/>
+        <srcFile name="lib/debug/TraceUtil.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/TraceUtil/TraceUtil.ov5T.dep" src="TraceUtil.c"/>
+        <srcFile name="package/lib/lib/debug/TraceUtil/package/package_ti.sdo.ce.utils.trace.ov5T.dep" src="package/package_ti.sdo.ce.utils.trace.c"/>
+        <srcFile name="lib/release/TraceUtil.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/TraceUtil/TraceUtil.ov5T.dep" src="TraceUtil.c"/>
+        <srcFile name="package/lib/lib/release/TraceUtil/package/package_ti.sdo.ce.utils.trace.ov5T.dep" src="package/package_ti.sdo.ce.utils.trace.c"/>
+        <srcFile name="lib/debug/TraceUtil.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/TraceUtil/TraceUtil.o470uC.dep" src="TraceUtil.c"/>
+        <srcFile name="package/lib/lib/debug/TraceUtil/package/package_ti.sdo.ce.utils.trace.o470uC.dep" src="package/package_ti.sdo.ce.utils.trace.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_utils_trace.tar.dep" src="package/rel/ti_sdo_ce_utils_trace.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/TraceUtil"
+        pname="lib/debug/TraceUtil.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/TraceUtil"
+        pname="lib/release/TraceUtil.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/TraceUtil"
+        pname="lib/release/TraceUtil.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/TraceUtil"
+        pname="lib/debug/TraceUtil.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/TraceUtil"
+        pname="lib/release/TraceUtil.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/TraceUtil"
+        pname="lib/debug/TraceUtil.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_utils_trace"
+        pname="ti_sdo_ce_utils_trace.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package.bld"/>
+        <file name="package/package_ti.sdo.ce.utils.trace.c"/>
+        <file name="lib/release/TraceUtil.a86U"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/release/TraceUtil.av5T"/>
+        <file name="package/package.rel.dot"/>
+        <file name="TraceUtil.c"/>
+        <file name="lib/debug/TraceUtil.a86U"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/debug/TraceUtil.a470uC"/>
+        <file name="lib/debug/TraceUtil.av5T"/>
+        <file name="TraceUtil.h"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/release/TraceUtil.a470uC"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

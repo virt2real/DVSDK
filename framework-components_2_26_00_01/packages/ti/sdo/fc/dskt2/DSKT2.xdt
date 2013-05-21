@@ -1,0 +1,86 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    /*
+     *  ======== DSKT2.xdt ========
+     *  Generate DSKT2 configuration and initialization structures
+     */
+
+    var wbInvFxn = this.cacheWritebackInvalidateFxn;
+    if (wbInvFxn == null) {
+        wbInvFxn = "NULL";
+    }
+
+%%}
+/* C code contribution from ti/sdo/fc/DSKT2.xdt */
+
+#include <xdc/std.h>
+#include <ti/sdo/fc/dskt2/dskt2.h>
+
+%if (this.cacheWritebackInvalidateFxn != null) {
+extern Void `this.cacheWritebackInvalidateFxn`();
+%}
+
+DSKT2_CacheWBInvFxn DSKT2_cacheWBInvFxn = (DSKT2_CacheWBInvFxn)`wbInvFxn`;
+
+Uns _DSKT2_ALLOW_EXTERNAL_SCRATCH = `this.ALLOW_EXTERNAL_SCRATCH ? 1 : 0`;
+
+#if `this.DARAM_SCRATCH_SIZES.length` > DSKT2_NUM_SCRATCH_GROUPS
+#error too many values in DARAM_SCRATCH_SIZES array, please fix your .cfg
+#endif
+
+#if `this.SARAM_SCRATCH_SIZES.length` > DSKT2_NUM_SCRATCH_GROUPS
+#error too many values in SARAM_SCRATCH_SIZES array, please fix your .cfg
+#endif
+
+Uns _DSKT2_DARAM_SCRATCH_SIZES[ DSKT2_NUM_SCRATCH_GROUPS ] = {
+% for (var i = 0; i < this.DARAM_SCRATCH_SIZES.length; i++) {
+    `this.DARAM_SCRATCH_SIZES[i]``i < this.DARAM_SCRATCH_SIZES.length-1?",":""`
+% }
+};
+
+Uns _DSKT2_SARAM_SCRATCH_SIZES[ DSKT2_NUM_SCRATCH_GROUPS ] = {
+% for (var i = 0; i < this.SARAM_SCRATCH_SIZES.length; i++) {
+    `this.SARAM_SCRATCH_SIZES[i]``i < this.SARAM_SCRATCH_SIZES.length-1?",":""`
+% }
+};
+
+%%{
+/*
+ * @(#) ti.sdo.fc.dskt2; 1, 0, 4,300; 12-1-2010 17:24:35; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+
+%%}

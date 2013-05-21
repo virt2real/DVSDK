@@ -1,0 +1,95 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+/*
+ *  ======== config.bld ========
+ *  This script is run prior to all build scripts.  It initializes the
+ *  rootDir configuration parameter of all supported targets.
+ *
+ *  There are more details about config.bld here:
+ *  http://rtsc.eclipse.org/docs-tip/Glossary#config.bld
+ */
+
+var Build = xdc.useModule('xdc.bld.BuildEnvironment');
+var Pkg = xdc.useModule('xdc.bld.PackageContents');
+
+/* initialize local vars with those set in xdcpaths.mak (via XDCARGS) */
+for (x = 0; x < arguments.length; x++) {
+    if (arguments[x].match(/^CODEGEN_INSTALL_DIR=/)) {
+        cgRootDir = arguments[x].split("=")[1];
+    }
+}
+
+/* should test here that cgRootDir is set! */
+
+% if (this.platform.match(/evmOMAPL13[78]/)) {
+var C674 = xdc.useModule('ti.targets.C674');
+C674.rootDir = cgRootDir;
+C674.ccOpts.suffix = "-mi10 -mo ";
+
+C674.platforms = [
+    "`this.platform`"
+];
+
+Build.targets.$add(C674);
+%var targ = 'C674';
+% }
+% else {
+var C64P = xdc.useModule('ti.targets.C64P');
+C64P.rootDir = cgRootDir;
+
+C64P.platforms = [
+    "`this.platform`"
+];
+
+Build.targets.$add(C64P);
+
+%var targ = 'C64P';
+% }
+
+/* We remove a few profiles, just to cut down on build time */
+delete `targ`.profiles["coverage"];
+delete `targ`.profiles["profile"];
+delete `targ`.profiles["whole_program"];
+delete `targ`.profiles["whole_program_debug"];
+
+/* Create a .zip file for redistribution.  Remove this line if you prefer .tar */
+Pkg.attrs.archiver = 'zip';
+%%{
+/*
+ * @(#) ti.sdo.ce.wizards.genserver; 1, 0, 0,84; 12-2-2010 21:28:48; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

@@ -1,0 +1,171 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ *  ======== package.bld ========
+ *  Build script for RMAN IRES VICP protocol example.
+ *
+ */
+
+Pkg.attrs.exportAll = true;
+//Pkg.attrs.profile = "debug_trace" ;
+Pkg.attrs.profile = "debug" ;
+
+var buildPlatforms = {
+    UCArm9:             ["DM365"],
+    MVArm9:             ["DM365"],
+};
+
+/*
+ * Executables for all platforms (2430, dm6446)
+ * To add a new program, just create a new element in the progs array and
+ * set it equal to an array listing the objects the program requires.
+ *
+ * The output will have the name "<element>_tiomapxxxx.<ext>" or
+ * "<element>_dm6446.<ext>" , and there
+ * must be a tconf script describing the programs configuration with the
+ * name <element>.tcf.
+ */
+var programs = [
+    {
+        name:   "lateAcquire",
+        sources: ["ires_lateacquire",
+                  "appCE",
+                  "checkRes",
+                 ],
+        defs:   " -DLATEACQUIRE -DUSECE ",
+    },
+];
+
+/* Specifies which programs run on which platforms */
+var platProgs = {
+    "DM365"     : "",   //programs,
+}
+
+var platDefs = {
+    "DM365"     : " -DDM365 ",
+}
+
+var realPlatformName = {
+    "2430"      : "ti.platforms.sdp2430" ,
+    "dm6446"    : "ti.platforms.evmDM6446",
+    "dm648"     : "ti.platforms.evmDM648",
+    "C6455"     : "ti.platforms.dsk6455",
+    "dm6467"    : "ti.platforms.evmDM6467",
+    "3430"      : "ti.platforms.sdp3430",
+    "3530"      : "ti.platforms.evm3530",
+    "DM365"     : "ti.platforms.evmDM365",
+    "DM355"     : "ti.platforms.evmDM355",
+    "PC"        : "host.platforms.PC",
+};
+
+
+Pkg.uses = [
+    "ti/bios/include",
+];
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+    var plat = targ.platform;   /* use the target's default platform */
+
+    if (buildPlatforms[targ.name] == null) {
+        continue;
+    }
+    //print("building for target " + targ.name + " ****");
+
+    var profName = "debug_trace";
+    var profCOpts = targ.profiles[profName].compileOpts.copts;
+    var profDefs = targ.profiles[profName].compileOpts.defs;
+
+    // for each build platform (eg, 2430,...)
+    for (k = 0; k < buildPlatforms[targ.name].length; k++) {
+        var chipType = buildPlatforms[targ.name][k]; // eg, "2430"
+        var progs = platProgs[chipType];  // eg, programs2430
+        //print("Chip Type " + chipType + " program tcf: " + prog.tcf +
+        //        "****");
+
+        var defs = platDefs[chipType] + " -DDEBUG=1 ";
+       /* Process platform's executables */
+        for (j = 0; j < progs.length; j++) {
+            var prog = progs[j];
+            //print("adding " + prog.name + " (" + chipType + ") flavor ****");
+            if (prog.defs) {
+                defs += prog.defs;
+            }
+
+            // add executable
+            if (prog.tcf != null) {
+                var exe = Pkg.addExecutable(
+
+                prog.name + "_" + chipType, targ, realPlatformName[chipType], {
+                    aopts: AOPTS,
+                    copts: " ",
+                    lopts: "-c ",
+                    defs : defs,
+                    profile: profName,
+                    cfgScript: prog.tcf  + ".tcf",
+                    cfgArgs: "{chipType: \"" + chipType + "\"}",
+                });
+            }
+            else {
+                /*
+                 *  This is not a BIOS program, so there is no tcf file.
+                 *  Instead use .xdt file that will have the linker include
+                 *  paths to search for dman3, acpy3, and rts libraries.
+                 *  Also set compile flag to compile out BIOS functions.
+                 */
+                //print("ChipType " + chipType + " Program xdt: " + prog.xdt +
+                //        "****");
+                var exe = Pkg.addExecutable(
+                        prog.name + "_" + chipType, targ,
+                        realPlatformName[chipType], {
+
+                    copts: profCOpts,
+                    defs: profDefs + defs,
+                    profile: profName,
+                    cfgArgs: "{chipType: \"" + chipType + "\"}",
+                    cfgScript: "ires_algorithm.cfg",
+                 });
+            }
+
+            // Add -pdr for remarks and -pdn to gen numeric remark IDs.
+            // (Note, we don't add it to the .addExecutable call above b/c
+            // the RTSC generated sources are noisy with -pdr.
+            exe.addObjects( prog.sources );
+        }
+    }
+}
+/*
+ *  @(#) ti.sdo.fc.rman.examples.lateacquire; 1, 0, 0,32; 12-1-2010 17:25:45; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

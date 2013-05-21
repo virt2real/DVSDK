@@ -1,0 +1,7 @@
+SECTIONS
+{
+% if (this.VC1DEC.dataSection) { 
+    .data  > `this.VC1DEC.dataSection`
+    .rodata  > `this.VC1DEC.dataSection`
+%}
+}

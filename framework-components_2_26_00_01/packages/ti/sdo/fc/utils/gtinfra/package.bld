@@ -1,0 +1,112 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * */
+/*
+ * ======== package.bld ========
+ */
+//Comment out for debugging ONLY
+if (Pkg.attrs.profile == "debug") {
+    print("WARNING:- Debugging enabled !!");
+}
+
+Pkg.attrs.exportSrc = true;
+
+/*
+ * Various libraries that this module will build
+ */
+var libs = ["gt_bios", "gt_noOs", "gt_wince"];
+
+/*
+ * sources requires for each library
+ */
+var src = {
+    "gt_bios"  : ["GT_config_BIOS", "Trace"],
+    "gt_noOs"  : ["GT_config_noOS", "Trace"],
+    "gt_wince" : ["GT_config_WinCE", "Trace"],
+}
+
+/*
+ * To be able to find the headers
+ */
+Pkg.uses = ["ti/bios/include"];
+
+/*
+ * Other files included in the package
+ */
+Pkg.otherFiles = [
+    "Trace.h",
+    "link.xdt",
+    "gt_dais.h",
+    "package.bld"
+];
+
+for (var i = 0; i < Build.targets.length; i++) {
+
+    var targ = Build.targets[i];
+
+    for (var j = 0; j < libs.length; j++) {
+
+        if (libs[j] == "gt_bios") {
+            /* Don't build for non-BIOS platforms */
+            if (targ.name != "C64P") {
+                continue;
+            }
+        }
+
+        if (libs[j] == "gt_wince") {
+            /* Don't build for non-WINCE platforms */
+            if (targ.name != "WinCE") {
+                continue;
+            }
+        }
+
+        Pkg.addLibrary("lib/debug/" + libs[j] , targ, {
+            profile: "debug",
+        }).addObjects(src[libs[j]]);
+
+        Pkg.addLibrary("lib/release/" + libs[j] , targ, {
+            profile: "release",
+        }).addObjects(src[libs[j]]);
+
+        Pkg.addLibrary("lib/trace/" + libs[j] , targ, {
+            profile: "trace",
+        }).addObjects(src[libs[j]]);
+
+        Pkg.addLibrary("lib/debug_trace/" + libs[j] , targ, {
+            profile: "debug_trace",
+        }).addObjects(src[libs[j]]);
+    }
+}
+/*
+ *  @(#) ti.sdo.fc.utils.gtinfra; 1, 0, 0,187; 12-1-2010 17:26:11; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

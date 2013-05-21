@@ -1,0 +1,316 @@
+Package: am-benchmarks-src
+Version: 1.2-r2+svnr59-arago1
+Section: system
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 099e6d7959ab79c3c730ba9cd042196b
+Size: 45888
+Filename: am-benchmarks-src_1.2-r2+svnr59-arago1_all.ipk
+Source: svn://gforge.ti.com/svn/am_benchmarks/;module=trunk;proto=https;user=anonymous;pswd='' https://gforge.ti.com/gf/download/frsrelease/406/3998/dhrystone-static.tar.gz
+Description: Patched sources for am-benchmarks
+Priority: Optional
+
+
+Package: am-sysinfo-src
+Version: 1.0-r2+svnr6
+Section: system
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: ce27290ed882dc8d52bcf67287ee5200
+Size: 24242
+Filename: am-sysinfo-src_1.0-r2+svnr6_all.ipk
+Source: svn://gforge.ti.com/svn/am_sysinfo/;module=trunk;proto=https;user=anonymous;pswd=''
+Description: Patched sources for am-sysinfo
+Priority: Optional
+
+
+Package: gstreamer-ti-src
+Version: svnr919-r93+r52
+Section: multimedia
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 5844e63696810d3c287d1f0299675100
+Size: 185126
+Filename: gstreamer-ti-src_svnr919-r93+r52_all.ipk
+Source: svn://gforge.ti.com/svn/gstreamer_ti/trunk;module=gstreamer_ti;proto=https;user=anonymous;pswd=''  file://0001-Introducing-TIDmaiVideoSink-version-2.-rename-it-to-.patch;striplevel=4  file://0002-set-maxInterFrameInterval-params-needed-by-ittiam-co.patch;striplevel=4  file://0003-update-omapl138-cfg-to-use-cs.674.patch;striplevel=4
+Description: Patched sources for gstreamer-ti
+Priority: Optional
+
+
+Package: linux-davinci-src
+Version: 2.6.32.17-psp03.01.01.39-r52
+Section: kernel
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 58fd49f3de6f1593f27633d4f79ba01b
+Size: 84843714
+Filename: linux-davinci-src_2.6.32.17-psp03.01.01.39-r52_all.ipk
+Source: git://arago-project.org/git/projects/linux-davinci.git;protocol=git;branch=master 	file://defconfig
+Description: Patched sources for linux-davinci
+Priority: Optional
+
+
+Package: matrix-gui-e-src
+Version: 1.3-r21.6
+Section: multimedia
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 43447018183841489e756044f94e0d20
+Size: 1400414
+Filename: matrix-gui-e-src_1.3-r21.6_all.ipk
+Source: svn://gforge.ti.com/svn/matrix_gui/;module=trunk;proto=https;user=anonymous;pswd=''
+Description: Patched sources for matrix-gui-e
+Priority: Optional
+
+
+Package: task-arago-qte
+Version: 1.0-r7.6
+Depends: qt4-embedded, qt4-embedded-plugin-mousedriver-tslib, qt4-embedded-plugin-gfxdriver-gfxtransformed
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: f90e70438c27b621c6d58079b25646de
+Size: 762
+Filename: task-arago-qte_1.0-r7.6_all.ipk
+Source: file:///sdk/build/DVSDK_4_02/4_02_00_06/arago-install/arago/recipes/tasks/task-arago-qte.bb
+Description: Task to add Qt/Embedded and basic plugins
+OE: task-arago-qte
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-toolchain-tisdk-bsp-target
+Version: 1.0-r3.6
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: e89b9233a543ff468afe2342b58a7320
+Size: 752
+Filename: task-arago-toolchain-tisdk-bsp-target_1.0-r3.6_all.ipk
+Source: file:///sdk/build/DVSDK_4_02/4_02_00_06/arago-install/arago/recipes/tasks/task-arago-toolchain-tisdk-bsp-target.bb
+Description: Task to build and install corresponding development packages for Board Support Package
+OE: task-arago-toolchain-tisdk-bsp-target
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-toolchain-tisdk-multimedia-target
+Version: 1.0-r3.6
+Depends: gstreamer-dev, gst-plugins-base-dev, gst-plugins-good-dev, gst-plugins-ugly-dev, gst-plugins-bad-dev
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 57cd3881fcd51579c9b546d21099df40
+Size: 776
+Filename: task-arago-toolchain-tisdk-multimedia-target_1.0-r3.6_all.ipk
+Source: file:///sdk/build/DVSDK_4_02/4_02_00_06/arago-install/arago/recipes/tasks/task-arago-toolchain-tisdk-multimedia-target.bb
+Description: Task to build and install header and libs in sdk
+OE: task-arago-toolchain-tisdk-multimedia-target
+HomePage: unknown
+Priority: optional
+
+
+Package: ti-board-utilities-dm36x-src
+Version: 03.01.01.39-r1
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 63c18a9f9a177d8a3cdb73c4af1df3f0
+Size: 2060790
+Filename: ti-board-utilities-dm36x-src_03.01.01.39-r1_all.ipk
+Source: http://install.source.dir.local/flash-utils-davinci.tar.gz;name=src  http://install.source.dir.local/board-utils-davinci.tar.gz;name=prebuiltbin
+Description: Patched sources for ti-board-utilities-dm36x
+Priority: Optional
+
+
+Package: ti-codec-engine-src
+Version: 2_26_02_11-r52a
+Section: devel
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: bfa2f76ac898c7cff56869667b975cb6
+Size: 31337142
+Filename: ti-codec-engine-src_2_26_02_11-r52a_all.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ce/2_26_02_11/exports/codec_engine_2_26_02_11,lite.tar.gz;name=cetarball
+Description: Patched sources for ti-codec-engine
+Priority: Optional
+
+
+Package: ti-codecs-dm365-src
+Version: 4_02_00_00-r52d
+Section: multimedia
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 48d40cf624cbd4399ec61af04de73a94
+Size: 31771704
+Filename: ti-codecs-dm365-src_4_02_00_00-r52d_all.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_mpeg4dec_hdvicp_02_00_00_05_production.bin;name=mpeg4dec_hdvicp     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_mpeg4enc_hdvicp_02_00_00_08_production.bin;name=mpeg4enc_hdvicp     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_h264dec_02_00_00_10_production.bin;name=h264dec     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_mpeg2dec_01_00_00_06_production.bin;name=mpeg2dec     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_mpeg2enc_01_00_00_07_production.bin;name=mpeg2enc     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_vc1dec_01_00_00_06_production.bin;name=vc1dec     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_mpeg4dec_01_10_00_01_production.bin;name=mpeg4dec     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_mpeg4enc_01_10_00_03_production.bin;name=mpeg4enc     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_jpegdec_01_00_00_10_production.bin;name=jpegdec     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_jpegenc_01_00_00_09_production.bin;name=jpegenc     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_aaclcdec_6_1_00_production.bin;name=aaclcdec     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_aaclcenc_3_5_00_production.bin;name=aaclcenc     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_g711dec_2_0_00_production.bin;name=g711dec     http://software-dl.ti.com/dsps/dsps_public_sw/codecs/DM365//DM365_latest/dm365_g711enc_2_0_00_production.bin;name=g711enc     http://install.dir.local.com/dm365_h264enc_02_20_00_01_production.tar;name=h264enc
+Description: Patched sources for ti-codecs-dm365
+Priority: Optional
+
+
+Package: ti-dm365mm-module-src
+Version: 01_00_03-r52b
+Section: devel
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: a658942fcd775394d74a62e4add3adec
+Size: 6680
+Filename: ti-dm365mm-module-src_01_00_03-r52b_all.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_10/latest/exports/dm365mm_01_00_03.tar.gz;name=dm365mmtarball
+Description: Patched sources for ti-dm365mm-module
+Priority: Optional
+
+
+Package: ti-dmai-src
+Version: 2_20_00_15-r2
+Section: multimedia
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: af8d73fd04eed400501e69ba624745a8
+Size: 798958
+Filename: ti-dmai-src_2_20_00_15-r2_all.ipk
+Source: svn://gforge.ti.com/svn/dmai/;module=tags/TAG_2_20_00_15;proto=https;user=anonymous;pswd='' 	    file://doxygen_templates.tar.gz         file://arago-tdox
+Description: Patched sources for ti-dmai
+Priority: Optional
+
+
+Package: ti-dvtb-src
+Version: 4_20_18-r17
+Section: multimedia
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: d3c27c775a487548d183e9b1a113499b
+Size: 3475834
+Filename: ti-dvtb-src_4_20_18-r17_all.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvtb/4_20_18/exports/dvtb_4_20_18.tar.gz;name=dvtbtarball   file://make-include-rules.make-conditional.patch
+Description: Patched sources for ti-dvtb
+Priority: Optional
+
+
+Package: ti-framework-components-src
+Version: 2_26_00_01-r1
+Section: devel
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 9c3c0395372c96aa580fbb0c0df68bb0
+Size: 22716724
+Filename: ti-framework-components-src_2_26_00_01-r1_all.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/fc/2_26_00_01/exports/framework_components_2_26_00_01,lite.tar.gz;name=fctarball
+Description: Patched sources for ti-framework-components
+Priority: Optional
+
+
+Package: ti-linux-driver-examples-src
+Version: psp03.01.01.38-r0e
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 8baf0c563974ced05c131d8a1bef4a63
+Size: 7897988
+Filename: ti-linux-driver-examples-src_psp03.01.01.38-r0e_all.ipk
+Source: git://arago-project.org/git/projects/examples-davinci.git;protocol=git
+Description: Patched sources for ti-linux-driver-examples
+Priority: Optional
+
+
+Package: ti-linuxutils-src
+Version: 2_26_01_02-r52d
+Section: devel
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 186d836584a7a5c622db6bfb74c638f2
+Size: 585196
+Filename: ti-linuxutils-src_2_26_01_02-r52d_all.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/linuxutils/2_26_01_02/exports/linuxutils_2_26_01_02.tar.gz
+Description: Patched sources for ti-linuxutils
+Priority: Optional
+
+
+Package: ti-tisdk-licenses-src
+Version: 1.0-r1
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 24ede3a76ec01390162bce2546fd2e91
+Size: 54378
+Filename: ti-tisdk-licenses-src_1.0-r1_all.ipk
+Source: file://ti-tisdk-licenses/APACHEv2.txt     file://ti-tisdk-licenses/ECLIPSEv1.txt     file://ti-tisdk-licenses/GPLv2.txt     file://ti-tisdk-licenses/GPLv3.txt     file://ti-tisdk-licenses/LGPLv2.1.txt     file://ti-tisdk-licenses/LGPLv3.txt     file://ti-tisdk-licenses/MPLv1.1.txt     file://ti-tisdk-licenses/TI_TSPA.txt     file://ti-tisdk-licenses/BSD.txt     file://ti-tisdk-licenses/MIT.txt     file://ti-tisdk-licenses/creativecommons.txt     file://ti-tisdk-licenses/openssl.txt
+Description: Patched sources for ti-tisdk-licenses
+Priority: Optional
+
+
+Package: ti-xdais-src
+Version: 6_26_01_03-r1
+Section: devel
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: f7d6412ed6a4e8e0369e13c5a2565ca4
+Size: 5955662
+Filename: ti-xdais-src_6_26_01_03-r1_all.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/xdais/6_26_01_03/exports/xdais_6_26_01_03.tar.gz;name=xdaistarball
+Description: Patched sources for ti-xdais
+Priority: Optional
+
+
+Package: ti-xdctools-src
+Version: 3_16_03_36-r2
+Section: devel
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: f7fc2b93c3d9d61f0aaba651578afe02
+Size: 176890784
+Filename: ti-xdctools-src_3_16_03_36-r2_all.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/rtsc/3_16_03_36/exports/xdctools_setuplinux_3_16_03_36.bin;name=xdcbin
+Description: Patched sources for ti-xdctools
+Priority: Optional
+
+
+Package: update-modules
+Version: 1.0-r10.6
+Depends: module-init-tools-depmod
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 5950a32313c7d5599f5173eb08185284
+Size: 2530
+Filename: update-modules_1.0-r10.6_all.ipk
+Source: file://update-modules
+Description: Script to manage module configuration files
+OE: update-modules
+HomePage: unknown
+Priority: optional
+
+
+Package: update-rc.d-dev
+Version: 0.7-r2.6
+Depends: update-rc.d
+Recommends: update-rc.d-dev
+Section: devel
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 03ba5aab46abdb906d43c273b7c07a54
+Size: 698
+Filename: update-rc.d-dev_0.7-r2.6_all.ipk
+Source: file://update-rc.d file://add-verbose.patch
+Description: Manage symlinks in /etc/rcN.d
+OE: update-rc.d
+HomePage: unknown
+Priority: standard
+
+
+Package: update-rc.d
+Version: 0.7-r2.6
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 8f9382719b93734904330b441cf342c2
+Size: 2576
+Filename: update-rc.d_0.7-r2.6_all.ipk
+Source: file://update-rc.d file://add-verbose.patch
+Description: Manage symlinks in /etc/rcN.d
+OE: update-rc.d
+HomePage: unknown
+Priority: standard
+
+

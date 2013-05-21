@@ -1,0 +1,303 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  SIGBUS (0x7) at pc=0x40801b43, pid=17410, tid=1073843824
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_11-b03 mixed mode)
+# Problematic frame:
+# C  [libzip.so+0xbb43]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x095bb890):  JavaThread "main" [_thread_in_native, id=17410]
+
+siginfo:si_signo=7, si_errno=0, si_code=2, si_addr=0x42bf08d8
+
+Registers:
+EAX=0x40807000, EBX=0x4080688c, ECX=0xffffffff, EDX=0x095bea50
+ESP=0xbffe7f04, EBP=0xbffe7f5c, ESI=0x42bf08d7, EDI=0x00000000
+EIP=0x40801b43, CR2=0x42bf08d8, EFLAGS=0x00010206
+
+Top of Stack: (sp=0xbffe7f04)
+0xbffe7f04:   095beae8 bffe7fc4 bffe7f2c 40292f73
+0xbffe7f14:   095beb28 00000001 bffe7f3c 402746b7
+0xbffe7f24:   403a516c 0000331b bffe7f4c 40205599
+0xbffe7f34:   095beae8 095bbdc8 bffe7f5c 40045b83
+0xbffe7f44:   095beae8 4080688c 40801b2d 4080688c
+0xbffe7f54:   42e7c368 00000000 bffe7f7c 408020bc
+0xbffe7f64:   095bea50 42e7c368 268a2b72 4080688c
+0xbffe7f74:   bffe7fc0 bffe7fc4 bffe7f9c 408025f1 
+
+Instructions: (pc=0x40801b43)
+0x40801b33:   83 ec 4c 8b 45 0c 8b 55 08 8b 30 8b 42 08 01 c6
+0x40801b43:   0f b6 46 01 0f b6 0e 0f b6 56 02 c1 e0 08 09 c1 
+
+Stack: [0xbfdee000,0xbffee000),  sp=0xbffe7f04,  free space=2023k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libzip.so+0xbb43]
+C  [libzip.so+0xc0bc]  ZIP_GetEntry+0x10c
+C  [libzip.so+0xc5f1]  ZIP_FindEntry+0x31
+V  [libjvm.so+0xf5244]
+V  [libjvm.so+0xf6344]
+V  [libjvm.so+0x2ddf4f]
+V  [libjvm.so+0x2dcde7]
+V  [libjvm.so+0x2dbe04]
+V  [libjvm.so+0x2dbbaa]
+V  [libjvm.so+0x121568]
+V  [libjvm.so+0x122031]
+V  [libjvm.so+0x25ee68]
+V  [libjvm.so+0x261aea]
+V  [libjvm.so+0x261c52]
+V  [libjvm.so+0x261aaa]
+V  [libjvm.so+0x16f8be]
+j  sun.misc.FloatingDecimal.<clinit>()V+908
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x17ad8c]
+V  [libjvm.so+0x28efd8]
+V  [libjvm.so+0x17abbf]
+V  [libjvm.so+0x158951]
+V  [libjvm.so+0x157450]
+V  [libjvm.so+0x1564c7]
+V  [libjvm.so+0x16c8c6]
+j  java.lang.Double.toString(D)Ljava/lang/String;+0
+j  java.lang.String.valueOf(D)Ljava/lang/String;+1
+j  java.security.Provider.putId()V+21
+j  java.security.Provider.<init>(Ljava/lang/String;DLjava/lang/String;)V+31
+j  sun.security.provider.Sun.<init>()V+8
+j  sun.security.util.ManifestEntryVerifier.<clinit>()V+12
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x17ad8c]
+V  [libjvm.so+0x28efd8]
+V  [libjvm.so+0x17abbf]
+V  [libjvm.so+0x158951]
+V  [libjvm.so+0x157450]
+V  [libjvm.so+0x1564c7]
+V  [libjvm.so+0x16c8c6]
+j  java.util.jar.JarFile.initializeVerifier()V+40
+j  java.util.jar.JarFile.getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;+25
+j  sun.misc.URLClassPath$JarLoader$1.getInputStream()Ljava/io/InputStream;+11
+j  sun.misc.Resource.cachedInputStream()Ljava/io/InputStream;+9
+j  sun.misc.Resource.getByteBuffer()Ljava/nio/ByteBuffer;+1
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+179
+j  java.net.URLClassLoader.access$100(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+3
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+43
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x17ad8c]
+V  [libjvm.so+0x28efd8]
+V  [libjvm.so+0x17abbf]
+V  [libjvm.so+0x1d834d]
+C  [libjava.so+0x93bc]  Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedExceptionAction_2Ljava_security_AccessControlContext_2+0x3c
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+43
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+36
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+j  java.lang.ClassLoader.loadClassInternal(Ljava/lang/String;)Ljava/lang/Class;+2
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x17ad8c]
+V  [libjvm.so+0x28efd8]
+V  [libjvm.so+0x17a822]
+V  [libjvm.so+0x17a90b]
+V  [libjvm.so+0x2de10e]
+V  [libjvm.so+0x2dcde7]
+V  [libjvm.so+0x2dbe04]
+V  [libjvm.so+0x2dbbaa]
+V  [libjvm.so+0x1ec3d6]
+V  [libjvm.so+0x18271d]
+C  [tconf.x86U+0x4a7b]
+C  [tconf.x86U+0x2f37]
+C  [tconf.x86U+0x1862]
+C  [libc.so.6+0x15dec]  __libc_start_main+0xdc
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.misc.FloatingDecimal.<clinit>()V+908
+v  ~StubRoutines::call_stub
+j  java.lang.Double.toString(D)Ljava/lang/String;+0
+j  java.lang.String.valueOf(D)Ljava/lang/String;+1
+j  java.security.Provider.putId()V+21
+j  java.security.Provider.<init>(Ljava/lang/String;DLjava/lang/String;)V+31
+j  sun.security.provider.Sun.<init>()V+8
+j  sun.security.util.ManifestEntryVerifier.<clinit>()V+12
+v  ~StubRoutines::call_stub
+j  java.util.jar.JarFile.initializeVerifier()V+40
+j  java.util.jar.JarFile.getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;+25
+j  sun.misc.URLClassPath$JarLoader$1.getInputStream()Ljava/io/InputStream;+11
+j  sun.misc.Resource.cachedInputStream()Ljava/io/InputStream;+9
+j  sun.misc.Resource.getByteBuffer()Ljava/nio/ByteBuffer;+1
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+179
+j  java.net.URLClassLoader.access$100(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+3
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+43
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+43
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+36
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+j  java.lang.ClassLoader.loadClassInternal(Ljava/lang/String;)Ljava/lang/Class;+2
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x09628318 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=17427]
+  0x09626d68 JavaThread "CompilerThread0" daemon [_thread_blocked, id=17426]
+  0x09625de0 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=17425]
+  0x0961b4b0 JavaThread "Finalizer" daemon [_thread_blocked, id=17421]
+  0x0961a7e8 JavaThread "Reference Handler" daemon [_thread_blocked, id=17420]
+=>0x095bb890 JavaThread "main" [_thread_in_native, id=17410]
+
+Other Threads:
+  0x096176d0 VMThread [id=17418]
+  0x096297f8 WatcherThread [id=17428]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 576K, used 266K [0x45810000, 0x458b0000, 0x45cf0000)
+  eden space 512K,  51% used [0x45810000, 0x45852808, 0x45890000)
+  from space 64K,   0% used [0x45890000, 0x45890000, 0x458a0000)
+  to   space 64K,   0% used [0x458a0000, 0x458a0000, 0x458b0000)
+ tenured generation   total 1408K, used 0K [0x45cf0000, 0x45e50000, 0x49810000)
+   the space 1408K,   0% used [0x45cf0000, 0x45cf0000, 0x45cf0200, 0x45e50000)
+ compacting perm gen  total 8192K, used 1499K [0x49810000, 0x4a010000, 0x4d810000)
+   the space 8192K,  18% used [0x49810000, 0x49986fb0, 0x49987000, 0x4a010000)
+No shared spaces configured.
+
+Dynamic libraries:
+003db000-003f4000 r-xp 00000000 03:04 328097     /lib/ld-2.5.so
+003f4000-003f5000 r-xp 00018000 03:04 328097     /lib/ld-2.5.so
+003f5000-003f6000 rwxp 00019000 03:04 328097     /lib/ld-2.5.so
+003f8000-0052f000 r-xp 00000000 03:04 328098     /lib/libc-2.5.so
+0052f000-00531000 r-xp 00137000 03:04 328098     /lib/libc-2.5.so
+00531000-00532000 rwxp 00139000 03:04 328098     /lib/libc-2.5.so
+00532000-00535000 rwxp 00532000 00:00 0 
+00537000-0055c000 r-xp 00000000 03:04 328105     /lib/libm-2.5.so
+0055c000-0055d000 r-xp 00024000 03:04 328105     /lib/libm-2.5.so
+0055d000-0055e000 rwxp 00025000 03:04 328105     /lib/libm-2.5.so
+00560000-00562000 r-xp 00000000 03:04 328099     /lib/libdl-2.5.so
+00562000-00563000 r-xp 00001000 03:04 328099     /lib/libdl-2.5.so
+00563000-00564000 rwxp 00002000 03:04 328099     /lib/libdl-2.5.so
+00566000-00579000 r-xp 00000000 03:04 328100     /lib/libpthread-2.5.so
+00579000-0057a000 r-xp 00012000 03:04 328100     /lib/libpthread-2.5.so
+0057a000-0057b000 rwxp 00013000 03:04 328100     /lib/libpthread-2.5.so
+0057b000-0057d000 rwxp 0057b000 00:00 0 
+00a8b000-00a9d000 r-xp 00000000 03:04 328108     /lib/libnsl-2.5.so
+00a9d000-00a9e000 r-xp 00012000 03:04 328108     /lib/libnsl-2.5.so
+00a9e000-00a9f000 rwxp 00013000 03:04 328108     /lib/libnsl-2.5.so
+00a9f000-00aa1000 rwxp 00a9f000 00:00 0 
+08048000-08053000 r-xp 00000000 00:1c 86163      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/tconf.x86U
+08053000-08054000 rwxp 0000a000 00:1c 86163      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/tconf.x86U
+08054000-08056000 rwxp 08054000 00:00 0 
+095b6000-0970b000 rwxp 095b6000 00:00 0 
+40000000-40001000 r-xp 40000000 00:00 0          [vdso]
+40001000-40002000 rwxp 40001000 00:00 0 
+40002000-40003000 r-xp 40002000 00:00 0 
+40003000-40004000 rwxp 40003000 00:00 0 
+40004000-4000a000 r-xp 00000000 00:1c 86407      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386/native_threads/libhpi.so
+4000a000-4000b000 rwxp 00006000 00:1c 86407      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386/native_threads/libhpi.so
+4000b000-40014000 r-xp 00000000 03:04 325801     /lib/libnss_files-2.5.so
+40014000-40015000 r-xp 00008000 03:04 325801     /lib/libnss_files-2.5.so
+40015000-40016000 rwxp 00009000 03:04 325801     /lib/libnss_files-2.5.so
+40016000-40018000 r-xs 00000000 00:1c 86440      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/ext/dnsns.jar
+40018000-4001a000 rwxp 40018000 00:00 0 
+4001a000-4038a000 r-xp 00000000 00:1c 86395      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386/client/libjvm.so
+4038a000-403a8000 rwxp 00370000 00:1c 86395      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386/client/libjvm.so
+403a8000-407bf000 rwxp 403a8000 00:00 0 
+407bf000-407c7000 rwxs 00000000 03:04 3029996    /tmp/hsperfdata_root/17410
+407c7000-407d2000 r-xp 00000000 00:1c 86411      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386/libverify.so
+407d2000-407d3000 rwxp 0000b000 00:1c 86411      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386/libverify.so
+407d3000-407f4000 r-xp 00000000 00:1c 86412      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386/libjava.so
+407f4000-407f6000 rwxp 00020000 00:1c 86412      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386/libjava.so
+407f6000-40805000 r-xp 00000000 00:1c 86416      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386/libzip.so
+40805000-40807000 rwxp 0000e000 00:1c 86416      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386/libzip.so
+40807000-42e16000 r-xs 00000000 00:1c 86418      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/rt.jar
+42e16000-42e7f000 rwxp 42e16000 00:00 0 
+42e7f000-42f04000 r-xs 00000000 00:1c 86426      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/jsse.jar
+42f04000-42f19000 r-xs 00000000 00:1c 86428      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/jce.jar
+42f19000-43788000 r-xs 00000000 00:1c 86429      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/charsets.jar
+43788000-43818000 rwxp 43788000 00:00 0 
+43818000-45788000 rwxp 43818000 00:00 0 
+45788000-4578b000 rwxp 45788000 00:00 0 
+4578b000-45808000 rwxp 4578b000 00:00 0 
+45810000-458b0000 rwxp 45810000 00:00 0 
+458b0000-45cf0000 rwxp 458b0000 00:00 0 
+45cf0000-45e50000 rwxp 45cf0000 00:00 0 
+45e50000-49810000 rwxp 45e50000 00:00 0 
+49810000-4a010000 rwxp 49810000 00:00 0 
+4a010000-4d810000 rwxp 4a010000 00:00 0 
+4d810000-4d811000 rwxp 4d810000 00:00 0 
+4d811000-4d812000 rwxp 4d811000 00:00 0 
+4d812000-4d814000 rwxp 4d812000 00:00 0 
+4d814000-4d830000 rwxp 4d814000 00:00 0 
+4d830000-4d834000 rwxp 4d830000 00:00 0 
+4d834000-4d850000 rwxp 4d834000 00:00 0 
+4d850000-4d852000 rwxp 4d850000 00:00 0 
+4d852000-4d86f000 rwxp 4d852000 00:00 0 
+4d86f000-4d874000 rwxp 4d86f000 00:00 0 
+4d874000-4d890000 rwxp 4d874000 00:00 0 
+4d890000-4d891000 --xp 4d890000 00:00 0 
+4d891000-4d911000 rwxp 4d891000 00:00 0 
+4d911000-4d914000 --xp 4d911000 00:00 0 
+4d914000-4d992000 rwxp 4d914000 00:00 0 
+4d992000-4d995000 --xp 4d992000 00:00 0 
+4d995000-4da13000 rwxp 4d995000 00:00 0 
+4da13000-4dc13000 r-xp 00000000 03:04 1471811    /usr/lib/locale/locale-archive
+4dc13000-4dc16000 --xp 4dc13000 00:00 0 
+4dc16000-4dc94000 rwxp 4dc16000 00:00 0 
+4dc94000-4dc97000 --xp 4dc94000 00:00 0 
+4dc97000-4dd15000 rwxp 4dc97000 00:00 0 
+4dd15000-4dd18000 --xp 4dd15000 00:00 0 
+4dd18000-4dd96000 rwxp 4dd18000 00:00 0 
+4dd96000-4dd97000 --xp 4dd96000 00:00 0 
+4dd97000-4de17000 rwxp 4dd97000 00:00 0 
+4de17000-4dedc000 r-xs 00000000 00:1c 86441      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/ext/localedata.jar
+4dedc000-4df03000 r-xs 00000000 00:1c 86442      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/ext/sunjce_provider.jar
+4df03000-4df2e000 r-xs 00000000 00:1c 86443      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/ext/sunpkcs11.jar
+4df2e000-4e085000 r-xs 00000000 00:1c 86389      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/js.jar
+4e085000-4e092000 r-xs 00000000 00:1c 86151      /home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/config.jar
+bfdee000-bfdf1000 --xp bfdee000 00:00 0 
+bfdf1000-bffee000 rwxp bfdf1000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Xverify:none -Dxdc.path=/home/ITTIAM/100200/audio_speech/release_process/release_out/g711_dec_2_0_00_production_dm365_mvl;/home/dm365/dvsdk_2_10_01_18/codec_engine_2_24/packages;/home/dm365/dvsdk_2_10_01_18/codec_engine_2_24/cetools/packages;/home/dm365/dvsdk_2_10_01_18/xdais_6_24/packages;/home/dm365/dvsdk_2_10_01_18/framework_components_2_24/fctools/packages;/home/dm365/dvsdk_2_10_01_18/framework_components_2_24/packages;/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages;../../.. -Dxdc.root=/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59 -Dxdc.hostOS=Linux -Dconfig.importPath=.;/home/ITTIAM/100200/audio_speech/release_process/release_out/g711_dec_2_0_00_production_dm365_mvl;/home/dm365/dvsdk_2_10_01_18/codec_engine_2_24/packages;/home/dm365/dvsdk_2_10_01_18/codec_engine_2_24/cetools/packages;/home/dm365/dvsdk_2_10_01_18/xdais_6_24/packages;/home/dm365/dvsdk_2_10_01_18/framework_components_2_24/fctools/packages;/home/dm365/dvsdk_2_10_01_18/framework_components_2_24/packages;/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages;../../..;/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59;/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/etc -Dxdc.bld.targets= -DTOOLS= -Djava.library.path=/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59:/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59:/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/../bin:. -Dconfig.scriptName=/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/bld/bld.js -Dconfig.rootDir=/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59 -Dconfig.path=/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59:/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/../lib:/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java: -DXDCPATH=/home/ITTIAM/100200/audio_speech/release_process/release_out/g711_dec_2_0_00_production_dm365_mvl;/home/dm365/dvsdk_2_10_01_18/codec_engine_2_24/packages;/home/dm365/dvsdk_2_10_01_18/codec_engine_2_24/cetools/packages;/home/dm365/dvsdk_2_10_01_18/xdais_6
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+CLASSPATH=/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/antlr.jar:/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/packages/xdc/shelf/java/js.jar
+PATH=/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/bin:/backup/mp_vps/vps/mv_pro_4.0/montavista/pro/devkit/arm/v5t_le/bin/:/usr/lib/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+LD_LIBRARY_PATH=/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59:/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386/client:/home/dm365/dvsdk_2_10_01_18/xdctools_3_15_01_59/jre/lib/i386
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x32a000], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x32a000], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x28e010], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x28e010], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x28e010], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x290460], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x28fe90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x28fe90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x28fe90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x28fe90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Red Hat Enterprise Linux Server release 5 (Tikanga)
+
+uname:Linux 2.6.18-8.el5 #1 SMP Fri Jan 26 14:15:21 EST 2007 i686
+libc:glibc 2.5 NPTL 2.5 
+rlimit: STACK infinity, CORE 0k, NPROC 16255, NOFILE 1024, AS infinity
+load average:2.33 1.71 1.15
+
+CPU:total 1 (cores per cpu 1, threads per core 1) family 15 model 2 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2
+
+Memory: 4k page, physical 1027272k(109532k free), swap 1052248k(1052232k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0_11-b03) for linux-x86, built on Dec 15 2006 02:25:41 by java_re with gcc 3.2.1-7a (J2SE release)
+

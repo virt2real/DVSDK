@@ -1,0 +1,615 @@
+<html>
+<head>
+<title>module ti.sdo.ce.Engine</title>
+<meta name="description" content="Engine Configuration interface">
+<link rel="stylesheet" type="text/css" href="../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.sdo.ce.</span><span class="xdoc-id">Engine</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/ICodec.html" title="interface ICodec"><img class="xdocHdrArrow" src="../../../Arrow_left.png"/></a></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/package.html" title="package ti.sdo.ce"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Server.html" title="module Server"><img class="xdocHdrArrow" src="../../../Arrow_right.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html">index URL</a></div>
+<p class="xdocHdrSummary">Engine Configuration interface</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../ti/sdo/ce/Engine-src.html"><span class="xdocLabelFile">ti/sdo/ce/Engine.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Engine</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">instance</span>:<b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> Engine = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.sdo.ce.Engine'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.M.A.X.G.R.O.U.P.I.D">Engine.<span class="xdoc-id">MAXGROUPID</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Maximum group id</span></span></a> = 20;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> <a class="xdocSynGo" href="#.Alg.Desc">Engine.<span class="xdoc-id">AlgDesc</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Algorithm descriptor</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">name</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Alg nick-name</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">mod</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;The alg implementation</span></span></a> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/ICodec.html#.Module" title="ti.sdo.ce.ICodec.Module">ICodec.Module</a></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">local</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Run algorithm locally</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">groupId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Alg group ID for sharing resources</span></span></a> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynHdr'>module-wide functions</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#create.From.Server">Engine.<span class="xdoc-id">createFromServer</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Create an Engine from a Server package</span></span></a>( <i><span class="xdoc-kw2">Any</span></i> <go><span class="xdoc-id">engineName</span></go>, <i><span class="xdoc-kw2">Any</span></i> <go><span class="xdoc-id">serverExecutable</span></go>, <i><span class="xdoc-kw2">Any</span></i> <go><span class="xdoc-id">serverPackage</span></go> ) <i>returns</i> <i><span class="xdoc-kw2">Any</span></i>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#get.Dsp.Mem.Table.From.Server">Engine.<span class="xdoc-id">getDspMemTableFromServer</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Get a remote processor's memory table from a Server package</span></span></a>( <i><span class="xdoc-kw2">Any</span></i> <go><span class="xdoc-id">serverExecutable</span></go>, <i><span class="xdoc-kw2">Any</span></i> <go><span class="xdoc-id">serverPackage</span></go> ) <i>returns</i> <i><span class="xdoc-kw2">Any</span></i>
+</div>
+<div class='xdocSynHdr'>per-instance config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">var</span> params = <span class="xdoc-kw1">new</span> Engine.<a class="xdocSynGo" href="#per-instance_config_parameters"><span class="xdoc-id">Params</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Instance config-params object</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>params.<a class="xdocSynGo" href="#algs"><span class="xdoc-id">algs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Array of algorithms available in an Engine</span></span></a> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/Engine.html#.Alg.Desc" title="ti.sdo.ce.Engine.AlgDesc">Engine.AlgDesc</a>[<span class="xdoc-kw2"></span>]</i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>params.<a class="xdocSynGo" href="#arm.Dsp.Link.Config"><span class="xdoc-id">armDspLinkConfig</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;ARM-side DSP Link configuration</span></span></a> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/ipc/IIpc.html#.Arm.Dsp.Link.Config" title="ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig">IIpc.ArmDspLinkConfig</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>params.<a class="xdocSynGo" href="#link.Cfg"><span class="xdoc-id">linkCfg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Optional name of DSP Link configuration</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>params.<a class="xdocSynGo" href="#name"><span class="xdoc-id">name</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name of this engine</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>params.<a class="xdocSynGo" href="#server"><span class="xdoc-id">server</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Optional name of the remote server</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class='xdocSynHdr'>per-instance creation</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">var</span> inst = Engine.<a class="xdocSynGo" href="#per-instance_creation"><span class="xdoc-id">create</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Create an instance-object</span></span></a>( <i><span class="xdoc-kw2">String</span></i> <go><span class="xdoc-id">name</span></go>, <i><a class="xdoc-link" href="../../../ti/sdo/ce/Engine.html#.Alg.Desc" title="ti.sdo.ce.Engine.AlgDesc">Engine.AlgDesc</a>[<span class="xdoc-kw2"></span>]</i> <go><span class="xdoc-id">algs</span></go>, params );
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../ti/sdo/ce/Engine-src.html"><span class="xdocLabelFile">ti/sdo/ce/Engine.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../ti/sdo/ce/package.html" title="ti.sdo.ce">ti.sdo.ce</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Engine</span></go> {
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.M.A.X.G.R.O.U.P.I.D"><span class="xdoc-id">MAXGROUPID</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Maximum group id</span></span></a> = 20;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">struct</span> <a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">AlgDesc</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Algorithm descriptor</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">name</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Alg nick-name</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdoc-link" href="../../../ti/sdo/ce/ICodec.html#.Module" title="ti.sdo.ce.ICodec.Module">ICodec.Module</a>&nbsp;<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">mod</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;The alg implementation</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">local</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Run algorithm locally</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">groupId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Alg group ID for sharing resources</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class='xdocSynHdr'>module-wide functions</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#create.From.Server"><span class="xdoc-kw1">function </span><span class="xdoc-id">createFromServer</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Create an Engine from a Server package</span></span></a>( <go><span class="xdoc-id">engineName</span></go>, <go><span class="xdoc-id">serverExecutable</span></go>, <go><span class="xdoc-id">serverPackage</span></go> );
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#get.Dsp.Mem.Table.From.Server"><span class="xdoc-kw1">function </span><span class="xdoc-id">getDspMemTableFromServer</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Get a remote processor's memory table from a Server package</span></span></a>( <go><span class="xdoc-id">serverExecutable</span></go>, <go><span class="xdoc-id">serverPackage</span></go> );
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">instance</span>:
+</div>
+<div class='xdocSynHdr'>per-instance config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../ti/sdo/ce/Engine.html#.Alg.Desc" title="ti.sdo.ce.Engine.AlgDesc">Engine.AlgDesc</a>&nbsp;<a class="xdocSynGo" href="#algs"><span class="xdoc-id">algs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Array of algorithms available in an Engine</span></span></a>[<span class="xdoc-kw2"></span>];
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../ti/sdo/ce/ipc/IIpc.html#.Arm.Dsp.Link.Config" title="ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig">IIpc.ArmDspLinkConfig</a>&nbsp;<a class="xdocSynGo" href="#arm.Dsp.Link.Config"><span class="xdoc-id">armDspLinkConfig</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;ARM-side DSP Link configuration</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#link.Cfg"><span class="xdoc-id">linkCfg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Optional name of DSP Link configuration</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#name"><span class="xdoc-id">name</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name of this engine</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#server"><span class="xdoc-id">server</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Optional name of the remote server</span></span></a>;
+</div>
+<div class='xdocSynHdr'>per-instance creation</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#per-instance_creation"><span class="xdoc-id">create</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Create an instance-object</span></span></a>( <span class="xdoc-kw2">String</span>&nbsp;<go><span class="xdoc-id">name</span></go>, <a class="xdoc-link" href="../../../ti/sdo/ce/Engine.html#.Alg.Desc" title="ti.sdo.ce.Engine.AlgDesc">Engine.AlgDesc</a>&nbsp;<go><span class="xdoc-id">algs</span></go>[<span class="xdoc-kw2"></span>] );
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".M.A.X.G.R.O.U.P.I.D"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">const</span> <span class="xdoc-id">Engine.</span><span class="xdoc-id">MAXGROUPID</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html#.M.A.X.G.R.O.U.P.I.D">index URL</a></div>
+<p class="xdocHdrSummary">Maximum group id</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> Engine.<span class="xdoc-id">MAXGROUPID</span> = 20;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Alg.Desc"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">struct</span> <span class="xdoc-id">Engine.</span><span class="xdoc-id">AlgDesc</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html#.Alg.Desc">index URL</a></div>
+<p class="xdocHdrSummary">Algorithm descriptor</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> Engine.<span class="xdoc-id">AlgDesc</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">name</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Alg nick-name</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">mod</span> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/ICodec.html#.Module" title="ti.sdo.ce.ICodec.Module">ICodec.Module</a></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;The alg implementation</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">local</span> = <i><span class="xdoc-kw2">Bool</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Run algorithm locally</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">groupId</span> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Alg group ID for sharing resources</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">FIELDS</div>
+<div class="xdocChild"><span class="xdocChildId">name</span>
+<span class="xdocChildSum">&#151;&nbsp;This string specifies the "local" name used by the
+                  application to identify the algorithm to instantiate</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">mod</span>
+<span class="xdocChildSum">&#151;&nbsp;This field is a module reference that identifies the
+                  actual module implementing the algorithm to instantiate</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">local</span>
+<span class="xdocChildSum">&#151;&nbsp;If true, the algorithm should be instantiated on the
+                  "local" CPU; otherwise the server will create an
+                  instance of the algorithm identifed by <tt>mod</tt>.</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">groupId</span>
+<span class="xdocChildSum">&#151;&nbsp;This id specifies which resource sharing group
+                  this codec will be placed into.  This 'group' concept
+                  is used by the framework to ensure algorithms in the
+                  same group don't pre-empt each other and corrupt the
+                  shared resources.</span>
+</div>
+<div class="xdocChildText">Note that this parameter is ignored if <tt>local</tt> is not
+                  TRUE.</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Each engine "contains" multiple algorithms described by AlgDesc
+  structures.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="create.From.Server"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-id">Engine.</span><span class="xdoc-id">createFromServer</span>( )&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html#create.From.Server">index URL</a></div>
+<p class="xdocHdrSummary">Create an Engine from a Server package</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Engine.<span class="xdoc-id">createFromServer</span>( <i><span class="xdoc-kw2">Any</span></i> <span class="xdoc-id">engineName</span>, <i><span class="xdoc-kw2">Any</span></i> <span class="xdoc-id">serverExecutable</span>, <i><span class="xdoc-kw2">Any</span></i> <span class="xdoc-id">serverPackage</span> ) <i>returns</i> <i><span class="xdoc-kw2">Any</span></i>
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">ARGUMENTS</div>
+<div class="xdocChild"><span class="xdocChildId">engineName</span>
+<span class="xdocChildSum">&#151;&nbsp;Name to be used for the engine created</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">serverExecutable</span>
+<span class="xdocChildSum">&#151;&nbsp;Path to the server executable (including the
+                            executable), relative from server package</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">serverPackage</span>
+<span class="xdocChildSum">&#151;&nbsp;Name of the server package</span>
+</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Given a Server package and an executable in that package, this method
+  creates an Engine instance and initializes it from details in the
+  Server provided.</div>
+<div class="xdocText">An Engine instance created this way has all the codecs that exist
+  in the Server executable - with codec names matching the names
+  configured into the Server, and is configured to use an appropriate
+  memory map and other DSP-specific info.</div>
+<div class="xdocText">Example usage:</div>
+<div class="xdocText"><PRE class="Example">  var myEngine = Engine.createFromServer("video_copy",
+                     "./video_copy.x64P",
+                     "ti.sdo.ce.examples.servers.video_copy");
+
+</PRE></div>
+<span id="xdoc-sect-3"></span>
+<div class="xdocSect">RETURNS</div>
+<div class="xdocText">An Engine instance of the same type as
+                            if <a class="xdoc-link" href="Engine.html#per-instance_creation" title="create">create()</a> were called.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="get.Dsp.Mem.Table.From.Server"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-id">Engine.</span><span class="xdoc-id">getDspMemTableFromServer</span>( )&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html#get.Dsp.Mem.Table.From.Server">index URL</a></div>
+<p class="xdocHdrSummary">Get a remote processor's memory table from a Server package</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Engine.<span class="xdoc-id">getDspMemTableFromServer</span>( <i><span class="xdoc-kw2">Any</span></i> <span class="xdoc-id">serverExecutable</span>, <i><span class="xdoc-kw2">Any</span></i> <span class="xdoc-id">serverPackage</span> ) <i>returns</i> <i><span class="xdoc-kw2">Any</span></i>
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">ARGUMENTS</div>
+<div class="xdocChild"><span class="xdocChildId">serverExecutable</span>
+<span class="xdocChildSum">&#151;&nbsp;Path to the server executable (including the
+                            executable), relative from server package</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">serverPackage</span>
+<span class="xdocChildSum">&#151;&nbsp;Name of the server package</span>
+</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Given a Server package and an executable in that package, this method
+  returns an object that contains the Server's memory map details.</div>
+<div class="xdocText">For example:</div>
+<div class="xdocText"><PRE class="Example">  myEngine.armDspLinkConfig.memTable =
+      Engine.getDspMemTableFromServer(
+                     "./video_copy.x64P",
+                     "ti.sdo.ce.examples.servers.video_copy" );
+
+</PRE></div>
+<div class="xdocText">There is no need to use this method when the preferred
+  <a class="xdoc-link" href="Engine.html#create.From.Server" title="createFromServer">createFromServer()</a> method is used first.</div>
+<span id="xdoc-sect-3"></span>
+<div class="xdocSect">RETURNS</div>
+<div class="xdocText">A DSP memory table "map" object, of type
+                            ti.sdo.ce.osal.Global.
+                            ArmDspLinkConfigMemTableEntry[string]</div>
+<span id="xdoc-sect-4"></span>
+<div class="xdocSect">SEE</div>
+<div class="xdocText"><a class="xdoc-link" href="../../../createFromServer/package.html" title="createFromServer">createFromServer</a></div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="per-instance_config_parameters"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdocSynSum">per-instance config parameters</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html#per-instance_config_parameters">index URL</a></div>
+<p class="xdocHdrSummary"></p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> params = <span class="xdoc-kw1">new</span> Engine.<span class="xdoc-id">Params</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt></tt>//&nbsp;Instance config-params object</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>params.<span class="xdoc-id">algs</span> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/Engine.html#.Alg.Desc" title="ti.sdo.ce.Engine.AlgDesc">Engine.AlgDesc</a>[<span class="xdoc-kw2"></span>]</i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Array of algorithms available in an Engine</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>params.<span class="xdoc-id">armDspLinkConfig</span> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/ipc/IIpc.html#.Arm.Dsp.Link.Config" title="ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig">IIpc.ArmDspLinkConfig</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;ARM-side DSP Link configuration</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>params.<span class="xdoc-id">linkCfg</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Optional name of DSP Link configuration</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>params.<span class="xdoc-id">name</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Name of this engine</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>params.<span class="xdoc-id">server</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Optional name of the remote server</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="algs"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Engine.</span><span class="xdoc-id">algs</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;per-instance</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html#algs">index URL</a></div>
+<p class="xdocHdrSummary">Array of algorithms available in an Engine</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> params = <span class="xdoc-kw1">new</span> Engine.<span class="xdoc-id">Params</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt>params.<span class="xdoc-id">algs</span> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/Engine.html#.Alg.Desc" title="ti.sdo.ce.Engine.AlgDesc">Engine.AlgDesc</a>[<span class="xdoc-kw2"></span>]</i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">An array of algorithms which this Engine instance provides.  A mix
+  of local and remote algorithms can be specified in this array.</div>
+<div class="xdocText"><a class="xdoc-link" href="Engine.html#create.From.Server" title="createFromServer">createFromServer()</a> can be used to populate
+  this array with algorithms configured into a remote Server.</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">SEE</div>
+<div class="xdocText"><a class="xdoc-link" href="../../../createFromServer/package.html" title="createFromServer">createFromServer</a></div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="arm.Dsp.Link.Config"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Engine.</span><span class="xdoc-id">armDspLinkConfig</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;per-instance</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html#arm.Dsp.Link.Config">index URL</a></div>
+<p class="xdocHdrSummary">ARM-side DSP Link configuration</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> params = <span class="xdoc-kw1">new</span> Engine.<span class="xdoc-id">Params</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt>params.<span class="xdoc-id">armDspLinkConfig</span> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/ipc/IIpc.html#.Arm.Dsp.Link.Config" title="ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig">IIpc.ArmDspLinkConfig</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">The ARM-side DSP Link configuration.  If left undefined will revert to
+  ti.sdo.ce.ipc.DEFAULT_ARMDSPLINKCONFIG, but with a warning</div>
+<div class="xdocText">Applies only to CE configurations where
+  osal.Global.runtimeEnv == DSPLINK_LINUX</div>
+<div class="xdocText">There is no need to use this method when the preferred
+  <a class="xdoc-link" href="Engine.html#create.From.Server" title="createFromServer">createFromServer()</a> method is used first.</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">SEE</div>
+<div class="xdocText"><a class="xdoc-link" href="../../../createFromServer/package.html" title="createFromServer">createFromServer</a></div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="link.Cfg"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Engine.</span><span class="xdoc-id">linkCfg</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;per-instance</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html#link.Cfg">index URL</a></div>
+<p class="xdocHdrSummary">Optional name of DSP Link configuration</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> params = <span class="xdoc-kw1">new</span> Engine.<span class="xdoc-id">Params</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt>params.<span class="xdoc-id">linkCfg</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This parameter is only needed when LAD is used to
+  arbitrate control of the DSP server</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="name"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Engine.</span><span class="xdoc-id">name</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;per-instance</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html#name">index URL</a></div>
+<p class="xdocHdrSummary">Name of this engine</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> params = <span class="xdoc-kw1">new</span> Engine.<span class="xdoc-id">Params</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt>params.<span class="xdoc-id">name</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This string provided by the application in the <tt>Engine_open()</tt> call.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="server"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Engine.</span><span class="xdoc-id">server</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;per-instance</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html#server">index URL</a></div>
+<p class="xdocHdrSummary">Optional name of the remote server</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> params = <span class="xdoc-kw1">new</span> Engine.<span class="xdoc-id">Params</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt>params.<span class="xdoc-id">server</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This parameter is only necessary when there are algorithms configured
+  to run remotely - i.e., their <tt>local</tt> field is set to false.</div>
+<div class="xdocText">Engines containing these remote algorithms will need to set
+  this <tt>server</tt> parameter to the name of the binary which should
+  be loaded on the remote processor.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="per-instance_creation"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdocSynSum">per-instance creation</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Engine.html#per-instance_creation">index URL</a></div>
+<p class="xdocHdrSummary"></p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> params = <span class="xdoc-kw1">new</span> Engine.<a class="xdoc-link" href="../../../ti/sdo/ce/Engine.html#per-instance_config_parameters" title="ti.sdo.ce.Engine.Params">Params</a>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt></tt>//&nbsp;Allocate instance config-params</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt>params.<i>config</i> = <b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt></tt>//&nbsp;Assign individual configs</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> inst = Engine.<span class="xdoc-id">create</span>( <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-id">name</span>, <i><a class="xdoc-link" href="../../../ti/sdo/ce/Engine.html#.Alg.Desc" title="ti.sdo.ce.Engine.AlgDesc">Engine.AlgDesc</a>[<span class="xdoc-kw2"></span>]</i> <span class="xdoc-id">algs</span>, params );
+</div>
+<div class='xdocSynSum'><tt></tt><tt></tt>//&nbsp;Create an instance-object</div>
+</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Parameters:</div>
+<div class="xdocText"><DL><DT> <tt>name</tt></DT><DD>
+          Name of this engine; this name is used by clients via the
+          <tt>Engine_open()</tt> API to identify the collection of algorithms
+          available.
+</DD><DT> <tt>algs</tt></DT><DD>
+          Array of algorithms this engine supports
+</DD><DT> <tt>server</tt></DT><DD>
+          Optional name of the DSP Server; this name is used (if
+          necessary) to load and start any associated DSP CPUs required
+          to support this Engine instance
+     
+</DD></DL></div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:36 GMT</div>
+</div></div></body>
+</html>

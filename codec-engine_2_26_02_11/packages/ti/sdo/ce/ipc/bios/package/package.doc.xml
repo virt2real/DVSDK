@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='ti.sdo.ce.ipc.bios' nodoc='0' root='../../../../../' summary='BIOS+implementation+of+Process%2C+Comm%2C+Power+modules'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eti.sdo.ce.ipc.bios%3C%2Fspan%3E%3C%2Fgo%3E+%5B2%2C+0%2C+1%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='Ipc' kind='module' nodoc='0' metaonly='1' summary='BIOS+ipc+settings' inherits='ti.sdo.ce.ipc.IIpc'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2Fbios%2Fpackage.html%22+title%3D%22ti.sdo.ce.ipc.bios%22%3Eti.sdo.ce.ipc.bios%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIpc%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%22+title%3D%22ti.sdo.ce.ipc.IIpc%22%3EIIpc%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EIpc%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%22+title%3D%22ti.sdo.ce.ipc.IIpc%22%3Eti.sdo.ce.ipc.IIpc%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Ipc+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.ce.ipc.bios.Ipc%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='DspManagement' anchor='.Dsp.Management' altext='ti.sdo.ce.ipc.bios.Ipc.DspManagement' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Value+for+controlling+DSP+from+ARM+w%2F+DspLink' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Dsp.Management%22+title%3D%22ti.sdo.ce.ipc.IIpc.DspManagement%22%3EIIpc%3C%2Fa%3E'>
+                <decl kind='enumval' name='BootAndLoadDsp' anchor='.Boot.And.Load.Dsp'/>
+                <decl kind='enumval' name='BootDspAutonomously' anchor='.Boot.Dsp.Autonomously'/>
+                <decl kind='enumval' name='None' anchor='.None'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EDspManagement%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EBootAndLoadDsp%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EBootDspAutonomously%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ENone%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EDspManagement%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EBootAndLoadDsp%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EBootDspAutonomously%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3ENone%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+                <docSect name='VALUES'>
+                    <docChild name='BootAndLoadDsp' summary='DspLink+boots+DSP+and+loads+executable'>
+                    </docChild>
+                    <docChild name='BootDspAutonomously' summary='DspLink+boots+DSP+w%2Fo+loading+executable'>
+                    </docChild>
+                    <docChild name='None' summary='DspLink+neither+boots+DSP+nor+loads+executable'>
+                    </docChild>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='ArmDspLinkConfig' anchor='.Arm.Dsp.Link.Config' altext='ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfig' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Configuration+for+the+DspLink+on+the+Arm+side' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EArmDspLinkConfig%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config.Mem.Table.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfigMemTableEntry%22%3EIIpc.ArmDspLinkConfigMemTableEntry%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmemTable%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdoPowerControl%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Dsp.Management%22+title%3D%22ti.sdo.ce.ipc.IIpc.DspManagement%22%3EIIpc.DspManagement%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspManagement%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EArmDspLinkConfig%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmemTable%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config.Mem.Table.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfigMemTableEntry%22%3EIIpc.ArmDspLinkConfigMemTableEntry%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdoPowerControl%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspManagement%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Dsp.Management%22+title%3D%22ti.sdo.ce.ipc.IIpc.DspManagement%22%3EIIpc.DspManagement%3C%2Fa%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='FIELDS'>
+                    <docChild name='memTable' summary='Memory+table%2C+describing+all+DSP+segments.%0A++++++++++++++++++++++NOTE%3A+segments+%22DDR2%22+%28or+whatever+is+the+name+of%0A++++++++++++++++++++++the+main+segment%29%2C+%22DSPLINKMEM%22%2C+and%0A++++++++++++++++++++++%22RESETCTRL%22+must+be+present'>
+                    </docChild>
+                    <docChild name='doPowerControl' summary='Flag+indicating+if+Link+should+implement%0A++++++++++++++++++++++power+control+of+DSP.'>
+                    </docChild>
+                    <docChild name='dspManagement' summary='Flag+indicating+how+Link+should+boot%2Fload+DSP'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='Of+the+many+fields+that+Link+exposes+for+configuration%2C%0A++selected+ones+are+exposed+through+this+interface.'/>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='ArmDspLinkConfigMemTableEntry' anchor='.Arm.Dsp.Link.Config.Mem.Table.Entry' altext='ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfigMemTableEntry' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Description+of+one+DSP+memory+segment+entry' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config.Mem.Table.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfigMemTableEntry%22%3EIIpc%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EArmDspLinkConfigMemTableEntry%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eaddr%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgppAddr%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esize%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etype%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EArmDspLinkConfigMemTableEntry%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eaddr%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgppAddr%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etype%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='FIELDS'>
+                    <docChild name='addr' summary='The+beginning+address+of+the+segment'>
+                    </docChild>
+                    <docChild name='gppAddr' summary='The+GPP+physical+address+of+the+segment+%28when+needed%29'>
+                    </docChild>
+                    <docChild name='size' summary='Size+of+the+segment+in+bytes'>
+                    </docChild>
+                    <docChild name='type' summary='One+of+the+following+types%3A%0A+++++++++++++++++%22main%22+++++--+main+code%2Fdata+segment+%28i.e.+DDR2%29%0A+++++++++++++++++%22link%22+++++--+DSPLINKMEM+segment%0A+++++++++++++++++%22reset%22++++--+RESETCTRL+segment%0A+++++++++++++++++%22poolmem%22++--+POOLMEM+segment%0A+++++++++++++++++%22code%22+++++--+dsp+code%2Fdata%2C+must+map+into+GPP+space%0A+++++++++++++++++%22other%22++++--+anything+else'>
+                    </docChild>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='LinkConfigEntry' anchor='.Link.Config.Entry' altext='ti.sdo.ce.ipc.bios.Ipc.LinkConfigEntry' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='This+structure+associates+a+sever+executable+with+an+ipc+link%0A++configuration.+The+type+of+the+linkCfg+field+is+left+as+%22Any%22%2C%0A++since+it+will+depend+on+the+module+that+implements+the+IIpc%0A++interface.+This+is+an+internal+field+used+only+by+codec+engine%0A++scripting' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Link.Config.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.LinkConfigEntry%22%3EIIpc%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ELinkConfigEntry%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverName%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc.ArmDspLinkConfig%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkCfg%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3ELinkConfigEntry%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkCfg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc.ArmDspLinkConfig%3C%2Fa%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='armCommMsgSize' anchor='arm.Comm.Msg.Size' altext='ti.sdo.ce.ipc.bios.Ipc.armCommMsgSize' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Default+size+for+the+Arm-DSP+communication+messages+%28MSGQ+messages%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EarmCommMsgSize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+4%2B*%2B1024%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EarmCommMsgSize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+4%2B*%2B1024%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Applies+only+to+configurations+where+DSP+Link+is+used.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='debug' anchor='debug' altext='ti.sdo.ce.ipc.bios.Ipc.debug' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Enable+the+debug+profile'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edebug%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3Edebug%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Now+obsolete.+Leave+here+for+awhile+until+users+update.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='dspCommMsgSize' anchor='dsp.Comm.Msg.Size' altext='ti.sdo.ce.ipc.bios.Ipc.dspCommMsgSize' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Default+size+for+the+inter-DSP+communication+messages+%28MSGQ+messages%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspCommMsgSize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+1024%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EdspCommMsgSize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+1024%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Applies+only+to+configurations+where+DSP+Link+is+not+used%2C+in+special%0A++circumstances.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='dspCommNumMsgQueues' anchor='dsp.Comm.Num.Msg.Queues' altext='ti.sdo.ce.ipc.bios.Ipc.dspCommNumMsgQueues' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Number+of+message+queues+%28that+can+receive+and+store+messages%29+on+the%0A++DSP+side.+Each+DSP+node+%28task%29+needs+one+message+queue'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspCommNumMsgQueues%3C%2Fspan%3E%3C%2Fgo%3E+%3D+64%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EdspCommNumMsgQueues%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+64%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Applies+only+to+configurations+where+runtimeEnv+%3D%3D+DSPBIOS+or%0A++runtimeEnv+%3D%3D+DSPLINK_BIOS'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='dspCommNumMsgs' anchor='dsp.Comm.Num.Msgs' altext='ti.sdo.ce.ipc.bios.Ipc.dspCommNumMsgs' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Number+of+%26lt%3BcommMsgSize%26gt%3B-sized+messages+used+for+Arm-DSP+communication'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspCommNumMsgs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+64%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EdspCommNumMsgs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+64%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Applies+only+to+configurations+where+DSP+Link+is+not+used%2C+in+special%0A++circumstances.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='dspCommUseExactMatch' anchor='dsp.Comm.Use.Exact.Match' altext='ti.sdo.ce.ipc.bios.Ipc.dspCommUseExactMatch' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Indicates+that+%22exact+match%22+must+be+used+for+comm+messages+allocated%0A++on+the+DSP+side'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspCommUseExactMatch%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EdspCommUseExactMatch%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Applies+only+to+configurations+where+DSP+Link+is+used.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='dspConfigureMsgqAndPool' anchor='dsp.Configure.Msgq.And.Pool' altext='ti.sdo.ce.ipc.bios.Ipc.dspConfigureMsgqAndPool' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Set+to+true+by+default%2C+instructs+this+module+to+generate+code+that%0A++configures+BIOS+MSGQ+and+POOL+modules%3A+symbols+MSGQ_config+and%0A++POOL_config.+If+set+to+false%2C+and+if+BIOS+is+configured+to+use+MSGQ%2C%0A++user+application+must+define+these+symbols'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspConfigureMsgqAndPool%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EdspConfigureMsgqAndPool%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='dspUseMsgqAndPool' anchor='dsp.Use.Msgq.And.Pool' altext='ti.sdo.ce.ipc.bios.Ipc.dspUseMsgqAndPool' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='If+set+to+false%2C+instructs+Codecs+Engine+to+cut+out+MSGQ+and+POOL%0A++references+completely+from+the+final+image'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspUseMsgqAndPool%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EdspUseMsgqAndPool%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Must+be+set+to+true+if+DSP+Link+is+used.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='linkConfigs' anchor='link.Configs' altext='ti.sdo.ce.ipc.bios.Ipc.linkConfigs' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Link+configurations+per+server%3B+if+left+undefined+will+be%0A++set+to+DEFAULT_ARMDSPLINKCONFIG%2C+but+with+a+warning.+This+is+an%0A++internal+field%2C+set+by+the+Engine+scripting' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23link.Configs%22+title%3D%22ti.sdo.ce.ipc.IIpc.linkConfigs%22%3EIIpc%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Link.Config.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.LinkConfigEntry%22%3EIIpc.LinkConfigEntry%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkConfigs%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3ElinkConfigs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Link.Config.Entry%22+title%3D%22ti.sdo.ce.ipc.IIpc.LinkConfigEntry%22%3EIIpc.LinkConfigEntry%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='powerSaveMemoryBlockName' anchor='power.Save.Memory.Block.Name' altext='ti.sdo.ce.ipc.bios.Ipc.powerSaveMemoryBlockName' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Memory+segment+name+for+context+save%2Frestore'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpowerSaveMemoryBlockName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EpowerSaveMemoryBlockName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+name+of+the+segment+to+which+power+should+be+saved%3B+if+left+null%2C%0A++will+default+to+defaultMemSegId.'/>
+                    <docPara content='This+feature+may+not+be+available+on+all+devices.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='usePowerManagement' anchor='use.Power.Management' altext='ti.sdo.ce.ipc.bios.Ipc.usePowerManagement' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+power+Management'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EusePowerManagement%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EusePowerManagement%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='If+set+to+true%2C+will+attempt+to+include+power-management+code%0A++where+applicable.'/>
+                    <docPara content='This+feature+may+not+be+available+on+all+devices.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='dspLinkUsed' anchor='dsp.Link.Used' altext='ti.sdo.ce.ipc.bios.Ipc.dspLinkUsed' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Returns+true+if+the+executable+should+be+built+with+DSP+Link'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspLinkUsed%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EIpc.%3Cspan+class%3D%22xdoc-id%22%3EdspLinkUsed%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+    </unit>
+</package>

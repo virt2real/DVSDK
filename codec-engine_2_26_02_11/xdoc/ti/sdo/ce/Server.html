@@ -1,0 +1,570 @@
+<html>
+<head>
+<title>module ti.sdo.ce.Server</title>
+<meta name="description" content="DSP Server Configuration interface">
+<link rel="stylesheet" type="text/css" href="../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.sdo.ce.</span><span class="xdoc-id">Server</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Engine.html" title="module Engine"><img class="xdocHdrArrow" src="../../../Arrow_left.png"/></a></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/package.html" title="package ti.sdo.ce"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Settings.html" title="module Settings"><img class="xdocHdrArrow" src="../../../Arrow_right.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Server.html">index URL</a></div>
+<p class="xdocHdrSummary">DSP Server Configuration interface</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../ti/sdo/ce/Server-src.html"><span class="xdocLabelFile">ti/sdo/ce/Server.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Server</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> Server = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.sdo.ce.Server'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><i>values of type <a class="xdocSynGo" href="#.Skel.Caching.Policy">Server.<span class="xdoc-id">SkelCachingPolicy</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Caching behavior that all skeletons will use</span></span></a></i>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Skel.Caching.Policy">Server.<span class="xdoc-id">LOCALBUFFERINVWB</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Invalidate before process, writeback after</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Skel.Caching.Policy">Server.<span class="xdoc-id">WBINVALL</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Writeback invalidate all after process</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Skel.Caching.Policy">Server.<span class="xdoc-id">NONE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;No cache management of buffers</span></span></a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> <a class="xdocSynGo" href="#.Alg.Desc">Server.<span class="xdoc-id">AlgDesc</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Algorithm descriptor</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">name</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;alg nick-name</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">mod</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;alg that implements skeletons</span></span></a> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/ICodec.html#.Module" title="ti.sdo.ce.ICodec.Module">ICodec.Module</a></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">threadAttrs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;thread properties for each alg instance</span></span></a> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Thread.Attrs" title="ti.sdo.ce.Server.ThreadAttrs">Server.ThreadAttrs</a></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">groupId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;group id of the algorithm</span></span></a> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> <a class="xdocSynGo" href="#.Thread.Attrs">Server.<span class="xdoc-id">ThreadAttrs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Thread attributes</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Thread.Attrs"><span class="xdoc-id">stackSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;minimum stack size required for this thread</span></span></a> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Thread.Attrs"><span class="xdoc-id">stackMemId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;MEM seg id for the thread's stack</span></span></a> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Thread.Attrs"><span class="xdoc-id">priority</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;priority of the thread</span></span></a> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.M.A.X.P.R.I">Server.<span class="xdoc-id">MAXPRI</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Maximum priority that a thread can assume</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 15;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.M.I.N.P.R.I">Server.<span class="xdoc-id">MINPRI</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Minimum priority that a thread can assume</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 1;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#algs">Server.<span class="xdoc-id">algs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Table of all algorithms supported by this DSP Server</span></span></a> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Alg.Desc" title="ti.sdo.ce.Server.AlgDesc">Server.AlgDesc</a>[<span class="xdoc-kw2"></span>]</i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#auto.Gen.Scratch.Size.Arrays">Server.<span class="xdoc-id">autoGenScratchSizeArrays</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Enable automatic generation of <span class="xdoc-link" href="../../../ti/sdo/fc/dskt2/DSKT2.html" title="ti.sdo.fc.dskt2.DSKT2">DSKT2</span>
+  scratch group size arrays</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> 0;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#skel.Caching.Policy">Server.<span class="xdoc-id">skelCachingPolicy</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Caching behavior that all skeletons will use</span></span></a> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Skel.Caching.Policy" title="ti.sdo.ce.Server.SkelCachingPolicy">Server.SkelCachingPolicy</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#stack.Size.Pad">Server.<span class="xdoc-id">stackSizePad</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Pad applied to unconfigured, CE-created threads</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 8192;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#thread.Attrs">Server.<span class="xdoc-id">threadAttrs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Thread attributes for the Server daemon thread</span></span></a> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Thread.Attrs" title="ti.sdo.ce.Server.ThreadAttrs">Server.ThreadAttrs</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../ti/sdo/ce/Server-src.html"><span class="xdocLabelFile">ti/sdo/ce/Server.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../ti/sdo/ce/package.html" title="ti.sdo.ce">ti.sdo.ce</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Server</span></go> {
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">enum</span> <a class="xdocSynGo" href="#.Skel.Caching.Policy"><span class="xdoc-id">SkelCachingPolicy</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Caching behavior that all skeletons will use</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Skel.Caching.Policy"><span class="xdoc-id">LOCALBUFFERINVWB</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Invalidate before process, writeback after</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Skel.Caching.Policy"><span class="xdoc-id">WBINVALL</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Writeback invalidate all after process</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Skel.Caching.Policy"><span class="xdoc-id">NONE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;No cache management of buffers</span></span></a>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">struct</span> <a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">AlgDesc</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Algorithm descriptor</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">name</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;alg nick-name</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdoc-link" href="../../../ti/sdo/ce/ICodec.html#.Module" title="ti.sdo.ce.ICodec.Module">ICodec.Module</a>&nbsp;<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">mod</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;alg that implements skeletons</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Thread.Attrs" title="ti.sdo.ce.Server.ThreadAttrs">Server.ThreadAttrs</a>&nbsp;<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">threadAttrs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;thread properties for each alg instance</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.Alg.Desc"><span class="xdoc-id">groupId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;group id of the algorithm</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">struct</span> <a class="xdocSynGo" href="#.Thread.Attrs"><span class="xdoc-id">ThreadAttrs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Thread attributes</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.Thread.Attrs"><span class="xdoc-id">stackSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;minimum stack size required for this thread</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.Thread.Attrs"><span class="xdoc-id">stackMemId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;MEM seg id for the thread's stack</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.Thread.Attrs"><span class="xdoc-id">priority</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;priority of the thread</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.M.A.X.P.R.I"><span class="xdoc-id">MAXPRI</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Maximum priority that a thread can assume</span></span></a> = 15;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.M.I.N.P.R.I"><span class="xdoc-id">MINPRI</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Minimum priority that a thread can assume</span></span></a> = 1;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Alg.Desc" title="ti.sdo.ce.Server.AlgDesc">Server.AlgDesc</a>&nbsp;<a class="xdocSynGo" href="#algs"><span class="xdoc-id">algs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Table of all algorithms supported by this DSP Server</span></span></a>[<span class="xdoc-kw2"></span>];
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#auto.Gen.Scratch.Size.Arrays"><span class="xdoc-id">autoGenScratchSizeArrays</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Enable automatic generation of <span class="xdoc-link" href="../../../ti/sdo/fc/dskt2/DSKT2.html" title="ti.sdo.fc.dskt2.DSKT2">DSKT2</span>
+  scratch group size arrays</span></span></a> = 0;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Skel.Caching.Policy" title="ti.sdo.ce.Server.SkelCachingPolicy">Server.SkelCachingPolicy</a>&nbsp;<a class="xdocSynGo" href="#skel.Caching.Policy"><span class="xdoc-id">skelCachingPolicy</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Caching behavior that all skeletons will use</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#stack.Size.Pad"><span class="xdoc-id">stackSizePad</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Pad applied to unconfigured, CE-created threads</span></span></a> = 8192;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Thread.Attrs" title="ti.sdo.ce.Server.ThreadAttrs">Server.ThreadAttrs</a>&nbsp;<a class="xdocSynGo" href="#thread.Attrs"><span class="xdoc-id">threadAttrs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Thread attributes for the Server daemon thread</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Skel.Caching.Policy"></a>
+<a class="xdocAnchor" id=".L.O.C.A.L.B.U.F.F.E.R.I.N.V.W.B"></a>
+<a class="xdocAnchor" id=".W.B.I.N.V.A.L.L"></a>
+<a class="xdocAnchor" id=".N.O.N.E"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">enum</span> <span class="xdoc-id">Server.</span><span class="xdoc-id">SkelCachingPolicy</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Server.html" title="module Server"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Server.html#.Skel.Caching.Policy">index URL</a></div>
+<p class="xdocHdrSummary">Caching behavior that all skeletons will use</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><i>values of type Server.<span class="xdoc-id">SkelCachingPolicy</span></i>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Server.<span class="xdoc-id">LOCALBUFFERINVWB</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Invalidate before process, writeback after</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Server.<span class="xdoc-id">WBINVALL</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Writeback invalidate all after process</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Server.<span class="xdoc-id">NONE</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;No cache management of buffers</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Alg.Desc"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">struct</span> <span class="xdoc-id">Server.</span><span class="xdoc-id">AlgDesc</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Server.html" title="module Server"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Server.html#.Alg.Desc">index URL</a></div>
+<p class="xdocHdrSummary">Algorithm descriptor</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> Server.<span class="xdoc-id">AlgDesc</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">name</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;alg nick-name</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">mod</span> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/ICodec.html#.Module" title="ti.sdo.ce.ICodec.Module">ICodec.Module</a></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;alg that implements skeletons</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">threadAttrs</span> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Thread.Attrs" title="ti.sdo.ce.Server.ThreadAttrs">Server.ThreadAttrs</a></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;thread properties for each alg instance</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">groupId</span> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;group id of the algorithm</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">FIELDS</div>
+<div class="xdocChild"><span class="xdocChildId">name</span>
+<span class="xdocChildSum">&#151;&nbsp;This string specifies the "local" name used by the
+                  server to generate instance names</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">mod</span>
+<span class="xdocChildSum">&#151;&nbsp;This field is a module reference that identifies the
+                  actual module implementing the algorithm to instantiate.
+                  This module reference is often acquired by a call to
+                  <tt>xdc.useModule();</tt> like this:</span>
+</div>
+<div class="xdocChildText"><PRE class="Example">                      modReference = xdc.useModule('package.Module');
+</PRE></div>
+<div class="xdocChild"><span class="xdocChildId">threadAttrs</span>
+<span class="xdocChildSum">&#151;&nbsp;This structure defines attributes of the "server"
+                  thread that will handle instance processing
+                  requests; e.g., stack size and priority.</span>
+</div>
+<div class="xdocChildText"><UL><LI><a class="xdoc-link" href="Server.html#.Thread.Attrs" title="ThreadAttrs">threadAttrs.stackSize</a>:  This
+                      field is optional when configuring
+                      an algorithm in a server, though strongly
+                      recommended.  Stack overrun is a very common
+                      cause of system instability.  If it's not supplied
+                      by the server integrator's script, the stack size
+                      returned by the codec's
+                      <a class="xdoc-link" href="ICodec.html#get.Stack.Size" title="ICodec.getStackSize">ICodec.getStackSize()</a> method will be
+                      added to the value of
+                      <a class="xdoc-link" href="Server.html#stack.Size.Pad" title="stackSizePad">stackSizePad</a>.
+</LI><LI><a class="xdoc-link" href="Server.html#.Thread.Attrs" title="ThreadAttrs">threadAttrs.stackMemId</a>:  This
+                      field is required when configuring
+                      an algorithm in a server.
+</LI><LI><a class="xdoc-link" href="Server.html#.Thread.Attrs" title="ThreadAttrs">threadAttrs.priority</a>:  This
+                      field is optional (though strongly recommended)
+                       when configuring an algorithm in a server.
+                      If it's not supplied by the server integrator's
+                      script, a default priority will be assigned, and a
+                      remark will be printed to the console during server
+                      configuration to indicate which priority was
+                      assigned to the algorithm.  Note that this priority
+                      can be overridden at runtime by the application;
+                      see the various <tt>*_create()</tt> VISA APIs for more
+                      details.
+</LI></UL></div>
+<div class="xdocChild"><span class="xdocChildId">groupId</span>
+<span class="xdocChildSum">&#151;&nbsp;This id specifies which resource sharing group
+                  this codec will be placed into.  The system
+                  integrator must ensure that codecs within the same
+                  group can not pre-empt each other.</span>
+</div>
+<div class="xdocChildText">A common technique for assigning groupId's in
+                  systems where same-priority tasks don't pre-empt
+                  each other (e.g. DSP/BIOS) is to use the task priority.
+                  Some systems do not allow sharing resources.  In
+                  those systems, this parameter is ignored.</div>
+<div class="xdocChildText">Note that this parameter is ignored if "local" is not
+                  TRUE.</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This structure describes the execution context provided by
+  the server for an algorithm module.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Thread.Attrs"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">struct</span> <span class="xdoc-id">Server.</span><span class="xdoc-id">ThreadAttrs</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Server.html" title="module Server"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Server.html#.Thread.Attrs">index URL</a></div>
+<p class="xdocHdrSummary">Thread attributes</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> Server.<span class="xdoc-id">ThreadAttrs</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">stackSize</span> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;minimum stack size required for this thread</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">stackMemId</span> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;MEM seg id for the thread's stack</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">priority</span> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;priority of the thread</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This structure defines the thread attrubutes for any threads created
+  by the RMS thread; see Server.threadAttrs.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".M.A.X.P.R.I"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Server.</span><span class="xdoc-id">MAXPRI</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Server.html" title="module Server"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Server.html#.M.A.X.P.R.I">index URL</a></div>
+<p class="xdocHdrSummary">Maximum priority that a thread can assume</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> Server.<span class="xdoc-id">MAXPRI</span> = <i><span class="xdoc-kw2">Int</span></i> 15;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">All threads must have a priority value greater than or equal to
+  <a class="xdoc-link" href="Server.html#.M.I.N.P.R.I" title="MINPRI">Server.MINPRI</a> and less than or equal to
+  <a class="xdoc-link" href="Server.html#.M.A.X.P.R.I" title="MAXPRI">Server.MAXPRI</a>.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".M.I.N.P.R.I"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Server.</span><span class="xdoc-id">MINPRI</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Server.html" title="module Server"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Server.html#.M.I.N.P.R.I">index URL</a></div>
+<p class="xdocHdrSummary">Minimum priority that a thread can assume</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> Server.<span class="xdoc-id">MINPRI</span> = <i><span class="xdoc-kw2">Int</span></i> 1;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">All threads must have a priority value greater than or equal to
+  <a class="xdoc-link" href="Server.html#.M.I.N.P.R.I" title="MINPRI">Server.MINPRI</a> and less than or equal to
+  <a class="xdoc-link" href="Server.html#.M.A.X.P.R.I" title="MAXPRI">Server.MAXPRI</a>.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="algs"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Server.</span><span class="xdoc-id">algs</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Server.html" title="module Server"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Server.html#algs">index URL</a></div>
+<p class="xdocHdrSummary">Table of all algorithms supported by this DSP Server</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Server.<span class="xdoc-id">algs</span> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Alg.Desc" title="ti.sdo.ce.Server.AlgDesc">Server.AlgDesc</a>[<span class="xdoc-kw2"></span>]</i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">See <a class="xdoc-link" href="Server.html#.Alg.Desc" title="AlgDesc">AlgDesc</a> documentation for more details.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="auto.Gen.Scratch.Size.Arrays"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Server.</span><span class="xdoc-id">autoGenScratchSizeArrays</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Server.html" title="module Server"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Server.html#auto.Gen.Scratch.Size.Arrays">index URL</a></div>
+<p class="xdocHdrSummary">Enable automatic generation of <a class="xdoc-link" href="../../../ti/sdo/fc/dskt2/DSKT2.html" title="ti.sdo.fc.dskt2.DSKT2">DSKT2</a>
+  scratch group size arrays</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Server.<span class="xdoc-id">autoGenScratchSizeArrays</span> = <i><span class="xdoc-kw2">Bool</span></i> 0;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This configuration flag enables/disables automatic generation of
+  the <a class="xdoc-link" href="../../../ti/sdo/fc/dskt2/DSKT2.html#.D.A.R.A.M_.S.C.R.A.T.C.H_.S.I.Z.E.S" title="ti.sdo.fc.dskt2.DSKT2.DARAM_SCRATCH_SIZES">ti.sdo.fc.dskt2.DSKT2.DARAM_SCRATCH_SIZES</a> and
+  <a class="xdoc-link" href="../../../ti/sdo/fc/dskt2/DSKT2.html#.S.A.R.A.M_.S.C.R.A.T.C.H_.S.I.Z.E.S" title="ti.sdo.fc.dskt2.DSKT2.SARAM_SCRATCH_SIZES">ti.sdo.fc.dskt2.DSKT2.SARAM_SCRATCH_SIZES</a> scratch group sizes
+  arrays.</div>
+<div class="xdocText">When enabled (1), the arrays will be automatically generated during
+  Server configuration, based upon the
+  <a class="xdoc-link" href="ICodec.html#get.Daram.Scratch.Size" title="ICodec.getDaramScratchSize">ICodec.getDaramScratchSize()</a> and
+  <a class="xdoc-link" href="ICodec.html#get.Saram.Scratch.Size" title="ICodec.getSaramScratchSize">ICodec.getSaramScratchSize()</a> methods of the configured set of
+  algorithms.</div>
+<div class="xdocText">When disabled (0), the engine integrator needs to manually configure
+  the scratch group sizes arrays.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="skel.Caching.Policy"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Server.</span><span class="xdoc-id">skelCachingPolicy</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Server.html" title="module Server"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Server.html#skel.Caching.Policy">index URL</a></div>
+<p class="xdocHdrSummary">Caching behavior that all skeletons will use</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Server.<span class="xdoc-id">skelCachingPolicy</span> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Skel.Caching.Policy" title="ti.sdo.ce.Server.SkelCachingPolicy">Server.SkelCachingPolicy</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="stack.Size.Pad"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Server.</span><span class="xdoc-id">stackSizePad</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Server.html" title="module Server"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Server.html#stack.Size.Pad">index URL</a></div>
+<p class="xdocHdrSummary">Pad applied to unconfigured, CE-created threads</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Server.<span class="xdoc-id">stackSizePad</span> = <i><span class="xdoc-kw2">Int</span></i> 8192;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This pad is only applied to algorithm stacks that are not configured,
+  as well as the <a class="xdoc-link" href="Server.html#thread.Attrs" title="threadAttrs">Server thread</a> if it is not
+  configured.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="thread.Attrs"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Server.</span><span class="xdoc-id">threadAttrs</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/sdo/ce/Server.html" title="module Server"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/sdo/ce/Server.html#thread.Attrs">index URL</a></div>
+<p class="xdocHdrSummary">Thread attributes for the Server daemon thread</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Server.<span class="xdoc-id">threadAttrs</span> = <i><a class="xdoc-link" href="../../../ti/sdo/ce/Server.html#.Thread.Attrs" title="ti.sdo.ce.Server.ThreadAttrs">Server.ThreadAttrs</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">A single Server thread is created within each DSP Server.  This thread
+  accepts requests to create/destroy algorithm instances.</div>
+<div class="xdocText">This thread is sometimes referred to as the Resource Manager Server
+  (RMS) thread.</div>
+<div class="xdocText">The <tt>threadAttrs.stackSize</tt> field is optional when configuring a
+  server, though strongly recommended.  Stack overrun is a very common
+  cause of system instability.  If the <tt>threadAttrs.stackSize</tt> field is
+  not assigned by the server integrator's script, a default value of
+  1K (1024 bytes) will be added to the value of
+  <a class="xdoc-link" href="Server.html#stack.Size.Pad" title="stackSizePad">stackSizePad</a> and used.</div>
+<div class="xdocText">The <tt>threadAttrs.priority</tt> field is optional when configuring a
+  server.  If it is not assigned, by the server integrator's script, a
+  default value of <a class="xdoc-link" href="Server.html#.M.I.N.P.R.I" title="MINPRI">MINPRI</a> will be used.</div>
+<div class="xdocText">The <tt>threadAttrs.stackMemId</tt> field is optional when configuring a
+  server.  If it is not assigned, by the server integrator's script, a
+  default value of 0 will be used.</div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:36 GMT</div>
+</div></div></body>
+</html>

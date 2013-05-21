@@ -1,0 +1,51 @@
+%%{
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+%%}
+%/*
+% *  ======== Boot.xdt ========
+% *
+% *! Revision History
+% *! ================
+% *! 10-Aug-2009 agd    created
+% */
+% /* Don't generate Boot_init if this is a romimage */
+% if (!Program.$$isrom && (Program.build.rtsName !== null)) {
+%var Boot = xdc.module("ti.catalog.arm.lm3init.Boot");
+    extern ti_catalog_arm_lm3init_Boot_sysCtlClockSet(UInt ulConfig);
+    extern ti_catalog_arm_lm3init_Boot_configureLdo(UInt ulVoltage);
+
+#if defined(__ti__)
+#pragma CODE_SECTION(ti_catalog_arm_lm3init_Boot_init, ".bootCodeSection")
+#endif
+
+/*
+ *  ======== ti_catalog_arm_lm3init_Boot_init ========
+ */
+Void ti_catalog_arm_lm3init_Boot_init()
+{
+%if (Boot.configureClock == true) {
+    ti_catalog_arm_lm3init_Boot_sysCtlClockSet((UInt)(`Boot.ulConfig`));
+%}
+%if (Boot.configureLdo == true) {
+    ti_catalog_arm_lm3init_Boot_configureLdo((UInt)(`Boot.ldoOut`));
+%}
+}
+%}
+
+%%{
+/*
+ * @(#) ti.catalog.arm.lm3init; 1, 0, 0,40; 2-23-2010 16:50:33; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+
+%%}

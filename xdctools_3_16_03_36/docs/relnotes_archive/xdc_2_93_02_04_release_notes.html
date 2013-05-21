@@ -1,0 +1,720 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<!--
+/*
+ *  Copyright 2007 by Texas Instruments Incorporated .
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ */
+-->
+
+<head>
+  <title>XDC 2.93.02 Release Notes</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <!-- For now, we use the doxygen style sheet -->
+  <link href="doxygen.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+<table width="100%">
+  <tbody>
+  <tr>
+    <td bgcolor="black" width="1"><a href="http://www.ti.com/"><img style="border: 0px solid ; width: 222px; height: 54px;" alt="Texas Instruments" src="doc/tilogo.gif"> </a></td>
+    <td bgcolor="red"><img style="width: 314px; height: 26px;" alt="Technology for Innovators(tm)" src="doc/titagline.gif"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 align="center">XDC 2.93.02 Release Notes</h1>
+
+<h2 align="center">April 04, 2007</h2>
+
+<p align="center">
+  <a href="#General_Info">Introduction</a>, 
+  <a href="#Known_Issues">Known Issues</a>,
+  <a href="#Documentation">Documentation</a>, 
+  <a href="#Whats_New">What's New</a>,
+  <a href="#Compatibility">Upgrade &amp; Compatibility Information</a>,
+  <a href="#Host_Support">Host Support</a>,
+  <a href="#Dependencies">Dependencies</a>, 
+  <a href="#Device_Support">Device Support</a>,
+  <a href="#Validation">Validation Info</a>,
+  <a href="#Version">Version Information</a>,
+  <a href="#Support">Technical Support</a>.
+</p>
+
+<hr>
+
+<h2><a name="General_Info">Introduction</a></h2>
+
+<p>eXpress DSP Components (XDC) is a standard for reusable software
+components, optimized for real-time embedded systems. XDC components
+have hardware-neutral formal interfaces, are configurable offline to
+optimize memory and performance, and support custom automation in the
+development environment via a scripting language.</p>
+
+<p>XDC 2.93.02 is a patch release to XDC 2.93.</p>
+
+<p>This XDC release includes the following sets of packages: </p>
+
+<ul>
+
+  <li><b>XDC core (<tt>xdc.*</tt>)</b> - the <tt><b>xdc</b></tt> and
+      <tt><b>xs</b></tt> command line utilities for building packages
+	  and execting scripts, together with the packages that implement
+	  XDC itself;</li>
+
+  <li><b>User tools (<tt>xdc.tools.*</tt>)</b> - command-line
+      and graphical utilities for working with packages and repositories;</li>
+
+  <li><b>Targets (<tt>*.targets.*</tt>)</b> - definitions for using
+      various TI and third-party compiler tool chains with XDC;</li>
+
+  <li><b>Platforms (<tt>ti.platforms.*</tt>)</b> - definitions for
+      linking and running code on various TI board-level hardware and
+	  simulator products using XDC.</li>
+
+</ul>
+
+<hr>
+
+<h2><a name="Known_Issues">Known Issues</a></h2>
+
+<h4>Enable XDC in CCS Component Manager before opening XDC-enabled CCS projects</h4>
+
+<p>This release of XDC includes integration into Code Composer Studio v3.3 on
+Windows, via an XDC tab in the CCS project build settings. The CCS Component
+Manager must be used to enable this tab after installing XDC, before opening
+any XDC-enabled CCS projects.</p>
+
+<blockquote><b>Failing to enable XDC in Component Manager will cause CCS to
+delete XDC build settings from XDC-enabled .pjt files.</b></blockquote>
+
+<p>This issue primarily affects example CCS .pjt files delivered with XDC and
+dependent products. It also affects only CCS projects for the TMS320C64XX family,
+as XDC integration is currently only available for this device family.</p>
+
+<p>To enable XDC in CCS Component Manager:</p>
+<ol>
+  <li>Launch Code Composer Studio v3.3</li>
+  <li>Select "About.." item from CCS "Help" menu</li>
+  <li>Click "Component Manager" button in About dialog</li>
+  <li>Expand "Target Content (XDC)" tree item</li>
+  <li>Expand "TMS320C64XX" tree item</li>
+  <li>Enable check box beside "XDC <2.93.02>" item</li>
+  <li>Close Component Manager</li>
+  <li>Click "OK" button in About dialog</li>
+  <li>Close CCS</li>
+</ol>
+
+<p>The XDC build settings tab will be available in CCS when it is next launched.</p>
+
+<hr>
+
+<h2><a name="Documentation">Documentation</a></h2>
+
+<p>The following documentation is available: </p>
+
+<ul>
+
+	<li><a href="doc/index.html">XDC documents</a></li>
+
+</ul>
+
+<p>Release notes from previous releases are also available in the <a href="doc/relnotes_archive">relnotes_archive</a> 
+directory. </p>
+
+<hr>
+
+<h2><a name="Whats_New">What's New</a></h2>
+
+<p>The following significant changes have been made since 2.92</p>
+
+<ul>
+  <li>Additions to the XDC Spec language</li>
+  <li>Additions to XDC runtime: Gate and TimeStamp</li>
+  <li>Enhanced ROM-ability of XDC content</li>
+  <li>Configuro build support added to Code Composer Studio v3.3</li>
+</ul>
+
+<div class="memitem">
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<h3>2.93.02 (This Release)</h3>
+
+<!-- *************************************************************** -->
+<h4>Platforms</h4>
+<ul>
+  <li>Bug fixes for some C64x device family platform files</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Defects</h4>
+  <p>The following defects were resolved:</p>
+  
+    <table width="100%">
+    <colgroup width="15%"></colgroup><tbody>
+
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+
+    <tr>
+      <td>SDSCM00016293</td>
+      <td>evmDM6437 and evm6424 platform files have 2 sections named "DDR2"</td>
+    </tr>
+
+    </tbody></table>
+
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<h3>2.93.01</h3>
+
+<!-- *************************************************************** -->
+<h4>Configuro Build</h4>
+<ul>
+  <li>Fixed a bug in xdc.tools.configuro in supporting mixed
+                XDC / BIOS 5.X tconf use case. Forced
+                "config.programName" to be an absolute pathname, so that
+                the tconf-generated linker script gets included correctly.
+                Also added "ti.bios" package as a requirement to the
+                configuro-generated package.xdc in this use case.</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Defects</h4>
+  <p>The following defects were resolved:</p>
+  
+    <table width="100%">
+    <colgroup width="15%"></colgroup><tbody>
+
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+
+    <tr>
+      <td>SDSCM00016256</td>
+      <td>Configuro fails on .tcf files</td>
+    </tr>
+
+    </tbody></table>
+
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<h3>2.93</h3>
+
+<!-- *************************************************************** -->
+<h4>XDC Spec Language</h4>
+<ul>
+  <li>added ability to generate a custom header from a template.
+		The @CustomHeader attribute now accepts an optional argument.
+		If an argument is supplied it is interpreted as a template 
+		that should be used (in lieu of the standard RTSC header
+		file generation) to create the module's header.</li>
+
+  <li>@CustomHeader is now interpreted for metaonly modules; this
+		can be used to generate headers from metaonly modules used 
+		for config.</li>
+
+  <li>module-wide configs defined in abstract interfaces can no
+		longer be accessed via proxies; in general, there was no way
+		to access these given an abstract module anyway.  in cases
+		where runtime access to an underlying module config is required
+		via such an abstraction, a getter should then be explicitly
+		spec'd in the interface.</li>
+
+  <li>added the @TargetHeader attribute for metaonly units, allowing
+		them to supply a template for generating a target-domain .h
+		file.  this feature is currently used by various ITarget.xdc to
+		invoke a common template used to generate various #define's
+		previously passed on the command-line</li>
+
+  <li>proxy declarations can now appear in the 'internal' section of
+		an .xdc module spec, just like most other module-wide features.
+		since these proxies are (in principle) not seen by the client,
+		their binding is the reponsibility of the module supplier in
+		their Mod.xs file; usage in both the meta- and target-domains
+		is otherwise the same</li>
+
+  <li>abstract const declarations (without initializers) appearing
+		in interfaces can now be overriden in units that inherit this
+		interface.  by definition, a const with an initializer is
+		effectively 'final'.  any const that has not been initialized
+		in a concrete module implies a @CustomHeader</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>XDC Script</h4>
+<ul>
+  <li>added the built-in xdc-script operators $externFxn() and
+		$externPtr(), both of which take a string-valued argument that
+		denotes an external symbol.  these operators should be used
+		when assigning legacy code/data pointers to config params of
+		type I/UArg.  this approach is preferred over the current
+		'&myFxn' style of values, which would now be denoted as
+		$externFxn('myFxn')</li>
+
+  <li>change all examples to use the new $externFxn('myFxn') operator
+		in lieu of '&myFxn'; see idioms/i302 for an illustration</li>
+
+
+  <li>extended support for $logError functions to cfg model
+		initialization so that the platform instantiation code can use
+		that support; as a result, the function setExecutable() now
+		returns a String which contains errors and warnings, if any</li>
+</ul>		
+
+<!-- *************************************************************** -->
+<h4>Boot</h4>
+<ul>
+  <li>if Program.system is null, two symbols from xdc.runtime.Startup
+		are added to the linker command file, and set to 0; these 
+		symbols are function names, and the purpose of setting these
+		symbols to 0 in tha case when the functions are not linked in
+		is to support new boot files; new boot files will always look
+		for those symbols, but will call functions only if symbols are
+		not equal to 0</li>
+
+  <li>Added calls to Startup_reset & Startup_exec in boot files; added
+		--args option and removed alloc in SECTIONS in linkcmd.xdt in
+		ti.targets</li>
+
+  <li>Added autoinit to rts5500 and rts6000</li>
+
+  <li>Fixed the way we're calling the reset/exec functions in the boot
+		file for Arm9</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Runtime</h4>
+<ul>
+  <li>removed __PLAT__ from xdc/runtime/std.h</li>
+
+  <li>renamed the xdc_target__profile symbols to be xdc_bld__profile
+		to distinguish this symbol from the symbols xdc_target_*
+		symbols defined by std.h</li>
+
+  <li>the type xdc.runtime.Gate.Ref is now @Encoded as a
+		IGateProvider.Handle, enabling config-time assignment to state
+		variables of this type by simply assigning the result of
+		creating an IGateProvider instance object.  this type continues
+		to be represented as an opaque pointer on the target, subject
+		to manipulation by the Gate_{alloc,enter,leave,free} macros.</li>
+ 
+  <li>added the getFreq into xdc.runtime.ITimeStamp and related
+		modules</li>
+
+  <li>removed 'name' from IHeap interface</li>
+
+  <li>Added new type xdc.runtime.Types.FreqHz to represent ferquency
+		in Hz. Used xdc.runtime.Types.FreqHz in
+		xdc.runtime.ITimestampSupport and xdc.runtime.Timestamp modules.</li>
+
+  <li>made SysMin and HeapMin thread-safe (using GATE_enterSystem),
+		and made a couple of name tweaks to Gate files</li>
+
+  <li>flushFull set to 'true' in SysMin.xdc</li>
+
+  <li>SysMin changes:
+  <ul>
+		  <li>HOSTwrite 256 max problem fixed. On TI targets,
+		    SysMin.bufSize greater than 256 was truncated to just 256.</li>
+  		  <li>Default flushFull to false. This might impact regression
+  		    tests with large amount of output via System_printf and
+  		    using SysMin.</li>
+		  <li>bufSize default to 1024 chars instead of 256</li>
+  </ul>
+
+  <li>Gate-protected the insertion/removal of created/deleted
+		instances from their module's master linked list within
+		xdc.runtime.Core, using the System gate</li>
+ 
+  <li>added 4 IArg fields to the end of the (opaque) Error_Block
+		struct for future expansion</li>
+ 
+  <li>reworked the (recursive) implementation of Text_putRope to
+		prevent "INLINE Recursion" warnings from occuring when
+		Text_NOLOAD is true; this also helps reduce code size</li>
+ 
+  <li>changed the signature of System_fail to take only a msg,
+		rather than a msg + vargs; this enables a more efficient
+		implementation in that only putch is called internally.
+		the two known call sites for this API (Error_raise and
+		Startup_exec) have been altered accordingly</li>
+ 
+  <li>changed the signature of Log_doPrint to take a single arg of
+		type Log_EventRec*, where the latter contains the log event,
+		args, timestamp, and serial number.  modified LoggerSys to use
+		this feature, while also adding a config param to control
+		whether a timestamp is reported</li>
+ 
+  <li>the special format specifiers %$R, %$M, and %$S have been
+		removed from System_printf; current usage in xdc.runtime is
+		replaced with direct calls to routines in Text.  the %$L
+		specifier remains, and is used to print the label associated
+		with a Handle-valued arg</li>
+</ul>		
+
+<!-- *************************************************************** -->
+<h4>XDC Module Binary Contract</h4>
+<ul>
+  <li>arrays generated in package/cfg/*.c now are external symbols
+		with a '__A' suffix in their name; this helps in understanding
+		footprint issues when looking at a link map, but otherwise has
+		no impact on performance</li>
+</ul> 
+
+<!-- *************************************************************** -->
+<h4>Targets</h4>
+<ul>
+  <li>added default platform for ti.targets.TMS470* targets</li>
+
+  <li>added a parameter to Win32 target to contain the path to an
+		installation of Platform SDK; Platform SDK is installed
+		separately from Visual Studio, so the installation path is not
+		fixed</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Platforms</h4>
+<ul>
+  <li>added a new parameter renameMap to xdc.platform.IPlatform; the
+		puprose of this parameter is to allow a simple way of changing
+		the names of memory objects without redefining the whole memory
+		map with 'customMemoryMap'</li>
+		
+  <li>added assembleMemoryMap() to xdc.platform.Utils; the function
+		gathers cpu's and board's memory into a memory map and applies
+		any renaming requests passed through 'renameMap'</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>ROM Support</h4>
+<ul>
+  <li>fixed a bug in the handling of object-offset accessors within
+		the ROM flow, but treating the underlying const offset value
+		not unlike any other module-wide config</li>
+ 
+  <li>fixed a bug in the handling of proxies within the ROM flow</li>
+
+  <li>Added .bss fix for ROM, plus NOLOAD change, to
+		ti/targets/linkcmd.xdt</li>
+
+  <li>fixed a bug in the generation of makefiles for ROM assemblies.
+		the ITarget link method now receives the reflected value of the
+		'isRom' attr in is 'goal' argument.  ti/targets/ITarget.xs
+		factors this in when deciding to apply the "sed" hack</li>
+		
+  <li>changed the use of 'DSECT' to 'NOLOAD' in
+		ti/targets/linkcmd.xdt when specifying the .fixedCode section
+		in the final link</li>
+ 
+  <li>fixed a ROM bug resulting from module-wide configs defined in
+		interfaces that are in turn inherited by a proxy</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Build</h4>
+<ul>
+  <li>removed most command line -D options added by xdc.bld; they 
+		are now statically defined in headers included (indirectly)
+		by xdc/std.h.  Clients that build source that include 
+		xdc/std.h must only need to define two symbols:
+  <ul>
+    <li>xdc_target_types__	- the package qualified path to the 
+					  target's standard types header; e.g.,
+					  ti/targets/std.h</li>
+	<li>xdc_target_name__	- the name of the target without the 
+					  package name</li>
+  </ul></li>
+
+  <li>fixed xdc/bld/build.dtd, and xdc/bld/release.dtd to be
+		consistent with what is currently being generated</li>
+
+  <li>added a timestamp to the end of each package's .$vers array;
+		it previously contained only the compatibility key values from
+		package.xdc.  With the addition of the package's release date
+		timestamp, this array can now be used as a version number;
+		i.e., different releases have unique $vers arrays</li>
+
+  <li>code in xdc.cfg.Main.xs that determines the order in which the
+		packages add their libraries to the linker command file is
+		changes, so that the package being built gets always on the top
+		of the list in the linker command file</li>
+
+  <li>fixed release processing to not complain about require
+		statements that exist solely to create a bundle</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Configuro Build</h4>
+<ul>
+  <li>Simplified the makefile usage for
+		non-TI targets. The generated linker.cmd file is now a linker
+		script with the correct syntax for the target. Previously some
+		special processing was needed in the makefile to convert syntax
+		for non-TI targets. Updated configuro examples.</li>
+
+  <li>Added new configuro command-line options to support
+		integration into CCS via BTI DLL.</li>
+
+  <li>Changed the command line syntax for using configuro with a
+		TCONF script. Previously the name of the .tcf file was given,
+		and the .cfg file was inferred. Now the name of the .cfg file
+		is given, and an additional "--tcf" option is used.</li>
+
+  <li>Modified configuro to use an XDC assembly only when the profile 
+		is "whole_program" and the target is a TI target.</li>
+</ul>
+		
+<!-- *************************************************************** -->
+<h4>Code Composer Studio Support</h4>
+<ul>
+  <li>Added support for XDC build using Configuro to Code Composer
+		Studio v3.3. This shows up as an "XDC" tab in the project
+		Build Settings. Configuro build is enabled by adding a .cfg
+		file to the CCS project.</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Coverity Support</h4>
+<ul>
+  <li>change -fs and -fr options to use -fs= and -fr= variants to 
+		work around  Coverity Prevent defect number 6979</li>
+
+  <li>fixed tisb.coverity.filters compiler config to work with
+		C++ code</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Tools</h4>
+<ul>
+  <li>In xdc.tools.Cmdr, updated command-line argument processing
+		with support for long and short option names. Also if the
+		config param is an array, then the option can be used multiple
+		times on the command line, as in -I... .</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Assemblies</h4>
+<ul>
+  <li>changed condition that determines if __PLAT__ and other symbols
+		in Program.xdt are included; now, Program checks for assemblies
+		by checking the length of the array $$asmvec, which gets
+		populated if Program imported any assemblies. If assemblies are
+		imported, at least one of them included symbols. However, this
+		solution does not solve the problem if Program imports more
+		than one assembly, where each one of them included symbols.</li>
+		
+  <li>added two additional commands for a compilation goal where an
+		assembly is built in 'whole_program' profile.  In that case,
+		the linker creates non-relocatable partially linked file, and
+		depending on the section order, linking such a file in the
+		final linker step can generate errors. The implemented solution
+		uses the optimized assembly file that the linker also generates
+		and compiles that assembly file to create a relocatable object
+		file, with all optimizations we need. Then, the compiled file
+		replaces the file that the linker initially generated.</li>
+</ul>
+
+
+
+<!-- *************************************************************** -->
+<h4>XGCONF Graphical Configuration</h4>
+<ul>
+  <li>Added checks for script text lines that the xgconf
+        parser does not support. If found the script is
+        marked as non-parsable. If the user performs an
+        edit action a golden watermark is appended to the
+        file and it is reparsed prior to executing the action.</li>
+</ul>
+
+
+
+<!-- *************************************************************** -->
+<h4>Enhancements</h4>
+  <p>The following minor enhancements were resolved:</p>
+  
+    <table width="100%">
+    <colgroup width="15%"></colgroup><tbody>
+
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+
+    </tbody></table>
+
+<!-- *************************************************************** -->
+<h4>Defects</h4>
+  <p>The following defects were resolved:</p>
+  
+    <table width="100%">
+    <colgroup width="15%"></colgroup><tbody>
+
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+
+    <tr>
+      <td>SDSCM00006912</td>
+      <td>need to standardize std.h architecture symbols</td>
+    </tr>
+
+    <tr>
+      <td>SDSCM00012058</td>
+      <td> XGCONF "optimize script" corrupts some hand-written config
+	       scripts</td>
+    </tr>
+
+    </tbody></table>
+
+</div>
+<br>
+
+<hr>
+
+<h2><a name="Compatibility">Upgrade and Compatibility Information</a></h2>
+
+<ul>
+
+  <li><b><tt>ti.targets</tt></b> - This package is compatible with the 
+  previous release. (Compatibility key: 1,0,0,0 -&gt; 1,0,0,<font color="red"><b>1</b></font>) 
+  </li>
+  <li><b><tt>gnu.targets</tt></b> - This package is compatible with the 
+  previous release. (Compatibility key: 1,0,0,0 -&gt; 1,0,0,<font color="red"><b>1</b></font>) 
+  </li>
+</ul>
+
+
+<p><b>Warning:</b> Beginning with xdc-o02, internal C files generated when
+    building package schemas are
+    named package_&lt;package name&gt;.c instead of &lt;package_name&gt;.c.
+    This may introduce incompatibilities with older xdc-n and xdc-o trees
+	(XDC 2.X products).
+    The compatibility with metaonly xdc-m packages (XDC 1.X products) is still maintained.
+
+</p>
+<h3>Compatibility Key Definitions</h3>
+
+<p>Compatibility keys are intentionally independent of Marketing product numbers 
+and are intended to: 
+</p>
+<ol>
+
+  <li>Enable tooling to identify incompatibilities between components, and 
+  </li>
+  <li>Convey a level of compatibility between different releases to set end user 
+  expectations. </li>
+</ol>
+
+<p>Compatibility keys are composed of 3 comma-delimited numbers - M,S,R - where: 
+
+</p>
+<ul>
+
+  <li><b>M = Major</b>. A difference in M indicates a break in compatibility. 
+  </li>
+  <li><b>S = Source</b>. A difference in S indicates source compability. That 
+  is, the user's source doesn't require change, but <i>does</i> require 
+  rebuilding. 
+  </li>
+  <li><b>R = Radix</b>. A difference in R indicates an introduction of new 
+  features, but compatibility with previous interfaces has not broken. If 
+  libraries are provided by the package, an application must re-link with the 
+  new libraries, but not rebuild from source. </li>
+</ul>
+
+<hr>
+
+<h2><a name="Host_Support">Host Support</a></h2>
+
+<p>This release supports the following hosts:</p>
+
+<ul>
+  <li>Windows XP</li>
+  <li>RedHat Enterprise Linux 3</li>
+</ul>
+
+<hr>
+
+<h2><a name="Dependencies">Dependencies</a></h2>
+
+<p>This release requires the following other software components and tools 
+versions to successfully function: </p>
+
+<ul>
+  <li>C6x Code Generation Tools version 5.3.0. or later</li>
+  <li>C55 Code Generation Tools version 3.2.0. or later</li>
+  <li>GCC for x86 version 3.2.3 or later</li>
+  <li>GCC for ARM version 3.2.3 or later</li>
+</ul>
+
+<hr>
+
+<h2><a name="Device_Support">Device Support</a></h2>
+
+<p>This release supports the following device families: </p>
+
+<ul>
+  <li>C67P, C67, C64P, C64, C62 </li>
+  <li>C55P, C55, C54</li>
+  <li>C28</li>
+  <li>TMS470</li>
+  <li>Native development host</li>
+</ul>
+
+<hr>
+
+<h2><a name="Validation">Validation Information</a></h2>
+
+<p>This release was built and validated against using the following components: 
+</p>
+
+<ul>
+  <li>Code Composer Studio version 3.3</li>
+  <li>C6x Code Generation Tools version 6.0.7</li>
+  <li>C55 Code Generation Tools version 3.2.2</li>
+  <li>GCC for x86 version 3.2.3</li>
+  <li>GCC for ARM version 3.2.3</li>
+</ul>
+
+<hr>
+
+<h2><a name="Version">Version Information</a></h2>
+
+<p>This product's version follows a version format, <b>M.mm.pp.bb</b>, where 
+<b>M</b> is a single digit Major number, <b>mm</b> is 2 digit minor number, 
+<b>pp</b> is a 2 digit patch number, and <b>b</b> is an unrestricted set of 
+digits used as an incrementing build counter. </p>
+
+<p>To support multiple side-by-side installations of the product, the product 
+version is encoded in the top level directory, e.g. 
+<b>xdc_2_93</b>. </p>
+
+<p>Subsequent releases of patch upgrades will be identified by the patch number, 
+ex. XDC 2.93.03 with directory <b>xdc_2_93_03</b>. Typically, 
+these patches only include critical bug fixes. </p>
+
+<p>Please note that version numbers and compatibility keys are NOT the same. For 
+an explanation of compatibility keys, please refer to the 'Upgrade and 
+Compatibility Information' section. </p>
+
+<hr>
+
+<h2><a name="Support">Technical Support</a></h2>
+
+<p>For technical support, contact <a href="mailto:rtsc_champs@list.ti.com">rtsc_champs@list.ti.com</a></p>
+
+<hr>
+
+<p>Last updated: April 4, 2007 </p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+############################################################
+# Decode and dump JPEG Image from a file
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp jpegdec1 codec jpegdec
+
+#specify image decoder parameters
+setp jpegdec1 maxHeight 480
+setp jpegdec1 maxWidth 720
+setp jpegdec1 maxScans 1
+setp jpegdec1 dataEndianness 1
+setp jpegdec1 forceChromaFormat 4
+setp jpegdec1 numAU 0
+setp jpegdec1 decodeHeader 0
+setp jpegdec1 displayWidth 0
+setp jpegdec1 extDynParamsDisableEOI 0
+setp jpegdec1 extDynParamsResizeOption 0
+setp jpegdec1 extDynParamsSubRegUpLeftX 0
+setp jpegdec1 extDynParamsSubRegUpLeftY 0
+setp jpegdec1 extDynParamsSubRegDownRightX 0
+setp jpegdec1 extDynParamssubRegDownRightY 0
+setp jpegdec1 extDynParamsRotation 0
+setp jpegdec1 extDynParamsDecodingPreset 1
+
+# Trigger the decode+display scenario
+func jpegdec1 -s shrek_720x480.jpg -t out_720x480_422i.yuv
+
+

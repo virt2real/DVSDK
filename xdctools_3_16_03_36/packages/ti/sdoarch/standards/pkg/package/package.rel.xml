@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="ti_sdoarch_standards_pkg" label="default" date="1247779707123" buildCount="86">
+<package name="ti.sdoarch.standards.pkg"
+    version="1, 0, 0"/>
+<imports>
+</imports>
+<references>
+    <package name="xdc.services.global"
+        version="1, 0, 0">
+        <file name="Clock.xs"/>
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.global.sch"/>
+    </package>
+    <package name="gnu.targets"
+        version="1, 0, 0, 1">
+        <file name="ITarget.xs"/>
+        <file name="package.xs"/>
+        <file name="package/gnu.targets.sch"/>
+    </package>
+    <package name="xdc.bld"
+        version="1, 0, 0, 0">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+        <file name="package/xdc.bld.sch"/>
+    </package>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.intern.cmd.sch"/>
+    </package>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 0">
+        <file name="java/antlr.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/junit.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+        <file name="package/xdc.shelf.sch"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 0, 0">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="package/xdc.sch"/>
+        <file name="recap.xs"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+    </package>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.spec.sch"/>
+    </package>
+    <package name="microsoft.targets"
+        version="1, 0, 1, 0">
+        <file name="ITarget.xs"/>
+        <file name="Win32.xs"/>
+        <file name="_utils.xs"/>
+        <file name="package.xs"/>
+        <file name="package/microsoft.targets.sch"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.intern.xsr.sch"/>
+    </package>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.intern.gen.sch"/>
+    </package>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod-g06/product/Linux/xdc_2_95_02/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include/utils.tci"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/ztree/library/trees/ps-b05x/src/config.bld"/>
+</orphans>
+</release>

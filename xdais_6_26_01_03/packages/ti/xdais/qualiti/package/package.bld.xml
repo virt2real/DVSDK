@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.xdais.qualiti" version="1, 0, 0" producerId="xdais_6_26_01_03">
+    <units>
+        <interface name="ITest"/>
+        <module name="Main"/>
+        <module name="System"/>
+        <module name="Compiler"/>
+        <module name="Rules8_9_10"/>
+        <module name="Rule12"/>
+        <module name="Rules13_26"/>
+        <module name="Rule20"/>
+        <module name="Rules21_22"/>
+        <module name="Rule25"/>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_xdais_qualiti.tar.dep" src="package/rel/ti_xdais_qualiti.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_xdais_qualiti"
+        pname="ti_xdais_qualiti.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="ti.ico"/>
+        <file name="package.bld"/>
+        <file name="QtiProject.xdt"/>
+        <file name="cgtools"/>
+        <file name="README.txt"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="Tools.ini"/>
+        <file name="report.html.xdt"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

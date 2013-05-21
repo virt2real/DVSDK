@@ -1,0 +1,1506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='ti.bios.power' nodoc='0' root='../../../' summary='The+DSP%2FBIOS+Power+package'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eti.bios.power%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+1%2C+1%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='ITMS320CDM644x' kind='interface' nodoc='0' metaonly='1' summary='Interface+for+TMS320DM644x+devices'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2Fpackage.html%22+title%3D%22ti.bios.power%22%3Eti.bios.power%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EITMS320CDM644x%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EITMS320CDM644x%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <docSect name='details'>
+            <docPara content='The+common+configuration+parameters+for+all+TMS320DM644x+devices%0A++are+contained+within+this+module.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='OpersysCfg' anchor='.Opersys.Cfg' altext='ti.bios.power.ITMS320CDM644x.OpersysCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Runtime+Operating+System'>
+                <decl kind='enumval' name='Opersys_PrOS_DaVinci' anchor='.Opersys_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Opersys_Linux' anchor='.Opersys_.Linux'/>
+                <decl kind='enumval' name='Opersys_DSPBIOS' anchor='.Opersys_.D.S.P.B.I.O.S'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='enum' name='TransportCfg' anchor='.Transport.Cfg' altext='ti.bios.power.ITMS320CDM644x.TransportCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Transport+Layer+used+between+GPP+and+DSP'>
+                <decl kind='enumval' name='Transport_Link_PrOS_DaVinci' anchor='.Transport_.Link_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Transport_Link_Linux' anchor='.Transport_.Link_.Linux'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+            </decl>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='opersys' anchor='opersys' altext='ti.bios.power.ITMS320CDM644x.opersys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+operating+system+is+running+on+the+CPU+%28required%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+            </decl>
+            <decl kind='config' name='proxyFor' anchor='proxy.For' altext='ti.bios.power.ITMS320CDM644x.proxyFor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Proxy+device+used+for+new+devices'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='To+support+new+devices+which+behave+the+same+as+existing+devices%2C%0A++set+this+configuration+parameter+to+a+known+device+which+can+be%0A++used+as+a+proxy+for+the+new+device.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='transport' anchor='transport' altext='ti.bios.power.ITMS320CDM644x.transport' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+transport+layer+is+used+%28required%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='OMAP2530DSP' kind='module' nodoc='0' metaonly='1' summary='DSP+configuration+module+for+the+OMAP2530+device' inherits='ti.bios.power.ITMS320CDM644x'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2Fpackage.html%22+title%3D%22ti.bios.power%22%3Eti.bios.power%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOMAP2530DSP%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3EITMS320CDM644x%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOMAP2530DSP%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3Eti.bios.power.ITMS320CDM644x%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+OMAP2530DSP+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.bios.power.OMAP2530DSP%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='Configuration+parameters+for+the+Local+Power+Manager+running%0A++on+the+DSP+core+of+an+OMAP2530+device.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='OpersysCfg' anchor='.Opersys.Cfg' altext='ti.bios.power.OMAP2530DSP.OpersysCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Runtime+Operating+System' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Opersys_PrOS_DaVinci' anchor='.Opersys_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Opersys_Linux' anchor='.Opersys_.Linux'/>
+                <decl kind='enumval' name='Opersys_DSPBIOS' anchor='.Opersys_.D.S.P.B.I.O.S'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='enum' name='TransportCfg' anchor='.Transport.Cfg' altext='ti.bios.power.OMAP2530DSP.TransportCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Transport+Layer+used+between+GPP+and+DSP' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Transport_Link_PrOS_DaVinci' anchor='.Transport_.Link_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Transport_Link_Linux' anchor='.Transport_.Link_.Linux'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='RuntimeContext' anchor='.Runtime.Context' altext='ti.bios.power.OMAP2530DSP.RuntimeContext' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='dsp+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ERuntimeContext%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='length+of+context+buffer' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='override+save%2Frestore+functions' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseUserFxns%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='context+save+function+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsaveFxn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='context+restore+function+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErestoreFxn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3ERuntimeContext%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='length+of+context+buffer' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='override+save%2Frestore+functions' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseUserFxns%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='context+save+function+name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsaveFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='context+restore+function+name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErestoreFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='CONTEXT_BUFFER_MAX_SIZE' anchor='.C.O.N.T.E.X.T_.B.U.F.F.E.R_.M.A.X_.S.I.Z.E' altext='ti.bios.power.OMAP2530DSP.CONTEXT_BUFFER_MAX_SIZE' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='maximum+allowable+size+for+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECONTEXT_BUFFER_MAX_SIZE%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x40000%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3ECONTEXT_BUFFER_MAX_SIZE%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0x40000%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='CPU_NAME' anchor='.C.P.U_.N.A.M.E' altext='ti.bios.power.OMAP2530DSP.CPU_NAME' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='cpu+name%2C+useful+for+adding+validation+checks'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522DSP%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522DSP%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='dspRC' anchor='dsp.R.C' altext='ti.bios.power.OMAP2530DSP.dspRC' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+value+for+dsp+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FOMAP2530DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.OMAP2530DSP.RuntimeContext%22%3EOMAP2530DSP.RuntimeContext%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3EdspRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FOMAP2530DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.OMAP2530DSP.RuntimeContext%22%3EOMAP2530DSP.RuntimeContext%3C%2Fa%3E%3C%2Fi%3E+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='edmaChannel' anchor='edma.Channel' altext='ti.bios.power.OMAP2530DSP.edmaChannel' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+edma+channel+to+use+for+save%2Frestore+transfers'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EedmaChannel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+45%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3EedmaChannel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+45%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='opersys' anchor='opersys' altext='ti.bios.power.OMAP2530DSP.opersys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+operating+system+is+running+on+the+CPU+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23opersys%22+title%3D%22ti.bios.power.ITMS320CDM644x.opersys%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='proxyFor' anchor='proxy.For' altext='ti.bios.power.OMAP2530DSP.proxyFor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Proxy+device+used+for+new+devices' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23proxy.For%22+title%3D%22ti.bios.power.ITMS320CDM644x.proxyFor%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='To+support+new+devices+which+behave+the+same+as+existing+devices%2C%0A++set+this+configuration+parameter+to+a+known+device+which+can+be%0A++used+as+a+proxy+for+the+new+device.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='stopBiosClockOnHibernate' anchor='stop.Bios.Clock.On.Hibernate' altext='ti.bios.power.OMAP2530DSP.stopBiosClockOnHibernate' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='stop+BIOS+clock+when+hibernating'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstopBiosClockOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3EstopBiosClockOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='stopCpuLoadMonitorOnHibernate' anchor='stop.Cpu.Load.Monitor.On.Hibernate' altext='ti.bios.power.OMAP2530DSP.stopCpuLoadMonitorOnHibernate' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='stop+CPU+load+monitoring+when+hibernating'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstopCpuLoadMonitorOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3EstopCpuLoadMonitorOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='targetMemoryRangeName' anchor='target.Memory.Range.Name' altext='ti.bios.power.OMAP2530DSP.targetMemoryRangeName' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='name+given+to+target+memory+range+for+storing+context+data'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EtargetMemoryRangeName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3EtargetMemoryRangeName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+must+be+set+to+a+valid+target+memory+range+defined+in+the%0A++linker+command+file%27s+memory+section.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='transport' anchor='transport' altext='ti.bios.power.OMAP2530DSP.transport' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+transport+layer+is+used+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23transport%22+title%3D%22ti.bios.power.ITMS320CDM644x.transport%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='wugenEventMask' anchor='wugen.Event.Mask' altext='ti.bios.power.OMAP2530DSP.wugenEventMask' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='WUGEN+wake+event+mask'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EwugenEventMask%3C%2Fspan%3E%3C%2Fgo%3E%5B3%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530DSP.%3Cspan+class%3D%22xdoc-id%22%3EwugenEventMask%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%5B3%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='OMAP2530GPP' kind='module' nodoc='0' metaonly='1' summary='GPP+configuration+module+for+the+OMAP2530+device' inherits='ti.bios.power.ITMS320CDM644x'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2Fpackage.html%22+title%3D%22ti.bios.power%22%3Eti.bios.power%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOMAP2530GPP%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3EITMS320CDM644x%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOMAP2530GPP%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3Eti.bios.power.ITMS320CDM644x%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+OMAP2530GPP+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.bios.power.OMAP2530GPP%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='Configuration+parameters+for+the+Local+Power+Manager+running%0A++on+the+GPP+core+of+an+OMAP2530+device.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='OpersysCfg' anchor='.Opersys.Cfg' altext='ti.bios.power.OMAP2530GPP.OpersysCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Runtime+Operating+System' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Opersys_PrOS_DaVinci' anchor='.Opersys_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Opersys_Linux' anchor='.Opersys_.Linux'/>
+                <decl kind='enumval' name='Opersys_DSPBIOS' anchor='.Opersys_.D.S.P.B.I.O.S'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3EOMAP2530GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='enum' name='TransportCfg' anchor='.Transport.Cfg' altext='ti.bios.power.OMAP2530GPP.TransportCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Transport+Layer+used+between+GPP+and+DSP' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Transport_Link_PrOS_DaVinci' anchor='.Transport_.Link_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Transport_Link_Linux' anchor='.Transport_.Link_.Linux'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3EOMAP2530GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='CPU_NAME' anchor='.C.P.U_.N.A.M.E' altext='ti.bios.power.OMAP2530GPP.CPU_NAME' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='cpu+name%2C+useful+for+adding+validation+checks'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522GPP%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP2530GPP.%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522GPP%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='opersys' anchor='opersys' altext='ti.bios.power.OMAP2530GPP.opersys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+operating+system+is+running+on+the+CPU+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23opersys%22+title%3D%22ti.bios.power.ITMS320CDM644x.opersys%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530GPP.%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='proxyFor' anchor='proxy.For' altext='ti.bios.power.OMAP2530GPP.proxyFor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Proxy+device+used+for+new+devices' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23proxy.For%22+title%3D%22ti.bios.power.ITMS320CDM644x.proxyFor%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530GPP.%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='To+support+new+devices+which+behave+the+same+as+existing+devices%2C%0A++set+this+configuration+parameter+to+a+known+device+which+can+be%0A++used+as+a+proxy+for+the+new+device.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='transport' anchor='transport' altext='ti.bios.power.OMAP2530GPP.transport' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+transport+layer+is+used+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23transport%22+title%3D%22ti.bios.power.ITMS320CDM644x.transport%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP2530GPP.%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='OMAP3530DSP' kind='module' nodoc='0' metaonly='1' summary='DSP+configuration+module+for+the+OMAP3530+device' inherits='ti.bios.power.ITMS320CDM644x'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2Fpackage.html%22+title%3D%22ti.bios.power%22%3Eti.bios.power%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOMAP3530DSP%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3EITMS320CDM644x%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOMAP3530DSP%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3Eti.bios.power.ITMS320CDM644x%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+OMAP3530DSP+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.bios.power.OMAP3530DSP%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='Configuration+parameters+for+the+Local+Power+Manager+running%0A++on+the+DSP+core+of+an+OMAP3530+device.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='OpersysCfg' anchor='.Opersys.Cfg' altext='ti.bios.power.OMAP3530DSP.OpersysCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Runtime+Operating+System' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Opersys_PrOS_DaVinci' anchor='.Opersys_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Opersys_Linux' anchor='.Opersys_.Linux'/>
+                <decl kind='enumval' name='Opersys_DSPBIOS' anchor='.Opersys_.D.S.P.B.I.O.S'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='enum' name='TransportCfg' anchor='.Transport.Cfg' altext='ti.bios.power.OMAP3530DSP.TransportCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Transport+Layer+used+between+GPP+and+DSP' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Transport_Link_PrOS_DaVinci' anchor='.Transport_.Link_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Transport_Link_Linux' anchor='.Transport_.Link_.Linux'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='RuntimeContext' anchor='.Runtime.Context' altext='ti.bios.power.OMAP3530DSP.RuntimeContext' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='dsp+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ERuntimeContext%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='length+of+context+buffer' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='override+save%2Frestore+functions' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseUserFxns%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='context+save+function+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsaveFxn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='context+restore+function+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErestoreFxn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3ERuntimeContext%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='length+of+context+buffer' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='override+save%2Frestore+functions' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseUserFxns%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='context+save+function+name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsaveFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='context+restore+function+name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErestoreFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='CONTEXT_BUFFER_MAX_SIZE' anchor='.C.O.N.T.E.X.T_.B.U.F.F.E.R_.M.A.X_.S.I.Z.E' altext='ti.bios.power.OMAP3530DSP.CONTEXT_BUFFER_MAX_SIZE' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='maximum+allowable+size+for+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECONTEXT_BUFFER_MAX_SIZE%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x40000%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3ECONTEXT_BUFFER_MAX_SIZE%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0x40000%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='CPU_NAME' anchor='.C.P.U_.N.A.M.E' altext='ti.bios.power.OMAP3530DSP.CPU_NAME' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='cpu+name%2C+useful+for+adding+validation+checks'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522DSP%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522DSP%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='dspRC' anchor='dsp.R.C' altext='ti.bios.power.OMAP3530DSP.dspRC' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+value+for+dsp+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FOMAP3530DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.OMAP3530DSP.RuntimeContext%22%3EOMAP3530DSP.RuntimeContext%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3EdspRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FOMAP3530DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.OMAP3530DSP.RuntimeContext%22%3EOMAP3530DSP.RuntimeContext%3C%2Fa%3E%3C%2Fi%3E+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='edmaChannel' anchor='edma.Channel' altext='ti.bios.power.OMAP3530DSP.edmaChannel' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+edma+channel+to+use+for+save%2Frestore+transfers'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EedmaChannel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+45%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3EedmaChannel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+45%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='opersys' anchor='opersys' altext='ti.bios.power.OMAP3530DSP.opersys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+operating+system+is+running+on+the+CPU+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23opersys%22+title%3D%22ti.bios.power.ITMS320CDM644x.opersys%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='proxyFor' anchor='proxy.For' altext='ti.bios.power.OMAP3530DSP.proxyFor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Proxy+device+used+for+new+devices' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23proxy.For%22+title%3D%22ti.bios.power.ITMS320CDM644x.proxyFor%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='To+support+new+devices+which+behave+the+same+as+existing+devices%2C%0A++set+this+configuration+parameter+to+a+known+device+which+can+be%0A++used+as+a+proxy+for+the+new+device.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='stopBiosClockOnHibernate' anchor='stop.Bios.Clock.On.Hibernate' altext='ti.bios.power.OMAP3530DSP.stopBiosClockOnHibernate' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='stop+BIOS+clock+when+hibernating'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstopBiosClockOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3EstopBiosClockOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='stopCpuLoadMonitorOnHibernate' anchor='stop.Cpu.Load.Monitor.On.Hibernate' altext='ti.bios.power.OMAP3530DSP.stopCpuLoadMonitorOnHibernate' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='stop+CPU+load+monitoring+when+hibernating'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstopCpuLoadMonitorOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3EstopCpuLoadMonitorOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='targetMemoryRangeName' anchor='target.Memory.Range.Name' altext='ti.bios.power.OMAP3530DSP.targetMemoryRangeName' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='name+given+to+target+memory+range+for+storing+context+data'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EtargetMemoryRangeName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3EtargetMemoryRangeName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+must+be+set+to+a+valid+target+memory+range+defined+in+the%0A++linker+command+file%27s+memory+section.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='transport' anchor='transport' altext='ti.bios.power.OMAP3530DSP.transport' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+transport+layer+is+used+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23transport%22+title%3D%22ti.bios.power.ITMS320CDM644x.transport%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='wugenEventMask' anchor='wugen.Event.Mask' altext='ti.bios.power.OMAP3530DSP.wugenEventMask' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='WUGEN+wake+event+mask'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EwugenEventMask%3C%2Fspan%3E%3C%2Fgo%3E%5B3%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530DSP.%3Cspan+class%3D%22xdoc-id%22%3EwugenEventMask%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%5B3%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='OMAP3530GPP' kind='module' nodoc='0' metaonly='1' summary='GPP+configuration+module+for+the+OMAP3530+device' inherits='ti.bios.power.ITMS320CDM644x'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2Fpackage.html%22+title%3D%22ti.bios.power%22%3Eti.bios.power%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOMAP3530GPP%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3EITMS320CDM644x%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOMAP3530GPP%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3Eti.bios.power.ITMS320CDM644x%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+OMAP3530GPP+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.bios.power.OMAP3530GPP%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='Configuration+parameters+for+the+Local+Power+Manager+running%0A++on+the+GPP+core+of+an+OMAP3530+device.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='OpersysCfg' anchor='.Opersys.Cfg' altext='ti.bios.power.OMAP3530GPP.OpersysCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Runtime+Operating+System' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Opersys_PrOS_DaVinci' anchor='.Opersys_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Opersys_Linux' anchor='.Opersys_.Linux'/>
+                <decl kind='enumval' name='Opersys_DSPBIOS' anchor='.Opersys_.D.S.P.B.I.O.S'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3EOMAP3530GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='enum' name='TransportCfg' anchor='.Transport.Cfg' altext='ti.bios.power.OMAP3530GPP.TransportCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Transport+Layer+used+between+GPP+and+DSP' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Transport_Link_PrOS_DaVinci' anchor='.Transport_.Link_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Transport_Link_Linux' anchor='.Transport_.Link_.Linux'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3EOMAP3530GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='CPU_NAME' anchor='.C.P.U_.N.A.M.E' altext='ti.bios.power.OMAP3530GPP.CPU_NAME' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='cpu+name%2C+useful+for+adding+validation+checks'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522GPP%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EOMAP3530GPP.%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522GPP%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='opersys' anchor='opersys' altext='ti.bios.power.OMAP3530GPP.opersys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+operating+system+is+running+on+the+CPU+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23opersys%22+title%3D%22ti.bios.power.ITMS320CDM644x.opersys%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530GPP.%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='proxyFor' anchor='proxy.For' altext='ti.bios.power.OMAP3530GPP.proxyFor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Proxy+device+used+for+new+devices' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23proxy.For%22+title%3D%22ti.bios.power.ITMS320CDM644x.proxyFor%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530GPP.%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='To+support+new+devices+which+behave+the+same+as+existing+devices%2C%0A++set+this+configuration+parameter+to+a+known+device+which+can+be%0A++used+as+a+proxy+for+the+new+device.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='transport' anchor='transport' altext='ti.bios.power.OMAP3530GPP.transport' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+transport+layer+is+used+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23transport%22+title%3D%22ti.bios.power.ITMS320CDM644x.transport%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EOMAP3530GPP.%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='TMS320C3430DSP' kind='module' nodoc='0' metaonly='1' summary='DSP+configuration+module+for+the+TMS3203430+device' inherits='ti.bios.power.ITMS320CDM644x'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2Fpackage.html%22+title%3D%22ti.bios.power%22%3Eti.bios.power%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320C3430DSP%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3EITMS320CDM644x%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320C3430DSP%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3Eti.bios.power.ITMS320CDM644x%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+TMS320C3430DSP+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.bios.power.TMS320C3430DSP%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='Configuration+parameters+for+the+Local+Power+Manager+running%0A++on+the+DSP+core+of+a+TMS3203430+device.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='OpersysCfg' anchor='.Opersys.Cfg' altext='ti.bios.power.TMS320C3430DSP.OpersysCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Runtime+Operating+System' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Opersys_PrOS_DaVinci' anchor='.Opersys_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Opersys_Linux' anchor='.Opersys_.Linux'/>
+                <decl kind='enumval' name='Opersys_DSPBIOS' anchor='.Opersys_.D.S.P.B.I.O.S'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='enum' name='TransportCfg' anchor='.Transport.Cfg' altext='ti.bios.power.TMS320C3430DSP.TransportCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Transport+Layer+used+between+GPP+and+DSP' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Transport_Link_PrOS_DaVinci' anchor='.Transport_.Link_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Transport_Link_Linux' anchor='.Transport_.Link_.Linux'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='RuntimeContext' anchor='.Runtime.Context' altext='ti.bios.power.TMS320C3430DSP.RuntimeContext' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='dsp+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ERuntimeContext%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='length+of+context+buffer' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='override+save%2Frestore+functions' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseUserFxns%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='context+save+function+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsaveFxn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='context+restore+function+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErestoreFxn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3ERuntimeContext%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='length+of+context+buffer' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='override+save%2Frestore+functions' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseUserFxns%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='context+save+function+name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsaveFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='context+restore+function+name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErestoreFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='CONTEXT_BUFFER_MAX_SIZE' anchor='.C.O.N.T.E.X.T_.B.U.F.F.E.R_.M.A.X_.S.I.Z.E' altext='ti.bios.power.TMS320C3430DSP.CONTEXT_BUFFER_MAX_SIZE' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='maximum+allowable+size+for+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECONTEXT_BUFFER_MAX_SIZE%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x40000%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3ECONTEXT_BUFFER_MAX_SIZE%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0x40000%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='CPU_NAME' anchor='.C.P.U_.N.A.M.E' altext='ti.bios.power.TMS320C3430DSP.CPU_NAME' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='cpu+name%2C+useful+for+adding+validation+checks'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522DSP%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522DSP%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='dspRC' anchor='dsp.R.C' altext='ti.bios.power.TMS320C3430DSP.dspRC' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+value+for+dsp+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FTMS320C3430DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.TMS320C3430DSP.RuntimeContext%22%3ETMS320C3430DSP.RuntimeContext%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3EdspRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FTMS320C3430DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.TMS320C3430DSP.RuntimeContext%22%3ETMS320C3430DSP.RuntimeContext%3C%2Fa%3E%3C%2Fi%3E+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='edmaChannel' anchor='edma.Channel' altext='ti.bios.power.TMS320C3430DSP.edmaChannel' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+edma+channel+to+use+for+save%2Frestore+transfers'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EedmaChannel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+45%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3EedmaChannel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+45%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='opersys' anchor='opersys' altext='ti.bios.power.TMS320C3430DSP.opersys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+operating+system+is+running+on+the+CPU+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23opersys%22+title%3D%22ti.bios.power.ITMS320CDM644x.opersys%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='proxyFor' anchor='proxy.For' altext='ti.bios.power.TMS320C3430DSP.proxyFor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Proxy+device+used+for+new+devices' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23proxy.For%22+title%3D%22ti.bios.power.ITMS320CDM644x.proxyFor%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='To+support+new+devices+which+behave+the+same+as+existing+devices%2C%0A++set+this+configuration+parameter+to+a+known+device+which+can+be%0A++used+as+a+proxy+for+the+new+device.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='stopBiosClockOnHibernate' anchor='stop.Bios.Clock.On.Hibernate' altext='ti.bios.power.TMS320C3430DSP.stopBiosClockOnHibernate' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='stop+BIOS+clock+when+hibernating'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstopBiosClockOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3EstopBiosClockOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='stopCpuLoadMonitorOnHibernate' anchor='stop.Cpu.Load.Monitor.On.Hibernate' altext='ti.bios.power.TMS320C3430DSP.stopCpuLoadMonitorOnHibernate' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='stop+CPU+load+monitoring+when+hibernating'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstopCpuLoadMonitorOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3EstopCpuLoadMonitorOnHibernate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='targetMemoryRangeName' anchor='target.Memory.Range.Name' altext='ti.bios.power.TMS320C3430DSP.targetMemoryRangeName' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='name+given+to+target+memory+range+for+storing+context+data'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EtargetMemoryRangeName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3EtargetMemoryRangeName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+must+be+set+to+a+valid+target+memory+range+defined+in+the%0A++linker+command+file%27s+memory+section.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='transport' anchor='transport' altext='ti.bios.power.TMS320C3430DSP.transport' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+transport+layer+is+used+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23transport%22+title%3D%22ti.bios.power.ITMS320CDM644x.transport%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='wugenEventMask' anchor='wugen.Event.Mask' altext='ti.bios.power.TMS320C3430DSP.wugenEventMask' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='WUGEN+wake+event+mask'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EwugenEventMask%3C%2Fspan%3E%3C%2Fgo%3E%5B3%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430DSP.%3Cspan+class%3D%22xdoc-id%22%3EwugenEventMask%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%5B3%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='TMS320C3430GPP' kind='module' nodoc='0' metaonly='1' summary='GPP+configuration+module+for+the+TMS3203430+device' inherits='ti.bios.power.ITMS320CDM644x'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2Fpackage.html%22+title%3D%22ti.bios.power%22%3Eti.bios.power%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320C3430GPP%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3EITMS320CDM644x%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320C3430GPP%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3Eti.bios.power.ITMS320CDM644x%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+TMS320C3430GPP+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.bios.power.TMS320C3430GPP%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='Configuration+parameters+for+the+Local+Power+Manager+running%0A++on+the+GPP+core+of+a+TMS3203430+device.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='OpersysCfg' anchor='.Opersys.Cfg' altext='ti.bios.power.TMS320C3430GPP.OpersysCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Runtime+Operating+System' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Opersys_PrOS_DaVinci' anchor='.Opersys_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Opersys_Linux' anchor='.Opersys_.Linux'/>
+                <decl kind='enumval' name='Opersys_DSPBIOS' anchor='.Opersys_.D.S.P.B.I.O.S'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320C3430GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='enum' name='TransportCfg' anchor='.Transport.Cfg' altext='ti.bios.power.TMS320C3430GPP.TransportCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Transport+Layer+used+between+GPP+and+DSP' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Transport_Link_PrOS_DaVinci' anchor='.Transport_.Link_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Transport_Link_Linux' anchor='.Transport_.Link_.Linux'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320C3430GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='CPU_NAME' anchor='.C.P.U_.N.A.M.E' altext='ti.bios.power.TMS320C3430GPP.CPU_NAME' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='cpu+name%2C+useful+for+adding+validation+checks'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522GPP%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320C3430GPP.%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522GPP%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='opersys' anchor='opersys' altext='ti.bios.power.TMS320C3430GPP.opersys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+operating+system+is+running+on+the+CPU+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23opersys%22+title%3D%22ti.bios.power.ITMS320CDM644x.opersys%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430GPP.%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='proxyFor' anchor='proxy.For' altext='ti.bios.power.TMS320C3430GPP.proxyFor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Proxy+device+used+for+new+devices' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23proxy.For%22+title%3D%22ti.bios.power.ITMS320CDM644x.proxyFor%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430GPP.%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='To+support+new+devices+which+behave+the+same+as+existing+devices%2C%0A++set+this+configuration+parameter+to+a+known+device+which+can+be%0A++used+as+a+proxy+for+the+new+device.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='transport' anchor='transport' altext='ti.bios.power.TMS320C3430GPP.transport' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+transport+layer+is+used+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23transport%22+title%3D%22ti.bios.power.ITMS320CDM644x.transport%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320C3430GPP.%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='TMS320CDM6441DSP' kind='module' nodoc='0' metaonly='1' summary='DSP+configuration+module+for+the+TMS320DM6441+device' inherits='ti.bios.power.ITMS320CDM644x'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2Fpackage.html%22+title%3D%22ti.bios.power%22%3Eti.bios.power%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320CDM6441DSP%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3EITMS320CDM644x%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320CDM6441DSP%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3Eti.bios.power.ITMS320CDM644x%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+TMS320CDM6441DSP+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.bios.power.TMS320CDM6441DSP%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='Configuration+parameters+for+the+Local+Power+Manager+running%0A++on+the+DSP+core+of+a+TMS320DM6441+device.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='OpersysCfg' anchor='.Opersys.Cfg' altext='ti.bios.power.TMS320CDM6441DSP.OpersysCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Runtime+Operating+System' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Opersys_PrOS_DaVinci' anchor='.Opersys_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Opersys_Linux' anchor='.Opersys_.Linux'/>
+                <decl kind='enumval' name='Opersys_DSPBIOS' anchor='.Opersys_.D.S.P.B.I.O.S'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='enum' name='TransportCfg' anchor='.Transport.Cfg' altext='ti.bios.power.TMS320CDM6441DSP.TransportCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Transport+Layer+used+between+GPP+and+DSP' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Transport_Link_PrOS_DaVinci' anchor='.Transport_.Link_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Transport_Link_Linux' anchor='.Transport_.Link_.Linux'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='RuntimeContext' anchor='.Runtime.Context' altext='ti.bios.power.TMS320CDM6441DSP.RuntimeContext' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='dsp+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ERuntimeContext%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='length+of+context+buffer' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='override+save%2Frestore+functions' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseUserFxns%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='context+save+function+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsaveFxn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='context+restore+function+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErestoreFxn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3ERuntimeContext%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='length+of+context+buffer' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='override+save%2Frestore+functions' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseUserFxns%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='context+save+function+name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsaveFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='context+restore+function+name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErestoreFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='CONTEXT_BUFFER_MAX_SIZE' anchor='.C.O.N.T.E.X.T_.B.U.F.F.E.R_.M.A.X_.S.I.Z.E' altext='ti.bios.power.TMS320CDM6441DSP.CONTEXT_BUFFER_MAX_SIZE' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='maximum+allowable+size+for+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECONTEXT_BUFFER_MAX_SIZE%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x40000%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3ECONTEXT_BUFFER_MAX_SIZE%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0x40000%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='CPU_NAME' anchor='.C.P.U_.N.A.M.E' altext='ti.bios.power.TMS320CDM6441DSP.CPU_NAME' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='cpu+name%2C+useful+for+adding+validation+checks'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522DSP%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522DSP%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='dspRC' anchor='dsp.R.C' altext='ti.bios.power.TMS320CDM6441DSP.dspRC' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+value+for+dsp+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FTMS320CDM6441DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.TMS320CDM6441DSP.RuntimeContext%22%3ETMS320CDM6441DSP.RuntimeContext%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3EdspRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FTMS320CDM6441DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.TMS320CDM6441DSP.RuntimeContext%22%3ETMS320CDM6441DSP.RuntimeContext%3C%2Fa%3E%3C%2Fi%3E+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='edmaChannel' anchor='edma.Channel' altext='ti.bios.power.TMS320CDM6441DSP.edmaChannel' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+edma+channel+to+use+for+save%2Frestore+transfers'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EedmaChannel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+45%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3EedmaChannel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+45%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='imcopRC' anchor='imcop.R.C' altext='ti.bios.power.TMS320CDM6441DSP.imcopRC' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+value+for+vicp+%28imcop%29+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FTMS320CDM6441DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.TMS320CDM6441DSP.RuntimeContext%22%3ETMS320CDM6441DSP.RuntimeContext%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EimcopRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3EimcopRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FTMS320CDM6441DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.TMS320CDM6441DSP.RuntimeContext%22%3ETMS320CDM6441DSP.RuntimeContext%3C%2Fa%3E%3C%2Fi%3E+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='opersys' anchor='opersys' altext='ti.bios.power.TMS320CDM6441DSP.opersys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+operating+system+is+running+on+the+CPU+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23opersys%22+title%3D%22ti.bios.power.ITMS320CDM644x.opersys%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='proxyFor' anchor='proxy.For' altext='ti.bios.power.TMS320CDM6441DSP.proxyFor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Proxy+device+used+for+new+devices' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23proxy.For%22+title%3D%22ti.bios.power.ITMS320CDM644x.proxyFor%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='To+support+new+devices+which+behave+the+same+as+existing+devices%2C%0A++set+this+configuration+parameter+to+a+known+device+which+can+be%0A++used+as+a+proxy+for+the+new+device.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='targetMemoryRangeName' anchor='target.Memory.Range.Name' altext='ti.bios.power.TMS320CDM6441DSP.targetMemoryRangeName' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='name+given+to+target+memory+range+for+storing+context+data'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EtargetMemoryRangeName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3EtargetMemoryRangeName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+must+be+set+to+a+valid+target+memory+range+defined+in+the%0A++linker+command+file%27s+memory+section.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='transport' anchor='transport' altext='ti.bios.power.TMS320CDM6441DSP.transport' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+transport+layer+is+used+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23transport%22+title%3D%22ti.bios.power.ITMS320CDM644x.transport%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6441DSP.%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='TMS320CDM6441GPP' kind='module' nodoc='0' metaonly='1' summary='GPP+configuration+module+for+the+TMS320DM6441+device' inherits='ti.bios.power.ITMS320CDM644x'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2Fpackage.html%22+title%3D%22ti.bios.power%22%3Eti.bios.power%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320CDM6441GPP%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3EITMS320CDM644x%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320CDM6441GPP%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3Eti.bios.power.ITMS320CDM644x%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+TMS320CDM6441GPP+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.bios.power.TMS320CDM6441GPP%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='Configuration+parameters+for+the+Local+Power+Manager+running%0A++on+the+GPP+core+of+a+TMS320DM6441+device.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='OpersysCfg' anchor='.Opersys.Cfg' altext='ti.bios.power.TMS320CDM6441GPP.OpersysCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Runtime+Operating+System' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Opersys_PrOS_DaVinci' anchor='.Opersys_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Opersys_Linux' anchor='.Opersys_.Linux'/>
+                <decl kind='enumval' name='Opersys_DSPBIOS' anchor='.Opersys_.D.S.P.B.I.O.S'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='enum' name='TransportCfg' anchor='.Transport.Cfg' altext='ti.bios.power.TMS320CDM6441GPP.TransportCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Transport+Layer+used+between+GPP+and+DSP' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Transport_Link_PrOS_DaVinci' anchor='.Transport_.Link_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Transport_Link_Linux' anchor='.Transport_.Link_.Linux'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='CPU_NAME' anchor='.C.P.U_.N.A.M.E' altext='ti.bios.power.TMS320CDM6441GPP.CPU_NAME' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='cpu+name%2C+useful+for+adding+validation+checks'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522GPP%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522GPP%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='enableVicpAtPowerOn' anchor='enable.Vicp.At.Power.On' altext='ti.bios.power.TMS320CDM6441GPP.enableVicpAtPowerOn' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='vicp+power+on+state'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EenableVicpAtPowerOn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3EenableVicpAtPowerOn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='opersys' anchor='opersys' altext='ti.bios.power.TMS320CDM6441GPP.opersys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+operating+system+is+running+on+the+CPU+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23opersys%22+title%3D%22ti.bios.power.ITMS320CDM644x.opersys%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='proxyFor' anchor='proxy.For' altext='ti.bios.power.TMS320CDM6441GPP.proxyFor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Proxy+device+used+for+new+devices' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23proxy.For%22+title%3D%22ti.bios.power.ITMS320CDM644x.proxyFor%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='To+support+new+devices+which+behave+the+same+as+existing+devices%2C%0A++set+this+configuration+parameter+to+a+known+device+which+can+be%0A++used+as+a+proxy+for+the+new+device.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='transport' anchor='transport' altext='ti.bios.power.TMS320CDM6441GPP.transport' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+transport+layer+is+used+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23transport%22+title%3D%22ti.bios.power.ITMS320CDM644x.transport%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6441GPP.%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='TMS320CDM6446DSP' kind='module' nodoc='0' metaonly='1' summary='DSP+configuration+module+for+the+TMS320DM6446+device' inherits='ti.bios.power.ITMS320CDM644x'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2Fpackage.html%22+title%3D%22ti.bios.power%22%3Eti.bios.power%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320CDM6446DSP%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3EITMS320CDM644x%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320CDM6446DSP%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3Eti.bios.power.ITMS320CDM644x%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+TMS320CDM6446DSP+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.bios.power.TMS320CDM6446DSP%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='Configuration+parameters+for+the+Local+Power+Manager+running%0A++on+the+DSP+core+of+a+TMS320DM6446+device.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='OpersysCfg' anchor='.Opersys.Cfg' altext='ti.bios.power.TMS320CDM6446DSP.OpersysCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Runtime+Operating+System' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Opersys_PrOS_DaVinci' anchor='.Opersys_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Opersys_Linux' anchor='.Opersys_.Linux'/>
+                <decl kind='enumval' name='Opersys_DSPBIOS' anchor='.Opersys_.D.S.P.B.I.O.S'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='enum' name='TransportCfg' anchor='.Transport.Cfg' altext='ti.bios.power.TMS320CDM6446DSP.TransportCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Transport+Layer+used+between+GPP+and+DSP' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Transport_Link_PrOS_DaVinci' anchor='.Transport_.Link_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Transport_Link_Linux' anchor='.Transport_.Link_.Linux'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='RuntimeContext' anchor='.Runtime.Context' altext='ti.bios.power.TMS320CDM6446DSP.RuntimeContext' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='dsp+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ERuntimeContext%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='length+of+context+buffer' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='override+save%2Frestore+functions' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseUserFxns%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='context+save+function+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsaveFxn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='context+restore+function+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErestoreFxn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3ERuntimeContext%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='length+of+context+buffer' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='override+save%2Frestore+functions' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseUserFxns%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='context+save+function+name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsaveFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='context+restore+function+name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErestoreFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='CONTEXT_BUFFER_MAX_SIZE' anchor='.C.O.N.T.E.X.T_.B.U.F.F.E.R_.M.A.X_.S.I.Z.E' altext='ti.bios.power.TMS320CDM6446DSP.CONTEXT_BUFFER_MAX_SIZE' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='maximum+allowable+size+for+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECONTEXT_BUFFER_MAX_SIZE%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x40000%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3ECONTEXT_BUFFER_MAX_SIZE%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0x40000%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='CPU_NAME' anchor='.C.P.U_.N.A.M.E' altext='ti.bios.power.TMS320CDM6446DSP.CPU_NAME' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='cpu+name%2C+useful+for+adding+validation+checks'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522DSP%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522DSP%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='dspRC' anchor='dsp.R.C' altext='ti.bios.power.TMS320CDM6446DSP.dspRC' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+value+for+dsp+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FTMS320CDM6446DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.TMS320CDM6446DSP.RuntimeContext%22%3ETMS320CDM6446DSP.RuntimeContext%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdspRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3EdspRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FTMS320CDM6446DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.TMS320CDM6446DSP.RuntimeContext%22%3ETMS320CDM6446DSP.RuntimeContext%3C%2Fa%3E%3C%2Fi%3E+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='edmaChannel' anchor='edma.Channel' altext='ti.bios.power.TMS320CDM6446DSP.edmaChannel' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+edma+channel+to+use+for+save%2Frestore+transfers'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EedmaChannel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+45%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3EedmaChannel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt32%3C%2Fspan%3E%3C%2Fi%3E+45%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='imcopRC' anchor='imcop.R.C' altext='ti.bios.power.TMS320CDM6446DSP.imcopRC' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='default+value+for+vicp+%28imcop%29+runtime+context+buffer'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FTMS320CDM6446DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.TMS320CDM6446DSP.RuntimeContext%22%3ETMS320CDM6446DSP.RuntimeContext%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EimcopRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3EimcopRC%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FTMS320CDM6446DSP.html%23.Runtime.Context%22+title%3D%22ti.bios.power.TMS320CDM6446DSP.RuntimeContext%22%3ETMS320CDM6446DSP.RuntimeContext%3C%2Fa%3E%3C%2Fi%3E+%257B'/>
+                    <line tab='1' content='len%253A%2B0x40000%252C'/>
+                    <line tab='1' content='useUserFxns%253A%2B%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%252C'/>
+                    <line tab='1' content='saveFxn%253A%2B%2522%2522%252C'/>
+                    <line tab='1' content='restoreFxn%253A%2B%2522%2522'/>
+                    <line tab='0' content='%257D%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='opersys' anchor='opersys' altext='ti.bios.power.TMS320CDM6446DSP.opersys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+operating+system+is+running+on+the+CPU+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23opersys%22+title%3D%22ti.bios.power.ITMS320CDM644x.opersys%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='proxyFor' anchor='proxy.For' altext='ti.bios.power.TMS320CDM6446DSP.proxyFor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Proxy+device+used+for+new+devices' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23proxy.For%22+title%3D%22ti.bios.power.ITMS320CDM644x.proxyFor%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='To+support+new+devices+which+behave+the+same+as+existing+devices%2C%0A++set+this+configuration+parameter+to+a+known+device+which+can+be%0A++used+as+a+proxy+for+the+new+device.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='targetMemoryRangeName' anchor='target.Memory.Range.Name' altext='ti.bios.power.TMS320CDM6446DSP.targetMemoryRangeName' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='name+given+to+target+memory+range+for+storing+context+data'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EtargetMemoryRangeName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3EtargetMemoryRangeName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+must+be+set+to+a+valid+target+memory+range+defined+in+the%0A++linker+command+file%27s+memory+section.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='transport' anchor='transport' altext='ti.bios.power.TMS320CDM6446DSP.transport' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+transport+layer+is+used+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23transport%22+title%3D%22ti.bios.power.ITMS320CDM644x.transport%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6446DSP.%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='TMS320CDM6446GPP' kind='module' nodoc='0' metaonly='1' summary='GPP+configuration+module+for+the+TMS320DM6446+device' inherits='ti.bios.power.ITMS320CDM644x'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2Fpackage.html%22+title%3D%22ti.bios.power%22%3Eti.bios.power%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320CDM6446GPP%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3EITMS320CDM644x%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETMS320CDM6446GPP%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%22+title%3D%22ti.bios.power.ITMS320CDM644x%22%3Eti.bios.power.ITMS320CDM644x%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+TMS320CDM6446GPP+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.bios.power.TMS320CDM6446GPP%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='Configuration+parameters+for+the+Local+Power+Manager+running%0A++on+the+GPP+core+of+a+TMS320DM6446+device.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='OpersysCfg' anchor='.Opersys.Cfg' altext='ti.bios.power.TMS320CDM6446GPP.OpersysCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Runtime+Operating+System' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Opersys_PrOS_DaVinci' anchor='.Opersys_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Opersys_Linux' anchor='.Opersys_.Linux'/>
+                <decl kind='enumval' name='Opersys_DSPBIOS' anchor='.Opersys_.D.S.P.B.I.O.S'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersysCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='PrOS+on+DaVinci+platform' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Linux+%28HLOS%29' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3EOpersys_DSPBIOS%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='enum' name='TransportCfg' anchor='.Transport.Cfg' altext='ti.bios.power.TMS320CDM6446GPP.TransportCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Transport+Layer+used+between+GPP+and+DSP' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <decl kind='enumval' name='Transport_Link_PrOS_DaVinci' anchor='.Transport_.Link_.Pr.O.S_.Da.Vinci'/>
+                <decl kind='enumval' name='Transport_Link_Linux' anchor='.Transport_.Link_.Linux'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransportCfg%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+PrOS+on+DaVinci' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_PrOS_DaVinci%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='DSP%2FBIOS+Link+for+Linux' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3ETransport_Link_Linux%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='CPU_NAME' anchor='.C.P.U_.N.A.M.E' altext='ti.bios.power.TMS320CDM6446GPP.CPU_NAME' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='cpu+name%2C+useful+for+adding+validation+checks'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522GPP%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3ECPU_NAME%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522GPP%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='enableVicpAtPowerOn' anchor='enable.Vicp.At.Power.On' altext='ti.bios.power.TMS320CDM6446GPP.enableVicpAtPowerOn' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='vicp+power+on+state'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EenableVicpAtPowerOn%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3EenableVicpAtPowerOn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='opersys' anchor='opersys' altext='ti.bios.power.TMS320CDM6446GPP.opersys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+operating+system+is+running+on+the+CPU+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23opersys%22+title%3D%22ti.bios.power.ITMS320CDM644x.opersys%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3Eopersys%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Opersys.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.OpersysCfg%22%3EITMS320CDM644x.OpersysCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='proxyFor' anchor='proxy.For' altext='ti.bios.power.TMS320CDM6446GPP.proxyFor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Proxy+device+used+for+new+devices' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23proxy.For%22+title%3D%22ti.bios.power.ITMS320CDM644x.proxyFor%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3EproxyFor%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='To+support+new+devices+which+behave+the+same+as+existing+devices%2C%0A++set+this+configuration+parameter+to+a+known+device+which+can+be%0A++used+as+a+proxy+for+the+new+device.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='transport' anchor='transport' altext='ti.bios.power.TMS320CDM6446GPP.transport' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Define+which+transport+layer+is+used+%28required%29' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23transport%22+title%3D%22ti.bios.power.ITMS320CDM644x.transport%22%3EITMS320CDM644x%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETMS320CDM6446GPP.%3Cspan+class%3D%22xdoc-id%22%3Etransport%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpower%2FITMS320CDM644x.html%23.Transport.Cfg%22+title%3D%22ti.bios.power.ITMS320CDM644x.TransportCfg%22%3EITMS320CDM644x.TransportCfg%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+</package>

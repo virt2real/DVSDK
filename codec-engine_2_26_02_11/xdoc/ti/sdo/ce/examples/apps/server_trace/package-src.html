@@ -1,0 +1,77 @@
+<html><head><title>package ti.sdo.ce.examples.apps.server_trace</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* 
+</span>     2    <span class="comment"> * Copyright (c) 2010, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> * 
+</span>    32    <span class="comment"> */</span>
+    33    <span class="xdoc">/*!
+</span>    34    <span class="xdoc"> *  ======== package.xdc ========
+</span>    35    <span class="xdoc"> *  Codec Engine example application for pulling and optionally saving to files
+</span>    36    <span class="xdoc"> *  DSP server trace and LOG data.
+</span>    37    <span class="xdoc"> *
+</span>    38    <span class="xdoc"> *  This example is built only for the MVArm9 and UCArm9 targets, and requires
+</span>    39    <span class="xdoc"> *  the Link Abiter Daemon, (LAD), for shared access of a DSP server.
+</span>    40    <span class="xdoc"> *
+</span>    41    <span class="xdoc"> *  This example builds using the XDC build tools, and is portable to
+</span>    42    <span class="xdoc"> *  several execution environments.  The following files are
+</span>    43    <span class="xdoc"> *  included in this package:
+</span>    44    <span class="xdoc"> *  <b>@p(dlist)</b>
+</span>    45    <span class="xdoc"> *      - `package.xdc`
+</span>    46    <span class="xdoc"> *          This file is required to declare a globally unique name for this
+</span>    47    <span class="xdoc"> *          package.
+</span>    48    <span class="xdoc"> *      - `package.bld`
+</span>    49    <span class="xdoc"> *          This file is the build script describing the application to the
+</span>    50    <span class="xdoc"> *          XDC built tools.
+</span>    51    <span class="xdoc"> *      - `makefile`
+</span>    52    <span class="xdoc"> *          A usability makefile wrapper around the XDC build tools.
+</span>    53    <span class="xdoc"> *      - `remote.cfg`
+</span>    54    <span class="xdoc"> *          The XDC configuration file for this executable, when configured
+</span>    55    <span class="xdoc"> *          to run "remote" codecs.
+</span>    56    <span class="xdoc"> *      - `trace.c`
+</span>    57    <span class="xdoc"> *          The primary source file for this executable.
+</span>    58    <span class="xdoc"> *      - `main_native.c`
+</span>    59    <span class="xdoc"> *          The execution runtime-specific entry point for this executable.
+</span>    60    <span class="xdoc"> *          This isolates any runtime-specific startup code from the generic
+</span>    61    <span class="xdoc"> *          application.
+</span>    62    <span class="xdoc"> */</span>
+    63    <span class=key>package</span> ti.sdo.ce.examples.apps.server_trace [1, 0, 0] {
+    64    }
+    65    <span class="comment">/*
+</span>    66    <span class="comment"> *  @(#) ti.sdo.ce.examples.apps.server_trace; 1, 0, 0,217; 12-2-2010 21:20:12; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+</span>    67    <span class="comment">
+</span>    68    <span class="comment"> */</span>
+    69    
+</pre>
+</body></html>

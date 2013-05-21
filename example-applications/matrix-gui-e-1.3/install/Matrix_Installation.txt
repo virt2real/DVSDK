@@ -1,0 +1,98 @@
+
+Download and untar the LGPL version of the Qt SDK for Embedded linux from here:
+
+  http://qt.nokia.com/products/platform/qt-for-embedded-linux
+
+  tar -zxvf qt-everywhere-opensource-src-4.6.2.tar.gz
+
+Download the touchscreen library from http://tslib.berlios.de to get the header file.
+
+  tar -jxvf tslib-1.0.tar.bz2
+
+Copy touchscreen header file to target filesystem:
+
+  cp src/tslib.h target/usr/include/.
+
+Install and edit these files to replace all occurances of "target" to point to your target file system:
+
+  cp mkqt462 qt-everywhere-opensource-src-4.6.2/.
+  cd qt-everywhere-opensource-src-4.6.2
+  vi mkqt462
+
+  cp linux-omap3-g++.tar.gz  mkspecs/qws/.
+  cd mkspecs/qws
+  tar -xzvf linux-omap3-g++.tar.gz
+  cd linux-omap3-g++
+  vi qmake.conf
+
+Create symbolic links to the touchscreen libs in your target filesystem:
+
+  cd target/usr/lib  
+
+  ln -s libts-1.0.so.0 libts.so
+  ln -s libz.so.1 libz.so
+
+It should now look like this:
+
+  ls -la libts*
+    root root      18 Mar  9 12:46 libts-1.0.so.0 -> libts-1.0.so.0.0.0
+    root root    6320 Sep 11 16:14 libts-1.0.so.0.0.0
+    root root      14 Mar  9 13:26 libts.so -> libts-1.0.so.0
+
+  ls -la libz*
+    root root      9 Mar  2 14:56 libz.so -> libz.so.1
+    root root     13 Mar  2 14:43 libz.so.1 -> libz.so.1.2.3
+    root root  67984 Sep 11 16:07 libz.so.1.2.3
+
+Add exports to profile on target:
+
+  cd target/etc/profile
+  vi profile
+
+    export QWS_MOUSE_PROTO='Tslib:/dev/input/touchscreen0'
+    export TSLIB_TSDEVICE='/dev/input/touchscreen0'
+
+Disable the annoying LCD screensaver (old 2.6.29 kernel only):
+
+    echo 600000 > /sys/devices/platform/omapfb/sleep_timeout
+
+Run configuration script on host and select open source license:
+
+  cd qt-everywhere-opensource-src-4.6.2
+  source ./mkqt462
+
+Build and install the Qt SDK (Requires about 2 hours to build):
+
+  make
+  make install
+
+Copy Matrix to your Qt SDK build tree at:
+
+  qt-everywhere-opensource-src-4.6.2/matrix
+
+Run qmake, make and install to your target filesystem:
+
+  cd  qt-everywhere-opensource-src-4.6.2/matrix
+  ../bin/qmake
+  make
+  make  install  INSTALL_ROOT=/target
+
+Copy html and bmp files there too.
+
+  cp  *.bmp  target/.
+  cp  view.html  target/.
+
+Run matrix:
+
+  ts_calibrate
+  cd  target/matrix
+  matrix -qws view.html
+--------------
+
+UPDATES:
+
+Run menuconfig to install mouse driver into kernel and rebuild kernel.
+
+export QWS_MOUSE_PROTO='Tslib:/dev/input/touchscreen0 Auto:/dev/input/mouse1'
+
+

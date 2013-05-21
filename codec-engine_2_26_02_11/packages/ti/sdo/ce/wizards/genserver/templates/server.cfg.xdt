@@ -1,0 +1,430 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+ %%}
+/*
+ *  ======== server.cfg ========
+ *
+ *  For details about the packages and configuration parameters used throughout
+ *  this config script, see the Codec Engine Configuration Guide (link
+ *  provided in the release notes) and the Codec Engine Package Documentation at:
+ *  http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ce/latest_2_x/xdoc/index.html
+ *  which references to Framework Components configurable modules under ti.sdo.fc.
+ */
+
+/* scratch groups */
+var MAXGROUPS = `this.groups.length`;
+% for (var i = 0; i < this.groups.length; i++) {
+%     if (this.groups[i]) {
+var GROUP_`i` = `i`;
+%     }
+% }
+
+/*
+ *  Configure CE's OSAL.  This codec server only builds for the BIOS-side of
+ *  a heterogeneous system, so use the "DSPLINK_BIOS" configuration.
+ */
+var osalGlobal = xdc.useModule('ti.sdo.ce.osal.Global');
+osalGlobal.runtimeEnv = osalGlobal.DSPLINK_BIOS;
+
+/*
+ *  Uncomment and modify the following line, to change the size of the circular
+ *  trace buffer, if necessary.
+ */
+//osalGlobal.traceBufferSize = 32 * 1024;
+
+%%{
+var defaultMemSegIdStr = 'DDR2';
+if (this.platform.match(/evmOMAPL137/)) {
+    defaultMemSegIdStr = 'SDRAM';
+}
+%%}
+
+/* configure default memory seg id to BIOS-defined "`defaultMemSegIdStr`" */
+osalGlobal.defaultMemSegId = "`defaultMemSegIdStr`";
+
+/* activate BIOS logging module */
+var LogServer = xdc.useModule('ti.sdo.ce.bioslog.LogServer');
+% if (this.enablePwr) {
+
+/* configure power management */
+var biosIpc = xdc.useModule('ti.sdo.ce.ipc.bios.Ipc');
+biosIpc.usePowerManagement = true;
+% }
+
+/*
+ *  ======== Server Configuration ========
+ */
+var Server = xdc.useModule('ti.sdo.ce.Server');
+/* The server's stackSize.  More than we need... but safe. */
+Server.threadAttrs.stackSize = 16384;
+
+/* The servers execution priority */
+Server.threadAttrs.priority = Server.MINPRI;
+
+/*
+ * The optional stack pad to add to non-configured stacks.  This is well
+ * beyond most codec needs, but follows the approach of "start big and
+ * safe, then optimize when things are working."
+ */
+Server.stackSizePad = 9000;
+
+utils.importFile("codec.cfg");
+
+/* to link in debug/trace FC libs, uncomment one of these */
+// xdc.useModule('ti.sdo.fc.global.Settings').profile = "debug");
+// xdc.useModule('ti.sdo.fc.global.Settings').profile = "debug_trace");
+// xdc.useModule('ti.sdo.fc.global.Settings').profile = "trace");
+
+/*
+ *  ======== DSKT2 (XDAIS Alg. memory allocation) configuration ========
+ *
+ *  DSKT2 is the memory manager for all algorithms running in the system,
+ *  granting them persistent and temporary ("scratch") internal and external
+ *  memory. We configure it here to define its memory allocation policy.
+ *
+ *  DSKT2 settings are critical for algorithm performance.
+ *
+ *  First we assign various types of algorithm internal memory (DARAM0..2,
+ *  SARAM0..2,IPROG, which are all the same on a C64+ DSP) to "L1DHEAP"
+ *  defined in the .tcf file as an internal memory heap. (For instance, if
+ *  an algorithm asks for 5K of DARAM1 memory, DSKT2 will allocate 5K from
+ *  L1DHEAP, if available, and give it to the algorithm; if the 5K is not
+ *  available in the L1DHEAP, that algorithm's creation will fail.)
+ *
+ *  The remaining segments we point to the "DDRALGHEAP" external memory segment
+ *  (also defined in the.tcf) except for DSKT2_HEAP which stores DSKT2's
+ *  internal dynamically allocated objects, which must be preserved even if
+ *  no codec instances are running, so we place them in "DDR2" memory segment
+ *  with the rest of system code and static data.
+ */
+var DSKT2 = xdc.useModule('ti.sdo.fc.dskt2.DSKT2');
+% if (this.platform == 'ti.platforms.evmDM6467') {
+DSKT2.DARAM0     = "IRAM";
+DSKT2.DARAM1     = "IRAM";
+DSKT2.DARAM2     = "IRAM";
+DSKT2.SARAM0     = "IRAM";
+DSKT2.SARAM1     = "IRAM";
+DSKT2.SARAM2     = "IRAM";
+DSKT2.ESDATA     = "DDRALGHEAP";
+DSKT2.IPROG      = "IRAM";
+DSKT2.EPROG      = "DDR2";
+% }
+% else {
+DSKT2.DARAM0     = "L1DHEAP";
+DSKT2.DARAM1     = "L1DHEAP";
+DSKT2.DARAM2     = "L1DHEAP";
+DSKT2.SARAM0     = "L1DHEAP";
+DSKT2.SARAM1     = "L1DHEAP";
+DSKT2.SARAM2     = "L1DHEAP";
+DSKT2.ESDATA     = "DDRALGHEAP";
+DSKT2.IPROG      = "L1DHEAP";
+DSKT2.EPROG      = "DDRALGHEAP";
+% }
+DSKT2.DSKT2_HEAP = "`defaultMemSegIdStr`";
+
+
+/*
+ *  Next we define how to fulfill algorithms' requests for fast ("scratch")
+ *  internal memory allocation; "scratch" is an area an algorithm writes to
+ *  while it processes a frame of data and is discarded afterwards.
+ *
+ *  First we turn off the switch that allows the DSKT2 algorithm memory manager
+ *  to give to an algorithm external memory for scratch if the system has run
+ *  out of internal memory. In that case, if an algorithm fails to get its
+ *  requested scratch memory, it will fail at creation rather than proceed to
+ *  run at poor performance. (If your algorithms fail to create, you may try
+ *  changing this value to "true" just to get it running and optimize other
+ *  scratch settings later.)
+ *
+ *  Setting "algorithm scratch sizes", is a scheme we use to minimize internal
+ *  memory resources for algorithms' scratch memory allocation. Algorithms that
+ *  belong to the same "scratch group ID" -- field "groupId" in the algorithm's
+ *  Server.algs entry above, reflecting the priority of the task running the
+ *  algorithm -- don't run at the same time and thus can share the same
+ *  scratch area. When creating the first algorithm in a given "scratch group"
+ *  (between 0 and 19), a shared scratch area for that groupId is created with
+ *  a size equal to SARAM_SCRATCH_SIZES[<alg's groupId>] below -- unless the
+ *  algorithm requests more than that number, in which case the size will be
+ *  what the algorithm asks for. So SARAM_SCRATCH_SIZES[<alg's groupId>] size is
+ *  more of a groupId size guideline -- if the algorithm needs more it will get
+ *  it, but getting these size guidelines right is important for optimal use of
+ *  internal memory. The reason for this is that if an algorithm comes along
+ *  that needs more scratch memory than its groupId scratch area's size, it
+ *  will get that memory allocated separately, without sharing.
+ *
+ *  This DSKT2.SARAM_SCRATCH_SIZES[<groupId>] does not mean it is a scratch size
+ *  that will be automatically allocated for the group <groupId> at system
+ *  startup, but only that is a preferred minimum scratch size to use for the
+ *  first algorithm that gets created in the <groupId> group, if any.
+ *
+ *  (An example: if algorithms A and B with the same groupId = 0 require 10K and
+ *  20K of scratch, and if SARAM_SCRATCH_SIZES[0] is 0, if A gets created first
+ *  DSKT2 allocates a shared scratch area for group 0 of size 10K, as A needs.
+ *  If then B gets to be created, the 20K scratch area it gets will not be
+ *  shared with A's -- or anyone else's; the total internal memory use will be
+ *  30K. By contrast, if B gets created first, a 20K shared scratch will be
+ *  allocated, and when A comes along, it will get its 10K from the existing
+ *  group 0's 20K area. To eliminate such surprises, we set
+ *  SARAM_SCRATCH_SIZES[0] to 20K and always spend exactly 20K on A and B's
+ *  shared needs -- independent of their creation order. Not only do we save 10K
+ *  of precious internal memory, but we avoid the possibility that B can't be
+ *  created because less than 20K was available in the DSKT2 internal heaps.)
+ *
+ *  Finally, note that if the codecs correctly implement the
+ *  ti.sdo.ce.ICodec.getDaramScratchSize() and .getSaramScratchSize() methods,
+ *  this scratch size configuration can be autogenerated by
+ *  configuring Server.autoGenScratchSizeArrays = true.
+ */
+DSKT2.ALLOW_EXTERNAL_SCRATCH = false;
+% for (var i = 0; i < this.groups.length; i++) {
+%     if (this.groups[i]) {
+DSKT2.SARAM_SCRATCH_SIZES[`'GROUP_' + i`] = `this.groups[i].dskt2.saram`;
+%     }
+% }
+% for (var i = 0; i < this.groups.length; i++) {
+%     if (this.groups[i]) {
+DSKT2.DARAM_SCRATCH_SIZES[`'GROUP_' + i`] = `this.groups[i].dskt2.daram[this.platform]`;
+%     }
+% }
+
+% if (this.idma3Fxns || this.useDMAN3) {
+/*
+ *  ======== DMAN3 (DMA manager) configuration ========
+ */
+
+/*  First we configure how DMAN3 handles memory allocations:
+ *
+ *  Essentially the configuration below should work for most codec combinations.
+ *  If it doesn't work for yours -- meaning an algorithm fails to create due
+ *  to insufficient internal memory -- try the alternative (commented out
+ *  line that assigns "DDRALGHEAP" to DMAN3.heapInternal).
+ *
+ *  What follows is an FYI -- an explanation for what the alternative would do:
+ *
+ *  When we use an external memory segment (DDRALGHEAP) for DMAN3 internal
+ *  segment, we force algorithms to use external memory for what they think is
+ *  internal memory -- we do this in a memory-constrained environment
+ *  where all internal memory is used by cache and/or algorithm scratch
+ *  memory, pessimistically assuming that if DMAN3 uses any internal memory,
+ *  other components (algorithms) will not get the internal memory they need.
+ *
+ *  This setting would affect performance very lightly.
+ *
+ *  By setting DMAN3.heapInternal = <external-heap>  DMAN3 *may not* supply
+ *  ACPY3_PROTOCOL IDMA3 channels the protocol required internal memory for
+ *  IDMA3 channel 'env' memory. To deal with this catch-22 situation we
+ *  configure DMAN3 with hook-functions to obtain internal-scratch memory
+ *  from the shared scratch pool for the associated algorithm's
+ *  scratch-group (i.e. it first tries to get the internal scratch memory
+ *  from DSKT2 shared allocation pool, hoping there is enough extra memory
+ *  in the shared pool, if that doesn't work it will try persistent
+ *  allocation from DMAN3.internalHeap).
+ */
+
+var DMAN3 = xdc.useModule('ti.sdo.fc.dman3.DMAN3');
+% if (this.configuresEdma3) {
+DMAN3.useExternalRM = true;
+% }
+% if (this.platform == 'ti.platforms.evmDM6467') {
+DMAN3.heapInternal    = "IRAM";       /* L1DHEAP is an internal segment */
+% }
+% else {
+DMAN3.heapInternal    = "L1DHEAP";       /* L1DHEAP is an internal segment */
+% }
+DMAN3.heapExternal    = "DDRALGHEAP";
+DMAN3.idma3Internal   = false;
+DMAN3.scratchAllocFxn = "DSKT2_allocScratch";
+DMAN3.scratchFreeFxn  = "DSKT2_freeScratch";
+% }
+% if (this.useDMAN3) {
+/*  Next, we configure all the physical resources that DMAN3 is granted
+ *  exclusively. These settings are optimized for the DSP on DM6446 (DaVinci).
+ *
+ *  We assume PaRams 0..79 are taken by the Arm drivers, so we reserve
+ *  all the rest, up to 127 (there are 128 PaRam sets on DM6446).
+ *  DMAN3 takes TCC's 32 through 63 (hence the High TCC mask is 0xFFFFFFFF
+ *  and the Low TCC mask is 0). Of the 48 PaRams we reserved, we assign
+ *  all of them to scratch group 0; similarly, of the 32 TCCs we reserved,
+ *  we assign all of them to scratch group 0.
+ *
+ *  If we had more scratch groups with algorithms that require EDMA, we would
+ *  split those 48 PaRams and 32 TCCs appropriately. For example, if we had
+ *  a video encoder alg. in group 0 and video decoder alg. in group 1, and they
+ *  both needed a number of EDMA channels, we could assing 24 PaRams and 16
+ *  TCCs to Groups [0] and [1] each. (Assuming both algorithms needed no more
+ *  than 24 channels to run properly.)
+ */
+DMAN3.paRamBaseIndex     = 80;  // 1st EDMA3 PaRAM set available for DMAN3
+DMAN3.numQdmaChannels    = 8;   // number of device's QDMA channels to use
+DMAN3.qdmaChannels       = [0,1,2,3,4,5,6,7]; // choice of QDMA channels to use
+DMAN3.numPaRamEntries    = 48;  // number of PaRAM sets exclusively used by DMAN
+%     for (var i = 0; i < this.groups.length; i++) {
+%         if (this.groups[i] && this.groups[i].cfgDman3) {
+DMAN3.numPaRamGroup[`'GROUP_' + i`] = `this.groups[i].dman3.numPaRam`; // number of PaRAM sets for scratch group `i`
+%         }
+%     }
+%     for (var i = 0; i < this.groups.length; i++) {
+%         if (this.groups[i] && this.groups[i].cfgDman3) {
+DMAN3.numTccGroup[`'GROUP_' + i`] = `this.groups[i].dman3.numTccGroup[this.platform]`; // number of TCCs assigned to scratch group `i`
+%         }
+%     }
+% if (this.platform.match(/evmOMAPL13[78]/)) {
+DMAN3.tccAllocationMaskL = 0xffffffff; // assign all TCCs 0..31 for DMAN3
+DMAN3.tccAllocationMaskH = 0;          // assign no TCCs 32..63 for DMAN3
+% }
+% else {
+DMAN3.tccAllocationMaskL = 0;          // assign no TCCs 0..31 for DMAN3
+DMAN3.tccAllocationMaskH = 0xffffffff; // assign all TCCs 32..63 for DMAN3
+% }
+
+/*  The remaining DMAN3 configuration settings are as defined in ti.sdo.fc.DMAN3
+ *  defaults. You may need to override them to add more QDMA channels and
+ *  configure per-scratch-group resource sub-allocations.
+ */
+
+% }
+/*
+ *  ======== RMAN (IRES Resource manager) configuration ========
+ */
+var RMAN = xdc.useModule('ti.sdo.fc.rman.RMAN');
+RMAN.useDSKT2 = true;
+RMAN.tableSize = 10;
+RMAN.semCreateFxn = "Sem_create";
+RMAN.semDeleteFxn = "Sem_delete";
+RMAN.semPendFxn = "Sem_pend";
+RMAN.semPostFxn = "Sem_post";
+/* The lock/unlock/set/getContext functions will default to DSKT2 */
+
+% if (this.configuresEdma3) {
+var EDMA3 = xdc.useModule('ti.sdo.fc.edma3.Settings');
+EDMA3.globalInit = true;
+% if (this.platformSupportsEdma) {
+%     for (var i = 0; i < this.groups.length; i++) {
+%         if (this.groups[i] && this.groups[i].cfgEdma3) {
+EDMA3.maxTccs[`'GROUP_' + i`] = `this.groups[i].edma3.maxTccs`;
+%         }
+%     }
+%     for (var i = 0; i < this.groups.length; i++) {
+%         if (this.groups[i] && this.groups[i].cfgEdma3) {
+EDMA3.maxPaRams[`'GROUP_' + i`] = `this.groups[i].edma3.maxPaRams`;
+%         }
+%     }
+%     for (var i = 0; i < this.groups.length; i++) {
+%         if (this.groups[i] && this.groups[i].cfgEdma3 && this.groups[i].implsIresFxns) {
+EDMA3.maxEdmaChannels[`'GROUP_' + i`] = `this.groups[i].edma3.maxEdmaChannels`;
+%         }
+%     }
+%     for (var i = 0; i < this.groups.length; i++) {
+%         if (this.groups[i] && this.groups[i].cfgEdma3) {
+EDMA3.maxQdmaChannels[`'GROUP_' + i`] = `this.groups[i].edma3.maxQdmaChannels`;
+%         }
+%     }
+% }
+
+var EDMA3CHAN = xdc.useModule('ti.sdo.fc.ires.edma3chan.EDMA3CHAN');
+
+% var hdvicp = false;
+% var nullres = false;
+% for (var i = 0; i < this.iresImpl.length; i++) {
+%    if (this.iresImpl[i] == 'hdvicp') {
+%        if (!hdvicp) {
+%           hdvicp = true;
+%        }    
+%    }
+%    else if (this.iresImpl[i] == 'nullresource') {
+%        if (!nullres) {
+%           nullres = true;
+%        }    
+%    }
+%    else {
+%        var uppermod = this.iresImpl[i].toUpperCase();
+/*
+ *  Framework Components' IRES Resman and Protocol implementation
+ *  for the `uppermod` resource.
+ *
+ *  To use this implementation, uncomment the xdc.useModule() statement 
+ *  assign your values to config parameters of this module.
+ *
+ */
+/* var `uppermod` =  xdc.useModule('ti.sdo.fc.ires.`this.iresImpl[i]`.`uppermod`'); */
+
+%    }
+% }
+% if (nullres) {
+/*
+ *  Framework Components' IRES Resman and Protocol implementation
+ *  for the NULLRES resource.
+ *
+ *  To use this implementation, uncomment the xdc.useModule() statement 
+ *  assign your values to config parameters of this module.
+ *
+ */
+/* var NULLRES =  xdc.useModule('ti.sdo.fc.ires.nullresource.NULLRES'); */
+
+% }
+% if (hdvicp) {
+/*  
+ *  Framework Components' IRES Resman and Protocol implementation
+ *  for the HDVICP resource.
+ *
+ *  To use this implementation, uncomment the xdc.useModule() statement 
+ *  assign your values to config parameters of this module.
+ *
+ */
+/* var HDVICP =  xdc.useModule('ti.sdo.fc.ires.hdvicp.HDVICP'); */
+
+/*
+ * Ensure these events and vector id's don't conflict with anything else
+ * in the system.
+ */
+var HDINTC = xdc.useModule('ti.sdo.fc.hdintc.HDINTC');
+HDINTC.interruptVectorId_0 = 10;
+HDINTC.interruptVectorId_1 = 11;
+HDINTC.biosInterruptVectorId_0 = 7;
+HDINTC.biosInterruptVectorId_1 = 8;
+HDINTC.hdvicpInterruptEventNo_0 = 29;
+HDINTC.hdvicpInterruptEventNo_1 = 39;
+HDINTC.biosInterruptEventNo_0 = 30;
+HDINTC.biosInterruptEventNo_1 = 31;
+% }
+% }
+
+
+%%{
+/*
+ * @(#) ti.sdo.ce.wizards.genserver; 1, 0, 0,84; 12-2-2010 21:28:48; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

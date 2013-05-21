@@ -1,0 +1,114 @@
+%%{
+/* 
+ *  Copyright (c) 2008 Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ * 
+ * */
+
+/* Linker templates are passed the following arguments:
+ *      $out        - an open file stream for the generated linker
+ *                    command file
+ *      $args[]     - array of zero or more libraries that should be linked
+ *                    with (in the order they appear in the argument list)
+ *
+ *  We add "'s around names to allow these names to contain embedded spaces
+ */
+
+/*
+ *  ======== map ========
+ *  map unix file names to Windows file names (with drive letters) for wine
+ *  support
+ */
+function map(name)
+{
+    /* map /db/?tree/ files */
+    var tokens = name.match(/(^\/[^\/]+\/)([a-z])(tree\/)(.*)/);
+    if (tokens != null && tokens.length == 5) {
+        var drive = tokens[2];
+        if (drive == "a") {
+            drive = "i";
+        }
+        return (drive + ":/" + tokens[4]);
+    }
+
+    /* map /db/toolsrc files */
+    tokens = name.match(/(^\/[^\/]+\/toolsrc\/)(.*)/);
+    if (tokens != null && tokens.length == 3) {
+        return ("t:/" + tokens[2]);
+    }
+
+    /* otherwise give up */
+    return (name);
+}
+%%}
+
+%if (Program.$$isasm) {
+    %var instNames={ Handle__label:'', Object__count:'', Object__create:'',
+        %Object__delete:'', Object__destruct:'', Object__get:'',
+        %Object__heap:'', Object__sizeof:'', Params__init:''};
+    %var proxyNames={ Proxy__abstract:'', Proxy__delegate:'' };
+%
+    %for each (var _name in $om.$$bindings()) {
+        %var name = _name+'';
+        %var o=$om[name];
+        %/* keep only the bindings that are Externs */
+        %if (!o || (typeof(o)!='object') || !('$category' in o) ||
+                %o.$category!='Extern') {
+            %continue;
+        %}
+%
+        %/* separate the module and decl names */
+        %var modName = name.replace(/\.[^.]*$/,'');
+        %var declName = name.substring(modName.length+1);
+%
+        %/* keep only the names from used target modules */
+        %var m = xdc.om[modName];
+        %if (!m.$used || m.$$scope != 1 || m.$hostonly) {
+            %continue;
+        %}
+%
+        %/* reject if an instance decl on a non-instance module */
+        %if ((declName in instNames) & !m.$$instflag) {
+            %continue;
+        %}
+%
+        %/* reject if a proxy decl on a non-proxy module */
+        %if ((declName in proxyNames) & !m.$spec.isProxy()) {
+            %continue;
+        %}
+%
+        %/* output the export */
+            |-                                          |-export:`o.$name`
+    %}
+%}
+
+%for (var i = 0; i < Program.$$asmvec.length; i++) {
+    |-                                                  |"`prog.$$asmvec[i]`"
+%}
+
+%for (var i = 0; i < $args.length; i++) {
+%    var lib = $args[i];
+%    /* this is a hack to support wine builds using this target; when building
+%     * on a unix host, library paths begin with '/' (because they are
+%     * absolute paths) but the microsoft linker sees the '/' as the option
+%     * character and aborts because it does not recognize the option(!)
+%     */
+%    if (lib[0] != '/') {
+        |-                                              |"`lib`"
+%    }
+%    else {
+        |-                                              |"`map(lib)`"
+%    }
+%}
+%%{
+/*
+ * @(#) microsoft.targets; 1, 0, 2, 0,387; 2-24-2010 16:24:02; /db/ztree/library/trees/xdctargets/xdctargets-b36x/src/
+ */
+
+%%}

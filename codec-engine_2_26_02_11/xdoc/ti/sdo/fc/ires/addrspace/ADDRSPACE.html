@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>module ti.sdo.fc.ires.addrspace.ADDRSPACE</title>
+<meta name="description" content="Framework Components Edma3 specific IRES Resman and Protocol Implementation">
+<link rel="stylesheet" type="text/css" href="../../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.sdo.fc.ires.addrspace.</span><span class="xdoc-id">ADDRSPACE</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/fc/ires/addrspace/package.html" title="package ti.sdo.fc.ires.addrspace"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/fc/ires/addrspace/ADDRSPACE.html">index URL</a></div>
+<p class="xdocHdrSummary">Framework Components Edma3 specific IRES Resman and Protocol Implementation</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../ti/sdo/fc/ires/addrspace/ADDRSPACE-src.html"><span class="xdocLabelFile">ti/sdo/fc/ires/addrspace/ADDRSPACE.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">ADDRSPACE</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> ADDRSPACE = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.sdo.fc.ires.addrspace.ADDRSPACE'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#auto.Register">ADDRSPACE.<span class="xdoc-id">autoRegister</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#no.Lib">ADDRSPACE.<span class="xdoc-id">noLib</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Do not return a library from this package, only headers</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#no.O.S">ADDRSPACE.<span class="xdoc-id">noOS</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Indicate that there is no OS on this platform</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../ti/sdo/fc/ires/addrspace/ADDRSPACE-src.html"><span class="xdocLabelFile">ti/sdo/fc/ires/addrspace/ADDRSPACE.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../../../ti/sdo/fc/ires/addrspace/package.html" title="ti.sdo.fc.ires.addrspace">ti.sdo.fc.ires.addrspace</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">ADDRSPACE</span></go> {
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#auto.Register"><span class="xdoc-id">autoRegister</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#no.Lib"><span class="xdoc-id">noLib</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Do not return a library from this package, only headers</span></span></a> = <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#no.O.S"><span class="xdoc-id">noOS</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Indicate that there is no OS on this platform</span></span></a> = <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="auto.Register"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">const</span> <span class="xdoc-id">ADDRSPACE.</span><span class="xdoc-id">autoRegister</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/fc/ires/addrspace/ADDRSPACE.html" title="module ADDRSPACE"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/fc/ires/addrspace/ADDRSPACE.html#auto.Register">index URL</a></div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> ADDRSPACE.<span class="xdoc-id">autoRegister</span> = <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="no.Lib"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">ADDRSPACE.</span><span class="xdoc-id">noLib</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/fc/ires/addrspace/ADDRSPACE.html" title="module ADDRSPACE"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/fc/ires/addrspace/ADDRSPACE.html#no.Lib">index URL</a></div>
+<p class="xdocHdrSummary">Do not return a library from this package, only headers</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>ADDRSPACE.<span class="xdoc-id">noLib</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Use this to link in your own implementation of the MEMADDR apis.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="no.O.S"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">ADDRSPACE.</span><span class="xdoc-id">noOS</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/fc/ires/addrspace/ADDRSPACE.html" title="module ADDRSPACE"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/fc/ires/addrspace/ADDRSPACE.html#no.O.S">index URL</a></div>
+<p class="xdocHdrSummary">Indicate that there is no OS on this platform</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>ADDRSPACE.<span class="xdoc-id">noOS</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Used to indicate that there is no OS running on this platform.  This
+  is used to return an appropriate, OS-independent library.</div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:08 GMT</div>
+</div></div></body>
+</html>

@@ -1,0 +1,37 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== CDA255.tci ========
+ *  The chip configuration settings are based on document SPRS205B.
+ *
+ */
+
+utils.importFile("ti/catalog/c5500/C5509.tci");
+
+/*
+ *  ======== CDA255 ========
+ */
+function CDA255(name, parent)
+{
+    /* Since DA255, 5509 and 5509A are same from the configuration point of 
+     * view, instead of duplicating code, the DA255 device is configured using
+     * the code for 5509 and then only deviceName is changed.
+     */
+
+    C5509.apply(this, [name, parent]);
+    this.deviceName = "DA255";
+}
+/*
+ *  @(#) ti.catalog.c5500; 1, 0, 0, 0,226; 2-23-2010 16:53:05; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

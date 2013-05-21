@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='ti.bios.utils' nodoc='0' root='../../../' summary='Miscellaneous+DSP%2FBIOS+utilities'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Erequires%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Fpackage.html%22+title%3D%22ti.bios%22%3Eti.bios%3C%2Fa%3E%3B'/>
+    <line blank='1' always='0'/>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eti.bios.utils%3C%2Fspan%3E%3C%2Fgo%3E+%5B2%2C+0%2C+2%2C+02%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='Load' kind='module' nodoc='0' metaonly='1' summary='Load+module'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fbios%2Futils%2Fpackage.html%22+title%3D%22ti.bios.utils%22%3Eti.bios.utils%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ELoad%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ELoad%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Load+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.bios.utils.Load%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='The+Load+module+is+used+for+calculating+the+CPU+load+of+the+DSP.'/>
+            <docPara content='The+Load+module+provides+an+API+%28Load_getcpuload%28%29%29+that+returns+the%0A++current+CPU+load.++The+CPU+load+is+averaged+over+a+period+of+time+as%0A++specified+by+the+%27window%27+variable+within+Load.c.'/>
+            <docPara content='It+is+necessary+to+do+the+following+in+order+to+use+Load_getcpuload%28%29'/>
+            <docPara content='%281%29+A+BIOS+IDL+object+which+has+its+function+set+to+%27_Load_idlefxn%27+must%0A+++++exist.++The+code+to+do+this+has+already+been+written+for+the+user%2C+and%0A+++++exists+in+2+different+files%3A'/>
+            <docPara content='a.+ti%2Fbios%2Futils%2FLoad.tci'/>
+            <docPara content='If+the+user%27s+app+is+built+using+Tconf%2C+then+this+file+must+be%0A+++++++++included+into+the+build+by+adding+the+following+statement+into+the%0A+++++++++*.tcf+file%3A'/>
+            <docPara content='%3CPRE+class%3D%22Example%22%3E+++++++++utils.importFile%28%27Load.tci%27%29%3B%0A%3C%2FPRE%3E'/>
+            <docPara content='b.+ti%2Fbios%2Futils%2Fpackage.xs'/>
+            <docPara content='If+the+user%27s+app+is+built+using+RTSC%2C+then+one+must+use+the+Load%0A+++++++++module.+This+is+done+by+adding+the+following+line+to+the+*.cfg+file%3A'/>
+            <docPara content='%3CPRE+class%3D%22Example%22%3E+++++++++var+Load+%3D+xdc.useModule%28%27ti.bios.utils.Load%27%29%3B%0A%3C%2FPRE%3E'/>
+            <docPara content='NOTE%3A+The+two+above+mentioned+methods+are+mutually+exclusive.++One+can%27t%0A+++++++++++use+both+method+%27a%27+and+method+%27b%27+in+the+same+program+build%2C+the%0A+++++++++++user+must+choose+the+appropriate+one+for+their+build.'/>
+            <docPara content='%282%29+call+%27Load_init%28%29%27+from+your+application%27s+main%28%29+program'/>
+            <docPara content='%283%29+call+%27Load_getcpuload%28%29%27+to+return+the+CPU+load+as+averaged+over%0A++++++the+pre-compiled+window.++This+window+can+be+changed+by+modifying%0A++++++the+Load_WINDOW+value+in+this+file+and+recompiling+load.c.'/>
+            <docPara content='%284%29+compile+Load.c+and+link+it+with+your+application.'/>
+            <docPara content='CAVEATS%3A'/>
+            <docPara content='%281%29+This+implementation+self-calibrates+the+shortest+path+through+the%0A++++++IDL+loop.++It+does+this+by+keeping+track+of+the+shortest+time+between+%0A++++++invocations+of+%27Load_idlefxn%27.++This+relies+on+the+fact+that+the%0A++++++IDL+loop+will+execute+at+least+2+times+in+a+row+w%2Fo+being+interrupted%21%0A++++++In+the+unlikely+event+that+is+a+problem+for+your+application%2C+you+can%0A++++++measure+the+shortest+path+through+the+IDL+loop+using+the+profiler+and%0A++++++set+%27minloop%27+to+this+time.++Note+that+the+units+of+minloop+are%0A++++++CLK_gethtime%28%29+units+which+are+processor+dependent%3B+e.g.%2C+CPU%2F4+for%0A++++++%27C6211%2C+CPU%2F%28TDDR%2B1%29+for+%27C54xx%2C+CPU+for+C64P%2C+etc..'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <docSect name='details'>
+        <docPara content='This+package+currently+contains+utilities+to%3A'/>
+        <docPara content='%3COL%3E%3CLI%3E+measure+CPU+load%3B+see+Load.h+in+this+package%0A+%0A%3C%2FLI%3E%3C%2FOL%3E'/>
+    </docSect>
+</package>

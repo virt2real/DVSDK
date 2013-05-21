@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>package ti.sdo.ce.examples.codecs.g711</title>
+<meta name="description" content="Simple Codec Engine compatible 'wrapper package', enabling the G.711 encoder and decoder codecs distributed with xDAIS to be integrated into a Codec Engine-based system">
+<link rel="stylesheet" type="text/css" href="../../../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">package</span> <span class="xdoc-id">ti.sdo.ce.examples.codecs.g711</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../../ti/sdo/ce/examples/codecs/g711/G711DEC.html" title="module G711DEC"><img class="xdocHdrArrow" src="../../../../../../Arrow_right.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../../index.html#ti/sdo/ce/examples/codecs/g711/package.html">index URL</a></div>
+<p class="xdocHdrSummary">Simple Codec Engine compatible 'wrapper package',
+  enabling the G.711 encoder and decoder codecs
+  distributed with xDAIS to be integrated into a Codec Engine-based
+  system</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdoc-desc">Additional documentation</a></li>
+</ul>
+<div class="xdocBrief">
+This codec illustrates how to provide Codec Engine-specific
+  packaging around an existing algorithm.  It also demonstrates how
+  a single codec package can supply more than one codec - in this
+  case, both the encoder and decoder codecs are supported by this
+  single codec package.
+[&nbsp;<a class="xdocBrief" href="#xdoc-desc">more</a>&nbsp;...&nbsp;]
+</div>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../../ti/sdo/ce/examples/codecs/g711/package-src.html"><span class="xdocLabelFile">ti/sdo/ce/examples/codecs/g711/package.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../../../../../../ti/xdais/dm/examples/g711/package.html" title="ti.xdais.dm.examples.g711">ti.xdais.dm.examples.g711</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <go><span class="xdoc-id">ti.sdo.ce.examples.codecs.g711</span></go> [1, 0, 0] {
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">module</span> <a class='xdocSynGo' href='../../../../../../ti/sdo/ce/examples/codecs/g711/G711DEC.html' title='ti.sdo.ce.examples.codecs.g711.G711DEC'><span class="xdoc-id">G711DEC</span>;</a>
+</div>
+<div class='xdocSynSum'><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;G711 Decoder specification</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">module</span> <a class='xdocSynGo' href='../../../../../../ti/sdo/ce/examples/codecs/g711/G711ENC.html' title='ti.sdo.ce.examples.codecs.g711.G711ENC'><span class="xdoc-id">G711ENC</span>;</a>
+</div>
+<div class='xdocSynSum'><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;G711 Encoder specification</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<span id="xdoc-desc"></span>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This codec illustrates how to provide Codec Engine-specific
+  packaging around an existing algorithm.  It also demonstrates how
+  a single codec package can supply more than one codec - in this
+  case, both the encoder and decoder codecs are supported by this
+  single codec package.</div>
+<div class="xdocText">Five files are required to integrate into the Codec Engine:</div>
+<div class="xdocText"><DL><DT> <tt>package.xdc</tt></DT><DD>
+	    This file is required to declare a globally unique name
+	    for this package and to list all codec interfaces
+	    available.  This package has two interfaces, G711ENC and
+	    G711DEC.
+</DD><DT> <tt>G711ENC.xdc</tt></DT><DD>
+	    This file defines the G711ENC codec, which implements
+	    the ti.sdo.ce.speech1.ISPHENC1 interface.
+</DD><DT> <tt>G711ENC.xs</tt></DT><DD>
+	    This file implements the functions required by the ISPHENC1
+	    interface; these functions enable the codec to describe its
+	    non-functional requirements such as stack size.
+</DD><DT> <tt>G711DEC.xdc</tt></DT><DD>
+	    This file defines the G711DEC codec, which implements
+	    the ti.sdo.ce.speech1.ISPHDEC1 interface.
+</DD><DT> <tt>G711DEC.xs</tt></DT><DD>
+	    This file implements the functions required by the ISPHDEC1
+	    interface; these functions enable the codec to describe its
+	    non-functional requirements such as stack size.
+
+  Integration into the Codec Engine requires no change to the codecs
+  libraries.
+ 
+</DD></DL></div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:23 GMT</div>
+</div></div></body>
+</html>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.dskt2" version="1, 0, 4" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="DSKT2"/>
+    </units>
+    <sources>
+        <srcFile name="gt_dais.c"/>
+        <srcFile name="dskt2dact.c"/>
+        <srcFile name="dskt2actv.c"/>
+        <srcFile name="package/package_ti.sdo.fc.dskt2.c"/>
+        <srcFile name="dskt2_lock.c"/>
+        <srcFile name="dskt2_qos.c"/>
+        <srcFile name="dskt2_permute.c"/>
+        <srcFile name="dskt2_scratch.c"/>
+        <srcFile name="dskt2crea.c"/>
+        <srcFile name="dskt2ctrl.c"/>
+        <srcFile name="dskt2free.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/dskt2.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2_qos.o64P.dep" src="dskt2_qos.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2ctrl.o64P.dep" src="dskt2ctrl.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2actv.o64P.dep" src="dskt2actv.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2free.o64P.dep" src="dskt2free.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2_lock.o64P.dep" src="dskt2_lock.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2crea.o64P.dep" src="dskt2crea.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2dact.o64P.dep" src="dskt2dact.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2_permute.o64P.dep" src="dskt2_permute.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2_scratch.o64P.dep" src="dskt2_scratch.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/package/package_ti.sdo.fc.dskt2.o64P.dep" src="package/package_ti.sdo.fc.dskt2.c"/>
+        <srcFile name="lib/debug/dskt2.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2_qos.o674.dep" src="dskt2_qos.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2ctrl.o674.dep" src="dskt2ctrl.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2actv.o674.dep" src="dskt2actv.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2free.o674.dep" src="dskt2free.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2_lock.o674.dep" src="dskt2_lock.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2crea.o674.dep" src="dskt2crea.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2dact.o674.dep" src="dskt2dact.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2_permute.o674.dep" src="dskt2_permute.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2_scratch.o674.dep" src="dskt2_scratch.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/package/package_ti.sdo.fc.dskt2.o674.dep" src="package/package_ti.sdo.fc.dskt2.c"/>
+        <srcFile name="lib/debug/dskt2.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2_qos.o64P.dep" src="dskt2_qos.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2ctrl.o64P.dep" src="dskt2ctrl.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2actv.o64P.dep" src="dskt2actv.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2free.o64P.dep" src="dskt2free.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2_lock.o64P.dep" src="dskt2_lock.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2crea.o64P.dep" src="dskt2crea.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2dact.o64P.dep" src="dskt2dact.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2_permute.o64P.dep" src="dskt2_permute.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/dskt2_scratch.o64P.dep" src="dskt2_scratch.c"/>
+        <srcFile name="package/lib/lib/debug/dskt2/package/package_ti.sdo.fc.dskt2.o64P.dep" src="package/package_ti.sdo.fc.dskt2.c"/>
+        <srcFile name="lib/trace/dskt2.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2_qos.o674.dep" src="dskt2_qos.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2ctrl.o674.dep" src="dskt2ctrl.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2actv.o674.dep" src="dskt2actv.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2free.o674.dep" src="dskt2free.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2_lock.o674.dep" src="dskt2_lock.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2crea.o674.dep" src="dskt2crea.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2dact.o674.dep" src="dskt2dact.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2_permute.o674.dep" src="dskt2_permute.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2_scratch.o674.dep" src="dskt2_scratch.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/package/package_ti.sdo.fc.dskt2.o674.dep" src="package/package_ti.sdo.fc.dskt2.c"/>
+        <srcFile name="lib/trace/dskt2.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2_qos.o64P.dep" src="dskt2_qos.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2ctrl.o64P.dep" src="dskt2ctrl.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2actv.o64P.dep" src="dskt2actv.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2free.o64P.dep" src="dskt2free.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2_lock.o64P.dep" src="dskt2_lock.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2crea.o64P.dep" src="dskt2crea.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2dact.o64P.dep" src="dskt2dact.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2_permute.o64P.dep" src="dskt2_permute.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/dskt2_scratch.o64P.dep" src="dskt2_scratch.c"/>
+        <srcFile name="package/lib/lib/trace/dskt2/package/package_ti.sdo.fc.dskt2.o64P.dep" src="package/package_ti.sdo.fc.dskt2.c"/>
+        <srcFile name="lib/debug_trace/dskt2.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2_qos.o674.dep" src="dskt2_qos.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2ctrl.o674.dep" src="dskt2ctrl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2actv.o674.dep" src="dskt2actv.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2free.o674.dep" src="dskt2free.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2_lock.o674.dep" src="dskt2_lock.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2crea.o674.dep" src="dskt2crea.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2dact.o674.dep" src="dskt2dact.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2_permute.o674.dep" src="dskt2_permute.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2_scratch.o674.dep" src="dskt2_scratch.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/package/package_ti.sdo.fc.dskt2.o674.dep" src="package/package_ti.sdo.fc.dskt2.c"/>
+        <srcFile name="lib/debug_trace/dskt2.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2_qos.o64P.dep" src="dskt2_qos.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2ctrl.o64P.dep" src="dskt2ctrl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2actv.o64P.dep" src="dskt2actv.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2free.o64P.dep" src="dskt2free.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2_lock.o64P.dep" src="dskt2_lock.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2crea.o64P.dep" src="dskt2crea.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2dact.o64P.dep" src="dskt2dact.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2_permute.o64P.dep" src="dskt2_permute.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/dskt2_scratch.o64P.dep" src="dskt2_scratch.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dskt2/package/package_ti.sdo.fc.dskt2.o64P.dep" src="package/package_ti.sdo.fc.dskt2.c"/>
+        <srcFile name="lib/release/dskt2.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2_qos.o674.dep" src="dskt2_qos.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2ctrl.o674.dep" src="dskt2ctrl.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2actv.o674.dep" src="dskt2actv.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2free.o674.dep" src="dskt2free.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2_lock.o674.dep" src="dskt2_lock.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2crea.o674.dep" src="dskt2crea.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2dact.o674.dep" src="dskt2dact.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2_permute.o674.dep" src="dskt2_permute.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/dskt2_scratch.o674.dep" src="dskt2_scratch.c"/>
+        <srcFile name="package/lib/lib/release/dskt2/package/package_ti.sdo.fc.dskt2.o674.dep" src="package/package_ti.sdo.fc.dskt2.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_dskt2.tar.dep" src="package/rel/ti_sdo_fc_dskt2.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/dskt2"
+        pname="lib/release/dskt2.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/dskt2"
+        pname="lib/debug/dskt2.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/dskt2"
+        pname="lib/debug/dskt2.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/dskt2"
+        pname="lib/trace/dskt2.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/dskt2"
+        pname="lib/trace/dskt2.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/dskt2"
+        pname="lib/debug_trace/dskt2.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/dskt2"
+        pname="lib/debug_trace/dskt2.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/dskt2"
+        pname="lib/release/dskt2.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_dskt2"
+        pname="ti_sdo_fc_dskt2.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.rel.dot"/>
+        <file name="dskt2_scratch.c"/>
+        <file name="dskt2ctrl.c"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/debug_trace/dskt2.a674"/>
+        <file name="lib/release/dskt2.a64P"/>
+        <file name="_dskt.h"/>
+        <file name="dskt2_qos.c"/>
+        <file name="lib/debug/dskt2.a674"/>
+        <file name="package.bld"/>
+        <file name="dskt2_qos.h"/>
+        <file name="dskt2dact.c"/>
+        <file name="lib/debug_trace/dskt2.a64P"/>
+        <file name="lib/trace/dskt2.a674"/>
+        <file name="dskt2_cmd.tpl"/>
+        <file name="_dskt2.h"/>
+        <file name="dskt2free.c"/>
+        <file name="dskt2_lock.c"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="dskt2crea.c"/>
+        <file name="dskt2_lock.h"/>
+        <file name="lib/debug/dskt2.a64P"/>
+        <file name="dskt2_mem.h"/>
+        <file name="package/package_ti.sdo.fc.dskt2.c"/>
+        <file name="lib/trace/dskt2.a64P"/>
+        <file name="dskt2actv.c"/>
+        <file name="package/package.bld.xml"/>
+        <file name="DSKT2.link.xdt"/>
+        <file name="dskt2_permute.c"/>
+        <file name="lib/release/dskt2.a674"/>
+        <file name="dskt2.tci"/>
+        <file name="dskt2_permute.h"/>
+        <file name="package/build.cfg"/>
+        <file name="dskt2_c.tpl"/>
+        <file name="dskt2.h"/>
+        <file name="gt_dais.c"/>
+        <file name="package/package.ext.xml"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

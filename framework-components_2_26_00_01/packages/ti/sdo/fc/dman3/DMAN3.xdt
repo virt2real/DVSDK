@@ -1,0 +1,263 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+
+%%{
+    /*
+     *  ======== DMAN3.xdt ========
+     *  Generate DMAN3 configuration and initialization structures
+     */
+
+    var DMAN3 = this.$package.DMAN3;
+    function su(segName) { /* "strip underscore" */
+        return (segName.charAt(0) == "_") ? segName.substr( 1 ) : segName;
+    }
+%%}
+/* C code contribution from ti/sdo/fc/dman3/DMAN3.xdt */
+
+#include <ti/sdo/fc/dman3/dman3.h>
+#include <ti/sdo/fc/acpy3/acpy3.h>
+
+#if `this.MAXGROUPS` > DMAN3_MAXGROUPS
+#error DMAN3 internal assertion:  const DMAN3.MAXGROUPS larger than header const
+#endif
+
+__FAR__ Bool ti_sdo_fc_dman3_DMAN3_useCustomDma = `this.customDmaLib == true ? "TRUE" : "FALSE"`;
+
+__FAR__ Uns ti_sdo_fc_dman3_DMAN3_numQdmaGroup[`this.MAXGROUPS + 1`] = {
+% for (var i = 0; i < this.numQdmaGroup.length; i++) {
+    `this.numQdmaGroup[i] == undefined ? 0 : this.numQdmaGroup[i]`,
+% }
+   0 /* For scratch id -1 */ 
+};
+
+__FAR__ Uns DMAN3_QDMA_CHANNELS[`this.qdmaChannels.length`] = {
+% for (var i = 0; i < this.qdmaChannels.length; i++) {
+    `this.qdmaChannels[i]``i < this.qdmaChannels.length-1?",":""`
+% }
+};
+
+__FAR__ Uns DMAN3_QDMA_QUEUE_MAP[`this.qdmaChannels.length`] = {
+% for (var i = 0; i < this.qdmaChannels.length; i++) {
+    `this.qdmaQueueMap[i]``i < this.qdmaChannels.length-1?",":""`
+% }
+};
+
+__FAR__ Uns DMAN3_QUEUE_TC_MAP[`this.queueTCMap.length`] = {
+% for (var i = 0; i < this.queueTCMap.length; i++) {
+    `this.queueTCMap[i]``i < this.queueTCMap.length-1?",":""`
+% }
+};
+
+__FAR__ Uns DMAN3_QUEUE_PRIORITIES[`this.queuePri.length`] = {
+% for (var i = 0; i < this.queuePri.length; i++) {
+    `this.queuePri[i]``i < this.queuePri.length-1?",":""`
+% }
+};
+
+extern Void  _DMAN3_initInternal();
+extern Void  _DMAN3_initImpl(Void);
+% if (this.scratchAllocFxn != null) {
+/* declaration of user-supplied DMAN3.scratchAllocFxn */
+extern Bool `su(this.scratchAllocFxn)`(IALG_Handle alg, Int mutexId,
+            IALG_MemRec *memTab, Int numRecs);
+% }
+
+% if (this.scratchFreeFxn != null) {
+/* declaration of user-supplied DMAN3.scratchFreeFxn */
+extern Void `su(this.scratchFreeFxn)`(Int mutexId, Void *addr, Uns size);
+% }
+
+/* Base key value for DMAN3 IPC objects */
+% if (Program.build.target.suffix.match("64") == null) {
+/* Base key value for DMAN3 Linux IPC objects */
+UInt32 _DMAN3_ipcKeyBase = `utils.toHex(this.ipcKeyBase)`;
+% }
+
+/*
+ *  ======== DMAN3_init  ========
+ */
+Void DMAN3_init(Void)
+{
+    extern __FAR__ DMAN3_Params DMAN3_PARAMS;
+
+% if ((Program.build.target.suffix.match( "64" ) == null) && (Program.build.target.suffix.match( "674" ) == null)) {
+    DMAN3_PARAMS.heapInternal = 0;
+    DMAN3_PARAMS.heapExternal = 0;
+% } else {
+    /* BIOS heap labels */
+    extern __FAR__ Int `su(this.heapInternal)`;
+    extern __FAR__ Int `su(this.heapExternal)`;
+
+    DMAN3_PARAMS.heapInternal = `su(this.heapInternal)`;
+    DMAN3_PARAMS.heapExternal = `su(this.heapExternal)`;
+% }
+    _DMAN3_initImpl();
+}
+
+
+/*
+ *  ======== DMAN3_CE_init  ========
+ *  Supplied to support legacy Codec Engine Frameworks. To be deprecated in the future.
+ */
+Void DMAN3_CE_init()
+{
+    DMAN3_init();
+    ACPY3_init();
+}
+
+/*
+ *  ======== DMAN3_CE_exit  ========
+ *  Supplied to support legacy Codec Engine Frameworks. To be deprecated in the future.
+ */
+Void DMAN3_CE_exit()
+{
+    DMAN3_exit();
+    ACPY3_exit();
+}
+
+/*
+ *  ======== DMAN3_PARAMS ========
+ *  Default module configuration structure for DMAN3 implementation.
+ *  It is set at design time by the system integrator to adjust the behaviour
+ *  of the module to be optimal for its execution environment.
+ */
+DMAN3_Params DMAN3_PARAMS = {
+
+    /* qdmaPaRamBase: Physical base address for PARAM0 */
+    (Uns *)`utils.toHex(this.qdmaPaRamBase)`,
+
+    /* The maxPaRamEntries:  Total number of PARAM Table entries on the
+     * hardware (eg, for IVA2 this is 128, for Himalaya, this is 256).
+     */
+    `this.maxPaRamEntries`,
+
+    /*
+     * paRamBaseIndex: (0>value>255) represents the first PARAM TABLE ENTRY
+     * NUMBER that is assigned by configuration for exclusive DMAN3 allocation.
+     */
+    `this.paRamBaseIndex`,
+
+    /*
+     * numPaRamEntries:  number of PARAM Table entries starting at
+     * DMAN3_PARAM_BASE_INDEX assigned by configuration for exclusive DMAN3
+     * allocation.
+     */
+    `this.numPaRamEntries`,
+
+
+    /* maxQdmaChannels:  contains the total number of Physical QDMA channels
+     * available on the hardware (eg, 8 for DaVinci, 4 for IVA2).
+     */
+    `this.maxQdmaChannels`,
+
+    /*
+     * numQdmaChannels: contains the number of Physical QDMA channels
+     * that are assigned to DMAN3 via configuration.
+     * qdmaChannels: array containing list of DMAN3_NUM_QDMA_CHANNELS
+     * many Physical QDMA channels assigned to DMAN3 via configuration.
+     */
+    `this.numQdmaChannels`,
+
+    DMAN3_QDMA_CHANNELS,
+
+    /*
+     * tccAllocationMaskH and tccAllocationMaskL:  are 32-bit bitmasks
+     * representing configuration provided list of TCCs for exclusive DMAN3
+     * allocation.
+     *
+     * For example, for TCC's in the range 0-31 the Low Mask (tccAllocationMaskL)
+     * is configured so that a '1' in bit position 'i' indicates the TCC 'i' is
+     * assigned to DMAN3
+     */
+    `utils.toHex(this.tccAllocationMaskH)`,
+    `utils.toHex(this.tccAllocationMaskL)`,
+
+     /*
+      * heapInternal: BIOS Heap ID for dynamic allocation of DMAN3 objects
+      * must be allocated in L1D Internal RAM.
+      * heapExternal: BIOS Heap ID for dyn allocation of private DMAN3
+      * data structures.
+      *
+      * A value of -1 indicates that the heap is NOT DEFINED.
+      */
+    -1, //`su(this.heapInternal)`,
+    0,  //`su(this.heapExternal)`,
+
+    /* numTccGroup[DMAN3_MAXGROUPS] */
+    {
+% for (var i = 0; i < this.numTccGroup.length; i++) {
+    `this.numTccGroup[i]``i < this.numTccGroup.length-1?",":""`
+% }
+    },
+
+    /* numPaRamGroup[DMAN3_MAXGROUPS] */
+    {
+% for (var i = 0; i < this.numPaRamGroup.length; i++) {
+    `this.numPaRamGroup[i]``i < this.numPaRamGroup.length-1?",":""`
+% }
+    },
+
+    /* idma3Internal */
+    `this.idma3Internal ? 1 : 0`,
+
+    /* scratchAllocFxn */
+    `this.scratchAllocFxn == null ? "NULL" : su(this.scratchAllocFxn)`,
+
+    /* scratchFreeFxn */
+    `this.scratchFreeFxn == null ? "NULL" : su(this.scratchFreeFxn)`,
+
+    /* nullPaRamIndex */
+    `this.nullPaRamIndex`,
+
+    /* maxTcs */
+    `this.maxTCs`,
+
+    DMAN3_QDMA_QUEUE_MAP,
+
+    DMAN3_QUEUE_TC_MAP,
+
+    DMAN3_QUEUE_PRIORITIES,
+
+    /* allowUnshared */
+    `this.allowUnshared ? 1 : 0`,
+};
+
+%%{
+/*
+ * @(#) ti.sdo.fc.dman3; 1, 0, 4,300; 12-1-2010 17:24:24; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+
+%%}

@@ -1,0 +1,633 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD><TITLE>Compliance and Performance Test Report</TITLE></HEAD>
+<BODY>
+
+<STYLE TYPE="text/css">
+<!--
+.indented
+   {
+   padding-left: 25pt;
+   padding-right: 25pt;
+   }
+-->
+</STYLE>
+
+<a name="Top of Page"></a>
+
+<TABLE BORDER="1" WIDTH="100%">
+  <TR>
+    <TD COLSPAN="2">
+      <CENTER><FONT SIZE="+2"><B>TMS320 DSP Algorithm Interoperability Standard</B></FONT></CENTER><BR>
+      <CENTER><FONT SIZE="+1"><B>QualiTI <a href="#compliance">Compliance</a> and <a href="#performance">Performance</a> Testing</B></font></CENTER><BR>
+    </TD>
+  </TR>
+  <TR>
+    <TD><B>Date</B></TD><TD>Wed Sep 15 2010 19:50:40 GMT+0530 (IST)</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Vendor</B></TD><TD>TI</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Algorithm</B></TD><TD>MPEG4VENC</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Architecture</B></TD><TD>ARM</TD>
+  </TR>
+
+  <TR>
+    <TD><B>TI Compiler</B></TD><TD>false</TD>
+  </TR>
+  
+  <TR>
+    <TD><B>Library Format</B></TD><TD>ELF</TD>
+  </TR>
+  
+  <TR>
+    <TD><B>Compiler Version</B></TD><TD>UNKNOWN</TD>
+  </TR>
+  <TR>
+    <TD><B>Test Execution Log</B></TD><TD><a href="#Compiler Info">Test execution log for compiler info</a></TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="2">
+
+      <B>Algorithm Base Directory:</B><BR>
+
+      &nbsp;&nbsp;&nbsp;D:\DM365\mpeg4_encoder\mpeg4_encoder_hdvicp<BR>
+
+<BR>
+      <B>Algorithm Archive(s):</B><BR>
+
+      &nbsp;&nbsp;&nbsp;lib\mpeg4venc_ti_arm926.a<BR>
+<BR>
+      <B>Header File(s):</B><BR>
+      &nbsp;&nbsp;&nbsp;.\inc\imp4venc.h<BR>
+<BR>
+    </TD>
+
+  </TR>
+
+
+      <TR>
+        <TD COLSPAN="2">
+        <a name=compliance>
+          <FONT SIZE="+1"><BR><br><CENTER><B>Compliance Test Report</B></CENTER><BR><br></font>
+        </a>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD><B>Test Results</B></TD>
+        <td>
+        <font color="#00A000">PASS: 2</font><br>
+        <font color="#FF0000"><B>FAIL: 0</b></font>
+        &nbsp;&nbsp;&nbsp; 
+        
+        <br>
+        Skipped: 0<br>
+        Not apply: 3<br>
+        <b>Total: 5</b><br>
+        </td>
+      </TR>
+      <TR>
+
+        <TD COLSPAN="2">
+            <B>Test Notes</B><BR>
+            &nbsp;&nbsp;&nbsp;This report has been generated with QualiTI Version 6.24 - the XDAIS compliance and performance test suite. <BR><BR>
+
+
+        </TD>
+      </TR>
+
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rules 8, 9 and 10">XDAIS Rules 8, 9, 10: Namespace compliance</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">(Rule 8) All external definitions must be either API identifiers or API and vendor prefixed.<br><br>(Rule 9) All undefined references must refer either to the operations specified in Appendix B (a subset of C runtime support library functions and a subset of the DSP/BIOS HWI API functions), or TI's DSPLIB or IMGLIB functions or other XDAIS-compliant modules.<br><br>(Rule 10) All modules must follow the eXpressDSP naming conventions for those external declarations disclosed to the client.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test passed.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rules 8, 9 and 10">XDAIS Rules 8, 9 and 10 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 12">XDAIS Rule 12: IALG interface implementation</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must implement the IALG interface.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test passed.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 12">XDAIS Rule 12 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 13+">XDAIS Rule 13+: correct linker section names</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">Each of the IALG methods implemented by an algorithm must be independently relocatable.<br><br>Additional rule: there should be no non-standard linker sections. (Standard linker sections are: ".cinit", ".switch", ".far", ".text", ".const", ".bss", ".pinit".)</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Currently, this test cannot be run on non-TI compiled libraries.  This rule is not relevant for ARM libraries since sections should be placed properly.<br><BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 13+">XDAIS Rule 13+ execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 25">XDAIS Rule 25: All C6x algorithms must be supplied in little-endian format</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All C6x algorithms must be supplied in little-endian format.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">This test does not apply since this is not a C6x architecture.<br><BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 25">XDAIS Rule 25 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 26">XDAIS Rule 26: All static/global data must be far on c6x</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All C6x algorithms must access all static and global data as far data.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">This test does not apply since this is not a C6x architecture.<br><BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 26">XDAIS Rule 26 execution log</a><br>
+        </TD>
+      </TR>
+      <TR>
+        <TD COLSPAN="2">
+        <a name=performance>
+          <FONT SIZE="+1"><BR><br><CENTER><B>Performance Test Report</B></CENTER><BR><br></font>
+        </a>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD><B>Test Results</B></TD>
+        <td>
+        <font color="#00A000">PASS: 1</font><br>
+        <font color="#FF0000"><B>FAIL: 0</b></font>
+        &nbsp;&nbsp;&nbsp; 
+        
+        <br>
+        Skipped: 0<br>
+        Not apply: 1<br>
+        <b>Total: 2</b><br>
+        </td>
+      </TR>
+      <TR>
+
+        <TD COLSPAN="2">
+            <B>Test Notes</B><BR>
+            &nbsp;&nbsp;&nbsp;This report has been generated with QualiTI Version 6.24 - the XDAIS compliance and performance test suite. <BR><BR>
+
+
+        </TD>
+      </TR>
+
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 20">XDAIS Rule 20: must declare worst-case stack requirements</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must characterize their worst-case stack space memory requirements (including alignment).</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Currently, this test cannot be run on non-TI compiled libraries.  The test requires DWARF information that was not detected in this library.  You will need to calculate the worst case stack size using other means and report this in the data sheet.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 20">XDAIS Rule 20 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rules 21, 22">XDAIS Rules 21, 22: must characterize static data & program memory requirements</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must characterize their static data & program memory requirements</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Performance test completed. CODE, DATA & UDATA sections characterized<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rules 21, 22">XDAIS Rules 21, 22 execution log</a><br>
+        </TD>
+      </TR>
+</TABLE>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<a name="Compiler Info">Test execution log for <b>Compiler Info:</b></a><br>
+<PRE>
+Determining compiler info.
+
+Chcking if this library was created with a TI compiler...
+Attempting to determine library format...
+ Running command:&gt; "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none "D:\DM365\mpeg4_encoder\mpeg4_encoder_hdvicp\lib\mpeg4venc_ti_arm926.a" | "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\bin\grep\grep.exe" -E "&lt;.*coff&gt;|&lt;.*elf&gt;"
+                   (from "C:\Documents and Settings\100056\Local Settings\Temp\qualiti_runcmd_29192.sh"
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+The library is in ELF format.
+
+ Running command:&gt; "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -g "D:\DM365\mpeg4_encoder\mpeg4_encoder_hdvicp\lib\mpeg4venc_ti_arm926.a" | "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\bin\grep\grep.exe" -A 3 "DW_AT_producer"
+                   (from "C:\Documents and Settings\100056\Local Settings\Temp\qualiti_runcmd_29193.sh"
+This library was not  created with a TI compiler.
+
+Attempting to determine the compiler version...
+ Running command:&gt; "find.exe" "GCC:" "D:\DM365\mpeg4_encoder\mpeg4_encoder_hdvicp\lib\mpeg4venc_ti_arm926.a"|"\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\bin\grep\grep.exe" "GCC:"
+                   (from "C:\Documents and Settings\100056\Local Settings\Temp\qualiti_runcmd_29194.sh"
+  FIND: Parameter format not correct
+The compiler is UNKNOWN.
+
+</PRE>
+<a href="#Top of Page">back</a><br>
+<hr>
+<a name="log XDAIS Rules 8, 9 and 10">Test execution log for <b>XDAIS Rules 8, 9 and 10:</b></a><br>
+<PRE>
+Running test 'XDAIS Rules 8, 9 and 10'
+Extracting names of global symbols defined by the algorithm...
+ Running command:&gt; "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\cgtools\bin\nm6x.exe" -g "D:\DM365\mpeg4_encoder\mpeg4_encoder_hdvicp\lib\mpeg4venc_ti_arm926.a" | "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\bin\grep\grep.exe" " [TBCUD] "
+                   (from "C:\Documents and Settings\100056\Local Settings\Temp\qualiti_runcmd_29195.sh"
+  00000000 U DMA_TI_ECopy_1D1D
+  00000000 U DMA_TI_Wait
+  00000038 T MPEG4VENC_TI_Copy_codearm968
+  00000000 T MPEG4VENC_TI_Get968codeSize
+  000001e0 T MPEG4VENC_TI_KaleidoPsc_Enable
+  0000029c T MPEG4VENC_TI_KaleidoPsc_EnableInitRamLow
+  000000d4 T MPEG4VENC_TI_KaleidoPsc_Reset
+  00000158 T MPEG4VENC_TI_KaleidoPsc_SyncReset
+  00000358 T MPEG4VENC_TI_Loader_Arm968
+  00000000 D MPEG4VENC_TI_SECTION0
+  00000020 D MPEG4VENC_TI_SECTION1
+  0000be70 D MPEG4VENC_TI_SECTION2
+  0000da4f D MPEG4VENC_TI_SECTION3
+  00000000 U memcpy
+  00000000 U DMA_TI_ECopy_1D1D
+  00000000 U DMA_TI_Wait
+  00000038 T MPEG4VENC_TI_Copy_codearm968_std_quality
+  00000000 T MPEG4VENC_TI_Get968codeSize_std_quality
+  000000d4 T MPEG4VENC_TI_Loader_Arm968_std_quality
+  00000000 D MPEG4VENC_TI_STD_QUALITY_SECTION0
+  00000020 D MPEG4VENC_TI_STD_QUALITY_SECTION1
+  0000a30c D MPEG4VENC_TI_STD_QUALITY_SECTION2
+  0000bc6f D MPEG4VENC_TI_STD_QUALITY_SECTION3
+  00000000 U memcpy
+  00000000 T MPEG4VENC_TI_H263_Header
+  00000170 T MPEG4VENC_TI_Put_GOBHdr
+  00000000 U MPEG4VENC_TI_Putbits_strbuf
+  00002fd4 T MPEG4VENC_TI_ChkavailMB
+  00001b7c T MPEG4VENC_TI_FindPMV
+  000008f0 T MPEG4VENC_TI_GOV_Header
+  000013b8 T MPEG4VENC_TI_MB_Header
+  00000218 T MPEG4VENC_TI_MP4_Header
+  000027e8 T MPEG4VENC_TI_MVpack
+  00000000 T MPEG4VENC_TI_Putbits
+  0000019c T MPEG4VENC_TI_Putbits_strbuf
+  000019b8 T MPEG4VENC_TI_Putcbpcm_Inter
+  000018f4 T MPEG4VENC_TI_Putcbpcm_Intra
+  00001a70 T MPEG4VENC_TI_Putcbpy_preac
+  0000014c T MPEG4VENC_TI_StuffRM
+  00000f9c T MPEG4VENC_TI_VOP_Header
+  00000b8c T MPEG4VENC_TI_VOP_Header_skip
+  00000000 D MPEG4VENC_TI_sDquant
+  000013bc T MPEG4VENC_TI_FindMaxQsBoost
+  00001878 T MPEG4VENC_TI_RcUpdateInit
+  00000000 D MPEG4VENC_TI_ciEstCoefQ8
+  0000030c T MPEG4VENC_TI_endOfPicture
+  00000d6c T MPEG4VENC_TI_startOfMBProc
+  0000118c T MPEG4VENC_TI_startOfPicture
+  00000000 U __aeabi_d2iz
+  00000000 U __aeabi_ddiv
+  00000000 U __aeabi_i2d
+  00000000 U __aeabi_idiv
+  00000000 U __aeabi_ldivmod
+  00000030 D IMPEG4VENC_PARAMS
+  00000000 U DMA_TI_ECopy_1D1D
+  00000000 U DMA_TI_ECopy_2D1D
+  00000000 U DMA_TI_Wait
+  00000000 U MEMUTILS_cacheInv
+  00000000 U MEMUTILS_cacheWb
+  00000000 U MEMUTILS_cacheWbInv
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U MPEG4VENC_TI_Conv_phy
+  00000aec T MPEG4VENC_TI_Encode_Frameend
+  00000000 T MPEG4VENC_TI_Encode_Start
+  00000000 U MPEG4VENC_TI_GOV_Header
+  00000000 U MPEG4VENC_TI_H263_Header
+  00000000 U MPEG4VENC_TI_MP4_Header
+  00000cfc T MPEG4VENC_TI_Pad_Refframe
+  00000000 U MPEG4VENC_TI_VOP_Header
+  00000000 U MPEG4VENC_TI_VOP_Header_skip
+  00000000 U MPEG4VENC_TI_endOfPicture
+  00000000 U MPEG4VENC_TI_startOfPicture
+  00000000 U __aeabi_uidivmod
+  00000000 U memcpy
+  00000000 U DMA_TI_Map_TC
+  00000000 U HDVICPSYNC_start
+  00000000 U HDVICPSYNC_wait
+  00000000 U IMPEG4VENC_PARAMS
+  00000000 U MEMUTILS_cacheWbInv
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U MPEG4VENC_TI_Copy_codearm968
+  00000000 U MPEG4VENC_TI_Copy_codearm968_std_quality
+  00005f58 T MPEG4VENC_TI_Encode
+  00005b74 T MPEG4VENC_TI_Encode_End
+  00000000 U MPEG4VENC_TI_Encode_Frameend
+  00000000 U MPEG4VENC_TI_Encode_Start
+  00000000 U MPEG4VENC_TI_Encoder_Init
+  00000000 U MPEG4VENC_TI_Get968codeSize
+  00000000 U MPEG4VENC_TI_Get968codeSize_std_quality
+  00000000 U MPEG4VENC_TI_IALG
+  00000000 U MPEG4VENC_TI_InitConv_phy
+  00000000 U MPEG4VENC_TI_KaleidoPsc_Enable
+  00000000 U MPEG4VENC_TI_KaleidoPsc_EnableInitRamLow
+  00000000 U MPEG4VENC_TI_KaleidoPsc_Reset
+  00000000 U MPEG4VENC_TI_KaleidoPsc_SyncReset
+  00000000 U MPEG4VENC_TI_Loader_Arm968
+  00000000 U MPEG4VENC_TI_Loader_Arm968_std_quality
+  00000000 U MPEG4VENC_TI_Pad_Refframe
+  00000000 U MPEG4VENC_TI_RcUpdateInit
+  000020a0 T MPEG4VENC_TI_activate
+  00002210 T MPEG4VENC_TI_alloc
+  00002d48 T MPEG4VENC_TI_control
+  00002154 T MPEG4VENC_TI_deactivate
+  00003f74 T MPEG4VENC_TI_free
+  000041ec T MPEG4VENC_TI_initObj
+  00005b58 T MPEG4VENC_TI_numAlloc
+  00000000 U __aeabi_ldivmod
+  00000000 U __aeabi_uidiv
+  00000004 C arm968_time
+  00000000 U gettimeofday
+  00000000 U memcpy
+  00000000 U MPEG4VENC_TI_Encode
+  0000002c D MPEG4VENC_TI_IALG
+  00000000 D MPEG4VENC_TI_IMPEG4VENC
+  00000000 U MPEG4VENC_TI_activate
+  00000000 U MPEG4VENC_TI_alloc
+  00000000 U MPEG4VENC_TI_control
+  00000000 U MPEG4VENC_TI_deactivate
+  00000000 U MPEG4VENC_TI_free
+  00000000 U MPEG4VENC_TI_initObj
+  00000000 U MPEG4VENC_TI_numAlloc
+  00000000 T MPEG4VENC_TI_Encoder_Init
+  00000000 U DMA_TI_IRES_EDMA_Open
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U MPEG4VENC_TI_ChbaseDma
+  00000000 U MPEG4VENC_TI_IALG
+  00000030 D MPEG4VENC_TI_IRES
+  000003bc T MPEG4VENC_TI_activateAllResources
+  000000b8 T MPEG4VENC_TI_activateResource
+  0000085c T MPEG4VENC_TI_deactivateAllResources
+  00000558 T MPEG4VENC_TI_deactivateResource
+  000010e0 T MPEG4VENC_TI_deinitResources
+  00001578 T MPEG4VENC_TI_getResourceDescriptors
+  000009f8 T MPEG4VENC_TI_initResources
+  00000000 T MPEG4VENC_TI_numResourceDescriptors
+  00001410 T MPEG4VENC_TI_reinitResources
+  00000002 C gPatternMaskingIMGBUFs
+  00000002 C gPatternMaskingOthers
+  00000002 C gPatternMaskingSEQBUFs
+  00000000 U strcmp
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 T MPEG4VENC_TI_ChbaseDma
+  00000348 T MPEG4VENC_TI_Conv_phy
+  000001c0 T MPEG4VENC_TI_InitConv_phy
+Verifying that all global symbols are named XXX_TI_xxx ...
+and that no blacklisted external references are made
+Found symbol 'IMPEG4VENC_PARAMS', that's okay.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+
+</PRE>
+<a href="#XDAIS Rules 8, 9 and 10">back</a>
+<hr>
+<a name="log XDAIS Rule 12">Test execution log for <b>XDAIS Rule 12:</b></a><br>
+<PRE>
+Running test 'XDAIS Rule 12'
+Extracting names of global BSS data symbols...
+ Running command:&gt; "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\cgtools\bin\nm6x.exe" -g "D:\DM365\mpeg4_encoder\mpeg4_encoder_hdvicp\lib\mpeg4venc_ti_arm926.a" | "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\bin\grep\grep.exe" " [BD] "
+                   (from "C:\Documents and Settings\100056\Local Settings\Temp\qualiti_runcmd_29196.sh"
+  00000000 D MPEG4VENC_TI_SECTION0
+  00000020 D MPEG4VENC_TI_SECTION1
+  0000be70 D MPEG4VENC_TI_SECTION2
+  0000da4f D MPEG4VENC_TI_SECTION3
+  00000000 D MPEG4VENC_TI_STD_QUALITY_SECTION0
+  00000020 D MPEG4VENC_TI_STD_QUALITY_SECTION1
+  0000a30c D MPEG4VENC_TI_STD_QUALITY_SECTION2
+  0000bc6f D MPEG4VENC_TI_STD_QUALITY_SECTION3
+  00000000 D MPEG4VENC_TI_sDquant
+  00000000 D MPEG4VENC_TI_ciEstCoefQ8
+  00000030 D IMPEG4VENC_PARAMS
+  0000002c D MPEG4VENC_TI_IALG
+  00000000 D MPEG4VENC_TI_IMPEG4VENC
+  00000030 D MPEG4VENC_TI_IRES
+Verifying that objects 'MPEG4VENC_TI_IALG' and 'MPEG4VENC_TI_IMPEG4VENC' are defined...
+Data object 'MPEG4VENC_TI_IALG' found.
+Data object 'MPEG4VENC_TI_IMPEG4VENC' found.
+
+</PRE>
+<a href="#XDAIS Rule 12">back</a>
+<hr>
+<a name="log XDAIS Rule 13+">Test execution log for <b>XDAIS Rule 13+:</b></a><br>
+<PRE>
+Currently, this test cannot be run on non-TI compiled libraries.
+
+</PRE>
+<a href="#XDAIS Rule 13+">back</a>
+<hr>
+<a name="log XDAIS Rule 20">Test execution log for <b>XDAIS Rule 20:</b></a><br>
+<PRE>
+Currently, this test cannot be run on non-TI compiled libraries.
+</PRE>
+<a href="#XDAIS Rule 20">back</a>
+<hr>
+<a name="log XDAIS Rules 21, 22">Test execution log for <b>XDAIS Rules 21, 22:</b></a><br>
+<PRE>
+Running test 'XDAIS Rules 21, 22'
+Using sectti on ofd output to find static data & program memory requirements...
+ Running command:&gt; "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none,sections,header "D:\DM365\mpeg4_encoder\mpeg4_encoder_hdvicp\lib\mpeg4venc_ti_arm926.a" | "C:\Program Files\Texas Instruments\cg_xml\bin\sectti.exe"
+                   (from "C:\Documents and Settings\100056\Local Settings\Temp\qualiti_runcmd_29197.sh"
+  Reading from stdin ...
+  ====================================================================
+  REPORT FOR LIBRARY: D:/DM365/mpeg4_encoder/mpeg4_encoder_hdvicp/lib/mpeg4venc_ti_arm926.a
+  ====================================================================
+  
+  
+  ************************************************************
+  REPORT FOR FILE: mpeg4venc_ti_arm968bootloader.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       1128  0x00000468  CODE 
+                           .data :         48  0x00000030  DATA 
+                         .rodata :      55947  0x0000da8b  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: mpeg4venc_ti_arm968bootloader_std_quality.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :        484  0x000001e4  CODE 
+                           .data :         48  0x00000030  DATA 
+                         .rodata :      48299  0x0000bcab  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: mpeg4venc_ti_h263.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :        856  0x00000358  CODE 
+                           .data :         48  0x00000030  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: mpeg4venc_ti_headerpack.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :      12828  0x0000321c  CODE 
+                           .data :         48  0x00000030  DATA 
+                         .rodata :        192  0x000000c0  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: mpeg4venc_ti_rc.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       6632  0x000019e8  CODE 
+                           .data :         48  0x00000030  DATA 
+                         .rodata :          7  0x00000007  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: imp4venc.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .data :        148  0x00000094  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: mpeg4venc_ti_frame926.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       4192  0x00001060  CODE 
+                           .data :         48  0x00000030  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: version.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+  
+  ************************************************************
+  REPORT FOR FILE: mpeg4venc_ti_ialg.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :      34692  0x00008784  CODE 
+                           .data :        304  0x00000130  DATA 
+                            .bss :          8  0x00000008  UDATA
+                         .rodata :        212  0x000000d4  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: mpeg4venc_ti_ialgvt.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .data :         80  0x00000050  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: mpeg4venc_ti_init.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       1528  0x000005f8  CODE 
+                           .data :         48  0x00000030  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: mpeg4venc_ti_ires.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       6856  0x00001ac8  CODE 
+                           .data :         88  0x00000058  DATA 
+                         .rodata :        592  0x00000250  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: mpeg4venc_ti_memutils.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       1012  0x000003f4  CODE 
+                           .data :         48  0x00000030  DATA 
+  
+  ------------------------------------------------------------
+  Totals by section type
+  ------------------------------------------------------------
+    Uninitialized Data :          8  0x00000008
+      Initialized Data :     106253  0x00019f0d
+                  Code :      70208  0x00011240
+
+</PRE>
+<a href="#XDAIS Rules 21, 22">back</a>
+<hr>
+<a name="log XDAIS Rule 25">Test execution log for <b>XDAIS Rule 25:</b></a><br>
+<PRE>
+This test does not apply since this is not a C6x architecture.
+
+</PRE>
+<a href="#XDAIS Rule 25">back</a>
+<hr>
+<a name="log XDAIS Rule 26">Test execution log for <b>XDAIS Rule 26:</b></a><br>
+<PRE>
+This test does not apply since this is not a C6x architecture.
+
+</PRE>
+<a href="#XDAIS Rule 26">back</a>
+<hr>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</BODY>
+</HTML>
+
+
+
+

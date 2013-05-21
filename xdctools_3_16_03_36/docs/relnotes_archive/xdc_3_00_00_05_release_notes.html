@@ -1,0 +1,915 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+<!-- /* * Copyright 2007 by Texas Instruments Incorporated . * * All rights reserved. Property of Texas Instruments Incorporated. * Restricted rights to use, duplicate or disclose this code are * granted through contract. * */ -->
+  <title>XDC 3.00.00.05 Release Notes</title>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<!-- For now, we use the doxygen style sheet -->
+  <link href="doxygen.css" type="text/css" rel="stylesheet">
+
+</head>
+
+
+
+
+<body>
+
+<table width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td bgcolor="black" width="1"><a href="http://www.ti.com/"><img style="border: 0px solid ; width: 222px; height: 54px;" alt="Texas Instruments" src="docs/tilogo.gif"> </a></td>
+
+      <td bgcolor="red"><img style="width: 314px; height: 26px;" alt="Technology for Innovators(tm)" src="docs/titagline.gif">
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h1 align="center">XDC 3.00 Release Notes</h1>
+
+<h2 align="center">August 13, 2007</h2>
+
+<p align="center"> <a href="#General_Info">Introduction</a>,
+<a href="#Known_Issues">Known Issues</a>, <a href="#Documentation">Documentation</a>, <a href="#Whats_New">What's New</a>, <a href="#Compatibility">Upgrade &amp; Compatibility
+Information</a>, <a href="#Host_Support">Host
+Support</a>, <a href="#Dependencies">Dependencies</a>,
+<a href="#Device_Support">Device Support</a>, <a href="#Validation">Validation Info</a>, <a href="#Version">Version Information</a>, <a href="#Support">Technical Support</a>.
+</p>
+
+<hr>
+<h2><a name="General_Info">Introduction</a></h2>
+
+<p>eXpress DSP Components (XDC) is a standard for reusable
+software
+components, optimized for real-time embedded systems. XDC components
+have hardware-neutral formal interfaces, are configurable offline to
+optimize memory and performance, and support custom automation in the
+development environment via a scripting language.</p>
+
+<p>This XDC release includes the following sets of packages: </p>
+
+<ul>
+
+  <li><b>XDC core (<tt>xdc.*</tt>)</b> -
+the <tt><b>xdc</b></tt> and <tt><b>xs</b></tt>
+command line utilities for building packages and execting scripts,
+together with the packages that implement XDC itself;</li>
+
+  <li><b>User tools (<tt>xdc.tools.*</tt>)</b>
+- command-line and graphical utilities for working with packages and
+repositories;</li>
+
+  <li><b>Targets (<tt>*.targets.*</tt>)</b>
+- definitions for using various TI and third-party compiler tool chains
+with XDC;</li>
+
+  <li><b>Platforms (<tt>ti.platforms.*</tt>)</b>
+- definitions for linking and running code on various TI board-level
+hardware and simulator products using XDC.</li>
+
+</ul>
+
+<hr>
+<h2><a name="Known_Issues">Known Issues</a></h2>
+
+<p>None.</p>
+
+<hr>
+<h2><a name="Documentation">Documentation</a></h2>
+
+<p>The following documentation is available: </p>
+
+<ul>
+
+  <li><a href="docs/XDC_Getting_Started_Guide.pdf">XDC
+Getting Started Guide</a></li>
+
+  <li><a href="docs/userguide/XDC_User_Guide.pdf">XDC
+Consumer User's Guide</a></li>
+
+  <li><a href="docs/index.html">XDC Documents Index</a></li>
+
+</ul>
+
+<p>Release notes from previous releases are also available in the
+<a href="docs/relnotes_archive">relnotes_archive</a>
+directory. </p>
+
+<hr>
+<h2><a name="Whats_New">What's New</a></h2>
+
+<p>The following significant changes have been made since 2.95:</p>
+
+<ul>
+
+  <li>First General Availability release of XDC Module Binary
+Contract, supporting binary backwards compatibility of XDC metaonly and
+target packages through the XDC 3.X series.</li>
+
+  <li>Enhanced documentation. Addition of Getting Started Guide,
+Consumer User's Guide, and improved API documentation.</li>
+
+  <li>Enhanced graphical and command line user tooling.</li>
+
+  <li>Bug fixes detailed below.</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<div class="memitem">
+<h3>3.00.00.05 (This Release)</h3>
+
+<!-- *************************************************************** -->
+<h4>XDC Runtime</h4>
+
+<ul>
+
+  <li>Reworked the implementation of xdc.runtime.Text to avoid
+recursion when traversing ropes, which occured when printing
+fully-qualified module names as well as when matching module-name
+patterns through Diags_setMask(). Besides minimizing runtime stack
+usage and (theoretically) enabling static analysis of worse-case stack
+depth, this change also make better use of the internal rope
+representation to capture redundency in package-prefixes of module
+names; runtime code size, however, is roughly the same as before.</li>
+
+  <li>Fixed a bug in xdc.runtime.Error that prevented calls to
+Error_raise in legacy .c files. Like other diags, the controlling
+module for legacy .c files automatically becomes xdc.runtime.Main</li>
+
+  <li>Error_raise() is now robust against "nested errors" in
+which the raiseHook() itself leads to a call to Error_raise(); in this
+case, Error_raise terminates abruptly by calling System_abort() with a
+special message</li>
+
+  <li>Removed error id's E_{device,value} from xdc.runtime.Error,
+leaving only E_{generic,memory}. These former error id's are no longer
+used by anyone (and in fact have an unsupported '%$R' format specifier
+in their msg string, proving further that no one is really using them);
+the format string in the remaining E_generic has also been changed to
+use '%s'. Since these have been on the "to-be-removed" list for
+sometime, no change in xdc.runtime MSRP will occur.</li>
+
+  <li>Moved the handling of the abort string to the proxys. The
+ISystemSupport modules now flush on abort (SysMin's can be disabled via
+the flushAtExit config parameter). Create Memory.defaultHeapInstance if
+it is null or undefined.</li>
+
+  <li>Documentation updates to modules Assert, Diags, Error, Log,
+and LoggerBuf in the xdc.runtime package.</li>
+
+  <li>Renamed Diags.setMask$meta() to Diags.setMaskMeta()</li>
+
+  <li>added XDOC for *Timestamp* modules and interface</li>
+
+  <li>Made HeapStd thread-safe. Checking align parameter in
+HeapStd_alloc now. It fails if the value is larger than the supported
+size of malloc.</li>
+
+  <li>In SysMin and SysStd, allowed for NULL string parameter to
+abort().</li>
+
+  <li>Added Timestamp proxy config to LoggerBuf; to match
+LoggerSys</li>
+
+  <li>In Text, fixed multiple buffer overrun bugs and premature
+truncation of output to buffer. pkgGroup regular expression fixed to
+properly match only xdc.runtime packages</li>
+
+  <li>Demoted the typedef 'xdc.runtime.SysMin.OutputFunc' to
+internal, since this was never intended to be client-visible</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Targets</h4>
+
+<ul>
+
+  <li>Added a missing "." to some references to 'bss' in
+ti/targets/linkcmd.xdt</li>
+
+  <li>Added reset and exit function hooks to rts470/boot.asm</li>
+
+  <li>Added '--recursion_limit=20' to the arm profile
+'whole_program'</li>
+
+  <li>Enabled sdkPath in microsoft.targets.Win32 to accept
+absolute paths (SDSCM00016858)</li>
+
+  <li>Moved dependency flags into cc.cmd for MVArm9 target</li>
+
+  <li>Boot code in rts5500 was invalid for small data model,
+could corrupt top seven bits of XAR6 register</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Platforms</h4>
+
+<ul>
+
+  <li>Platform tests are separated into their own packages, so
+that loading a platform does not create a dependency on the package
+xdc.runtime</li>
+
+  <li>added evm6452 and evmTNETV2685</li>
+
+  <li>clock rate on sdp3430 changed to 312.4</li>
+
+  <li>updated ti.platforms.generic XDOC to explain how to use
+this platform to "create" a usable platform</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>XDC Core</h4>
+
+<ul>
+
+  <li>Moved std.h out of the xdc.runtime package, and into the
+xdc package; std.h also no longer directly #includes <xdc>. this
+enables legacy .c files that #include <xdc> to no longer have a
+needless dependency on the xdc.runtime package</xdc></xdc></li>
+
+  <li>Altered the generation of package/package.c to avoid
+unconditional #includes of xdc.runtime headers; these are only included
+if the package contains target modules. This change also helps reduce
+bogus dependencies on the xdc.runtime package, not only in packages
+that create legacy libraries but even legacy programs</li>
+
+  <li>Relaxed a limitation in which spec'd consts associated with
+a (target) module were only available in the .cfg model; values of
+consts can now be retrieved in *any* xs context. Access to spec'd
+configs, on the other hand, are still contrained to the .cfg model</li>
+
+  <li>Program.system is of type 'Any' to avoid dependency on
+xdc.runtime in the cases when there are no target modules in a program;
+if Program.system is needed and a module is assigned to it, the module
+must inherit ISystemSupport</li>
+
+  <li>Added three special marker files to the package/ subdir
+whose names include the internal "version" of the green/red/blue worlds
+respectively; these files will enable future XDCTOOLS to re-generate
+internal files (e.g., *.ccs/*.sch/package.c files) on a more
+fine-grained basis. Existing packages (which, of course, don't already
+have these files) can be easily discerned by future XDCTOOLS, hence
+there is no compatibility issues here</li>
+
+  <li>Removed dependency on libstdc++ when building XDC tools for
+Linux and Solaris</li>
+
+  <li>Fixed a warning from Microsoft compilers pertaining to the
+internal function xdc_runtime_Text_visitRope by simplifying the
+declaration of its signature thru 'Fxn' and using some casts within
+Text.c.</li>
+
+  <li>Removed spurious references to xdc.runtime from generated
+package.c files, as well as further decoupled xdc.cfg from xdc.runtime.</li>
+
+  <li>package/build.cfg is added to the standard release; without
+that file, on-line rebuilding of schemas does not recreate correctly
+the list of libraries in pkg.build.libraries</li>
+
+  <li>Fixed a bug in which units named in package.xdc that do not
+exist (e.g., no .xdc file) were causing a fatal java exception. a more
+appropriate error message is now emitted.</li>
+
+  <li>Enabled a finer-grained mechanism for on-the-fly
+regeneration of selected package files. Using the recently added
+package/.vers_{rgb}<n> files, we can independently regenerate
+(green) .css files, (red) .sch files, and (blue) package.c files if
+needed. This mechanism is critical to maintaining (full-)compability in
+the face of changes to these internal files; this mechanism also
+comprehends older packages in a backward-compatible manner. As part of
+this change, the .ccs file no longer carries a <n> suffix.</n></n></li>
+
+  <li>Added a distinguished package named 'xdc.corevers', whose
+MSRP basically reflects the overall compatibility of the core packages
+in this version of the XDCTOOLS with others before/after it. All
+released packages will depended implicitly on this 'xdc.corevers',
+though this special package has no content. There is also no formal
+relationship between this package's MSRP and the "external version" of
+the XDCTOOLS (e.g., 3.1.12). By convention, the MSRP of this package
+will change whenever a new release (major, minor, patch) of XDCTOOLS
+occurs, and will reflect the compatibility constraints (full vs
+backward vs source vs none) accordingly.</li>
+
+  <li>Fixed the bug in schema regeneration code when there are
+libraries in the package; the libraries are listed in
+package/build.cfg, but that file was not a part of a standard release,
+so during regeneration that file would not be found and the list of
+libraries would be empty; in xdc-p06 we added build.cfg to the standard
+release, but when older packages are consumed, we need to recreate
+build.cfg on the fly; it is done by reading the list of libraries from
+package.bld.xml</li>
+
+  <li>Updated documentation for getLibs in xdc.IPackage</li>
+
+  <li>Changed xdc.services.spec.ParserSession System.exit() into
+Java exceptions. The console output on some parser errors has changed,
+with an additional line following the main error message: "error:
+compilation failed: parser failed"</li>
+
+  <li>EXPERIMENTAL ADDITION -- first implementation of the @Annex(<n>)
+attribute, which can be applied to public target configs and functions
+in modules. configs/fxns annotated in this way are generated *after*
+all other decls, enabling addition of configs/fxns while maintaining
+binary backwards-compatibility when structs are used in the underlying
+implementation. the integer parameter <n> must be positive to
+have any effect. as a rule, all decls are output in the same order as
+input, suggesting that simply re-ordering a module's decls can
+potentially break backwards-compatibility in some cases</n></n></li>
+
+  <li>EXPERIMENTAL ADDITION -- first implementation of the
+@NoRuntime attribute, used in target modules wishing to opt-out of any
+xdc.runtime support. this enables target modules with const/type/extern
+declarations to have no implicit dependencies on the xdc.runtime
+package. such modules do *not* implicitly inherit xdc.runtime.IModule,
+and hence have no common$ metaonly config.</li>
+
+  <li>EXPERIMENTAL ADDITION -- 'extern' declarations (fxns or
+vars) appearing in .xdc files are no longer required to have an
+identifier initializer. if absent, the extern 'pkg.Mod.ext' is
+basically an alias for the C symbol 'pkg_Mod_ext'. this offers module
+producers a simpler alternative to @DirectCall, in that it not only
+looks more "natural" in the .xdc file but also does not introduce a
+symbol with the __E suffix in the linkmap. this feature melds well with
+the new @NoRuntime attribute, and provides a potentially "lower-risk"
+path for migrating legacy content</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Configuro Build Tool</h4>
+
+<ul>
+
+  <li>Explicitly set homepkg to the configuration package.
+Prevents problems with homepkg when the user's config script is not
+itself in a package. Removed the previous workaround to this problem,
+which was to create a stub for the user's config script in the
+generated package. The generated package.bld script now points directly
+to the user's .cfg file.</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Repoman Repository Management Tool</h4>
+
+<ul>
+
+  <li>For --rrestore and --rcreate options, do not restore/create
+repository unless the operatins can be completed successfully.</li>
+
+  <li>Added RepoRestore.xs, a dialog that is invoked upon opening
+a .rmn file.</li>
+
+  <li>Removed automatic compatiblity checking from Package Path
+tree in xdc.tools.repoman.sg and added toolbar button that invokes a
+compatibility check when pressed</li>
+
+  <li>Implemented lazy tree expansion for Available Packages tree
+and Package Path tree</li>
+
+  <li>Modified command line for repo restore and repo create.</li>
+
+  <li>Fixed/updated documentation in Main.xdc and package.xdc for
+better cdoc viewing.</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Xdoc / Cdoc Package Documentation Tool</h4>
+
+<ul>
+
+  <li>Added checks for the case when referred-to packages are not
+available on the package path. If a packaged neede for documentation
+(e.g. it defines an interface that a module in another package
+implements) is not available, and not able to be recovered from private
+information in the dependent package, cdoc cannot show the package docs
+and instead shows a grey icon in the index. This use case is unique to
+cdoc and does not affect configuration. The full workaround is for the
+user to make the needed packages available on the package path.</li>
+
+  <li>Updated command line usage message. Modified cdoc to use
+xdc.tools.ICmd to decode command line.</li>
+
+  <li>Optimized program startup time. On startup the package path
+is inventoried, but little else. The index view is filled on demand.
+Added progress info in the status bar.</li>
+
+  <li>Modified to use the doxygen stylesheet, which displays the
+generated output in a more compact format. Made generated abstract type
+converters @_nodoc to reduce clutter. These can still be viewed via the
+view @_nodoc button.</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Path Tool</h4>
+
+<ul>
+
+  <li>Check package path packages for shadow files and flag them
+when found</li>
+
+  <li>Fixed/updated documentation in Main.xdc and package.xdc for
+better cdoc viewing.</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Configuration Viewer Tool</h4>
+
+<ul>
+
+  <li>Added right-click menu to bring up cdoc browser of any
+package visible in the configuration.</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Other Tools</h4>
+
+<ul>
+
+  <li>Enhanced xdc.tools.Cmdr to allow non-Posix syntax for
+command-line options, for use in existing tools without breaking option
+compatibility. The @CommandOption() attribute now allows the '-' or
+'--' flag prefix to optionally be included in the attribute text, so
+that '-' can be used with long option names.</li>
+
+  <li>Fixed xdc.tools.sg.swt_linux to not warn when used to
+simply determine schema dependencies</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Examples</h4>
+
+<ul>
+
+  <li>Added examples/basic/absconst, both to illustrate the
+ability to define "abstract" constants in either interfaces or modules,
+as well as the ability of the latter to override abstract constant
+specs in the former. this example also includes a test script that
+accesses various constants outside of the .cfg model</li>
+
+  <li>Added /basic/vers/rtos/test to test ability to access
+config parames *outside* config model</li>
+
+  <li>In etrain/filters examples Fir.c, made align parameter for
+history alloc() work on targets with MAU sizes other than eight bits.</li>
+
+  <li>In basic.instname, added test of label output to a buffer</li>
+
+  <li>In basic.logging, added ability to easily switch between
+LoggerBuf and LoggerSys (to see "same" output).</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Installer</h4>
+
+<ul>
+
+  <li>Added ability to install XDC tools to a shared network
+drive, without installing Windows registry entries</li>
+
+  <li>Added ability to choose which components of XDC tools to
+install</li>
+
+  <li>Bug fix to InstallJammer when nested inside another product
+installer</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Enhancements</h4>
+
+<p>The following minor enhancements were resolved:</p>
+
+<table width="100%">
+
+  <colgroup width="15%"></colgroup><tbody>
+
+    <tr>
+
+      <td><b>ID</b></td>
+
+      <td><b>Headline</b></td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00017350</td>
+
+      <td>CDOC should allow doxygen stylesheet</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00017825</td>
+
+      <td>need "registryfree" install of xdc tools</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- *************************************************************** -->
+<h4>Defects</h4>
+
+<p>The following defects were resolved:</p>
+
+<table width="100%">
+
+  <colgroup width="15%"></colgroup><tbody>
+
+    <tr>
+
+      <td><b>ID</b></td>
+
+      <td><b>Headline</b></td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00016858</td>
+
+      <td>The sdkPath property of the Win32 target should support
+absolute path</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00017928</td>
+
+      <td>incorrect XDCPATH causes xdc.tools.path.sg to emit
+strange warning and fail</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018207</td>
+
+      <td>cdoc.sg viewer cannot resolve name
+ti.sysbios.interfaces.ITimer</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018222</td>
+
+      <td>CDOC should not show @_nodoc functions in the TOC on
+LHS of page</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018234</td>
+
+      <td>CDOC - move "Details" to the top of each module page
+and change title to "Summary"</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018237</td>
+
+      <td>configuro generates duplicate -I for xdc/packages in
+compiler.opt file</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018294</td>
+
+      <td>System_abort is passing an invalid string to the
+Proxy's abort</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018304</td>
+
+      <td>Parts of SysStd are being pulled in along with SysMin
+(and vica versa).</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018328</td>
+
+      <td>platform packages should not depend on xdc.runtime</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018352</td>
+
+      <td>XDC build for Windows Host throws Link Error with lnkx86</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018395</td>
+
+      <td>rts470 boot code needs reset function hook</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018543</td>
+
+      <td>cdoc.sg index shows meta create() and construct() as
+target</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018616</td>
+
+      <td>arm whole_program should use --recursion_limit=20 switch</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018673</td>
+
+      <td>add release notes, getting started guide, user guide,
+cdoc, repoman, pathman under shortcuts in start menu for xdc installs</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018692</td>
+
+      <td>Display horizontal rule in cdoc graphical viewer</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018710</td>
+
+      <td>global TSK_Obj symbols created by Program.symbol in
+legacy bios are not correct</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018831</td>
+
+      <td>HeapStd should fail when passed an unsupport alignment</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018832</td>
+
+      <td>HeapStd is not thread safe</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018833</td>
+
+      <td>System atexit handlers should always execute with the
+system gate entered</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00018885</td>
+
+      <td>Cdoc viewer crash in Node.xs</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00019014</td>
+
+      <td>XDC config is slow to write the generated .c file</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00019018</td>
+
+      <td>ti.targets.rts5000 boot code fails for C55 small model</td>
+
+    </tr>
+
+    <tr>
+
+      <td>SDSCM00019039</td>
+
+      <td>can't set multiple import path in the CCS - XDC tab</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- *************************************************************** -->
+<!-- *************************************************************** --><!-- *************************************************************** -->
+<!-- *************************************************************** --><!-- *************************************************************** -->
+<!-- *************************************************************** --><!-- *************************************************************** -->
+<!-- *************************************************************** --><!-- *************************************************************** -->
+<hr>
+<h2><a name="Compatibility">Upgrade and
+Compatibility Information</a></h2>
+
+<p><b>Warning:</b> Beginning with XDC 2.95, XDC
+modules with target content (i.e. non-meta-only) are incompatible with
+non-metaonly modules from XDC 2.94 and earlier. Metaonly modules are
+not affected. Non-metaonly modules require at least a recompile.
+</p>
+
+<p><b>Warning:</b> Beginning with xdc-o02, internal C
+files generated when building package schemas are named
+package_&lt;package name&gt;.c instead of
+&lt;package_name&gt;.c. This may introduce incompatibilities
+with older xdc-n and xdc-o trees (XDC 2.X products). The compatibility
+with metaonly xdc-m packages (XDC 1.X products) is still maintained.
+</p>
+
+<h3>Compatibility Key Definitions</h3>
+
+<p>Compatibility keys are intentionally independent of Marketing
+product
+numbers and are intended to: </p>
+
+<ol>
+
+  <li>Enable tooling to identify incompatibilities between
+components, and </li>
+
+  <li>Convey a level of compatibility between different releases
+to set end user expectations. </li>
+
+</ol>
+
+<p>Compatibility keys are composed of 3 comma-delimited numbers -
+M,S,R - where: </p>
+
+<ul>
+
+  <li><b>M = Major</b>. A difference in M indicates a
+break in compatibility. </li>
+
+  <li><b>S = Source</b>. A difference in S indicates
+source compability. That is, the user's source doesn't require change,
+but <i>does</i> require rebuilding. </li>
+
+  <li><b>R = Radix</b>. A difference in R indicates
+an introduction of new features, but compatibility with previous
+interfaces has not broken. If libraries are provided by the package, an
+application must re-link with the new libraries, but not rebuild from
+source. </li>
+
+</ul>
+
+<hr>
+<h2><a name="Host_Support">Host Support</a></h2>
+
+<p>This release supports the following hosts:</p>
+
+<ul>
+
+  <li>Windows XP</li>
+
+  <li>RedHat Enterprise Linux 3</li>
+
+</ul>
+
+<hr>
+<h2><a name="Dependencies">Dependencies</a></h2>
+
+<p>This release requires the following other software components
+and tools versions to successfully function: </p>
+
+<ul>
+
+  <li>C6x Code Generation Tools version 5.3.0 or later. Version
+6.0.13 or later is required in order to use whole_program build profile.</li>
+
+  <li>C55 Code Generation Tools version 3.2.0. or later</li>
+
+  <li>TMS470 (Arm) Code Generation Tools version 4.1.4</li>
+
+  <li>GCC for x86 version 3.2.3 or later</li>
+
+  <li>GCC for ARM version 3.2.3 or later</li>
+
+</ul>
+
+<hr>
+<h2><a name="Device_Support">Device Support</a></h2>
+
+<p>This release supports the following device families: </p>
+
+<ul>
+
+  <li>C67P, C67, C64P, C64, C62 </li>
+
+  <li>C55P, C55, C54</li>
+
+  <li>C28</li>
+
+  <li>TMS470</li>
+
+  <li>Native development host (Windows, Linux)</li>
+
+</ul>
+
+<hr>
+<h2><a name="Validation">Validation Information</a></h2>
+
+<p>This release was built and validated against using the
+following components: </p>
+
+<ul>
+
+  <li>Code Composer Studio version 3.3</li>
+
+  <li>C6x Code Generation Tools version 6.0.7 and 6.0.13</li>
+
+  <li>C55 Code Generation Tools version 3.2.2</li>
+
+  <li>GCC for x86 version 3.2.3</li>
+
+  <li>GCC for ARM version 3.2.3</li>
+
+</ul>
+
+<hr>
+<h2><a name="Version">Version Information</a></h2>
+
+<p>This product's version follows a version format, <b>M.mm.pp.bb</b>,
+where <b>M</b> is a single digit Major number, <b>mm</b>
+is 2 digit minor number, <b>pp</b> is a 2 digit patch
+number, and <b>b</b> is an unrestricted set of digits used
+as an incrementing build counter. </p>
+
+<p>To support multiple side-by-side installations of the product,
+the product version is encoded in the top level directory, e.g. <b>xdc_3_00</b>.
+</p>
+
+<p>Subsequent releases of patch upgrades will be identified by
+the patch number, ex. XDC 3.00.03 with directory <b>xdc_3_00_03</b>.
+Typically, these patches only include critical bug fixes. </p>
+
+<p>Please note that version numbers and compatibility keys are
+NOT the same. For an explanation of compatibility keys, please refer to
+the 'Upgrade and Compatibility Information' section. </p>
+
+<hr>
+<h2><a name="Support">Technical Support</a></h2>
+
+<p>For technical support, contact <a href="mailto:rtsc_champs@list.ti.com">rtsc_champs@list.ti.com</a></p>
+
+<hr>
+<p>Last updated: August 13, 2007 </p>
+
+</div>
+
+</body>
+</html>

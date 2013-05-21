@@ -1,0 +1,211 @@
+<html>
+<head>
+<title>module ti.sdo.fc.global.Settings</title>
+<meta name="description" content="Global configuration settings for all Framework Components packages">
+<link rel="stylesheet" type="text/css" href="../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.sdo.fc.global.</span><span class="xdoc-id">Settings</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/fc/global/package.html" title="package ti.sdo.fc.global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/fc/global/Settings.html">index URL</a></div>
+<p class="xdocHdrSummary">Global configuration settings for all Framework Components packages</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdoc-desc">Additional documentation</a></li>
+<li class="xdocToc2"><a class="xdocToc" href="#xdoc-sect-1">DETAILS</a></li>
+<li class="xdocToc2"><a class="xdocToc" href="#xdoc-sect-2">LINKING WITH FRAMEWORK COMPONENTS LIBRARIES</a></li>
+</ul>
+<div class="xdocBrief">
+This module provides high-level configuration settings for all
+  Framework Components packages.
+[&nbsp;<a class="xdocBrief" href="#xdoc-desc">more</a>&nbsp;...&nbsp;]
+</div>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/fc/global/Settings-src.html"><span class="xdocLabelFile">ti/sdo/fc/global/Settings.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Settings</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> Settings = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.sdo.fc.global.Settings'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#multi.Process">Settings.<span class="xdoc-id">multiProcess</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#osal.Package">Settings.<span class="xdoc-id">osalPackage</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Some FC packages (such as ti.sdo.fc.rman and
+ ti.sdo.fc.ires.* on Linux) need implementation
+ of some OSAL APIs (LockMP_acquire/release/create/delete
+ and Sem_create/delete/pend/post).
+ Point to a package that implements these
+ Signatures of the Lock functions are available at
+ ti/sdo/fc/utils/lock.h</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#profile">Settings.<span class="xdoc-id">profile</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name the library profile to use at link time</span></span></a> = <i><span class="xdoc-kw2">String</span></i> "release";
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/fc/global/Settings-src.html"><span class="xdocLabelFile">ti/sdo/fc/global/Settings.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../../ti/sdo/fc/global/package.html" title="ti.sdo.fc.global">ti.sdo.fc.global</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Settings</span></go> {
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#multi.Process"><span class="xdoc-id">multiProcess</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#osal.Package"><span class="xdoc-id">osalPackage</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Some FC packages (such as ti.sdo.fc.rman and
+ ti.sdo.fc.ires.* on Linux) need implementation
+ of some OSAL APIs (LockMP_acquire/release/create/delete
+ and Sem_create/delete/pend/post).
+ Point to a package that implements these
+ Signatures of the Lock functions are available at
+ ti/sdo/fc/utils/lock.h</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#profile"><span class="xdoc-id">profile</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name the library profile to use at link time</span></span></a> = "release";
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<span id="xdoc-desc"></span>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This module provides high-level configuration settings for all
+  Framework Components packages.</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">LINKING WITH FRAMEWORK COMPONENTS LIBRARIES</div>
+<div class="xdocText"></div>
+<div class="xdocText">When linking an executable, this module's profile config param is
+  used to select which libraries are used. See the <a class="xdoc-link" href="Settings.html#profile" title="profile">profile</a>
+  config param below. There are three typical use-cases.</div>
+<div class="xdocText">1. Link with Framework Components libraries of a specific profile. Add the
+  following to your application cfg script.</div>
+<div class="xdocText"><PRE class="Example">  // set all framework component libraries to the given profile
+  xdc.useModule('ti.sdo.fc.global.Settings').profile = "debug";
+</PRE></div>
+<div class="xdocText">2. Link with Framework Component libraries using the program's profile. Add
+  the following to your application cfg script.</div>
+<div class="xdocText"><PRE class="Example">  // use the program's profile
+  var Program = xdc.useModule('xdc.cfg.Program');
+  xdc.useModule('ti.sdo.fc.global.Settings').profile = Program.build.profile;
+</PRE></div>
+<div class="xdocText">3. Specify a profile on a per-package basis.</div>
+<div class="xdocText"><PRE class="Example">  // specify the profile for some select packages
+  xdc.loadPackage('ti.sdo.fc').profile = "debug";
+  xdc.loadPackage('ti.sdo.fc.rman').profile = "debug";
+  xdc.loadPackage('ti.sdo.fc.dman3').profile = "debug";
+  xdc.loadPackage('ti.sdo.fc.edma3').profile = "debug";
+</PRE></div>
+<div class="xdocText">Note that the third method above does not actually use the <tt>profile</tt>
+  config param. It sets the package's profile config param directly.</div>
+<div class="xdocText">The default value for the <tt>profile</tt> config param is <tt>release</tt>.
+  Thus, even when building your executable using a debug profile, the
+  Framework Component release libraries will be used. This helps to keep the
+  executable size smaller when you want to debug the application code.</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="multi.Process"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Settings.</span><span class="xdoc-id">multiProcess</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/fc/global/Settings.html" title="module Settings"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/fc/global/Settings.html#multi.Process">index URL</a></div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Settings.<span class="xdoc-id">multiProcess</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="osal.Package"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Settings.</span><span class="xdoc-id">osalPackage</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/fc/global/Settings.html" title="module Settings"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/fc/global/Settings.html#osal.Package">index URL</a></div>
+<p class="xdocHdrSummary">Some FC packages (such as ti.sdo.fc.rman and
+ ti.sdo.fc.ires.* on Linux) need implementation
+ of some OSAL APIs (LockMP_acquire/release/create/delete
+ and Sem_create/delete/pend/post).
+ Point to a package that implements these
+ Signatures of the Lock functions are available at
+ ti/sdo/fc/utils/lock.h</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Settings.<span class="xdoc-id">osalPackage</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="profile"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Settings.</span><span class="xdoc-id">profile</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/fc/global/Settings.html" title="module Settings"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/fc/global/Settings.html#profile">index URL</a></div>
+<p class="xdocHdrSummary">Name the library profile to use at link time</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Settings.<span class="xdoc-id">profile</span> = <i><span class="xdoc-kw2">String</span></i> "release";
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">If the Framework Component libraries have been built using the profile
+  named by this config param, then these libraries will be used
+  when linking the final executable. Otherwise, a substitute
+  library will be used. For example, if this config param is set to
+  debug but there are only release libraries available, then the
+  release library is used.</div>
+</div>
+<div id="xdocDate">generated on Wed, 01 Dec 2010 01:28:41 GMT</div>
+</div></div></body>
+</html>

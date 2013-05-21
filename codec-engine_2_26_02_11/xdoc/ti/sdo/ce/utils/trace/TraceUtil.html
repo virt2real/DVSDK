@@ -1,0 +1,442 @@
+<html>
+<head>
+<title>module ti.sdo.ce.utils.trace.TraceUtil</title>
+<meta name="description" content="TraceUtil Configuration interface">
+<link rel="stylesheet" type="text/css" href="../../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.sdo.ce.utils.trace.</span><span class="xdoc-id">TraceUtil</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/utils/trace/package.html" title="package ti.sdo.ce.utils.trace"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/utils/trace/TraceUtil.html">index URL</a></div>
+<p class="xdocHdrSummary">TraceUtil Configuration interface</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil-src.html"><span class="xdocLabelFile">ti/sdo/ce/utils/trace/TraceUtil.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">TraceUtil</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> TraceUtil = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.sdo.ce.utils.trace.TraceUtil'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.D.E.F.A.U.L.T_.T.R.A.C.I.N.G">TraceUtil.<span class="xdoc-id">DEFAULT_TRACING</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Tracing that prints warnings and errors on the standard output</span></span></a> = {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.F.U.L.L_.T.R.A.C.I.N.G">TraceUtil.<span class="xdoc-id">FULL_TRACING</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Enable all tracing</span></span></a> = {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.N.O_.T.R.A.C.I.N.G">TraceUtil.<span class="xdoc-id">NO_TRACING</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;No tracing or logging of any kind</span></span></a> = {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.S.O.C.R.A.T.E.S_.T.R.A.C.I.N.G">TraceUtil.<span class="xdoc-id">SOCRATES_TRACING</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Tracing appropriate for the SoC Analyzer data collection tool</span></span></a> = {
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> <a class="xdocSynGo" href="#.Attrs">TraceUtil.<span class="xdoc-id">Attrs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Configuration attributes</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">localTraceMask</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;local tracing mask</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">localTraceFile</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;local tracing file</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">dsp0TraceMask</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;server's tracing mask</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">dsp0TraceFile</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;server's tracing file</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">dsp0BiosFile</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;server's BIOS tracing file</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">traceFileFlags</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;flags for fopen()ing trace files</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">refreshPeriod</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;number of ms before two DSP data gets</span></span></a> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">cmdPipeFile</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;named pipe to read commands from</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">cmdAliases</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;any aliases for the pipe commands</span></span></a> = <i><a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.Pipe.Cmd.Alias" title="ti.sdo.ce.utils.trace.TraceUtil.PipeCmdAlias">TraceUtil.PipeCmdAlias</a>[<span class="xdoc-kw2"></span>]</i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> <a class="xdocSynGo" href="#.Pipe.Cmd.Alias">TraceUtil.<span class="xdoc-id">PipeCmdAlias</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Alias' to use for the cmd pipe</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Pipe.Cmd.Alias"><span class="xdoc-id">alias</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;alias for a group of pipe commands</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Pipe.Cmd.Alias"><span class="xdoc-id">cmds</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;list of pipe commands for this alias</span></span></a> = <i><span class="xdoc-kw2">String</span>[<span class="xdoc-kw2"></span>]</i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#attrs">TraceUtil.<span class="xdoc-id">attrs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Tracing configuration; by default set to some very basic tracing</span></span></a> = <i><a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.Attrs" title="ti.sdo.ce.utils.trace.TraceUtil.Attrs">TraceUtil.Attrs</a></i> <a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.D.E.F.A.U.L.T_.T.R.A.C.I.N.G" title="ti.sdo.ce.utils.trace.TraceUtil.DEFAULT_TRACING">TraceUtil.DEFAULT_TRACING</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil-src.html"><span class="xdocLabelFile">ti/sdo/ce/utils/trace/TraceUtil.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/package.html" title="ti.sdo.ce.utils.trace">ti.sdo.ce.utils.trace</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">TraceUtil</span></go> {
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.Attrs" title="ti.sdo.ce.utils.trace.TraceUtil.Attrs">TraceUtil.Attrs</a>&nbsp;<a class="xdocSynGo" href="#.D.E.F.A.U.L.T_.T.R.A.C.I.N.G"><span class="xdoc-id">DEFAULT_TRACING</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Tracing that prints warnings and errors on the standard output</span></span></a> = {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.Attrs" title="ti.sdo.ce.utils.trace.TraceUtil.Attrs">TraceUtil.Attrs</a>&nbsp;<a class="xdocSynGo" href="#.F.U.L.L_.T.R.A.C.I.N.G"><span class="xdoc-id">FULL_TRACING</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Enable all tracing</span></span></a> = {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.Attrs" title="ti.sdo.ce.utils.trace.TraceUtil.Attrs">TraceUtil.Attrs</a>&nbsp;<a class="xdocSynGo" href="#.N.O_.T.R.A.C.I.N.G"><span class="xdoc-id">NO_TRACING</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;No tracing or logging of any kind</span></span></a> = {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.Attrs" title="ti.sdo.ce.utils.trace.TraceUtil.Attrs">TraceUtil.Attrs</a>&nbsp;<a class="xdocSynGo" href="#.S.O.C.R.A.T.E.S_.T.R.A.C.I.N.G"><span class="xdoc-id">SOCRATES_TRACING</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Tracing appropriate for the SoC Analyzer data collection tool</span></span></a> = {
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">struct</span> <a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">Attrs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Configuration attributes</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">localTraceMask</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;local tracing mask</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">localTraceFile</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;local tracing file</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">dsp0TraceMask</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;server's tracing mask</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">dsp0TraceFile</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;server's tracing file</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">dsp0BiosFile</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;server's BIOS tracing file</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">traceFileFlags</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;flags for fopen()ing trace files</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">refreshPeriod</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;number of ms before two DSP data gets</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">cmdPipeFile</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;named pipe to read commands from</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.Pipe.Cmd.Alias" title="ti.sdo.ce.utils.trace.TraceUtil.PipeCmdAlias">TraceUtil.PipeCmdAlias</a>&nbsp;<a class="xdocSynGo" href="#.Attrs"><span class="xdoc-id">cmdAliases</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;any aliases for the pipe commands</span></span></a>[<span class="xdoc-kw2"></span>];
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">struct</span> <a class="xdocSynGo" href="#.Pipe.Cmd.Alias"><span class="xdoc-id">PipeCmdAlias</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Alias' to use for the cmd pipe</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Pipe.Cmd.Alias"><span class="xdoc-id">alias</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;alias for a group of pipe commands</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Pipe.Cmd.Alias"><span class="xdoc-id">cmds</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;list of pipe commands for this alias</span></span></a>[<span class="xdoc-kw2"></span>];
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.Attrs" title="ti.sdo.ce.utils.trace.TraceUtil.Attrs">TraceUtil.Attrs</a>&nbsp;<a class="xdocSynGo" href="#attrs"><span class="xdoc-id">attrs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Tracing configuration; by default set to some very basic tracing</span></span></a> = <a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.D.E.F.A.U.L.T_.T.R.A.C.I.N.G" title="ti.sdo.ce.utils.trace.TraceUtil.DEFAULT_TRACING">TraceUtil.DEFAULT_TRACING</a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".D.E.F.A.U.L.T_.T.R.A.C.I.N.G"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">const</span> <span class="xdoc-id">TraceUtil.</span><span class="xdoc-id">DEFAULT_TRACING</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html" title="module TraceUtil"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/utils/trace/TraceUtil.html#.D.E.F.A.U.L.T_.T.R.A.C.I.N.G">index URL</a></div>
+<p class="xdocHdrSummary">Tracing that prints warnings and errors on the standard output</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> TraceUtil.<span class="xdoc-id">DEFAULT_TRACING</span> = {
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".F.U.L.L_.T.R.A.C.I.N.G"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">const</span> <span class="xdoc-id">TraceUtil.</span><span class="xdoc-id">FULL_TRACING</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html" title="module TraceUtil"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/utils/trace/TraceUtil.html#.F.U.L.L_.T.R.A.C.I.N.G">index URL</a></div>
+<p class="xdocHdrSummary">Enable all tracing</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> TraceUtil.<span class="xdoc-id">FULL_TRACING</span> = {
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".N.O_.T.R.A.C.I.N.G"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">const</span> <span class="xdoc-id">TraceUtil.</span><span class="xdoc-id">NO_TRACING</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html" title="module TraceUtil"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/utils/trace/TraceUtil.html#.N.O_.T.R.A.C.I.N.G">index URL</a></div>
+<p class="xdocHdrSummary">No tracing or logging of any kind</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> TraceUtil.<span class="xdoc-id">NO_TRACING</span> = {
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".S.O.C.R.A.T.E.S_.T.R.A.C.I.N.G"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">const</span> <span class="xdoc-id">TraceUtil.</span><span class="xdoc-id">SOCRATES_TRACING</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html" title="module TraceUtil"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/utils/trace/TraceUtil.html#.S.O.C.R.A.T.E.S_.T.R.A.C.I.N.G">index URL</a></div>
+<p class="xdocHdrSummary">Tracing appropriate for the SoC Analyzer data collection tool</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> TraceUtil.<span class="xdoc-id">SOCRATES_TRACING</span> = {
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">The default settings here place data files into the <tt>/tmp</tt> directory.
+  <tt>/tmp</tt> typically provides faster write access than other file
+  system files, so it is used to lower the overhead of tracing.</div>
+<div class="xdocText">Using these default settings, the GPP and DSP generate approximately
+  400 characters of trace in *each* the localTraceFile and
+  dsp0TraceFile, for each round trip to/from the DSP.  This includes the
+  typical <tt>process()</tt> and <tt>control()</tt> calls to each codec.</div>
+<div class="xdocText">Using that figure, the user is encouraged to configure the
+  refreshPeriod and System trace buffers appropriately, so as to reduce
+  the likelyhood of data loss due to wrapping.</div>
+<div class="xdocText">For example, consider an application which utilizes a 30
+  frame-per-second video codec in parallel with a 50 frame-per-second
+  audio codec.  Additionally, the audio codec requires calling <tt>process()</tt>
+  *and* <tt>control()</tt> for each frame - the video only requires a single
+  process() call.  This application alone will generate approximately
+  ((50 * 2) + 30) * 400 = 52000 bytes of trace data each second.  If the
+  default System trace buffer size is used (32768 bytes), the application
+  needs to ensure the refresh period is less than 650 milliseconds
+  *not including I/O overhead or potential for pre-emption*.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Attrs"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">struct</span> <span class="xdoc-id">TraceUtil.</span><span class="xdoc-id">Attrs</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html" title="module TraceUtil"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/utils/trace/TraceUtil.html#.Attrs">index URL</a></div>
+<p class="xdocHdrSummary">Configuration attributes</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> TraceUtil.<span class="xdoc-id">Attrs</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">localTraceMask</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;local tracing mask</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">localTraceFile</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;local tracing file</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">dsp0TraceMask</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;server's tracing mask</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">dsp0TraceFile</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;server's tracing file</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">dsp0BiosFile</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;server's BIOS tracing file</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">traceFileFlags</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;flags for fopen()ing trace files</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">refreshPeriod</span> = <i><span class="xdoc-kw2">Int</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;number of ms before two DSP data gets</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">cmdPipeFile</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;named pipe to read commands from</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">cmdAliases</span> = <i><a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.Pipe.Cmd.Alias" title="ti.sdo.ce.utils.trace.TraceUtil.PipeCmdAlias">TraceUtil.PipeCmdAlias</a>[<span class="xdoc-kw2"></span>]</i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;any aliases for the pipe commands</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">FIELDS</div>
+<div class="xdocChild"><span class="xdocChildId">localTraceMask</span>
+<span class="xdocChildSum">&#151;&nbsp;The trace mask to be used on the "local",
+                          or application processor.</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">localTraceFile</span>
+<span class="xdocChildSum">&#151;&nbsp;The name of the file into which trace output
+                          will be generated.  This can be a full path
+                          (e.g. <tt>/tmp/local.txt</tt>), or a path relative
+                          to the executing application.</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">dsp0TraceMask</span>
+<span class="xdocChildSum">&#151;&nbsp;The trace mask to be used on the "remote"
+                          server.</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">dsp0TraceFile</span>
+<span class="xdocChildSum">&#151;&nbsp;The name of the file into which trace output
+                          will be generated.  This can be a full path
+                          (e.g. <tt>/tmp/dsp0.txt</tt>), or a path relative
+                          to the executing application.</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">dsp0BiosFile</span>
+<span class="xdocChildSum">&#151;&nbsp;The name of the file into which DSP/BIOS log
+                          output will be generated.  This can be a
+                          full path (e.g. <tt>/tmp/dspbios.dat</tt>), or a
+                          path relative to the executing application.</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">traceFileFlags</span>
+<span class="xdocChildSum">&#151;&nbsp;fopen flags used when opening the various
+                          trace/log files.  See fopen() documentation
+                          for details.  For example, to open the files
+                          in "append" mode (i.e. add to existing file
+                          content), use "a"; to open in "over-write"
+                          mode, use "w".</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">refreshPeriod</span>
+<span class="xdocChildSum">&#151;&nbsp;The number of milliseconds to sleep before
+                          reading the content off the remote servers.
+                          This will vary based on the amount of trace
+                          generated, and the size of the trace logs.
+                          Failure to set this low enough will result
+                          in data loss.</span>
+</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This structure describes the initialization settings for the
+  TraceUtil module; see TraceUtil.attrs.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Pipe.Cmd.Alias"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">struct</span> <span class="xdoc-id">TraceUtil.</span><span class="xdoc-id">PipeCmdAlias</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html" title="module TraceUtil"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/utils/trace/TraceUtil.html#.Pipe.Cmd.Alias">index URL</a></div>
+<p class="xdocHdrSummary">Alias' to use for the cmd pipe</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> TraceUtil.<span class="xdoc-id">PipeCmdAlias</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">alias</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;alias for a group of pipe commands</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">cmds</span> = <i><span class="xdoc-kw2">String</span>[<span class="xdoc-kw2"></span>]</i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;list of pipe commands for this alias</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="attrs"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">TraceUtil.</span><span class="xdoc-id">attrs</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html" title="module TraceUtil"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/utils/trace/TraceUtil.html#attrs">index URL</a></div>
+<p class="xdocHdrSummary">Tracing configuration; by default set to some very basic tracing</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>TraceUtil.<span class="xdoc-id">attrs</span> = <i><a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.Attrs" title="ti.sdo.ce.utils.trace.TraceUtil.Attrs">TraceUtil.Attrs</a></i> <a class="xdoc-link" href="../../../../../ti/sdo/ce/utils/trace/TraceUtil.html#.D.E.F.A.U.L.T_.T.R.A.C.I.N.G" title="ti.sdo.ce.utils.trace.TraceUtil.DEFAULT_TRACING">TraceUtil.DEFAULT_TRACING</a>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:34 GMT</div>
+</div></div></body>
+</html>

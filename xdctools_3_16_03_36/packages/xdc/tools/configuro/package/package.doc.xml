@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='xdc.tools.configuro' nodoc='0' root='../../../' summary='Command-line+configuration+tool'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Erequires%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Fmkpkg%2Fpackage.html%22+title%3D%22xdc.tools.mkpkg%22%3Exdc.tools.mkpkg%3C%2Fa%3E%3B'/>
+    <line blank='1' always='0'/>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc.tools.configuro%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+0%2C+0%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='Main' kind='module' nodoc='0' metaonly='1' summary='Command-line+configuration+tool' inherits='xdc.tools.ICmd'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Fconfiguro%2Fpackage.html%22+title%3D%22xdc.tools.configuro%22%3Exdc.tools.configuro%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMain%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%22+title%3D%22xdc.tools.ICmd%22%3EICmd%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMain%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%22+title%3D%22xdc.tools.ICmd%22%3Exdc.tools.ICmd%3C%2Fa%3E'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Main+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27xdc.tools.configuro.Main%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='This+command+allows+RTSC+content%2C+in+the+form+of+reusable+modules+built%0A++using+the+XDCtools+tooling%2C+to+be+imported+into+a+system+integrator%27s%0A++embedded+application.+It+is+the+recommended+method+for+integrating+RTSC%0A++content+into+non-RTSC+application+build+environments.'/>
+            <docPara content='Configuro+lets+the+system+integrator+identify+and+customize+the+RTSC%0A++content+they+wish+to+use%2C+and+computes+a+set+of+libraries%2C+command-line%0A++flags+and+other+artifacts+to+include+in+their+application+build.+By%0A++changing+the+values+of+configuration+settings%2C+the+integrator+can%0A++trade+off+the+functionality%2C+memory+footprint%2C+and+even+performance+of%0A++the+RTSC+content+to+best+meet+the+needs+of+their+application.'/>
+        </docSect>
+        <docSect name='INPUTS'>
+            <docPara content=''/>
+            <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Einfile.cfg%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++A+user-supplied+configuration+script+that+names+a+set+of+RTSC%0A++++++modules%2C+and+optionally+changes+their+configuration+settings.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        </docSect>
+        <docSect name='OUTPUTS'>
+            <docPara content=''/>
+            <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Eoutdir%2F%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++A+directory+containing+all+generated+build+artifacts.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Eoutdir%2Fcompiler.opt%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++A+file+containing+C+compiler+command-line+flags.+These+flags+must%0A++++++included+on+the+compiler+command+line+for+any+C+source+file+that%0A++++++directly+accesses+the+RTSC+content.+The+flags+define+the+header+file%0A++++++include+paths%2C+and+machine-mode+compiler+flags+to+ensure+object+code%0A++++++compatibility+between+all+included+content.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Eoutdir%2Flinker.cmd%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++A+file+containing+linker+command-line+flags.+These+flags+must+be%0A++++++included+on+the+linker+command+line+for+the+final+link+of+the%0A++++++application.+The+flags+list+needed+libraries+and+object+files%2C%0A++++++and+on+some+platforms+define+the+embedded+system+memory+map.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='For+example%3A'/>
+            <docPara content='%3CPRE+class%3D%22Example%22%3E++++++xs+xdc.tools.configuro+myconfig.cfg%0A%3C%2FPRE%3E'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='usage' anchor='usage' altext='xdc.tools.configuro.Main.usage' nodoc='0' external='1' overrides='1' readonly='0' instance='0' summary='usage+help+message' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23usage%22+title%3D%22xdc.tools.ICmd.usage%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eoverride+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eusage%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%3D+%255B'/>
+                    <line tab='1' content='%2527%255B-v%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-%2540%2Boptionsfile%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-o%2Boutdir%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-b%2Bconfig_bld%2B%257C%2B-c%2Bcodegen_dir%2B%257C%2B--cb%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-t%2Btarget%255D%2B%255B-p%2Bplatform%255B%253Ainstance%255D%255D%2B%255B-r%2Bprofile%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-Dname%253Dvalue%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-w%2B%257C%2B-x%2Bregexp%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--rtsName%2Bpkg_name%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--cfgArgs%2Bargs_string%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--linkTemplate%2Blinker_template%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--tcf%255D%2B%255B--bios5%255D%2B%255B--pkg%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--compileOptions%2Bcompile_options_string%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--oc%2Bcompiler.opt%255D%2B%255B--ol%2Blinker.cmd%255D%2527%252C'/>
+                    <line tab='1' content='%2527infile.cfg%2527'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Eusage%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B'/>
+                    <line tab='1' content='%2527%255B-v%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-%2540%2Boptionsfile%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-o%2Boutdir%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-b%2Bconfig_bld%2B%257C%2B-c%2Bcodegen_dir%2B%257C%2B--cb%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-t%2Btarget%255D%2B%255B-p%2Bplatform%255B%253Ainstance%255D%255D%2B%255B-r%2Bprofile%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-Dname%253Dvalue%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B-w%2B%257C%2B-x%2Bregexp%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--rtsName%2Bpkg_name%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--cfgArgs%2Bargs_string%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--linkTemplate%2Blinker_template%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--tcf%255D%2B%255B--bios5%255D%2B%255B--pkg%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--compileOptions%2Bcompile_options_string%255D%2527%252C'/>
+                    <line tab='1' content='%2527%255B--oc%2Bcompiler.opt%255D%2B%255B--ol%2Blinker.cmd%255D%2527%252C'/>
+                    <line tab='1' content='%2527infile.cfg%2527'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='exec' anchor='exec' altext='xdc.tools.configuro.Main.exec' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='%27xs%27+script+entry+point' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23exec%22+title%3D%22xdc.tools.ICmd.exec%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Eexec%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Eexec%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='main' anchor='main' altext='xdc.tools.configuro.Main.main' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='%27xs%27+shell+entry+point' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23main%22+title%3D%22xdc.tools.ICmd.main%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Emain%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Emain%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='$instance'>
+            <synopSpec>
+                <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A'/>
+                <line blank='1' always='0'/>
+            </synopSpec>
+        </group>
+        <group name='per-instance config parameters'>
+            <synopMeta>
+                <line tab='0' comment='Instance+config-params+object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                <line tab='1' comment='Add+the+DSP%2FBIOS+5.X+include+directory+to+the+compiler+options' anchor='bios5.Incs' altext='xdc.tools.configuro.Main.bios5Incs' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ebios5Incs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Optional+arguments+passed+to+configuration+script' anchor='cfg.Args' altext='xdc.tools.configuro.Main.cfgArgs' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcfgArgs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Add+compile+options+for+C+files+in+the+configuration+package' anchor='compile.Options' altext='xdc.tools.configuro.Main.compileOptions' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcompileOptions%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522%2522%3B'/>
+                <line tab='1' comment='Set+the+name+of+the+compiler+options+file+%28default+is+%22compiler.opt%22%29' anchor='compiler.Options.File' altext='xdc.tools.configuro.Main.compilerOptionsFile' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcompilerOptionsFile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522compiler.opt%2522%3B'/>
+                <line tab='1' comment='Read+build+environment+from+the+named+%3Ctt%3Econfig.bld%3C%2Ftt%3E+file' anchor='configbld' altext='xdc.tools.configuro.Main.configbld' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Econfigbld%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Set+a+Java+property+in+the+configuration+script' anchor='defines' altext='xdc.tools.configuro.Main.defines' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edefines%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B%2B%255D%3B'/>
+                <line tab='1' comment='Exclude+packages+matching+regexp+from+compatibility+checking' anchor='exclude' altext='xdc.tools.configuro.Main.exclude' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eexclude%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Read+infile.tcf+in+addition+to+infile.cfg' anchor='has.Tconf' altext='xdc.tools.configuro.Main.hasTconf' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EhasTconf%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Linker+command+file+template' anchor='link.Template' altext='xdc.tools.configuro.Main.linkTemplate' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkTemplate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Set+the+name+of+the+linker+command+file+%28default+is+%22linker.cmd%22%29' anchor='linker.Command.File' altext='xdc.tools.configuro.Main.linkerCommandFile' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkerCommandFile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522linker.cmd%2522%3B'/>
+                <line tab='1' comment='Create+the+generated+output+files+but+do+not+build' anchor='mk.Pkg.Only' altext='xdc.tools.configuro.Main.mkPkgOnly' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmkPkgOnly%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Pathname+of+the+output+directory' anchor='output' altext='xdc.tools.configuro.Main.output' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eoutput%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Name+of+the+RTSC+platform+package+%28and+optionally+instance%29' anchor='platform' altext='xdc.tools.configuro.Main.platform' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eplatform%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Build+profile+to+use' anchor='profile' altext='xdc.tools.configuro.Main.profile' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprofile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2527release%2527%3B'/>
+                <line tab='1' comment='Root+directory+of+the+code+generation+tools' anchor='rootdir' altext='xdc.tools.configuro.Main.rootdir' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erootdir%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Set+the+name+of+the+RTSC+runtime+package' anchor='rts.Name' altext='xdc.tools.configuro.Main.rtsName' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErtsName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Use+a+%3Ctt%3Econfig.bld%3C%2Ftt%3E+found+along+the+package+path' anchor='search.For.Config.Bld' altext='xdc.tools.configuro.Main.searchForConfigBld' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsearchForConfigBld%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Name+of+the+RTSC+target+module' anchor='target' altext='xdc.tools.configuro.Main.target' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etarget%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Show+verbose+details+during+build' anchor='verbose' altext='xdc.tools.configuro.Main.verbose' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Everbose%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Treat+package+version+incompatibilites+as+warnings' anchor='warn' altext='xdc.tools.configuro.Main.warn' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ewarn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+            </synopMeta>
+            <decl spacer='1'/>
+            <decl kind='config' name='bios5Incs' anchor='bios5.Incs' altext='xdc.tools.configuro.Main.bios5Incs' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Add+the+DSP%2FBIOS+5.X+include+directory+to+the+compiler+options'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ebios5Incs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Ebios5Incs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+directory+is+located+in+%22include%22+in+package+%22ti.bios%22.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='cfgArgs' anchor='cfg.Args' altext='xdc.tools.configuro.Main.cfgArgs' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Optional+arguments+passed+to+configuration+script'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcfgArgs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EcfgArgs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Lets+the+user+pass+values+into+the+configuration+script+from+the%0A++command+line.+The+argument+is+an+expression+in+JavaScript+syntax.%0A++Its+value+is+available+in+the+configuration+script+under+the+name%0A++%3Ctt%3EProgram.build.cfgArgs%3C%2Ftt%3E.'/>
+                    <docPara content='The+JavaScript+expression+is+evaluated+in+the+configuration+domain%0A++after+the+platform+package+is+imported%2C+immediately+before+calling%0A++the+user%27s+configuration+script.'/>
+                    <docPara content='This+string+has+the+same+effect+as+the+%3Ctt%3EcfgArgs%3C%2Ftt%3E+string+in%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fbld%2FExecutable%2FAttrs.html%22+title%3D%22xdc.bld.Executable.Attrs%22%3Exdc.bld.Executable.Attrs%3C%2Fa%3E%3C%2Ftt%3E.'/>
+                    <docPara content='You+can+pass+multiple+values+to+configuration+scripts+using+the%0A++syntax+of+a+JavaScript+%3Ctt%3EObject%3C%2Ftt%3E+constant%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++xs+xdc.tools.configuro+--cfgArgs+%22%7Bfoo%3A%27hello%27%3Bbar%3A2%7D%22+...+app.cfg%0A%3C%2FPRE%3E'/>
+                    <docPara content='The+configuration+script+can+read+the+various+fields+as%2C+e.g.%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++if+%28Program.build.cfgArgs.foo+%3D%3D+%22hello%22%29+%7B%0A++++++++++%3A%0A++++++%7D%0A%3C%2FPRE%3E'/>
+                    <docPara content='Note+the+use+of+single+quotes+around+the+string+value+%3Ctt%3E%27hello%27%3C%2Ftt%3E+on%0A++the+command+line.+This+is+the+easiest+way+to+quote+a+JavaScript%0A++string+constant+that+is+compatible+with+the+enclosing+double%0A++quotes%2C+which+are+for+the+benefit+of+the+command+line+shell.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fbld%2FExecutable.html%23.Attrs%22+title%3D%22xdc.bld.Executable.Attrs%22%3Exdc.bld.Executable.Attrs%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='compileOptions' anchor='compile.Options' altext='xdc.tools.configuro.Main.compileOptions' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Add+compile+options+for+C+files+in+the+configuration+package'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcompileOptions%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EcompileOptions%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+option+accepts+one+or+more+compiler+options+that+are+added+to%0A++the+compiler+command+line+when+compiling+C+files+in+the+generated%0A++configuration+package.%0A++If+multiple+compiler+options+are+given%2C+the+whole+string+containing%0A++options+must+be+surrounded+by+quotes.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='compilerOptionsFile' anchor='compiler.Options.File' altext='xdc.tools.configuro.Main.compilerOptionsFile' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Set+the+name+of+the+compiler+options+file+%28default+is+%22compiler.opt%22%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcompilerOptionsFile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522compiler.opt%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EcompilerOptionsFile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522compiler.opt%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='configbld' anchor='configbld' altext='xdc.tools.configuro.Main.configbld' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Read+build+environment+from+the+named+%3Ctt%3Econfig.bld%3C%2Ftt%3E+file'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Econfigbld%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Econfigbld%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='A+%3Ctt%3Econfig.bld%3C%2Ftt%3E+file+can+optionally+be+used+to+hold+the+values%0A++of+the+target%2C+compiler+root+directory%2C+platform%2C+and+other%0A++more+advanced+options.+This+is+a+convenient+way+to+share+a+common%0A++build+environment+between+multiple+projects.'/>
+                    <docPara content='The+format+of+the+file+is+JavaScript+statements+with+the+XDCscript%0A++extensions.+The+script+should+set+the+properties+of+the%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fbld%2FBuildEnvironment.html%22+title%3D%22xdc.bld.BuildEnvironment%22%3E%3Ctt%3EBuild%3C%2Ftt%3E%3C%2Fa%3E+global+object.'/>
+                    <docPara content='If+no+%3Ctt%3Econfig.bld%3C%2Ftt%3E+file+is+given+then+the+target+and+compiler%0A++root+directory+are+required+command-line+parameters.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='defines' anchor='defines' altext='xdc.tools.configuro.Main.defines' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Set+a+Java+property+in+the+configuration+script'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edefines%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%3D+%255B%2B%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Edefines%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B%2B%255D%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Allows+values+to+be+injected+from+the+command+line+into+the%0A++%3Ctt%3Econfig.bld%3C%2Ftt%3E+file.+For+example%2C+the+option+%3Ctt%3E-Dmyprop%3Dmyval%3C%2Ftt%3E%0A++creates+a+property+named+%3Ctt%3Emyprop%3C%2Ftt%3E+with+string+value+%3Ctt%3E%22myval%22%3C%2Ftt%3E.%0A++This+can+be+read+in+%3Ctt%3Econfig.bld%3C%2Ftt%3E+using+the+XDCscript+syntax%0A++%3Ctt%3Eenvironment%5B%22myprop%22%5D%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='exclude' anchor='exclude' altext='xdc.tools.configuro.Main.exclude' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Exclude+packages+matching+regexp+from+compatibility+checking'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eexclude%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Eexclude%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='A+JavaScript+regular+expression+that+is+used+to+select+packages+that%0A++should+be+excluded+from+the+set+of+packages+checked+during%0A++configuration.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fcfg%2Fpackage.html%22+title%3D%22xdc.cfg%22%3Exdc.cfg%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='hasTconf' anchor='has.Tconf' altext='xdc.tools.configuro.Main.hasTconf' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Read+infile.tcf+in+addition+to+infile.cfg'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EhasTconf%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EhasTconf%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+.tcf+file+optionally+configures+DSP%2FBIOS+5.X+.+This+allows+a%0A++single+program+to+use+both+DSP%2FBIOS+5.X+and+RTSC-based+content.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='linkTemplate' anchor='link.Template' altext='xdc.tools.configuro.Main.linkTemplate' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Linker+command+file+template'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkTemplate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3ElinkTemplate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='If+this+option+is+provided+it+overrides+the+template+supplied+by%0A++the+platform%2C+giving+the+caller+complete+control+over+the+generated%0A++linker+command+file.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%23link.Template%22+title%3D%22xdc.cfg.Program.linkTemplate%22%3Exdc.cfg.Program.linkTemplate%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='linkerCommandFile' anchor='linker.Command.File' altext='xdc.tools.configuro.Main.linkerCommandFile' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Set+the+name+of+the+linker+command+file+%28default+is+%22linker.cmd%22%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkerCommandFile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522linker.cmd%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3ElinkerCommandFile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522linker.cmd%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='mkPkgOnly' anchor='mk.Pkg.Only' altext='xdc.tools.configuro.Main.mkPkgOnly' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Create+the+generated+output+files+but+do+not+build'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmkPkgOnly%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EmkPkgOnly%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+option+creates+the+output+directory+and+key+generated+files%0A++but+does+not+process+the+user%27s+configuration+script.+It+is+used%0A++by+internal+tooling+to+snapshot+the+RTSC+build+settings+implied+by%0A++the+configuro+command+line+parameters.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='output' anchor='output' altext='xdc.tools.configuro.Main.output' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Pathname+of+the+output+directory'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eoutput%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Eoutput%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='A+directory+containing+the+generated+build+artifacts%2C+in+particular%0A++the+%3Ctt%3Ecompiler.opt%3C%2Ftt%3E+and+%3Ctt%3Elinker.cmd%3C%2Ftt%3E+files.+By+default%2C+the+output%0A++directory+has+the+same+name+as+the+configuration+script%2C+minus+the%0A++%3Ctt%3E.cfg%3C%2Ftt%3E+extension%2C+within+the+same+parent+directory+as+this+script.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='platform' anchor='platform' altext='xdc.tools.configuro.Main.platform' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Name+of+the+RTSC+platform+package+%28and+optionally+instance%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eplatform%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Eplatform%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+name+of+a+RTSC+platform+package+to+use%2C+using+the+syntax%0A++%3Ctt%3Emy.pkg.name%3C%2Ftt%3E+or+%3Ctt%3Emy.pkg.name%3AinstanceName%3C%2Ftt%3E.+For+example%2C%0A++%3Ctt%3Eti.platforms.sim64Pxx%3C%2Ftt%3E+or+%3Ctt%3Eti.platforms.generic%3Acustom%3C%2Ftt%3E.'/>
+                    <docPara content='This+is+an+optional+parameter%2C+and+by+default+the+platform+is%0A++the+one+that+the+selected+target+names+as+its+default.+The+user%0A++may+override+this+default+in+their+%3Ctt%3Econfig.bld%3C%2Ftt%3E+or+by+using+this%0A++parameter.'/>
+                    <docPara content='The+optional+%3Ctt%3E%3AinstanceName%3C%2Ftt%3E+suffix+names+a+pre-configured+variant%0A++of+the+platform%2C+which+can+be+set+up+either+in+the+user%27s%0A++%3Ctt%3Econfig.bld%3C%2Ftt%3E+or+in+the+platform+package+itself.+For+more+details%2C+see%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fbld%2FBuildEnvironment.html%23platform.Table%22+title%3D%22xdc.bld.BuildEnvironment.platformTable%22%3E%3Ctt%3EBuild.platformTable%3C%2Ftt%3E%3C%2Fa%3E%0A++and+the+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%22+title%3D%22xdc.platform.IPlatform%22%3E%3Ctt%3EIPlatform%3C%2Ftt%3E%3C%2Fa%3E+interface.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='profile' anchor='profile' altext='xdc.tools.configuro.Main.profile' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Build+profile+to+use'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprofile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2527release%2527%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Eprofile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2527release%2527%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+name+of+the+build+profile+to+use+for+the+RTSC+content%2C+for%0A++example+%27release%27+or+%27debug%27.+The+list+of+allowed+profiles+is%0A++determined+by+the+RTSC+target+module+named.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='rootdir' anchor='rootdir' altext='xdc.tools.configuro.Main.rootdir' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Root+directory+of+the+code+generation+tools'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erootdir%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Erootdir%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+path+to+the+installation+directory+of+the+compiler+and+linker%0A++for+the+selected+target.+The+definition+of+%22installation+directory%22%0A++can+vary+from+compiler+to+compiler%2C+but+is+most+commonly+the%0A++directory+that+contains+a+%22bin%22+subdirectory.'/>
+                    <docPara content='If+no+%3Ctt%3Econfig.bld%3C%2Ftt%3E+file+is+given%2C+then+this+is+a+required%0A++parameter.'/>
+                    <docPara content='If+a+%3Ctt%3Econfig.bld%3C%2Ftt%3E+file+is+given+then+this+parameter+is+optional%2C%0A++and+by+default+the+compiler+will+be+the+one+configured+there.%0A++This+option+can+still+be+used%2C+to+override+the+default+established%0A++in+%3Ctt%3Econfig.bld%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='rtsName' anchor='rts.Name' altext='xdc.tools.configuro.Main.rtsName' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Set+the+name+of+the+RTSC+runtime+package'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErtsName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3ErtsName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+name+of+a+package+containing+pre-built+libraries+containing%0A++the+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fruntime%2Fpackage.html%22+title%3D%22xdc.runtime%22%3Exdc.runtime%3C%2Fa%3E+modules.++If+this+parameter+is+%3Ctt%3Enull%3C%2Ftt%3E+%28or%0A++%3Ctt%3Eundefined%3C%2Ftt%3E%29+the+name+of+the+rts+package+is+taken+from+the+target%0A++%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fbld%2FITarget.html%23rts.Name%22+title%3D%22xdc.bld.ITarget.rtsName%22%3Exdc.bld.ITarget.rtsName%3C%2Fa%3E%3C%2Ftt%3E%29.++If+this+parameter+is+set+to%0A++the+empty+string+%28%22%22%29%2C+then+no+rts+package+is+included+in+the%0A++configuration.++Finally%2C+if+this+parameter+is+non-%3Ctt%3Enull%3C%2Ftt%3E+and%0A++non-empty%2C+it+should+be+the+name+of+a+package+along+the+package%0A++path+that+can+supply+pre-built+versions+of+the+modules+in+the%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fruntime%2Fpackage.html%22+title%3D%22xdc.runtime%22%3Exdc.runtime%3C%2Fa%3E%3C%2Ftt%3E+package.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fbld%2FITarget.html%23rts.Name%22+title%3D%22xdc.bld.ITarget.rtsName%22%3Exdc.bld.ITarget.rtsName%3C%2Fa%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fbld%2FExecutable.html%23.Attrs%22+title%3D%22xdc.bld.Executable.Attrs%22%3Exdc.bld.Executable.Attrs%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='searchForConfigBld' anchor='search.For.Config.Bld' altext='xdc.tools.configuro.Main.searchForConfigBld' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Use+a+%3Ctt%3Econfig.bld%3C%2Ftt%3E+found+along+the+package+path'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsearchForConfigBld%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EsearchForConfigBld%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Find+a+%3Ctt%3Econfig.bld%3C%2Ftt%3E+by+searching+the+package+path%2C+instead+of%0A++via+an+explicit+pathname.+Looks+for+a+file+named+%3Ctt%3Econfig.bld%3C%2Ftt%3E+in%0A++any+of+the+directories+named+along+the+package+path%2C+in+order.+The%0A++directories+are+not+searched+recursively.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='target' anchor='target' altext='xdc.tools.configuro.Main.target' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Name+of+the+RTSC+target+module'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etarget%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Etarget%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+name+of+a+RTSC+target+module+to+use%2C+for+example%0A++%3Ctt%3Eti.targets.C64P%3C%2Ftt%3E.'/>
+                    <docPara content='If+no+%3Ctt%3Econfig.bld%3C%2Ftt%3E+file+is+given%2C+then+this+is+a+required%0A++parameter.'/>
+                    <docPara content='If+a+%3Ctt%3Econfig.bld%3C%2Ftt%3E+file+is+given+then+this+parameter+is+optional%2C%0A++and+by+default+the+target+will+be%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fbld%2FBuildEnvironment.html%23targets%22+title%3D%22xdc.bld.BuildEnvironment.targets%22%3E%3Ctt%3EBuild.targets%5B0%5D%3C%2Ftt%3E%3C%2Fa%3E+from+the%0A++user%27s+%3Ctt%3Econfig.bld%3C%2Ftt%3E.+If+%3Ctt%3EBuild.targets%3C%2Ftt%3E+contains+more+than+one+entry%2C%0A++then+this+option+can+be+used+to+override+that+default.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='verbose' anchor='verbose' altext='xdc.tools.configuro.Main.verbose' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Show+verbose+details+during+build'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Everbose%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Everbose%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+option+produces+the+same+verbose+output+as+the+%3Ctt%3Exdc%3C%2Ftt%3E+command%0A++with+the+%3Ctt%3EXDCOPTIONS%3Dv%3C%2Ftt%3E+parameter.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='warn' anchor='warn' altext='xdc.tools.configuro.Main.warn' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Treat+package+version+incompatibilites+as+warnings'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ewarn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Ewarn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='If+set+to+%22%3Ctt%3Etrue%3C%2Ftt%3E%22%2C+force+any+incompatibilities+detected+to+be%0A++treated+as+warnings+only%3B+otherwise+incompatibilities+are+fatal.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fcfg%2Fpackage.html%22+title%3D%22xdc.cfg%22%3Exdc.cfg%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='per-instance creation'/>
+        <group name='per-instance functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='gen' anchor='gen' altext='xdc.tools.configuro.Main.gen' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Generate+and+build+the+configuration+package'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Egen%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Einfile%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Egen%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Einfile%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='run' anchor='run' altext='xdc.tools.configuro.Main.run' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Underlying+implementation' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23run%22+title%3D%22xdc.tools.ICmd.run%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erun%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FCmdr.html%23.Instance%22+title%3D%22xdc.tools.Cmdr.Instance%22%3ECmdr.Instance%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecmdr%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Erun%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FCmdr.html%23.Instance%22+title%3D%22xdc.tools.Cmdr.Instance%22%3ECmdr.Instance%3C%2Fa%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecmdr%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+    </unit>
+</package>

@@ -1,0 +1,699 @@
+2010-10-25: Don Darling, Texas Instruments, Inc.
+	* src/gsttividenc1.{c,h}:
+	Use GstAdapter on TIVidenc1's sink pad.
+
+2010-10-25: Don Darling, Texas Instruments, Inc.
+	* src/gsttividenc1.{c,h}:
+	Fix handling of framerate values in TIVidenc1.
+
+2010-09-13: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaibuffertransport.h:
+	Return NULL from GST_TIDMAIBUFFERTRANSPORT_DMAIBUF if passed a NULL
+	argument.
+
+2010-09-13: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c:
+	Allow size to be specified to gst_tidmaivideosink_alloc_display_buffers
+
+2010-09-13: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.{c,h}:
+	Use GstTIDmaiBufTab object to manage user-allocated buffers in
+	TIDmaiVideoSink.
+
+2010-09-13: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaibuftab.{c,h}:
+	Add gst_tidmaibuftab_set_blocking() function.
+
+2010-09-13: Don Darling, Texas Instruments, Inc.
+	* src/gsttividdec2.c:
+	Create gst_tividdec2_set_source_caps_base() function.
+
+2010-09-10: Don Darling, Texas Instruments, Inc.
+	* src/gsttividdec2.{c,h}:
+	Fix handling of framerate values in TIViddec2.
+
+2010-09-10: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c:
+	Make framerate property override caps information for TIDmaiVideoSink.
+
+2010-09-10: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.{c,h}:
+	Replace dFramerateNum and dFramerateDen with dCapsFramerate.
+
+2010-09-10: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.{c,h}:
+	Relpace all integer framerate values in TIDmaiVideoSink with GstFraction.
+
+2010-09-10: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c:
+	Properly initialize dFramerateNum and dFramerateDen
+
+2010-08-25: Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttiauddec1.{c,h}}:
+	Add "RTCodecThread" property.
+
+2010-08-25: Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividdec2.{c,h}}:
+	Add "RTCodecThread" property.
+
+2010-08-24: Brijesh Singh, Texas Instruments, Inc.
+	* configure.ac, Makefile.external, 
+	src/{Makefile.am, gsttic6xcolorspace.{c,h}, gstticodecplugin.c}:
+	Add "TIC6xColorspace" element.
+
+2010-08-24: Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividdec2.c}:
+	Update OMAPL138-specific Vdec2 parameter to output I420 buffer.
+
+2010-08-24: Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividenc1.c}:
+	Update OMAPL138-specific Venc1 parameters.
+
+2010-08-24: Brijesh Singh, Texas Instruments, Inc.
+	* src/{gstticodecplugin_omapl138.cfg, gstticodecs_omapl138.c, 
+	Makefile.am ,Makefile.external}:
+	Add support for OMAPL138 platform.
+
+2010-08-24: Brijesh Singh, Texas Instruments, Inc.
+	* src/{Makefile.external}:
+	Export CROSS_COMPILE/PLATFORM_XDC environment variables needed by cfg.
+	
+2010-07-29: Don Darling, Texas Instruments, Inc.
+	* src/{gstticodecplugin_dm355.cfg, gstticodecs_dm355.c}:
+	Add support for DVSDK 3.10 OOB codecs on DM355.
+
+2010-07-29: Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec1.c, gstticodecplugin_dm365.cfg, gstticodecs_dm365.c,
+	gsttividdec2.c}:
+	Add support for DVSDK 3.10 OOB codecs on DM365.
+
+2010-07-29: Don Darling, Texas Instruments, Inc.
+	* src/gsttividenc1.c:
+	Update DM6467T-specific Venc1 parameters to match DVSDK demos for
+	DVSDK 3.10.
+
+2010-07-29: Don Darling, Texas Instruments, Inc.
+	* src/gsttividdec2.c:
+	Update DM6467T-specific Vdec2 parameters to match DVSDK demos for
+	DVSDK 3.10.
+
+2010-07-29: Don Darling, Texas Instruments, Inc.
+	* src/{gstticodecplugin_dm6467t.cfg, gstticodecs_dm6467t.c}:
+	Add support for DVSDK 3.10 OOB codec servers on DM6467T.
+
+2010-07-29: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c:
+	Specify explicit pitch when allocating user buffers in TIDmaiVideoSink.
+
+2010-07-29: Don Darling, Texas Instruments, Inc.
+	* src/{gstticommonutils.{c,h}, gsttidmaivideosink.c, gsttividenc1.c,
+	gsttividresize.c}:
+	Add parameter to gst_ti_calc_buffer_size that specifies pitch.
+
+2010-07-29: Don Darling, Texas Instruments, Inc.
+	* src/gsttiauddec1.c:
+	Detect audio/mpeg, mpegversion=2 as AAC.
+
+2010-07-29: Don Darling, Texas Instruments, Inc.
+	* src/gsttiauddec1.c:
+	Add TIAuddec1 support for decoding AC3 audio streams.
+
+2010-07-29: Don Darling, Texas Instruments, Inc.
+	* src/gsttividenc1.c:
+	TIViddec1's resolution property should override caps settings.
+
+2010-07-01: Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec1.c, gsttiaudenc1.c, gsttidmaibuffertransport.{c,h},
+	gsttiimgdec1.c, gsttiimgenc1.c, gsttividdec2.c, gsttividenc1.c,
+	gsttividresize.c}:
+	Declare all useMask _FREE flags in gsttidmaibuffertransport.h.
+
+2010-07-01: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaibuffertransport.c:
+	Remove GST_LOG call at the beginning of gst_tidmaibuffertransport_new().
+
+2010-07-01: Don Darling, Texas Instruments, Inc.
+	* src/gstticircbuffer.c:
+	Remove GST_LOG call at the beginning of gst_ticircbuffer_new().
+
+2010-07-01: Don Darling, Texas Instruments, Inc.
+	* src/gstticommonutils.c:
+	Fix assertion failure caused by gst_ti_parse_newsegment().
+
+2010-07-01: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.{c,h}:
+	Open the OSD on DM365/DM6446/DM355 during video playback.
+
+2010-06-15: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.{c,h}:
+	Add support for user-allocated buffers in TIDmaiVideoSink.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/{Makefile.am, gsttiauddec.{c,h}, gstticodecplugin.c,
+	gsttiimgdec.{c,h}, gsttiimgenc.{c,h}, gsttividdec.{c,h},
+	gsttividenc.{c,h}}:
+	Remove support for xDM 0.9-based codecs.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaibuffertransport.{c,h}:
+	Remove the gst_tidmaibuffertransport_set_owner() function.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c, gsttiauddec1.c, gsttiaudenc1.c, gsttiimgdec.c,
+	gsttiimgdec1.c, gsttiimgenc.c, gsttiimgenc1.c, gsttividdec.c,
+	gsttividdec2.c, gsttividenc.c, gsttividenc1.c, gsttividresize.c}:
+	Specify GstTIDmaiBufTab owners with gst_tidmaibuffertransport_new()
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaibuffertransport.{c,h}:
+	Remove support for registering and managing orphaned buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gstticommonutils.{c,h}:
+	Remove gst_ti_reclaim_buffers function.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaibuffertransport.{c,h}:
+	Remove hRv data member from GstTIDmaiBufferTransport.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaibuffertransport.{c,h}:
+	Change second parameter of gst_tidmaibuffertransport_new().
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttividresize.{c,h}:
+	Update TIVidResize to use the GstTIDmaiBufTab object to manage output
+	buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttiimgenc.{c,h}:
+	Update TIImgenc to use the GstTIDmaiBufTab object to manage output buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttiimgenc1.{c,h}:
+	Update TIImgenc1 to use the GstTIDmaiBufTab object to manage output
+	buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttiaudenc1.{c,h}:
+	Update TIAudenc1 to use the GstTIDmaiBufTab object to manage output
+	buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttividenc.{c,h}:
+	Update TIVidenc to use the GstTIDmaiBufTab object to manage output buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttividenc1.{c,h}:
+	Update TIVidenc1 to use the GstTIDmaiBufTab object to manage output
+	buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttiimgdec.{c,h}:
+	Update TIImgdec to use the GstTIDmaiBufTab object to manage output buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttiimgdec1.{c,h}:
+	Update TIImgdec1 to use the GstTIDmaiBufTab object to manage output
+	buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttiauddec.{c,h}:
+	Update TIAuddec to use the GstTIDmaiBufTab object to manage output buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttiauddec1.{c,h}:
+	Update TIAuddec1 to use the GstTIDmaiBufTab object to manage output
+	buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttividdec.{c,h}:
+	Update TIViddec to use the GstTIDmaiBufTab object to manage output buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttividdec2.{c,h}:
+	Update TIViddec2 to use the GstTIDmaiBufTab object to manage output
+	buffers.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaibuffertransport.{c,h}:
+	Add gst_tidmaibuffertransport_set_owner() function.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/{Makefile.am, gsttidmaibuftab.{c,h}}:
+	Create a "TIDmaiBufTab" buffer table object
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c:
+	Push all display initialization code into gst_tidmaivideosink_init_display.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.{c,h}:
+	Remove GST_TIDMAIVIDEOSINK_CAST macro.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c:
+	Add static declaration for gst_tidmaivideosink_process_caps.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/src/gsttividdec2.c:
+	Correct the way source caps information is generated in TIViddec2.
+
+2010-06-14: Don Darling, Texas Instruments, Inc.
+	* src/{gstticodecplugin_dm357.cfg, gstticodecs_dm357.c}:
+	Remove DM357 support.
+
+2010-06-07: Brijesh Singh, Texas Instruments, Inc.
+	* src/gsttiauddec1.c:
+	Fix duration query in TIAuddec1.
+
+2010-06-04: Don Darling, Texas Instruments, Inc.
+	* src/gsttividdec2.c:
+	Force the TIViddec2 frameRate property to override upstream caps.
+
+2010-06-04: Don Darling, Texas Instruments, Inc.
+	* {*}, src/{*}:
+	Corrected TI Copyright notices (replaced $year with proper years).
+
+2010-05-24: Don Darling, Texas Instruments, Inc.
+	* src/gsttividdec2.c:
+	Add support for the DivX and XviD mime types in TIViddec2.
+
+2010-05-24: Don Darling, Texas Instruments, Inc.
+	* src/gsttividenc1.c:
+	Create source caps information for MPEG-2 streams in TIVidenc1.
+
+2010-05-24: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c:
+	Remove DM365 guard for NV12 fourcc check.
+
+2010-05-24: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c:
+	Add support for the 1080P_60 video standard in TIDmaiVideoSink.
+
+2010-05-24: Don Darling, Texas Instruments, Inc.
+	* src/gsttividresize.c:
+	Add support for the NV16 colorspace in TIVidResize.
+
+2010-05-24: Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c:
+	Add support for the NV16 colorspace in TIDmaiVideoSink.
+
+2010-05-24: Don Darling, Texas Instruments, Inc.
+	* src/gsttividenc1.c:
+	Add support for the NV16 colorspace in TIVidenc1.
+
+2010-05-24: Don Darling, Texas Instruments, Inc.
+	* src/gsttiimgdec1.c:
+	Correct size metadata imgdec1->hInBuf prior to calling the codec.
+
+2010-05-24: Don Darling, Texas Instruments, Inc.
+	* src/gsttiimgenc1.c:
+	Fix assertion failure in TIImgenc1.
+
+2010-05-24: Don Darling, Texas Instruments, Inc.
+	* src/{gsttiimgdec.c, gsttiimgdec1.c, gsttiimgenc.c, gsttiimgenc1.c}:
+	Fix typos in error messages.
+
+2010-01-18: Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttiquicktime_h264.{c,h}, gsttividenc.{c,h}, gsttividenc1.{c,h}}:
+	Add support for generating H.264 packetized stream.
+
+2010-01-18: Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividdec2.c, gsttividdec.c}:
+	Do not abort the decode thread on generic codec or bit errors.
+
+2009-12-28: Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttiquicktime_mpeg4.{c,h}, gsttividdec2.{c,h}, gsttividdec.{c,h},
+	Makefile.am}:
+	Add support for MPEG-4 video in quicktime container.
+
+2009-12-16: Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttiauddec1.c, gsttiauddec.c}:
+	Handle the case when audio decoder does not return the correct sample rate.
+
+2009-12-16: Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttiauddec1.c, gsttiauddec.c}:
+	Handle the case when audio decoder outputs zero bytes.
+
+2009-12-03 Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividenc1.{c,h},gsttividenc.{c,h}}:
+	Add encodingPreset property in video encoder elements.
+
+2009-12-01 Don Darling, Texas Instruments, Inc.
+	* src/gstticircbuffer.c:
+	Fix issue where codecs could be fed garbage data.
+
+2009-10-29 Don Darling, Texas Instruments, Inc.
+	* src/{gsttividenc1.{c,h}}:
+	Fix issue where encode codec was not properly initialized when caps
+	negotiation was not done.
+
+2009-10-26 Don Darling, Texas Instruments, Inc.
+	* src/gstticircbuffer.c:
+	Change return value of gst_ticircbuffer_shift_data() to show success or
+	failure.
+
+2009-10-26 Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c, gsttiauddec1.c}:
+	Fix memory leak while handling AAC packetized streams.
+
+2009-10-25 Bob Faskos
+	* src/gsttiquicktime_h264.c:
+	Fix memory leak while handling H.264 packetized streams. see bug#964.
+
+2009-10-16 Chase Maupin, Texas Instruments, Inc.
+	* src/gsttividresize.c, gstticodecplugin.c:
+	Changed name of TIVidresize element to TIVidResize.
+
+2009-10-05 Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.{c,h}:
+	Add new method for displaying frames multiple times.  Lets us give a single
+	buffer to the display driver and have it displayed multiple times.
+
+2009-10-05 Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.{c,h}:
+	Move caps processing code into gst_tidmaivideosink_process_caps().
+
+2009-10-05 Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c:
+	Only adjust display buffer colorspace for non-DMAI input buffers.
+
+2009-10-05 Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c:
+	Set parent_class in gst_tidmaivideosink_class_init.
+
+2009-10-02 Brijesh Singh, Texas Instruments, Inc.
+	Add new element "TIVidresize" to resize the video using hardware accel.
+
+2009-09-23 Chase Maupin, Texas Instruments, Inc.
+	* src/{gstticommonutils.c}:
+	Increased the default timeout to wait for downstream elements to 
+	free the buffers we sent them from 2 seconds to 6 seconds.  During
+	audio encode testing it was found that downstream elements could take
+	up to 6 seconds to return the buffers passed to them.
+
+2009-09-23 Chase Maupin, Texas Instruments, Inc.
+	* src/{gsttiaudenc1.c, gsttiaudenc1.h, gstticodecplugin.c,
+	gstticodecs_dm6467.c, Makefile.am}:
+	Added support for audio encode using xDM 1.0 codecs.  New element is
+	named TIAudenc1.
+
+2009-10-02 Brijesh Singh, Texas Instruments, Inc.
+	If encoder is recieving dmai transport buffer then use hw accelerated
+	framecopy.
+
+2009-09-30 Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividenc1.c}:
+	Workaround DMAI 1.20.00.06 non-accel framecopy BUG on DM6467 platform.
+
+2009-09-29 Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividenc1.c}:
+	Add support for DM365 video encoders.
+
+2009-09-29 Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividenc1.{c,h}, gsttividenc.{c,h}, gstticircbuffer.{c,h}}:
+	Extend circular buffer to execute user defined function instead of regular
+	memcpy() during queue_data. This feature is mainly used by video encoders 
+	to use its own copy function instead of memcpy() while queuing the data
+	into circular buffer. 
+
+	Refactor video encoders to use user defined function to queue data in 
+	circular buffer. 
+
+	Add new property "rateControlPreset" in encoder elements, this can be used
+	to set the codec rate control preset values.
+
+2009-09-27 Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttiauddec.c, gsttiauddec1.c, gsttiimgdec.c, 
+	gsttiimgdec1.c, gsttiimgenc.c, gsttiimgenc1.c, gsttividdec.c, 
+	gsttividdec2.c, gsttividenc.c, gsttividenc1.c}:
+	Replace GST_ERROR function with GST_ELEMENT_ERROR in all elements.
+
+2009-09-27 Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttidmaivideosink.c}:
+	DM365: Set the display colorspace attribute based on the input buffer 
+	fourcc.
+
+2009-09-24  Don Darling, Texas Instruments, Inc.
+	* src/{gstticodecplugin_omap3530.cfg,gstticodecs_omap3530.c}:
+	Update OMAP3530 Support to use DVSDK 3.00.02.44.
+
+2009-09-22 Brijesh Singh, Texas Instruments, Inc.
+	* src/{gstticircbuffer.c}:
+	Add error check in circular buffer API.
+
+2009-09-23 Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c, gsttiauddec1.c}:
+	Correct circular buffer allocation for TIAuddec and TIAuddec1.
+
+2009-09-23 Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c, gsttiauddec1.c, gsttiimgdec.c, gsttiimgdec1.c,
+	gsttiimgenc.c, gsttiimgenc1.c, gsttividdec.c, gsttividdec2.c,
+	gsttividenc.c, gsttividenc1.c, gsttithreadprops.h}:
+	Rename TIThread_DECODE_* flags to TIThread_CODEC_*
+
+2009-09-23 Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c, gsttiauddec1.c, gsttiimgdec.c, gsttiimgdec1.c,
+	gsttiimgenc.c, gsttiimgenc1.c, gsttividdec.c, gsttividdec2.c,
+	gsttividenc.c, gsttividenc1.c}:
+	Set drainingEOS to true AFTER checking to see if the codec thread exists.
+
+2009-09-23 Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c, gsttiauddec1.c, gsttiimgdec.c, gsttiimgdec1.c,
+	gsttiimgenc.c, gsttiimgenc1.c, gsttividdec.c, gsttividdec2.c,
+	gsttividenc.c, gsttividenc1.c}:
+	Set the circular buffer pointer to NULL before unreffing it.
+
+2009-09-23 Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c, gsttiauddec1.c, gsttiimgdec.c, gsttiimgdec1.c,
+	gsttiimgenc.c, gsttiimgenc1.c, gsttividdec.c, gsttividdec2.c,
+	gsttividenc.c, gsttividenc1.c}:
+	Delay calling codec_stop during shut-down.
+
+2009-09-23 Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c, gsttiauddec1.c, gsttiimgdec.c, gsttiimgdec1.c,
+	gsttiimgenc.c, gsttiimgenc1.c, gsttividdec.c, gsttividdec2.c,
+	gsttividenc.c, gsttividenc1.c}:
+	Create single exit point in *_chain functions.
+
+2009-09-23 Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.{c,h}, gsttiauddec1.{c,h}, gsttiimgdec.{c,h}, 
+	gsttiimgdec1.{c,h}, gsttiimgenc.{c,h}, gsttiimgenc1.{c,h}, 
+	gsttiquicktime_h264.{c,h}, gsttithreadprops.h, gsttividdec.{c,h}, 
+	gsttividdec2.{c,h}, gsttividenc.{c,h}, gsttividenc1.{c,h}}:
+	Remove the queue thread from all elements
+
+2009-07-28 Brijesh Singh, Texas Instruments, Inc.
+	* src/{gstticircbuffer.c}:
+	Fix potential memory leak in circular buffer when accel framecopy flag is 
+	used.
+
+2009-06-25 Sajesh Kumar Saran, Texas Instruments, Inc.
+	* src/{gsttidmaivideosink.c, gstticodecs_dm365.c, gsttividdec2.c,
+	gstticodecplugin_dm365.cfg, Makefile.am}:
+	Added support for DM365 processor.
+
+2009-06-16  Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c,gsttiauddec1.c,gsttidmaibuffertransport.c,
+	gsttiimgdec.c,gsttiimgdec1.c,gsttiimgenc.c,gsttiimgenc1.c,gsttividdec.c,
+	gsttividdec2.c,gsttividenc.c,gsttividenc1.c}:
+	Correct double-free issue.
+
+2009-06-16  Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.{c,h},gsttiauddec1.{c,h},gsttiimgdec.{c,h},
+	gsttiimgdec1.{c,h},gsttiimgenc.{c,h},gsttiimgenc1.{c,h},gsttividdec.{c,h},
+	gsttividdec2.{c,h},gsttividenc.{c,h},gsttividenc1.{c,h}}:
+	Remove the decodeDrained and encodeDrained variables, which were
+	unnecessary.
+
+2009-06-10  Don Darling, Texas Instruments, Inc.
+	* src/gstticodecs_dm6467.c:
+	Rename "aacdec" to "aachedec" to support DVSDK 2.00.
+
+2009-06-04  Don Darling, Texas Instruments, Inc.
+	* src/gsttidmaibuffertransport.{c,h}:
+	Fix memory leak during the destruction of TIDmaiBufferTransport objects.
+
+2009-06-04  Don Darling, Texas Instruments, Inc.
+	* src/gstticircbuffer.c:
+	Fix free memory read during error check.
+
+2009-05-27  Don Darling, Texas Instruments, Inc.
+	* src/gstticircbuffer.c:
+	Correct circular buffer error check when in fixedBlockSize mode.
+	It now allows zero-length buffers to be consumed without error.
+
+2009-05-27  Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c,gsttiauddec1.c,gsttiimgdec.c,gsttiimgdec1.c,
+	gsttiimgenc.c,gsttiimgenc1.c,gsttividdec.c,gsttividdec2.c,gsttividenc.c,
+	gsttividenc1.c}:
+	Fix memory leak in all encode/decode elements.
+
+2009-05-27  Don Darling, Texas Instruments, Inc.
+	* src/gsttiauddec.c:
+	Correct issue when shutting down the codec and audio element.
+
+2009-05-22  Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c,gsttiauddec1.c,gsttiimgdec.c,gsttiimgdec1.c,
+	gsttiimgenc.c,gsttiimgenc1.c,gsttividdec.c,gsttividdec2.c,gsttividenc.c,
+	gsttividenc1.c}:
+	Destroy custom thread attribute object after we're done using it.
+
+2009-05-22  Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c,gsttiauddec1.c}:
+	Fix issue where we were always setting audio source caps to 2 channels.
+
+2009-05-22  Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c,gsttiauddec1.c}:
+	Correct the number of channels setting when playing elementary streams.
+
+2009-05-21  Don Darling, Texas Instruments, Inc.
+	* Makefile.am,autogen.sh,configure.ac:
+	- Add support for libtool 2.2.x.
+
+2009-05-01  Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividdec2.c,gsttividdec.c,gsttividdec2.h,gsttividdec.h
+	gsttiauddec1.c,gsttiauddec.c,gsttiauddec1.h,gsttiauddec.h,
+	gstticommonutils.c, gstticommonutils.h}:
+	- Added common function to handle new segment event. 
+	  This function parses new segment event and covert from BYTE to TIME 
+	  format.  
+	- Added common function to update position and duration on pad query event.
+
+2009-05-07  Chase Maupin, Texas Instruments, Inc.
+	* src/{gsttividenc1.c,gsttividenc.c,gsttividdec2.c,gsttividdec.c,
+	gsttiauddec1.c,gsttiauddec.c,gsttiimgdec1.c,gsttiimgenc1.c,
+	gsttiimgdec.c, gsttiimgenc.c}:
+	Applied patch from Tommy supplied in bug tracker 555.  This patch
+	removes GStreamer assertions when LOG level 5 is specified.
+
+2009-04-27  Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividenc1.c,gsttividenc.c,gsttividdec2.c,gsttividdec.c,
+	gsttiauddec1.c,gsttiauddec.c,gsttiimgdec1.c,gsttiimgenc1.c,
+	gsttiimgdec.c, gsttiimgenc.c}:
+	The CMEM module requires that buffers allocated from a CMEM pool *must* 
+	be freed by the same thread.
+	
+2009-03-27  Chase Maupin, Texas Instruments, Inc.
+	* src/{gsttividenc1.c,gsttividenc.c,gsttividdec2.c,gsttividdec.c,
+	gsttiauddec1.c,gsttiauddec.c,gsttiimgdec1.c,gsttiimgenc1.c,
+	gstticommonutils.c, gstticommonutils.h, gsttiimgdec.c,
+	gsttiimgenc.c}:
+	Fixed issue where buffers on the Fifo were not flushed and freed
+	when the queue and encode/decode threads were being cleaned up.
+	This led to a memory leak when switching the pipeline from
+	PLAYING -> NULL and NULL -> PLAYING states.
+
+2009-03-27  Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividenc1.c,gsttividenc.c,gsttividdec1.c,gsttividdec.c,
+	gsttiauddec1.c,gsttiauddec.c,gsttiimgdec1.c,gsttiimgenc1.c}:
+	Added support to configure elements properties using environment variables.
+	e.g To set codecName="h624dec" for TIAuddec element, use 
+	$export GST_TI_TIAuddec_codecName=h264dec 
+
+2009-03-15  Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividdec.c, gsttividdec2, gsttiimgdec.c}:
+	Calculate output buffer size using video resolution so that it can work 
+	with ffmpegcolorspace and xvimagesink elements.
+
+2009-03-10  Chase Maupin, Texas Instruments, Inc.
+	* src/gsttiimgenc.c,gsttiimgdec.c:
+	- Fixed build issue with xDM 0.9 image elements when using DMAI 1.16
+
+2009-03-10  Brijesh Singh, Texas Instruments, Inc.
+	* src/{gstticodecplugin.c}:
+	Added environment variable to control element registration process.
+	e.g To un-register TIAuddec1 use "export GST_TI_TIAuddec1_DISABLE=1".
+
+2009-03-10  Chase Maupin, Texas Instruments, Inc.
+	* src/{gsttiimgenc1.{c,h},gsttiimgenc.{c,h},gsttiimgdec1.{c,h},gsttiimgdec.:
+	- Add support for the DM357 processor
+	- Add xDM 0.9 image encoder and decoder elements used by the DM357
+	- Fix issue in image elements where they may put too much data on
+	  the FIFO which can cause an Out-Of-Memory issue.
+	- Add test scripts for DM357
+
+2009-02-25  Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividenc1.{c,h},gsttividenc.{c,h},gsttividdec1.{c,h},gsttividdec.
+	{c,h},gsttiauddec1.{c,h},gsttiauddec.{c,h},gsttiimgdec1.{c,h},gsttiimgenc1.
+	{c,h}}:
+	Fix potential dead-lock in all elements.
+
+2009-02-24  Diego Dompe, RidgeRun
+	* src/Makefile.am:
+	Add XDC_USER_PATH to the XDC_PATH so people can add the location 
+	of codecs without needing to change the Makefile.am
+	* src/{gsttiauddec.c,gsttiauddec1.c,gsttiimgdec1.c,gsttividdec2.c,
+	gsttividdec.c,gsttiimgenc1.c}:
+	Rename the source and sinks to standard "src" and "sink" names, so
+	the autoplug system may pick them.	
+
+2009-02-23  Diego Dompe, RidgeRun
+	* src/{gsttividenc.c,gsttividdec.c,gsttividdec2.c,gstvidenc1.c}:
+	- Correct the static capabilities so the plugins can be pickup by
+	the autoplugging system.
+	- Fix some typos on the generation of capabilities
+	- Remove invalid assignment of videnc1->device field.
+
+2009-02-20  Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividenc.{c,h},Makefile.am,gstticodecplugin.c}:
+	Add xDM 1.x video encoder support
+
+2009-02-20  Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttividenc.{c,h},Makefile.am,gstticodecplugin.c}:
+	Add xDM 0.9 video encoder support
+
+2009-02-20  Brijesh Singh, Texas Instruments, Inc.
+	* src/{gsttiauddec.c,gsttiauddec1.c,gsttiimgdec1.c,gsttiimgenc1.c,
+	gsttividdec.c,gsttividdec2.c}:
+	Fix potential memory leak in all element, see bug#303.
+
+2009-02-20 Chase Maupin, Texas Instruments, Inc.
+	* src/gsttidmaivideosink.c, gsttidmaivideosink.h:
+	Changed how DMAI video sink does auto detection of the video
+	standard.  Added a new parameter to enable auto detection.
+	Added the ability for the plugin to retry finding a video
+	standard that works if the first selected standard fails.
+
+2009-02-20 Chase Maupin, Texas Instruments, Inc.
+	* src/{gsttiauddec.c,gsttiauddec1.c,gsttiimgdec1.c,gsttiimgenc1.c,
+	gsttividdec.c,gsttividdec2.c}:
+	Fix memory leak in all elements.  See bug#389.
+	
+2009-02-20  Don Darling, Texas Instruments, Inc.
+	Release 0.99.00.  This is our first major release.  The ChangeLog before
+	this point in time may be incomplete.
+
+2009-02-19  Diego Dompe, Ridgerun
+	* BUILDING_STAND_ALONE.txt,Makefile.external:
+	Add information about how to build the plugins outside project's build 
+	system
+
+2009-01-12  Don Darling, Texas Instruments, Inc.
+	* src/{gsttiauddec.c,gsttiauddec1.c,gsttiimgdec1.c,gsttiimgenc1.c,
+	gsttividdec.c,gsttividdec2.c}:
+	Fix potential deadlock issue with the queue Fifo object on all elements.
+
+2009-01-12  Don Darling, Texas Instruments, Inc.
+	* src/gstticircbuffer.{c,h}:
+	Optimize circular buffer for encoding with support for fixed-sized
+	blocks.
+
+	* src/{gsttiauddec.{c,h},gsttiauddec1.{c,h},gsttiimgdec1.c,gsttiimgenc1.c,
+	gsttividdec.c,gsttividdec2.c}:
+	Update calls to gst_ticircbuffer_new to pass the correct value for
+	the new fixedBlockSize parameter.
+
+	* src/gsttiimgdec1.c:
+	Use three windows in the circular buffer for image decoder to match the
+	video decoder.
+
+2009-01-07  Diego Dompe <diego.dompe@ridgerun.com>
+	* src/{gsttiauddec.{c,h},gsttiauddec1.{c,h}}: Add multiple buffer
+	support to audio decoders, and a property to set the desired
+	value. Default number of buffers for audio decoders will be 2.
+
+2008-11-17  Don Darling, Texas Instruments, Inc.
+	Initial creation.
+

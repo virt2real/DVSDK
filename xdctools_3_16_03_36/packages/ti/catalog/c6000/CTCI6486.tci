@@ -1,0 +1,128 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== CTCI6486.tci ========
+ *  The chip configuration settings are based on document:
+ *      http://pds.design.ti.com/cgi-bin/viewdocs?pds_bgid=3&docconfigid=67
+ *
+ */
+
+/*
+ *  Load C64P.tci arch file
+ */
+utils.loadArch("64P", "ti.catalog.c6000");
+
+/*
+ *  ======== CTCI6486 ========
+ */
+function CTCI6486(name, parent)
+{
+    /*
+     * The 'this' refers to the cpu object created in the platform file.
+     * The apply function is a way to execute a function with a specific
+     * 'this' pointer. Its used to initialize CTCI6486 base on a C64P.
+     */
+    C64P.apply(this, [name, parent]);
+
+    /*
+     * This field is used to include bios settings for this device.
+     */
+    this.deviceName = "TCI6486";
+
+    /* cpu registers */
+    this.registers = [];
+
+    /*
+     * This associative array defines the on-chip physical memory segments
+     * indexed by the segment name.  
+     */
+    this.memBlock = [];
+    
+    this.memBlock["LL2RAM"] = {
+        comment: "608K Local L2 RAM/CACHE",
+        name: "LL2RAM",
+        base: 0x00800000,
+        len:  0x00098000,
+        space: "code/data"
+    };
+    
+    this.memBlock["L1PSRAM"] = {
+        comment: "32K RAM/CACHE L1 Program Memory",
+        name: "L1PSRAM",
+        base: 0x00E00000,
+        len:  0x00008000,
+        space: "code"
+    };
+
+    this.memBlock["L1DSRAM"] = {
+        comment: "32K RAM/CACHE L1 Data Memory",
+        name: "L1DSRAM",
+        base: 0x00F00000,
+        len:  0x00008000,
+        space: "data"
+    };
+
+    this.memBlock["SL2ROM"] = {
+        comment: "768K Shared L2 ROM",
+        name: "SL2ROM",
+        base: 0x00100000,
+        len:  0x000C0000,
+        space: "code/data"
+    };
+
+    this.memBlock["SL2RAM"] = {
+        comment: "768K Shared L2 RAM",
+        name: "SL2RAM",
+        base: 0x00200000,
+        len:  0x000C0000,
+        space: "code/data"
+    };
+    
+    /* Define On-chip Memory Map */
+    this.mem = [];
+
+    this.mem[0] = [
+        this.memBlock["L1PSRAM"],
+        this.memBlock["L1DSRAM"],
+        this.memBlock["LL2RAM"],
+        this.memBlock["SL2RAM"]
+    ];
+
+    /* This is the memory to be used for BIOS versions older than 5.30.00.06,
+     * which did not use the parameters l1PMode and l1DMode.
+     */
+    this.mem[1] = [
+        this.memBlock["LL2RAM"],
+        this.memBlock["SL2RAM"]
+    ];
+
+/*
+ * ======== getMemoryMap ========
+ * This method returns the on-chip memory map.
+ */
+this.getMemoryMap = function ()
+{
+        if (this.registers.l1PMode == undefined &&
+            this.registers.l1DMode == undefined) {
+            return (this.mem[1]);    
+        }
+        else {
+    return(this.mem[0]);
+        }
+};
+
+}
+/*
+ *  @(#) ti.catalog.c6000; 1, 0, 0, 0,226; 2-23-2010 16:50:37; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

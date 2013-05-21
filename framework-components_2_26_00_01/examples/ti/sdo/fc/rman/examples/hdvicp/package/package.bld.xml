@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.rman.examples.hdvicp" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470MV.c"/>
+        <srcFile name="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64P.c"/>
+        <srcFile name="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64Pcfg_c.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="ires_algorithm.tcf"/>
+        <srcFile name="ires_algorithm.cfg"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp/ires_algorithm.o470MV.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp/appLinux.o470MV.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470MV.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp/ires_algorithm.o470MV.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp/appLinux.o470MV.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470MV.dep" src="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp/ires_algorithm.o470MV.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp/appLinux.o470MV.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470MV.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp/ires_algorithm.o470MV.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp/appLinux.o470MV.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470MV.dep" src="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp/ires_algorithm.o470MV.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp/appLinux.o470MV.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470MV.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp/ires_algorithm.o470MV.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp/appLinux.o470MV.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470MV.dep" src="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp/ires_algorithm.o470MV.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp/appLinux.o470MV.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470MV.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp/ires_algorithm.o470MV.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp/appLinux.o470MV.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470MV.dep" src="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp/ires_algorithm.ov5T.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp/appLinux.ov5T.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp/ires_algorithm.ov5T.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp/appLinux.ov5T.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp/ires_algorithm.ov5T.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp/appLinux.ov5T.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp/ires_algorithm.ov5T.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp/appLinux.ov5T.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp/ires_algorithm.ov5T.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp/appLinux.ov5T.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp/ires_algorithm.ov5T.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp/appLinux.ov5T.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp/ires_algorithm.ov5T.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp/appLinux.ov5T.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp/ires_algorithm.ov5T.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp/appLinux.ov5T.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp/ires_algorithm.o470uC.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp/appLinux.o470uC.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp/ires_algorithm.o470uC.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp/appLinux.o470uC.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp/ires_algorithm.o470uC.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp/appLinux.o470uC.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp/ires_algorithm.o470uC.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp/appLinux.o470uC.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp/ires_algorithm.o470uC.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp/appLinux.o470uC.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp/ires_algorithm.o470uC.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp/appLinux.o470uC.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp/ires_algorithm.o470uC.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp/appLinux.o470uC.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp/ires_algorithm.o470uC.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp/appLinux.o470uC.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x9t.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x9t.o9t.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp/ires_algorithm.o9t.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp/appLinux.o9t.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x9t.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x9t.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x9t.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp/ires_algorithm.o9t.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x9t.o9t.dep" src="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp/appLinux.o9t.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x9t.dep" src="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x9t.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x9t.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x9t.o9t.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp/ires_algorithm.o9t.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp/appLinux.o9t.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x9t.dep" src="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x9t.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x9t.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp/ires_algorithm.o9t.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x9t.o9t.dep" src="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp/appLinux.o9t.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x9t.dep" src="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x9t.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x9t.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp/ires_algorithm.o9t.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x9t.o9t.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp/appLinux.o9t.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x9t.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x9t.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x9t.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x9t.o9t.dep" src="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp/ires_algorithm.o9t.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp/appLinux.o9t.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x9t.dep" src="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x9t.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x9t.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x9t.o9t.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp/ires_algorithm.o9t.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp/appLinux.o9t.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x9t.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x9t.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x9t.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp/ires_algorithm.o9t.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x9t.o9t.dep" src="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x9t.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp/appLinux.o9t.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x9t.dep" src="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x9t.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64Pcfg_c.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64P.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64Pcfg.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64P.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64Pcfg.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64P.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64Pcfg_c.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64P.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64P.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64Pcfg_c.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64Pcfg.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64P.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64Pcfg.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64P.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64Pcfg_c.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64P.cfg"/>
+        <srcFile name="package/rel/ti_sdo_fc_rman_examples_hdvicp.tar.dep" src="package/rel/ti_sdo_fc_rman_examples_hdvicp.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.Arm9t"
+            version="ti.targets.arm.Arm9t{1,0,4.5,0"
+            platform="ti.platforms.evmDM355"
+            isa="v5T"
+            suffix="9t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,0"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="bin/ti_platforms_evmDM355/debug/hdvicp"
+        pname="bin/ti_platforms_evmDM355/debug/hdvicp.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM355"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/release/hdvicp"
+        pname="bin/ti_platforms_evmDM355/release/hdvicp.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM355"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/debug_trace/hdvicp"
+        pname="bin/ti_platforms_evmDM355/debug_trace/hdvicp.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM355"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/trace/hdvicp"
+        pname="bin/ti_platforms_evmDM355/trace/hdvicp.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM355"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/debug/hdvicp"
+        pname="bin/ti_platforms_evmDM365/debug/hdvicp.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM365"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/release/hdvicp"
+        pname="bin/ti_platforms_evmDM365/release/hdvicp.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM365"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/debug_trace/hdvicp"
+        pname="bin/ti_platforms_evmDM365/debug_trace/hdvicp.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM365"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/trace/hdvicp"
+        pname="bin/ti_platforms_evmDM365/trace/hdvicp.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM365"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/debug/hdvicp"
+        pname="bin/ti_platforms_evmDM355/debug/hdvicp.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM355"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/release/hdvicp"
+        pname="bin/ti_platforms_evmDM355/release/hdvicp.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM355"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/debug_trace/hdvicp"
+        pname="bin/ti_platforms_evmDM355/debug_trace/hdvicp.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM355"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/trace/hdvicp"
+        pname="bin/ti_platforms_evmDM355/trace/hdvicp.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM355"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/debug/hdvicp"
+        pname="bin/ti_platforms_evmDM365/debug/hdvicp.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM365"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/release/hdvicp"
+        pname="bin/ti_platforms_evmDM365/release/hdvicp.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM365"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/debug_trace/hdvicp"
+        pname="bin/ti_platforms_evmDM365/debug_trace/hdvicp.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM365"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/trace/hdvicp"
+        pname="bin/ti_platforms_evmDM365/trace/hdvicp.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM365"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/debug/hdvicp"
+        pname="bin/ti_platforms_evmDM355/debug/hdvicp.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM355"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/release/hdvicp"
+        pname="bin/ti_platforms_evmDM355/release/hdvicp.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM355"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/debug_trace/hdvicp"
+        pname="bin/ti_platforms_evmDM355/debug_trace/hdvicp.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM355"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/trace/hdvicp"
+        pname="bin/ti_platforms_evmDM355/trace/hdvicp.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM355"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/debug/hdvicp"
+        pname="bin/ti_platforms_evmDM365/debug/hdvicp.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM365"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/release/hdvicp"
+        pname="bin/ti_platforms_evmDM365/release/hdvicp.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM365"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/debug_trace/hdvicp"
+        pname="bin/ti_platforms_evmDM365/debug_trace/hdvicp.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM365"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/trace/hdvicp"
+        pname="bin/ti_platforms_evmDM365/trace/hdvicp.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM365"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/debug/hdvicp"
+        pname="bin/ti_platforms_evmDM355/debug/hdvicp.x9t"
+        target="ti.targets.arm.Arm9t"
+        platform="ti.platforms.evmDM355"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x9t.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/debug/hdvicp_x9t"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/release/hdvicp"
+        pname="bin/ti_platforms_evmDM355/release/hdvicp.x9t"
+        target="ti.targets.arm.Arm9t"
+        platform="ti.platforms.evmDM355"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x9t.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/release/hdvicp_x9t"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/debug_trace/hdvicp"
+        pname="bin/ti_platforms_evmDM355/debug_trace/hdvicp.x9t"
+        target="ti.targets.arm.Arm9t"
+        platform="ti.platforms.evmDM355"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x9t.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/debug_trace/hdvicp_x9t"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM355/trace/hdvicp"
+        pname="bin/ti_platforms_evmDM355/trace/hdvicp.x9t"
+        target="ti.targets.arm.Arm9t"
+        platform="ti.platforms.evmDM355"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x9t.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM355/trace/hdvicp_x9t"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/debug/hdvicp"
+        pname="bin/ti_platforms_evmDM365/debug/hdvicp.x9t"
+        target="ti.targets.arm.Arm9t"
+        platform="ti.platforms.evmDM365"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x9t.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/debug/hdvicp_x9t"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/release/hdvicp"
+        pname="bin/ti_platforms_evmDM365/release/hdvicp.x9t"
+        target="ti.targets.arm.Arm9t"
+        platform="ti.platforms.evmDM365"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x9t.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/release/hdvicp_x9t"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/debug_trace/hdvicp"
+        pname="bin/ti_platforms_evmDM365/debug_trace/hdvicp.x9t"
+        target="ti.targets.arm.Arm9t"
+        platform="ti.platforms.evmDM365"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x9t.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/debug_trace/hdvicp_x9t"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM365/trace/hdvicp"
+        pname="bin/ti_platforms_evmDM365/trace/hdvicp.x9t"
+        target="ti.targets.arm.Arm9t"
+        platform="ti.platforms.evmDM365"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x9t.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/trace/hdvicp_x9t"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM6467/debug/hdvicp6x"
+        pname="bin/ti_platforms_evmDM6467/debug/hdvicp6x.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6467/debug/hdvicp6x_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6467%22%7D"
+        />
+    <executable name="bin/ti_platforms_evmDM6467/release/hdvicp6x"
+        pname="bin/ti_platforms_evmDM6467/release/hdvicp6x.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6467/release/hdvicp6x_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6467%22%7D"
+        />
+    <executable name="bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x"
+        pname="bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6467%22%7D"
+        />
+    <executable name="bin/ti_platforms_evmDM6467/trace/hdvicp6x"
+        pname="bin/ti_platforms_evmDM6467/trace/hdvicp6x.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6467/trace/hdvicp6x_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6467%22%7D"
+        />
+    </executables>
+    <tests>
+    <test exeName="bin/ti_platforms_evmDM355/debug/hdvicp.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/debug/hdvicp.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/release/hdvicp.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/release/hdvicp.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/debug_trace/hdvicp.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/debug_trace/hdvicp.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/trace/hdvicp.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/trace/hdvicp.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/debug/hdvicp.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/debug/hdvicp.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/release/hdvicp.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/release/hdvicp.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/debug_trace/hdvicp.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/debug_trace/hdvicp.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/trace/hdvicp.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/trace/hdvicp.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/debug/hdvicp.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/debug/hdvicp.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/release/hdvicp.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/release/hdvicp.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/debug_trace/hdvicp.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/debug_trace/hdvicp.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/trace/hdvicp.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/trace/hdvicp.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/debug/hdvicp.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/debug/hdvicp.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/release/hdvicp.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/release/hdvicp.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/debug_trace/hdvicp.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/debug_trace/hdvicp.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/trace/hdvicp.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/trace/hdvicp.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/debug/hdvicp.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/debug/hdvicp.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/release/hdvicp.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/release/hdvicp.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/debug_trace/hdvicp.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/debug_trace/hdvicp.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/trace/hdvicp.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/trace/hdvicp.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/debug/hdvicp.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/debug/hdvicp.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/release/hdvicp.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/release/hdvicp.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/debug_trace/hdvicp.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/debug_trace/hdvicp.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/trace/hdvicp.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/trace/hdvicp.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/debug/hdvicp.x9t"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/debug/hdvicp.x9t"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/release/hdvicp.x9t"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/release/hdvicp.x9t"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/debug_trace/hdvicp.x9t"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/debug_trace/hdvicp.x9t"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM355/trace/hdvicp.x9t"
+        args=""
+        groupName="bin/ti_platforms_evmDM355/trace/hdvicp.x9t"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/debug/hdvicp.x9t"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/debug/hdvicp.x9t"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/release/hdvicp.x9t"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/release/hdvicp.x9t"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/debug_trace/hdvicp.x9t"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/debug_trace/hdvicp.x9t"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/trace/hdvicp.x9t"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/trace/hdvicp.x9t"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM6467/debug/hdvicp6x.x64P"
+        args=""
+        groupName="bin/ti_platforms_evmDM6467/debug/hdvicp6x.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM6467/release/hdvicp6x.x64P"
+        args=""
+        groupName="bin/ti_platforms_evmDM6467/release/hdvicp6x.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x.x64P"
+        args=""
+        groupName="bin/ti_platforms_evmDM6467/debug_trace/hdvicp6x.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM6467/trace/hdvicp6x.x64P"
+        args=""
+        groupName="bin/ti_platforms_evmDM6467/trace/hdvicp6x.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_rman_examples_hdvicp"
+        pname="ti_sdo_fc_rman_examples_hdvicp.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="package/package.bld.xml"/>
+        <file name="hdvicp.cmd.xdt"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

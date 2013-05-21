@@ -1,0 +1,176 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%var Settings = this;
+unsigned int ti_sdo_ce_alg_ALG_useHeap = `Settings.useHeap ? "TRUE" : "FALSE"`;
+unsigned int ti_sdo_ce_alg_ALG_useCache = `Settings.useCache ? "TRUE" : "FALSE"`;
+
+unsigned int ti_sdo_ce_alg_ALG_maxGroups = `this.MAXGROUPID`; 
+
+% // IPC key used by ALG module. ALG uses up to MAXGROUPID keys (one for each
+% // scratch group used), whose values start at this base.
+UInt32 ti_sdo_ce_alg_ipcKey = `utils.toHex(this.ipcKeyBase)`;
+
+int _ALG_groupUsed[`this.MAXGROUPID`] = {
+% for (var i = 0; i < this.MAXGROUPID; i++) {
+     `this.groupUsed[i] ? 1 : 0`,
+% }
+};
+
+#include <ti/sdo/ce/osal/SemMP.h>
+#include <ti/xdais/ialg.h>
+
+SemMP_Handle _ALG_sems[`this.MAXGROUPID`];
+int _ALG_groupRefCount[`this.MAXGROUPID`] = {
+% for (var i = 0; i < this.MAXGROUPID; i++) {
+     0,
+% }
+};
+
+IALG_Handle _Algorithm_lockOwner[`this.MAXGROUPID`] = {
+% for (var i = 0; i < this.MAXGROUPID; i++) {
+     NULL,
+% }
+};
+
+% if ((!Settings.useIdma3) &&
+%         (!xdc.loadPackage('ti.sdo.fc.dman3').DMAN3.$used)) {
+// No IDMA3 using algs in the system, and DMAN3 is not configured into the
+// system.  Stub out these fxn calls.
+Void DMAN3_CE_init()
+{
+}
+Void DMAN3_CE_exit()
+{
+}
+
+int DMAN3_grantDmaChannels(int groupId, void *algHandles, void *dmaFxns,
+        int numAlgs)
+{
+    /* TODO:M  Should assert(false) here.  Should never be called */
+    return (0);
+}
+
+int DMAN3_releaseDmaChannels(void *algHandles, void * dmaFxns, int numAlgs)
+{
+    /* TODO:M  Should assert(false) here.  Should never be called */
+    return (0);
+}
+% }
+
+%//
+%// We need to be able to check whether or not RMAN has been loaded,
+%// to determine whether or not to stub out the RMAN functions.
+%// Settings.useIres gets set when one of a configured engine's algorithms
+%// implements IRES functions. However, it is possible that RMAN has been
+%// loaded by the user in the .cfg file, but no configured engine's algorithms
+%// implement IRES functions (eg, RMAN is used independently of the algorithms,
+%// as with DMAN3_createChannels()). Unfortunately, the check:
+%//     !xdc.module('ti.sdo.fc.rman.RMAN').$used
+%// causes the RMAN module to be loaded, even if it has not already been
+%// loaded. This causes a dependency on BIOS (RMAN -> DSKT2 -> BIOS).
+%// The for() loop below checks whether or not RMAN is used, without actually
+%// loading the module.
+%//
+% var rmanUsed = false;
+% var rmanFound = false;
+% var pkgList = $om.$packages;
+% for (var i = 0; i < pkgList.length; i++) {
+%     //print("package[" + i + "] = " + pkgList[i]);
+%     if (pkgList[i] == "ti.sdo.fc.rman") {
+%         rmanFound = true;
+%         //print("Found rman, modules: " + pkgList[i].$modules.length);
+%         for (var j = 0; j < pkgList[i].$modules.length; j++) {
+%             if (pkgList[i].$modules[j].$used) {
+%                 rmanUsed = true;
+%                 break;
+%             }
+%         }
+%         break;
+%     }
+% }
+% //print("rmanFound = " + rmanFound + " rmanUsed = " + rmanUsed);
+% if ((!Settings.useIres) && !rmanUsed) {
+// No IRES using algs in the system, and RMAN is not configured into the
+// system.  Stub out these fxn calls.
+% //print("Stubbing out RMAN functions");
+#include <ti/xdais/ires.h>   /* for IRES types */
+
+IRES_Status RMAN_activateAllResources(IALG_Handle algHandle, IRES_Fxns *resFxns, Int scratchId)
+{
+    /* TODO:M  Should assert(false) here.  Should never be called */
+    return (IRES_OK);
+}
+
+IRES_Status RMAN_assignResources(IALG_Handle algHandle, IRES_Fxns *resFxns, 
+        Int scratchGroupId)
+{
+    /* TODO:M  Should assert(false) here.  Should never be called */
+    return (IRES_OK);
+}
+
+IRES_Status RMAN_deactivateAllResources(IALG_Handle algHandle, 
+        IRES_Fxns * resFxns, Int scratchId)
+{
+    /* TODO:M  Should assert(false) here.  Should never be called */
+    return (IRES_OK);
+}
+
+IRES_Status RMAN_freeResources(IALG_Handle algHandle, IRES_Fxns * resFxns, 
+        Int scratchGroupId)
+{
+    /* TODO:M  Should assert(false) here.  Should never be called */
+    return (IRES_OK);
+}
+
+IRES_Status RMAN_init(void)
+{
+    return (IRES_OK);
+}
+
+IRES_Status RMAN_exit(void)
+{
+    return (IRES_OK);
+}
+
+
+
+% }
+%%{
+/*
+ * @(#) ti.sdo.ce.alg; 1, 0, 1,191; 12-2-2010 21:18:41; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

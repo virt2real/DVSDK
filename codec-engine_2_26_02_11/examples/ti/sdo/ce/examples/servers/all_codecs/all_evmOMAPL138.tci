@@ -1,0 +1,159 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ * Setup platform-specific memory map:
+ */
+var mem_ext = [
+{
+    comment:    "DDRALGHEAP: off-chip memory for dynamic algmem allocation",
+    name:       "DDRALGHEAP",
+    base:       0xC3000000,
+    len:        0x01000000,
+    space:      "code/data"
+},
+{
+    comment:    "SDRAM: off-chip memory for application code and data",
+    name:       "SDRAM",
+    base:       0xC2C00000,
+    len:        0x00300000,
+    space:      "code/data"
+},
+{
+    comment:    "DSPLINK: off-chip memory reserved for DSPLINK code and data",
+    name:       "DSPLINKMEM",
+    base:       0xC2F01000,
+    len:        0x00100000 - 0x1000,
+    space:      "code/data"
+},
+{
+    comment:    "RESET_VECTOR: off-chip memory for the reset vector table",
+    name:       "RESET_VECTOR",
+    base:       0xC2F00000,
+    len:        0x00001000,
+    space:      "code/data"
+},
+];
+
+
+/*
+ *  Internal memory partitioning for evmOMAPL138
+ *
+ *  TODO - add details.
+ */
+
+/*
+ *  Configure L1D Cache and L1DSRAM segment: l1DMode
+ *
+ *  TODO - add details.
+ *
+ *  Configure L2 Cache memory settings: l2Mode
+ *
+ *  TODO - add details.
+ *
+ */
+
+var device_regs = {
+    l1PMode: "32k",
+    l1DMode: "16k",
+    l2Mode: "128k"
+};
+
+var params = {
+    clockRate: 300,
+    catalogName: "ti.catalog.c6000",
+    deviceName: "L137",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/*
+ * Now customize the generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+
+/*  ===========================================================================
+ *  Enable heaps and tasks
+ *  ===========================================================================
+ */
+bios.enableMemoryHeaps(prog);
+bios.enableTskManager(prog);
+
+/*  ===========================================================================
+ *  Create heaps in memory segments that are to have heap
+ *  ===========================================================================
+ */
+bios.SDRAM.createHeap = true;
+bios.SDRAM.heapSize   = 0x20000; // 128K
+
+/* set for use in all.tcf */
+var platformSeg = bios.SDRAM;
+
+bios.DDRALGHEAP.createHeap = true;
+bios.DDRALGHEAP.heapSize   = bios.DDRALGHEAP.len;
+
+/*
+ * The setting of L1DSRAM.len is to work around a problem in the BIOS 5
+ * bios_6747.tci file.  TODO - remove when that (SDOCM00051331) is fixed.
+ */
+bios.L1DSRAM.len       = 0x4000;
+
+bios.L1DSRAM.createHeap       = true;
+bios.L1DSRAM.enableHeapLabel  = true;
+bios.L1DSRAM["heapLabel"]     = prog.extern("L1DHEAP");
+bios.L1DSRAM.heapSize     = bios.L1DSRAM.len;  // all of L1DSRAM for this heap
+
+bios.IRAM.createHeap       = true;
+bios.IRAM.enableHeapLabel  = true;
+bios.IRAM["heapLabel"]     = prog.extern("L2HEAP");
+bios.IRAM.heapSize     = 0x20000;  // half of IRAM's 256K for this heap
+
+bios.L3_CBA_RAM.createHeap       = true;
+bios.L3_CBA_RAM.enableHeapLabel  = true;
+bios.L3_CBA_RAM["heapLabel"]     = prog.extern("L3_CBA_RAM_HEAP");
+bios.L3_CBA_RAM.heapSize     = 0x10000;  // half of L3's 128K for this heap
+
+/*  ===========================================================================
+ *  GBL
+ *  ===========================================================================
+ */
+/* set MAR register to cache shared internal memory 0x80000000-0x80FFFFFF */
+bios.GBL.C64PLUSMAR128to159 = 0x00000001;
+
+/* set MAR register to cache external memory 0xC0000000-0xC3FFFFFF */
+bios.GBL.C64PLUSMAR192to223 = 0x0000000f;
+
+/*
+ *  @(#) ti.sdo.ce.examples.servers.all_codecs; 1, 0, 0,261; 12-2-2010 21:23:34; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+

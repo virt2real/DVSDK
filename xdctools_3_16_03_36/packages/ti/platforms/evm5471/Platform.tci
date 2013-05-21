@@ -1,0 +1,112 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+
+/*
+ * Specify the default pmst value which does have an effect on
+ * the memory map.  MP/MC = 1, OVLY = 1, DROM = 0.
+ * The registers swwsr, swcr, bscr deal with memory wait states
+ * The default is for 7 wait-states.
+ */
+var device_regs = {
+    pmst:  0xffe0,
+    swwsr: 0x7fff,
+    swcr:  0x0000,
+    bscr:  0x0002
+};
+
+var mem_ext = [];
+var MPMCBITMASK = 0x40;
+var DROMBITMASK = 0x08;
+
+if (environment["ti.bios.oldMemoryNames"] == undefined ||
+    environment["ti.bios.oldMemoryNames"] == 'false' ||
+    environment["ti.bios.oldMemoryNames"] == '0') {
+    /* If DROM bit in PMST is 1, EDATA.len is 0x4000. If MP/nMC in
+     * PMST is 0, EPROG is not a part of the memory map.
+     */
+
+    var edatalen = 0x8000;
+    if (device_regs.pmst & DROMBITMASK) {
+        edatalen = 0x4000;
+    }
+    mem_ext[0] = {
+        comment: "External data memory",
+        name: "EDATA",
+        base: 0x8000,
+        len:  edatalen,
+        space: "data"
+    };
+
+    mem_ext[1] = {
+        comment: "Interrupt Vectors",
+        name: "VECT",
+        base: 0xff80,
+        len:  0x0080,
+        space: "code"
+    };
+
+    if (~device_regs.pmst & DROMBITMASK) {
+        mem_ext[2] = {
+            comment: "External program memory",
+            name: "EPROG",
+            base: 0x8000,
+            len:  0x7f80,
+            space: "code"
+        };
+    }
+}
+else {
+    mem_ext[0] = {
+        comment: "External Program Memory",
+        name: "EPROG",
+        space: "code",
+        base: 0x6000,
+        len:  0x9f80
+    };
+
+    mem_ext[1] = {
+        comment: "External Data Memory",
+        name: "EDATA",
+        space: "data",
+        base: 0x8000,
+        len:  0x8000
+    };
+}
+
+var params = {
+    clockRate: 100,
+    catalogName: "ti.catalog.c5400",
+    deviceName: "5471",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+
+print("Warning: evm5471 platform has been deprecated.")
+print("It will not be supported in later releases of DSP/BIOS.");
+/*
+ *  @(#) ti.platforms.evm5471; 1, 0, 0,276; 2-23-2010 16:53:19; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

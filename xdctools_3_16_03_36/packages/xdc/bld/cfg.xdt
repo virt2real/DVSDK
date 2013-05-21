@@ -1,0 +1,483 @@
+%%{
+/* --COPYRIGHT--,EPL
+ *  Copyright (c) 2008 Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ * 
+ * --/COPYRIGHT--*/
+    var base = $args[0];        /* base name of config files */
+    var noasm = $args[1];       /* true for exes, false for assemblies */
+    var pkg = $args[2];         /* the PackageContents object */
+    var genTab = $args[3];      /* generation table from target filters */
+    var prog = this;            /* build model Executable object */
+    
+    /* create the build object to pass to the configuration domain */
+    var build = {};
+    for (var i in prog.attrs) {
+	build[i] = prog.attrs[i];
+    }
+    build.target = prog.target.$orig;
+    
+    /* get the platform package name and the instance parameters */
+    var _Utils = xdc.useModule('xdc.bld.Utils');
+    var _pstat = _Utils.parsePlatName(prog.platform);
+    var platPkgName = _pstat.platPkgName;
+    var platCfgName = _pstat.instName;
+
+    /* get the platform instance creation args */
+    var platCfg;
+    if (_pstat.instMod == null) {
+        if (prog.platform == "" || prog.platform == null
+            || prog.platform == undefined) {
+            throw xdc.$$XDCException(
+                "xdc.bld.PLATFORM_NOT_SET", "Platform is not defined for "
+                + "target '" + build.target.$name + "'");    
+        }
+        platCfg = xdc.om['xdc.bld.BuildEnvironment'].platformTable[prog.platform];
+    }
+    else {
+        if (_pstat.instName == "") {
+            throw new Error("the platform name '" + prog.platform
+                + "' can't be parsed; the module '" + _pstat.instMod
+                + "' does not have the specified platform instance field");
+        }
+    }
+    if (platCfg == null) {
+        platCfg = {};
+    }
+
+    /*
+     *  ======== _inPkg ========
+     *  Determine if the file, cfname, is in the package specified by
+     *  pdir.
+     *
+     *  Returns true iff cfname is a file name that appears in the package
+     *  base directory pdir (i.e., pdir contains "package.xdc") and *not* in
+     *  any nested package of pdir.
+     *
+     *  Note: The file cfname does not need to exist; i.e., this function may
+     *  return true even if the file does not exist.
+     *
+     *  Parameters:
+     *	pdir	is the canonical path name of the package's base directory
+     *		followed by java.io.File.separator
+     *	cfname	is the canonical path name of a file to check
+     */
+    function _inPkg(pdir, cfname)
+    {
+        /* if the canonical path of the package base isn't a prefix of
+         *  the canonical file name, the file can't be in the package
+         */
+        if (cfname.indexOf(pdir) != 0) {
+            return (false);
+        }
+    
+        /* if there is no directory separator in the file name beyond pdir/,
+         *  then the file is in the package (and not in a nested package).
+         *  This is a "quick" check to avoid the more expensive check below.
+         */
+        if ((cfname.substr(pdir.length)).indexOf(java.io.File.separator) == -1) {
+            return (true);
+        }
+    
+        /* use Scan.findPackageSpec() to check if file is in a nested package */
+        var pf = Packages.xdc.services.intern.cmd.Scan.findPackageSpec(cfname);
+        if (pf != null) {
+            pf = (new java.io.File(pf)).getCanonicalPath();
+            if (pf == (pdir + "package.xdc")) {
+                return (true);
+            }
+        }
+    
+        return (false);
+    }
+    
+    /*
+     *  ======== _inThisPackage ========
+     */
+    function _inThisPackage(fileName, mustExist)
+    {
+        var file = new java.io.File(fileName);
+    
+        if (mustExist && !file.exists()) {
+            return (false);
+        }
+    
+        var cwd = "" + (new java.io.File(".")).getCanonicalPath()
+                    + java.io.File.separator;
+        var cfp = "" + file.getCanonicalPath();
+    
+        return (_inPkg(cwd, cfp));
+    }
+    
+    /*
+     *  ======== _serialize ========
+     */
+    function _serialize(obj, indent)
+    {
+        if (indent == null) {
+            indent = "";
+        }
+        if (obj == null) {
+            return ("null");
+        }
+
+        var prefix = "\n";
+        var suffix = "";
+        var s;
+        if (obj instanceof Array) {
+            s = "[";
+        }
+        else {
+            s = "{";
+        }
+        
+        if ("$name" in obj && obj.$name.match(/#\d+/) == null) {
+            /* Check CQ14103 for explanation why some $names are removed. */
+            s = s.concat('\n' + indent + '    ' + '$name:"' + obj.$name + '",');
+            suffix = "\n" + indent;
+        }
+    
+        for (var i in obj) {
+            if (i[0] != '$') {
+                var field = obj[i];
+                var next;
+                if (typeof field == 'string'
+                    || field instanceof java.lang.String) {
+                    next = '"' + escape(field) + '"';
+                }
+                else if (typeof field == 'object'
+                    || typeof field == 'function') {
+                    /* we add a new line to keep lines reasonably short; xpr
+                     * has difficulty parsing long lines
+                     */
+                    var tmp = indent + "    ";
+                    next = _serialize(field, tmp);
+                }
+                else if (typeof field == 'number'
+                         || typeof field == 'boolean') {
+                    next = field;
+                }
+                else {
+                    continue;	/* skip over unknown types *and* undefined */
+                }
+                var pname = i.indexOf('.') >= 0 ? '"' + i + '"' : i;
+                pname = pname + ": ";
+                /* if in an array, elements should be listed without names */
+                if (obj instanceof Array) {
+                    pname = "";
+                }
+                s = s.concat(prefix + indent + "    " + pname + next);
+                prefix = ",\n";
+                suffix = "\n" + indent;
+            }
+        }
+        if (obj instanceof Array) {
+            s = s.concat(suffix + "]");
+        }
+        else {
+            s = s.concat(suffix + "}");
+        }
+    
+        return (s);
+    }
+%%}
+/*
+ *  ======== `base`.cfg ========
+ *  This generated configuration script runs the user's configuration script
+ *  the context of a specific target and platform in order to generate
+ *  all the files necessary to create an executable; e.g., linker command
+ *  files, static C/C++ data structures, etc.
+ */
+
+/*
+ *  ======== _runescape ========
+ *  Recursive unescape to decode serialized strings
+ */
+function _runescape(obj) {
+    for (var i in obj) {
+	if (obj[i] != null) {
+	    if (typeof obj[i] == 'string') {
+		obj[i] = unescape(obj[i]);
+	    }
+	    else if (typeof obj[i] == 'object') {
+		_runescape(obj[i]);
+	    }
+	}
+    }
+}
+
+%    /* If the platform parameters are found in platformTable, we generate
+%     * this function that will be invoked when creating a platform, and again
+%     * when a Tconf platform receives its parameters.
+%     */ 
+%    if (_pstat.instMod == null) {
+/*
+ *  ======== _getPlatCfg ========
+ */
+function _getPlatCfg() {
+    var tmp = `_serialize(platCfg, "    ")`;
+    _runescape(tmp);
+    return (tmp);
+}
+%    }
+%
+/*
+ *  ======== _cfginit ========
+ */
+function _cfginit() {
+    xdc.loadPackage('xdc.services.intern.cmd');
+    var prog = xdc.om['xdc.cfg.Program'];
+
+    /* initialize prog attrs from build model */
+    var build = `_serialize(build, "    ")`;
+%%{
+    /* _serialize don't work for functions, so we have to add functions
+     * explicitly. A series of replace calls is to make identation look the
+     * same as the rest of the build.target object.
+     */
+    var findStr = new String(build.target.findSuffix).replace(/\n/, "").
+        replace(/\n$/m, "").replace(/\n/g, "\n    ") + ";\n";
+    var selStr = new String(build.target.selectSuffix).replace(/\n/, "").
+        replace(/\n$/m, "").replace(/\n/g, "\n    ") + ";\n";
+    if ("asmName" in build.target) {
+        var asmStr = new String(build.target.asmName).replace(/\n/, "").
+            replace(/\n$/m, "").replace(/\n/g, "\n    ") + ";\n";
+    }
+%%}
+    build.target.findSuffix = `findStr`
+    build.target.selectSuffix = `selStr`
+%    if ("asmName" in build.target) {
+    build.target.asmName = `asmStr`
+%    }
+    _runescape(build);
+%    if (build.cfgArgs != "") {
+%        if (build.cfgArgsEncoded == true) {
+    build.cfgArgs = `unescape(build.cfgArgs)`;
+%        }
+%        else {
+    build.cfgArgs = `build.cfgArgs`;
+%        }
+%    }
+    prog.build = build;
+    
+    prog.name = "`prog.$private.name`";
+%    if (build.linkTemplate != null) {
+%	var prefix = "";
+%	if (_inThisPackage(build.linkTemplate, true)) {
+%	    prefix = "./";
+%	}
+    prog.linkTemplate = "`prefix + build.linkTemplate`";
+%    }
+
+%    /* gen cmds to: create aliases for commonly needed build properties */
+%    if (build.target.model.endian != null) {
+    prog.endian = prog.build.target.model.endian;
+%    }
+%    if (build.target.model.codeModel != null) {
+    prog.codeModel = prog.build.target.model.codeModel;
+%    }
+%    if (build.target.model.dataModel != null) {
+    prog.dataModel = prog.build.target.model.dataModel;
+%    }
+
+%    if (_pstat.instMod == null) {    
+    /* use the platform package's Platform module */
+    var Platform = xdc.useModule("`platPkgName`.Platform");
+%%{
+    /* When calling create, we are passing the platform instance parameters
+     * twice. The first copy is for the old platforms that copy the values
+     * from the second required parameter to their parameters. The second copy
+     * is for the newer platforms that ignore the second required parameter
+     * because that parameter will be removed later. We also have to filter
+     * the properties from the second copy that are not instance parameters,
+     * otherwise the call to create will fail when the code in schema tries to
+     * assign a value to a non-existent parameter. The filtering code should
+     * be removed once we are allowed to break compatibility with old platforms
+     */
+%%}
+    var platParams = _getPlatCfg();
+    for (var prop in platParams) {
+        if (!(prop in Platform.PARAMS)) {
+            delete platParams[prop];
+        }
+    }
+    prog.platformName = "`prog.platform`";
+    prog.platform = Platform.create("`platCfgName`", _getPlatCfg(), platParams);
+%    }
+%    else {
+    var Instances = xdc.useModule("`_pstat.instMod`");
+    prog.platform = Instances["`_pstat.instName`"];
+    prog.platformName = prog.platform.$module.$package.$name + ":" + "`_pstat.instName`";
+%    }
+%
+    /* record the executable's package name */
+    prog.buildPackage = "`pkg.name`";
+
+    /* record build-model information required during config generation */
+    prog.$$bind("$$isasm", `(prog.$private.noasm ? "0" : "1")`);
+    prog.$$bind("$$isrom", `(prog.$private.noasm || !prog.attrs.isRom ? "0" : "1")`);
+    prog.$$bind("$$gentab", [
+%    for (i = 0; i < genTab.length; i++) {
+%       var desc = genTab[i];
+        {template: "`desc.template`", file: "`desc.file`"},
+%    }
+    ]);
+    
+    /* bind prog to an appropriate execution context */
+    prog.cpu = prog.platform.getExeContext(prog);
+
+%    /*  gen cmds to: import RTS package, unless the client sets
+%     *  prog.attrs.rtsName to null
+%     */
+%    if (prog.attrs.rtsName !== null) {
+%	var rts = prog.attrs.rtsName;
+%	if (rts == null) { /* if prog's rtsName is undef'd, use target's RTS */
+%	    rts = build.target.rts;
+%	}
+%	if (rts != null) {
+    /* import the target's run-time support pkg */
+    xdc.loadPackage("`rts`");
+%	}
+%    }
+}
+    
+/* function to import the cfg script's package */
+function _userscript($$legacy, script) {
+    var home;
+    var spath;
+%    if (build.cfgHome != null) {
+    home = xdc.loadPackage("`build.cfgHome`");
+%}
+%    else if (build.cfgScript == null
+%	|| _inThisPackage(build.cfgScript, true)) {
+    /* import the executable's package */
+    home = xdc.loadPackage("`pkg.name`");
+    spath = '.';
+%    }
+%    else {
+    /* locate the cfg script's package and import it */
+    var ppn = xdc.findFile("`build.cfgScript`");
+    if (ppn != null) {
+        var scan = new Packages.xdc.services.intern.cmd.Scan(
+            xdc.$$private.Env);
+        ppn = scan.findPackageSpec(ppn);
+        if (ppn != null) {
+            ppn = scan.read(ppn);
+            if (ppn != null) {
+                home = xdc.loadPackage(ppn);
+            }
+        }
+    }
+    /* if can't find the config script's package, use the executable's */
+    if (ppn == null) {
+        home = xdc.loadPackage("`pkg.name`");
+	spath = '.';
+    }
+%    }
+    
+    xdc.om.$$bind('$homepkg', home);
+
+    if (script != null) {
+        utils.evaluateScript(script);
+    }
+%     if (build.cfgScript != null) {
+    else {
+        /* load & run program cfg script and monitor all loaded files */
+        _runCfg("`build.cfgScript`", spath, "`base`",  
+                 `prog.$private.legacyTcf`, 
+                 `prog.$private.legacyCfg`,
+%        if (_pstat.instMod == null) {
+                 _getPlatCfg());
+%        }
+%        /* The function _getPlatCfg() is not available, if the platform is
+%         * created as a config parameter of a module. In that case, we call
+%         * getCreateArgs() for platforms from platform-j series, or we 
+%         * just pass the platform instance for newer platforms, where create
+%         * arguments are same as config params.
+%         */
+%        else {
+                 ("args" in prog.platform.$private) ?
+                     prog.platform.getCreateArgs() : prog.platform);
+%        }
+    }                           
+%     }
+
+
+    /*
+     *  ======== _runCfg ========
+     *  Run a user supplied configuration script and prevent user's script from
+     *  overwriting the global variable prog.
+     */
+    function _runCfg(cfgScript, path, programName, legacyTcf, legacyCfg,
+        platParams)
+    {
+        if (legacyTcf) {
+            /* save current global variables */
+            var $save = {prog: utils.global.prog, Program: Program};
+    
+            /* initialize global variables for legacy config scripts */
+            environment["config.programName"] = programName;
+            environment["config.platform"] = Program.platformName;
+            utils.seedPath = environment["config.importPath"];
+            utils.loadPlatform.params = platParams;
+            Program = $$legacy.Program;     /* defined in cfg.tci */
+            
+            /* run legacy config script with prog == to RTSC Program; this
+             * allows legacy script to read build atributes from RTSC model
+             * before re-creating the prog object
+             */
+            utils.loadCapsule(cfgScript, false, path);  
+    
+            /* restore global variables; now prog == TCOM prog because
+             * utils.loadPlatform() creates the TCOM prog object.
+             */
+            $$legacy.prog = utils.global.prog;  /* in case XDC wants it */
+            utils.global.prog = $save.prog;
+            Program = $save.Program;
+    
+            /* run XDC configuration script, if it exists */
+            if (legacyCfg) {
+                utils.importFile(cfgScript.replace(/\.tcf/, ".cfg"), path);
+            }
+        }
+        else {
+            utils.loadCapsule(cfgScript, false, path);
+        }
+    }
+}
+    
+function _postinit() {
+%    var goals = null;
+%    if (prog.$private.legacyTcf) {
+%	goals = "'" + base + "cfg" + prog.$private.legacySuf
+%	    + " " + base + "cfg_c.c'";
+%    }
+
+    var cout = null;
+
+%    if (noasm) {
+    var prog = xdc.om['xdc.cfg.Program'];
+    /* get the exec command for this executable */
+    if (prog.execCmd == null) {
+        prog.execCmd = prog.platform.getExecCmd(prog,
+            xdc.om["`platPkgName`"].packageBase);
+    }
+    cout = "define EXEC." + prog.name + '\n\n';
+    cout += prog.execCmd;
+    cout += "\nendef\n\n";
+%    }
+
+    utils.genDep("`base`", "`pkg.name`", utils.loadedFiles, cout, `goals`);
+}
+%%{
+/*
+ * @(#) xdc.bld; 1, 0, 2,238; 2-22-2010 10:33:32; /db/ztree/library/trees/xdc/xdc-u17x/src/packages/
+ */
+
+%%}

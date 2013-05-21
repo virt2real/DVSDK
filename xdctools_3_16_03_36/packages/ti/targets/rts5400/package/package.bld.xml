@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.targets.rts5400" version="1, 0, 0, 0" producerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="xdc/runtime/SysMin.c"/>
+        <srcFile name="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="xdc/runtime/Assert.c"/>
+        <srcFile name="xdc/runtime/HeapStd.c"/>
+        <srcFile name="xdc/runtime/HeapMin.c"/>
+        <srcFile name="xdc/runtime/Timestamp.c"/>
+        <srcFile name="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="xdc/runtime/Diags.c"/>
+        <srcFile name="xdc/runtime/Startup.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="xdc/runtime/System.c"/>
+        <srcFile name="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="xdc/runtime/Core_label.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="xdc/runtime/Gate.c"/>
+        <srcFile name="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="xdc/runtime/Memory.c"/>
+        <srcFile name="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="boot.asm"/>
+        <srcFile name="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="xdc/runtime/Rta.c"/>
+        <srcFile name="xdc/runtime/Error.c"/>
+        <srcFile name="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/package_ti.targets.rts5400.c"/>
+        <srcFile name="xdc/runtime/Log.c"/>
+        <srcFile name="xdc/runtime/Core_params.c"/>
+        <srcFile name="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="xdc/runtime/Text.c"/>
+        <srcFile name="xdc/runtime/GateNull.c"/>
+        <srcFile name="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="xdc/runtime/SysStd.c"/>
+        <srcFile name="xdc/runtime/Core_mem.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/ti.targets.rts5400.a54.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/SysMin.o54.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/Thread.o54.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/GateThreadSupportNull.o54.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Assert.o54.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/HeapStd.o54.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/HeapMin.o54.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Timestamp.o54.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/TimestampNull.o54.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/CacheSupportNull.o54.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Diags.o54.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Startup.o54.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/GateProcessSupportNull.o54.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/TimestampStd.o54.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/System.o54.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/SemProcess.o54.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Core_label.o54.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/GateProcess.o54.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/Sync.o54.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/GateThread.o54.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/LoggerSys.o54.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Gate.o54.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/xdc_noinit.o54.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/GateH.o54.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Memory.o54.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/SyncSemThread.o54.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/SyncNull.o54.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/SyncGeneric.o54.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/package/package_ti.targets.rts5400.o54.dep" src="package/package_ti.targets.rts5400.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Rta.o54.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Error.o54.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/Semaphore.o54.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/SemThread.o54.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Log.o54.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Core_params.o54.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/LoggerBuf.o54.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Text.o54.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/GateNull.o54.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/Cache.o54.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/SysStd.o54.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Core_mem.o54.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts5400.a54f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/SysMin.o54f.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/Thread.o54f.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/GateThreadSupportNull.o54f.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Assert.o54f.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/HeapStd.o54f.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/HeapMin.o54f.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Timestamp.o54f.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/TimestampNull.o54f.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/CacheSupportNull.o54f.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Diags.o54f.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Startup.o54f.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/GateProcessSupportNull.o54f.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/TimestampStd.o54f.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/System.o54f.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/SemProcess.o54f.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Core_label.o54f.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/GateProcess.o54f.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/Sync.o54f.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/GateThread.o54f.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/LoggerSys.o54f.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Gate.o54f.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/xdc_noinit.o54f.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/GateH.o54f.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Memory.o54f.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/SyncSemThread.o54f.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/SyncNull.o54f.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/SyncGeneric.o54f.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/package/package_ti.targets.rts5400.o54f.dep" src="package/package_ti.targets.rts5400.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Rta.o54f.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Error.o54f.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/Semaphore.o54f.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/SemThread.o54f.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Log.o54f.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Core_params.o54f.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/LoggerBuf.o54f.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Text.o54f.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/GateNull.o54f.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/knl/Cache.o54f.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/SysStd.o54f.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts5400/xdc/runtime/Core_mem.o54f.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.a54f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o54f.dep" src="boot.asm"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts5400.o54f.dep" src="package/package_ti.targets.rts5400.c"/>
+        <srcFile name="lib/boot.a54.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o54.dep" src="boot.asm"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts5400.o54.dep" src="package/package_ti.targets.rts5400.c"/>
+        <srcFile name="package/rel/ti_targets_rts5400.tar.gz.dep" src="package/rel/ti_targets_rts5400.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C54_far"
+            version="ti.targets.C54_far{1,0,4.2,0"
+            platform="ti.platforms.sim54xx"
+            isa="54"
+            suffix="54f"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c5xx/c5xxcc-4.2.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts5400">
+            <model endian="undefined"
+                codeModel="far"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C54"
+            version="ti.targets.C54{1,0,4.2,0"
+            platform="ti.platforms.sim54xx"
+            isa="54"
+            suffix="54"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c5xx/c5xxcc-4.2.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts5400">
+            <model endian="undefined"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/ti.targets.rts5400"
+        pname="lib/ti.targets.rts5400.a54"
+        profile="whole_program"
+        target="ti.targets.C54"/>
+    <library name="lib/ti.targets.rts5400"
+        pname="lib/ti.targets.rts5400.a54f"
+        profile="whole_program"
+        target="ti.targets.C54_far"/>
+    <library name="lib/boot"
+        pname="lib/boot.a54f"
+        profile="release"
+        target="ti.targets.C54_far"/>
+    <library name="lib/boot"
+        pname="lib/boot.a54"
+        profile="release"
+        target="ti.targets.C54"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_targets_rts5400"
+        pname="../../../../exports/ti_targets_rts5400.tar.gz"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="boot.asm"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/boot.a54"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/ti.targets.rts5400.a54f"/>
+        <file name="lib/boot.a54f"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/ti.targets.rts5400.a54"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

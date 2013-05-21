@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.catalog.msp430.init" version="1, 0, 0" producerId="undefined">
+    <units>
+        <module name="Boot"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.catalog.msp430.init.c"/>
+        <srcFile name="Boot.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/Boot.a430X.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/Boot/package/package_ti.catalog.msp430.init.o430X.dep" src="package/package_ti.catalog.msp430.init.c"/>
+        <srcFile name="package/lib/lib/Boot/Boot.o430X.dep" src="Boot.c"/>
+        <srcFile name="lib/Boot.a430XL.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/Boot/package/package_ti.catalog.msp430.init.o430XL.dep" src="package/package_ti.catalog.msp430.init.c"/>
+        <srcFile name="package/lib/lib/Boot/Boot.o430XL.dep" src="Boot.c"/>
+        <srcFile name="lib/Boot.a430.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/Boot/package/package_ti.catalog.msp430.init.o430.dep" src="package/package_ti.catalog.msp430.init.c"/>
+        <srcFile name="package/lib/lib/Boot/Boot.o430.dep" src="Boot.c"/>
+        <srcFile name="package/rel/ti_catalog_msp430_init.tar.dep" src="package/rel/ti_catalog_msp430_init.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.MSP430_large_data"
+            version="ti.targets.MSP430_large_data{1,0,3.2,1"
+            platform="ti.platforms.exp430F5438"
+            isa="430"
+            suffix="430XL"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/MSP430/3.2.1/Linux"
+            os="undefined"
+            rts="ti.targets.rts430">
+            <model endian="little"
+                codeModel="large"
+                dataModel="large"/>
+        </target>
+        <target name="ti.targets.MSP430"
+            version="ti.targets.MSP430{1,0,3.2,1"
+            platform="ti.platforms.exp430F5438"
+            isa="430"
+            suffix="430"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/MSP430/3.2.1/Linux"
+            os="undefined"
+            rts="ti.targets.rts430">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.MSP430_large_code"
+            version="ti.targets.MSP430_large_code{1,0,3.2,1"
+            platform="ti.platforms.exp430F5438"
+            isa="430"
+            suffix="430X"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/MSP430/3.2.1/Linux"
+            os="undefined"
+            rts="ti.targets.rts430">
+            <model endian="little"
+                codeModel="large"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/Boot"
+        pname="lib/Boot.a430X"
+        profile="whole_program_debug"
+        target="ti.targets.MSP430_large_code"/>
+    <library name="lib/Boot"
+        pname="lib/Boot.a430XL"
+        profile="whole_program_debug"
+        target="ti.targets.MSP430_large_data"/>
+    <library name="lib/Boot"
+        pname="lib/Boot.a430"
+        profile="whole_program_debug"
+        target="ti.targets.MSP430"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_catalog_msp430_init"
+        pname="../../../../../exports/ti_catalog_msp430_init.tar"
+        label="default"
+        relScript="tisb/release/epl/copyright.rel">
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/Boot.a430X"/>
+        <file name="package/package.bld.xml"/>
+        <file name="Boot.c"/>
+        <file name="lib/Boot.a430XL"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/Boot.a430"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

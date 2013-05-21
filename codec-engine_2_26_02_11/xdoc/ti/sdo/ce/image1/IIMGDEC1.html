@@ -1,0 +1,732 @@
+<html>
+<head>
+<title>interface ti.sdo.ce.image1.IIMGDEC1</title>
+<meta name="description" content="IIMGDEC1-compliant image decoder interface">
+<link rel="stylesheet" type="text/css" href="../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">interface</span> <span class="xdoc-id">ti.sdo.ce.image1.</span><span class="xdoc-id">IIMGDEC1</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/package.html" title="package ti.sdo.ce.image1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGENC1.html" title="interface IIMGENC1"><img class="xdocHdrArrow" src="../../../../Arrow_right.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html">index URL</a></div>
+<p class="xdocHdrSummary">IIMGDEC1-compliant image decoder interface</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<div class="xdocBrief">
+All IIMGDEC1-compliant image decoder modules must implement this
+  interface.
+</div>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">interface</span> <go><span class="xdoc-id">IIMGDEC1</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt>//&nbsp;inherits <a class="xdoc-link" href="../../../../ti/sdo/ce/ICodec.html" title="ti.sdo.ce.ICodec">ti.sdo.ce.ICodec</a></div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../../ti/sdo/ce/image1/package.html" title="ti.sdo.ce.image1">ti.sdo.ce.image1</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">interface</span> <go><span class="xdoc-id">IIMGDEC1</span></go><span class="xdoc-kw1"> inherits </span><a class="xdoc-link" href="../../../../ti/sdo/ce/ICodec.html" title="ti.sdo.ce.ICodec">ICodec</a> {
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#ialg.Fxns"><span class="xdoc-id">ialgFxns</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name of xDAIS alg function table</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#idma3.Fxns"><span class="xdoc-id">idma3Fxns</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name of xDAIS alg IDMA3 Interface function table</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#ires.Fxns"><span class="xdoc-id">iresFxns</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name of xDAIS alg IRES Interface function table</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">override </span><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#rpc.Protocol.Version"><span class="xdoc-id">rpcProtocolVersion</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Version of the Protocol used between the stubFxns and the serverFxns</span></span></a> = 1;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#manage.In.Bufs.Cache"><span class="xdoc-id">manageInBufsCache</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Codec Class configuration param</span></span></a>[16] = [
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>];
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#manage.Out.Bufs.Cache"><span class="xdoc-id">manageOutBufsCache</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Codec Class configuration param</span></span></a>[16] = [
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>];
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">override </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#server.Fxns"><span class="xdoc-id">serverFxns</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name of skeleton fxn table</span></span></a> = "IMGDEC1_SKEL";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">override </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#stub.Fxns"><span class="xdoc-id">stubFxns</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name of stubs fxn table</span></span></a> = "IMGDEC1_STUBS";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#use.Cache"><span class="xdoc-id">useCache</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;If set to true, the codec's memory requests will be allocated from
+  cacheable memory. If set to false, the memory will be allocated from
+  non-cached memory. If this is not set, the
+  ti.sdo.ce.alg.Settings.useCache flag will determine whether the
+  codec's memory will be allocated from cached or non-cached memory</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#uuid"><span class="xdoc-id">uuid</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Unique algorithm implementation ID</span></span></a>;
+</div>
+<div class='xdocSynHdr'>module-wide functions</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#get.Creation.Stack.Size"><span class="xdoc-id">getCreationStackSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Get the maximum required stack size (in octets) for this algorithm
+  during algorithm instance creation</span></span></a>( <a class="xdoc-link" href="../../../../xdc/cfg/Program.html#.Module" title="xdc.cfg.Program.Module">Program.Module</a>&nbsp;<go><span class="xdoc-id">prog</span></go> );
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#get.Daram.Scratch.Size"><span class="xdoc-id">getDaramScratchSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Get the maximum scratch size (in octets) required for this algorithm
+  from DARAM space</span></span></a>( <a class="xdoc-link" href="../../../../xdc/cfg/Program.html#.Module" title="xdc.cfg.Program.Module">Program.Module</a>&nbsp;<go><span class="xdoc-id">prog</span></go> );
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#get.Saram.Scratch.Size"><span class="xdoc-id">getSaramScratchSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Get the maximum scratch size (in octets) required for this algorithm
+  from SARAM space</span></span></a>( <a class="xdoc-link" href="../../../../xdc/cfg/Program.html#.Module" title="xdc.cfg.Program.Module">Program.Module</a>&nbsp;<go><span class="xdoc-id">prog</span></go> );
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#get.Stack.Size"><span class="xdoc-id">getStackSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Get the maximum stack size (in octets) required for this algorithm
+  during its execution phase</span></span></a>( <a class="xdoc-link" href="../../../../xdc/cfg/Program.html#.Module" title="xdc.cfg.Program.Module">Program.Module</a>&nbsp;<go><span class="xdoc-id">prog</span></go> );
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="ialg.Fxns"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">ialgFxns</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#ialg.Fxns">index URL</a></div>
+<p class="xdocHdrSummary">Name of xDAIS alg function table</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<span class="xdoc-id">ialgFxns</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">All xDAIS algorithms must define an IALG_Fxns structure that
+  contains implementations of the IALG methods.  This configuration
+  parameter is simply the extern name of this structure.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="idma3.Fxns"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">idma3Fxns</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#idma3.Fxns">index URL</a></div>
+<p class="xdocHdrSummary">Name of xDAIS alg IDMA3 Interface function table</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<span class="xdoc-id">idma3Fxns</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">All xDAIS algorithms that use DMA must define an IDMA3_Fxns structure
+  containing the pointers to functions implementatng the IDMA3 interface.
+  If algorithm does not use DMA this structure does not have to be
+  defined.</div>
+<div class="xdocText">This configuration parameter is simply the extern name of this
+  structure when defined, null otherwise.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="ires.Fxns"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">iresFxns</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#ires.Fxns">index URL</a></div>
+<p class="xdocHdrSummary">Name of xDAIS alg IRES Interface function table</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<span class="xdoc-id">iresFxns</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">All xDAIS algorithms that use an IRES resource must define an
+  IRES_Fxns structure containing the pointers to functions
+  implementatng the IRES interface.
+  If algorithm does not use an IRES resource this structure does not
+  have to be defined.</div>
+<div class="xdocText">This configuration parameter is simply the extern name of this
+  structure when defined, null otherwise.</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">SEE</div>
+<div class="xdocText"><a class="xdoc-link" href="IIMGDEC1.html#ialg.Fxns" title="ialgFxns">ialgFxns</a>, <a class="xdoc-link" href="IIMGDEC1.html#idma3.Fxns" title="idma3Fxns">idma3Fxns</a></div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="rpc.Protocol.Version"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">rpcProtocolVersion</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#rpc.Protocol.Version">index URL</a></div>
+<p class="xdocHdrSummary">Version of the Protocol used between the stubFxns and the serverFxns</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">override </span><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<span class="xdoc-id">rpcProtocolVersion</span> = 1;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This is set by a particular implementation of a stub/skeleton RPC pair,
+  and is used at runtime to ensure the protocol matches.  This is
+  important, for example, to ensure that the protocol used by skeletons
+  built into a server matches that used by the stubs built into the
+  application.  Specifically, this is typically changed when the
+  marshalling/unmarshalling message format changes.</div>
+<div class="xdocText">This is generally not configured by application or server config
+  scripts, but rather by developers of VISA-like API class extensions.</div>
+<div class="xdocText">This rpcProtocolVersion is built into the local application executable,
+  as well as the remote server's executable.</div>
+<div class="xdocText">Developers of class extensions should ensure this config parameter is
+  set appropriately by each release of their stubs/skeletons.  If a new
+  protocol is introduced, implying that updating both would result in
+  error, the number should be incremented.</div>
+<div class="xdocText">There is no "backward-compatibility" requirement in rpcProtocolVersion.
+  If the version is different, regardless of whether it's larger or
+  smaller, the creation of algorithms of this class will fail.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="manage.In.Bufs.Cache"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">manageInBufsCache</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#manage.In.Bufs.Cache">index URL</a></div>
+<p class="xdocHdrSummary">Codec Class configuration param</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<span class="xdoc-id">manageInBufsCache</span>[16] = [
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt>];
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Determines whether cache will be managed on the DSP for each of the
+  (up to 16) input buffers given to the codec's "process()" call.</div>
+<div class="xdocText">If this flag is set to "false" for one or more
+  elements, the cache for the corresponding input buffer will not be
+  invalidated before the process() call. Skipping unnecessary cache
+  invalidation improves performance, especially if a buffer is large.</div>
+<div class="xdocText">(If element "i" in this array is set to true, cache for inBufs[i] will
+  be invalidated only if the buffer is supplied, of course.)</div>
+<div class="xdocText">For example, if you know that a particular codec of this class always
+  reads the data from its inBufs[1] buffer only via DMA, you can set
+  manageInBufsCache[1] = false;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="manage.Out.Bufs.Cache"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">manageOutBufsCache</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#manage.Out.Bufs.Cache">index URL</a></div>
+<p class="xdocHdrSummary">Codec Class configuration param</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<span class="xdoc-id">manageOutBufsCache</span>[16] = [
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">true</span>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt>];
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Determines whether cache will be managed on the DSP for each of the
+  (up to 16) output buffers given to the codec's "process()" call.</div>
+<div class="xdocText">If this flag is set to "false" for one or more
+  elements, the cache for the corresponding output buffer will not be
+  invalidated before the process() call.
+  Skipping unnecessary cache invalidation improves
+  performance. Whether the buffer will be written back after the process()
+  call depends on the algorithm and cannot be controlled here.</div>
+<div class="xdocText">For example, if you know that a particular codec of this class always
+  writes the data to its outBufs[2] buffer only via DMA, you can set
+  manageOutBufsCache[2] = false;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="server.Fxns"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">serverFxns</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#server.Fxns">index URL</a></div>
+<p class="xdocHdrSummary">Name of skeleton fxn table</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">override </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<span class="xdoc-id">serverFxns</span> = "IMGDEC1_SKEL";
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">All algorithm's that can run on a remote processor must specify a set
+  of "stub" functions that marshall arguments to send to the remote
+  process that runs corresponding "skeletons" to do the actual
+  processing.  This configuration parameter defines the entry point for
+  this algorithm's the skeletons (which run on the remote processor).</div>
+<div class="xdocText">This is generally not configured by application or server config
+  scripts, but rather by developers of VISA-like API class extensions.
+  However, an application or server integrator could use this config
+  param to configure in custom serverFxns.</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">SEE</div>
+<div class="xdocText"><a class="xdoc-link" href="IIMGDEC1.html#stub.Fxns" title="stubFxns">stubFxns</a></div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="stub.Fxns"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">stubFxns</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#stub.Fxns">index URL</a></div>
+<p class="xdocHdrSummary">Name of stubs fxn table</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">override </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<span class="xdoc-id">stubFxns</span> = "IMGDEC1_STUBS";
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">All algorithm's that can run on a remote processor must specify a set
+  of "stub" functions that marshall arguments to send to the remote
+  process that runs corresponding "skeletons" to do the actual
+  processing.  This configuration parameter defines the entry point for
+  this algorithm's the stubs (which run on the local processor).</div>
+<div class="xdocText">This is generally not configured by application or server config
+  scripts, but rather by developers of VISA-like API class extensions.
+  However, an application or server integrator could use this config
+  param to configure in custom stubFxns.</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">SEE</div>
+<div class="xdocText"><a class="xdoc-link" href="IIMGDEC1.html#server.Fxns" title="serverFxns">serverFxns</a></div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="use.Cache"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">useCache</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#use.Cache">index URL</a></div>
+<p class="xdocHdrSummary">If set to true, the codec's memory requests will be allocated from
+  cacheable memory. If set to false, the memory will be allocated from
+  non-cached memory. If this is not set, the
+  ti.sdo.ce.alg.Settings.useCache flag will determine whether the
+  codec's memory will be allocated from cached or non-cached memory</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<span class="xdoc-id">useCache</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="uuid"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">uuid</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#uuid">index URL</a></div>
+<p class="xdocHdrSummary">Unique algorithm implementation ID</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<span class="xdoc-id">uuid</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This integer must be a unique ID for every algorithm in a "system",
+  where the "system" includes all possible DSP Servers.</div>
+<div class="xdocText">This id is used by the Codec Engine APIs to identify the algorithm
+  implementation that will create an instance on a DSP Server.</div>
+<div class="xdocText">If a codec doesn't explicitly configure this parameter, a "very likely
+  unique" ID will be generated.  It is recommended that codecs not
+  explicitly configure this parameter, and leave it to the system.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="get.Creation.Stack.Size"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">getCreationStackSize</span>( )&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#get.Creation.Stack.Size">index URL</a></div>
+<p class="xdocHdrSummary">Get the maximum required stack size (in octets) for this algorithm
+  during algorithm instance creation</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw2">Int</span>&nbsp;<span class="xdoc-id">getCreationStackSize</span>( <a class="xdoc-link" href="../../../../xdc/cfg/Program.html#.Module" title="xdc.cfg.Program.Module">Program.Module</a>&nbsp;<span class="xdoc-id">prog</span> );
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This method is called during DSP Server configuration and is used to
+  ensure that the instance creation thread on the server has sufficient
+  stackspace to instantiate the algorithm.  This stack size is typically
+  the greater of the stack sizes required by the algorithm's
+  algNumAlloc(), algAlloc(), or algInit() methods.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="get.Daram.Scratch.Size"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">getDaramScratchSize</span>( )&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#get.Daram.Scratch.Size">index URL</a></div>
+<p class="xdocHdrSummary">Get the maximum scratch size (in octets) required for this algorithm
+  from DARAM space</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw2">Int</span>&nbsp;<span class="xdoc-id">getDaramScratchSize</span>( <a class="xdoc-link" href="../../../../xdc/cfg/Program.html#.Module" title="xdc.cfg.Program.Module">Program.Module</a>&nbsp;<span class="xdoc-id">prog</span> );
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This method is called during DSP Server configuration and is used to
+  ensure that sufficient scratch space is configured for the specified
+  set of algorithms.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="get.Saram.Scratch.Size"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">getSaramScratchSize</span>( )&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#get.Saram.Scratch.Size">index URL</a></div>
+<p class="xdocHdrSummary">Get the maximum scratch size (in octets) required for this algorithm
+  from SARAM space</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw2">Int</span>&nbsp;<span class="xdoc-id">getSaramScratchSize</span>( <a class="xdoc-link" href="../../../../xdc/cfg/Program.html#.Module" title="xdc.cfg.Program.Module">Program.Module</a>&nbsp;<span class="xdoc-id">prog</span> );
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This method is called during DSP Server configuration and is used to
+  ensure that sufficient scratch space is configured for the specified
+  set of algorithms.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="get.Stack.Size"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-id">IIMGDEC1.</span><span class="xdoc-id">getStackSize</span>( )&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1.html" title="interface IIMGDEC1"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/image1/IIMGDEC1.html#get.Stack.Size">index URL</a></div>
+<p class="xdocHdrSummary">Get the maximum stack size (in octets) required for this algorithm
+  during its execution phase</p>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/image1/IIMGDEC1-src.html"><span class="xdocLabelFile">ti/sdo/ce/image1/IIMGDEC1.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw2">Int</span>&nbsp;<span class="xdoc-id">getStackSize</span>( <a class="xdoc-link" href="../../../../xdc/cfg/Program.html#.Module" title="xdc.cfg.Program.Module">Program.Module</a>&nbsp;<span class="xdoc-id">prog</span> );
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This method is called during DSP Server configuration and is used to
+  ensure that threads on the server have sufficient stackspace to run
+  the algorithm.</div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:35 GMT</div>
+</div></div></body>
+</html>

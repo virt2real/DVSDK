@@ -1,0 +1,110 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+
+/*
+ *  ======== package.bld ========
+ */
+
+var Build = xdc.useModule('xdc.bld.BuildEnvironment');
+var Pkg = xdc.useModule('xdc.bld.PackageContents');
+
+var serverName = "audio1_ires";
+
+/*
+ * When constructing a release, release all build files.
+ * To include the executables in your distribution, uncomment the assignment
+ * of Pkg.attrs.exportExe to true.
+ */
+Pkg.attrs.exportAll = true;
+//Pkg.attrs.exportExe = true;
+
+/* Uncomment this to build the server with debug support */
+//Pkg.attrs.profile = "debug";
+
+/* bin/ is a generated directory that 'xdc clean' should remove */
+Pkg.generatedFiles.$add("bin/");
+
+/*
+ * This statement places BIOS headers on the include path, which is necessary
+ * for the TConf-generated assembly files.
+ */
+Pkg.uses.$add("ti/bios/include");
+
+Pkg.otherFiles = [
+    "package/info"
+    ];
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+
+    /* only build for BIOS-based targets */
+    if (targ.os == undefined) {
+        /* As no OS is defined, presume BIOS */
+        print("building for target " + targ.name + " ...");
+
+        /* Platforms were added to targ.platforms[] in config.bld */
+        for (var j = 0; j < targ.platforms.length; j++) {
+            var platform = targ.platforms[j];
+
+            print("  platform:  " + platform);
+
+            /* assert that the platform has both a GPP and a DSP core */
+            var platMod = xdc.useModule(platform + '.Platform');
+            if (!("DSP" in platMod) || !("GPP" in platMod)) {
+                print("Skipping unsupported, single processor " +
+                        "platform " + platform);
+                continue;
+            }
+
+            // name = bin/platform/name.x+suffix
+            var name = "bin/" +
+                    // replace all ':' and '.' with '_' in platform name
+                    platform.replace(/\:/g, "_").replace(/\./g, "_") + '/' +
+                    serverName;
+
+            Pkg.addExecutable(name, targ, platform,
+                {
+                    cfgScript: serverName + ".tcf",
+                    cfgArgs: "{ platform: \"" + platform + "\" }",
+                    lopts: "-l link.cmd",
+                    rtsName: null
+                }
+            ).addObjects(["main.c"]);
+        }
+    }
+}
+/*
+ *  @(#) ti.sdo.ce.examples.servers.audio1_ires; 1, 0, 0,160; 12-2-2010 21:23:47; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+

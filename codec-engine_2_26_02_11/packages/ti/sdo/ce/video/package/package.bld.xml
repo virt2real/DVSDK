@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.video" version="1, 0, 3" producerId="codec_engine_2_26_02_11">
+    <units>
+        <interface name="IVIDDEC"/>
+        <interface name="IVIDENC"/>
+        <module name="VIDENCConfig"/>
+        <module name="VIDDECConfig"/>
+    </units>
+    <sources>
+        <srcFile name="videnc_skel.c"/>
+        <srcFile name="videnc_stubs.c"/>
+        <srcFile name="viddec_stubs.c"/>
+        <srcFile name="viddec_skel.c"/>
+        <srcFile name="videnc.c"/>
+        <srcFile name="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="viddec.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/video.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/video/videnc_skel.ov4TCE.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc_stubs.ov4TCE.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_stubs.ov4TCE.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_skel.ov4TCE.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc.ov4TCE.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/release/video/package/package_ti.sdo.ce.video.ov4TCE.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec.ov4TCE.dep" src="viddec.c"/>
+        <srcFile name="lib/release/video.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/video/videnc_skel.o86U.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc_stubs.o86U.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_stubs.o86U.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_skel.o86U.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc.o86U.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/release/video/package/package_ti.sdo.ce.video.o86U.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec.o86U.dep" src="viddec.c"/>
+        <srcFile name="lib/debug/video.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_skel.ov4TCE.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_stubs.ov4TCE.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_stubs.ov4TCE.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_skel.ov4TCE.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc.ov4TCE.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/debug/video/package/package_ti.sdo.ce.video.ov4TCE.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec.ov4TCE.dep" src="viddec.c"/>
+        <srcFile name="lib/debug/video.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_skel.o674.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_stubs.o674.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_stubs.o674.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_skel.o674.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc.o674.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/debug/video/package/package_ti.sdo.ce.video.o674.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec.o674.dep" src="viddec.c"/>
+        <srcFile name="lib/release/video.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/video/videnc_skel.o470uC.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc_stubs.o470uC.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_stubs.o470uC.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_skel.o470uC.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc.o470uC.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/release/video/package/package_ti.sdo.ce.video.o470uC.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec.o470uC.dep" src="viddec.c"/>
+        <srcFile name="lib/release/video.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/video/videnc_skel.ov5T.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc_stubs.ov5T.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_stubs.ov5T.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_skel.ov5T.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc.ov5T.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/release/video/package/package_ti.sdo.ce.video.ov5T.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec.ov5T.dep" src="viddec.c"/>
+        <srcFile name="lib/debug/video.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_skel.o470uC.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_stubs.o470uC.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_stubs.o470uC.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_skel.o470uC.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc.o470uC.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/debug/video/package/package_ti.sdo.ce.video.o470uC.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec.o470uC.dep" src="viddec.c"/>
+        <srcFile name="lib/debug/video.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_skel.o64P.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_stubs.o64P.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_stubs.o64P.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_skel.o64P.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc.o64P.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/debug/video/package/package_ti.sdo.ce.video.o64P.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec.o64P.dep" src="viddec.c"/>
+        <srcFile name="lib/release/video.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/video/videnc_skel.o674.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc_stubs.o674.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_stubs.o674.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_skel.o674.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc.o674.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/release/video/package/package_ti.sdo.ce.video.o674.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec.o674.dep" src="viddec.c"/>
+        <srcFile name="lib/release/video.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/video/videnc_skel.o64P.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc_stubs.o64P.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_stubs.o64P.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec_skel.o64P.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/release/video/videnc.o64P.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/release/video/package/package_ti.sdo.ce.video.o64P.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/release/video/viddec.o64P.dep" src="viddec.c"/>
+        <srcFile name="lib/debug/video.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_skel.o86U.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_stubs.o86U.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_stubs.o86U.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_skel.o86U.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc.o86U.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/debug/video/package/package_ti.sdo.ce.video.o86U.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec.o86U.dep" src="viddec.c"/>
+        <srcFile name="lib/debug/video.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_skel.ov5T.dep" src="videnc_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc_stubs.ov5T.dep" src="videnc_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_stubs.ov5T.dep" src="viddec_stubs.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec_skel.ov5T.dep" src="viddec_skel.c"/>
+        <srcFile name="package/lib/lib/debug/video/videnc.ov5T.dep" src="videnc.c"/>
+        <srcFile name="package/lib/lib/debug/video/package/package_ti.sdo.ce.video.ov5T.dep" src="package/package_ti.sdo.ce.video.c"/>
+        <srcFile name="package/lib/lib/debug/video/viddec.ov5T.dep" src="viddec.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_video.tar.dep" src="package/rel/ti_sdo_ce_video.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/video"
+        pname="lib/release/video.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/video"
+        pname="lib/release/video.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/video"
+        pname="lib/debug/video.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/video"
+        pname="lib/debug/video.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/release/video"
+        pname="lib/release/video.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/video"
+        pname="lib/release/video.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/video"
+        pname="lib/debug/video.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/video"
+        pname="lib/debug/video.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/video"
+        pname="lib/release/video.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/release/video"
+        pname="lib/release/video.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/video"
+        pname="lib/debug/video.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/video"
+        pname="lib/debug/video.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_video"
+        pname="ti_sdo_ce_video.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/debug/video.a674"/>
+        <file name="_videnc.h"/>
+        <file name="package/package_ti.sdo.ce.video.c"/>
+        <file name="viddec.c"/>
+        <file name="IVIDENC_dsutils.xs"/>
+        <file name="videnc.c"/>
+        <file name="package/package.ext.xml"/>
+        <file name="videnc_stubs.c"/>
+        <file name="viddec.h"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="IVIDDEC_dsutils.xs"/>
+        <file name="videnc.h"/>
+        <file name="lib/debug/video.av4TCE"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/debug/video.a470uC"/>
+        <file name="lib/release/video.a64P"/>
+        <file name="lib/debug/video.a64P"/>
+        <file name="lib/release/video.av4TCE"/>
+        <file name="videnc_skel.c"/>
+        <file name="lib/release/video.a86U"/>
+        <file name="lib/release/video.a470uC"/>
+        <file name="lib/release/video.av5T"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/release/video.a674"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="lib/debug/video.a86U"/>
+        <file name="viddec_skel.c"/>
+        <file name="lib/debug/video.av5T"/>
+        <file name="viddec_stubs.c"/>
+        <file name="_viddec.h"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.rman.examples.bufres_yield" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="ibufalg.c"/>
+        <srcFile name="package/cfg/bin/dm6446/bufres_test_yield_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/C6455/bufres_test_yield_x64Pcfg.s62"/>
+        <srcFile name="package/package_ti.sdo.fc.rman.examples.bufres_yield.c"/>
+        <srcFile name="bufres_test_rmanYield.c"/>
+        <srcFile name="bufres.c"/>
+        <srcFile name="package/cfg/bin/dm6446/bufres_test_yield_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/dm6446/bufres_test_yield_x64P.c"/>
+        <srcFile name="bufres_util.c"/>
+        <srcFile name="bufalg_ti.c"/>
+        <srcFile name="package/cfg/bin/C6455/bufres_test_yield_x64P.c"/>
+        <srcFile name="bufalg_ti_vtab.c"/>
+        <srcFile name="package/cfg/bin/C6455/bufres_test_yield_x64Pcfg_c.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="bufres_test.tcf"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="bufres.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/bufres/package/package_ti.sdo.fc.rman.examples.bufres_yield.o64P.dep" src="package/package_ti.sdo.fc.rman.examples.bufres_yield.c"/>
+        <srcFile name="package/lib/bufres/bufres_util.o64P.dep" src="bufres_util.c"/>
+        <srcFile name="package/lib/bufres/bufres.o64P.dep" src="bufres.c"/>
+        <srcFile name="bufalg_ti.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/bufalg_ti/bufalg_ti_vtab.o64P.dep" src="bufalg_ti_vtab.c"/>
+        <srcFile name="package/lib/bufalg_ti/package/package_ti.sdo.fc.rman.examples.bufres_yield.o64P.dep" src="package/package_ti.sdo.fc.rman.examples.bufres_yield.c"/>
+        <srcFile name="package/lib/bufalg_ti/bufalg_ti.o64P.dep" src="bufalg_ti.c"/>
+        <srcFile name="package/lib/bufalg_ti/ibufalg.o64P.dep" src="ibufalg.c"/>
+        <srcFile name="package/cfg/bin/dm6446/bufres_test_yield_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/dm6446/bufres_test_yield_x64P.o64P.dep" src="package/cfg/bin/dm6446/bufres_test_yield_x64P.c"/>
+        <srcFile name="package/cfg/bin/dm6446/bufres_test_yield_x64Pcfg.o64P.dep" src="package/cfg/bin/dm6446/bufres_test_yield_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/dm6446/bufres_test_yield/bufres_test_rmanYield.o64P.dep" src="bufres_test_rmanYield.c"/>
+        <srcFile name="package/cfg/bin/dm6446/bufres_test_yield_x64Pcfg_c.o64P.dep" src="package/cfg/bin/dm6446/bufres_test_yield_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/dm6446/bufres_test_yield_x64P.dep" src="package/cfg/bin/dm6446/bufres_test_yield_x64P.cfg"/>
+        <srcFile name="package/cfg/bin/C6455/bufres_test_yield_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/C6455/bufres_test_yield_x64Pcfg.o64P.dep" src="package/cfg/bin/C6455/bufres_test_yield_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/C6455/bufres_test_yield_x64Pcfg_c.o64P.dep" src="package/cfg/bin/C6455/bufres_test_yield_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/C6455/bufres_test_yield_x64P.o64P.dep" src="package/cfg/bin/C6455/bufres_test_yield_x64P.c"/>
+        <srcFile name="package/cfg/bin/C6455/bufres_test_yield/bufres_test_rmanYield.o64P.dep" src="bufres_test_rmanYield.c"/>
+        <srcFile name="package/cfg/bin/C6455/bufres_test_yield_x64P.dep" src="package/cfg/bin/C6455/bufres_test_yield_x64P.cfg"/>
+        <srcFile name="package/rel/ti_sdo_fc_rman_examples_bufres_yield.tar.dep" src="package/rel/ti_sdo_fc_rman_examples_bufres_yield.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="bufres"
+        pname="bufres.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="bufalg_ti"
+        pname="bufalg_ti.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    </libraries>
+    <executables>
+    <executable name="bin/dm6446/bufres_test_yield"
+        pname="bin/dm6446/bufres_test_yield.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6446"
+        profile="release"
+        xCfgScript="package/cfg/bin/dm6446/bufres_test_yield_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/dm6446/bufres_test_yield_x64P"
+        cfgScript="bufres_test.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6446%22%7D"
+        />
+    <executable name="bin/C6455/bufres_test_yield"
+        pname="bin/C6455/bufres_test_yield.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.dsk6455"
+        profile="release"
+        xCfgScript="package/cfg/bin/C6455/bufres_test_yield_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/C6455/bufres_test_yield_x64P"
+        cfgScript="bufres_test.tcf"
+        cfgArgs="%7BchipType%3A%20%22C6455%22%7D"
+        />
+    </executables>
+    <tests>
+    <test exeName="bin/dm6446/bufres_test_yield.x64P"
+        args=""
+        groupName="bin/dm6446/bufres_test_yield.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/C6455/bufres_test_yield.x64P"
+        args=""
+        groupName="bin/C6455/bufres_test_yield.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_rman_examples_bufres_yield"
+        pname="ti_sdo_fc_rman_examples_bufres_yield.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="bufres.a64P"/>
+        <file name="bufalg_ti.a64P"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

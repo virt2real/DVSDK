@@ -1,0 +1,1881 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="readme_files/filelist.xml">
+<title>Real-Time Software Components README</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PersonName"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>dr</o:Author>
+  <o:LastAuthor>dr</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1530</o:TotalTime>
+  <o:LastPrinted>2004-11-30T00:22:00Z</o:LastPrinted>
+  <o:Created>2008-05-05T23:12:00Z</o:Created>
+  <o:LastSaved>2008-05-05T23:12:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>3767</o:Words>
+  <o:Characters>21473</o:Characters>
+  <o:Company>Texas Instruments, SB</o:Company>
+  <o:Lines>178</o:Lines>
+  <o:Paragraphs>50</o:Paragraphs>
+  <o:CharactersWithSpaces>25190</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:ActiveWritingStyle Lang="EN-US" VendorID="64" DLLVersion="131077"
+   NLCheck="1">1</w:ActiveWritingStyle>
+  <w:ActiveWritingStyle Lang="EN-US" VendorID="64" DLLVersion="131078"
+   NLCheck="1">1</w:ActiveWritingStyle>
+  <w:DoNotHyphenateCaps/>
+  <w:PunctuationKerning/>
+  <w:DrawingGridHorizontalSpacing>6 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>6 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>3</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627421319 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	text-autospace:none;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	text-autospace:none;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h3
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	text-autospace:none;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h4
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h5
+	{mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:7.75pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:normal;}
+h6
+	{mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:4.5pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:6.7pt;
+	margin-bottom:.0001pt;
+	text-indent:-6.7pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-noshow:yes;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:navy;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";}
+p
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+code
+	{font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:217279361;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-472512678;}
+@list l0:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:225654739;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1669552404;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:485753126;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2030609360;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:617687592;
+	mso-list-template-ids:229140196;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Symbol;
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:694306960;
+	mso-list-template-ids:425781248;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Symbol;
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5
+	{mso-list-id:745154313;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1762513208;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:947195823;
+	mso-list-template-ids:-1586837634;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Symbol;
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7
+	{mso-list-id:982201345;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1294823580;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:1242980779;
+	mso-list-template-ids:1966622592;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Symbol;
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:1563373389;
+	mso-list-template-ids:-1140410616;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Symbol;
+	mso-bidi-font-family:"Times New Roman";}
+@list l9:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10
+	{mso-list-id:1798722373;
+	mso-list-template-ids:-2032086286;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Symbol;
+	mso-bidi-font-family:"Times New Roman";}
+@list l10:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l11
+	{mso-list-id:1825312438;
+	mso-list-type:hybrid;
+	mso-list-template-ids:338987402;}
+@list l11:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l12
+	{mso-list-id:1835799393;
+	mso-list-template-ids:658042480;}
+@list l12:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Symbol;
+	mso-bidi-font-family:"Times New Roman";}
+@list l12:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l12:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l12:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l12:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l12:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l12:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l12:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l12:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050">
+  <o:colormenu v:ext="edit" fillcolor="none"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<h1 align=center style='text-align:center'>XDCtools</h1>
+
+<p align=center style='margin-bottom:12.0pt;text-align:center'><strong><span
+style='font-size:13.5pt;mso-bidi-font-size:12.0pt'>A Real-Time Software
+Component (RTSC) Development Toolset<o:p></o:p></span></strong></p>
+
+<p align=center style='margin-bottom:12.0pt;text-align:center'><strong>Updated:
+</strong><!--[if supportFields]><strong><span style='mso-element:field-begin'></span><span
+style='mso-spacerun:yes'> </span>SAVEDATE \@ &quot;dddd, MMMM dd, yyyy&quot; \*
+MERGEFORMAT <span style='mso-element:field-separator'></span></strong><![endif]--><strong><span
+style='mso-no-proof:yes'>Thursday, December 20, 2007</span></strong><!--[if supportFields]><strong><span
+style='mso-element:field-end'></span></strong><![endif]--></p>
+
+<div style='mso-element:para-border-div;border:none;border-top:solid #999999 2.25pt;
+padding:2.0pt 0in 0in 0in'>
+
+<p class=MsoNormal align=center style='text-align:center;border:none;
+mso-border-top-alt:solid #999999 2.25pt;padding:0in;mso-padding-alt:2.0pt 0in 0in 0in'><o:p>&nbsp;</o:p></p>
+
+</div>
+
+<h3><a name=Contents></a><a name="_Contents"></a><span style='mso-bookmark:
+Contents'><span style='font-size:18.0pt;mso-bidi-font-size:13.5pt'>Contents</span></span></h3>
+
+<p style='mso-outline-level:1'><span style='font-size:14.0pt;mso-bidi-font-size:
+12.0pt'><a href="#_Installation">Installation</a><o:p></o:p></span></p>
+
+<p style='mso-outline-level:1'><span style='font-size:14.0pt;mso-bidi-font-size:
+12.0pt'><a href="#_Hello_World_Example">Hello World Example</a></span></p>
+
+<p style='margin-top:5.0pt;margin-right:.5in;margin-bottom:5.0pt;margin-left:
+.5in;mso-outline-level:1'><a href="#_Copying_a_Package">Copying a Package</a></p>
+
+<p style='margin-top:5.0pt;margin-right:.5in;margin-bottom:5.0pt;margin-left:
+.5in;mso-outline-level:1'><a href="#_Cleaning_a_Package">Cleaning a Package</a></p>
+
+<p style='margin-top:5.0pt;margin-right:.5in;margin-bottom:5.0pt;margin-left:
+.5in;mso-outline-level:1'><a href="#_Building_a_Package">Building a Package</a></p>
+
+<p style='margin-top:5.0pt;margin-right:.5in;margin-bottom:5.0pt;margin-left:
+.5in;mso-outline-level:1'><a href="#_Testing_a_Package">Testing a Package</a></p>
+
+<p style='margin-top:5.0pt;margin-right:.5in;margin-bottom:5.0pt;margin-left:
+.5in;mso-outline-level:1'><a href="#_Delivering_and_Installing">Managing
+Package Dependencies<o:p></o:p></a></p>
+
+<p style='margin-top:5.0pt;margin-right:.5in;margin-bottom:5.0pt;margin-left:
+.5in;mso-outline-level:1'><a href="#_Delivering_and_Installing_a Package">Delivering
+and Installing a Package</a></p>
+
+<p style='mso-outline-level:1'><span style='font-size:14.0pt;mso-bidi-font-size:
+12.0pt'><a href="#_Managing_Package_Dependencies">Examples</a><o:p></o:p></span></p>
+
+<p style='mso-outline-level:1'><span style='font-size:14.0pt;mso-bidi-font-size:
+12.0pt'><a href="#_Advanced_Topics">Advanced Topics</a><o:p></o:p></span></p>
+
+<p style='margin-top:5.0pt;margin-right:.5in;margin-bottom:5.0pt;margin-left:
+.5in;mso-outline-level:1'><a href="#_The_xdc_Command">The <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>xdc</span>
+Command</a></p>
+
+<p style='margin-top:5.0pt;margin-right:.5in;margin-bottom:5.0pt;margin-left:
+.5in;mso-outline-level:1'><a href="#_The_Package_Path_and XDCPATH">The Package Path
+and <span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>XDCPATH</span></a></p>
+
+<p style='margin-top:5.0pt;margin-right:.5in;margin-bottom:5.0pt;margin-left:
+.5in;mso-outline-level:1'><a href="#_Debugging_Build_Scripts_1">Debugging Build
+Scripts</a></p>
+
+<div style='mso-element:para-border-div;border:none;border-top:solid #999999 2.25pt;
+padding:2.0pt 0in 0in 0in'>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;text-align:center;
+border:none;mso-border-top-alt:solid #999999 2.25pt;padding:0in;mso-padding-alt:
+2.0pt 0in 0in 0in'><o:p>&nbsp;</o:p></p>
+
+</div>
+
+<h2><a name="_Setup"></a><a name="_Installation"></a><a href="#_Contents">Installation</a></h2>
+
+<p style='margin-top:14.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+0in;margin-bottom:.0001pt'><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt'>System Requirements<o:p></o:p></span></b></p>
+
+<p>The XDC tools are supported on the following development hosts:</p>
+
+<p style='margin-left:.5in'>Windows NT 4, 2000, and XP</p>
+
+<p style='margin-left:.5in'>Red Hat Enterprise Linux WS release 3 or above</p>
+
+<p style='margin-left:.5in'>Solaris 2.8 or above</p>
+
+<p>If you are using one of the UNIX development hosts, you must also have a
+Korn Shell compatible shell installed as <span style='font-family:"Courier New"'>/usr/bin/ksh.</span></p>
+
+<p style='margin-top:14.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+0in;margin-bottom:.0001pt'><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt'>Unpacking the Distribution<o:p></o:p></span></b></p>
+
+<p>The XDC tools are distributed as a single gzip’d tar file for each of the
+supported development hosts; <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>xdc-win32.tar.gz</span> for Windows, <span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>xdc-linux.tar.gz</span>
+for Linux, and <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>xdc-solaris.tar.gz</span> for Solaris.<span
+style='mso-spacerun:yes'>  </span></p>
+
+<p>This file can be unpacked via WinZip 8.x (or greater) for PC
+distributions.<span style='mso-spacerun:yes'>  </span>Note earlier versions of
+WinZip (e.g., 7.0) do not extract zero-length files from archives.<span
+style='mso-spacerun:yes'>  </span>Since XDC uses zero-length files to maintain
+timestamps, extracting XDC using an earlier version of WinZip will result in a
+corrupted installation.</p>
+
+<p>If you have a UNIX distribution, use <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><a href="http://www.gzip.org/">gu<span
+style='mso-bookmark:_Hlt847301'>n</span>z<span style='mso-bookmark:_Hlt847314'>i</span>p</a><![if !supportNestedAnchors]><a
+name="_Hlt847314"></a><a name="_Hlt847301"></a><![endif]></span> and <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>tar</span>
+to unpack the XDC distribution.</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>gunzip xdc-linux.tar.gz<br>
+tar xf xdc-linux.tar<o:p></o:p></span></p>
+
+<p>When unpacked, this distribution consists of a single top-level directory
+that contains everything necessary to create and use XDC packages (with the
+exception of your code generation tools).<span style='mso-spacerun:yes'> 
+</span>In the remainder of this note, we refer to this directory symbolically
+as <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>xdcroot</span></i></b>.<span
+style='mso-spacerun:yes'>  </span></p>
+
+<p style='margin-top:14.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+0in;margin-bottom:.0001pt'><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt'>Configuring Your Command
+Line Shell</span><o:p></o:p></b></p>
+
+<p>The only command necessary to use the XDC tools is the <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>xdc</span>
+command.<span style='mso-spacerun:yes'>  </span>This command must either be
+found along your <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>PATH</span> or you must define an alias that explicitly
+names the full path to the <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>xdc</span> command.<span style='mso-spacerun:yes'> 
+</span>The table below illustrates how to modify your path to use the XDC
+tools.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid black .75pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.75pt 0in 5.75pt;mso-border-insideh:
+ .75pt solid black;mso-border-insidev:.75pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;page-break-inside:avoid'>
+  <td width=211 style='width:2.2in;border:solid black 1.0pt;mso-border-alt:
+  solid black .75pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p align=center style='text-align:center'>Windows cmd.exe</p>
+  </td>
+  <td width=234 style='width:175.5pt;border:solid black 1.0pt;border-left:none;
+  mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p align=center style='text-align:center'>Unix csh</p>
+  </td>
+  <td width=234 style='width:175.5pt;border:solid black 1.0pt;border-left:none;
+  mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p align=center style='text-align:center'>Unix ksh</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes;page-break-inside:avoid'>
+  <td width=211 style='width:2.2in;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";color:blue'>set PATH=%PATH%;<b
+  style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>xdcroot</i></b></span><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=234 style='width:175.5pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";color:blue'>setenv PATH=&quot;$PATH:<b
+  style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>xdcroot</i></b>&quot;</span><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=234 style='width:175.5pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";color:blue'>export PATH=&quot;$PATH:<b
+  style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>xdcroot</i></b>&quot;</span><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:12.0pt'>Alternatively, one may define an alias that simply
+specifies the full path to the <span style='font-family:"Courier New"'>xdc</span>
+command.<span style='mso-spacerun:yes'>  </span>This is illustrated below.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=679
+ style='width:509.4pt;border-collapse:collapse;border:none;mso-border-alt:solid black .75pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .75pt solid black;mso-border-insidev:.75pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=247 valign=top style='width:185.4pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p align=center style='text-align:center'>Windows cmd.exe</p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p align=center style='text-align:center'>Unix csh</p>
+  </td>
+  <td width=234 valign=top style='width:175.5pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p align=center style='text-align:center'>Unix ksh</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width=247 valign=top style='width:185.4pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";color:blue'>doskey xdc=<b
+  style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>xdcroot</i></b>/xdc.exe
+  $*</span><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  mso-border-alt:solid black .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";color:blue'>alias xdc <b
+  style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>xdcroot</i></b>/xdc</span><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=234 valign=top style='width:175.5pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  mso-border-alt:solid black .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";color:blue'>alias xdc=&quot;<b
+  style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>xdcroot</i></b>/xdc&quot;</span><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p style='margin-top:14.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+0in;margin-bottom:.0001pt'><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt'>Configuring External
+Compilation Tools</span><o:p></o:p></b></p>
+
+<p>Before the <span style='font-family:"Courier New"'>xdc</span> command can
+generate a package’s makefile and compile it's sources, it must be told which
+targets should be used and, for each target, where its compiler is
+installed.<span style='mso-spacerun:yes'>  </span>This information is specified
+in a “<span style='font-family:"Courier New"'>config.bld</span>” file.<span
+style='mso-spacerun:yes'>  </span></p>
+
+<p>Unless you explicitly tell the <span style='font-family:"Courier New"'>xdc</span>
+command where to find this file on the command line or it’s in the current
+package directory, <span style='font-family:"Courier New"'>xdc</span> will use the
+file named by the environment variable <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>XDCBUILDCFG</span>; see <a
+href="http://www.sanb.design.ti.com/iliad/webhome/xdoc/index.html#xdc/bld/BuildEnvironment.html">xdc.bld.BuildEnvironment</a>
+for a complete de<st1:PersonName w:st="on">sc</st1:PersonName>ription of the
+search algorithm.<span style='mso-spacerun:yes'>  </span>For the purpose of
+this introduction, we'll simply set the <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>XDCBUILDCFG</span> environment
+variable.<span style='mso-spacerun:yes'>  </span>For example from a Windows <span
+style='font-family:"Courier New"'>cmd.exe</span> command shell:</p>
+
+<p style='margin-left:.5in'><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+color:blue'>set XDCBUILDCMD=c:/my/home/config.bld</span></p>
+
+<p>The contents of the <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>config.bld</span> file – written in JavaScript – specify
+which target tool-chain to use and where it’s installed.<span
+style='mso-spacerun:yes'>  </span>The example below specifies the TI C62
+compiler, but all other compilers can be similarly configured.</p>
+
+<p style='margin-top:5.0pt;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:"Courier New";
+color:blue'>var C62 = xdc.useModule(&quot;ti.targets.C62&quot;);<o:p></o:p></span></p>
+
+<p style='margin-top:5.0pt;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:"Courier New";
+color:blue'>C62.rootDir = &quot;C:/CCStudio_v3.3/C6000/cgtools&quot;;<o:p></o:p></span></p>
+
+<p style='margin-top:5.0pt;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:"Courier New";
+color:blue'>Build.targets = [C62];<o:p></o:p></span></p>
+
+<p style='margin-top:.25in;margin-right:0in;margin-bottom:0in;margin-left:0in;
+margin-bottom:.0001pt'><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt'>Testing the Installation</span><o:p></o:p></b></p>
+
+<p>To ensure that everything is working properly, type the following commands:</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>cd <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>xdcroot</i></b><br>
+xdc -PR examples/basic<o:p></o:p></span></p>
+
+<p>The last command builds all of the basic example packages for all configured
+targets, and should complete without errors.</p>
+
+<h2 style='margin-top:12.0pt'><a name="Hello_World_Example"></a><a
+name="_Hello_World_Example"></a><span style='mso-bookmark:Hello_World_Example'></span><a
+href="#_Contents"><span style='mso-bookmark:Hello_World_Example'>Hello World
+Example</span><span style='mso-bookmark:Hello_World_Example'></span></a><span
+style='mso-bookmark:Hello_World_Example'></span></h2>
+
+<p style='margin-right:.5in'>The directory <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>xdcroot</span></i></b><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>/examples/basic</span>
+contains several sample packages, which can be copied to your workspace;
+although you may develop and build within the distribution directory, it is
+good practice to maintain a separate working directory to avoid overwriting
+your work when updating to a new release of XDC. The package <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>xdcroot</span></i></b><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>/examples/basic/hello</span>
+is a configurable form of the ever-popular <i style='mso-bidi-font-style:normal'>hello
+world</i> example. <span style='mso-spacerun:yes'> </span>We use this package
+to demonstrate how to develop and deliver XDC packages.</p>
+
+<p style='margin-right:.5in'>Although we use this package to demonstrate the
+mechanics of package management, the process is the same for all packages.<span
+style='mso-spacerun:yes'>  </span>In particular, if you are interested in
+seeing how to encapsulate an existing code base as a package without making <i
+style='mso-bidi-font-style:normal'>any</i> changes to the C sources, the <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>xdcroot</span></i></b><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>/examples/legacy/</span><span
+style='font-family:"Courier New"'>hello</span> package would be a good place to
+start.<span style='mso-spacerun:yes'>  </span>This package encapsulates the <i
+style='mso-bidi-font-style:normal'>hello world</i> example from <span
+style='mso-bidi-font-style:italic'>Kernighan and Ritchie</span><span
+style='mso-bidi-font-weight:bold'>’s text “The C Programming Language”.</span></p>
+
+<h4 style='margin-top:12.0pt'><a name="Copying_a_Package"></a><a
+name="_Copying_a_Package"></a><span style='mso-bookmark:Copying_a_Package'></span><a
+href="#_Hello_World_Example"><span style='mso-bookmark:Copying_a_Package'>Copying
+a Package</span><span style='mso-bookmark:Copying_a_Package'></span></a><span
+style='mso-bookmark:Copying_a_Package'></span></h4>
+
+<p>We begin by copying the <span style='font-family:"Courier New"'>basic.hello</span>
+package to a working directory that is outside of <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>xdcroot</span></i></b><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>:</span></p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>mkdir basic<br>
+cp -rp <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>xdcroot</i></b>/examples/basic/hello basic<br>
+cd basic/hello<o:p></o:p></span></p>
+
+<p>Note that the name of the package directory is important: all XDC packages
+have names that <i>must</i> match the name of the directory holding the
+contents of the package.<span style='mso-spacerun:yes'>  </span>In this case,
+the name of the package is “<span style='font-family:"Courier New"'>basic.hello</span>”
+so the name of the directory containing the package must have a name that ends
+with “<span style='font-family:"Courier New"'>basic/hello</span>”.<span
+style='mso-spacerun:yes'>  </span>The name and version of a package is declared
+in the file <span style='font-family:"Courier New"'>package.xdc</span> which is
+contained at the top of the package’s directory tree.</p>
+
+<h4 style='margin-top:12.0pt'><a name="Cleaning_a_Package"></a><a
+name="_Cleaning_a_Package"></a><span style='mso-bookmark:Cleaning_a_Package'></span><a
+href="#_Hello_World_Example"><span style='mso-bookmark:Cleaning_a_Package'>Cleaning
+a Package</span><span style='mso-bookmark:Cleaning_a_Package'></span></a><span
+style='mso-bookmark:Cleaning_a_Package'></span></h4>
+
+<p>In order to more easily understand the files necessary to create a package,
+we begin by removing all generated files. The following command will remove all
+files that are generated as part of building the package, leaving only the
+package’s source files.</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>xdc clean<o:p></o:p></span></p>
+
+<p>The following table summarizes the source files that are part of the Hello
+package.</p>
+
+<p><o:p>&nbsp;</o:p></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:-2.6pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid black 1.5pt;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;mso-border-alt:
+  solid black .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><strong>File</strong></p>
+  </td>
+  <td width=462 style='width:346.7pt;border:solid black 1.0pt;border-left:none;
+  mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><strong>Description</strong></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>Hello.xdc<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>Hello module’s definition; this file defines the C/C++
+  interface and the configuration interface to <span style='font-family:"Courier New"'>Hello</span>
+  module</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>Hello.c<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>C implementation of the <span style='font-family:"Courier New"'>Hello</span>
+  module’s target interface</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>Hello.cfg<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>Hello</span>
+  program’s configuration script; this script is used during the generation of
+  the configuration files necessary to build the <span style='font-family:"Courier New"'>Hello</span>
+  program.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>package.xdc<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>package’s “package declaration”; this file defines the
+  package’s name and all modules and interfaces supplied by this package.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>package.xs<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>package’s “include” script; this script is run every time
+  a program’s configuration script includes this package.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>package.bld<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>package’s build script; this script defines all of the
+  physical files that must be part of the delivered package, e.g., libraries,
+  programs, headers, documentation, etc.<span style='mso-spacerun:yes'> 
+  </span>After running this script, the XDC build system generates a makefile
+  that is capable of building all deliverable files. </p>
+  </td>
+ </tr>
+</table>
+
+<h4 style='margin-top:12.0pt'><a name="Building_a_Package"></a><a
+name="_Building_a_Package"></a><span style='mso-bookmark:Building_a_Package'></span><a
+href="#_Hello_World_Example"><span style='mso-bookmark:Building_a_Package'>Building
+a Package</span><span style='mso-bookmark:Building_a_Package'></span></a><span
+style='mso-bookmark:Building_a_Package'></span></h4>
+
+<p>To build the <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>basic.hello</span> package, type the command:</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>xdc all<o:p></o:p></span></p>
+
+<p style='margin-bottom:12.0pt'>The following table summarizes the files
+created as part of building the <span style='font-family:"Courier New"'>basic.hello</span>
+package.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:-2.6pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid black 1.5pt;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;mso-border-alt:
+  solid black .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><strong>File</strong></p>
+  </td>
+  <td width=462 style='width:346.7pt;border:solid black 1.0pt;border-left:none;
+  mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><strong>Description</strong></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-family:"Courier New"'>package<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>directory containing all generated files necessary for the
+  creation of the package’s programs</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>*.x62<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>executables built for a “62” target.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>Hello.h<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>C interface header file for the <span style='font-family:
+  "Courier New"'>Hello</span> module (generated from <span style='font-family:
+  "Courier New"'>Hello.xdc</span>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>lib<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>directory containing the release and debug versions of the
+  package’s libraries for all targets</p>
+  </td>
+ </tr>
+</table>
+
+<h4 style='margin-top:12.0pt'><a name="Testing_a_Package"></a><a
+name="_Testing_a_Package"></a><span style='mso-bookmark:Testing_a_Package'></span><a
+href="#_Hello_World_Example"><span style='mso-bookmark:Testing_a_Package'>Testing
+a Package</span><span style='mso-bookmark:Testing_a_Package'></span></a><span
+style='mso-bookmark:Testing_a_Package'></span></h4>
+
+<p>To test the <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>basic.hello</span> package, type the command:</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>xdc test<o:p></o:p></span></p>
+
+<p>The package’s build script can define one or more tests. A test is defined
+by an executable and a specified set of arguments (passed to the <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>main</span>()
+method’s <span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>argv</span>[]
+parameter). The build script may optionally define an “exec” program that is
+used to load and execute the test’s program.</p>
+
+<p>Building “<span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>test</span>”
+causes <em>all</em> tests defined by the package’s build script to be run. </p>
+
+<h4 style='margin-top:12.0pt'><a name="_Delivering_and_Installing"></a><span
+class=MsoHyperlink><a href="#_Hello_World_Example">Managing Package Dependencies<o:p></o:p></a></span></h4>
+
+<p>In general, any package may depend on zero or more “external” packages in
+order to build or run.<span style='mso-spacerun:yes'>  </span>Dependent
+packages must be located either along a “package repository” path defined by
+the variable <span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>XDCPATH</span>,
+in the <b><i><span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>xdcroot</span></i></b><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>/packages</span>
+repository, or in the repository containing the current package; <b><i><span
+style='font-family:"Courier New"'>xdcroot</span></i></b><span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>/packages</span> and the
+repository containing the current package are always searched <i>after</i> any
+repositories named by <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>XDCPATH</span>.</p>
+
+<p>Since the <span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>basic.hello</span>
+package only requires packages from the <b><i><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>xdcroot</span></i></b><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>/packages</span>
+repository, there is no need to define <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>XDCPATH</span> in order to build <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>basic.hello</span>.<span
+style='mso-spacerun:yes'>  </span>However, a <i>client</i> of the <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>basic.hello</span>
+package will need to modify <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>XDCPATH</span> to include the directory containing the <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>basic.hello</span>
+package directory (unless the <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>basic.hello</span> package and the
+client package are in the same repository.)<span style='mso-spacerun:yes'> 
+</span>If, for example, the <span style='font-family:"Courier New"'>basic.hello</span>
+package is installed in the repository <span style='font-family:"Courier New"'>c:/packages</span>,
+a client can build using this package as follows:<span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>xdc XDCPATH=&quot;c:/packages&quot; all</span><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p>As an alternative to defining <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>XDCPATH</span> on the command-line, an
+environment variable of the same name can be defined instead. </p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>set XDCPATH=&quot;c:/packages&quot;<o:p></o:p></span></p>
+
+<p><a name="_Examples"></a>If the <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>XDCPATH</span> environment variable is
+defined <i>and</i> <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>XDCPATH</span> is specified on the command line, the command
+line definition overrides the environment variable setting.</p>
+
+<h4 style='margin-top:12.0pt'><a name="_Delivering_and_Installing_a Package"></a><a
+href="#_Hello_World_Example">Delivering and Installing a Package</a></h4>
+
+<p>To deliver the <span style='font-family:"Courier New"'>basic.hello</span>
+package to a consumer (i.e., someone who uses but does not modify the contents
+of the package), simply send them the file <span style='font-family:"Courier New"'>basic_hello.tar</span>.<span
+style='mso-spacerun:yes'>  </span>This file is automatically created as part of
+building the <span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>release</span>
+goal in the <span style='font-family:"Courier New"'>basic.hello</span> package.</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>xdc release<br>
+cp basic_hello.tar …<o:p></o:p></span></p>
+
+<p>The package’s build script can define additional files that should be
+included in the tar file.<span style='mso-spacerun:yes'>  </span>For example,
+platform packages such as <span style='font-family:"Courier New"'>ti.platforms.sim62xx</span>
+include linker command files.</p>
+
+<p>To install a package, simply unpack the tar file in <i style='mso-bidi-font-style:
+normal'>any</i> directory named in <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>XDCPATH</span>, say <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>c:\packages</span>.</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>cp basic_hello.tar c:\packages<br>
+cd c:\packages<br>
+tar xf basic_hello.tar<br>
+rm basic_hello.tar<o:p></o:p></span></p>
+
+<p>The <span style='font-family:"Courier New"'><a
+href="../webhome/examples/basic/client/package.xdc.html">basic.client</a></span>
+example shows how a consumer can use the <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>basic.hello</span> package installed
+along the <span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>XDCPATH</span>.</p>
+
+<h2 style='margin-top:12.0pt'><a name=Examples></a><a
+name="_Managing_Package_Dependencies"></a><span style='mso-bookmark:Examples'></span><a
+href="#_Contents"><span style='mso-bookmark:Examples'>Examples</span><span
+style='mso-bookmark:Examples'></span></a><span style='mso-bookmark:Examples'></span></h2>
+
+<p>The distribution contains a wide variety of examples designed to illustrate
+the various capabilities of XDC.<span style='mso-spacerun:yes'>  </span>The
+examples repository is organized into several sub-directories.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:-2.6pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid black 1.5pt;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;mso-border-alt:
+  solid black .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together;
+  page-break-after:avoid'><strong>Sub-Directory</strong></p>
+  </td>
+  <td width=462 style='width:346.7pt;border:solid black 1.0pt;border-left:none;
+  mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together;
+  page-break-after:avoid'><strong>Description</strong></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together;
+  page-break-after:avoid'><span style='font-family:"Courier New"'>basic<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together;
+  page-break-after:avoid'>each package in this repository illustrates a basic
+  capability of XDC</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together;
+  page-break-after:avoid'><span style='font-family:"Courier New"'>demo<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together;
+  page-break-after:avoid'>two packages, “<span style='font-family:"Courier New"'>bob</span>”
+  that builds a library which the “<span style='font-family:"Courier New"'>dave</span>”
+  package uses to build an executable.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p style='margin:0in;margin-bottom:.0001pt;mso-pagination:widow-orphan lines-together;
+  page-break-after:avoid'><span style='font-family:"Courier New"'>idioms<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together;
+  page-break-after:avoid'>a graduated set of examples that are part of the XDC
+  training</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together;
+  page-break-after:avoid'><span style='font-family:"Courier New"'>legacy<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together;
+  page-break-after:avoid'>packages illustrating the use of XDC with legacy code
+  bases; e.g., <span style='font-family:"Courier New"'>legacy.hello</span>
+  illustrates a simple encapsulation of K &amp; R’s “hello world”.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together'><span
+  style='font-family:"Courier New"'>local<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together'>a
+  package illustrating how to create and bundle custom targets</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td width=118 style='width:88.7pt;border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together'><span
+  style='font-family:"Courier New"'>testsuite<o:p></o:p></span></p>
+  </td>
+  <td width=462 style='width:346.7pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .75pt;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='mso-pagination:widow-orphan lines-together'>two
+  packages that illustrates how a regression test suite might be organized to
+  allow delivery of the test suite to a third party who re-targets, re-builds,
+  and re-runs the tests.</p>
+  </td>
+ </tr>
+</table>
+
+<p>A description of each example is contained in the package’s <span
+style='font-family:"Courier New"'>package.xdc</span> file.<span
+style='mso-spacerun:yes'>  </span>The packages may also be browsed <a
+href="http://www.sanb.design.ti.com/iliad/webhome/examples/index.html">on-line</a>.</p>
+
+<h2 style='margin-top:12.0pt'><a name="_Advanced_Topics"></a><a
+href="#_Contents">Advanced Topics</a></h2>
+
+<h4 style='margin-top:12.0pt'><a name="_Debugging_Build_Scripts"></a><a
+href="#_Advanced_Topics">Build Scripts</a></h4>
+
+<p>Build scripts operate on objects defined using the XDC Interface Definition
+Language.<span style='mso-spacerun:yes'>  </span>In particular, the modules
+contained in the <span style='font-family:"Courier New"'>xdc.bld</span> package
+located in <b><i><span style='font-family:"Courier New"'>xdcroot</span></i></b><span
+style='font-family:"Courier New"'>/packages</span> define the build object
+model’s objects.</p>
+
+<p>The module <span style='font-family:"Courier New"'>xdc.bld.BuildEnvironment</span>
+provides “global” context read by build scripts.<span
+style='mso-spacerun:yes'>  </span>The <span style='font-family:"Courier New"'>xdc.bld.PackageContents</span>
+module, on the other hand, is modified by the build script by populating the
+package set with the physical files (programs, libraries, object files,
+documentation, etc.) which makeup the <i>delivered</i> package.</p>
+
+<p>Although the names “<span style='font-family:"Courier New"'>xdc.bld.BuildEnvironment</span>”
+and “<span style='font-family:"Courier New"'>xdc.bld.PackageContents</span>”
+are descriptive, they are somewhat long and can make build scripts hard to
+read.<span style='mso-spacerun:yes'>  </span>Therefore, standard short aliases
+for these modules exist at the time build scripts run; “<span style='font-family:
+"Courier New"'>Build</span>” is an alias for the <span style='font-family:"Courier New"'>xdc.bld.BuildEnvironment</span>
+module, and “<span style='font-family:"Courier New"'>Pkg</span>” is an alias
+for the <span style='font-family:"Courier New"'>xdc.bld.PackageContents</span>
+module.</p>
+
+<h4 style='margin-top:12.0pt'><a name="_Debugging_Build_Scripts_1"></a><a
+href="#_Advanced_Topics">Debugging Build Scripts</a></h4>
+
+<p>Build scripts are extremely powerful but this power can make the scripts
+difficult to read and understand.<span style='mso-spacerun:yes'>  </span>Of
+course, one can always use “printf” style debugging within a build script; all
+objects support the ability to display themselves as a string and any XDC
+script can use the “<span style='font-family:"Courier New"'>print</span>”
+function to display a string.</p>
+
+<p>In addition, as part of the XDC makefile generation process, a hierarchical
+XML representation of the build goals is also produced (<span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>package/package.bld.xml</span>).<span
+style='mso-spacerun:yes'>  </span>Using a GUI XML reader, it is possible to
+easily review the results of the build script and determine whether the
+appropriate build goals and options are specified. </p>
+
+<p>Finally, since build scripts are run via the <span style='font-family:"Courier New"'>tconf</span>
+tool and this tool has a built-in graphical debugger, it is even possible to
+single-step debug build scripts.<span style='mso-spacerun:yes'>  </span>Recall
+that the <span style='font-family:"Courier New"'>xdc</span> command is simply a
+“wrapper” for GNU <span style='font-family:"Courier New"'>make</span>, so we
+need a way to tell <span style='font-family:"Courier New"'>make</span> to pass
+the “<span style='font-family:"Courier New"'>-g</span>” option to <span
+style='font-family:"Courier New"'>tconf</span> whenever <span style='font-family:
+"Courier New"'>tconf</span> is used to run a build script.<span
+style='mso-spacerun:yes'>  </span>This can be done by either setting the
+environment variable <span style='font-family:"Courier New"'>MK_BLDOPTS</span>
+to “<span style='font-family:"Courier New"'>-g</span>” or by directly setting
+this variable on the <span style='font-family:"Courier New"'>xdc</span> command
+line.</p>
+
+<p style='margin-top:5.0pt;margin-right:0in;margin-bottom:12.0pt;margin-left:
+.5in'><span style='font-family:"Courier New";color:blue'>xdc MK_BLDOPTS=-g …<o:p></o:p></span></p>
+
+<h4 style='margin-top:12.0pt'><a name="_Build_Model_Configuration"></a><a
+href="#_Advanced_Topics">Targets and Platforms</a></h4>
+
+<p>In XDC, a Target encapsulates all the information necessary to build an
+object file and archive it in a library.<span style='mso-spacerun:yes'> 
+</span>Intuitively a target corresponds to a CPU Instruction Set Architecture
+(ISA) that is the target instruction set of the compiler <i style='mso-bidi-font-style:
+normal'>together</i> with one of the compiler’s runtime models (big endian,
+little endian, near, far, …).<span style='mso-spacerun:yes'>  </span>A
+platform, on the other hand, encapsulates the information necessary to create
+and run executables.<span style='mso-spacerun:yes'>  </span>Platforms include
+memory map information, external peripheral information, one or more CPUs and
+their revision numbers, as well as one or more boards and their revision
+numbers.</p>
+
+<p>Executables are built to run on platforms and an executable can run on just
+one CPU of a particular platform.<span style='mso-spacerun:yes'> 
+</span>Libraries and object files are built for a target and can be used by any
+executable that runs on a platform that supports the specified target.<span
+style='mso-spacerun:yes'>  </span>Libraries and objects built for the same
+target may always be compatibly linked together into a single executable.</p>
+
+<h4 style='margin-top:12.0pt'><a href="#_Advanced_Topics">Build and
+Configuration Domains</a></h4>
+
+<p>The XDC development environment has a number of scripts that are used to
+both specify the elements of a package as well control the design-time
+configuration of individual programs.<span style='mso-spacerun:yes'> 
+</span>The build script, <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>package.bld</span>, populates the Build Object Model (BOM)
+whereas program configuration scripts, <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>*.cfg</span>, populate the Target
+Content Object Model (TCOM).<span style='mso-spacerun:yes'>  </span>It is
+important to realize that while there are many similarities between these
+models, they are distinct “domains”; i.e., the objects in the BOM have distinct
+properties and methods that are separate from the objects in the TCOM.</p>
+
+<p>The BOM includes information about collections of libraries, programs, and
+headers that make up a package; it includes everything necessary to build the
+package.<span style='mso-spacerun:yes'>  </span>TCOM, on the other hand,
+includes information about a single program that is a part of a package; e.g.,
+specific configurations of modules included in the program.</p>
+
+<p>It is often desirable to configure a program conditionally as a function of
+attributes specified in the BOM.<span style='mso-spacerun:yes'>  </span>For
+example, one may want to select a “debug” configuration of a package as a
+function of the attributes specified in the BOM.</p>
+
+<h4 style='margin-top:12.0pt'><a href="#_Advanced_Topics">Adding a New Target</a></h4>
+
+<p>This section describes how to add a new target to the XDC build system.</p>
+
+<p>Adding a new target requires the creation of a module that implements the <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>xdc.bld.ITarget</span>
+inte<st1:PersonName w:st="on">rf</st1:PersonName>ace.<span
+style='mso-spacerun:yes'>  </span>The global build configuration script (e.g., <span
+style='font-family:"Courier New"'>config.bld</span>) must load the package
+containing this module and simply add this module to the <span
+style='font-family:"Courier New"'>Build.targets</span> array.</p>
+
+<p>Since host-side inte<st1:PersonName w:st="on">rf</st1:PersonName>aces may
+contain default implementations of methods, it is often possible to “inherit”
+an existing implementation of the <span style='font-family:"Courier New"'>xdc.bld.ITarget</span>
+inte<st1:PersonName w:st="on">rf</st1:PersonName>ace from another target.<span
+style='mso-spacerun:yes'>  </span>For example, when adding a new target that
+uses a TI compiler, it is often possible to simply create a new module that
+extends <span style='font-family:"Courier New"'>ti.targets.ITarget</span>.<span
+style='mso-spacerun:yes'>  </span>In this case, one can add a target by simply
+initializing data parameters specified in this inte<st1:PersonName w:st="on">rf</st1:PersonName>ace;
+the implementation reads these parameters and pe<st1:PersonName w:st="on">rf</st1:PersonName>orms
+the appropriate actions.</p>
+
+<h4 style='margin-top:12.0pt;page-break-after:avoid'><a href="#_Advanced_Topics">Re-Building
+Target Runtime Support</a></h4>
+
+<p>There are situations where it is necessary to rebuild the runtime support
+libraries that are delivered with a package of targets.<span
+style='mso-spacerun:yes'>  </span>This usually occurs because the existing
+runtime support libraries have been built with a newer compiler than you are
+using.<span style='mso-spacerun:yes'>  </span>If it is not possible to upgrade
+to a newer compiler, it is possible to rebuild the runtime support libraries as
+follows:</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>cd <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>targets-package</i></b><br>
+xdc -PR .<o:p></o:p></span></p>
+
+<p>For example, if your host development environment is a PC running Linux or
+Windows <i>and</i> you have to build native executables with your existing
+compiler, you can build the XDC runtime support libraries for your target.</p>
+
+<p>For Linux workstations, type:</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>cd <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>xdcroot</i></b><i style='mso-bidi-font-style:
+normal'>/</i>packages/gnu/targets<br>
+xdc -PR .<o:p></o:p></span></p>
+
+<p>For Windows workstations, type:</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>cd <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>xdcroot</i></b><i style='mso-bidi-font-style:
+normal'>/</i>packages/microsoft/targets<br>
+xdc -PR .<o:p></o:p></span></p>
+
+<p>These commands will build the XDC runtime support libraries for all
+configured native targets, and should complete without errors.</p>
+
+<h4 style='margin-top:12.0pt'><a href="#_Advanced_Topics">Adding a New Platform</a></h4>
+
+<p>This section describes how to add a new platform to the XDC build system.</p>
+
+<p>Adding a new platform to XDC requires the creation of a “platform
+package”.<span style='mso-spacerun:yes'>  </span>A platform package is like any
+other XDC package except that it must contain a module named “Platform” that
+implements the <span style='font-family:"Courier New"'>xdc.platform.IPlatform</span>
+inte<st1:PersonName w:st="on">rf</st1:PersonName>ace.</p>
+
+<h4 style='margin-top:12.0pt'><a name="_The_XDC_Package"></a><a
+name="_The_Package_Path"></a><a name="_The_Package_Path_and XDCPATH"></a><a
+href="#_Advanced_Topics">The Package Path and <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>XDCPATH</span></a></h4>
+
+<p>This section describes how to use the XDC Package Path to control the
+packages that are part of a development environment.<span
+style='mso-spacerun:yes'>  </span>The package path names one or more
+directories that contain package directories.<span style='mso-spacerun:yes'> 
+</span>This allows packages to be installed anywhere on a system.<span
+style='mso-spacerun:yes'>  </span>It also allows one to work with multiple
+versions of the same package.</p>
+
+<p>When building or using a package, the XDC tools will search for a package’s
+files by looking for the package’s directory in the directories specified by
+the path</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>$(XDCPATH);$(XDCROOT)/packages;^<o:p></o:p></span></p>
+
+<p>where <span style='font-family:"Courier New"'>$(XDCPATH)</span> is the value
+of the optionally defined <span style='font-family:"Courier New"'>XDCPATH</span>
+environment variable, <span style='font-family:"Courier New"'>$(XDCROOT)</span>
+is the installation directory of the <span style='font-family:"Courier New"'>xdc</span>
+command, and <span style='font-family:"Courier New"'>^</span> is the relative
+directory path to the repository containing the package being built.<span
+style='mso-spacerun:yes'>  </span>For example, when building a package named “<span
+style='font-family:"Courier New"'>ti.bios</span>”, the symbol <span
+style='font-family:"Courier New"'>^</span> is replaced with “<span
+style='font-family:"Courier New"'>../../</span>” but for a package named “<span
+style='font-family:"Courier New"'>hello</span>” the symbol <span
+style='font-family:"Courier New"'>^</span> is replaced with “<span
+style='font-family:"Courier New"'>../</span>”.<span style='mso-spacerun:yes'> 
+</span>By having this directory or “repository” in the package path, it is
+possible to work within a package that depends on other packages contained in
+this repository without ever having to set the <span style='font-family:"Courier New"'>XDCPATH</span>
+environment variable.</p>
+
+<p>The package path does <i style='mso-bidi-font-style:normal'>not</i> name
+package directories; it names repositories (i.e., directories containing
+package directories).<span style='mso-spacerun:yes'>  </span>Suppose, for
+example, that all packages from third parties are installed in <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>/usr/local/packages</span>
+and you are also developing several packages of you own (located in <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>/usr/home/me</span>).<span
+style='mso-spacerun:yes'>  </span>The following setting of the <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>XDCPATH</span>
+will allow your packages to use any package in <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>/usr/local/packages</span> or your own
+packages.</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>set XDCPATH=/usr/local/packages;/usr/home/me<o:p></o:p></span></p>
+
+<p>Note that directories are always separated by the ‘<span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>;</span>’ character; even
+on Unix based development systems.<span style='mso-spacerun:yes'>  </span></p>
+
+<p>It is usually a mistake to put a relative path in the <span
+style='font-family:"Courier New"'>XDCPATH</span> environment variable.<span
+style='mso-spacerun:yes'>  </span><b>Relative paths in </b><b><span
+style='font-family:"Courier New"'>XDCPATH</span> reference directories relative
+to the package being built rather than the directory where the </b><b><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>xdc</span>
+command was invoked.</b><span style='mso-spacerun:yes'>  </span>Thus, a
+relative path will refer to a different repository for each package being
+built.<span style='mso-spacerun:yes'>  </span></p>
+
+<p>It is possible, however, to use the ‘<span style='font-family:"Courier New"'>^</span>’character
+in the <span style='font-family:"Courier New"'>XDCPATH</span> definition to
+refer to the current package’s repository.<span style='mso-spacerun:yes'> 
+</span>So, if you have a repository that is always in a fixed location relative
+to all of your packages repositories, it is possible to create a single <span
+style='font-family:"Courier New"'>XDCPATH</span> setting that does not include
+any absolute paths.<span style='mso-spacerun:yes'>  </span>Suppose, for
+example, that your build system places all prerequisite packages in an “<span
+style='font-family:"Courier New"'>imports</span>” repository prior to building
+the packages in a “<span style='font-family:"Courier New"'>src</span>”
+repository <b style='mso-bidi-font-weight:normal'>and</b> the <span
+style='font-family:"Courier New"'>import</span> and <span style='font-family:
+"Courier New"'>src</span> repositories are sibling directories in the file
+system.<span style='mso-spacerun:yes'>  </span>The following XDCPATH setting is
+sufficient to build all packages in the <span style='font-family:"Courier New"'>src</span>
+repository.</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>set XDCPATH=^/../imports<o:p></o:p></span></p>
+
+<p>Note that multiple versions of the same package can appear along the <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>XDCPATH</span>.<span
+style='mso-spacerun:yes'>  </span>The package path can name multiple “package
+repositories” which can contain a package directory with the same name.<span
+style='mso-spacerun:yes'>  </span>When searching for a package, the first
+repository that contains a directory matching the package’s name will be
+used.<span style='mso-spacerun:yes'>  </span>Thus, even if two packages with
+the same name appear in the package path, only one will ever be found; i.e.,
+the first one in the order specified in the package path.</p>
+
+<h4 style='margin-top:12.0pt'><a href="#_Advanced_Topics">Package Names</a></h4>
+
+<p>All modules and interfaces are part of a named package.<span
+style='mso-spacerun:yes'>  </span>If the name is non-empty, the name must
+“match” a suffix of the current working directory name; each component of the
+package name must match the name of a corresponding sub-directory name.<span
+style='mso-spacerun:yes'>  </span>For example, the package name “<span
+style='font-family:"Courier New"'>examples.basic.hello</span>” must be located
+in a directory that ends with “<span style='font-family:"Courier New"'>examples/basic/hello</span>”.<span
+style='mso-spacerun:yes'>  </span>All module names begin with the package name
+followed by the dot (‘.’) character.<span style='mso-spacerun:yes'>  </span></p>
+
+<p>If a package’s name is the empty name, the last sub-directory name of the
+current working directory is used for locating libraries and interfaces.<span
+style='mso-spacerun:yes'>  </span>However, all module and interface names are
+not enclosed in any namespace.<span style='mso-spacerun:yes'>  </span>Thus,
+clients of the module <b><i>Mod</i></b> in an unnamed package in the directory <b><i>dir</i></b>
+must <span style='font-family:"Courier New"'>#include &lt;</span><b><i>dir</i></b>/<b><i>Mod</i></b><span
+style='font-family:"Courier New"'>.h&gt;</span> in C/C++ source files and link
+with libraries named <b><i>dir</i></b>/lib (where <b><i>dir</i></b>/lib is the
+library name returned by the unnamed package’s <span style='font-family:"Courier New"'>getLibs()</span>
+method).<span style='mso-spacerun:yes'>  </span>Since the package name is
+empty, the client can directly refer to the module <b><i>Mod</i></b> <i>without</i>
+any package namespace qualifier. </p>
+
+<p>It is possible to use “<span style='font-family:"Courier New"'>#include &lt;</span><b><i>Mod</i></b><span
+style='font-family:"Courier New"'>.h&gt;</span>” in-lieu of “<span
+style='font-family:"Courier New"'>#include &lt;</span><b><i>dir</i></b>/<b><i>Mod</i></b><span
+style='font-family:"Courier New"'>.h&gt;</span>” (thereby eliminating the
+package directory names from the C/C++ files that refer to a package) by
+specifying in the <span style='font-family:"Courier New"'>package.bld</span>
+build script that the referring package “<span style='font-family:"Courier New"'>uses</span>”
+<b><i>dir</i></b>.</p>
+
+<p style='margin-left:.5in'><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";color:blue'>Pkg.uses = [&quot;bios/legacy&quot;];<o:p></o:p></span></p>
+
+<p>The package path will be searched for a directory that matches the path
+suffixes named and these directories are added to the C/C++ compiler’s include
+paths.</p>
+
+<h4 style='margin-top:12.0pt'><a name="_The_xdc_Command"></a><a
+href="#_Advanced_Topics">The <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>xdc</span> Command</a><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></h4>
+
+<p>The <span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>xdc</span>
+command is used to build packages and programs that use packages.<span
+style='mso-spacerun:yes'>  </span>In its current implementation, <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>xdc</span>
+is nothing more than command shell that invokes the GNU <span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>make</span> utility with
+makefiles that are either part of the XDC toolset or generated as part of
+processing the package build script (i.e., <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>package.bld</span>).</p>
+
+<p>Complete documentation of this command together with examples is part of the
+<a href="xdc.html"><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>xdc</span> man page</a>.</p>
+
+<h4 style='margin-top:12.0pt'><a href="#_Advanced_Topics">Known Problems</a><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></h4>
+
+<p>This section contains a description of known problems with the current
+release.</p>
+
+<p style='margin-left:1.0in;text-indent:-.25in;mso-list:l11 level1 lfo18;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>The current dependency generation is much too
+conservative; in many situations we unnecessarily re-build files.<span
+style='mso-spacerun:yes'>  </span>For example, executables will re-configure
+and re-link if a package it depends on has been cleanly rebuilt.<span
+style='mso-spacerun:yes'>  </span>This is a consequence of how we determine
+changes to an interface.</p>
+
+<p style='margin-left:1.0in;text-indent:-.25in;mso-list:l11 level1 lfo18;
+tab-stops:list 1.0in left 1.5in'><![if !supportLists]><span style='font-family:
+Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>The package path allows multiple packages with
+the same name to be part of the build environment.<span
+style='mso-spacerun:yes'>  </span>This can be a useful when building a
+“replacement” package for a package that may appear in a central read-only
+repository together with other packages that are needed.<span
+style='mso-spacerun:yes'>  </span>In practice, however, this technique may
+result in build errors because of an improper setting of the package path: an
+unintended version of the duplicate package is used.</p>
+
+<p style='margin-left:1.0in;text-indent:-.25in;mso-list:l11 level1 lfo18;
+tab-stops:list 1.0in left 1.5in'><![if !supportLists]><span style='font-family:
+Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>If package B depends on package A, installation
+of a <i style='mso-bidi-font-style:normal'>different</i> version of package A
+should cause the appropriate files in package B to be re-built.<span
+style='mso-spacerun:yes'>  </span>However, because the underlying build engine
+is GNU make, package B will re-build only if the files in package A are newer;
+i.e., replacing a package with an older version of itself does not necessarily
+trigger a re-build.</p>
+
+<p style='tab-stops:1.5in'><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+<!--
+/*
+ * @(#) xdc.cdk; 1, 0, 0, 0,213; 2-22-2010 10:33:10; /db/ztree/library/trees/xdc/xdc-u17x/src/packages/
+ */
+-->
+

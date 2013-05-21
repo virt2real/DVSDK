@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="" label="" date="" buildCount="" producerId="">
+<package name="microsoft.targets.arm.rts"
+    version="1, 0, 0, 0"/>
+<imports>
+    <package name="xdc.runtime"
+        version=""/>
+</imports>
+<references>
+    <package name="ti.targets"
+        version="1, 0, 3, 1266971046000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="ITarget.xs"/>
+        <file name="MSP430.xs"/>
+        <file name="MSP430_large_code.xs"/>
+        <file name="MSP430_large_data.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="gnu.targets"
+        version="1, 0, 1, 1266971035000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="ITarget.xs"/>
+        <file name="Linux86.xs"/>
+        <file name="MVArm9.xs"/>
+        <file name="Mingw.xs"/>
+        <file name="UCArm9.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0, 1266863629976"
+        providerId="xdccore">
+        <file name="Clock.xs"/>
+        <file name="Trace.xs"/>
+        <file name="java/package.jar"/>
+    </package>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0, 1266863640796"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0, 1266863661115"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="microsoft.targets"
+        version="1, 0, 2, 0, 1266971036000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="ITarget.xs"/>
+        <file name="Win32.xs"/>
+        <file name="_utils.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 1266863682375"
+        providerId="xdccore">
+        <file name="java/antlr.jar"/>
+        <file name="java/ecj.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/jsr173_api.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+    </package>
+    <package name="xdc.rov"
+        version="1, 0, 0, 1266863613586"
+        providerId="xdccore">
+        <file name="Model.xs"/>
+        <file name="Program.xs"/>
+        <file name="StateReader.xs"/>
+        <file name="StructureDecoder.xs"/>
+        <file name="ViewXml.xs"/>
+    </package>
+    <package name="xdc.runtime"
+        version="2, 0, 0, 0, 1266863632077"
+        providerId="xdccore">
+        <file name="Assert.xs"/>
+        <file name="Defaults.xs"/>
+        <file name="Diags.xs"/>
+        <file name="Error.xs"/>
+        <file name="Gate.xs"/>
+        <file name="GateNull.xs"/>
+        <file name="HeapMin.xs"/>
+        <file name="HeapStd.xs"/>
+        <file name="IGateProvider.xs"/>
+        <file name="ILogger.xs"/>
+        <file name="Log.xs"/>
+        <file name="LoggerBuf.xs"/>
+        <file name="LoggerSys.xs"/>
+        <file name="Memory.xs"/>
+        <file name="Rta.xs"/>
+        <file name="Startup.xs"/>
+        <file name="SysMin.xs"/>
+        <file name="System.xs"/>
+        <file name="Text.xs"/>
+        <file name="Timestamp.xs"/>
+        <file name="build.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.runtime.knl"
+        version="1, 0, 0, 1266863624753"
+        providerId="xdccore">
+        <file name="build.xs"/>
+    </package>
+    <package name="xdc.bld"
+        version="1, 0, 2, 1266863600174"
+        providerId="xdccore">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="microsoft.targets.arm"
+        version="1, 0, 0, 0, 1266971047000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="WinCE.xs"/>
+    </package>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0, 1266863637790"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.targets.arm"
+        version="2, 0, 1, 0, 1266971047000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="package.xs"/>
+    </package>
+    <package name="gnu.targets.arm"
+        version="1, 0, 0, 0, 1266971036000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="GCArmv6.xs"/>
+        <file name="GCArmv7A.xs"/>
+    </package>
+    <package name="ti.targets.elf"
+        version="1, 0, 0, 1266971055000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="ITarget.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0, 1266863644657"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.targets.arm.elf"
+        version="1, 0, 0, 1266971048000"
+        providerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src">
+        <file name="IArm.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 1, 1266863565961"
+        providerId="xdccore">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+        <file name="xmlgen2.xs"/>
+    </package>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod/xdcprod-l34/product/Linux/xdctools_3_16_03_34_eng/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include/utils.tci"/>
+        <xdcCorePkg version="16, 0, 1, 0, 1266863587840" producerId="ndefined" buildCount="224" releaseName="xdc_corevers" label="default" date="1266863587840"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/common.bld"/>
+    <file name="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/config.bld"/>
+</orphans>
+</release>

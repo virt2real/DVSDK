@@ -1,0 +1,13 @@
+Package: libsidplay1
+Version: 1.36.59-r1.6
+Description: A library for replaying C64 SID music
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: libsidplay
+Homepage: unknown
+Build: install/afa4844
+Depends: libstdc++6, libc6, libgcc1
+Source: ftp://ftp.uni-frankfurt.de/pub/Mirrors2/gentoo.org/distfiles/libsidplay-1.36.59.tgz;name=archive http://ftp.debian.org/debian/pool/main/libs/libsidplay/libsidplay_1.36.59-5.diff.gz;name=patch

@@ -1,0 +1,197 @@
+/*
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+/*
+ * Generally there is no need to edit this file!
+ *
+ * This file controls which binaries are built, as well as compiler options
+ * to use.
+ *
+ * The contents of this file usually don't change, but having it in your
+ * ownership allows you to tweak your compler options.  If you do change
+ * this file, however, on the next upgrade to Codec Engine we recommend
+ * that you take "config.bld" file as supplied by the upgrade and then merge
+ * your changes with it.
+ *
+ * Also note that the XDC tools pick up the first config.bld file they find
+ * along the package path; to make sure it is this file that gets picked,
+ * make the directory where this file is the first in the package path.
+ * You can verify that this file is being included by checking that
+ * the build process for each package prints the "Running the version
+ * from Codec Engine Examples" message.
+ */
+
+/*
+ *  ======== config.bld ========
+ *  This script is run prior to all build scripts. It sets host-system-
+ *  independent values for targets and platforms, then it attempts to
+ *  find the host-system-specific user.bld script that sets rootDirs.
+ *
+ *  These settings may be a function of the following global variables:
+ *
+ *	environment a hash table of environment strings
+ *
+ *	arguments   an array of string arguments to the config.bld script
+ *		    initialized as follows:
+ *		        arguments[0] - the file name of the config.bld script
+ *		        arguments[1] - the first argument specified in XDCARGS
+ *		            :
+ *		        arguments[n] - the n'th argument in XDCARGS
+ *
+ *	Build	    an alias for xdc.om.xdc.bld.BuildEnvironment
+ */
+
+print("config.bld: Running the version from Codec Engine Examples.");
+
+var C64P_rootdir;
+var C674_rootdir;
+var V5T_rootdir;
+var CC_V5T;
+var ucarm9_rootdir;
+var linux86_rootdir;
+var wince_rootdir;
+var wince_projectroot;
+var devices;
+var programs;
+var gppos;
+
+/* initialize local vars with those set in xdcpaths.mak (via XDCARGS) */
+for (x = 0; x < arguments.length; x++) {
+    if (arguments[x].match(/^CGTOOLS_C64P=/)) {
+        C64P_rootdir = arguments[x].split("=")[1];
+    } else if(arguments[x].match(/^CGTOOLS_C674=/)) {
+        C674_rootdir = arguments[x].split("=")[1];
+    } else if(arguments[x].match(/^CGTOOLS_V5T=/)) {
+        V5T_rootdir = arguments[x].split("=")[1];
+    } else if(arguments[x].match(/^CC_V5T=/)) {
+        CC_V5T = arguments[x].split("=")[1];
+    } else if(arguments[x].match(/^CGTOOLS_UCARM9=/)) {
+        ucarm9_rootdir = arguments[x].split("=")[1];
+    } else if(arguments[x].match(/^CGTOOLS_LINUX86=/)) {
+        linux86_rootdir = arguments[x].split("=")[1];
+    } else if(arguments[x].match(/^WINCE_ROOTDIR=/)) {
+        wince_rootdir = arguments[x].split("=")[1];
+    } else if(arguments[x].match(/^WINCE_PROJECTROOT=/)) {
+        wince_projectroot = arguments[x].split("=")[1];
+    } else if(arguments[x].match(/^DEVICES=/)) {
+        devices = arguments[x].split("=")[1];
+    } else if(arguments[x].match(/^PROGRAMS=/)) {
+        programs = arguments[x].split("=")[1];
+    } else if(arguments[x].match(/^GPPOS=/)) {
+        gppos = arguments[x].split("=")[1];
+    }
+}
+
+var os = environment["xdc.hostOS"];
+
+/*
+ *  ======== DSP target ========
+ */
+var remarks =  " " +
+//   "-pdr "     + // enable remarks
+   "-pden "    + // enumerate remarks
+//   "-pds=880 " + // variable never referenced
+//   "-pds=552 " + // variable set but not used
+//   "-pds=238 " + // controlling expression is constant
+//   "-pds=681 " + // call cannot be inlined
+//   "-pds=452 " + // long long type is not standard
+   "-pds=195 " + // zero used for undefined preprocessing id (setjmp.h)
+   "";
+
+/* supported targets we _might_ build for */
+var GCArmv5T;
+var C64P;
+var C674;
+var UCArm9;
+var WinCE;
+var Linux86;
+
+/* Loading this 'capsule' initializes the targets we _will_ build for */
+utils.loadCapsule('ti/sdo/ce/examples/buildutils/Platforms.xs');
+
+/* now that we know which targets we're building for, finish their config */
+if (C64P != undefined) {
+    C64P.rootDir = C64P_rootdir;
+    C64P.ccOpts.prefix += remarks;
+
+    Build.targets.$add(C64P);
+}
+
+if (C674 != undefined) {
+    C674.rootDir = C674_rootdir;
+    C674.ccOpts.prefix += remarks;
+
+    Build.targets.$add(C674);
+}
+
+if (Linux86 != undefined) {
+    Linux86.rootDir = linux86_rootdir;
+    Linux86.lnkOpts.suffix = "-lpthread " + Linux86.lnkOpts.suffix;
+
+    Build.targets.$add(Linux86);
+}
+
+if (UCArm9 != undefined) {
+    UCArm9.rootDir = ucarm9_rootdir;
+    UCArm9.ccOpts.prefix += " -D_REENTRANT ";
+
+    /* add pthreads */
+    UCArm9.lnkOpts.suffix = "-lpthread " + UCArm9.lnkOpts.suffix;
+
+    Build.targets.$add(UCArm9);
+}
+
+if (GCArmv5T != undefined) {
+    GCArmv5T.rootDir = V5T_rootdir;
+    GCArmv5T.LONGNAME = CC_V5T;
+    GCArmv5T.ccOpts.prefix += " -Wall -fno-strict-aliasing ";
+
+    /* We disable C++ support so we don't need it on the target file system */
+    GCArmv5T.lnkOpts.suffix = GCArmv5T.lnkOpts.suffix.replace("-lstdc++", "");
+
+    /* add pthreads */
+    GCArmv5T.lnkOpts.suffix += " -lpthread ";
+
+    Build.targets.$add(GCArmv5T);
+}
+
+if (WinCE != undefined) {
+    WinCE.rootDir = wince_rootdir;
+    WinCE.execExt = "_wince.exe";
+    WinCE.projectRoot = wince_projectroot;
+
+    Build.targets.$add(WinCE);
+}
+
+/*
+ *  ======== Pkg.attrs.profile ========
+ */
+Pkg.attrs.profile = "release";

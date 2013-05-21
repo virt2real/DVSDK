@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.examples.dma" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="app.c"/>
+        <srcFile name="mySem.c"/>
+        <srcFile name="package/cfg/bin/dmaExample_dm6467_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/dmaExample_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/bin/dmaExample_dm6467_x64Pcfg_c.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="dmaExample.tcf"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/bin/dmaExample_dm6467_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/dmaExample_dm6467/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/dmaExample_dm6467_x64Pcfg_c.o64P.dep" src="package/cfg/bin/dmaExample_dm6467_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/dmaExample_dm6467/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/bin/dmaExample_dm6467_x64Pcfg.o64P.dep" src="package/cfg/bin/dmaExample_dm6467_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/dmaExample_dm6467_x64P.o64P.dep" src="package/cfg/bin/dmaExample_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/bin/dmaExample_dm6467_x64P.dep" src="package/cfg/bin/dmaExample_dm6467_x64P.cfg"/>
+        <srcFile name="package/rel/ti_sdo_fc_examples_dma.tar.dep" src="package/rel/ti_sdo_fc_examples_dma.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="bin/dmaExample_dm6467"
+        pname="bin/dmaExample_dm6467.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/dmaExample_dm6467_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/dmaExample_dm6467_x64P"
+        cfgScript="dmaExample.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6467%22%7D"
+        />
+    </executables>
+    <tests>
+    <test exeName="bin/dmaExample_dm6467.x64P"
+        args=""
+        groupName="bin/dmaExample_dm6467.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_examples_dma"
+        pname="ti_sdo_fc_examples_dma.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

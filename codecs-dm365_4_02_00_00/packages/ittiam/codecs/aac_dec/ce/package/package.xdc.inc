@@ -1,0 +1,16 @@
+package.xdc
+package.xs
+AAC_DEC.xdc
+AAC_DEC.xs
+package/ittiam.codecs.aac_dec.ce.sch
+package/.vers_g150
+package/.vers_r160
+package/.vers_b150
+package/.vers_c150
+package/.xdc-t50
+package/ittiam_codecs_aac_dec_ce.java
+package/ittiam_codecs_aac_dec_ce.class
+package/package_ittiam.codecs.aac_dec.ce.c
+package/package.defs.h
+package/package.doc.xml
+package/ittiam.codecs.aac_dec.ce.ccs

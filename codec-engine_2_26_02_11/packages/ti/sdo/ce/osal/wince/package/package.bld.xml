@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.osal.wince" version="1, 0, 0" producerId="codec_engine_2_26_02_11">
+    <units>
+        <module name="Settings"/>
+    </units>
+    <sources>
+        <srcFile name="Trace.c"/>
+        <srcFile name="Sem_wince.c"/>
+        <srcFile name="Memory_cmem.c"/>
+        <srcFile name="LockMP_wince.c"/>
+        <srcFile name="SemMP_wince.c"/>
+        <srcFile name="Queue_wince.c"/>
+        <srcFile name="package/package_ti.sdo.ce.osal.wince.c"/>
+        <srcFile name="Reg_wince.c"/>
+        <srcFile name="File_wince.c"/>
+        <srcFile name="Log_noOS.c"/>
+        <srcFile name="Thread_wince.c"/>
+        <srcFile name="Global_wince.c"/>
+        <srcFile name="Lock_wince.c"/>
+        <srcFile name="GT_config_wince.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/osal_wince.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/Trace.ov4TCE.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/Sem_wince.ov4TCE.dep" src="Sem_wince.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/package/package_ti.sdo.ce.osal.wince.ov4TCE.dep" src="package/package_ti.sdo.ce.osal.wince.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/Memory_cmem.ov4TCE.dep" src="Memory_cmem.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/LockMP_wince.ov4TCE.dep" src="LockMP_wince.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/SemMP_wince.ov4TCE.dep" src="SemMP_wince.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/Queue_wince.ov4TCE.dep" src="Queue_wince.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/Reg_wince.ov4TCE.dep" src="Reg_wince.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/File_wince.ov4TCE.dep" src="File_wince.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/Log_noOS.ov4TCE.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/Thread_wince.ov4TCE.dep" src="Thread_wince.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/Global_wince.ov4TCE.dep" src="Global_wince.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/Lock_wince.ov4TCE.dep" src="Lock_wince.c"/>
+        <srcFile name="package/lib/lib/debug/osal_wince/GT_config_wince.ov4TCE.dep" src="GT_config_wince.c"/>
+        <srcFile name="lib/release/osal_wince.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/osal_wince/Trace.ov4TCE.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/Sem_wince.ov4TCE.dep" src="Sem_wince.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/package/package_ti.sdo.ce.osal.wince.ov4TCE.dep" src="package/package_ti.sdo.ce.osal.wince.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/Memory_cmem.ov4TCE.dep" src="Memory_cmem.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/LockMP_wince.ov4TCE.dep" src="LockMP_wince.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/SemMP_wince.ov4TCE.dep" src="SemMP_wince.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/Queue_wince.ov4TCE.dep" src="Queue_wince.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/Reg_wince.ov4TCE.dep" src="Reg_wince.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/File_wince.ov4TCE.dep" src="File_wince.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/Log_noOS.ov4TCE.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/Thread_wince.ov4TCE.dep" src="Thread_wince.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/Global_wince.ov4TCE.dep" src="Global_wince.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/Lock_wince.ov4TCE.dep" src="Lock_wince.c"/>
+        <srcFile name="package/lib/lib/release/osal_wince/GT_config_wince.ov4TCE.dep" src="GT_config_wince.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_osal_wince.tar.dep" src="package/rel/ti_sdo_ce_osal_wince.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/osal_wince"
+        pname="lib/debug/osal_wince.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/osal_wince"
+        pname="lib/release/osal_wince.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_osal_wince"
+        pname="ti_sdo_ce_osal_wince.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package_ti.sdo.ce.osal.wince.c"/>
+        <file name="Queue_wince.c"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/debug/osal_wince.av4TCE"/>
+        <file name="File_wince.c"/>
+        <file name="SemMP_wince.c"/>
+        <file name="package/package.rel.dot"/>
+        <file name="Lock_wince.c"/>
+        <file name="Thread_wince.c"/>
+        <file name="GT_config_libC.h"/>
+        <file name="Reg_wince.c"/>
+        <file name="Memory_cmem.c"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/release/osal_wince.av4TCE"/>
+        <file name="GT_config_wince.c"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="LockMP_wince.c"/>
+        <file name="Trace.c"/>
+        <file name="Reg.h"/>
+        <file name="Sem_wince.c"/>
+        <file name="package.bld"/>
+        <file name="Log_noOS.c"/>
+        <file name="Global_wince.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

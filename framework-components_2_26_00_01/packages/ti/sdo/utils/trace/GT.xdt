@@ -1,0 +1,110 @@
+%/*
+% *  Copyright (c) 2010, Texas Instruments Incorporated
+% *  All rights reserved.
+% * 
+% *  Redistribution and use in source and binary forms, with or without
+% *  modification, are permitted provided that the following conditions
+% *  are met:
+% * 
+% *  *  Redistributions of source code must retain the above copyright
+% *     notice, this list of conditions and the following disclaimer.
+% * 
+% *  *  Redistributions in binary form must reproduce the above copyright
+% *     notice, this list of conditions and the following disclaimer in the
+% *     documentation and/or other materials provided with the distribution.
+% * 
+% *  *  Neither the name of Texas Instruments Incorporated nor the names of
+% *     its contributors may be used to endorse or promote products derived
+% *     from this software without specific prior written permission.
+% * 
+% *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+% *  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+% *  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+% *  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+% *  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+% *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+% *  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+% *  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+% *  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+% *  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+% *  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+%  */
+%%{
+    /*
+     * ======== GT.xdt ========
+     * Generate the config structure for GT module
+     */
+    var GT = this;
+
+    /*
+     * Validate the params that have to non-NULL and generate an error 
+     * if they are 
+     */
+    if (this.MALLOCFXN == null) {
+        throw("GT cannot function without malloc fxn. Please configure MALLOCFXN for GT \n");
+    }
+
+    if (this.PRINTFXN == null) {
+        throw("GT cannot function without a print fxn. Please configure PRINTFXN for GT \n");
+    }
+
+%%}
+
+
+
+/*
+ * C code contribution from ti/sdo/utils/GT.xdt 
+ */
+#include <xdc/std.h>
+#include <ti/sdo/utils/trace/gt.h>
+
+% // unconditionally, we need printfxn and mallocfxn
+extern Void `this.PRINTFXN`(String fmt, ...); 
+extern Ptr `this.MALLOCFXN`(Int size);
+ 
+% if (this.PIDFXN != null) {
+extern Int `this.PIDFXN`(void);
+% }
+% if (this.TIDFXN != null) {
+extern Int `this.TIDFXN`(void);
+% }
+% if (this.ERRORFXN != null) {
+extern void `this.ERRORFXN`(String fmt, ...);
+% }
+% if (this.FREEFXN != null) {
+extern void `this.FREEFXN`(Ptr, Int);
+% }
+% if (this.TIMEFXN != null) {
+extern UInt32 `this.TIMEFXN`(void);
+% }
+% if (this.LOCKFXN != null) {
+extern Int `this.LOCKFXN`(void);
+% }
+% if (this.UNLOCKFXN != null) {
+extern Int `this.UNLOCKFXN`(void);
+% }
+% if (this.INITFXN != null) {
+extern Int `this.INITFXN`(void);
+% }
+
+GT_Config _ti_sdo_utils_trace_GT_params = {
+    `this.PRINTFXN == null ? "NULL" : this.PRINTFXN`,
+    `this.PIDFXN == null ? "NULL" : this.PIDFXN`,
+    `this.TIDFXN == null ? "NULL" : this.TIDFXN`,
+    `this.ERRORFXN == null ? "NULL" : this.ERRORFXN`,
+    `this.MALLOCFXN == null ? "NULL" : this.MALLOCFXN`,
+    `this.FREEFXN == null ? "NULL" : this.FREEFXN`,
+    `this.TIMEFXN == null ? "NULL" : this.TIMEFXN`,
+    `this.LOCKFXN == null ? "NULL" : this.LOCKFXN`,
+    `this.UNLOCKFXN == null ? "NULL" : this.UNLOCKFXN`,
+    `this.INITFXN == null ? "NULL" : this.INITFXN`    
+};
+
+GT_Config *GT = &_ti_sdo_utils_trace_GT_params;
+%%{
+/*
+ * @(#) ti.sdo.utils.trace; 1, 0, 0,186; 12-1-2010 17:26:17; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+
+%%}

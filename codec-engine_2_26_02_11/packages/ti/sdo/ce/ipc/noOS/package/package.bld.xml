@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.ipc.noOS" version="2, 0, 1" producerId="codec_engine_2_26_02_11">
+    <units>
+        <module name="Ipc"/>
+    </units>
+    <sources>
+        <srcFile name="Comm_noOS.c"/>
+        <srcFile name="package/package_ti.sdo.ce.ipc.noOS.c"/>
+        <srcFile name="Processor_noOS.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/ipc_noOS.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/Comm_noOS.ov5T.dep" src="Comm_noOS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/package/package_ti.sdo.ce.ipc.noOS.ov5T.dep" src="package/package_ti.sdo.ce.ipc.noOS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/Processor_noOS.ov5T.dep" src="Processor_noOS.c"/>
+        <srcFile name="lib/debug/ipc_noOS.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/Comm_noOS.o86U.dep" src="Comm_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/package/package_ti.sdo.ce.ipc.noOS.o86U.dep" src="package/package_ti.sdo.ce.ipc.noOS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/Processor_noOS.o86U.dep" src="Processor_noOS.c"/>
+        <srcFile name="lib/release/ipc_noOS.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/Comm_noOS.ov4TCE.dep" src="Comm_noOS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/package/package_ti.sdo.ce.ipc.noOS.ov4TCE.dep" src="package/package_ti.sdo.ce.ipc.noOS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/Processor_noOS.ov4TCE.dep" src="Processor_noOS.c"/>
+        <srcFile name="lib/debug/ipc_noOS.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/Comm_noOS.ov4TCE.dep" src="Comm_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/package/package_ti.sdo.ce.ipc.noOS.ov4TCE.dep" src="package/package_ti.sdo.ce.ipc.noOS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/Processor_noOS.ov4TCE.dep" src="Processor_noOS.c"/>
+        <srcFile name="lib/release/ipc_noOS.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/Comm_noOS.o86U.dep" src="Comm_noOS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/package/package_ti.sdo.ce.ipc.noOS.o86U.dep" src="package/package_ti.sdo.ce.ipc.noOS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/Processor_noOS.o86U.dep" src="Processor_noOS.c"/>
+        <srcFile name="lib/release/ipc_noOS.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/Comm_noOS.o470uC.dep" src="Comm_noOS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/package/package_ti.sdo.ce.ipc.noOS.o470uC.dep" src="package/package_ti.sdo.ce.ipc.noOS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_noOS/Processor_noOS.o470uC.dep" src="Processor_noOS.c"/>
+        <srcFile name="lib/debug/ipc_noOS.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/Comm_noOS.o470uC.dep" src="Comm_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/package/package_ti.sdo.ce.ipc.noOS.o470uC.dep" src="package/package_ti.sdo.ce.ipc.noOS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/Processor_noOS.o470uC.dep" src="Processor_noOS.c"/>
+        <srcFile name="lib/debug/ipc_noOS.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/Comm_noOS.ov5T.dep" src="Comm_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/package/package_ti.sdo.ce.ipc.noOS.ov5T.dep" src="package/package_ti.sdo.ce.ipc.noOS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_noOS/Processor_noOS.ov5T.dep" src="Processor_noOS.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_ipc_noOS.tar.dep" src="package/rel/ti_sdo_ce_ipc_noOS.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/ipc_noOS"
+        pname="lib/release/ipc_noOS.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/ipc_noOS"
+        pname="lib/debug/ipc_noOS.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/ipc_noOS"
+        pname="lib/release/ipc_noOS.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/ipc_noOS"
+        pname="lib/debug/ipc_noOS.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/ipc_noOS"
+        pname="lib/release/ipc_noOS.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/ipc_noOS"
+        pname="lib/release/ipc_noOS.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/ipc_noOS"
+        pname="lib/debug/ipc_noOS.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/ipc_noOS"
+        pname="lib/debug/ipc_noOS.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_ipc_noOS"
+        pname="ti_sdo_ce_ipc_noOS.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/debug/ipc_noOS.a470uC"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/release/ipc_noOS.av4TCE"/>
+        <file name="package/package_ti.sdo.ce.ipc.noOS.c"/>
+        <file name="lib/debug/ipc_noOS.a86U"/>
+        <file name="lib/release/ipc_noOS.a86U"/>
+        <file name="package/package.rel.dot"/>
+        <file name="Processor_noOS.c"/>
+        <file name="lib/debug/ipc_noOS.av5T"/>
+        <file name="lib/release/ipc_noOS.a470uC"/>
+        <file name="lib/release/ipc_noOS.av5T"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="Comm_noOS.c"/>
+        <file name="lib/debug/ipc_noOS.av4TCE"/>
+        <file name="package.bld"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

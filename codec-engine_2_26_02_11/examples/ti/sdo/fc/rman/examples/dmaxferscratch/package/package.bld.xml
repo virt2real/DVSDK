@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.rman.examples.dmaxferscratch" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/dmaXferScratch_dm6446_x64Pcfg.s62"/>
+        <srcFile name="app.c"/>
+        <srcFile name="package/cfg/dmaXferScratch_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/dmaXferScratch_dm6446_x64Pcfg_c.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="dmaXferScratch.tcf"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/dmaXferScratch_dm6446_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dmaXferScratch_dm6446/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/dmaXferScratch_dm6446_x64Pcfg.o64P.dep" src="package/cfg/dmaXferScratch_dm6446_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dmaXferScratch_dm6446_x64Pcfg_c.o64P.dep" src="package/cfg/dmaXferScratch_dm6446_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dmaXferScratch_dm6446_x64P.o64P.dep" src="package/cfg/dmaXferScratch_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/dmaXferScratch_dm6446_x64P.dep" src="package/cfg/dmaXferScratch_dm6446_x64P.cfg"/>
+        <srcFile name="package/rel/ti_sdo_fc_rman_examples_dmaxferscratch.tar.dep" src="package/rel/ti_sdo_fc_rman_examples_dmaxferscratch.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="dmaXferScratch_dm6446"
+        pname="dmaXferScratch_dm6446.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6446"
+        profile="debug_trace"
+        xCfgScript="package/cfg/dmaXferScratch_dm6446_x64P.cfg"
+        xCfgPrefix="package/cfg/dmaXferScratch_dm6446_x64P"
+        cfgScript="dmaXferScratch.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6446%22%7D"
+        />
+    </executables>
+    <tests>
+    <test exeName="dmaXferScratch_dm6446.x64P"
+        args=""
+        groupName="dmaXferScratch_dm6446.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_rman_examples_dmaxferscratch"
+        pname="ti_sdo_fc_rman_examples_dmaxferscratch.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

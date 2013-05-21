@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/gstreamer-0.10
+
+Name: GStreamer Bad Plugin libraries
+Description: Currently includes the photography interface library
+Requires: gstreamer-0.10 gstreamer-base-0.10
+Version: 0.10.20
+Libs: -L${libdir} -lgstphotography-0.10
+Cflags: -I${includedir}
+

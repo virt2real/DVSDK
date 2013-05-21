@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.bioslog" version="1, 0, 1" producerId="codec_engine_2_26_02_11">
+    <units>
+        <module name="LogClient"/>
+        <module name="LogServer"/>
+    </units>
+    <sources>
+        <srcFile name="LogServer.c"/>
+        <srcFile name="LogTracker.c"/>
+        <srcFile name="package/package_ti.sdo.ce.bioslog.c"/>
+        <srcFile name="LogClient.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/bioslog.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bioslog/package/package_ti.sdo.ce.bioslog.o674.dep" src="package/package_ti.sdo.ce.bioslog.c"/>
+        <srcFile name="package/lib/lib/release/bioslog/LogServer.o674.dep" src="LogServer.c"/>
+        <srcFile name="package/lib/lib/release/bioslog/LogTracker.o674.dep" src="LogTracker.c"/>
+        <srcFile name="package/lib/lib/release/bioslog/LogClient.o674.dep" src="LogClient.c"/>
+        <srcFile name="lib/release/bioslog.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bioslog/package/package_ti.sdo.ce.bioslog.o64P.dep" src="package/package_ti.sdo.ce.bioslog.c"/>
+        <srcFile name="package/lib/lib/release/bioslog/LogServer.o64P.dep" src="LogServer.c"/>
+        <srcFile name="package/lib/lib/release/bioslog/LogTracker.o64P.dep" src="LogTracker.c"/>
+        <srcFile name="package/lib/lib/release/bioslog/LogClient.o64P.dep" src="LogClient.c"/>
+        <srcFile name="lib/release/bioslog.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bioslog/LogClient.o470uC.dep" src="LogClient.c"/>
+        <srcFile name="package/lib/lib/release/bioslog/package/package_ti.sdo.ce.bioslog.o470uC.dep" src="package/package_ti.sdo.ce.bioslog.c"/>
+        <srcFile name="lib/release/bioslog.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bioslog/LogClient.ov5T.dep" src="LogClient.c"/>
+        <srcFile name="package/lib/lib/release/bioslog/package/package_ti.sdo.ce.bioslog.ov5T.dep" src="package/package_ti.sdo.ce.bioslog.c"/>
+        <srcFile name="lib/release/bioslog.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bioslog/LogClient.ov4TCE.dep" src="LogClient.c"/>
+        <srcFile name="package/lib/lib/release/bioslog/package/package_ti.sdo.ce.bioslog.ov4TCE.dep" src="package/package_ti.sdo.ce.bioslog.c"/>
+        <srcFile name="lib/release/bioslog.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bioslog/LogClient.o86U.dep" src="LogClient.c"/>
+        <srcFile name="package/lib/lib/release/bioslog/package/package_ti.sdo.ce.bioslog.o86U.dep" src="package/package_ti.sdo.ce.bioslog.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_bioslog.tar.dep" src="package/rel/ti_sdo_ce_bioslog.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/bioslog"
+        pname="lib/release/bioslog.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/release/bioslog"
+        pname="lib/release/bioslog.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/bioslog"
+        pname="lib/release/bioslog.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/bioslog"
+        pname="lib/release/bioslog.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/bioslog"
+        pname="lib/release/bioslog.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/bioslog"
+        pname="lib/release/bioslog.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_bioslog"
+        pname="ti_sdo_ce_bioslog.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="LogClient.h"/>
+        <file name="lib/release/bioslog.a86U"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/release/bioslog.av5T"/>
+        <file name="lib/release/bioslog.a674"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="LogServer.c"/>
+        <file name="Timer.h"/>
+        <file name="package/package_ti.sdo.ce.bioslog.c"/>
+        <file name="package/package.rel.dot"/>
+        <file name="LogServer.h"/>
+        <file name="lib/release/bioslog.av4TCE"/>
+        <file name="LogTracker.c"/>
+        <file name="lib/release/bioslog.a470uC"/>
+        <file name="LogTracker.h"/>
+        <file name="LogProtocol.h"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/release/bioslog.a64P"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="LogClient.c"/>
+        <file name="package.bld"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

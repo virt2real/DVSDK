@@ -1,0 +1,90 @@
+#/****************************************************************************/
+#/*                                                                          */
+#/*                  ITTIAM SYSTEMS PVT LTD, BANGALORE                       */
+#/*                         COPYRIGHT(C) 2008                                */
+#/*                                                                          */
+#/* This program is proprietary to Ittiam Systems Pvt. Ltd. and is protected */
+#/* under Indian Copyright Act as an unpublished work.Its use and disclosure */
+#/* is  limited by  the terms and conditions of a license  agreement. It may */
+#/* be copied or  otherwise reproduced or  disclosed  to persons outside the */
+#/* licensee 's  organization  except  in  accordance  with  the  terms  and */
+#/* conditions of  such an agreement. All  copies and reproductions shall be */
+#/* the  property  of Ittiam Systems Pvt.  Ltd. and  must  bear  this notice */
+#/* in its entirety.                                                         */
+#/*                                                                          */
+#/****************************************************************************/
+
+#
+#  ======== Makefile ========
+#
+
+# Set location of various tools
+
+DVEVM_INSTALL_DIR = /home/dm365/dvsdk_2_10_01_18
+
+XDC_INSTALL_DIR = $(DVEVM_INSTALL_DIR)/xdctools_3_15_01_59
+
+CE_INSTALL_DIR = $(DVEVM_INSTALL_DIR)/codec_engine_2_24
+
+XDAIS_INSTALL_DIR = $(DVEVM_INSTALL_DIR)/xdais_6_24
+
+CMEM_INSTALL_DIR = $(DVEVM_INSTALL_DIR)/framework_components_2_24/fctools
+
+FC_INSTALL_DIR = $(DVEVM_INSTALL_DIR)/framework_components_2_24
+
+# set the location for package directory which contains the codec and server xdc packages
+PACKAGE_DIR  = packages-production
+
+# Set location of xdc executable
+XDC = $(XDC_INSTALL_DIR)/xdc
+
+# Set XDCPATH to contain necessary repositories.
+XDCPATH = $(CURDIR);$(CE_INSTALL_DIR)/packages;$(CE_INSTALL_DIR)/cetools/packages;$(XDAIS_INSTALL_DIR)/packages;$(CMEM_INSTALL_DIR)/packages;$(FC_INSTALL_DIR)/packages
+
+# How many concurrent build threads (i.e. jobs) do you want to allow to run
+JOBS=1
+
+
+# Conditionally, you can create verbose build output
+XDCOPTIONS=v
+
+# Select the combo build type , either eval(evaluation) or prod( Production)
+XDCARGS="prod"
+
+
+
+export XDCOPTIONS
+export XDCPATH
+export XDCARGS
+
+########################################################
+## Shouldn't have to modify anything be low this line ##
+########################################################
+
+all: .all-packages
+
+# This recursively locates all packages in the PACKAGE_DIR directory, builds
+# and releases them
+.all-packages:
+	$(XDC) --jobs=$(JOBS) -PR $(PACKAGE_DIR)/ittiam/codecs
+	$(XDC) --jobs=$(JOBS) -PR $(PACKAGE_DIR)/ittiam/app
+	cp -f $(PACKAGE_DIR)/ittiam/app/g711_enc_app/g711_enc_app.x470MV $(PACKAGE_DIR)/ittiam/app/g711_enc_app/test/
+
+# This recursively cleans all packages in the PACKAGE_DIR directory
+clean: clean-packages
+
+clean-packages:
+	$(XDC) clean --jobs=$(JOBS) -PR $(PACKAGE_DIR)
+	rm -rf $(PACKAGE_DIR)/ittiam/*/*/package/
+	rm -rf $(PACKAGE_DIR)/ittiam/codecs/*/ce/package/
+	rm -f $(PACKAGE_DIR)/ittiam/*/*/.xdcenv.mak
+	rm -f $(PACKAGE_DIR)/ittiam/codecs/*/ce/.xdcenv.mak
+
+clean_obj:	
+	rm -rf $(PACKAGE_DIR)/ittiam/app/*/package/
+	rm -rf $(PACKAGE_DIR)/ittiam/codecs/*/package/*/
+	rm -rf $(PACKAGE_DIR)/ittiam/codecs/*/ce/package/*/
+	rm -f $(PACKAGE_DIR)/ittiam/*/*/.???*
+	rm -f $(PACKAGE_DIR)/ittiam/codecs/*/ce/.???*
+	rm -f $(PACKAGE_DIR)/ittiam/*/*/*.mak
+	rm -f $(PACKAGE_DIR)/ittiam/codecs/*/ce/*.mak

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="../../exports/framework_components_2_26_00_01,lite" label="undefined" date="1291167015772" buildCount="1" producerId="framework_components_2_26_00_01">
+<package name="framework_components_2_26_00_01"
+    version="1, 0, 0"/>
+<imports>
+    <package name="ti.sdo.fc.global"
+        version=""/>
+    <package name="ti.sdo.fc.dskt2"
+        version=""/>
+    <package name="ti.sdo.fc.dman3"
+        version=""/>
+    <package name="ti.sdo.fc.acpy3"
+        version=""/>
+    <package name="ti.sdo.fc.ires"
+        version=""/>
+    <package name="ti.sdo.fc.ires.addrspace"
+        version=""/>
+    <package name="ti.sdo.fc.ires.bufres"
+        version=""/>
+    <package name="ti.sdo.fc.ires.edma3chan"
+        version=""/>
+    <package name="ti.sdo.fc.ires.grouputils"
+        version=""/>
+    <package name="ti.sdo.fc.ires.hdvicp"
+        version=""/>
+    <package name="ti.sdo.fc.ires.memtcm"
+        version=""/>
+    <package name="ti.sdo.fc.ires.nullresource"
+        version=""/>
+    <package name="ti.sdo.fc.ires.sdma"
+        version=""/>
+    <package name="ti.sdo.fc.ires.shmbuf"
+        version=""/>
+    <package name="ti.sdo.fc.ires.vicp"
+        version=""/>
+    <package name="ti.sdo.fc.memutils"
+        version=""/>
+    <package name="ti.sdo.fc.rman"
+        version=""/>
+    <package name="ti.sdo.fc.utils"
+        version=""/>
+    <package name="ti.sdo.fc.utils.api"
+        version=""/>
+    <package name="ti.sdo.fc.utils.gtinfra"
+        version=""/>
+    <package name="ti.sdo.fc.edma3"
+        version=""/>
+    <package name="ti.sdo.fc.scpy"
+        version=""/>
+    <package name="ti.sdo.fc.hdintc"
+        version=""/>
+    <package name="ti.sdo.fc.hdvicpsync"
+        version=""/>
+    <package name="ti.sdo.fc.vicpsync"
+        version=""/>
+    <package name="ti.sdo.utils.trace"
+        version=""/>
+    <package name="ti.sdo.fc.dman3.examples.fastcopy"
+        version=""/>
+    <package name="ti.sdo.fc.examples.dmaxfer"
+        version=""/>
+    <package name="ti.sdo.fc.examples.dma"
+        version=""/>
+    <package name="ti.sdo.fc.ires.examples.codecs.auddec1"
+        version=""/>
+    <package name="ti.sdo.fc.ires.examples.codecs.template"
+        version=""/>
+    <package name="ti.sdo.fc.ires.examples.codecs.edmacodec1"
+        version=""/>
+    <package name="ti.sdo.fc.ires.examples.codecs.idma3codec1"
+        version=""/>
+    <package name="ti.sdo.fc.ires.examples.codecs.vicp2codec1"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.addrspace"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.bufres"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.bufres_yield"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.dmaxferscratch"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.dummyedma3"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.hdvicp"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.lateacquire"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.memtcm"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.nonrtscexample"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.nullresource"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.scratchedma3"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.sdma"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.shmbuf"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.staticreg"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.vicp"
+        version=""/>
+    <package name="ti.sdo.fc.rman.examples.vicpsync"
+        version=""/>
+</imports>
+<references>
+    <package name="ti.sdo.fc.ires.bufres"
+        version="1, 0, 0, 1291166696000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_bufres.tar"/>
+    </package>
+    <package name="ti.sdo.fc.dman3"
+        version="1, 0, 4, 1291166661000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_dman3.tar"/>
+    </package>
+    <package name="gnu.targets"
+        version="1, 0, 1, 1254761371234"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Linux86.xs"/>
+        <file name="MVArm9.xs"/>
+        <file name="Mingw.xs"/>
+        <file name="UCArm9.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.examples.dmaxfer"
+        version="1, 0, 0, 1291166683000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_examples_dmaxfer.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.vicp"
+        version="1, 0, 0, 1291166756000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_vicp.tar"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0, 1254957695155"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.edma3chan"
+        version="1, 0, 0, 1291166699000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_edma3chan.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.bufres_yield"
+        version="1, 0, 0, 1291166736000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_bufres_yield.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.examples.codecs.auddec1"
+        version="1, 0, 0, 1291166702000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_examples_codecs_auddec1.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.hdvicp"
+        version="1, 0, 0, 1291166742000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="ti_sdo_fc_rman_examples_hdvicp.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.nullresource"
+        version="1, 0, 0, 1291166719000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_nullresource.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.dmaxferscratch"
+        version="1, 0, 0, 1291166736000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_dmaxferscratch.tar"/>
+    </package>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0, 1254957692499"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.sdo.fc.utils.api"
+        version="1, 0, 0, 1291166763000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_utils_api.tar"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 1, 1254957667146"
+        providerId="xdccore">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+        <file name="xmlgen2.xs"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.nullresource"
+        version="1, 0, 0, 1291166747000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_nullresource.tar"/>
+    </package>
+    <package name="ti.sdo.fc.dman3.examples.fastcopy"
+        version="1, 0, 0, 1291166663000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_dman3_examples_fastcopy.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.examples.codecs.vicp2codec1"
+        version="1, 0, 0, 1291166708000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_examples_codecs_vicp2codec1.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.memtcm"
+        version="1, 0, 0, 1291166714000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_memtcm.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples"
+        version="1, 0, 0, 1291166733000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.addrspace"
+        version="1, 0, 0, 1291166693000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_addrspace.tar"/>
+    </package>
+    <package name="ti.sdo.fc.hdvicpsync"
+        version="1, 0, 0, 1291166689000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_hdvicpsync.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.shmbuf"
+        version="1, 0, 0, 1291166751000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="ti_sdo_fc_rman_examples_shmbuf.tar"/>
+    </package>
+    <package name="gnu.targets.arm"
+        version="1, 0, 0, 0, 1254762022855"
+        providerId="xdccore">
+        <file name="GCArmv6.xs"/>
+        <file name="GCArmv7A.xs"/>
+    </package>
+    <package name="ti.sdo.fc.ires.grouputils"
+        version="1, 0, 0, 1291166711000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_grouputils.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.sdma"
+        version="1, 0, 0, 1291166720000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_sdma.tar"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0, 1254957688697"
+        providerId="xdccore">
+        <file name="Clock.xs"/>
+        <file name="Trace.xs"/>
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.sdo.utils.trace"
+        version="1, 0, 0, 1291166774000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_utils_trace.tar"/>
+    </package>
+    <package name="ti.sdo.fc.vicpsync"
+        version="1, 0, 0, 1291166770000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_vicpsync.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.scratchedma3"
+        version="1, 0, 0, 1291166748000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_scratchedma3.tar"/>
+    </package>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0, 1254957691859"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.sdo.fc.utils.gtinfra"
+        version="1, 0, 0, 1291166768000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_utils_gtinfra.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.dummyedma3"
+        version="1, 0, 0, 1291166740000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_dummyedma3.tar"/>
+    </package>
+    <package name="ti.targets.arm"
+        version="2, 0, 1, 0, 1254761376888"
+        providerId="xdccore">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.ires"
+        version="1, 0, 0, 1291166691000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.bufres"
+        version="1, 0, 0, 1291166732000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_bufres.tar"/>
+    </package>
+    <package name="xdc.bld"
+        version="1, 0, 2, 1254957676628"
+        providerId="xdccore">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.utils"
+        version="1, 0, 2, 1291166764000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_utils.tar"/>
+        <file name="utils.xs"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.sdma"
+        version="1, 0, 0, 1291166752000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_sdma.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.examples.codecs.idma3codec1"
+        version="1, 0, 0, 1291166705000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_examples_codecs_idma3codec1.tar"/>
+    </package>
+    <package name="ti.sdo.fc.scpy"
+        version="1, 0, 0, 1291166758000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_scpy.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.memtcm"
+        version="1, 0, 0, 1291166742000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_memtcm.tar"/>
+    </package>
+    <package name="ti.sdo.fc.edma3"
+        version="3, 0, 0, 1291166679000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_edma3.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.addrspace"
+        version="1, 0, 0, 1291166731000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="ti_sdo_fc_rman_examples_addrspace.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.hdvicp"
+        version="1, 0, 1, 1291166713000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_hdvicp.tar"/>
+    </package>
+    <package name="ti.sdo.fc.hdintc"
+        version="1, 0, 4, 1291166686000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_hdintc.tar"/>
+    </package>
+    <package name="microsoft.targets.arm"
+        version="1, 0, 0, 0, 1254761374830"
+        providerId="xdccore">
+        <file name="WinCE.xs"/>
+    </package>
+    <package name="ti.sdo.fc.memutils"
+        version="1, 0, 0, 1291166726000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_memutils.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.vicp"
+        version="1, 0, 1, 1291166723000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_vicp.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.shmbuf"
+        version="1, 0, 0, 1291166720000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_shmbuf.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.staticreg"
+        version="1, 0, 0, 1291166751000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_staticreg.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.nonrtscexample"
+        version="1, 0, 0, 1291166746000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_nonrtscexample.tar"/>
+    </package>
+    <package name="ti.sdo.fc.global"
+        version="1, 0, 0, 1291166685000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="ti_sdo_fc_global.tar"/>
+    </package>
+    <package name="microsoft.targets"
+        version="1, 0, 2, 0, 1254761371234"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Win32.xs"/>
+        <file name="_utils.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.vicpsync"
+        version="1, 0, 0, 1291166758000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_vicpsync.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.examples.codecs.template"
+        version="1, 0, 0, 1291166706000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_examples_codecs_template.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman"
+        version="2, 0, 0, 1291166732000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman.tar"/>
+    </package>
+    <package name="ti.sdo.fc.examples.dma"
+        version="1, 0, 0, 1291166679000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_examples_dma.tar"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples.lateacquire"
+        version="1, 0, 0, 1291166742000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_rman_examples_lateacquire.tar"/>
+    </package>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 1254957708059"
+        providerId="xdccore">
+        <file name="java/antlr.jar"/>
+        <file name="java/ecj.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/jsr173_api.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+    </package>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0, 1254957699053"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.targets"
+        version="1, 0, 3, 1254761375030"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="MSP430.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.dskt2"
+        version="1, 0, 4, 1291166671000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_dskt2.tar"/>
+    </package>
+    <package name="ti.sdo.fc.acpy3"
+        version="1, 0, 4, 1291166661000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_acpy3.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.examples.codecs.edmacodec1"
+        version="1, 0, 0, 1291166702000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_fc_ires_examples_codecs_edmacodec1.tar"/>
+    </package>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include/utils.tci"/>
+        <xdcCorePkg version="16, 0, 1, 0, 1254957675604" producerId="ndefined" buildCount="218" releaseName="xdc_corevers" label="default" date="1254957675604"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/atree/library/trees/fc/fc-p01x/src/config.bld"/>
+</orphans>
+</release>

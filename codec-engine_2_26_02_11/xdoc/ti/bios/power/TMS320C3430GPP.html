@@ -1,0 +1,304 @@
+<html>
+<head>
+<title>module ti.bios.power.TMS320C3430GPP</title>
+<meta name="description" content="GPP configuration module for the TMS3203430 device">
+<link rel="stylesheet" type="text/css" href="../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.bios.power.</span><span class="xdoc-id">TMS320C3430GPP</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/TMS320C3430DSP.html" title="module TMS320C3430DSP"><img class="xdocHdrArrow" src="../../../Arrow_left.png"/></a></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/package.html" title="package ti.bios.power"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/TMS320CDM6441DSP.html" title="module TMS320CDM6441DSP"><img class="xdocHdrArrow" src="../../../Arrow_right.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/TMS320C3430GPP.html">index URL</a></div>
+<p class="xdocHdrSummary">GPP configuration module for the TMS3203430 device</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<div class="xdocBrief">
+Configuration parameters for the Local Power Manager running
+  on the GPP core of a TMS3203430 device.
+</div>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../ti/bios/power/TMS320C3430GPP-src.html"><span class="xdocLabelFile">ti/bios/power/TMS320C3430GPP.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">TMS320C3430GPP</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt>//&nbsp;inherits <a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html" title="ti.bios.power.ITMS320CDM644x">ti.bios.power.ITMS320CDM644x</a></div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> TMS320C3430GPP = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.bios.power.TMS320C3430GPP'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><i>values of type <a class="xdocSynGo" href="#.Opersys.Cfg">TMS320C3430GPP.<span class="xdoc-id">OpersysCfg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Runtime Operating System</span></span></a></i>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Opersys.Cfg">TMS320C3430GPP.<span class="xdoc-id">Opersys_PrOS_DaVinci</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;PrOS on DaVinci platform</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Opersys.Cfg">TMS320C3430GPP.<span class="xdoc-id">Opersys_Linux</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Linux (HLOS)</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Opersys.Cfg">TMS320C3430GPP.<span class="xdoc-id">Opersys_DSPBIOS</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS</span></span></a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><i>values of type <a class="xdocSynGo" href="#.Transport.Cfg">TMS320C3430GPP.<span class="xdoc-id">TransportCfg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Transport Layer used between GPP and DSP</span></span></a></i>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Transport.Cfg">TMS320C3430GPP.<span class="xdoc-id">Transport_Link_PrOS_DaVinci</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS Link for PrOS on DaVinci</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Transport.Cfg">TMS320C3430GPP.<span class="xdoc-id">Transport_Link_Linux</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS Link for Linux</span></span></a>;
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.C.P.U_.N.A.M.E">TMS320C3430GPP.<span class="xdoc-id">CPU_NAME</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;cpu name, useful for adding validation checks</span></span></a> = <i><span class="xdoc-kw2">String</span></i> "GPP";
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#opersys">TMS320C3430GPP.<span class="xdoc-id">opersys</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Define which operating system is running on the CPU (required)</span></span></a> = <i><a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Opersys.Cfg" title="ti.bios.power.ITMS320CDM644x.OpersysCfg">ITMS320CDM644x.OpersysCfg</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#proxy.For">TMS320C3430GPP.<span class="xdoc-id">proxyFor</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Proxy device used for new devices</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#transport">TMS320C3430GPP.<span class="xdoc-id">transport</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Define which transport layer is used (required)</span></span></a> = <i><a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Transport.Cfg" title="ti.bios.power.ITMS320CDM644x.TransportCfg">ITMS320CDM644x.TransportCfg</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../ti/bios/power/TMS320C3430GPP-src.html"><span class="xdocLabelFile">ti/bios/power/TMS320C3430GPP.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../ti/bios/power/package.html" title="ti.bios.power">ti.bios.power</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">TMS320C3430GPP</span></go><span class="xdoc-kw1"> inherits </span><a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html" title="ti.bios.power.ITMS320CDM644x">ITMS320CDM644x</a> {
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">enum</span> <a class="xdocSynGo" href="#.Opersys.Cfg"><span class="xdoc-id">OpersysCfg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Runtime Operating System</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Opersys.Cfg"><span class="xdoc-id">Opersys_PrOS_DaVinci</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;PrOS on DaVinci platform</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Opersys.Cfg"><span class="xdoc-id">Opersys_Linux</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Linux (HLOS)</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Opersys.Cfg"><span class="xdoc-id">Opersys_DSPBIOS</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS</span></span></a>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">enum</span> <a class="xdocSynGo" href="#.Transport.Cfg"><span class="xdoc-id">TransportCfg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Transport Layer used between GPP and DSP</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Transport.Cfg"><span class="xdoc-id">Transport_Link_PrOS_DaVinci</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS Link for PrOS on DaVinci</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Transport.Cfg"><span class="xdoc-id">Transport_Link_Linux</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS Link for Linux</span></span></a>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.C.P.U_.N.A.M.E"><span class="xdoc-id">CPU_NAME</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;cpu name, useful for adding validation checks</span></span></a> = "GPP";
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Opersys.Cfg" title="ti.bios.power.ITMS320CDM644x.OpersysCfg">ITMS320CDM644x.OpersysCfg</a>&nbsp;<a class="xdocSynGo" href="#opersys"><span class="xdoc-id">opersys</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Define which operating system is running on the CPU (required)</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#proxy.For"><span class="xdoc-id">proxyFor</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Proxy device used for new devices</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Transport.Cfg" title="ti.bios.power.ITMS320CDM644x.TransportCfg">ITMS320CDM644x.TransportCfg</a>&nbsp;<a class="xdocSynGo" href="#transport"><span class="xdoc-id">transport</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Define which transport layer is used (required)</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Opersys.Cfg"></a>
+<a class="xdocAnchor" id=".Opersys_.Pr.O.S_.Da.Vinci"></a>
+<a class="xdocAnchor" id=".Opersys_.Linux"></a>
+<a class="xdocAnchor" id=".Opersys_.D.S.P.B.I.O.S"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">enum</span> <span class="xdoc-id">TMS320C3430GPP.</span><span class="xdoc-id">OpersysCfg</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/TMS320C3430GPP.html" title="module TMS320C3430GPP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/TMS320C3430GPP.html#.Opersys.Cfg">index URL</a></div>
+<p class="xdocHdrSummary">Runtime Operating System</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><i>values of type TMS320C3430GPP.<span class="xdoc-id">OpersysCfg</span></i>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> TMS320C3430GPP.<span class="xdoc-id">Opersys_PrOS_DaVinci</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;PrOS on DaVinci platform</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> TMS320C3430GPP.<span class="xdoc-id">Opersys_Linux</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Linux (HLOS)</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> TMS320C3430GPP.<span class="xdoc-id">Opersys_DSPBIOS</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;DSP/BIOS</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Transport.Cfg"></a>
+<a class="xdocAnchor" id=".Transport_.Link_.Pr.O.S_.Da.Vinci"></a>
+<a class="xdocAnchor" id=".Transport_.Link_.Linux"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">enum</span> <span class="xdoc-id">TMS320C3430GPP.</span><span class="xdoc-id">TransportCfg</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/TMS320C3430GPP.html" title="module TMS320C3430GPP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/TMS320C3430GPP.html#.Transport.Cfg">index URL</a></div>
+<p class="xdocHdrSummary">Transport Layer used between GPP and DSP</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><i>values of type TMS320C3430GPP.<span class="xdoc-id">TransportCfg</span></i>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> TMS320C3430GPP.<span class="xdoc-id">Transport_Link_PrOS_DaVinci</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;DSP/BIOS Link for PrOS on DaVinci</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> TMS320C3430GPP.<span class="xdoc-id">Transport_Link_Linux</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;DSP/BIOS Link for Linux</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".C.P.U_.N.A.M.E"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">TMS320C3430GPP.</span><span class="xdoc-id">CPU_NAME</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/TMS320C3430GPP.html" title="module TMS320C3430GPP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/TMS320C3430GPP.html#.C.P.U_.N.A.M.E">index URL</a></div>
+<p class="xdocHdrSummary">cpu name, useful for adding validation checks</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> TMS320C3430GPP.<span class="xdoc-id">CPU_NAME</span> = <i><span class="xdoc-kw2">String</span></i> "GPP";
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="opersys"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">TMS320C3430GPP.</span><span class="xdoc-id">opersys</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/TMS320C3430GPP.html" title="module TMS320C3430GPP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/TMS320C3430GPP.html#opersys">index URL</a></div>
+<p class="xdocHdrSummary">Define which operating system is running on the CPU (required)</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>TMS320C3430GPP.<span class="xdoc-id">opersys</span> = <i><a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Opersys.Cfg" title="ti.bios.power.ITMS320CDM644x.OpersysCfg">ITMS320CDM644x.OpersysCfg</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="proxy.For"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">TMS320C3430GPP.</span><span class="xdoc-id">proxyFor</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/TMS320C3430GPP.html" title="module TMS320C3430GPP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/TMS320C3430GPP.html#proxy.For">index URL</a></div>
+<p class="xdocHdrSummary">Proxy device used for new devices</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>TMS320C3430GPP.<span class="xdoc-id">proxyFor</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">To support new devices which behave the same as existing devices,
+  set this configuration parameter to a known device which can be
+  used as a proxy for the new device.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="transport"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">TMS320C3430GPP.</span><span class="xdoc-id">transport</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/TMS320C3430GPP.html" title="module TMS320C3430GPP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/TMS320C3430GPP.html#transport">index URL</a></div>
+<p class="xdocHdrSummary">Define which transport layer is used (required)</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>TMS320C3430GPP.<span class="xdoc-id">transport</span> = <i><a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Transport.Cfg" title="ti.bios.power.ITMS320CDM644x.TransportCfg">ITMS320CDM644x.TransportCfg</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:14 GMT</div>
+</div></div></body>
+</html>

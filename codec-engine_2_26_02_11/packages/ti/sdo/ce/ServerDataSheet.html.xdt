@@ -1,0 +1,438 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    var svr = this;
+    function toHex(d) {
+        var hD="0123456789ABCDEF";
+        var h = "";
+        for (var i=0;i<8;i++) {h=hD.substr(d&15,1)+h;d=d>>4}
+        return "0x" + h;
+    }
+    function format(x) {
+        if (x == undefined) {
+            return;
+        }
+        if (typeof x == "number") {
+            return toHex(x);
+        }
+        if (typeof x == "object" && (x.length != undefined)) {
+            var s = "[ ";
+            for (var i = 0; i < x.length; i++) {
+                s = s + x[i] + ((i == x.length - 1) ? " ]" : ", ");
+            }
+            return s;
+        }
+        return x;
+    }
+
+%%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>DSP Server Data Sheet for `Program.name`</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<font face="Helvetica, Arial, sans-serif">
+<blockquote>
+</blockquote>
+<blockquote>
+  <h1>Data Sheet for the DSP server image</h1>
+</blockquote>
+<blockquote>
+  <table border="1" cellpadding="10" cellspacing="0">
+    <font face="Helvetica, Arial, sans-serif">
+    <small>
+    <tbody>
+      <tr>
+        <td valign="top">Server DSP image name</td>
+        <td valign="top"><b>`Program.name`</b></td>
+      </tr>
+      <tr>
+        <td valign="top">BIOS-related Configuration</td>
+        <td align="left" valign="top">
+          <table border="1" cellpadding="2" cellspacing="0" 'bgcolor="#ffffc0"'>
+            <tbody>
+% var biosSettings = xdc.module("ti.sdo.ce.osal.bios.Settings");
+% for (var biosSettingsField in biosSettings) {
+%     // special case _don't_ show deprecated fields
+%     if (biosSettingsField != 'debug') {
+              <tr><td valign="top" width="220">`biosSettingsField`</td><td valign="top">`format(biosSettings[biosSettingsField])`</td></tr>
+%     }
+% }
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Server Algorithms</td>
+        <td align="left" valign="top">
+
+%%{
+for (var i = 0; i < svr.algs.length; i++) {
+    var alg = svr.algs[i];
+    var pkg = alg.mod.$package;
+    var mod = alg.mod;
+    var type = "";
+    var pkgRep = (pkg.packageBase + "").replace( "/" + (pkg.$name+"").replace( ".", "/", "g" ), "" );
+    var modName = "";
+
+    var units = mod.$spec.getInherits().toArray();
+    for each (var unit in units) {
+        var uName = unit.getQualName() + "";
+        switch (uName) {
+            case "ti.sdo.ce.video.IVIDDEC":
+                type = "XDM video decoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.video.IVIDENC":
+                type = "XDM video encoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.audio.IAUDDEC":
+                type = "XDM audio decoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.audio.IAUDENC":
+                type = "XDM audio encoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.image.IIMGDEC":
+                type = "XDM image decoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.image.IIMGENC":
+                type = "XDM image encoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.speech.ISPHDEC":
+                type = "XDM speech decoder</b> (" + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.speech.ISPHENC":
+                type = "XDM speech encoder</b> (" + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.video1.IVIDDEC1":
+                type = "XDM video decoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.video2.IVIDDEC2":
+                type = "XDM video decoder</b> (" + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.video1.IVIDENC1":
+                type = "XDM video encoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.audio1.IAUDDEC1":
+                type = "XDM audio decoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.audio1.IAUDENC1":
+                type = "XDM audio encoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.image1.IIMGDEC1":
+                type = "XDM image decoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.image1.IIMGENC1":
+                type = "XDM image encoder</b> ("  + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.speech1.ISPHDEC1":
+                type = "XDM speech decoder</b> (" + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.speech1.ISPHENC1":
+                type = "XDM speech encoder</b> (" + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.vidtranscode.IVIDTRANSCODE":
+                type = "XDM video transcoder</b> (" + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.vidanalytics.IVIDANALYTICS":
+                type = "XDM video analytics</b> (" + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.video2.split.IVIDDEC2BACK":
+                type = "XDM video decoder - back half</b> (" + uName + ")<b>";
+                modName = uName;
+                break;
+
+            case "ti.sdo.ce.universal.IUNIVERSAL":
+                type = "XDM universal algorithm</b> (" + uName + ")<b>";
+                modName = uName;
+                break;
+
+            default:
+                break;
+        }
+    }
+    if (type == "") {
+        var uName = units[0].getQualName() + "";
+        type = "Proprietary algorithm (" + uName + ")";
+    }
+%%}
+        <table border="1" cellpadding="2" cellspacing="0" width="90%" `i%2==0?'bgcolor="#ffffc0"':'bgcolor="#ffffffd0"'`>
+          <tbody>
+            <tr><td valign="top" width="220">Codec name (alias)</td><td valign="top"><b>`alg.name`</b></td></tr>
+            <tr><td valign="top" width="220">Codec type</td><td valign="top"><b>`type`</b></td></tr>
+            <tr><td valign="top" width="220">Package</td><td valign="top">`pkg.$name`</td></tr>
+            <tr><td valign="top" width="220">Module</td><td valign="top">`(mod.$name + "").replace( /.*\./g, "" )`</td></tr>
+            <tr><td valign="top" width="220">Codec package location at server build time</td><td valign="top">`pkgRep`</td></tr>
+            <tr><td valign="top" width="220">Package version</td><td valign="top">[&nbsp;`pkg.$vers == undefined ? " " : pkg.$vers`&nbsp;]</td></tr>
+              <td valign="top" width="220">RPC protocol version</td>
+              <td valign="top">`mod.rpcProtocolVersion`<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" width="220">Thread attributes</td>
+              <td valign="top">
+              <table border="1" cellpadding="2" cellspacing="0">
+                <tbody>
+                  <tr>
+                    <td valign="top" width="105">Priority<br>
+                    </td>
+                    <td valign="top">`alg.threadAttrs.priority`<br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" width="105">Stack Size<br>
+                    </td>
+                    <td valign="top">`alg.threadAttrs.stackSize != undefined ? "<b>" + alg.threadAttrs.stackSize + "</b> bytes": "default for the alg (<b>" + alg.mod.getStackSize(xdc.om['xdc.cfg.Program']) + "</b> bytes) + <b>" + svr.stackSizePad + "</b> bytes padding"`<br>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" width="220"><a href="http://tiexpressdsp.com/index.php/Codec_Engine_GroupIds">Group ID number</a></td>
+              <td valign="top">`alg.groupId != undefined ? alg.groupId : svr.$private.pri2id[alg.threadAttrs.priority] + " (auto-assigned value)"`<br>
+              </td>
+            </tr>
+%       try {
+%           var theFile = modName.replace(/\./g, "/").replace(/$/, "_dsutils.xs");
+%//           print (theFile);
+%           var mod_dsutils = xdc.loadCapsule(theFile);
+            `mod_dsutils.genHTMLRow(mod)`
+%       } catch (e) {
+%           /* oh, well, nothing specific to report */
+%//           print("remark - unable to find a datasheet utility for " + modName);
+%       };
+          </tbody>
+        </table>
+
+        `i < svr.algs.length - 1 ? "<br>" : ""`
+% }
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Server DMA (DMAN3)<br>config</td>
+        <td align="left" valign="top">
+          <table border="1" cellpadding="2" cellspacing="0" 'bgcolor="#ffffc0"'>
+            <tbody>
+% var DMAN3 = xdc.module( "ti.sdo.fc.dman3.DMAN3" );
+% for (var dman3field in DMAN3) {
+%     // special case _don't_ show deprecated fields
+%     if ((dman3field != 'debug') && (dman3field != 'trace')) {
+              <tr><td valign="top" width="220">`dman3field`</td><td valign="top">`format(DMAN3[dman3field])`</td></tr>
+%     }
+% }
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Algorithm memory<br>allocation (DSKT2)<br>config</td>
+        <td align="left" valign="top">
+          <table border="1" cellpadding="2" cellspacing="0" 'bgcolor="#ffffc0"'>
+            <tbody>
+% var DSKT2 = xdc.module( "ti.sdo.fc.dskt2.DSKT2" );
+% for (var dskt2field in DSKT2) {
+%     // special case _don't_ show deprecated fields
+%     if ((dskt2field != 'debug') && (dskt2field != 'trace')) {
+              <tr><td valign="top" width="220">`dskt2field`</td><td valign="top">`format(DSKT2[dskt2field])`</td></tr>
+%     }
+% }
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td valign="top">DSP memory map</td>
+        <td align="left" valign="top">
+%%{
+        var memInsts = $$legacy.prog.module("MEM").instances();
+        var hasCMEM = false;
+        for (var i = 0; i < memInsts.length; i++) {
+            var mi = memInsts[i];
+            hasCMEM = hasCMEM || (mi.name == "CMEM");
+            // this code is duplicated in ipc/package.xs
+            if (Program.cpu.deviceName == "TMS320CDM6446" ||
+                Program.cpu.deviceName == "TMS320CDM6467") {
+                // on davinci and davinci HD all external memory is above
+                // 0x80000000, and we don't record internal memory segments
+                if ((mi.base & 0x80000000) == 0) {
+                    continue;
+                }
+            }
+%%}
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">`mi.name`</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">`toHex(mi.base)`</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">`toHex(mi.len)`</td></tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">`mi.comment`</td></tr>
+            </tbody>
+          </table>
+          `i < memInsts.length - 1 ? "<br>" : ""`
+%%{
+        }
+        if (Program.cpu.deviceName.match(
+            /C2430$|C3430$|^OMAP2530$|^OMAP3530$/ )) {
+            if (!hasCMEM) {
+                // For OMAP devices, CMEM will need to be mapped to the MMU.
+                // Add a place holder for CMEM that will be filled in at
+                // runtime using CMEM_getBlock().
+%%}
+          <br>
+          <table border="1" cellpadding="2" cellspacing="0" width="90%" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="100">Name</td><td valign="top">CMEM</td></tr>
+              <tr><td valign="top" width="100">Base</td><td valign="top">&lt;to be set to CMEM block address at server load time&gt;</td></tr>
+              <tr><td valign="top" width="100">Len</td><td valign="top">&lt;to be set to CMEM block size at server load time></td&gt;</tr>
+              <tr><td valign="top" width="100">Description</td><td valign="top">placeholder for the CMEM segment that the Arm side creates for I/O buffer exchange with the DSP; on OMAP devices the CMEM segment is automatically mapped on the DSP at DSP server load time so the DSP can access the Arm I/O buffers</td></tr>
+            </tbody>
+          </table>
+%%{
+            }
+        }
+%%}
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">Misc settings</td>
+        <td align="left" valign="top">
+          <table border="1" cellpadding="2" cellspacing="0" 'bgcolor="#ffffc0"'>
+            <tbody>
+              <tr><td valign="top" width="220">Server thread priority</td><td valign="top">`svr.threadAttrs.priority`</td></tr>
+              <tr><td valign="top" width="220">Server thread stack size</td><td valign="top"><b>`svr.threadAttrs.stackSize`</b> bytes</td></tr>
+              <tr><td valign="top" width="220">autoGenScratchSizeArrays</td><td valign="top">`svr.autoGenScratchSizeArrays`</td></tr>
+%%{
+    var skelCachingPolicyStr = "";
+    switch (svr.skelCachingPolicy) {
+        case svr.LOCALBUFFERINVWB:
+            skelCachingPolicyStr = "LOCALBUFFERINVWB (default)";
+            break;
+        case svr.WBINVALL:
+            skelCachingPolicyStr = "WBINVALL (gloabl writeback/inv will be done after each remote fxn)";
+            break;
+        case svr.NONE:
+            skelCachingPolicyStr = "NONE (no cache management will be done)";
+            break;
+        default:
+            skelCachingPolicyStr = "<i>unknown!</i>";
+            break;
+    }
+%%}
+              <tr><td valign="top" width="220">Skeleton Caching Policy</td><td valign="top">`skelCachingPolicyStr`</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td valign="top">Configured DSP clock speed</td>
+        <td align="left" valign="top">`$$legacy.prog.module("GBL").CLKOUT` MHz <font size="-1">(set in the GBL.CLKOUT TCF field; may or may not match the actual DSP clock speed)</font></td>
+      </tr>
+
+      <tr>
+        <td valign="top">Configuration example</td>
+        <td align="left" valign="top"> Add the following code to your Arm-side application configuration file (.cfg) to create an Engine from this server: <br>
+<pre>
+var Engine = xdc.useModule('ti.sdo.ce.Engine');
+var myEngine = Engine.createFromServer(
+    "`Program.name.replace( '.x' + Program.build.target.suffix, '' )`",  // Engine name (as referred to in the C app)
+    "`Program.name`", // path to server exe, relative to its package dir
+    "`xdc.om.$homepkg`" // full server package name
+);
+</pre>
+<!-- don't want to support configuro server builds due to complexity consuming them with Engine.createFromServer()...
+     (note: if the server was built with "Configuro", replace the shown package name with the actual server package name)
+-->
+        </td>
+      </tr>
+
+    </tbody>
+    </font>
+    </small>
+  </table>
+  <br>
+</blockquote>
+</font>
+</body>
+</html>
+%%{
+/*
+ * @(#) ti.sdo.ce; 1, 0, 6,432; 12-2-2010 21:19:08; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.osal.linux" version="2, 0, 1" producerId="codec_engine_2_26_02_11">
+    <units>
+        <module name="Settings"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.ce.osal.linux.c"/>
+        <srcFile name="Trace.c"/>
+        <srcFile name="Memory_noOS.c"/>
+        <srcFile name="LockMP_posix.c"/>
+        <srcFile name="Queue_posix.c"/>
+        <srcFile name="GT_config_libC.c"/>
+        <srcFile name="File_posix.c"/>
+        <srcFile name="Memory_cmem.c"/>
+        <srcFile name="Global_noOS.c"/>
+        <srcFile name="Thread_posix.c"/>
+        <srcFile name="Log_noOS.c"/>
+        <srcFile name="Lock_posix.c"/>
+        <srcFile name="GT_config_posix.c"/>
+        <srcFile name="SemMP_posix.c"/>
+        <srcFile name="Sem_posix.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/osal_linux_470.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Trace.ov5T.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/LockMP_posix.ov5T.dep" src="LockMP_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Queue_posix.ov5T.dep" src="Queue_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/GT_config_libC.ov5T.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/File_posix.ov5T.dep" src="File_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Memory_cmem.ov5T.dep" src="Memory_cmem.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/package/package_ti.sdo.ce.osal.linux.ov5T.dep" src="package/package_ti.sdo.ce.osal.linux.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Global_noOS.ov5T.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Thread_posix.ov5T.dep" src="Thread_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Log_noOS.ov5T.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Lock_posix.ov5T.dep" src="Lock_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/GT_config_posix.ov5T.dep" src="GT_config_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/SemMP_posix.ov5T.dep" src="SemMP_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Sem_posix.ov5T.dep" src="Sem_posix.c"/>
+        <srcFile name="lib/release/osal_linux_470.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Trace.o470uC.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/LockMP_posix.o470uC.dep" src="LockMP_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Queue_posix.o470uC.dep" src="Queue_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/GT_config_libC.o470uC.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/File_posix.o470uC.dep" src="File_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Memory_cmem.o470uC.dep" src="Memory_cmem.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/package/package_ti.sdo.ce.osal.linux.o470uC.dep" src="package/package_ti.sdo.ce.osal.linux.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Global_noOS.o470uC.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Thread_posix.o470uC.dep" src="Thread_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Log_noOS.o470uC.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Lock_posix.o470uC.dep" src="Lock_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/GT_config_posix.o470uC.dep" src="GT_config_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/SemMP_posix.o470uC.dep" src="SemMP_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_470/Sem_posix.o470uC.dep" src="Sem_posix.c"/>
+        <srcFile name="lib/debug/osal_linux_470.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Trace.o470uC.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/LockMP_posix.o470uC.dep" src="LockMP_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Queue_posix.o470uC.dep" src="Queue_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/GT_config_libC.o470uC.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/File_posix.o470uC.dep" src="File_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Memory_cmem.o470uC.dep" src="Memory_cmem.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/package/package_ti.sdo.ce.osal.linux.o470uC.dep" src="package/package_ti.sdo.ce.osal.linux.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Global_noOS.o470uC.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Thread_posix.o470uC.dep" src="Thread_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Log_noOS.o470uC.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Lock_posix.o470uC.dep" src="Lock_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/GT_config_posix.o470uC.dep" src="GT_config_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/SemMP_posix.o470uC.dep" src="SemMP_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Sem_posix.o470uC.dep" src="Sem_posix.c"/>
+        <srcFile name="lib/debug/osal_linux_86U.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/Memory_noOS.o86U.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/Trace.o86U.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/LockMP_posix.o86U.dep" src="LockMP_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/Queue_posix.o86U.dep" src="Queue_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/GT_config_libC.o86U.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/File_posix.o86U.dep" src="File_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/package/package_ti.sdo.ce.osal.linux.o86U.dep" src="package/package_ti.sdo.ce.osal.linux.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/Global_noOS.o86U.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/Thread_posix.o86U.dep" src="Thread_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/Log_noOS.o86U.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/Lock_posix.o86U.dep" src="Lock_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/GT_config_posix.o86U.dep" src="GT_config_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/SemMP_posix.o86U.dep" src="SemMP_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_86U/Sem_posix.o86U.dep" src="Sem_posix.c"/>
+        <srcFile name="lib/debug/osal_linux_470.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Trace.ov5T.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/LockMP_posix.ov5T.dep" src="LockMP_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Queue_posix.ov5T.dep" src="Queue_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/GT_config_libC.ov5T.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/File_posix.ov5T.dep" src="File_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Memory_cmem.ov5T.dep" src="Memory_cmem.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/package/package_ti.sdo.ce.osal.linux.ov5T.dep" src="package/package_ti.sdo.ce.osal.linux.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Global_noOS.ov5T.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Thread_posix.ov5T.dep" src="Thread_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Log_noOS.ov5T.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Lock_posix.ov5T.dep" src="Lock_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/GT_config_posix.ov5T.dep" src="GT_config_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/SemMP_posix.ov5T.dep" src="SemMP_posix.c"/>
+        <srcFile name="package/lib/lib/debug/osal_linux_470/Sem_posix.ov5T.dep" src="Sem_posix.c"/>
+        <srcFile name="lib/release/osal_linux_86U.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/Memory_noOS.o86U.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/Trace.o86U.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/LockMP_posix.o86U.dep" src="LockMP_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/Queue_posix.o86U.dep" src="Queue_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/GT_config_libC.o86U.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/File_posix.o86U.dep" src="File_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/package/package_ti.sdo.ce.osal.linux.o86U.dep" src="package/package_ti.sdo.ce.osal.linux.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/Global_noOS.o86U.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/Thread_posix.o86U.dep" src="Thread_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/Log_noOS.o86U.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/Lock_posix.o86U.dep" src="Lock_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/GT_config_posix.o86U.dep" src="GT_config_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/SemMP_posix.o86U.dep" src="SemMP_posix.c"/>
+        <srcFile name="package/lib/lib/release/osal_linux_86U/Sem_posix.o86U.dep" src="Sem_posix.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_osal_linux.tar.dep" src="package/rel/ti_sdo_ce_osal_linux.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/osal_linux_470"
+        pname="lib/release/osal_linux_470.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/osal_linux_470"
+        pname="lib/release/osal_linux_470.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/osal_linux_470"
+        pname="lib/debug/osal_linux_470.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/osal_linux_86U"
+        pname="lib/debug/osal_linux_86U.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/osal_linux_470"
+        pname="lib/debug/osal_linux_470.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/osal_linux_86U"
+        pname="lib/release/osal_linux_86U.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_osal_linux"
+        pname="ti_sdo_ce_osal_linux.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="File_posix.c"/>
+        <file name="lib/release/osal_linux_86U.a86U"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="Lock_posix.c"/>
+        <file name="Thread_posix.c"/>
+        <file name="Global_noOS.c"/>
+        <file name="package/package.rel.dot"/>
+        <file name="GT_config_libC.c"/>
+        <file name="GT_config_libC.h"/>
+        <file name="package/package_ti.sdo.ce.osal.linux.c"/>
+        <file name="GT_config_posix.c"/>
+        <file name="SemMP_posix.c"/>
+        <file name="lib/debug/osal_linux_470.av5T"/>
+        <file name="lib/debug/osal_linux_470.a470uC"/>
+        <file name="LockMP_posix.c"/>
+        <file name="Sem_posix.c"/>
+        <file name="GT_config_posix.h"/>
+        <file name="lib/release/osal_linux_470.a470uC"/>
+        <file name="Memory_cmem.c"/>
+        <file name="package/build.cfg"/>
+        <file name="Queue_posix.c"/>
+        <file name="Memory_noOS.c"/>
+        <file name="lib/release/osal_linux_470.av5T"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="Trace.c"/>
+        <file name="lib/debug/osal_linux_86U.a86U"/>
+        <file name="package.bld"/>
+        <file name="Log_noOS.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

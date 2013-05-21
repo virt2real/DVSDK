@@ -1,0 +1,52 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * The following comment is used by the Graphical Config Tool:
+ * !DESCRIPTION 2XXX!  eZdsp2808 (100 MHz) with on-chip 128KB Flash
+ * !NAME! ti.platforms.ezdsp2808
+ */
+
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+
+/*
+ * The board has a 20 Mhz oscillator and runs at 100 Mhz.
+ * This value is obtained by setting PLLCR = 0xa which makes
+ * it a multiplier of 5.
+ */
+var device_regs = {
+    pllcr: 0xa
+};
+
+var params = {
+    clockRate: 100.0000,
+    catalogName: "ti.catalog.c2800",
+    deviceName: "2808",
+    regs: device_regs
+};
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+/*
+ *  @(#) ti.platforms.ezdsp2808; 1, 0, 0,278; 2-23-2010 17:00:57; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

@@ -1,0 +1,60 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * The following comment is used by the Graphical Config Tool:
+ * !DESCRIPTION 6XXX!  EvmTNETV2685 (500 MHz)
+ * !NAME! ti.platforms.evmTNETV2685
+ */
+
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+var mem_ext = [];
+
+mem_ext[0] = {
+    comment: "256Mbytes of the DSP's DDR2 off-chip memory",
+    name: "DDR2",
+    base: 0xE0000000,
+    len:  0x10000000,
+    space: "code/data"
+};
+
+/* Specify the L1 and L2 memory settings */
+var device_regs = {
+    l1PMode: "32k",
+    l1DMode: "32k",
+    l2Mode: "0k"
+};
+
+var params = {
+    clockRate: 500,
+    catalogName: "ti.catalog.c6000",
+    deviceName: "TNETV2685",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+/*
+ *  @(#) ti.platforms.evmTNETV2685; 1, 0, 1,228; 2-23-2010 16:52:40; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

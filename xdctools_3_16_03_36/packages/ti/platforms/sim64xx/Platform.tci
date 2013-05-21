@@ -1,0 +1,87 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * The following comment is used by the Graphical Config Tool:
+ * !DESCRIPTION 6XXX!  Sim64xx (600 Mhz) using 6416 device
+ * !NAME! ti.platforms.sim64xx
+ */
+
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+var mem_ext = [];
+
+if (environment["ti.bios.oldMemoryNames"] == undefined ||
+    environment["ti.bios.oldMemoryNames"] == 'false' ||
+    environment["ti.bios.oldMemoryNames"] == '0') {
+    
+    mem_ext[0] = {
+        comment: "This object defines space for the DSP's off-chip memory",
+        name: "SDRAM",
+        base: 0x80000000,
+        len:  0x01000000,
+        space: "code/data"
+    };
+}
+
+/* Specify the L2 memory setting */
+var device_regs = {
+    l2Mode: "4-way cache (0k)"
+};
+
+var params = {
+    clockRate: 600,
+    catalogName: "ti.catalog.c6000",
+    deviceName: "6416",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/* override the defaults with anything specified by client */
+if (utils.loadPlatform.params != null) {
+    var overrides = utils.loadPlatform.params;
+    for (var i in params) {
+        if (i in overrides) {
+            params[i] = overrides[i];
+        }
+    }
+}
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+
+/* Set RTXD.MODE to simulator and then disable RTDX, so if a user chooses to
+ * have it enabled, MODE would be set correctly already.
+ */
+bios.RTDX.ENABLERTDX = 1;
+bios.RTDX.MODE = "Simulator";
+bios.RTDX.ENABLERTDX = 0;
+
+print("remark:Sim64xx platform is configured for " + params.deviceName + 
+      " device. To change the configuration to another 64xx device, please add " +
+      "that device as a parameter to utils.loadPlatform() call in your TCF file. Ex:\n" +
+      "utils.loadPlatform('ti.platforms.sim64xx', {deviceName: '###'});\n"); 
+print("For more information, please refer to Chapter 4 of the Tconf User's " +
+      "Guide \n(SPRU007G)");
+/*
+ *  @(#) ti.platforms.sim64xx; 1, 0, 0,277; 2-23-2010 16:51:58; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

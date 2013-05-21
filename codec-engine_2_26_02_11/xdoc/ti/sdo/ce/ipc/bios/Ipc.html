@@ -1,0 +1,529 @@
+<html>
+<head>
+<title>module ti.sdo.ce.ipc.bios.Ipc</title>
+<meta name="description" content="BIOS ipc settings">
+<link rel="stylesheet" type="text/css" href="../../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.sdo.ce.ipc.bios.</span><span class="xdoc-id">Ipc</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/ipc/bios/package.html" title="package ti.sdo.ce.ipc.bios"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/ipc/bios/Ipc.html">index URL</a></div>
+<p class="xdocHdrSummary">BIOS ipc settings</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc-src.html"><span class="xdocLabelFile">ti/sdo/ce/ipc/bios/Ipc.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Ipc</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt>//&nbsp;inherits <a class="xdoc-link" href="../../../../../ti/sdo/ce/ipc/IIpc.html" title="ti.sdo.ce.ipc.IIpc">ti.sdo.ce.ipc.IIpc</a></div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> Ipc = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.sdo.ce.ipc.bios.Ipc'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><i>values of type <a class="xdocSynGo" href="#.Dsp.Management">Ipc.<span class="xdoc-id">DspManagement</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Value for controlling DSP from ARM w/ DspLink</span></span></a></i>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Dsp.Management" title="ti.sdo.ce.ipc.bios.Ipc.DspManagement">Ipc.<span class="xdoc-id">BootAndLoadDsp</span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Dsp.Management" title="ti.sdo.ce.ipc.bios.Ipc.DspManagement">Ipc.<span class="xdoc-id">BootDspAutonomously</span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Dsp.Management" title="ti.sdo.ce.ipc.bios.Ipc.DspManagement">Ipc.<span class="xdoc-id">None</span></a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> <a class="xdocSynGo" href="#.Arm.Dsp.Link.Config">Ipc.<span class="xdoc-id">ArmDspLinkConfig</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Configuration for the DspLink on the Arm side</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfig"><span class="xdoc-id">memTable</span></a> = <i><a class="xdoc-link" href="../../../../../ti/sdo/ce/ipc/IIpc.html#.Arm.Dsp.Link.Config.Mem.Table.Entry" title="ti.sdo.ce.ipc.IIpc.ArmDspLinkConfigMemTableEntry">IIpc.ArmDspLinkConfigMemTableEntry</a>[<span class="xdoc-kw1">string</span>]</i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfig"><span class="xdoc-id">doPowerControl</span></a> = <i><span class="xdoc-kw2">Bool</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfig"><span class="xdoc-id">dspManagement</span></a> = <i><a class="xdoc-link" href="../../../../../ti/sdo/ce/ipc/IIpc.html#.Dsp.Management" title="ti.sdo.ce.ipc.IIpc.DspManagement">IIpc.DspManagement</a></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> <a class="xdocSynGo" href="#.Arm.Dsp.Link.Config.Mem.Table.Entry">Ipc.<span class="xdoc-id">ArmDspLinkConfigMemTableEntry</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Description of one DSP memory segment entry</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config.Mem.Table.Entry" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfigMemTableEntry"><span class="xdoc-id">addr</span></a> = <i><span class="xdoc-kw2">UInt32</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config.Mem.Table.Entry" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfigMemTableEntry"><span class="xdoc-id">gppAddr</span></a> = <i><span class="xdoc-kw2">UInt32</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config.Mem.Table.Entry" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfigMemTableEntry"><span class="xdoc-id">size</span></a> = <i><span class="xdoc-kw2">UInt32</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config.Mem.Table.Entry" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfigMemTableEntry"><span class="xdoc-id">type</span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#arm.Comm.Msg.Size">Ipc.<span class="xdoc-id">armCommMsgSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Default size for the Arm-DSP communication messages (MSGQ messages)</span></span></a> = <i><span class="xdoc-kw2">UInt32</span></i> 4 * 1024;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#dsp.Comm.Num.Msg.Queues">Ipc.<span class="xdoc-id">dspCommNumMsgQueues</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Number of message queues (that can receive and store messages) on the
+  DSP side. Each DSP node (task) needs one message queue</span></span></a> = <i><span class="xdoc-kw2">UInt32</span></i> 64;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#dsp.Comm.Use.Exact.Match">Ipc.<span class="xdoc-id">dspCommUseExactMatch</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Indicates that "exact match" must be used for comm messages allocated
+  on the DSP side</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#dsp.Configure.Msgq.And.Pool">Ipc.<span class="xdoc-id">dspConfigureMsgqAndPool</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Set to true by default, instructs this module to generate code that
+  configures BIOS MSGQ and POOL modules: symbols MSGQ_config and
+  POOL_config. If set to false, and if BIOS is configured to use MSGQ,
+  user application must define these symbols</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#dsp.Use.Msgq.And.Pool">Ipc.<span class="xdoc-id">dspUseMsgqAndPool</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;If set to false, instructs Codecs Engine to cut out MSGQ and POOL
+  references completely from the final image</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#power.Save.Memory.Block.Name">Ipc.<span class="xdoc-id">powerSaveMemoryBlockName</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Memory segment name for context save/restore</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#use.Power.Management">Ipc.<span class="xdoc-id">usePowerManagement</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Enable power Management</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc-src.html"><span class="xdocLabelFile">ti/sdo/ce/ipc/bios/Ipc.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../../../ti/sdo/ce/ipc/bios/package.html" title="ti.sdo.ce.ipc.bios">ti.sdo.ce.ipc.bios</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Ipc</span></go><span class="xdoc-kw1"> inherits </span><a class="xdoc-link" href="../../../../../ti/sdo/ce/ipc/IIpc.html" title="ti.sdo.ce.ipc.IIpc">IIpc</a> {
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">enum</span> <a class="xdocSynGo" href="#.Dsp.Management"><span class="xdoc-id">DspManagement</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Value for controlling DSP from ARM w/ DspLink</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Dsp.Management" title="ti.sdo.ce.ipc.bios.Ipc.DspManagement"><span class="xdoc-id">BootAndLoadDsp</span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Dsp.Management" title="ti.sdo.ce.ipc.bios.Ipc.DspManagement"><span class="xdoc-id">BootDspAutonomously</span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Dsp.Management" title="ti.sdo.ce.ipc.bios.Ipc.DspManagement"><span class="xdoc-id">None</span></a>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">struct</span> <a class="xdocSynGo" href="#.Arm.Dsp.Link.Config"><span class="xdoc-id">ArmDspLinkConfig</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Configuration for the DspLink on the Arm side</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdoc-link" href="../../../../../ti/sdo/ce/ipc/IIpc.html#.Arm.Dsp.Link.Config.Mem.Table.Entry" title="ti.sdo.ce.ipc.IIpc.ArmDspLinkConfigMemTableEntry">IIpc.ArmDspLinkConfigMemTableEntry</a>&nbsp;<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfig"><span class="xdoc-id">memTable</span></a>[<span class="xdoc-kw1">string</span>];
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfig"><span class="xdoc-id">doPowerControl</span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdoc-link" href="../../../../../ti/sdo/ce/ipc/IIpc.html#.Dsp.Management" title="ti.sdo.ce.ipc.IIpc.DspManagement">IIpc.DspManagement</a>&nbsp;<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfig"><span class="xdoc-id">dspManagement</span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">struct</span> <a class="xdocSynGo" href="#.Arm.Dsp.Link.Config.Mem.Table.Entry"><span class="xdoc-id">ArmDspLinkConfigMemTableEntry</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Description of one DSP memory segment entry</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">UInt32</span>&nbsp;<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config.Mem.Table.Entry" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfigMemTableEntry"><span class="xdoc-id">addr</span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">UInt32</span>&nbsp;<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config.Mem.Table.Entry" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfigMemTableEntry"><span class="xdoc-id">gppAddr</span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">UInt32</span>&nbsp;<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config.Mem.Table.Entry" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfigMemTableEntry"><span class="xdoc-id">size</span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Arm.Dsp.Link.Config.Mem.Table.Entry" title="ti.sdo.ce.ipc.bios.Ipc.ArmDspLinkConfigMemTableEntry"><span class="xdoc-id">type</span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">UInt32</span>&nbsp;<a class="xdocSynGo" href="#arm.Comm.Msg.Size"><span class="xdoc-id">armCommMsgSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Default size for the Arm-DSP communication messages (MSGQ messages)</span></span></a> = 4 * 1024;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">UInt32</span>&nbsp;<a class="xdocSynGo" href="#dsp.Comm.Num.Msg.Queues"><span class="xdoc-id">dspCommNumMsgQueues</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Number of message queues (that can receive and store messages) on the
+  DSP side. Each DSP node (task) needs one message queue</span></span></a> = 64;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#dsp.Comm.Use.Exact.Match"><span class="xdoc-id">dspCommUseExactMatch</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Indicates that "exact match" must be used for comm messages allocated
+  on the DSP side</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#dsp.Configure.Msgq.And.Pool"><span class="xdoc-id">dspConfigureMsgqAndPool</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Set to true by default, instructs this module to generate code that
+  configures BIOS MSGQ and POOL modules: symbols MSGQ_config and
+  POOL_config. If set to false, and if BIOS is configured to use MSGQ,
+  user application must define these symbols</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#dsp.Use.Msgq.And.Pool"><span class="xdoc-id">dspUseMsgqAndPool</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;If set to false, instructs Codecs Engine to cut out MSGQ and POOL
+  references completely from the final image</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#power.Save.Memory.Block.Name"><span class="xdoc-id">powerSaveMemoryBlockName</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Memory segment name for context save/restore</span></span></a> = <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#use.Power.Management"><span class="xdoc-id">usePowerManagement</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Enable power Management</span></span></a> = <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Dsp.Management"></a>
+<a class="xdocAnchor" id=".Boot.And.Load.Dsp"></a>
+<a class="xdocAnchor" id=".Boot.Dsp.Autonomously"></a>
+<a class="xdocAnchor" id=".None"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">enum</span> <span class="xdoc-id">Ipc.</span><span class="xdoc-id">DspManagement</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc.html" title="module Ipc"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/ipc/bios/Ipc.html#.Dsp.Management">index URL</a></div>
+<p class="xdocHdrSummary">Value for controlling DSP from ARM w/ DspLink</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><i>values of type Ipc.<span class="xdoc-id">DspManagement</span></i>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Ipc.<span class="xdoc-id">BootAndLoadDsp</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Ipc.<span class="xdoc-id">BootDspAutonomously</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Ipc.<span class="xdoc-id">None</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">VALUES</div>
+<div class="xdocChild"><span class="xdocChildId">BootAndLoadDsp</span>
+<span class="xdocChildSum">&#151;&nbsp;DspLink boots DSP and loads executable</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">BootDspAutonomously</span>
+<span class="xdocChildSum">&#151;&nbsp;DspLink boots DSP w/o loading executable</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">None</span>
+<span class="xdocChildSum">&#151;&nbsp;DspLink neither boots DSP nor loads executable</span>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Arm.Dsp.Link.Config"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">struct</span> <span class="xdoc-id">Ipc.</span><span class="xdoc-id">ArmDspLinkConfig</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc.html" title="module Ipc"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/ipc/bios/Ipc.html#.Arm.Dsp.Link.Config">index URL</a></div>
+<p class="xdocHdrSummary">Configuration for the DspLink on the Arm side</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> Ipc.<span class="xdoc-id">ArmDspLinkConfig</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">memTable</span> = <i><a class="xdoc-link" href="../../../../../ti/sdo/ce/ipc/IIpc.html#.Arm.Dsp.Link.Config.Mem.Table.Entry" title="ti.sdo.ce.ipc.IIpc.ArmDspLinkConfigMemTableEntry">IIpc.ArmDspLinkConfigMemTableEntry</a>[<span class="xdoc-kw1">string</span>]</i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">doPowerControl</span> = <i><span class="xdoc-kw2">Bool</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">dspManagement</span> = <i><a class="xdoc-link" href="../../../../../ti/sdo/ce/ipc/IIpc.html#.Dsp.Management" title="ti.sdo.ce.ipc.IIpc.DspManagement">IIpc.DspManagement</a></i><b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">FIELDS</div>
+<div class="xdocChild"><span class="xdocChildId">memTable</span>
+<span class="xdocChildSum">&#151;&nbsp;Memory table, describing all DSP segments.
+                      NOTE: segments "DDR2" (or whatever is the name of
+                      the main segment), "DSPLINKMEM", and
+                      "RESETCTRL" must be present</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">doPowerControl</span>
+<span class="xdocChildSum">&#151;&nbsp;Flag indicating if Link should implement
+                      power control of DSP.</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">dspManagement</span>
+<span class="xdocChildSum">&#151;&nbsp;Flag indicating how Link should boot/load DSP</span>
+</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Of the many fields that Link exposes for configuration,
+  selected ones are exposed through this interface.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Arm.Dsp.Link.Config.Mem.Table.Entry"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">struct</span> <span class="xdoc-id">Ipc.</span><span class="xdoc-id">ArmDspLinkConfigMemTableEntry</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc.html" title="module Ipc"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/ipc/bios/Ipc.html#.Arm.Dsp.Link.Config.Mem.Table.Entry">index URL</a></div>
+<p class="xdocHdrSummary">Description of one DSP memory segment entry</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> Ipc.<span class="xdoc-id">ArmDspLinkConfigMemTableEntry</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">addr</span> = <i><span class="xdoc-kw2">UInt32</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">gppAddr</span> = <i><span class="xdoc-kw2">UInt32</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">size</span> = <i><span class="xdoc-kw2">UInt32</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">type</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">FIELDS</div>
+<div class="xdocChild"><span class="xdocChildId">addr</span>
+<span class="xdocChildSum">&#151;&nbsp;The beginning address of the segment</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">gppAddr</span>
+<span class="xdocChildSum">&#151;&nbsp;The GPP physical address of the segment (when needed)</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">size</span>
+<span class="xdocChildSum">&#151;&nbsp;Size of the segment in bytes</span>
+</div>
+<div class="xdocChild"><span class="xdocChildId">type</span>
+<span class="xdocChildSum">&#151;&nbsp;One of the following types:
+                 "main"     -- main code/data segment (i.e. DDR2)
+                 "link"     -- DSPLINKMEM segment
+                 "reset"    -- RESETCTRL segment
+                 "poolmem"  -- POOLMEM segment
+                 "code"     -- dsp code/data, must map into GPP space
+                 "other"    -- anything else</span>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="arm.Comm.Msg.Size"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Ipc.</span><span class="xdoc-id">armCommMsgSize</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc.html" title="module Ipc"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/ipc/bios/Ipc.html#arm.Comm.Msg.Size">index URL</a></div>
+<p class="xdocHdrSummary">Default size for the Arm-DSP communication messages (MSGQ messages)</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Ipc.<span class="xdoc-id">armCommMsgSize</span> = <i><span class="xdoc-kw2">UInt32</span></i> 4 * 1024;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where DSP Link is used.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="dsp.Comm.Num.Msg.Queues"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Ipc.</span><span class="xdoc-id">dspCommNumMsgQueues</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc.html" title="module Ipc"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/ipc/bios/Ipc.html#dsp.Comm.Num.Msg.Queues">index URL</a></div>
+<p class="xdocHdrSummary">Number of message queues (that can receive and store messages) on the
+  DSP side. Each DSP node (task) needs one message queue</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Ipc.<span class="xdoc-id">dspCommNumMsgQueues</span> = <i><span class="xdoc-kw2">UInt32</span></i> 64;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS or
+  runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="dsp.Comm.Use.Exact.Match"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Ipc.</span><span class="xdoc-id">dspCommUseExactMatch</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc.html" title="module Ipc"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/ipc/bios/Ipc.html#dsp.Comm.Use.Exact.Match">index URL</a></div>
+<p class="xdocHdrSummary">Indicates that "exact match" must be used for comm messages allocated
+  on the DSP side</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Ipc.<span class="xdoc-id">dspCommUseExactMatch</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where DSP Link is used.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="dsp.Configure.Msgq.And.Pool"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Ipc.</span><span class="xdoc-id">dspConfigureMsgqAndPool</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc.html" title="module Ipc"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/ipc/bios/Ipc.html#dsp.Configure.Msgq.And.Pool">index URL</a></div>
+<p class="xdocHdrSummary">Set to true by default, instructs this module to generate code that
+  configures BIOS MSGQ and POOL modules: symbols MSGQ_config and
+  POOL_config. If set to false, and if BIOS is configured to use MSGQ,
+  user application must define these symbols</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Ipc.<span class="xdoc-id">dspConfigureMsgqAndPool</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="dsp.Use.Msgq.And.Pool"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Ipc.</span><span class="xdoc-id">dspUseMsgqAndPool</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc.html" title="module Ipc"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/ipc/bios/Ipc.html#dsp.Use.Msgq.And.Pool">index URL</a></div>
+<p class="xdocHdrSummary">If set to false, instructs Codecs Engine to cut out MSGQ and POOL
+  references completely from the final image</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Ipc.<span class="xdoc-id">dspUseMsgqAndPool</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Must be set to true if DSP Link is used.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="power.Save.Memory.Block.Name"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Ipc.</span><span class="xdoc-id">powerSaveMemoryBlockName</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc.html" title="module Ipc"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/ipc/bios/Ipc.html#power.Save.Memory.Block.Name">index URL</a></div>
+<p class="xdocHdrSummary">Memory segment name for context save/restore</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Ipc.<span class="xdoc-id">powerSaveMemoryBlockName</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">The name of the segment to which power should be saved; if left null,
+  will default to defaultMemSegId.</div>
+<div class="xdocText">This feature may not be available on all devices.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="use.Power.Management"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Ipc.</span><span class="xdoc-id">usePowerManagement</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/ipc/bios/Ipc.html" title="module Ipc"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/ipc/bios/Ipc.html#use.Power.Management">index URL</a></div>
+<p class="xdocHdrSummary">Enable power Management</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Ipc.<span class="xdoc-id">usePowerManagement</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">If set to true, will attempt to include power-management code
+  where applicable.</div>
+<div class="xdocText">This feature may not be available on all devices.</div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:30 GMT</div>
+</div></div></body>
+</html>

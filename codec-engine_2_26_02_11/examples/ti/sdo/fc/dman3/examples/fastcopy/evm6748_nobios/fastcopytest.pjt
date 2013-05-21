@@ -1,0 +1,42 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectName="NONBIOSDMATest"
+ProjectDir="$(Proj_dir)"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Project Dependencies]
+Source="..\fcpy_ti674.pjt"
+
+["..\fcpy_ti674.pjt" Settings]
+MatchConfigName=true
+
+[Source Files]
+Source="..\bios_rts.c"
+Source="..\bios_rtsasm.s62"
+Source="..\fastcopytest.c"
+Source="dman3_config.c"
+Source="..\fcpy.c"
+Source="..\ifcpy.c"
+Source="fastcopytest.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -eoo674 -fr"$(Proj_dir)\Debug" -i"." -i"%FC_INSTALL_DIR%/packages" -i"%XDAIS_INSTALL_DIR%/packages" -i"%XDC_INSTALL_DIR%/packages" -d"NON_RTSC_CONFIGURATION" -d"xdc_target_types__=ti/targets/std.h" -d"GT_CONFIG" -d"_RTS_MODE" -mv6740
+
+
+["Compiler" Settings: "Release"]
+Options=-o2 -eoo674 -fr"$(Proj_dir)\Release" -i"." -i"%FC_INSTALL_DIR%/packages" -i"%XDAIS_INSTALL_DIR%/packages" -i"%XDC_INSTALL_DIR%/packages" -d"xdc_target_types__=ti/targets/std.h" -d"NON_RTSC_CONFIGURATION" -d"_RTS_MODE" -mv6740
+
+["Linker" Settings: "Debug"]
+Options=-q -c -m".\debug\fastcopytest.map" -o".\debug\fastcopytest.out" -x -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/acpy3/lib/debug_trace" -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/dman3/lib/debug_trace" -i"%FC_INSTALL_DIR%/packages/ti/sdo/utils/trace/lib/debug" -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/utils/api/lib/debug_trace" -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/utils/gtinfra/lib/debug_trace" -l"acpy3.a674" -l"dman3.a674" -l"api.a674" -l"gt_noOs.a674" -l"gt.a674"
+
+["Linker" Settings: "Release"]
+Options=-q -c -m".\release\fastcopytest.map" -o".\release\fastcopytest.out" -x -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/acpy3/lib/release" -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/dman3/lib/release" -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/utils/api/lib/release" -i"%FC_INSTALL_DIR%/packages/ti/sdo/utils/trace/lib/release" -l"gt.a674" -l"acpy3.a674" -l"dman3.a674" -l"api.a674"
+

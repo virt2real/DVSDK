@@ -1,0 +1,78 @@
+%%{
+/* Linker templates are passed the following arguments:
+ *      $out	    - an open file stream for the generated linker
+ *		      command file
+ *	$args[]     - array of zero or more libraries that should be linked
+ *		      with (in the order they appear in the argument list)
+ *
+ *  We add "'s around names to allow these names to contain embedded spaces
+ */
+
+/*
+ *  ======== map ========
+ *  map unix file names to Windows file names (with drive letters) for wine
+ *  support
+ */
+function map(name)
+{
+    /* map /db/?tree/ files */
+    var tokens = name.match(/(^\/[^\/]+\/)([a-z])(tree\/)(.*)/);
+    if (tokens != null && tokens.length == 5) {
+        var drive = tokens[2];
+        if (drive == "a") {
+            drive = "i";
+        }
+        return (drive + ":/" + tokens[4]);
+    }
+
+    /* map /db/toolsrc files */
+    tokens = name.match(/(^\/[^\/]+\/toolsrc\/)(.*)/);
+    if (tokens != null && tokens.length == 3) {
+        return ("t:/" + tokens[2]);
+    }
+
+    /* otherwise give up */
+    return (name);
+}
+%%}
+
+%if (Program.$$isasm) {
+    %for (var i = 0; i < xdc.om.$modules.length; i++) {
+	%var m = xdc.om.$modules[i];
+	%if (!m.$used || m.$$scope != 1 || m.$hostonly) {
+	    %continue;
+	%}
+	%for (var j = 0; j < m.$$fxntab.length; j++) {
+	    %var f = m.$$fxntab[j];
+	    |-						|-export:`f`
+	%}
+	%if (!m.$$instflag) {
+	    %continue;
+	%}
+	%if (m.memoryPolicy$ > 0) {
+	    |-						|-export:`m.$name.replace(/\./g, '_')`_create__Object
+	%}
+	%if (m.memoryPolicy$ > 1) {
+	    |-						|-export:`m.$name.replace(/\./g, '_')`_delete
+	%}
+    %}
+%}
+
+%for (var i = 0; i < Program.$$asmvec.length; i++) {
+    |-							|"`prog.$$asmvec[i]`"
+%}
+
+%for (var i = 0; i < $args.length; i++) {
+%    var lib = $args[i];
+%    /* this is a hack to support wine builds using this target; when building
+%     * on a unix host, library paths begin with '/' (because they are
+%     * absolute paths) but the microsoft linker sees the '/' as the option
+%     * character and aborts because it does not recognize the option(!)
+%     */
+%    if (lib[0] != '/') {
+        |-						|"`lib`"
+%    }
+%    else {
+        |-						|"`map(lib)`"
+%    }
+%}

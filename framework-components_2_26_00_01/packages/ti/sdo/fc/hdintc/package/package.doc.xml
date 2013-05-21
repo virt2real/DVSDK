@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='ti.sdo.fc.hdintc' nodoc='0' root='../../../../' summary='Framework+Components%27+HDVICP+Interrupt+Registry+and+Synchronization%0A++manager'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eti.sdo.fc.hdintc%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+4%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='HDINTC' kind='module' nodoc='0' metaonly='1' summary='HDVICP+Interrupt+Registry+Callback+Library'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fti%2Fsdo%2Ffc%2Fhdintc%2Fpackage.html%22+title%3D%22ti.sdo.fc.hdintc%22%3Eti.sdo.fc.hdintc%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EHDINTC%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EHDINTC%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+HDINTC+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.fc.hdintc.HDINTC%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='biosInterruptEventNo_0' anchor='bios.Interrupt.Event.No_0' altext='ti.sdo.fc.hdintc.HDINTC.biosInterruptEventNo_0' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='This+must+correspond+to+an+unused+event+on+this+device.+This+is+a+dummy%0A++event+that+will+be+mapped+to+the+biosInterruptVectorId_0+above.+%0A++This+interrupt+will+be+software+triggered+%28by+writing+to+the+ISR%29.+%0A++It+won%27t+be+triggered+by+an+actual+event'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EbiosInterruptEventNo_0%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EHDINTC.%3Cspan+class%3D%22xdoc-id%22%3EbiosInterruptEventNo_0%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='biosInterruptEventNo_1' anchor='bios.Interrupt.Event.No_1' altext='ti.sdo.fc.hdintc.HDINTC.biosInterruptEventNo_1' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='This+must+correspond+to+an+unused+event+on+this+device.+This+is+a+dummy%0A++event+that+will+be+mapped+to+the+biosInterruptVectorId_1+above.+%0A++This+interrupt+will+be+software+triggered+%28by+writing+to+the+ISR%29.+%0A++It+won%27t+be+triggered+by+an+actual+event'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EbiosInterruptEventNo_1%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EHDINTC.%3Cspan+class%3D%22xdoc-id%22%3EbiosInterruptEventNo_1%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='biosInterruptVectorId_0' anchor='bios.Interrupt.Vector.Id_0' altext='ti.sdo.fc.hdintc.HDINTC.biosInterruptVectorId_0' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Map+this+to+an+unused+interrupt+vector+ID%0A++This+vector+Id+is+going+to+be+used+to+set+up+a+BIOS+ISR'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EbiosInterruptVectorId_0%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EHDINTC.%3Cspan+class%3D%22xdoc-id%22%3EbiosInterruptVectorId_0%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='biosInterruptVectorId_1' anchor='bios.Interrupt.Vector.Id_1' altext='ti.sdo.fc.hdintc.HDINTC.biosInterruptVectorId_1' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Map+this+to+an+unused+interrupt+vector+ID%0A++This+vector+Id+is+going+to+be+used+to+set+up+a+BIOS+ISR'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EbiosInterruptVectorId_1%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EHDINTC.%3Cspan+class%3D%22xdoc-id%22%3EbiosInterruptVectorId_1%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='debug' anchor='debug' altext='ti.sdo.fc.hdintc.HDINTC.debug' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Enable+the+debug+profile+of+the+library'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edebug%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EHDINTC.%3Cspan+class%3D%22xdoc-id%22%3Edebug%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+will+likely+result+in+a+larger+and+slower+library+being+linked+in.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='hdvicpInterruptEventNo_0' anchor='hdvicp.Interrupt.Event.No_0' altext='ti.sdo.fc.hdintc.HDINTC.hdvicpInterruptEventNo_0' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='This+must+match+the+physical+event-id+associated+with+the+HDVICP%0A++processor%3A0+interrupts+that+need+to+be+serviced+by+GEM%2C+via+the%0A++interrupt+line+selected+by+%27interruptVectorId_0%27'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EhdvicpInterruptEventNo_0%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EHDINTC.%3Cspan+class%3D%22xdoc-id%22%3EhdvicpInterruptEventNo_0%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='hdvicpInterruptEventNo_1' anchor='hdvicp.Interrupt.Event.No_1' altext='ti.sdo.fc.hdintc.HDINTC.hdvicpInterruptEventNo_1' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='This+must+match+the+physical+event-id+associated+with+the+HDVICP%0A++processor%3A0+interrupts+that+need+to+be+serviced+by+GEM%2C+via+the%0A++interrupt+line+selected+by+%27interruptVectorId_0%27'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EhdvicpInterruptEventNo_1%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EHDINTC.%3Cspan+class%3D%22xdoc-id%22%3EhdvicpInterruptEventNo_1%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='interruptVectorId_0' anchor='interrupt.Vector.Id_0' altext='ti.sdo.fc.hdintc.HDINTC.interruptVectorId_0' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Map+this+to+an+unused+interrupt+vector+ID'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EinterruptVectorId_0%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EHDINTC.%3Cspan+class%3D%22xdoc-id%22%3EinterruptVectorId_0%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='interruptVectorId_1' anchor='interrupt.Vector.Id_1' altext='ti.sdo.fc.hdintc.HDINTC.interruptVectorId_1' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Map+this+to+an+unused+interrupt+vector+ID'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EinterruptVectorId_1%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EHDINTC.%3Cspan+class%3D%22xdoc-id%22%3EinterruptVectorId_1%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='spinloop' anchor='spinloop' altext='ti.sdo.fc.hdintc.HDINTC.spinloop' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Use+%27spinloop%27+implementation'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Espinloop%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EHDINTC.%3Cspan+class%3D%22xdoc-id%22%3Espinloop%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='When+set+to+true%2C+the+services+which+wait+for+the+HDVICP%0A++completion+interrupt+will+spin%2C+rather+than+use+a+semaphore.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='trace' anchor='trace' altext='ti.sdo.fc.hdintc.HDINTC.trace' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Enable+trace+support'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etrace%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EHDINTC.%3Cspan+class%3D%22xdoc-id%22%3Etrace%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+</package>

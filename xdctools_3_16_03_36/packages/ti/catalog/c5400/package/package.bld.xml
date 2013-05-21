@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.catalog.c5400" version="1, 0, 0, 0" producerId="undefined">
+    <units>
+        <interface name="ITMS320C54xx"/>
+        <module name="TMS320C5401"/>
+        <module name="TMS320C5402"/>
+        <module name="TMS320C5402A"/>
+        <module name="TMS320C5404"/>
+        <module name="TMS320C5405"/>
+        <module name="TMS320C5407"/>
+        <module name="TMS320C5409"/>
+        <module name="TMS320C5409A"/>
+        <module name="TMS320C5410"/>
+        <module name="TMS320C5410A"/>
+        <module name="TMS320C5416"/>
+        <module name="TMS320C5420"/>
+        <module name="TMS320C5470"/>
+        <module name="TMS320C5471"/>
+        <module name="TMS320CDM270"/>
+        <module name="TMS320CDM310"/>
+        <module name="TMS320CDM320"/>
+        <module name="TMS320C54CST"/>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_catalog_c5400.tar.dep" src="package/rel/ti_catalog_c5400.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_catalog_c5400"
+        pname="../../../../exports/ti_catalog_c5400.tar"
+        label="default"
+        relScript="/db/ztree/library/trees/platform/platform-k32x/src/tisb/release/epl/copyright.rel">
+        <file name="C54.tci"/>
+        <file name="CDM270.tci"/>
+        <file name="C5410A.tci"/>
+        <file name="C54CST.tci"/>
+        <file name="C5407.tci"/>
+        <file name="package/package.ext.xml"/>
+        <file name="C5420.tci"/>
+        <file name="C5402.tci"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="C5402A.tci"/>
+        <file name="C5410.tci"/>
+        <file name="C5405.tci"/>
+        <file name="package/package.rel.dot"/>
+        <file name="C5470.tci"/>
+        <file name="C5416.tci"/>
+        <file name="CDM320.tci"/>
+        <file name="package/build.cfg"/>
+        <file name="C5401.tci"/>
+        <file name="CDM310.tci"/>
+        <file name="package/package.bld.xml"/>
+        <file name="C5409.tci"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="C5409A.tci"/>
+        <file name="C5471.tci"/>
+        <file name="C5404.tci"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

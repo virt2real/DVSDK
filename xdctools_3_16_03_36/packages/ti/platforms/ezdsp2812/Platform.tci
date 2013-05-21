@@ -1,0 +1,63 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * The following comment is used by the Graphical Config Tool:
+ * !DESCRIPTION 2XXX!  eZdsp2812 (150 MHz) with 128KB words of on-chip flash and 64K words of off-chip SRAM memory
+ * !NAME! ti.platforms.ezdsp2812
+ */
+
+
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+var mem_ext = [];
+
+mem_ext[0] = {
+    comment: "This object defines space for the DSP's off-chip memory",
+    name: "SRAM",
+    base: 0x100000,
+    len:  0x10000,
+    space: "data"
+};
+
+/*
+ * The board has a 30 Mhz oscillator and runs at 150 Mhz.
+ * This value is obtained by setting PLLCR = 0xa which makes
+ * it a multiplier of 5.
+ */
+var device_regs = {
+    pllcr: 0xa
+};
+
+var params = {
+    clockRate: 150.0000,
+    catalogName: "ti.catalog.c2800",
+    deviceName: "2812",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+/*
+ *  @(#) ti.platforms.ezdsp2812; 1, 0, 0,278; 2-23-2010 17:01:02; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

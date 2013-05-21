@@ -1,0 +1,100 @@
+<html><head><title>module ti.bios.power.TMS320CDM6441DSP</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* 
+</span>     2    <span class="comment"> * Copyright (c) 2010, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> * 
+</span>    32    <span class="comment"> */</span>
+    33    <span class="comment">/*
+</span>    34    <span class="comment"> *  ======== TMS320CDM6441DSP.xdc ========
+</span>    35    <span class="comment"> */</span>
+    36    
+    37    <span class=key>package</span> ti.bios.power;
+    38    
+    39    
+    40    <span class="xdoc">/*! DSP configuration module for the TMS320DM6441 device.
+</span>    41    <span class="xdoc"> *
+</span>    42    <span class="xdoc"> *  Configuration parameters for the Local Power Manager running
+</span>    43    <span class="xdoc"> *  on the DSP core of a TMS320DM6441 device.
+</span>    44    <span class="xdoc"> */</span>
+    45    @Template(<span class="string">"./config.xdt"</span>)
+    46    
+    47    <span class=key>metaonly</span> <span class=key>module</span> TMS320CDM6441DSP <span class=key>inherits</span> ITMS320CDM644x {
+    48    
+    49        <span class=xdoc>//! dsp runtime context buffer</span>
+    50        <span class=key>struct</span> RuntimeContext {
+    51            UInt32  len;            <span class=xdoc>//! length of context buffer</span>
+    52            Bool    useUserFxns;    <span class=xdoc>//! override save/restore functions</span>
+    53            String  saveFxn;        <span class=xdoc>//! context save function name</span>
+    54            String  restoreFxn;     <span class=xdoc>//! context restore function name</span>
+    55        };
+    56    
+    57        <span class=xdoc>//! maximum allowable size for context buffer</span>
+    58        <span class=key>readonly</span> <span class=key>config</span> <span class=key>unsigned</span> CONTEXT_BUFFER_MAX_SIZE = 0x40000;
+    59    
+    60        <span class=xdoc>//! default value for dsp runtime context buffer</span>
+    61        <span class=key>config</span> RuntimeContext dspRC = {
+    62            len:            0x40000,
+    63            useUserFxns:    <span class=key>false</span>,
+    64            saveFxn:        <span class="string">""</span>,
+    65            restoreFxn:     <span class="string">""</span>,
+    66        };
+    67    
+    68        <span class=xdoc>//! default value for vicp (imcop) runtime context buffer</span>
+    69        <span class=key>config</span> RuntimeContext imcopRC = {
+    70            len:            0x40000,
+    71            useUserFxns:    <span class=key>false</span>,
+    72            saveFxn:        <span class="string">""</span>,
+    73            restoreFxn:     <span class="string">""</span>,
+    74        };
+    75    
+    76        <span class=xdoc>//! default edma channel to use for save/restore transfers</span>
+    77        <span class=key>config</span> UInt32 edmaChannel = 45;
+    78    
+    79        <span class="xdoc">/*! name given to target memory range for storing context data
+</span>    80    <span class="xdoc">     *
+</span>    81    <span class="xdoc">     *  This must be set to a valid target memory range defined in the
+</span>    82    <span class="xdoc">     *  linker command file's memory section.
+</span>    83    <span class="xdoc">     */</span>
+    84        <span class=key>config</span> string targetMemoryRangeName = <span class="string">""</span>;
+    85    
+    86        <span class=xdoc>//! cpu name, useful for adding validation checks</span>
+    87        <span class=key>readonly</span> <span class=key>config</span> string CPU_NAME = <span class="string">"DSP"</span>;
+    88    }
+    89    <span class="comment">/*
+</span>    90    <span class="comment"> *  @(#) ti.bios.power; 1, 1, 1,1; 4-30-2010 13:19:46; /db/atree/library/trees/power/power-g09x/src/
+</span>    91    <span class="comment"> */</span>
+    92    
+</pre>
+</body></html>

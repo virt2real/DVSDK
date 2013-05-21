@@ -1,0 +1,463 @@
+digraph dependencies {
+    label="\nPackage xdc.platform.generic Dependency Graph";
+    size="7.5,10";
+    rankdir=LR;
+    ranksep=".75";
+    concentrate="true";
+    node [fixedsize=true, width=1.5, style=filled, color=black];
+    node [font=Helvetica, fontsize=12, fillcolor=lightgrey];
+    xdc_platform_generic [shape=record,label="xdc.platform.generic|1, 0, 0", URL="package.rel.xml"];
+    node [fontsize=10, fillcolor=white];
+
+    edge [style=solid, color=blue]
+    xdc_platform [shape=record,label="xdc.platform|1, 0, 1, 0", URL="../../package/package.rel.svg"];
+    xdc_platform_generic -> xdc_platform;
+
+    edge [style=solid, color=lightgrey]
+    xdc [shape=record,label="xdc|1, 1, 1", URL="../../../package/package.rel.svg"];
+    xdc_platform_generic -> xdc;
+    xdc_bld [shape=record,label="xdc.bld|1, 0, 2", URL="../../../bld/package/package.rel.svg"];
+    xdc_platform_generic -> xdc_bld;
+    xdc_utils_tconf [shape=record,label="xdc.utils.tconf|1, 0, 0, 0", URL="../../../../../../imports/xdc/utils/tconf/package/package.rel.svg"];
+    xdc_platform_generic -> xdc_utils_tconf;
+    xdc_services_intern_cmd [shape=record,label="xdc.services.intern.cmd|1, 0, 0, 0", URL="../../../services/intern/cmd/package/package.rel.svg"];
+    xdc_platform_generic -> xdc_services_intern_cmd;
+    xdc_services_intern_xsr [shape=record,label="xdc.services.intern.xsr|1, 0, 0", URL="../../../services/intern/xsr/package/package.rel.svg"];
+    xdc_platform_generic -> xdc_services_intern_xsr;
+    xdc_services_spec [shape=record,label="xdc.services.spec|1, 0, 0, 0", URL="../../../services/spec/package/package.rel.svg"];
+    xdc_platform_generic -> xdc_services_spec;
+    xdc_shelf [shape=record,label="xdc.shelf|1, 0, 0", URL="../../../shelf/package/package.rel.svg"];
+    xdc_platform_generic -> xdc_shelf;
+    xdc_services_global [shape=record,label="xdc.services.global|1, 0, 0", URL="../../../services/global/package/package.rel.svg"];
+    xdc_platform_generic -> xdc_services_global;
+    xdc_services_intern_gen [shape=record,label="xdc.services.intern.gen|1, 0, 0, 0", URL="../../../services/intern/gen/package/package.rel.svg"];
+    xdc_platform_generic -> xdc_services_intern_gen;
+    xdc_platform_generic -> xdc_platform;
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_gen -> xdc_shelf;
+    xdc_services_intern_gen -> xdc_services_spec;
+    xdc_services_intern_gen -> xdc_services_global;
+    xdc_services_intern_gen -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+    xdc_services_spec -> xdc_shelf;
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_xsr -> xdc_services_global;
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_cmd -> xdc_shelf;
+    xdc_services_intern_cmd -> xdc_services_spec;
+    xdc_services_intern_cmd -> xdc_services_global;
+    xdc_services_intern_cmd -> xdc_services_intern_gen;
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+    xdc_utils_rhino [shape=record,label="xdc.utils.rhino|1, 0, 0, 0", URL="../../../../../../imports/xdc/utils/rhino/package/package.rel.svg"];
+    xdc_utils_tconf -> xdc_utils_rhino;
+    xdc_services_host_lib [shape=record,label="xdc.services.host.lib|1, 0, 0", URL="../../../../../../imports/xdc/services/host/lib/package/package.rel.svg"];
+    xdc_utils_tconf -> xdc_services_host_lib;
+    ti_bios_config_cdbutils_gencfg [shape=record,label="ti.bios.config.cdbutils.gencfg|", URL="../../../../../../imports/ti/bios/config/cdbutils/gencfg/package/package.rel.svg"];
+    xdc_utils_tconf -> ti_bios_config_cdbutils_gencfg;
+    tisb_gen [shape=record,label="tisb.gen|", URL="../../../../../../imports/tisb/gen/package/package.rel.svg"];
+    xdc_utils_tconf -> tisb_gen;
+
+    edge [style=solid, color=lightgrey]
+    xdc_runtime [shape=record,label="xdc.runtime|2, 0, 0, 0", URL="../../../runtime/package/package.rel.svg"];
+    xdc_utils_tconf -> xdc_runtime;
+    xdc_utils_tconf -> xdc_services_host_lib;
+    xdc_utils_tconf -> xdc_services_intern_xsr;
+    host_platforms_PC [shape=record,label="host.platforms.PC|1, 0, 0", URL="../../../../host/platforms/PC/package/package.rel.svg"];
+    xdc_utils_tconf -> host_platforms_PC;
+    xdc_utils_tconf -> xdc_platform;
+    gnu_targets_rts86U [shape=record,label="gnu.targets.rts86U|1, 0, 0, 0", URL="../../../../../../imports/gnu/targets/rts86U/package/package.rel.svg"];
+    xdc_utils_tconf -> gnu_targets_rts86U;
+    gnu_targets_rts5 [shape=record,label="gnu.targets.rts5|1, 0, 0, 0", URL="../../../../../../imports/gnu/targets/rts5/package/package.rel.svg"];
+    xdc_utils_tconf -> gnu_targets_rts5;
+    xdc_utils_tconf -> xdc_services_intern_cmd;
+    tisb_pctools [shape=record,label="tisb.pctools|", URL="../../../../../../imports/tisb/pctools/package/package.rel.svg"];
+    xdc_utils_tconf -> tisb_pctools;
+    xdc_cfg [shape=record,label="xdc.cfg|1, 0, 2, 0", URL="../../../cfg/package/package.rel.svg"];
+    xdc_utils_tconf -> xdc_cfg;
+    xdc_utils_tconf -> xdc_utils_rhino;
+    xdc_utils_tconf -> ti_bios_config_cdbutils_gencfg;
+    host_platforms_SUN [shape=record,label="host.platforms.SUN|1, 0, 0, 1", URL="../../../../host/platforms/SUN/package/package.rel.svg"];
+    xdc_utils_tconf -> host_platforms_SUN;
+    ti_bios_config_cdbutils_cdb [shape=record,label="ti.bios.config.cdbutils.cdb|", URL="../../../../../../imports/ti/bios/config/cdbutils/cdb/package/package.rel.svg"];
+    xdc_utils_tconf -> ti_bios_config_cdbutils_cdb;
+    xdc_corevers [shape=record,label="xdc.corevers|16, 0, 1, 0", URL="../../../corevers/package/package.rel.svg"];
+    xdc_utils_tconf -> xdc_corevers;
+    xdc_utils_tconf -> xdc_services_spec;
+    microsoft_targets [shape=record,label="microsoft.targets|1, 0, 2, 0", URL="../../../../../../imports/microsoft/targets/package/package.rel.svg"];
+    xdc_utils_tconf -> microsoft_targets;
+    xdc_utils_tconf -> tisb_gen;
+    xdc_utils_tconf -> xdc_services_intern_gen;
+    microsoft_targets_rts [shape=record,label="microsoft.targets.rts|1, 0, 0, 0", URL="../../../../../../imports/microsoft/targets/rts/package/package.rel.svg"];
+    xdc_utils_tconf -> microsoft_targets_rts;
+    xdc_utils_tconf -> xdc_shelf;
+    xdc_utils_tconf -> xdc_services_global;
+    gnu_targets [shape=record,label="gnu.targets|1, 0, 1", URL="../../../../../../imports/gnu/targets/package/package.rel.svg"];
+    xdc_utils_tconf -> gnu_targets;
+    ti_bios_config_cdbutils_prot [shape=record,label="ti.bios.config.cdbutils.prot|", URL="../../../../../../imports/ti/bios/config/cdbutils/prot/package/package.rel.svg"];
+    xdc_utils_tconf -> ti_bios_config_cdbutils_prot;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_bios_config_cdbutils_prot -> xdc_shelf;
+    ti_bios_config_cdbutils_prot -> xdc_services_spec;
+    ti_bios_config_cdbutils_prot -> microsoft_targets;
+    ti_bios_config_cdbutils_prot -> xdc_corevers;
+    ti_bios_config_cdbutils_prot -> xdc_services_intern_cmd;
+    ti_bios_config_cdbutils_prot -> xdc_services_intern_xsr;
+    ti_bios_config_cdbutils_prot -> xdc_services_intern_gen;
+    ti_bios_config_cdbutils_prot -> xdc_services_global;
+    ti_bios_config_cdbutils_prot -> gnu_targets;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    gnu_targets -> xdc_services_intern_gen;
+    gnu_targets -> xdc_services_spec;
+    gnu_targets -> xdc_services_global;
+    gnu_targets -> xdc_shelf;
+    gnu_targets -> xdc_services_intern_cmd;
+    gnu_targets -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=blue]
+    microsoft_targets_rts -> xdc_runtime;
+
+    edge [style=solid, color=lightgrey]
+    xdc_rov [shape=record,label="xdc.rov|1, 0, 0", URL="../../../rov/package/package.rel.svg"];
+    microsoft_targets_rts -> xdc_rov;
+    microsoft_targets_rts -> xdc_services_intern_xsr;
+    xdc_runtime_knl [shape=record,label="xdc.runtime.knl|1, 0, 0", URL="../../../runtime/knl/package/package.rel.svg"];
+    microsoft_targets_rts -> xdc_runtime_knl;
+    microsoft_targets_rts -> microsoft_targets;
+    microsoft_targets_rts -> xdc_services_intern_cmd;
+    ti_targets_arm_elf [shape=record,label="ti.targets.arm.elf|not found"style=rounded, ];
+    microsoft_targets_rts -> ti_targets_arm_elf;
+    ti_targets [shape=record,label="ti.targets|not found"style=rounded, ];
+    microsoft_targets_rts -> ti_targets;
+    microsoft_targets_rts -> gnu_targets;
+    microsoft_targets_rts -> xdc_services_global;
+    microsoft_targets_rts -> xdc_runtime;
+    microsoft_targets_rts -> xdc_services_intern_gen;
+    microsoft_targets_rts -> xdc_shelf;
+    gnu_targets_arm [shape=record,label="gnu.targets.arm|not found"style=rounded, ];
+    microsoft_targets_rts -> gnu_targets_arm;
+    ti_targets_arm [shape=record,label="ti.targets.arm|not found"style=rounded, ];
+    microsoft_targets_rts -> ti_targets_arm;
+    microsoft_targets_rts -> xdc_services_spec;
+    microsoft_targets_arm [shape=record,label="microsoft.targets.arm|not found"style=rounded, ];
+    microsoft_targets_rts -> microsoft_targets_arm;
+    ti_targets_elf [shape=record,label="ti.targets.elf|not found"style=rounded, ];
+    microsoft_targets_rts -> ti_targets_elf;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    microsoft_targets -> xdc_services_intern_gen;
+    microsoft_targets -> xdc_services_spec;
+    microsoft_targets -> xdc_services_global;
+    microsoft_targets -> xdc_shelf;
+    microsoft_targets -> xdc_services_intern_cmd;
+    microsoft_targets -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_corevers -> xdc_utils_tconf;
+    xdc_corevers -> xdc_services_intern_cmd;
+    xdc_corevers -> xdc_services_intern_xsr;
+    xdc_corevers -> xdc_services_spec;
+    xdc_corevers -> xdc_shelf;
+    xdc_corevers -> xdc_services_global;
+    xdc_corevers -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+    ti_bios_config_cdbutils_cdb -> tisb_gen;
+    ti_bios_config_cdbutils_cdb -> tisb_pctools;
+
+    edge [style=solid, color=lightgrey]
+    ti_bios_config_cdbutils_cdb -> xdc_services_intern_xsr;
+    ti_bios_config_cdbutils_cdb -> xdc_runtime;
+    ti_bios_config_cdbutils_cdb -> host_platforms_PC;
+    ti_bios_config_cdbutils_cdb -> xdc_platform;
+    ti_bios_config_cdbutils_cdb -> gnu_targets_rts86U;
+    ti_bios_config_cdbutils_cdb -> gnu_targets_rts5;
+    ti_bios_config_cdbutils_cdb -> xdc_services_intern_cmd;
+    ti_bios_config_cdbutils_cdb -> tisb_pctools;
+    ti_bios_config_cdbutils_cdb -> xdc_cfg;
+    ti_bios_config_cdbutils_cdb -> host_platforms_SUN;
+    ti_bios_config_cdbutils_cdb -> xdc_corevers;
+    ti_bios_config_cdbutils_cdb -> xdc_services_spec;
+    ti_bios_config_cdbutils_cdb -> tisb_gen;
+    ti_bios_config_cdbutils_cdb -> microsoft_targets;
+    ti_bios_config_cdbutils_cdb -> xdc_services_intern_gen;
+    ti_bios_config_cdbutils_cdb -> microsoft_targets_rts;
+    ti_bios_config_cdbutils_cdb -> xdc_shelf;
+    ti_bios_config_cdbutils_cdb -> xdc_services_global;
+    ti_bios_config_cdbutils_cdb -> gnu_targets;
+
+    edge [style=solid, color=blue]
+    host_platforms_SUN -> xdc_platform;
+
+    edge [style=solid, color=lightgrey]
+    host_platforms_SUN -> gnu_targets;
+    host_platforms_SUN -> xdc_utils_tconf;
+    host_platforms_SUN -> microsoft_targets;
+    host_platforms_SUN -> xdc_services_intern_cmd;
+    host_platforms_SUN -> xdc_services_intern_xsr;
+    host_platforms_SUN -> xdc_shelf;
+    host_platforms_SUN -> xdc_services_global;
+    host_platforms_SUN -> xdc_services_spec;
+    host_platforms_SUN -> xdc_services_intern_gen;
+    host_platforms_SUN -> xdc_platform;
+
+    edge [style=solid, color=blue]
+    xdc_cfg -> xdc_services_global;
+
+    edge [style=solid, color=lightgrey]
+    xdc_cfg -> xdc_utils_tconf;
+    xdc_cfg -> xdc_services_intern_cmd;
+    xdc_cfg -> xdc_services_intern_xsr;
+    xdc_cfg -> xdc_services_spec;
+    xdc_cfg -> xdc_shelf;
+    xdc_cfg -> xdc_services_global;
+    xdc_cfg -> xdc_services_intern_gen;
+    xdc_cfg -> xdc_platform;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    tisb_pctools -> xdc_shelf;
+    tisb_pctools -> gnu_targets;
+    tisb_pctools -> xdc_services_spec;
+    tisb_pctools -> microsoft_targets;
+    tisb_pctools -> xdc_services_intern_cmd;
+    tisb_pctools -> xdc_services_intern_xsr;
+    tisb_pctools -> xdc_corevers;
+    tisb_pctools -> xdc_services_global;
+    tisb_pctools -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+    gnu_targets_rts5 -> xdc_runtime;
+
+    edge [style=solid, color=lightgrey]
+    gnu_targets_rts5 -> xdc_rov;
+    gnu_targets_rts5 -> xdc_services_intern_xsr;
+    gnu_targets_rts5 -> xdc_runtime_knl;
+    gnu_targets_rts5 -> microsoft_targets;
+    gnu_targets_rts5 -> xdc_services_intern_cmd;
+    gnu_targets_rts5 -> ti_targets_arm_elf;
+    gnu_targets_rts5 -> ti_targets;
+    gnu_targets_rts5 -> gnu_targets;
+    gnu_targets_rts5 -> xdc_services_global;
+    gnu_targets_rts5 -> xdc_runtime;
+    gnu_targets_rts5 -> xdc_services_intern_gen;
+    gnu_targets_rts5 -> xdc_shelf;
+    gnu_targets_rts5 -> gnu_targets_arm;
+    gnu_targets_rts5 -> ti_targets_arm;
+    gnu_targets_rts5 -> microsoft_targets_arm;
+    gnu_targets_rts5 -> xdc_services_spec;
+    gnu_targets_rts5 -> ti_targets_elf;
+
+    edge [style=solid, color=blue]
+    gnu_targets_rts86U -> xdc_runtime;
+
+    edge [style=solid, color=lightgrey]
+    gnu_targets_rts86U -> xdc_rov;
+    gnu_targets_rts86U -> xdc_services_intern_xsr;
+    gnu_targets_rts86U -> xdc_runtime_knl;
+    gnu_targets_rts86U -> microsoft_targets;
+    gnu_targets_rts86U -> xdc_services_intern_cmd;
+    gnu_targets_rts86U -> ti_targets_arm_elf;
+    gnu_targets_rts86U -> ti_targets;
+    gnu_targets_rts86U -> gnu_targets;
+    gnu_targets_rts86U -> xdc_services_global;
+    gnu_targets_rts86U -> xdc_runtime;
+    gnu_targets_rts86U -> xdc_services_intern_gen;
+    gnu_targets_rts86U -> xdc_shelf;
+    gnu_targets_rts86U -> gnu_targets_arm;
+    gnu_targets_rts86U -> ti_targets_arm;
+    gnu_targets_rts86U -> microsoft_targets_arm;
+    gnu_targets_rts86U -> xdc_services_spec;
+    gnu_targets_rts86U -> ti_targets_elf;
+
+    edge [style=solid, color=blue]
+    host_platforms_PC -> xdc_platform;
+
+    edge [style=solid, color=lightgrey]
+    host_platforms_PC -> gnu_targets;
+    host_platforms_PC -> xdc_utils_tconf;
+    host_platforms_PC -> microsoft_targets;
+    host_platforms_PC -> xdc_services_intern_cmd;
+    host_platforms_PC -> xdc_services_intern_xsr;
+    host_platforms_PC -> xdc_shelf;
+    host_platforms_PC -> xdc_services_global;
+    host_platforms_PC -> xdc_services_spec;
+    host_platforms_PC -> xdc_services_intern_gen;
+    host_platforms_PC -> xdc_platform;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    tisb_gen -> xdc_shelf;
+    tisb_gen -> gnu_targets;
+    tisb_gen -> xdc_services_spec;
+    tisb_gen -> microsoft_targets;
+    tisb_gen -> xdc_services_intern_cmd;
+    tisb_gen -> xdc_services_intern_xsr;
+    tisb_gen -> xdc_corevers;
+    tisb_gen -> xdc_services_global;
+    tisb_gen -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+    ti_bios_config_cdbutils_gencfg -> tisb_gen;
+    ti_bios_config_cdbutils_gencfg -> ti_bios_config_cdbutils_cdb;
+
+    edge [style=solid, color=lightgrey]
+    ti_bios_config_cdbutils_gencfg -> xdc_services_intern_xsr;
+    ti_bios_config_cdbutils_gencfg -> xdc_runtime;
+    ti_bios_config_cdbutils_gencfg -> host_platforms_PC;
+    ti_bios_config_cdbutils_gencfg -> xdc_platform;
+    ti_bios_config_cdbutils_gencfg -> gnu_targets_rts86U;
+    ti_bios_config_cdbutils_gencfg -> gnu_targets_rts5;
+    ti_bios_config_cdbutils_gencfg -> xdc_services_intern_cmd;
+    ti_bios_config_cdbutils_gencfg -> tisb_pctools;
+    ti_bios_config_cdbutils_gencfg -> xdc_cfg;
+    ti_bios_config_cdbutils_gencfg -> host_platforms_SUN;
+    ti_bios_config_cdbutils_gencfg -> ti_bios_config_cdbutils_cdb;
+    ti_bios_config_cdbutils_gencfg -> xdc_corevers;
+    ti_bios_config_cdbutils_gencfg -> xdc_services_spec;
+    ti_bios_config_cdbutils_gencfg -> tisb_gen;
+    ti_bios_config_cdbutils_gencfg -> microsoft_targets;
+    ti_bios_config_cdbutils_gencfg -> xdc_services_intern_gen;
+    ti_bios_config_cdbutils_gencfg -> microsoft_targets_rts;
+    ti_bios_config_cdbutils_gencfg -> xdc_shelf;
+    ti_bios_config_cdbutils_gencfg -> xdc_services_global;
+    ti_bios_config_cdbutils_gencfg -> gnu_targets;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_host_lib -> xdc_shelf;
+    xdc_services_host_lib -> xdc_services_spec;
+    xdc_services_host_lib -> microsoft_targets;
+    xdc_services_host_lib -> xdc_corevers;
+    tisb_release_filters [shape=record,label="tisb.release.filters|1, 0, 0, 0", URL="../../../../../../../../../../../toolsrc/library/toolsC92/packages/tisb/release/filters/package/package.rel.svg"];
+    xdc_services_host_lib -> tisb_release_filters;
+    xdc_services_host_lib -> xdc_services_intern_cmd;
+    xdc_services_host_lib -> xdc_services_intern_xsr;
+    xdc_services_host_lib -> xdc_services_intern_gen;
+    xdc_services_host_lib -> gnu_targets;
+    xdc_services_host_lib -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    tisb_release_filters -> xdc_services_intern_cmd;
+    tisb_release_filters -> xdc_services_intern_xsr;
+    tisb_release_filters -> xdc_services_intern_gen;
+    tisb_release_filters -> xdc_corevers;
+    tisb_release_filters -> xdc_services_global;
+    tisb_release_filters -> xdc_services_spec;
+    tisb_release_filters -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_utils_rhino -> xdc_shelf;
+    xdc_utils_rhino -> xdc_services_spec;
+    xdc_utils_rhino -> microsoft_targets;
+    xdc_utils_rhino -> xdc_corevers;
+    xdc_utils_rhino -> xdc_services_intern_cmd;
+    xdc_utils_rhino -> xdc_services_intern_xsr;
+    xdc_utils_rhino -> xdc_services_intern_gen;
+    xdc_utils_rhino -> xdc_services_global;
+    xdc_utils_rhino -> gnu_targets;
+
+    edge [style=solid, color=blue]
+    xdc_bld -> xdc_services_global;
+    xdc_bld -> xdc_services_intern_cmd;
+
+    edge [style=solid, color=lightgrey]
+    xdc_bld -> xdc;
+    xdc_bld -> xdc_utils_tconf;
+    xdc_bld -> xdc_services_intern_cmd;
+    xdc_bld -> xdc_services_intern_xsr;
+    xdc_bld -> xdc_services_spec;
+    xdc_bld -> xdc_shelf;
+    xdc_bld -> xdc_services_global;
+    xdc_bld -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc -> xdc_services_global;
+    xdc -> xdc_utils_tconf;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_platform -> xdc_utils_tconf;
+    xdc_platform -> xdc_services_intern_cmd;
+    xdc_platform -> xdc_services_intern_xsr;
+    xdc_platform -> xdc_services_spec;
+    xdc_platform -> xdc_shelf;
+    xdc_platform -> xdc_services_global;
+    xdc_platform -> xdc_services_intern_gen;
+}

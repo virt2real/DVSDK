@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.targets" version="1, 0, 3" producerId="undefined">
+    <units>
+        <interface name="ITarget"/>
+        <module name="C62"/>
+        <module name="C62_big_endian"/>
+        <module name="C64"/>
+        <module name="C64_big_endian"/>
+        <module name="C64P"/>
+        <module name="C64P_big_endian"/>
+        <module name="C674"/>
+        <module name="C674_big_endian"/>
+        <module name="C67"/>
+        <module name="C67_big_endian"/>
+        <module name="C67P"/>
+        <module name="C64T"/>
+        <module name="C64T_big_endian"/>
+        <module name="C54"/>
+        <module name="C54_far"/>
+        <module name="C55"/>
+        <module name="C55_large"/>
+        <module name="C55_huge"/>
+        <module name="C55P_word"/>
+        <module name="C55P_byte"/>
+        <module name="C28"/>
+        <module name="C28_large"/>
+        <module name="C28_float"/>
+        <module name="TMS470"/>
+        <module name="TMS470_big_endian"/>
+        <module name="MSP430"/>
+        <module name="MSP430_large_code"/>
+        <module name="MSP430_large_data"/>
+    </units>
+    <sources>
+        <srcFile name="romAsmSections.xdt"/>
+        <srcFile name="std.h"/>
+        <srcFile name="linkcmd.xdt"/>
+        <srcFile name="ccs_exec.xdt"/>
+        <srcFile name="ccs_package.xdt"/>
+        <srcFile name="ccs_start.bat"/>
+        <srcFile name="ccs_start.pl"/>
+        <srcFile name="romSections.xdt"/>
+        <srcFile name="linkUtils.xs"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_targets.tar.gz.dep" src="package/rel/ti_targets.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_targets"
+        pname="../../../exports/ti_targets.tar.gz"
+        label="default"
+        relScript="./local.rel">
+        <file name="std.h"/>
+        <file name="romAsmSections.xdt"/>
+        <file name="linkcmd.xdt"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="ccs_exec.xdt"/>
+        <file name="ccs_package.xdt"/>
+        <file name="package/package.bld.xml"/>
+        <file name="ccs_start.bat"/>
+        <file name="ccs_start.pl"/>
+        <file name="romSections.xdt"/>
+        <file name="linkUtils.xs"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,34 @@
+############################################################
+# Read and encode Image in jpeg
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp jpegenc1 codec jpegenc
+
+#specify image decoder parameters
+setp jpegenc1 maxHeight 480
+setp jpegenc1 maxWidth 720
+setp jpegenc1 maxScans 1
+setp jpegenc1 dataEndianness 1
+setp jpegenc1 forceChromaFormat 2
+setp jpegenc1 numAU 0
+setp jpegenc1 inputChromaFormat 4
+setp jpegenc1 inputHeight 480
+setp jpegenc1 inputWidth 720
+setp jpegenc1 captureWidth 720
+setp jpegenc1 generateHeader 0
+setp jpegenc1 qValue 73
+setp jpegenc1 extDynParamsRstInterval 4
+setp jpegenc1 extDynParamsDisableEOI 0
+setp jpegenc1 extDynParamsRotation 0
+
+# Trigger the capture+dump scenario
+func jpegenc1 -s input_720x480_422i.yuv -t out.jpg
+

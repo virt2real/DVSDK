@@ -1,0 +1,13 @@
+Package: task-arago-toolchain-tisdk-multimedia-host
+Version: 1.0-r30.6
+Description: Task to build and install multimedia source (or development header) packages on host
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: dm365-evm
+OE: task-arago-toolchain-tisdk-multimedia-host
+Homepage: unknown
+Build: install/afa4844
+Recommends: ti-framework-components-src, ti-codec-engine-src, ti-linuxutils-src, ti-xdctools-src, ti-dmai-src, ti-xdais-src, gstreamer-ti-src, ti-tisdk-loadmodule, ti-codecs-dm365-src, ti-dm365mm-module-src, ti-dvtb-src, ti-dvsdk-demos-src
+Source: file:///sdk/build/DVSDK_4_02/4_02_00_06/arago-install/arago/recipes/tasks/task-arago-toolchain-tisdk-multimedia-host.bb

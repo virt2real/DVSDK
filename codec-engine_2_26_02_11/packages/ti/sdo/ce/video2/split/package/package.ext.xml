@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="" label="" date="" buildCount="" producerId="">
+<package name="ti.sdo.ce.video2.split"
+    version="1, 0, 0"/>
+<imports>
+</imports>
+<references>
+    <package name="gnu.targets"
+        version="1, 0, 1, 1254761371234"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Linux86.h"/>
+        <file name="Linux86.xs"/>
+        <file name="MVArm9.xs"/>
+        <file name="Mingw.xs"/>
+        <file name="UCArm9.h"/>
+        <file name="UCArm9.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="xdc.cfg"
+        version="1, 0, 2, 0, 1254957673849"
+        providerId="xdccore">
+        <file name="Program.xdc"/>
+    </package>
+    <package name="ti.xdais.dm"
+        version="1, 0, 5, 1284846354516"
+        providerId="xdais_6_26_01_03">
+        <file name="ividdec2.h"/>
+        <file name="ivideo.h"/>
+        <file name="split/ividdec2.h"/>
+        <file name="xdm.h"/>
+    </package>
+    <package name="ti.sdo.ce"
+        version="1, 0, 6, 1291267113000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="CERuntime.xs"/>
+        <file name="Engine.h"/>
+        <file name="Engine.xs"/>
+        <file name="ICodec.xdc"/>
+        <file name="ICodec.xs"/>
+        <file name="Server.h"/>
+        <file name="Server.xs"/>
+        <file name="package.xs"/>
+        <file name="skel.h"/>
+        <file name="visa.h"/>
+    </package>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0, 1254957691859"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.sdo.ce.utils"
+        version="1, 0, 0, 1291267671000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="libvers.xdt"/>
+    </package>
+    <package name="ti.targets"
+        version="1, 0, 3, 1254761375030"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="MSP430.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/6.1.5/Linux/"
+        trgs="ti.targets.C674">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu/"
+        trgs="gnu.targets.Linux86">
+        <file name="i686-unknown-linux-gnu/sys-include/_G_config.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/endian.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/stdio.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/stdio_lim.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/string.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/string2.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/sys_errlist.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/types.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/typesizes.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/wchar.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/wordsize.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/endian.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/features.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/gconv.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/gnu/stubs.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/libio.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/stdio.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/stdlib.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/string.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/sys/cdefs.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/wchar.h"/>
+        <file name="lib/gcc/i686-unknown-linux-gnu/4.1.0/include/stdarg.h"/>
+        <file name="lib/gcc/i686-unknown-linux-gnu/4.1.0/include/stddef.h"/>
+    </targetRoot>
+    <package name="ti.xdais"
+        version="1, 2.0, 1, 1284846354512"
+        providerId="xdais_6_26_01_03">
+        <file name="ialg.h"/>
+        <file name="xdas.h"/>
+    </package>
+    <package name="ti.sdo.ce.node"
+        version="1, 0, 0, 1291267470000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="node.h"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/cs/arm/arm-2007q3/"
+        trgs="gnu.targets.arm.GCArmv5T">
+        <file name="arm-none-linux-gnueabi/libc/usr/include/_G_config.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/predefs.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/stdio.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/stdio_lim.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/string.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/string2.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/sys_errlist.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/types.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/typesizes.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/wchar.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/bits/wordsize.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/features.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/gconv.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/gnu/stubs.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/libio.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/stdio.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/stdlib.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/string.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/sys/cdefs.h"/>
+        <file name="arm-none-linux-gnueabi/libc/usr/include/wchar.h"/>
+        <file name="lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h"/>
+        <file name="lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h"/>
+    </targetRoot>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 1254957708059"
+        providerId="xdccore">
+        <file name="java/antlr.jar"/>
+        <file name="java/ecj.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/jsr173_api.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+    </package>
+    <package name="ti.sdo.ce.video2"
+        version="1, 0, 2, 1291267697000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="viddec2.h"/>
+    </package>
+    <package name="ti.sdo.ce.osal"
+        version="2, 0, 2, 1291267470000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="Log.h"/>
+        <file name="Memory.h"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0, 1254957688697"
+        providerId="xdccore">
+        <file name="Clock.xs"/>
+        <file name="Trace.xs"/>
+        <file name="java/package.jar"/>
+    </package>
+    <package name="gnu.targets.arm"
+        version="1, 0, 0, 0, 1254762022855"
+        providerId="xdccore">
+        <file name="GCArmv5T.h"/>
+        <file name="GCArmv6.xs"/>
+        <file name="GCArmv7A.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="ti.sdo.utils.trace"
+        version="1, 0, 0, 1291166774602"
+        providerId="framework_components_2_26_00_01">
+        <file name="gt.h"/>
+    </package>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0, 1254957692499"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="xdc.platform"
+        version="1, 0, 1, 0, 1254957678104"
+        providerId="xdccore">
+        <file name="ICpuDataSheet.xdc"/>
+        <file name="IExeContext.xdc"/>
+        <file name="IPlatform.xdc"/>
+    </package>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0, 1254957699053"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="microsoft.targets"
+        version="1, 0, 2, 0, 1254761371234"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Win32.xs"/>
+        <file name="_utils.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/6.0.16/Linux/"
+        trgs="ti.targets.C64P">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/opensource/buildroot/10122007/build_arm/staging_dir/usr/"
+        trgs="gnu.targets.UCArm9">
+        <file name="include/bits/initspin.h"/>
+        <file name="include/bits/kernel_types.h"/>
+        <file name="include/bits/pthreadtypes.h"/>
+        <file name="include/bits/sched.h"/>
+        <file name="include/bits/sigset.h"/>
+        <file name="include/bits/sigthread.h"/>
+        <file name="include/bits/stdio_lim.h"/>
+        <file name="include/bits/time.h"/>
+        <file name="include/bits/types.h"/>
+        <file name="include/bits/typesizes.h"/>
+        <file name="include/bits/uClibc_arch_features.h"/>
+        <file name="include/bits/uClibc_clk_tck.h"/>
+        <file name="include/bits/uClibc_config.h"/>
+        <file name="include/bits/uClibc_mutex.h"/>
+        <file name="include/bits/uClibc_pthread.h"/>
+        <file name="include/bits/uClibc_stdio.h"/>
+        <file name="include/bits/wordsize.h"/>
+        <file name="include/features.h"/>
+        <file name="include/pthread.h"/>
+        <file name="include/sched.h"/>
+        <file name="include/signal.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/string.h"/>
+        <file name="include/sys/cdefs.h"/>
+        <file name="include/time.h"/>
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stdarg.h"/>
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stddef.h"/>
+    </targetRoot>
+    <package name="xdc.bld"
+        version="1, 0, 2, 1254957676628"
+        providerId="xdccore">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0, 1254957695155"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="microsoft.targets.arm"
+        version="1, 0, 0, 0, 1254761374830"
+        providerId="xdccore">
+        <file name="WinCE.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 1, 1254957667146"
+        providerId="xdccore">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+        <file name="xmlgen2.xs"/>
+    </package>
+    <package name="ti.sdo.ce.utils.xdm"
+        version="1, 0, 2, 1291267683000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="XdmUtils.h"/>
+    </package>
+    <package name="ti.sdo.ce.ipc"
+        version="2, 0, 1, 1291267439000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="Comm.h"/>
+        <file name="package.xs"/>
+    </package>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include/utils.tci"/>
+        <xdcCorePkg version="16, 0, 1, 0, 1254957675604" producerId="ndefined" buildCount="218" releaseName="xdc_corevers" label="default" date="1254957675604"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/atree/library/trees/ce/ce-r11x/src/config.bld"/>
+</orphans>
+</release>

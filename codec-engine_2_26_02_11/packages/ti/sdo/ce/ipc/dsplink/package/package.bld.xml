@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.ipc.dsplink" version="2, 0, 1" producerId="codec_engine_2_26_02_11">
+    <units>
+        <interface name="IDspLinkCfg"/>
+        <module name="Ipc"/>
+        <module name="DspLinkCfg"/>
+    </units>
+    <sources>
+        <srcFile name="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="Processor_dsplink_linkcfg_OMAP3530.c"/>
+        <srcFile name="Processor_dsplink_linkcfg_OMAPL138.c"/>
+        <srcFile name="Processor_dsplink_linkcfg_DM357.c"/>
+        <srcFile name="Processor_dsplink_linkcfg_OMAPL137.c"/>
+        <srcFile name="Processor_dsplink_linkcfg_OMAP2530.c"/>
+        <srcFile name="Processor_dsplink_linkcfg_DM6446.c"/>
+        <srcFile name="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="Processor_dsplink_linkcfg_DM6467.c"/>
+        <srcFile name="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/ipc_dsplink_357.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/Processor_dsplink_linkcfg_DM357.ov5T.dep" src="Processor_dsplink_linkcfg_DM357.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_2530.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/Processor_dsplink_linkcfg_OMAP2530.ov5T.dep" src="Processor_dsplink_linkcfg_OMAP2530.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_138.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/Processor_dsplink_linkcfg_OMAPL138.ov5T.dep" src="Processor_dsplink_linkcfg_OMAPL138.c"/>
+        <srcFile name="lib/release/ipc_dsplink_6446.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/Processor_dsplink_linkcfg_DM6446.o470uC.dep" src="Processor_dsplink_linkcfg_DM6446.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_3530.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/package/package_ti.sdo.ce.ipc.dsplink.ov4TCE.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/Processor_dsplink_linkcfg_OMAP3530.ov4TCE.dep" src="Processor_dsplink_linkcfg_OMAP3530.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_138.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_138/Processor_dsplink_linkcfg_OMAPL138.o470uC.dep" src="Processor_dsplink_linkcfg_OMAPL138.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_137.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/Processor_dsplink_linkcfg_OMAPL137.ov5T.dep" src="Processor_dsplink_linkcfg_OMAPL137.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_6467.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/Processor_dsplink_linkcfg_DM6467.o470uC.dep" src="Processor_dsplink_linkcfg_DM6467.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_137.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/Processor_dsplink_linkcfg_OMAPL137.o470uC.dep" src="Processor_dsplink_linkcfg_OMAPL137.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_3530.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/Processor_dsplink_linkcfg_OMAP3530.o470uC.dep" src="Processor_dsplink_linkcfg_OMAP3530.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_357.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/Processor_dsplink_linkcfg_DM357.ov5T.dep" src="Processor_dsplink_linkcfg_DM357.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_6467.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/Processor_dsplink_linkcfg_DM6467.o470uC.dep" src="Processor_dsplink_linkcfg_DM6467.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_6446.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/Processor_dsplink_linkcfg_DM6446.ov5T.dep" src="Processor_dsplink_linkcfg_DM6446.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_2530.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/Processor_dsplink_linkcfg_OMAP2530.o470uC.dep" src="Processor_dsplink_linkcfg_OMAP2530.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_357.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/Processor_dsplink_linkcfg_DM357.o470uC.dep" src="Processor_dsplink_linkcfg_DM357.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_357/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_2530.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/Processor_dsplink_linkcfg_OMAP2530.ov5T.dep" src="Processor_dsplink_linkcfg_OMAP2530.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_2530/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_3530.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/Processor_dsplink_linkcfg_OMAP3530.ov5T.dep" src="Processor_dsplink_linkcfg_OMAP3530.c"/>
+        <srcFile name="lib/release/ipc_dsplink_6446.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/Processor_dsplink_linkcfg_DM6446.ov4TCE.dep" src="Processor_dsplink_linkcfg_DM6446.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6446/package/package_ti.sdo.ce.ipc.dsplink.ov4TCE.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_2530.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/Processor_dsplink_linkcfg_OMAP2530.o470uC.dep" src="Processor_dsplink_linkcfg_OMAP2530.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_2530/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_3530.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_3530/Processor_dsplink_linkcfg_OMAP3530.ov5T.dep" src="Processor_dsplink_linkcfg_OMAP3530.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_6446.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/Processor_dsplink_linkcfg_DM6446.ov4TCE.dep" src="Processor_dsplink_linkcfg_DM6446.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/package/package_ti.sdo.ce.ipc.dsplink.ov4TCE.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_137.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/Processor_dsplink_linkcfg_OMAPL137.o470uC.dep" src="Processor_dsplink_linkcfg_OMAPL137.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_137/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_138.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/Processor_dsplink_linkcfg_OMAPL138.o470uC.dep" src="Processor_dsplink_linkcfg_OMAPL138.c"/>
+        <srcFile name="lib/release/ipc_dsplink_138.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_138/Processor_dsplink_linkcfg_OMAPL138.ov5T.dep" src="Processor_dsplink_linkcfg_OMAPL138.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_6446.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/Processor_dsplink_linkcfg_DM6446.o470uC.dep" src="Processor_dsplink_linkcfg_DM6446.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_3530.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov4TCE.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/package/package_ti.sdo.ce.ipc.dsplink.ov4TCE.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/Processor_dsplink_linkcfg_OMAP3530.ov4TCE.dep" src="Processor_dsplink_linkcfg_OMAP3530.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_357.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/Processor_dsplink_linkcfg_DM357.o470uC.dep" src="Processor_dsplink_linkcfg_DM357.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_357/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_6467.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/Processor_dsplink_linkcfg_DM6467.ov5T.dep" src="Processor_dsplink_linkcfg_DM6467.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6467/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_137.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/Processor_dsplink_linkcfg_OMAPL137.ov5T.dep" src="Processor_dsplink_linkcfg_OMAPL137.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_137/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_3530.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Power_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Comm_dsplink.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.o470uC.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/package/package_ti.sdo.ce.ipc.dsplink.o470uC.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_3530/Processor_dsplink_linkcfg_OMAP3530.o470uC.dep" src="Processor_dsplink_linkcfg_OMAP3530.c"/>
+        <srcFile name="lib/debug/ipc_dsplink_6446.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/Processor_dsplink_linkcfg_DM6446.ov5T.dep" src="Processor_dsplink_linkcfg_DM6446.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_dsplink_6446/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="lib/release/ipc_dsplink_6467.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Processor_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Power_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Power_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Comm_dsplink.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Comm_dsplink.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.ov5T.dep" src="ti/sdo/ce/ipc/dsplink/Processor_dsplink_linkcfg_OS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/Processor_dsplink_linkcfg_DM6467.ov5T.dep" src="Processor_dsplink_linkcfg_DM6467.c"/>
+        <srcFile name="package/lib/lib/release/ipc_dsplink_6467/package/package_ti.sdo.ce.ipc.dsplink.ov5T.dep" src="package/package_ti.sdo.ce.ipc.dsplink.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_ipc_dsplink.tar.dep" src="package/rel/ti_sdo_ce_ipc_dsplink.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/ipc_dsplink_357"
+        pname="lib/release/ipc_dsplink_357.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/ipc_dsplink_2530"
+        pname="lib/debug/ipc_dsplink_2530.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/ipc_dsplink_138"
+        pname="lib/debug/ipc_dsplink_138.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/ipc_dsplink_6446"
+        pname="lib/release/ipc_dsplink_6446.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ipc_dsplink_3530"
+        pname="lib/release/ipc_dsplink_3530.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/ipc_dsplink_138"
+        pname="lib/debug/ipc_dsplink_138.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/ipc_dsplink_137"
+        pname="lib/debug/ipc_dsplink_137.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/ipc_dsplink_6467"
+        pname="lib/release/ipc_dsplink_6467.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ipc_dsplink_137"
+        pname="lib/release/ipc_dsplink_137.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ipc_dsplink_3530"
+        pname="lib/release/ipc_dsplink_3530.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/ipc_dsplink_357"
+        pname="lib/debug/ipc_dsplink_357.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/ipc_dsplink_6467"
+        pname="lib/debug/ipc_dsplink_6467.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ipc_dsplink_6446"
+        pname="lib/release/ipc_dsplink_6446.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/ipc_dsplink_2530"
+        pname="lib/release/ipc_dsplink_2530.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ipc_dsplink_357"
+        pname="lib/release/ipc_dsplink_357.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ipc_dsplink_2530"
+        pname="lib/release/ipc_dsplink_2530.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/ipc_dsplink_3530"
+        pname="lib/debug/ipc_dsplink_3530.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/ipc_dsplink_6446"
+        pname="lib/release/ipc_dsplink_6446.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/ipc_dsplink_2530"
+        pname="lib/debug/ipc_dsplink_2530.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ipc_dsplink_3530"
+        pname="lib/release/ipc_dsplink_3530.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/ipc_dsplink_6446"
+        pname="lib/debug/ipc_dsplink_6446.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/ipc_dsplink_137"
+        pname="lib/debug/ipc_dsplink_137.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ipc_dsplink_138"
+        pname="lib/release/ipc_dsplink_138.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ipc_dsplink_138"
+        pname="lib/release/ipc_dsplink_138.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/ipc_dsplink_6446"
+        pname="lib/debug/ipc_dsplink_6446.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/ipc_dsplink_3530"
+        pname="lib/debug/ipc_dsplink_3530.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/ipc_dsplink_357"
+        pname="lib/debug/ipc_dsplink_357.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/ipc_dsplink_6467"
+        pname="lib/debug/ipc_dsplink_6467.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/ipc_dsplink_137"
+        pname="lib/release/ipc_dsplink_137.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/ipc_dsplink_3530"
+        pname="lib/debug/ipc_dsplink_3530.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/ipc_dsplink_6446"
+        pname="lib/debug/ipc_dsplink_6446.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/ipc_dsplink_6467"
+        pname="lib/release/ipc_dsplink_6467.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_ipc_dsplink"
+        pname="ti_sdo_ce_ipc_dsplink.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.rel.dot"/>
+        <file name="lib/debug/ipc_dsplink_137.av5T"/>
+        <file name="lib/release/ipc_dsplink_6446.av4TCE"/>
+        <file name="lib/release/ipc_dsplink_3530.av4TCE"/>
+        <file name="Processor_dsplink.c"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/release/ipc_dsplink_6446.av5T"/>
+        <file name="Power_dsplink.c"/>
+        <file name="lib/debug/ipc_dsplink_6446.av5T"/>
+        <file name="makefile"/>
+        <file name="lib/release/ipc_dsplink_2530.a470uC"/>
+        <file name="lib/debug/ipc_dsplink_3530.a470uC"/>
+        <file name="package.bld"/>
+        <file name="README.txt"/>
+        <file name="lib/debug/ipc_dsplink_6446.a470uC"/>
+        <file name="lib/release/ipc_dsplink_138.av5T"/>
+        <file name="lib/release/ipc_dsplink_3530.av5T"/>
+        <file name="lib/debug/ipc_dsplink_6467.a470uC"/>
+        <file name="lib/debug/ipc_dsplink_3530.av5T"/>
+        <file name="lib/release/ipc_dsplink_357.a470uC"/>
+        <file name="lib/debug/ipc_dsplink_138.av5T"/>
+        <file name="lib/debug/ipc_dsplink_3530.av4TCE"/>
+        <file name="lib/debug/ipc_dsplink_6446.av4TCE"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/release/ipc_dsplink_6467.av5T"/>
+        <file name="lib/debug/ipc_dsplink_357.a470uC"/>
+        <file name="Comm_dsplink.c"/>
+        <file name="lib/debug/ipc_dsplink_6467.av5T"/>
+        <file name="lib/release/ipc_dsplink_138.a470uC"/>
+        <file name="Processor_dsplink_linkcfg_OS.c"/>
+        <file name="_adapted_link_gpptypes.h"/>
+        <file name="lib/release/ipc_dsplink_137.a470uC"/>
+        <file name="lib/release/ipc_dsplink_357.av5T"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/debug/ipc_dsplink_2530.a470uC"/>
+        <file name="lib/debug/ipc_dsplink_138.a470uC"/>
+        <file name="buildDspLink.xs"/>
+        <file name="lib/release/ipc_dsplink_2530.av5T"/>
+        <file name="lib/debug/ipc_dsplink_357.av5T"/>
+        <file name="lib/release/ipc_dsplink_3530.a470uC"/>
+        <file name="lib/debug/ipc_dsplink_137.a470uC"/>
+        <file name="lib/release/ipc_dsplink_6446.a470uC"/>
+        <file name="lib/debug/ipc_dsplink_2530.av5T"/>
+        <file name="lib/release/ipc_dsplink_137.av5T"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/release/ipc_dsplink_6467.a470uC"/>
+        <file name="package/package.ext.xml"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

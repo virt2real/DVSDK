@@ -1,0 +1,176 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ * Setup platform-specific memory map:
+ */
+var mem_ext = [
+{
+    /*
+     *  Create a very small algorithm heap to illustrate how we can
+     *  change the heap at runtime using Server APIs. The initial size
+     *  of this heap will be too small to create both of the audio copy
+     *  codecs.
+     */
+    comment:    "DDRALGHEAP: off-chip memory for dynamic algmem allocation",
+    name:       "DDRALGHEAP",
+    base:       0x8f9ffff8,
+    len:        0x00000008,   // 8 bytes!
+    space:      "code/data"
+},
+{
+    comment:    "DDR2: off-chip memory for application code and data",
+    name:       "DDR2",
+    base:       0x8FA00000,   // 250MB
+    len:        0x00400000,   //   4MB
+    space:      "code/data"
+},
+{
+    comment:    "DSPLINK: off-chip memory reserved for DSPLINK code and data",
+    name:       "DSPLINKMEM",
+    base:       0x8FE00000,   // 254MB
+    len:        0x00100000,   //   1MB
+    space:      "code/data"
+},
+{
+    comment:    "RESET_VECTOR: off-chip memory for the reset vector table",
+    name:       "RESET_VECTOR",
+    base:       0x8FF00000,
+    len:        0x00000080,   // 128 B
+    space:      "code/data"
+}
+];
+
+
+/*
+ *  Internal memory partitioning
+ *
+ *  On the left in the diagram below is the layout of internal memory
+ *  available on DM6446 for data caching and as RAM; on the right is the
+ *  diagram showing how this configuration file partitions the available
+ *  64k+80k of memory. (The 32K for program cache is not affected by this
+ *  configuration.) Please find more specifics on how the configuration is
+ *  done further below.
+ *
+ *
+ *  Physical internal memory on DM6446     Default partitioning in this .tcf
+ *
+ *              |//////////|                           |//////////|
+ *  0x11800000  +----------+               0x11800000  +----------+
+ *              | L2Cache  |                           |          |
+ *              |  and/or  | 64k                       | L2 Cache | 64k
+ *              |  IRAM    |                           |          |
+ *              |          |                           |          |
+ *  0x11810000  +----------+               0x11810000  +----------+
+ *              |//////////|                           |//////////|
+ *              :          :                           :          :
+ *              |//////////|                           |//////////|
+ *  0x11F04000  +----------+               0x11F04000  +----------+
+ *              |          |                           |          |
+ *              | L1DSRAM  | 48k                       | L1DSRAM  |
+ *              |          |                           |          | 64k
+ *  0x11F10000  +- - - - - +                           |          |
+ *              |L1Cache or| 32k                       +- - - - - +
+ *              |more L1DSR|               0x11F14000  | L1 cache | 16k
+ *  0x11F18000  +----------+               0x11F18000  +----------+
+ *              |//////////|                           |//////////|
+ */
+
+/*
+ *  Configure L1D Cache and L1DSRAM segment: l1DMode
+ *
+ *  OMAP3530 device has 48KB of physical memory at 0x10F04000 available
+ *  as internal RAM, called the "L1DSRAM" segment in BIOS, and it has
+ *  another adjacent 32KB at 0x10F10000 that can either be used entirely
+ *  for L1D cache, or split between L1D cache and more internal memory.
+ *
+ *  The 80KB segment (48KB + 32KB) starts at 0x10F04000. When powered on,
+ *  the device uses the upper 32K for L1D cache entirely, so BIOS by default
+ *  defines the L1DSRAM segment to be 48KB long and does not change the cache.
+ *
+ *  We can change the default behavior, by shrinking the L1D cache and adding
+ *  the extra space to L1DSRAM. We can set the L1D cache to be 32K (the default)
+ *  or 16K, 8K, 4K, or 0K. The corresponding L1DSRAM sizes then are 48K (the
+ *  default), or 64K, 72K, 76K, or 80K.
+ *
+ *  The L1DSRAM segment always starts at 0x10F04000.
+ *
+ *  Configure L2 Cache memory settings: l2Mode
+ *
+ *  This value indicates how the physical internal memory of size 64KB
+ *  starting at 0x10800000 will be split between L2 cache and a
+ *  general-purpose internal memory segment IRAM.
+ *
+ *  The options for l2Mode are:
+ *
+ *  "0k"  -- IRAM    : start = 0x10800000, len = 64KB
+ *           L2 Cache: none
+ *  "32k" -- IRAM    : start = 0x10800000, len = 32KB
+ *           L2 Cache: start = 0x10808000, len = 32KB
+ *  "64k" -- IRAM    : none
+ *           L2 Cache: start = 0x10800000, len = 64KB
+ */
+
+var device_regs = {
+    l1PMode: "32k",
+    l1DMode: "4k",
+    l2Mode: "64k"
+};
+
+var params = {
+    clockRate: 594,
+    catalogName: "ti.catalog.c6000",
+    deviceName: "DM6467",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/*
+ *  Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+
+/*  ===========================================================================
+ *  GBL
+ *  ===========================================================================
+ */
+/* set MAR register to cache external memory 0x80000000-0x8FFFFFFF */
+prog.module("GBL").C64PLUSMAR128to159 = 0x0000ffff;
+
+/* set for use in audio_copy.tcf */
+var platformSeg = bios.DDR2;
+
+/*
+ *  @(#) ti.sdo.ce.examples.servers.server_api_example; 1, 0, 0,160; 12-2-2010 21:23:48; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+

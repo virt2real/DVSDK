@@ -1,0 +1,114 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+
+
+/* Base key value for  GROUPUTILS Linux IPC objects */
+UInt32 _GROUPUTILS_ipcKeyBase = `utils.toHex(this.ipcKeyBase)`;
+
+#include <ti/sdo/fc/ires/grouputils/ires_grouputils.h>
+
+%if ((null != this.lockScratchGroupFxn) && (null != this.unlockScratchGroupFxn)){
+
+extern Void `this.lockScratchGroupFxn`(Int groupId, IALG_Handle alg);
+extern Void `this.unlockScratchGroupFxn`(Int groupId, IALG_Handle alg);
+
+ti_sdo_fc_ires_grouputils_LockFxn ti_sdo_fc_ires_grouputils_lockGroup = 
+        (ti_sdo_fc_ires_grouputils_LockFxn)(`this.lockScratchGroupFxn`);
+ti_sdo_fc_ires_grouputils_LockFxn ti_sdo_fc_ires_grouputils_unlockGroup = 
+        (ti_sdo_fc_ires_grouputils_LockFxn)(`this.unlockScratchGroupFxn`);
+%}
+%else {
+
+ti_sdo_fc_ires_grouputils_LockFxn ti_sdo_fc_ires_grouputils_lockGroup = NULL; 
+        
+ti_sdo_fc_ires_grouputils_LockFxn ti_sdo_fc_ires_grouputils_unlockGroup = NULL; 
+
+%}
+
+/*
+ * Declare semaphore related functions before using them
+ */
+%if ((null != this.semCreateFxn) && (null != this.semDeleteFxn) && (null != this.semPendFxn) && (null != this.semPostFxn)) {
+
+/* Need to declare these functions only if they haven't been declared before */
+
+#include <xdc/std.h>
+#include <ti/sdo/fc/rman/rman.h>
+
+% if (this.semCreateFxn.match("SemMP")) {
+typedef struct SemMP_Obj *_GROUPUTILS_SemHandle;
+% }
+% else {
+typedef struct Sem_Obj *_GROUPUTILS_SemHandle;
+% }
+ 
+extern _GROUPUTILS_SemHandle `this.semCreateFxn`(Int key, Int count);
+extern Void `this.semDeleteFxn`(_GROUPUTILS_SemHandle sem);
+extern Int `this.semPendFxn`(_GROUPUTILS_SemHandle sem, UInt32 count);
+extern Void `this.semPostFxn`(_GROUPUTILS_SemHandle sem);
+
+__FAR__ ti_sdo_fc_ires_grouputils_GROUPUTILS_SemCreateFxn 
+        ti_sdo_fc_ires_grouputils_GROUPUTILS_semCreateFxn = 
+        (ti_sdo_fc_ires_grouputils_GROUPUTILS_SemCreateFxn)`this.semCreateFxn`;
+__FAR__ ti_sdo_fc_ires_grouputils_GROUPUTILS_SemDeleteFxn 
+        ti_sdo_fc_ires_grouputils_GROUPUTILS_semDeleteFxn = 
+        (ti_sdo_fc_ires_grouputils_GROUPUTILS_SemDeleteFxn)`this.semDeleteFxn`;
+__FAR__ ti_sdo_fc_ires_grouputils_GROUPUTILS_SemPendFxn  
+        ti_sdo_fc_ires_grouputils_GROUPUTILS_semPendFxn = 
+        (ti_sdo_fc_ires_grouputils_GROUPUTILS_SemPendFxn)`this.semPendFxn`;
+__FAR__ ti_sdo_fc_ires_grouputils_GROUPUTILS_SemPostFxn 
+        ti_sdo_fc_ires_grouputils_GROUPUTILS_semPostFxn = 
+        (ti_sdo_fc_ires_grouputils_GROUPUTILS_SemPostFxn)`this.semPostFxn`;
+
+%}
+%else {
+
+__FAR__ ti_sdo_fc_ires_grouputils_GROUPUTILS_SemCreateFxn 
+        ti_sdo_fc_ires_grouputils_GROUPUTILS_semCreateFxn = NULL;
+__FAR__ ti_sdo_fc_ires_grouputils_GROUPUTILS_SemDeleteFxn 
+        ti_sdo_fc_ires_grouputils_GROUPUTILS_semDeleteFxn = NULL;
+__FAR__ ti_sdo_fc_ires_grouputils_GROUPUTILS_SemPendFxn  
+        ti_sdo_fc_ires_grouputils_GROUPUTILS_semPendFxn = NULL;
+__FAR__ ti_sdo_fc_ires_grouputils_GROUPUTILS_SemPostFxn 
+        ti_sdo_fc_ires_grouputils_GROUPUTILS_semPostFxn = NULL;
+
+%}
+%%{
+/*
+ * @(#) ti.sdo.fc.ires.grouputils; 1, 0, 0,32; 12-1-2010 17:25:14; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+
+%%}

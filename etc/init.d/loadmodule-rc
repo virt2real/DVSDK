@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# Default DM365 EVM Memory Map
+#
+# Start Addr    Size    Description
+# -------------------------------------------
+# 0x00001000    32K     ARM TCM memory
+# 0x80000000    54 MB   Linux
+# 0x83000000    6  MB   Video driver memory (Linux)
+# 0x83C00000    68 MB   CMEM
+# 0x88000000    BOTTOM  ADDRESS
+
+load () {
+    modprobe cmemk phys_start=0x83C00000 phys_end=0x88000000 allowOverlap=1 phys_start_1=0x00001000 phys_end_1=0x00008000 pools_1=1x28672 useHeapIfPoolUnavailable=1
+    modprobe irqk 
+    modprobe edmak
+    modprobe dm365mmap
+    mknod /dev/dm365mmap c `awk "\\$2==\"dm365mmap\" {print \\$1}" /proc/devices` 0
+}
+
+unload () {
+    rmmod cmemk 2>/dev/null
+    rmmod irqk  2>/dev/null
+    rmmod edmak 2>/dev/null
+    rmmod dm365mmap 2>/dev/null
+    rm -f /dev/dm365mmap
+}
+
+case "$1" in
+      start) 
+            load
+             ;;
+       stop) 
+            unload           
+             ;;
+       restart) 
+            unload           
+            load
+             ;;
+        *)
+             echo "$0 <start/stop/restart>"
+             ;;
+esac
+

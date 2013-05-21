@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="linuxutils_2_26_01_02" version="1, 0, 0" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/../../exports/linuxutils_2_26_01_02.tar.dep" src="package/rel/../../exports/linuxutils_2_26_01_02.xdc.inc"/>
+        <srcFile name="package/rel/linuxutils_2_26_01_02.tar.dep" src="package/rel/linuxutils_2_26_01_02.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="../../exports/linuxutils_2_26_01_02"
+        pname="../../exports/linuxutils_2_26_01_02.tar"
+        label="undefined"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="relnotes_archive"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="docs"/>
+        <file name="packages"/>
+        <file name="xdoc"/>
+        <file name="linuxutils_2_26_01_02_manifest.html"/>
+        <file name="package/package.bld.xml"/>
+        <file name="gpl_2.0.txt"/>
+        <file name="package/package.ext.xml"/>
+        <file name="linuxutils_2_26_01_02_ReleaseNotes.html"/>
+        <file name="package/build.cfg"/>
+    </release>
+    <release name="linuxutils_2_26_01_02"
+        pname="linuxutils_2_26_01_02.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="packages"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    <repository name="packages"
+        pname="packages">
+        <importedRelease
+            package="ti.sdo.linuxutils.vicp"
+            pname="ti_sdo_linuxutils_vicp.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.linuxutils.sdma"
+            pname="ti_sdo_linuxutils_sdma.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.linuxutils.edma"
+            pname="ti_sdo_linuxutils_edma.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.linuxutils.cmem"
+            pname="ti_sdo_linuxutils_cmem.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.linuxutils.irq"
+            pname="ti_sdo_linuxutils_irq.tar"
+            label="default">
+        </importedRelease>
+    </repository>
+    </repositories>
+</package>

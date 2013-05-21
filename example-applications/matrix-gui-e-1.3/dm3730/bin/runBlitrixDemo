@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# this demo does not work with DVI
+default_display="`cat /sys/devices/platform/omapdss/manager0/display`"
+if [ "$default_display" = "dvi" ]; then
+    exit 0
+fi
+
+cd /usr/share/ti/blitrix
+./bxdemo
+

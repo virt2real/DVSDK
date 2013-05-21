@@ -1,0 +1,19 @@
+menuitem "Dmai";
+
+hotmenu Setup_Rtdx_Cio()
+{
+   GEL_SetStatusInterval(1, 1);
+   GEL_TextOut("RTDX 2.X CIO setup done.\n\n");
+}
+
+hotmenu Set_debugLogLevel_1()
+{
+   Dmai_debugLogLevel = 1;
+   GEL_TextOut("Dmai_debugLogLevel set to 1 (ErrorsWarnings).\n\n");
+}
+
+hotmenu Set_debugLogLevel_2()
+{
+   Dmai_debugLogLevel = 2;
+   GEL_TextOut("Dmai_debugLogLevel set to 2 (All).\n\n");
+}

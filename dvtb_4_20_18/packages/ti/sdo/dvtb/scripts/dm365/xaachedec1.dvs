@@ -1,0 +1,41 @@
+############################################################
+# Decode Audio: Read from file, decode and dump
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp aachedec1 codec aacdec1
+
+# Specify the codec parameters
+setp aachedec1 outputPCMWidth 16
+setp aachedec1 pcmFormat 1
+setp aachedec1 dataEndianness 2
+setp aachedec1 desiredChannelMode 1 
+setp aachedec1 downSampleSbrFlag 0
+setp aachedec1 i_max_channels 2
+setp aachedec1 i_flag_08khz_out 0
+setp aachedec1 i_flag_16khz_out 0
+setp aachedec1 i_interleave 1
+setp aachedec1 i_mp4_flag 0 
+setp aachedec1 i_disable_sync 0
+setp aachedec1 i_auto_sbr_upsample 1
+setp aachedec1 i_sampfreq 0
+setp aachedec1 i_coupling_channel 0
+setp aachedec1 inbufsize 10000
+setp aachedec1 outbufsize 16384
+
+# Specify the driver parameters
+#setp audio device plughw:0,0
+#setp audio format 2
+#setp audio samplerate 44100
+#setp audio channels 2
+#setp audio type 0
+
+# Trigger the decode+playback scenario
+func aachedec1 -s davincieffect.aac -t test.pcm

@@ -1,0 +1,35 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectName="fcpy_ti"
+ProjectDir="$(Proj_dir)"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="fcpy_ti.c"
+Source="fcpy_ti_ialg.c"
+Source="fcpy_ti_idma3.c"
+Source="fcpy_ti_idma3vt.c"
+Source="fcpy_ti_ifcpy.c"
+Source="fcpy_ti_ifcpyvt.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o"lib/debug/fcpy_ti.a64P"
+
+["Archiver" Settings: "Release"]
+Options=-r -o"lib/release/fcpy_ti.a64P"
+
+["Compiler" Settings: "Debug"]
+
+Options=-g -qq -q -s -oe -eoo64P -fr"$(Proj_dir)\debug" -i"." -i"%XDAIS_INSTALL_DIR%/packages" -i"%FC_INSTALL_DIR%/packages" -i"%XDC_INSTALL_DIR%/packages" -mv6400+ -d"xdc_target_types__=ti/targets/std.h"
+
+["Compiler" Settings: "Release"]
+Options=-q -o2 -eoo64P -fr"$(Proj_dir)\release" -i"." -i"%XDAIS_INSTALL_DIR%/packages" -i"%FC_INSTALL_DIR%/packages" -i"%XDC_INSTALL_DIR%/packages" -mv6400+ -d"xdc_target_types__=ti/targets/std.h"
+

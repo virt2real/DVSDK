@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='ti.sdo.ce.global' nodoc='0' root='../../../../' summary='Codec+Engine+Configuration'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eti.sdo.ce.global%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+0%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='Settings' kind='module' nodoc='0' metaonly='1' summary='Global+configuration+settings+for+all+Codec+Engine+packages'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fglobal%2Fpackage.html%22+title%3D%22ti.sdo.ce.global%22%3Eti.sdo.ce.global%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ESettings%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ESettings%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Settings+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.ce.global.Settings%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='This+module+provides+high-level+configuration+settings+for+all%0A++Codec+Engine+packages.'/>
+        </docSect>
+        <docSect name='Linking with Codec Engine Libraries'>
+            <docPara content=''/>
+            <docPara content='When+linking+an+executable%2C+this+module%27s+profile+config+param+is%0A++used+to+select+which+libraries+are+used.+See+the+%3Ca+class%3D%22xdoc-link%22+href%3D%22Settings.html%23profile%22+title%3D%22profile%22%3Eprofile%3C%2Fa%3E%0A++config+param+below.+There+are+three+typical+use-cases.'/>
+            <docPara content='1.+Link+with+Codec+Engine+libraries+of+a+specific+profile.+Add+the%0A++following+to+your+application+cfg+script.'/>
+            <docPara content='%3CPRE+class%3D%22Example%22%3E++%2F%2F+set+all+codec+engine+libraries+to+the+given+profile%0A++xdc.useModule%28%27ti.sdo.ce.global.Settings%27%29.profile+%3D+%22debug%22%3B%0A%3C%2FPRE%3E'/>
+            <docPara content='2.+Link+with+Codec+Engine+libraries+using+the+program%27s+profile.+Add%0A++the+following+to+your+application+cfg+script.'/>
+            <docPara content='%3CPRE+class%3D%22Example%22%3E++%2F%2F+use+the+program%27s+profile%0A++var+Program+%3D+xdc.useModule%28%27xdc.cfg.Program%27%29%3B%0A++xdc.useModule%28%27ti.sdo.ce.global.Settings%27%29.profile+%3D+Program.build.profile%3B%0A%3C%2FPRE%3E'/>
+            <docPara content='3.+Specify+a+profile+on+a+per-package+basis.'/>
+            <docPara content='%3CPRE+class%3D%22Example%22%3E++%2F%2F+specify+the+profile+for+some+select+packages%0A++xdc.loadPackage%28%27ti.sdo.ce%27%29.profile+%3D+%22debug%22%3B%0A++xdc.loadPackage%28%27ti.sdo.ce.video%27%29.profile+%3D+%22debug%22%3B%0A++xdc.loadPackage%28%27ti.sdo.ce.image%27%29.profile+%3D+%22debug%22%3B%0A++xdc.loadPackage%28%27ti.sdo.ce.speech%27%29.profile+%3D+%22debug%22%3B%0A++xdc.loadPackage%28%27ti.sdo.ce.audio%27%29.profile+%3D+%22debug%22%3B%0A%3C%2FPRE%3E'/>
+            <docPara content='Note+that+the+third+method+above+does+not+actually+use+the+%3Ctt%3Eprofile%3C%2Ftt%3E%0A++config+param.+It+sets+the+package%27s+profile+config+param+directly.'/>
+            <docPara content='The+default+value+for+the+%3Ctt%3Eprofile%3C%2Ftt%3E+config+param+is+%3Ctt%3Erelease%3C%2Ftt%3E.%0A++Thus%2C+even+when+building+your+executable+using+a+debug+profile%2C+the%0A++Codec+Engine+release+libraries+will+be+used.+This+helps+to+keep+the%0A++executable+size+smaller+when+you+want+to+debug+the+application+code.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='profile' anchor='profile' altext='ti.sdo.ce.global.Settings.profile' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Name+the+library+profile+to+use+at+link+time'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprofile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522release%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ESettings.%3Cspan+class%3D%22xdoc-id%22%3Eprofile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522release%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='If+the+Codec+Engine+libraries+have+been+built+using+the+profile%0A++named+by+this+config+param%2C+then+these+libraries+will+be+used%0A++when+linking+the+final+executable.+Otherwise%2C+a+substitute%0A++library+will+be+used.+For+example%2C+if+this+config+param+is+set+to%0A++debug+but+there+are+only+release+libraries+available%2C+then+the%0A++release+library+is+used.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <docSect name='details'>
+        <docPara content='This+package+provides+high-level+global+configuration+settings+for%0A++all+Codec+Engine+packages.'/>
+    </docSect>
+</package>

@@ -1,0 +1,34 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="U:\GForge\cat_flashutils\trunk\DM35x\CCS\NAND_ECC_Test\"
+ProjectType=Executable
+CPUFamily=TMS470R2X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\Common\ccs\src\debug.c"
+Source="..\..\..\Common\drivers\src\nand.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\Common\src\device.c"
+Source="..\..\Common\src\device_nand.c"
+Source="src\nandtester.c"
+Source="NAND_ECC_Test.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\Common\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\ccs\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"_DEBUG" -d"SKIP_LOW_LEVEL_INIT" -d"NAND_ECC_TEST" -me -mv5e --abi=eabi
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -d"SKIP_LOW_LEVEL_INIT" -me
+
+["Linker" Settings: "Debug"]
+Options=--abi=eabi -cr -m".\Debug\NAND_ECC_Test.map" -o".\Debug\NAND_ECC_Test.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\NAND_ECC_Test.map" -o".\Release\NAND_ECC_Test.out" -w -x
+

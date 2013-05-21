@@ -1,0 +1,212 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    /*
+     *  ======== CERuntime.xdt ========
+     *  Generate initialization backplace for the Codec Engine
+     */
+
+    var Server = this.$package.Server;
+    var Engine = this.$package.Engine;
+    var Settings = this.$package.Settings;
+
+    var ipcSettings = xdc.module('ti.sdo.ce.ipc.Settings');
+
+    // Get the name of the ipc module
+    var ipcName = ipcSettings.ipc.$name;
+
+    // Determine if the ipc has a property called "useLinkArbiter", and if it
+    // does, set the value of the variable useLinkArbiterProp to true. If it
+    // does not, we will generate the symbol Global_useLinkArbiter.
+    var ipc = xdc.module(ipcName);
+
+    var useLinkArbiterProp = false;
+    if ("useLinkArbiter" in ipc) {
+        //print("Server.xdt: ipc *has* property useLinkArbiter");
+        useLinkArbiterProp = true;
+    }
+    else {
+        //print("Server.xdt: ipc does *not* have property useLinkArbiter");
+    }
+%%}
+
+#include <ti/sdo/ce/osal/Global.h>
+#include <ti/sdo/ce/ipc/Comm.h>
+#include <ti/sdo/ce/osal/Memory.h>
+#include <ti/sdo/ce/osal/Queue.h>
+#include <ti/sdo/ce/osal/Sem.h>
+#include <ti/sdo/ce/osal/SemMP.h>
+#include <ti/sdo/ce/osal/Thread.h>
+#include <ti/sdo/ce/ipc/Processor.h>
+#include <ti/sdo/ce/alg/Algorithm.h>
+#include <ti/sdo/ce/osal/Lock.h>
+#include <ti/sdo/ce/osal/LockMP.h>
+#include <ti/sdo/ce/Server.h>
+#include <ti/sdo/ce/Engine.h>
+#include <ti/sdo/ce/rms.h>
+#include <ti/sdo/ce/utils/xdm/XdmUtils.h>
+
+#include <ti/sdo/utils/trace/gt.h>
+
+% // If the symbol Global_useLinkArbiter is not defined by the ipc (eg, for
+% // ce.ipc.linux), we need to define this symbol and set it to FALSE. The
+% // function Server_init() references this symbol for v5T targets.
+% if (!useLinkArbiterProp) {
+/* This symbol is referenced by Server_init() */
+Int Global_useLinkArbiter = FALSE;
+% }
+
+/*
+ *  ======== CERuntime_init ========
+ */
+Void CERuntime_init(Void)
+{
+% if (Engine.hasServer() || Server.$used) {
+    extern Void IPC_generatedInit();
+% }
+
+    GT_init();
+
+% if (Settings.checked) {
+    /* Checked build enabled, turn on trace level 7 */
+    GT_set("*+7");
+% }
+
+% if ((Program.build.target.os == "Linux") ||
+%      (Program.build.target.os == "WindowsCE")) {
+    /* if CE_DEBUG is set, turn on tracing and DSP auto trace collection */
+    if (Global_getenv("CE_DEBUG") != NULL) {
+        extern Bool   Engine_alwaysCollectDspTrace;
+        extern String Engine_ceDebugDspTraceMask;
+
+        Engine_alwaysCollectDspTrace = TRUE;
+
+% //      print( "INFO: to enable Codec Engine debugging, set env. " +
+% //             "var. CE_DEBUG=1 when running this program." );
+
+
+        if (Global_getenv("CE_DEBUG")[0] == '1') {
+            GT_set("*+67,CE-3,GT_time=0,GT_prefix=1235");
+            Engine_ceDebugDspTraceMask = "*+67,GT_prefix=1235,GT_time=3";
+        }
+        else if (Global_getenv("CE_DEBUG")[0] == '2') {
+            GT_set(
+                "*+01234567,CE-3,ti.sdo.ce.osal.SemMP=67,OG=467,OM=4567,OC=67,GT_time=0,GT_prefix=1235");
+            Engine_ceDebugDspTraceMask =
+                "*+01234567,CR=67,ti.sdo.fc.dman3-2,ti.sdo.fc.dskt2-2,GT_prefix=1235,GT_time=3";
+        } else {
+            GT_set("*+01234567,CE-3,GT_time=0,GT_prefix=12345");
+            Engine_ceDebugDspTraceMask = "*+01234567,GT_prefix=12345,GT_time=3";
+        }
+    }
+
+    if (Global_getenv("CE_CHECK") != NULL) {
+        extern Bool VISA_checked;
+
+        /*
+         * Currently just change _this_ processor's value... perhaps we should
+         * enable remote processors as well?
+         */
+        if (Global_getenv("CE_CHECK")[0] == '1') {
+            VISA_checked = TRUE;
+            /* turn on all GT_7CLASS trace (errors) */
+            GT_set("*+7");
+        } else if (Global_getenv("CE_CHECK")[0] == '0') {
+            VISA_checked = FALSE;
+        } else {
+            /* leave it whatever it was... maybe we should drop a warning? */
+        }
+    }
+% }
+
+    /* allow user to over-ride via CE_TRACE. */
+    GT_set(Global_getenv("CE_TRACE"));
+%//% print("CERuntime.xdt: Engine.hasServer() = " + Engine.hasServer() +
+%//%       " Server.$used = " + Server.$used);
+% if (Engine.hasServer() || Server.$used) {
+    IPC_generatedInit();
+% }
+    Global_init();
+
+    Sem_init();
+    SemMP_init();
+
+% if (this.$private.addEarlyInitCodeText != undefined) {
+`this.$private.addEarlyInitCodeText`
+% }
+
+    Memory_init();
+    Queue_init();
+    Comm_init();
+    Thread_init();
+    Processor_init();
+    LockMP_init();  /* Must be called before DMAN3_init() */
+    Algorithm_init();
+    XdmUtils_init();
+    Lock_init();
+
+%if (Server.$used) {
+    RMS_init();
+    Global_atexit((Fxn)RMS_exit);
+%}
+%if (Engine.$used) {
+    Engine_init();
+    Server_init();
+%}
+
+% if (this.$private.addLateInitCodeText != undefined) {
+`this.$private.addLateInitCodeText`
+% }
+}
+
+/*
+ *  ======== CERuntime_exit ========
+ */
+Void CERuntime_exit(Void)
+{
+    Global_exit();
+}
+
+/* for backward compatibility with xdc-m based tools */
+Void ti_sdo_ce_CERuntime_init__F(Void) {
+    CERuntime_init();
+}
+%%{
+/*
+ * @(#) ti.sdo.ce; 1, 0, 6,432; 12-2-2010 21:19:06; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

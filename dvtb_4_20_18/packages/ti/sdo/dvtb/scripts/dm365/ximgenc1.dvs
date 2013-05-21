@@ -1,0 +1,45 @@
+
+
+setp engine name encodedecode
+
+setp jpegenc1 codec                  jpegenc1
+setp jpegenc1 maxHeight              720
+setp jpegenc1 maxWidth               1280
+setp jpegenc1 maxScans               1
+setp jpegenc1 dataEndianness         1
+setp jpegenc1 forceChromaFormat      2
+setp jpegenc1 numAU                  0
+setp jpegenc1 inputChromaFormat      4
+setp jpegenc1 inputHeight            720
+setp jpegenc1 inputWidth             1280
+setp jpegenc1 captureWidth           0
+setp jpegenc1 generateHeader         0
+setp jpegenc1 qValue                 73
+setp jpegenc1 halfBufCB              0
+setp jpegenc1 halfBufCBarg           0
+setp jpegenc1 extDynParamsRstInterval            84
+setp jpegenc1 extDynParamsRstInterval 4
+setp jpegenc1 extDynParamsDisableEOI 0
+setp jpegenc1 extDynParamsRotation   0
+setp jpegenc1 customQ                0
+
+# Configure VPFE parameters
+#setp vpfe width        1280
+#setp vpfe height       720
+
+#setp vpfe input        2
+#setp vpfe standard     1
+#setp vpfe format       8
+
+#setp vpfe cropEnable 0
+#setp vpfe cropCapLeft 0
+#setp vpfe cropCapTop 32
+#setp vpfe cropCapWidth 160
+#setp vpfe cropCapHeight 320
+
+
+# Trigger the capture+encode operation
+#func jpegenc1 -t <output file name>
+
+# Trigger the file-read+encode operation
+func jpegenc1 -s input-720p_422i.yuv -t out.jpg

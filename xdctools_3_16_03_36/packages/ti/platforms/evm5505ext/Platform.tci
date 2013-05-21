@@ -1,0 +1,77 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * The following comment is used by the Graphical Config Tool:
+ * !DESCRIPTION 55XX!  evm5505 with daughter card (NAND,NOR,SRAM).
+ * !NAME! ti.platforms.evm5505ext
+ */
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+var mem_ext = [];
+
+mem_ext[0] = {
+    comment: "NAND Flash",
+    name: "NAND",
+    base: 0x800000,
+    len:  0x600000,
+    space: "code/data"
+};
+
+mem_ext[1] = {
+    comment: "NOR Flash",
+    name: "NOR",
+    base: 0xe00000,
+    len:  0x100000,
+    space: "code/data"
+};
+
+mem_ext[2] = {
+    comment: "External SRAM",
+    name: "SRAM",
+    base: 0xf00000,
+    len:  0x100000,
+    space: "code/data"
+};
+
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+
+var device_regs = {
+    st3_55: null
+}
+
+var params = {
+    clockRate: 100,
+    catalogName: "ti.catalog.c5500",
+    deviceName: "5505",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+/*
+ *  @(#) ti.platforms.evm5505ext; 1, 0, 0,44; 2-23-2010 16:53:26; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

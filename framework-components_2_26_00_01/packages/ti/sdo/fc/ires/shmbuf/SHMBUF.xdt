@@ -1,0 +1,96 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+
+%%{
+    /*
+     *  ======== SHMBUF.xdt ========
+     *  Generate SHMBUF configuration and initialization structures
+     */
+    var shmbuf = this.$package.SHMBUF;
+
+    var allocFxn;
+    var freeFxn; 
+
+    function su(segName) { /* "strip underscore" */
+        return (segName.charAt(0) == "_") ? segName.substr(1) : segName;
+    }
+%%}
+
+/* C code contribution from ti/sdo/fc/ires/shmbuf/SHMBUF.xdt */
+
+#include <xdc/std.h>
+
+#include <ti/sdo/fc/ires/iresman.h>
+#include <ti/sdo/fc/ires/shmbuf/shmbuf.h>
+
+% if ((this.persistentAllocFxn != null) && (this.persistentFreeFxn != null)) {
+
+/* declaration of user-supplied RMAN.persistentAllocFxn */
+extern Bool `su(this.persistentAllocFxn)`(IALG_MemRec *memTab, Int numRecs);
+extern Void `su(this.persistentFreeFxn)`(IALG_MemRec *memTab, Int numRecs);
+%     allocFxn = su(this.persistentAllocFxn);
+%     freeFxn = su(this.persistentFreeFxn);
+% }
+% else {
+%     allocFxn = "NULL";
+%     freeFxn = "NULL";
+% }
+
+SHMBUF_Params SHMBUF_PARAMS = {
+    /* IRESMAN_Params iresConfig; */
+    {
+        /* size: The size of this structure */
+        sizeof(SHMBUF_Params),
+
+        /* allocFxn: Function to allocate memory required by the resource */
+        `allocFxn`,
+
+        /* freeFxn: Function to free memory acquired by allocFxn */
+        `freeFxn`
+    },
+
+    /* Int bufsize; The length of the shared memory resource (MAUs) */
+    `utils.toHex(shmbuf.bufsize)`,
+
+    /* UInt32 key; The key to identiy shared memory resource */
+    `utils.toHex(shmbuf.key)`
+};
+%%{
+/*
+ * @(#) ti.sdo.fc.ires.shmbuf; 1, 0, 0,119; 12-1-2010 17:25:22; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+
+%%}

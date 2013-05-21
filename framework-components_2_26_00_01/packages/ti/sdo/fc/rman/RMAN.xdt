@@ -1,0 +1,190 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    /*
+     *  ======== RMAN.xdt ========
+     *  Generate RMAN configuration and initialization structures
+     */
+    var RMAN = this.$package.RMAN;
+    var allocFxn;
+    var freeFxn; 
+    var yieldFxn;
+
+    function su(segName) { /* "strip underscore" */
+        return (segName.charAt(0) == "_") ? segName.substr( 1 ) : segName;
+    }
+%%}
+/* C code contribution from ti/sdo/fc/rman/RMAN.xdt */
+ 
+#include <ti/sdo/fc/rman/rman.h>
+
+% if (this.useDSKT2 == true) {
+
+#include <ti/xdais/ialg.h>
+#include <ti/xdais/ires.h>
+extern Bool DSKT2_allocPersistent(IALG_MemRec *memTab, Int numRecs);
+
+extern Void DSKT2_freePersistent(IALG_MemRec *memTab, Int numRecs);
+
+extern Void RMAN_yield(IRES_YieldResourceType resourceType,
+        IRES_YieldContextHandle algYieldContext, IRES_YieldArgs yieldArgs);
+  
+%allocFxn = "DSKT2_allocPersistent";
+%freeFxn = "DSKT2_freePersistent";
+%yieldFxn = "RMAN_yield";
+
+% }
+% else {
+%   if ((this.persistentAllocFxn != null) && (this.persistentFreeFxn != null)) {
+
+        /* declaration of user-supplied RMAN.persistentAllocFxn */
+        extern Bool `su(this.persistentAllocFxn)`(IALG_MemRec *memTab, Int numRecs);
+        extern Void `su(this.persistentFreeFxn)`(IALG_MemRec *memTab, Int numRecs);
+%        allocFxn = su(this.persistentAllocFxn);
+%        freeFxn = su(this.persistentFreeFxn);
+%   }
+%   else {
+%        allocFxn = "NULL";
+%        freeFxn = "NULL";
+%   }
+%    yieldFxn = "NULL";
+% }
+
+%    var numEntries = this.tableSize + 1;
+/* Table of user-configured size to store the registration entries */ 
+__FAR__ IRESMAN_Fxns * RMAN_TABLE[`numEntries`];
+
+/* Table of user-configured size to store the freed entries */ 
+__FAR__ short RMAN_FREE_ENTRIES[`numEntries`];
+
+/*
+ * Number of entries statically configured for the Resource Registry table
+ */
+__FAR__ short RMAN_numRegistryEntries  = 0;
+ 
+/*
+ * Static configuration entries for the table
+ */
+__FAR__ IRESMAN_Fxns ** RMAN_registryEntries = NULL;
+ 
+/*
+ * Initialization arguments for the entries to be registered
+ */
+__FAR__ IRESMAN_Params ** RMAN_registryResmanArgs = NULL;
+
+/*
+ *   ========== RMAN_PARAMS ===========
+ *   Module configuration for RMAN implementation
+ *   It is set at design time by system integrator to adjust the behavior of 
+ *   module to be optimal for its execution environment
+ */
+RMAN_Params RMAN_PARAMS = {
+ 
+    /* size of the registry table */ 
+    `numEntries`,
+
+    /* persistentAllocFxn */
+    `allocFxn`,
+ 
+    /* persistentFreeFxn */
+    `freeFxn`,
+  
+    /* yieldFxn */
+    `yieldFxn`,
+
+    /* flag indicating if yield to same priority is allowed */
+    `this.yieldSamePriority == false ? "FALSE" : "TRUE"`,
+};
+
+%   var modList = $om.$modules;
+%   var j = 0; 
+%   var resmanArr = new Array;
+%   var paramsArr = new Array;
+%   for (var i = 0; i < modList.length; i++) {
+%       if ((String(modList[i]).search("ti.sdo.fc.ires") >= 0) && 
+%               (modList[i].$used)){
+%           if (String(modList[i]) + ".autoRegister" in $om) {
+%               print("Auto register " + modList[i]);    
+%               var modname = modList[i].$name.match(/.*\.([^\.]*)$/)[1];
+%               resmanArr.push(modname + "_getIresmanFxns()");
+%               paramsArr.push(modname + "_getDefaultParams()");
+extern IRESMAN_Fxns * `resmanArr[resmanArr.length -1]`;
+extern IRESMAN_Params * `paramsArr[paramsArr.length-1]`;
+%               j++;
+%           }
+%           else {
+%               if (String(modList[i]).search("nullres") < 0) {
+%                   print("Need to call RMAN_register explicitly for " + 
+%                       modList[i] + ". Resource may not function correctly "
+%                       + "otherwise.");         
+%               }
+%           }
+%       }
+%   }
+
+
+static __FAR__ IRESMAN_Fxns * _entries[`resmanArr.length` + 1];
+static __FAR__ IRESMAN_Params * _params[`resmanArr.length` + 1];
+
+IRES_Status RMAN_autoRegister()
+{
+    /* Populate the RMAN_registryEntries etc tables, to be able to do 
+       static registration of these arguments */ 
+    IRES_Status status = IRES_OK;
+    
+    RMAN_numRegistryEntries = `resmanArr.length`;
+
+%   for (var i = 0; i < resmanArr.length; i++) {
+
+    _entries[`i`] = `resmanArr[i]`; 
+    _params[`i`] = `paramsArr[i]`; 
+
+    _params[`i`]->allocFxn = RMAN_PARAMS.allocFxn;
+    _params[`i`]->freeFxn = RMAN_PARAMS.freeFxn;
+
+%   }
+
+    RMAN_registryEntries = (IRESMAN_Fxns **)(&_entries);
+    RMAN_registryResmanArgs = (IRESMAN_Params **)(&_params);
+
+    return (status);
+}
+%%{
+/*
+ * @(#) ti.sdo.fc.rman; 2, 0, 0,207; 12-1-2010 17:25:37; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+
+%%}

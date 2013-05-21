@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.rman.examples.scratchedma3" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x470MV.c"/>
+        <srcFile name="package/cfg/scratchEdma3_C6455_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6446_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x470MV.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3430_x64P.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3530_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6467_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6446_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x9t.c"/>
+        <srcFile name="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x470uC.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6467_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/scratchEdma3_C6455_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x470uC.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3530_x64P.c"/>
+        <srcFile name="appLinux.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x9t.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3530_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/scratchEdma3_C6455_x64P.c"/>
+        <srcFile name="app.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3430_x64Pcfg.s62"/>
+    </sources>
+    <configurations>
+        <srcFile name="ires_algorithm.tcf"/>
+        <srcFile name="ires_algorithm.cfg"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6446_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6446/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6446/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6446_x64Pcfg.o64P.dep" src="package/cfg/scratchEdma3_dm6446_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6446_x64Pcfg_c.o64P.dep" src="package/cfg/scratchEdma3_dm6446_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6446_x64P.o64P.dep" src="package/cfg/scratchEdma3_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6446_x64P.dep" src="package/cfg/scratchEdma3_dm6446_x64P.cfg"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6467_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6467/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6467/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6467_x64Pcfg.o64P.dep" src="package/cfg/scratchEdma3_dm6467_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6467_x64P.o64P.dep" src="package/cfg/scratchEdma3_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6467_x64Pcfg_c.o64P.dep" src="package/cfg/scratchEdma3_dm6467_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/scratchEdma3_dm6467_x64P.dep" src="package/cfg/scratchEdma3_dm6467_x64P.cfg"/>
+        <srcFile name="package/cfg/scratchEdma3_C6455_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/scratchEdma3_C6455/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3_C6455/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/scratchEdma3_C6455_x64P.o64P.dep" src="package/cfg/scratchEdma3_C6455_x64P.c"/>
+        <srcFile name="package/cfg/scratchEdma3_C6455_x64Pcfg_c.o64P.dep" src="package/cfg/scratchEdma3_C6455_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/scratchEdma3_C6455_x64Pcfg.o64P.dep" src="package/cfg/scratchEdma3_C6455_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/scratchEdma3_C6455_x64P.dep" src="package/cfg/scratchEdma3_C6455_x64P.cfg"/>
+        <srcFile name="package/cfg/scratchEdma3_3430_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/scratchEdma3_3430/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3430/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3430_x64Pcfg_c.o64P.dep" src="package/cfg/scratchEdma3_3430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3430_x64P.o64P.dep" src="package/cfg/scratchEdma3_3430_x64P.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3430_x64Pcfg.o64P.dep" src="package/cfg/scratchEdma3_3430_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/scratchEdma3_3430_x64P.dep" src="package/cfg/scratchEdma3_3430_x64P.cfg"/>
+        <srcFile name="package/cfg/scratchEdma3_3530_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/scratchEdma3_3530/ires_algorithm.o64P.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3530/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3530_x64Pcfg.o64P.dep" src="package/cfg/scratchEdma3_3530_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/scratchEdma3_3530_x64P.o64P.dep" src="package/cfg/scratchEdma3_3530_x64P.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3530_x64Pcfg_c.o64P.dep" src="package/cfg/scratchEdma3_3530_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/scratchEdma3_3530_x64P.dep" src="package/cfg/scratchEdma3_3530_x64P.cfg"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x470MV.o470MV.dep" src="package/cfg/scratchEdma3Linux_DM355_x470MV.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355/ires_algorithm.o470MV.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355/appLinux.o470MV.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x470MV.dep" src="package/cfg/scratchEdma3Linux_DM355_x470MV.cfg"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x470MV.o470MV.dep" src="package/cfg/scratchEdma3Linux_DM365_x470MV.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365/ires_algorithm.o470MV.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365/appLinux.o470MV.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x470MV.dep" src="package/cfg/scratchEdma3Linux_DM365_x470MV.cfg"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355/ires_algorithm.o470uC.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x470uC.o470uC.dep" src="package/cfg/scratchEdma3Linux_DM355_x470uC.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355/appLinux.o470uC.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x470uC.dep" src="package/cfg/scratchEdma3Linux_DM355_x470uC.cfg"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365/ires_algorithm.o470uC.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x470uC.o470uC.dep" src="package/cfg/scratchEdma3Linux_DM365_x470uC.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365/appLinux.o470uC.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x470uC.dep" src="package/cfg/scratchEdma3Linux_DM365_x470uC.cfg"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x9t.mak" src="package.bld"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355/ires_algorithm.o9t.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x9t.o9t.dep" src="package/cfg/scratchEdma3Linux_DM355_x9t.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355/appLinux.o9t.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM355_x9t.dep" src="package/cfg/scratchEdma3Linux_DM355_x9t.cfg"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x9t.mak" src="package.bld"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x9t.o9t.dep" src="package/cfg/scratchEdma3Linux_DM365_x9t.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365/ires_algorithm.o9t.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365/appLinux.o9t.dep" src="appLinux.c"/>
+        <srcFile name="package/cfg/scratchEdma3Linux_DM365_x9t.dep" src="package/cfg/scratchEdma3Linux_DM365_x9t.cfg"/>
+        <srcFile name="package/rel/ti_sdo_fc_rman_examples_scratchedma3.tar.dep" src="package/rel/ti_sdo_fc_rman_examples_scratchedma3.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.Arm9t"
+            version="ti.targets.arm.Arm9t{1,0,4.5,0"
+            platform="ti.platforms.evmDM355"
+            isa="v5T"
+            suffix="9t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="scratchEdma3_dm6446"
+        pname="scratchEdma3_dm6446.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6446"
+        profile="debug_trace"
+        xCfgScript="package/cfg/scratchEdma3_dm6446_x64P.cfg"
+        xCfgPrefix="package/cfg/scratchEdma3_dm6446_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6446%22%7D"
+        />
+    <executable name="scratchEdma3_dm6467"
+        pname="scratchEdma3_dm6467.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="debug_trace"
+        xCfgScript="package/cfg/scratchEdma3_dm6467_x64P.cfg"
+        xCfgPrefix="package/cfg/scratchEdma3_dm6467_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6467%22%7D"
+        />
+    <executable name="scratchEdma3_C6455"
+        pname="scratchEdma3_C6455.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.dsk6455"
+        profile="debug_trace"
+        xCfgScript="package/cfg/scratchEdma3_C6455_x64P.cfg"
+        xCfgPrefix="package/cfg/scratchEdma3_C6455_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%22C6455%22%7D"
+        />
+    <executable name="scratchEdma3_3430"
+        pname="scratchEdma3_3430.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.sdp3430"
+        profile="debug_trace"
+        xCfgScript="package/cfg/scratchEdma3_3430_x64P.cfg"
+        xCfgPrefix="package/cfg/scratchEdma3_3430_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%223430%22%7D"
+        />
+    <executable name="scratchEdma3_3530"
+        pname="scratchEdma3_3530.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evm3530"
+        profile="debug_trace"
+        xCfgScript="package/cfg/scratchEdma3_3530_x64P.cfg"
+        xCfgPrefix="package/cfg/scratchEdma3_3530_x64P"
+        cfgScript="ires_algorithm.tcf"
+        cfgArgs="%7BchipType%3A%20%223530%22%7D"
+        />
+    <executable name="scratchEdma3Linux_DM355"
+        pname="scratchEdma3Linux_DM355.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM355"
+        profile="debug_trace"
+        xCfgScript="package/cfg/scratchEdma3Linux_DM355_x470MV.cfg"
+        xCfgPrefix="package/cfg/scratchEdma3Linux_DM355_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        cfgArgs="%7BchipType%3A%20%22DM355%22%7D"
+        />
+    <executable name="scratchEdma3Linux_DM365"
+        pname="scratchEdma3Linux_DM365.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM365"
+        profile="debug_trace"
+        xCfgScript="package/cfg/scratchEdma3Linux_DM365_x470MV.cfg"
+        xCfgPrefix="package/cfg/scratchEdma3Linux_DM365_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        cfgArgs="%7BchipType%3A%20%22DM365%22%7D"
+        />
+    <executable name="scratchEdma3Linux_DM355"
+        pname="scratchEdma3Linux_DM355.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM355"
+        profile="debug_trace"
+        xCfgScript="package/cfg/scratchEdma3Linux_DM355_x470uC.cfg"
+        xCfgPrefix="package/cfg/scratchEdma3Linux_DM355_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        cfgArgs="%7BchipType%3A%20%22DM355%22%7D"
+        />
+    <executable name="scratchEdma3Linux_DM365"
+        pname="scratchEdma3Linux_DM365.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM365"
+        profile="debug_trace"
+        xCfgScript="package/cfg/scratchEdma3Linux_DM365_x470uC.cfg"
+        xCfgPrefix="package/cfg/scratchEdma3Linux_DM365_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        cfgArgs="%7BchipType%3A%20%22DM365%22%7D"
+        />
+    <executable name="scratchEdma3Linux_DM355"
+        pname="scratchEdma3Linux_DM355.x9t"
+        target="ti.targets.arm.Arm9t"
+        platform="ti.platforms.evmDM355"
+        profile="debug_trace"
+        xCfgScript="package/cfg/scratchEdma3Linux_DM355_x9t.cfg"
+        xCfgPrefix="package/cfg/scratchEdma3Linux_DM355_x9t"
+        cfgScript="ires_algorithm.cfg"
+        cfgArgs="%7BchipType%3A%20%22DM355%22%7D"
+        />
+    <executable name="scratchEdma3Linux_DM365"
+        pname="scratchEdma3Linux_DM365.x9t"
+        target="ti.targets.arm.Arm9t"
+        platform="ti.platforms.evmDM365"
+        profile="debug_trace"
+        xCfgScript="package/cfg/scratchEdma3Linux_DM365_x9t.cfg"
+        xCfgPrefix="package/cfg/scratchEdma3Linux_DM365_x9t"
+        cfgScript="ires_algorithm.cfg"
+        cfgArgs="%7BchipType%3A%20%22DM365%22%7D"
+        />
+    </executables>
+    <tests>
+    <test exeName="scratchEdma3_dm6446.x64P"
+        args=""
+        groupName="scratchEdma3_dm6446.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="scratchEdma3_dm6467.x64P"
+        args=""
+        groupName="scratchEdma3_dm6467.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="scratchEdma3_C6455.x64P"
+        args=""
+        groupName="scratchEdma3_C6455.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="scratchEdma3_3430.x64P"
+        args=""
+        groupName="scratchEdma3_3430.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="scratchEdma3_3530.x64P"
+        args=""
+        groupName="scratchEdma3_3530.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="scratchEdma3Linux_DM355.x470MV"
+        args=""
+        groupName="scratchEdma3Linux_DM355.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="scratchEdma3Linux_DM365.x470MV"
+        args=""
+        groupName="scratchEdma3Linux_DM365.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="scratchEdma3Linux_DM355.x470uC"
+        args=""
+        groupName="scratchEdma3Linux_DM355.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="scratchEdma3Linux_DM365.x470uC"
+        args=""
+        groupName="scratchEdma3Linux_DM365.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="scratchEdma3Linux_DM355.x9t"
+        args=""
+        groupName="scratchEdma3Linux_DM355.x9t"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="scratchEdma3Linux_DM365.x9t"
+        args=""
+        groupName="scratchEdma3Linux_DM365.x9t"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_rman_examples_scratchedma3"
+        pname="ti_sdo_fc_rman_examples_scratchedma3.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

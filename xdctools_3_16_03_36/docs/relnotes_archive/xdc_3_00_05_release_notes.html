@@ -1,0 +1,462 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><!-- /* * Copyright 2007 by Texas Instruments Incorporated . * * All rights reserved. Property of Texas Instruments Incorporated. * Restricted rights to use, duplicate or disclose this code are * granted through contract. * */ -->
+
+
+  
+
+
+  <title>XDC 3.00.05 Release Notes</title><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><!-- For now, we use the doxygen style sheet -->
+
+
+  <link href="doxygen.css" type="text/css" rel="stylesheet"></head>
+<body>
+
+<table width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td bgcolor="black" width="1"><a href="http://www.ti.com/"><img style="border: 0px solid ; width: 222px; height: 54px;" alt="Texas Instruments" src="docs/tilogo.gif"> </a></td>
+
+      <td bgcolor="red"><img style="width: 314px; height: 26px;" alt="Technology for Innovators(tm)" src="docs/titagline.gif">
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h1 align="center"><a name="XDC_TOP"></a>XDC 3.00.05 Release Notes</h1>
+
+<h2 align="center">Feb  6, 2008</h2>
+
+<p align="center"> <a href="#General_Info">Introduction</a>,
+<a href="#Known_Issues">Known Issues</a>, <a href="#Documentation">Documentation</a>, <a href="#Whats_New">What's New</a>, <a href="#Compatibility">Upgrade &amp; Compatibility
+Information</a>, <a href="#Host_Support">Host
+Support</a>, <a href="#Dependencies">Dependencies</a>,
+<a href="#Device_Support">Device Support</a>, <a href="#Validation">Validation Info</a>, <a href="#Version">Version Information</a>, <a href="#Support">Technical Support</a>.
+</p>
+
+<hr>
+<h2><a name="General_Info">Introduction</a></h2>
+
+<p>eXpress DSP Components (XDC) is a standard for reusable
+software
+components, optimized for real-time embedded systems. XDC components
+have hardware-neutral formal interfaces, are configurable offline to
+optimize memory and performance, and support custom automation in the
+development environment via a scripting language.</p>
+
+<p>This XDC release includes the following sets of packages: </p>
+
+<ul>
+
+  <li><b>XDC core (<tt>xdc.*</tt>)</b> -
+the <tt><b>xdc</b></tt> and <tt><b>xs</b></tt>
+command line utilities for building packages and execting scripts,
+together with the packages that implement XDC itself;</li>
+
+  <li><b>User tools (<tt>xdc.tools.*</tt>)</b>
+- command-line and graphical utilities for working with packages and
+repositories;</li>
+
+  <li><b>Targets (<tt>*.targets.*</tt>)</b>
+- definitions for using various TI and third-party compiler tool chains
+with XDC;</li>
+
+  <li><b>Platforms (<tt>ti.platforms.*</tt>)</b>
+- definitions for linking and running code on various TI board-level
+hardware and simulator products using XDC.</li>
+
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Known_Issues">Known Issues</a></h2>
+
+<p>None.</p><p><a href="#XDC_TOP">back to top</a></p>
+
+<hr>
+<h2><a name="Documentation">Documentation</a></h2>
+
+<p>The following documentation is available: </p>
+
+<ul>
+
+  <li><a href="docs/XDC_Getting_Started_Guide.pdf">XDC
+Getting Started Guide</a></li>
+
+  <li><a href="docs/userguide/XDC_User_Guide.pdf">XDC
+Consumer User's Guide</a></li>
+
+  <li><a href="docs/index.html">XDC Documents Index</a></li>
+
+</ul>
+
+<p>Release notes from previous releases are also available in the
+<a href="docs/relnotes_archive">relnotes_archive</a>
+directory.</p><p><a href="#XDC_TOP">back to top</a> </p>
+
+<hr>
+<h2><a name="Whats_New">What's New</a></h2>
+
+<p>The following significant changes have been made since 3.00.04:</p>
+
+<ul>
+
+  <li>Device and platform support for OMAP25xx, OMAP35xx and DRA4xx</li>
+  <li>CodeSourcery GCC target for ARM v5T</li>
+  <li>New configuro, cdoc and repoman features</li>
+  <li>Backwards-compatible and forwards-compatible change to XDC
+      module binary contract for improved forwards compatibility</li>
+  <li>Bug fixes detailed below</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<div class="memitem">
+<h3>3.00.05 (This Release)</h3>
+
+<!-- *************************************************************** -->
+<h4>Targets</h4>
+<ul>
+  <li>Built gnu.targets using XDC 3.00.04 tools to get the runtime
+      libraries for MVArm9 and UCArm9</li>
+  <li>Added a target package 'gnu.targets.codesourcery' with two
+      targets GCArmv5t (v5t architecture) and GCArmv6
+      (v6 architecture). The suffix for GCArmv5t is "470MV" so the
+      libraries built for MVArm9 are going to be supplied to GCArmv5t.
+      getLibs() functions should use target.suffix to decide
+      which library to supply.</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Catalogs</h4>
+<ul>
+  <li>Added support for OMAP devices 2431, 2530, 2531, 3530
+      3425 and 3525 to ti.catalog.c6000 and ti.catalog.c470</li>
+  <li>Added catalog files for DRA402/DRA404/DRA414/DRA416, and
+      updated DRA406 to reflect rev A of data manual</li>
+  <li>Changed generic platform so we can use the prefix "OMAP" for
+      OMAP device modules instead of "TMS320C"</li>
+  <li>fixed incomplete checks for the presence of properties in
+      the sructure 'regs' when calling getMemoryMap()</li>
+  <li>reorganized OMAP devices in c6000 so they all inherit from
+      the interfaces IOMAP2x3x and IOMAP3xxx. Same for
+      DRA4xx devices, to inherit from DRA406</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Platforms</h4>
+<ul>
+  <li>Added evm2530 and evm3530 platforms.</li>
+  <li>Added evmDRA416 platform.</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Core</h4>
+<ul>
+  <li>Changed the default implementation of IPackage.getLibs() so
+      that it returns libraries based on the name of the target for
+      which a library was built and the name of the target building
+      the program. If the names are not the same, then suffixes are
+      compared. Currently, the suffix for the library is guessed from
+      the library name because the structure LibDesc does not contain
+      that information.</li>
+  <li>Changed VERS for package.c files in Body.java to ensure that
+      package.c files generated by XDC 3.05 and later tools will be
+      rebuilt by the tools based on this XDC 3.00.05 product. This
+      ensures forwards compatibility with target content produced by
+      upcoming XDC releases.</li>
+  <li>Added a __FAR__ qualifier and a module name to the symbol
+      __dummy__ declared in package C files. This change makes this
+      file compatible with xDAIS standards.</li>
+  <li>Removed dependency of .interfaces goal on .vers files. This
+      dependency prevents us from removing old .vers files when a
+      package is built with different tools without cleaning the
+      package first.</li>
+  <li>Extended xdc.exec() and xdc.services.global.Host.exec() to
+      optionally accept the command line via an array of strings.
+      The program name and the arguments are each in a separate
+      array element. Useful when the program name or arguments
+      might contain spaces. Previous versions of xdc.exec() will
+      return a status of -1 if given an array of strings.</li>
+  <li>added GZIP support to package release.</li>
+  <li>added xdclpf utility to list all package files
+      not in a nested packages.  This can be used
+      in conjunction with tar to create a development
+      "snapshot" of a package to be exchanged with others
+<pre>
+      cd &lt;package-repository&gt;
+      xdclpf ./my/pkg &gt; list
+      tar czf my_pkg.tar.gz -T list
+</pre></li>
+  <li>fixed bug in XUTL_scanFS where Windows file scan
+      is passed "." and ".." as ordinary files</li>
+  <li>hacked fixlist to manipulate file times to avoid
+      tar failures</li>
+  <li>fix XUTL_scanFS to behave the same on Windows as
+      on UNIX wrt files that begin with '.' (i.e, they
+      are treated as though they are hidden files).</li>
+  <li>added an "all files" flag to XDC_scanFS() to allow
+      clients to include hidden files in the scan.</li>
+  <li>extended hacked fixlist to *recursively* manipulate
+      file times to avoid tar failures, made this hack
+      optional (requires -t option), and added a -z option
+      to cause the output to be appropriate for zip rather
+      than tar.</li>
+  <li>fixed xdclpf to output *all* files not just the
+      non-hidden files; this makes it more useful for
+      creating a "snapshot" package archive list for
+      tar or zip</li>
+  <li>fixed xs usage string</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Configuro</h4>
+<ul>
+  <li>Added new command line options --rtsName and --linkTemplate,
+      giving the ability to specify the XDC rts package name and
+      the linker command file template from the command line.</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Cdoc Command Line and GUI</h4>
+<ul>
+  <li>Made unified C + XS view the default view in cdoc.sg</li>
+  <li>Fixed bug in -PR operation, previously behaved
+      like XDC command option "-Pr"</li>
+  <li>Removed construct() from XS language view.</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Repoman Command Line and GUI</h4>
+<ul>
+  <li>handle packages and bundles in .zip files</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Path Command Line and GUI</h4>
+<ul>
+  <li>Added -PR option with the same meaning as in XDC
+      and XDOC commands -- find packages recursively, not
+      necessarily rooted at the given directory.
+      Added -Pr option, an alias for -d.</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Enhancements</h4>
+<p>The following minor enhancements were resolved:</p>
+<table width="100%">
+  <colgroup width="15%"></colgroup><tbody>
+
+
+  </tbody>
+</table>
+
+<!-- *************************************************************** -->
+<h4>Defects</h4>
+<p>The following defects were resolved:</p>
+<table width="100%">
+  <colgroup width="15%"></colgroup><tbody>
+
+    <tr>
+      <td>SDSCM00008143</td>
+      <td>xdoc does not properly inherit "nodoc"</td>
+    </tr>
+    <tr>
+      <td>SDSCM00020709</td>
+      <td>CDOC generates bad link to type docs</td>
+    </tr>
+    <tr>
+      <td>SDSCM00021761</td>
+      <td>cdoc fixed-width font size in struct field descriptions is
+          microscopic in Firefox</td>
+    </tr>
+    <tr>
+      <td>SDSCM00022450</td>
+      <td>@_nodoc instance paramaters are still being documented</td>
+    </tr>
+    <tr>
+      <td>SDSCM00022540</td>
+      <td>System CDOC is not visible</td>
+    </tr>
+    <tr>
+      <td>SDSCM00022656</td>
+      <td>cdoc should not define construct for metaonly modules</td>
+    </tr>
+    <tr>
+      <td>SDSCM00022728</td>
+      <td>cdoc -l U does not show proxy config parameters</td>
+    </tr>
+    <tr>
+      <td>SDSCM00022790</td>
+      <td>cdoc does not allow @see `links`</td>
+    </tr>
+    <tr>
+      <td>SDSCM00022850</td>
+      <td>Cannot modify decorated name of executable</td>
+    </tr>
+    <tr>
+      <td>SDSCM00022907</td>
+      <td>Offline CDOC must support @link to files</td>
+    </tr>
+    <tr>
+      <td>SDSCM00023066</td>
+      <td>Incorrect linker command template file for sdp2430 package</td>
+    </tr>
+    <tr>
+      <td>SDSCM00023151</td>
+      <td>cdoc in-line code style (via `s) should be able span lines</td>
+    </tr>
+    <tr>
+      <td>SDSCM00023391</td>
+      <td>config.bld along XDCPATH is NOT getting imported.</td>
+    </tr>
+    <tr>
+      <td>SDSCM00023410</td>
+      <td>Offline CDOC has bad links in index tree</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<a href="#XDC_TOP">back to top</a>
+
+<hr><h2><a name="Compatibility">Upgrade and
+Compatibility Information</a></h2>
+
+<p><b>Warning:</b> Beginning with XDC 2.95, XDC
+modules with target content (i.e. non-meta-only) are incompatible with
+non-metaonly modules from XDC 2.94 and earlier. Metaonly modules are
+not affected. Non-metaonly modules require at least a recompile.
+</p>
+
+<p><b>Warning:</b> Beginning with xdc-o02, internal C
+files generated when building package schemas are named
+package_&lt;package name&gt;.c instead of
+&lt;package_name&gt;.c. This may introduce incompatibilities
+with older xdc-n and xdc-o trees (XDC 2.X products). The compatibility
+with metaonly xdc-m packages (XDC 1.X products) is still maintained.
+</p>
+
+<h3>Compatibility Key Definitions</h3>
+
+<p>Compatibility keys are intentionally independent of Marketing
+product
+numbers and are intended to: </p>
+
+<ol>
+  <li>Enable tooling to identify incompatibilities between
+components, and </li>
+  <li>Convey a level of compatibility between different releases
+to set end user expectations. </li>
+</ol>
+
+<p>Compatibility keys are composed of 3 comma-delimited numbers -
+M,S,R - where: </p>
+
+<ul>
+  <li><b>M = Major</b>. A difference in M indicates a
+break in compatibility. </li>
+  <li><b>S = Source</b>. A difference in S indicates
+source compatibility. That is, the user's source doesn't require change,
+but <i>does</i> require rebuilding. </li>
+  <li><b>R = Radix</b>. A difference in R indicates
+an introduction of new features, but compatibility with previous
+interfaces has not broken. If libraries are provided by the package, an
+application must re-link with the new libraries, but not rebuild from
+source.</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Host_Support">Host Support</a></h2>
+
+<p>This release supports the following hosts:</p>
+<ul>
+  <li>Windows XP</li>
+  <li>RedHat Enterprise Linux 3</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Dependencies">Dependencies</a></h2>
+
+<p>This release requires the following other software components
+and tools versions to successfully function: </p>
+
+<ul>
+  <li>C6x Code Generation Tools version 5.3.0 or later. Version
+6.0.13 or later is required in order to use whole_program build profile.</li>
+  <li>C55 Code Generation Tools version 3.2.0. or later</li>
+  <li>TMS470 (Arm) Code Generation Tools version 4.5</li>
+  <li>GCC for x86 version 3.2.3 or later</li>
+  <li>GCC for ARM version 3.2.3 or later</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Device_Support">Device Support</a></h2>
+
+<p>This release supports the following device families: </p>
+<ul>
+  <li>C67P, C67, C64P, C64, C62 </li>
+  <li>C55P, C55, C54</li>
+  <li>C28</li>
+  <li>TMS470</li>
+  <li>Native development host (Windows, Linux)</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Validation">Validation Information</a></h2>
+
+<p>This release was built and validated against using the
+following components: </p>
+<ul>
+  <li>Code Composer Studio version 3.3</li>
+  <li>C6x Code Generation Tools version 6.0.7 and 6.0.13</li>
+  <li>C55 Code Generation Tools version 3.2.2</li>
+  <li>GCC for x86 version 3.2.3</li>
+  <li>GCC for ARM version 3.2.3</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Version">Version Information</a></h2>
+
+<p>This product's version follows a version format, <b>M.mm.pp.bb</b>,
+where <b>M</b> is a single digit Major number, <b>mm</b>
+is 2 digit minor number, <b>pp</b> is a 2 digit patch
+number, and <b>b</b> is an unrestricted set of digits used
+as an incrementing build counter. </p>
+
+<p>To support multiple side-by-side installations of the product,
+the product version is encoded in the top level directory, e.g. <b>xdc_3_00</b>.
+</p>
+
+<p>Subsequent releases of patch upgrades will be identified by
+the patch number, ex. XDC 3.00.03 with directory <b>xdc_3_00_03</b>.
+Typically, these patches only include critical bug fixes. </p>
+
+<p>Please note that version numbers and compatibility keys are
+NOT the same. For an explanation of compatibility keys, please refer to
+the 'Upgrade and Compatibility Information' section.</p><p><a href="#XDC_TOP">back to top</a> </p>
+
+<hr>
+<h2><a name="Support">Technical Support</a></h2>
+
+<p>For technical support, contact <a href="mailto:rtsc_champs@list.ti.com">rtsc_champs@list.ti.com</a></p><p><a href="#XDC_TOP">back to top</a></p>
+
+<hr>
+<p>Last updated: Feb  6, 2008 Build Ver: 3.00.05.23 Rev: h14</p>
+
+</div>
+
+</body></html>
+</body>
+</html>

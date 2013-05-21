@@ -1,0 +1,284 @@
+%/* 
+% *  Copyright (c) 2008 Texas Instruments and others.
+% *  All rights reserved. This program and the accompanying materials
+% *  are made available under the terms of the Eclipse Public License v1.0
+% *  which accompanies this distribution, and is available at
+% *  http://www.eclipse.org/legal/epl-v10.html
+% * 
+% *  Contributors:
+% *      Texas Instruments - initial implementation
+% * 
+% * */
+%/*
+% * ======== linkcmd.xdt ========
+% *  This is template file is used to generate a linker command file for
+% *  executables.  It provides a single place where we can embed information
+% *  necessary to load/run executables.
+% *
+% *  This template is expanded after the configuration script runs and the
+% *  results placed in a file (with extension .xdl) associated with the
+% *  executable.
+% *
+% *  Linker templates are passed the following arguments:
+% *     $out        - an open file stream for the generated linker
+% *                   command file
+% *     $args[]     - an array of zero or more libraries that should be linked
+% *                   with (in the order they appear in the argument list)
+% *
+% *  In addition to these arguments, there is a global variable named
+% *  'this' that is set as follows:
+% *     this        - the program object
+% */
+%var _utils = xdc.loadCapsule("ti/targets/linkUtils.xs");
+%var prog = this;    /* meaningful alias for this (== xdc.cfg.Program) */
+
+/*
+ * Do not modify this file; it is automatically generated from the template
+ * linkcmd.xdt in the ti.platforms.ez430_rf2500 package and will be
+ * overwritten.
+ */
+
+/*
+ * put '"'s around paths because, without this, the linker
+ * considers '-' as minus operator, not a file name character.
+ */
+
+%for (var i = 0; i < prog.$$asmvec.length; i++) {
+"`prog.$$asmvec[i]`"
+%}
+
+%for (var i = 0; i < $args.length; i++) {
+-l"`$args[i]`"
+%}
+
+%/* aliases interfere with whole_program and are unnecessary in this case */
+%if (prog.build.profile.match(/whole_program/) == null) {
+`_utils.genAliases(prog)`
+%}
+
+%/* There are symbols that exist when linking for ELF, but they need to
+% * be referenced in both ELF and COFF builds, so we need to create them here
+% * for COFF targets.
+% */
+`_utils.genElfSymbols(prog)`
+
+--args `utils.toHex(prog.argSize)`
+-heap  `utils.toHex(prog.heap)`
+-stack `utils.toHex(prog.stack)`
+
+MEMORY
+{
+%for (var i = 0; i < prog.cpu.memoryMap.length; i++) {
+    %var mem = prog.cpu.memoryMap[i];
+    %var page = (mem.page != null) ? ("PAGE " + mem.page + ": ") : "";
+    %var org = utils.toHex(mem.base);
+    %var len = utils.toHex(mem.len);
+    %var access = (mem.access != null) ? (" (" + mem.access + ")") : "";
+    `page``mem.name``access` : org = `org`, len = `len`
+%}
+}
+
+/*
+ * Linker command file contributions from all loaded packages:
+ */
+`_utils.genContributions($args)`
+
+/*
+ * symbolic aliases for static instance objects
+ */
+%for (var sym in Program.symbol) {
+    %var inst = Program.symbol[sym];
+    %if (typeof(inst) == 'number') {
+`this.build.target.asmName(sym)` = `inst`;
+    %}
+    %else {
+        %var objTab = inst.$module.$name.replace(/\./g, '_') + '_Object__table__V';
+        %var off = Program.$capsule.instSize(inst) * inst.$index;
+`this.build.target.asmName(sym)` = `this.build.target.asmName(objTab)` + `off`;
+    %}
+%}
+
+/************************************************************
+* STANDARD BITS
+************************************************************/
+/************************************************************
+* STATUS REGISTER BITS
+************************************************************/
+/************************************************************
+* PERIPHERAL FILE MAP
+************************************************************/
+/************************************************************
+* SPECIAL FUNCTION REGISTER ADDRESSES + CONTROL BITS
+************************************************************/
+IE1                = 0x0000;
+IFG1               = 0x0002;
+IE2                = 0x0001;
+IFG2               = 0x0003;
+
+/************************************************************
+* ADC10
+************************************************************/
+ADC10DTC0          = 0x0048;
+ADC10DTC1          = 0x0049;
+ADC10AE0           = 0x004A;
+ADC10AE1           = 0x004B;
+ADC10CTL0          = 0x01B0;
+ADC10CTL1          = 0x01B2;
+ADC10MEM           = 0x01B4;
+ADC10SA            = 0x01BC;
+
+/************************************************************
+* Basic Clock Module
+************************************************************/
+DCOCTL             = 0x0056;
+BCSCTL1            = 0x0057;
+BCSCTL2            = 0x0058;
+BCSCTL3            = 0x0053;
+
+/*************************************************************
+* Flash Memory
+*************************************************************/
+FCTL1              = 0x0128;
+FCTL2              = 0x012A;
+FCTL3              = 0x012C;
+
+/************************************************************
+* Operational Amplifier
+************************************************************/
+OA0CTL0            = 0x00C0;
+OA0CTL1            = 0x00C1;
+OA1CTL0            = 0x00C2;
+OA1CTL1            = 0x00C3;
+
+/************************************************************
+* DIGITAL I/O Port1/2 Pull up / Pull down Resistors
+************************************************************/
+P1IN               = 0x0020;
+P1OUT              = 0x0021;
+P1DIR              = 0x0022;
+P1IFG              = 0x0023;
+P1IES              = 0x0024;
+P1IE               = 0x0025;
+P1SEL              = 0x0026;
+P1REN              = 0x0027;
+P2IN               = 0x0028;
+P2OUT              = 0x0029;
+P2DIR              = 0x002A;
+P2IFG              = 0x002B;
+P2IES              = 0x002C;
+P2IE               = 0x002D;
+P2SEL              = 0x002E;
+P2REN              = 0x002F;
+
+/************************************************************
+* DIGITAL I/O Port3/4 Pull up / Pull down Resistors
+************************************************************/
+P3IN               = 0x0018;
+P3OUT              = 0x0019;
+P3DIR              = 0x001A;
+P3SEL              = 0x001B;
+P3REN              = 0x0010;
+P4IN               = 0x001C;
+P4OUT              = 0x001D;
+P4DIR              = 0x001E;
+P4SEL              = 0x001F;
+P4REN              = 0x0011;
+
+/************************************************************
+* Timer A3
+************************************************************/
+TAIV               = 0x012E;
+TACTL              = 0x0160;
+TACCTL0            = 0x0162;
+TACCTL1            = 0x0164;
+TACCTL2            = 0x0166;
+TAR                = 0x0170;
+TACCR0             = 0x0172;
+TACCR1             = 0x0174;
+TACCR2             = 0x0176;
+
+/************************************************************
+* Timer B3
+************************************************************/
+TBIV               = 0x011E;
+TBCTL              = 0x0180;
+TBCCTL0            = 0x0182;
+TBCCTL1            = 0x0184;
+TBCCTL2            = 0x0186;
+TBR                = 0x0190;
+TBCCR0             = 0x0192;
+TBCCR1             = 0x0194;
+TBCCR2             = 0x0196;
+
+/************************************************************
+* USCI
+************************************************************/
+UCA0CTL0           = 0x0060;
+UCA0CTL1           = 0x0061;
+UCA0BR0            = 0x0062;
+UCA0BR1            = 0x0063;
+UCA0MCTL           = 0x0064;
+UCA0STAT           = 0x0065;
+UCA0RXBUF          = 0x0066;
+UCA0TXBUF          = 0x0067;
+UCA0ABCTL          = 0x005D;
+UCA0IRTCTL         = 0x005E;
+UCA0IRRCTL         = 0x005F;
+UCB0CTL0           = 0x0068;
+UCB0CTL1           = 0x0069;
+UCB0BR0            = 0x006A;
+UCB0BR1            = 0x006B;
+UCB0I2CIE          = 0x006C;
+UCB0STAT           = 0x006D;
+UCB0RXBUF          = 0x006E;
+UCB0TXBUF          = 0x006F;
+UCB0I2COA          = 0x0118;
+UCB0I2CSA          = 0x011A;
+
+/************************************************************
+* WATCHDOG TIMER
+************************************************************/
+WDTCTL             = 0x0120;
+
+/************************************************************
+* Calibration Data in Info Mem
+************************************************************/
+CALDCO_16MHZ       = 0x10F8;
+CALBC1_16MHZ       = 0x10F9;
+CALDCO_12MHZ       = 0x10FA;
+CALBC1_12MHZ       = 0x10FB;
+CALDCO_8MHZ        = 0x10FC;
+CALBC1_8MHZ        = 0x10FD;
+CALDCO_1MHZ        = 0x10FE;
+CALBC1_1MHZ        = 0x10FF;
+
+SECTIONS
+{
+%for (var i = 0; i < prog.cpu.memoryMap.length; i++) {
+%    var mem = prog.cpu.memoryMap[i];
+%    if (mem.name.substring(0, 3) == "INT") {
+    .`mem.name.toLowerCase()` > `mem.name`
+%    }
+%}
+    .reset > RESET
+    .usci_rx > USCI_RX
+    .timer_a0 > TIMER_A0
+    .timer_b0 > TIMER_B0
+    .adc10 > ADC10
+   
+%/get "standard" section text */
+%var sections = _utils.genSections(prog);
+%
+%/* replace NOLOAD with COPY to work around a ti.targets "bug" */
+%sections = sections.replace('NOLOAD', 'COPY');
+%
+%/* modify .stack to fill with a known initial value */
+%sections = sections.replace('.stack:', '.stack: fill=0xcafe,');
+`sections`
+}
+%%{
+/*
+ * @(#) ti.platforms.ez430_rf2500; 1, 0, 0, 1,13; 2-23-2010 17:00:56; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+
+%%}

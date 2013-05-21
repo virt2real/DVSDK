@@ -1,0 +1,298 @@
+<html>
+<head>
+<title>module ti.sdo.ce.osal.bios.Settings</title>
+<meta name="description" content="Global OS Abstract Layer Configuration">
+<link rel="stylesheet" type="text/css" href="../../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.sdo.ce.osal.bios.</span><span class="xdoc-id">Settings</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/osal/bios/package.html" title="package ti.sdo.ce.osal.bios"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/osal/bios/Settings.html">index URL</a></div>
+<p class="xdocHdrSummary">Global OS Abstract Layer Configuration</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../ti/sdo/ce/osal/bios/Settings-src.html"><span class="xdocLabelFile">ti/sdo/ce/osal/bios/Settings.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Settings</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt>//&nbsp;inherits <a class="xdoc-link" href="../../../../../ti/sdo/ce/osal/IOsal.html" title="ti.sdo.ce.osal.IOsal">ti.sdo.ce.osal.IOsal</a></div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> Settings = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.sdo.ce.osal.bios.Settings'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#default.Mem.Seg.Id">Settings.<span class="xdoc-id">defaultMemSegId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Default ID of the memory segment from which to allocate space
+  (for Memory_alloc/free() calls, as opposed to Memory_segAlloc/Free()).
+  Typically it's the segment where all other code and data go</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#enable.Logging">Settings.<span class="xdoc-id">enableLogging</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;If set to true, enable data generation necessary for CE benchmarking
+  analysis</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#log.Name">Settings.<span class="xdoc-id">logName</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name of buffer used for capturing benchmarking data</span></span></a> = <i><span class="xdoc-kw2">String</span></i> "ti_sdo_ce_osal_LOG_Buffer";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#log.Seg">Settings.<span class="xdoc-id">logSeg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Memory segment for the buffer used for capturing benchmarking data</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#log.Size">Settings.<span class="xdoc-id">logSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of buffer used for capturing benchmarking data</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 256;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#log.Type">Settings.<span class="xdoc-id">logType</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Type of buffer used for capturing benchmarking data</span></span></a> = <i><span class="xdoc-kw2">String</span></i> "circular";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#trace.Buffer.Size">Settings.<span class="xdoc-id">traceBufferSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of the server trace buffer, in MAUs</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 32768;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../ti/sdo/ce/osal/bios/Settings-src.html"><span class="xdocLabelFile">ti/sdo/ce/osal/bios/Settings.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../../../ti/sdo/ce/osal/bios/package.html" title="ti.sdo.ce.osal.bios">ti.sdo.ce.osal.bios</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Settings</span></go><span class="xdoc-kw1"> inherits </span><a class="xdoc-link" href="../../../../../ti/sdo/ce/osal/IOsal.html" title="ti.sdo.ce.osal.IOsal">IOsal</a> {
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#default.Mem.Seg.Id"><span class="xdoc-id">defaultMemSegId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Default ID of the memory segment from which to allocate space
+  (for Memory_alloc/free() calls, as opposed to Memory_segAlloc/Free()).
+  Typically it's the segment where all other code and data go</span></span></a> = <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#enable.Logging"><span class="xdoc-id">enableLogging</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;If set to true, enable data generation necessary for CE benchmarking
+  analysis</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#log.Name"><span class="xdoc-id">logName</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name of buffer used for capturing benchmarking data</span></span></a> = "ti_sdo_ce_osal_LOG_Buffer";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#log.Seg"><span class="xdoc-id">logSeg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Memory segment for the buffer used for capturing benchmarking data</span></span></a> = <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#log.Size"><span class="xdoc-id">logSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of buffer used for capturing benchmarking data</span></span></a> = 256;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#log.Type"><span class="xdoc-id">logType</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Type of buffer used for capturing benchmarking data</span></span></a> = "circular";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#trace.Buffer.Size"><span class="xdoc-id">traceBufferSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of the server trace buffer, in MAUs</span></span></a> = 32768;
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="default.Mem.Seg.Id"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Settings.</span><span class="xdoc-id">defaultMemSegId</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/osal/bios/Settings.html" title="module Settings"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/osal/bios/Settings.html#default.Mem.Seg.Id">index URL</a></div>
+<p class="xdocHdrSummary">Default ID of the memory segment from which to allocate space
+  (for Memory_alloc/free() calls, as opposed to Memory_segAlloc/Free()).
+  Typically it's the segment where all other code and data go</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Settings.<span class="xdoc-id">defaultMemSegId</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">If left as "null", the system will try to find a BIOS segment named
+  "DDR" or "DDR2" and assign its name to this field. In the future
+  this auto-find feature may be removed, so it's best that user .cfg
+  script set this value directly to what they know is appropriate
+  segment.</div>
+<div class="xdocText">Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+  to set the target OS.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="enable.Logging"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Settings.</span><span class="xdoc-id">enableLogging</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/osal/bios/Settings.html" title="module Settings"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/osal/bios/Settings.html#enable.Logging">index URL</a></div>
+<p class="xdocHdrSummary">If set to true, enable data generation necessary for CE benchmarking
+  analysis</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Settings.<span class="xdoc-id">enableLogging</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+  to set the target OS.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="log.Name"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Settings.</span><span class="xdoc-id">logName</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/osal/bios/Settings.html" title="module Settings"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/osal/bios/Settings.html#log.Name">index URL</a></div>
+<p class="xdocHdrSummary">Name of buffer used for capturing benchmarking data</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Settings.<span class="xdoc-id">logName</span> = <i><span class="xdoc-kw2">String</span></i> "ti_sdo_ce_osal_LOG_Buffer";
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">In BIOS environments, this is the name of the BIOS LOG.</div>
+<div class="xdocText">Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+  to set the target OS.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="log.Seg"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Settings.</span><span class="xdoc-id">logSeg</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/osal/bios/Settings.html" title="module Settings"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/osal/bios/Settings.html#log.Seg">index URL</a></div>
+<p class="xdocHdrSummary">Memory segment for the buffer used for capturing benchmarking data</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Settings.<span class="xdoc-id">logSeg</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+  to set the target OS.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="log.Size"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Settings.</span><span class="xdoc-id">logSize</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/osal/bios/Settings.html" title="module Settings"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/osal/bios/Settings.html#log.Size">index URL</a></div>
+<p class="xdocHdrSummary">Size of buffer used for capturing benchmarking data</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Settings.<span class="xdoc-id">logSize</span> = <i><span class="xdoc-kw2">Int</span></i> 256;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+  to set the target OS.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="log.Type"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Settings.</span><span class="xdoc-id">logType</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/osal/bios/Settings.html" title="module Settings"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/osal/bios/Settings.html#log.Type">index URL</a></div>
+<p class="xdocHdrSummary">Type of buffer used for capturing benchmarking data</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Settings.<span class="xdoc-id">logType</span> = <i><span class="xdoc-kw2">String</span></i> "circular";
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This can be either "fixed" or "circular".</div>
+<div class="xdocText">Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+  to set the target OS.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="trace.Buffer.Size"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Settings.</span><span class="xdoc-id">traceBufferSize</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/ce/osal/bios/Settings.html" title="module Settings"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/ce/osal/bios/Settings.html#trace.Buffer.Size">index URL</a></div>
+<p class="xdocHdrSummary">Size of the server trace buffer, in MAUs</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Settings.<span class="xdoc-id">traceBufferSize</span> = <i><span class="xdoc-kw2">Int</span></i> 32768;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">The server trace buffer is a circular buffer of characters written
+  to by clients of ti.sdo.ce.osal.Trace (and ti.sdo.utils.trace.GT) and
+  read by the Engine_*Trace() methods.</div>
+<div class="xdocText">All the trace data in the target memory is stored into a globally
+  visible character buffer
+       Char Global_traceBuffer[ &lt;traceBufferSize&gt; ];</div>
+<div class="xdocText">Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+  to set the target OS.</div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:31 GMT</div>
+</div></div></body>
+</html>

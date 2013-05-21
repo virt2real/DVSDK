@@ -1,0 +1,45 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="U:\GForge\cat_flashutils\trunk\DM35x\CCS\UBL\"
+ProjectType=Executable
+CPUFamily=TMS470R2X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="DM355_270MHz"
+Config="DM355_216MHz"
+
+[Source Files]
+Source="..\..\..\Common\drivers\src\nor.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\Common\src\device.c"
+Source="..\..\..\Common\gnu\src\debug.c"
+Source="..\..\..\Common\gnu\src\uart.c"
+Source="..\..\..\Common\ubl\src\norboot.c"
+Source="..\..\..\Common\ubl\src\uartboot.c"
+Source="..\..\..\Common\ubl\src\ubl.c"
+Source="..\..\..\Common\arch\arm926ejs\src\selfcopy.c"
+Source="..\..\..\Common\arch\arm926ejs\src\boot.c"
+Source="UBL.cmd"
+
+["DM355_270MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM355_NOR_270.bin $(Proj_dir)\NOR\UBL_DM355_NOR_270.out;Run=Always
+
+["Compiler" Settings: "DM355_270MHz"]
+Options=-o3 -fr"$(Proj_dir)\NOR" -fs"$(Proj_dir)\NOR" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -d"DM355_270MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Linker" Settings: "DM355_270MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR\UBL_DM355_NOR_270.map" -o"$(Proj_dir)\NOR\UBL_DM355_NOR_270.out" -x --retain="*(.selfcopy)"
+
+
+["DM355_216MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM355_NOR_216.bin $(Proj_dir)\NOR\UBL_DM355_NOR_216.out;Run=Always
+
+["Compiler" Settings: "DM355_216MHz"]
+Options=-o3 -fr"$(Proj_dir)\NOR" -fs"$(Proj_dir)\NOR" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -d"DM355_216MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Linker" Settings: "DM355_216MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR\UBL_DM355_NOR_216.map" -o"$(Proj_dir)\NOR\UBL_DM355_NOR_216.out" -x --retain="*(.selfcopy)"
+

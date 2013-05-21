@@ -1,0 +1,79 @@
+############################################################
+# Read YUV and encode with Mpeg4 encoder
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp mpeg4enc1 codec mpeg4enc
+
+# specify the parameters
+setp mpeg4enc1 encodingPreset 0
+setp mpeg4enc1 rateControlPreset 1
+setp mpeg4enc1 maxHeight 576
+setp mpeg4enc1 maxWidth 720
+setp mpeg4enc1 maxFrameRate 30000
+setp mpeg4enc1 maxBitRate 2000000
+setp mpeg4enc1 dataEndianness 1
+setp mpeg4enc1 maxInterFrameInterval 30
+setp mpeg4enc1 inputChromaFormat 9
+setp mpeg4enc1 inputContentType 0
+setp mpeg4enc1 reconChromaFormat -1
+setp mpeg4enc1 inputHeight 480
+setp mpeg4enc1 inputWidth 720
+setp mpeg4enc1 refFrameRate 30000
+setp mpeg4enc1 targetFrameRate 30000
+setp mpeg4enc1 targetBitRate 10000000
+setp mpeg4enc1 intraFrameInterval 30
+setp mpeg4enc1 generateHeader 0
+setp mpeg4enc1 captureWidth 0
+setp mpeg4enc1 forceFrame -1
+setp mpeg4enc1 interFrameInterval 1
+setp mpeg4enc1 mbDataFlag 0
+setp mpeg4enc1 MPEG4_mode 1 
+setp mpeg4enc1 levelIdc 5 
+setp mpeg4enc1 profileIdc 0
+setp mpeg4enc1 useVOS 1
+setp mpeg4enc1 useGOV 0
+setp mpeg4enc1 useVOLatGOV 0
+setp mpeg4enc1 useQpel 0
+setp mpeg4enc1 useInterlace 0
+setp mpeg4enc1 aspectRatio 1
+setp mpeg4enc1 pixelRange 1
+setp mpeg4enc1 timerResolution 30000
+setp mpeg4enc1 reset_vIMCOP_every_frame 0
+setp mpeg4enc1 UMV 0
+setp mpeg4enc1 Four_MV_mode 0
+setp mpeg4enc1 PacketSize 0
+setp mpeg4enc1 qpIntra 8
+setp mpeg4enc1 qpInter 8
+setp mpeg4enc1 useHEC 0
+setp mpeg4enc1 useGOBSync 0
+setp mpeg4enc1 RcAlgo 8
+setp mpeg4enc1 QPMax 31
+setp mpeg4enc1 QPMin 2
+setp mpeg4enc1 maxDelay 1000
+setp mpeg4enc1 qpInit 0
+setp mpeg4enc1 MVaccessFlag 0
+setp mpeg4enc1 ME_Type 1
+setp mpeg4enc1 PerceptualRC 0
+setp mpeg4enc1 Insert_End_Seq_code 0
+setp mpeg4enc1 framePitch 1280
+setp mpeg4enc1 numFrames 30
+
+
+#specify vpfe parameters
+#setp vpfe device /dev/video0
+#setp vpfe standard 4
+#setp vpfe format 7 
+#setp vpfe width 1280
+#setp vpfe height 720
+
+# Start the capture+encode operation
+func mpeg4enc1 -s input_720x480_420p.yuv -t mpeg4ext-encode.264
+

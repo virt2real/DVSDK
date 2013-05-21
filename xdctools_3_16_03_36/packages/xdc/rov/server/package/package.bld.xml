@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xdc.rov.server" version="1, 1, 0, 0" producerId="/db/ztree/library/trees/xdc/xdc-u17x/src/">
+    <units>
+        <module name="Main"/>
+        <module name="CoreDumpImage"/>
+        <module name="SymbolsViaOfd"/>
+        <module name="DSSymbolReader"/>
+        <module name="DSCallBack"/>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/xdc_rov_server,src.tar.gz.dep" src="package/rel/xdc_rov_server,src.xdc.inc"/>
+        <srcFile name="package/rel/xdc_rov_server.tar.gz.dep" src="package/rel/xdc_rov_server.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xdc_rov_server,src"
+        pname="xdc_rov_server,src.tar.gz"
+        label="undefined"
+    >
+        <file name="package/build.cfg"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    <release name="xdc_rov_server"
+        pname="xdc_rov_server.tar.gz"
+        label="default"
+    >
+        <file name="package/build.cfg"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

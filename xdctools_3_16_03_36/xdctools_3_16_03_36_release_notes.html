@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><!--
+/*
+* Copyright 2007 by Texas Instruments Incorporated .
+*
+* All rights reserved. Property of Texas Instruments Incorporated.
+* Restricted rights to use, duplicate or disclose this code are
+* granted through contract.
+*
+*/
+-->
+
+
+<title>XDCtools 3.16.03.36  Release Notes</title><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><!-- We use the doxygen style sheet -->
+
+<link href="doxygen.css" type="text/css" rel="stylesheet"></head>
+<body>
+<table width="100%">
+<tbody>
+<tr>
+<td bgcolor="black" width="1"> <a href="http://www.ti.com/"><img style="border: 0px solid ; width: 222px; height: 54px;" alt="Texas Instruments" src="docs/tilogo.gif"> </a>
+</td>
+<td bgcolor="red"><img style="width: 314px; height: 26px;" alt="Technology for Innovators(tm)" src="docs/titagline.gif">
+</td>
+</tr>
+</tbody>
+</table>
+<h1 align="center"><a name="XDC_TOP"></a>XDCtools
+3.16.03.36  Release Notes</h1>
+<h2 align="center">February 25, 2010</h2>
+<p align="center"> <a href="#General_Info">Introduction</a>,
+<a href="#Documentation">Documentation</a>, <a href="#License">License</a>, <a href="#Whats_New">What's
+New</a>, <a href="#Compatibility">Upgrade &amp;
+Compatibility Information</a>, <a href="#Host_Support">Host
+Support</a>, <a href="#Dependencies">Dependencies</a>,
+<a href="#Device_Support">Device Support</a>, <a href="#Validation">Validation Info</a>, <a href="#Known_Issues">Known Issues</a>, <a href="#Version">Version Information</a>, <a href="#Support">Technical Support</a>.
+</p>
+<hr>
+<h2><a name="General_Info">Introduction</a></h2>
+<p>RTSC / XDC (eXpanDed C) is a standard for reusable software
+components, optimized for real-time embedded systems. RTSC components
+have hardware-neutral formal interfaces, are configurable offline to
+optimize memory and performance, and support custom automation in the
+development environment via a scripting language.</p>
+<p>The XDCtools product includes the following components: </p>
+<ul>
+<li><b>Core (<tt>xdc.*</tt>)</b> -
+the <tt><b>xdc</b></tt> and <tt><b>xs</b></tt>
+command line utilities for building packages and executing scripts
+respectively; packages that implement the RTSC standard;</li>
+<li><b>User tools (<tt>xdc.tools.*</tt>)</b>
+- command-line and graphical utilities for working with packages and
+repositories;</li>
+<li><b>Targets (<tt>*.targets.*</tt>)</b>
+- definitions for using various TI and third-party compiler tool
+chains;</li>
+<li><b>Platforms (<tt>*.platforms.*</tt>)</b>
+- definitions for linking and running code on various TI and
+third-party
+board-level hardware and simulator products.</li>
+<li><span style="font-weight: bold;">Eclipse
+(</span><b><tt>eclipse</tt></b><span style="font-weight: bold;">)</span>
+- A set of integration plugins &nbsp;for RTSC for the eclipse
+platform.
+These plugins are leveraged by CCS4 (Code Composer Studio v4.0) to
+provide support for integrating RTSC content in the IDE environment.</li>
+</ul>
+<a href="#XDC_TOP">back to top</a>
+<hr>
+<h2><a name="Documentation">Documentation</a></h2>
+<p>The product documentation for this release is available in two
+formats:</p>
+<ul>
+<li><a href="docs/docs.zip">Compressed .zip file
+archive</a></li>
+<li><a href="docs/xdctools.chm">Microsoft HTML
+Help .chm file</a></li>
+</ul>
+<p>Both formats are delivered with the product in the <a href="docs">docs</a> subdirectory.
+The most up-to-date docs can also be viewed on-line at:</p>
+<ul>
+<li><a href="http://rtsc.eclipse.org/docs-tip">http://rtsc.eclipse.org/docs-tip</a></li>
+</ul>
+<p>Release notes from previous product releases are available in
+the
+<a href="docs/relnotes_archive">relnotes_archive</a>
+directory.</p>
+<p><a href="#XDC_TOP">back to top</a> </p>
+<hr>
+<h2><a name="License">License</a></h2>
+<p>XDCtools contains elements released under the Eclipse Public
+License v1.0
+and a number of other open-source licenses, detailed
+<a href="docs/license/xdc/shelf/package.html">here</a>.</p>
+<hr>
+<h2><a name="Whats_New">What's New</a></h2>
+<p>The following significant changes are included in
+3.16.03.36:</p>
+<ul>
+<li>An experimental module <span style="font-weight: bold; font-family: monospace;">xdc.runtime.Reset</span> has been added&nbsp; to the core packages</li><li><a href="#Whats_New_bug_fixes">Bug fixes</a></li>
+</ul>
+<ul>
+</ul>
+<br>
+<br>
+<hr>
+<div class="memitem">
+<h3><a name="Whats_New_bug_fixes">Defect history for
+3.16.03.36 (This Release)</a></h3>
+<span class="">XDCtools bugs are filed in </span><a class="" href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=RTSC&amp;version=unspecified&amp;rep_platform=All&amp;op_sys=All">eclipse
+bugzilla</a><span class="">.</span><span class="">
+</span><br class=""><span class="">The following defects were resolved in this release:</span>
+<table class="" x:str="" style="border-collapse: collapse; width: 572px;" border="2" cellpadding="0" cellspacing="0">
+<col style="width: 48pt;" width="64"> <col style="width: 524pt;" width="699"> <tbody>
+<tr>
+<td style="text-align: center; font-weight: bold;">ID</td>
+<td style="text-align: center; font-weight: bold;">Headline</td>
+</tr>
+<tr><td class=""><a href="http://bugs.eclipse.org/300934">ECL300934</a></td><td class="" style="color: black;">ROV holding lock on fil<span class="Apple-style-span" style="border-collapse: separate; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;"><span class="Apple-style-span" style="font-size: small;">e</span></span></td></tr><tr><td class=""><a href="http://bugs.eclipse.org/299076">ECL299076</a><a href="http://bugs.eclipse.org/283056"><br></a></td><td class="" style="color: black;">assigning a Java string to any target field causes makefile generation to fail</td></tr><tr>
+<td class=""><a href="http://bugs.eclipse.org/299971">ECL299971</a><a href="http://bugs.eclipse.org/297632"><br></a></td>
+<td class="">Problem with extended printf support
+</td>
+</tr><tr><td class=""><a href="http://bugs.eclipse.org/302885">ECL302885</a></td><td class="">Add catalogs/platforms for c5514/c5515 devices</td></tr>
+
+
+
+
+
+
+</tbody>
+</table>
+<br>
+<p><a href="#XDC_TOP">back to top</a>
+</p>
+<hr>
+<h2><a name="Compatibility">Upgrade and
+Compatibility Information</a></h2>
+<p><b>Warning:</b>Starting with XDCtool 2.95, RTSC
+packages with target
+content are incompatible with target content from previous releases.
+Compatibility of meta only content is not affected. Packages with
+target content would require a recompile. Starting with XDCtool 3.00
+release both backward and forward compatibility is maintained for all
+content.
+</p>
+<h3>Package Compatibility Keys</h3>
+<p>The packages comprising the XDCtools release are uniquely
+identified by a
+compatibility key defined in the
+<span class="SpellE"><span style="font-family: &quot;Courier New&quot;;">package.xdc</span></span>
+file of a package. Please note that the package compatibility keys are
+independent of XDC <a href="#Version">product release
+numbers</a>. </p>
+<p>Package compatibility keys are intended to: </p>
+<ol>
+<li>Enable tooling to identify incompatibilities between
+components, and</li>
+<li>Convey a level of compatibility between different releases
+to set end user expectations. </li>
+</ol>
+<p>Package compatibility keys are composed of 4 comma-delimited
+numbers -
+M, S, R, <span class="GramE">P</span> - where: </p>
+<ul>
+<li class="MsoNormal" style=""><b>M = Major
+-</b> A difference in M indicates a break in compatibility. The
+package consumer is required to re-write its source code in order to
+use the package.<o:p></o:p></li>
+<li class="MsoNormal" style=""><b>S =
+Source </b>- A difference in S indicates source compatibility.
+The package consumer’s source code doesn't require change, but <i>does</i>
+require a recompile. <o:p></o:p></li>
+<li class="MsoNormal" style=""><b>R = Radix
+-</b> A difference in R indicates an introduction of new
+features, but compatibility with previous interfaces is not broken. If
+libraries are provided by the package, an application must re-link with
+the new libraries, but is not required to recompile its source.</li>
+<li class="MsoNormal" style=""><b>P = Patch
+- </b><span style="">A difference in P indicates
+that only bugs have been fixed in the latest package and no new
+features have been introduced. </span>If libraries are provided
+by the package, an application must re-link with the new libraries, but
+is not required to recompile its source.</li>
+</ul>
+<br>
+<br>
+<a href="#XDC_TOP">back to top</a>
+<hr>
+<h2><a name="Host_Support">Host Support</a></h2>
+<p>This release supports the following hosts:</p>
+<ul>
+<li>Windows XP</li>
+<li>RedHat Enterprise Linux 3</li>
+</ul>
+<a href="#XDC_TOP">back to top</a>
+<hr>
+<br><h2><a name="Dependencies">Dependencies</a></h2>
+<p>This release requires the following other software components
+and tools versions to successfully function: </p>
+<ul>
+<li>C6x Code Generation Tools version 5.3.0 or later. Version
+6.0.13 or later is required in order to use whole_program build profile.</li>
+<li>C55 Code Generation Tools version 3.2.0. or later</li>
+<li>TMS470 (Arm) Code Generation Tools version 4.5</li>
+<li>GCC for x86 version 3.2.3 or later</li>
+<li>GCC for ARM version 3.2.3 or later</li><li>Mozilla Firefox browser
+&nbsp;is required when using product on Linux. The browser is required in order to use
+graphical utilities shipped with product.</li>
+</ul>
+<a href="#XDC_TOP">back to top</a>
+<hr>
+<h2><a name="Device_Support">Device Support</a></h2>
+<p>This release supports the following device families: </p>
+<ul>
+<li>C6000 family - C674, C67P, C67, C64P, C64, C62 </li>
+<li>C5000 family - C55P, C55, C54</li>
+<li>C2000 family - C28</li>
+<li>ARM processors - TMS470, ARM9, ARM Cortex M3/R4</li>
+<li>MSP430</li>
+<li>Native development host (Windows, Linux)</li>
+</ul>
+<a href="#XDC_TOP">back to top</a>
+<hr>
+<h2><a name="Validation">Validation Information</a></h2>
+<p>This release was built and validated against using the
+following components: </p>
+<ul>
+<li>Code Composer Studio version 4.0.1.01000</li>
+<li>TI ARM Code Generation Tools version 4.5.0 and 4.6.0</li>
+<li>TI C6x Code Generation Tools version 6.0.16,6.1.9 and
+7.0.0</li>
+<li>TI MSP430 Code Generation Tools version 3.2.1</li>
+<li>TI C55 Code Generation Tools version 3.3.2</li>
+<li>TI C54 Code Generation Tools version 4.2.0</li>
+<li>TI C28 Code Generation Tools version 5.2.1</li>
+<li>GCC for x86 version 3.2.3</li>
+<li>GCC for ARM version 3.2.3</li>
+</ul>
+<a href="#XDC_TOP">back to top</a>
+<br>
+<br>
+<hr style="width: 100%; height: 2px;">
+<h2><a name="Known_Issues">Known Issues</a></h2>
+<p>The following major issue is known to exist in this release.</p>
+<big><span style="font-weight: bold;">CCSv4 IDE
+integration not supported on Linux</span></big>
+<p>Command-line operation on Linux is fully supported.</p><p>Outstanding defects in this release are shown below:</p><table class="" x:str="" style="border-collapse: collapse; width: 572px;" border="2" cellpadding="0" cellspacing="0"><tbody><tr><td style="text-align: center; font-weight: bold; width: 153px;">ID</td><td style="text-align: center; font-weight: bold; width: 417px;">Headline</td></tr><tr><td style="width: 153px; text-align: center;"><a href="http://bugs.eclipse.org/303793">ECL303793</a></td><td style="width: 417px; text-align: center;"><span id="summary_alias_container"><span id="short_desc_nonedit_display">Platform wizard does not support c28xx devices</span></span></td></tr></tbody></table><p></p>
+<p><a href="#XDC_TOP">back to top</a></p>
+<hr>
+<h2><a name="Version">Version Information</a></h2>
+<p>All releases have 4 digits (<b>M.mm.pp.bb</b>).
+This includes GA and
+pre-releases (engineering, EA, beta, etc.). Pre-releases are denoted
+with a
+suffix (e.g. 3.15.01.51<b>-eng</b> or 3.15.01.58<b>-beta</b>).</p>
+<p>This product's version follows a version format, <b>M.mm.pp.bb</b>,
+where
+<b>M</b> is a single digit Major number, <b>mm</b>
+is 2 digit minor number,
+<b>pp</b> is a 2 digit patch number, and <b>b</b>
+is an unrestricted set of
+digits used as an incrementing build counter.</p>
+<p>To support multiple side-by-side installations of the product,
+the product
+version is encoded in the top level directory, ex. xdctools_3_15_00_50.</p>
+<p>Subsequent releases of patch upgrades will be identified by
+the patch
+number, ex. XDCtools 3.15.01.67 with directory xdctools_3_15_01_67.
+Typically, these patches only include critical bug fixes.</p>
+<p>Please note that version numbers and compatibility keys are
+NOT the same. For an explanation of compatibility keys, please refer to
+the '<a href="#Compatibility">Upgrade and Compatibility
+Information</a>'
+section.</p>
+<p><a href="#XDC_TOP">back to top</a> </p>
+<hr>
+<h2><a name="Support">Technical Support</a></h2>
+<p>Please view and file bugs against this product at
+<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=DSDP&amp;product=RTSC&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;cmdtype=doit">rtsc.eclipse.org</a>.</p>
+<p><a href="#XDC_TOP">back to top</a></p>
+<hr>
+<p>Last updated: February 25, 2010 Build Ver: 3.16.03.36 Rev: l36</p>
+</div>
+</body></html></body>
+</html>

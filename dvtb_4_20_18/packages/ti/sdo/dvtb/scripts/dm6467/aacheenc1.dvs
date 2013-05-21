@@ -1,0 +1,56 @@
+############################################################
+# Encode Audio: Read from file, encode and dump
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp aacheenc1 codec aacheenc
+
+# Specify the codec parameters
+setp aacheenc1 seconds 10
+setp aacheenc1 sampleRate 44100 
+setp aacheenc1 bitRate 64000
+setp aacheenc1 channelMode 1
+setp aacheenc1 dataEndianness 2
+setp aacheenc1 encMode 0
+setp aacheenc1 inputFormat 1
+setp aacheenc1 inputBitsPerSample 16
+setp aacheenc1 maxBitRate 192000
+setp aacheenc1 dualMonoMode 0
+setp aacheenc1 crcFlag 0
+setp aacheenc1 ancFlag 1
+setp aacheenc1 lfeFlag 0 
+setp aacheenc1 outObjectType 5 
+setp aacheenc1 outFileFormat 2
+setp aacheenc1 useTns 1
+setp aacheenc1 usePns 1 
+setp aacheenc1 downMixFlag 0 
+setp aacheenc1 bitRateMode 1 
+setp aacheenc1 ancRate -1 
+setp aacheenc1 dynamicparams.sampleRate 44100
+setp aacheenc1 dynamicparams.bitRate 64000
+setp aacheenc1 dynamicparams.channelMode 1
+setp aacheenc1 dynamicparams.lfeFlag 0
+setp aacheenc1 dynamicparams.dualMonoMode 0
+setp aacheenc1 dynamicparams.inputBitsPerSample 16
+setp aacheenc1 dynamicparams.useTns 1
+setp aacheenc1 dynamicparams.usePns 1
+setp aacheenc1 dynamicparams.downMixFlag 0 
+setp aacheenc1 dynamicparams.ancFlag 1
+setp aacheenc1 dynamicparams.ancRate -1 
+
+# Specify the driver parameters
+#setp audio device plughw:0,0
+#setp audio format 2
+#setp audio samplerate 44100
+#setp audio channels 2
+#setp audio type 0
+
+# Trigger the decode+playback scenario
+func aacheenc1 -s input_44k.pcm -t test.aac

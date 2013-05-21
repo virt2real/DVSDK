@@ -1,0 +1,43 @@
+############################################################
+# MPEG2 Decode: Read encoded file, decode and dump 
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp mpeg2dec2 codec mpeg2dec2
+
+# Specify the parameters
+setp mpeg2dec2 maxWidth 1920
+setp mpeg2dec2 maxHeight 1088
+setp mpeg2dec2 maxFrameRate 30000
+setp mpeg2dec2 maxBitRate 10000000
+setp mpeg2dec2 dataEndianness 1
+setp mpeg2dec2 forceChromaFormat 9
+setp mpeg2dec2 display_delay 1
+setp mpeg2dec2 decodeHeader 0
+setp mpeg2dec2 displayWidth 0
+setp mpeg2dec2 frameSkipMode 0
+setp mpeg2dec2 frameOrder 0
+setp mpeg2dec2 newFrameFlag 0
+setp mpeg2dec2 mbDataFlag 0
+setp mpeg2dec2 bottom_fld_DDR_Opt 0
+setp mpeg2dec2 mb_error_reporting 0
+setp mpeg2dec2 errorConceal 1
+setp mpeg2dec2 reset_HDVICP_every_frame 1
+setp mpeg2dec2 numFrames 30
+
+#specify vpbe parameters
+#setp vpbe width 1920
+#setp vpbe height 1080
+#setp vpbe std 2
+#setp vpbe output 3
+
+# Trigger the decode+display scenario
+func mpeg2dec2 -s davincieffect_1080i_30fps.m2v -t test.yuv
+

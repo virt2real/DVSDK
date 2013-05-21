@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.targets.rts470" version="1, 0, 0, 0" producerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="xdc/runtime/SysMin.c"/>
+        <srcFile name="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="xdc/runtime/Assert.c"/>
+        <srcFile name="xdc/runtime/HeapStd.c"/>
+        <srcFile name="xdc/runtime/HeapMin.c"/>
+        <srcFile name="xdc/runtime/Timestamp.c"/>
+        <srcFile name="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="xdc/runtime/Diags.c"/>
+        <srcFile name="xdc/runtime/Startup.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="xdc/runtime/System.c"/>
+        <srcFile name="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="xdc/runtime/Core_label.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="xdc/runtime/Gate.c"/>
+        <srcFile name="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="xdc/runtime/Memory.c"/>
+        <srcFile name="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="boot.asm"/>
+        <srcFile name="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/package_ti.targets.rts470.c"/>
+        <srcFile name="xdc/runtime/Rta.c"/>
+        <srcFile name="xdc/runtime/Error.c"/>
+        <srcFile name="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="xdc/runtime/Log.c"/>
+        <srcFile name="xdc/runtime/Core_params.c"/>
+        <srcFile name="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="xdc/runtime/Text.c"/>
+        <srcFile name="xdc/runtime/GateNull.c"/>
+        <srcFile name="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="xdc/runtime/SysStd.c"/>
+        <srcFile name="xdc/runtime/Core_mem.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/ti.targets.rts470.a470.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/SysMin.o470.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Thread.o470.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateThreadSupportNull.o470.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Assert.o470.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/boot.o470.dep" src="boot.asm"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/HeapStd.o470.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/HeapMin.o470.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Timestamp.o470.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/TimestampNull.o470.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/CacheSupportNull.o470.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Diags.o470.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Startup.o470.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateProcessSupportNull.o470.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/TimestampStd.o470.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/System.o470.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SemProcess.o470.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Core_label.o470.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateProcess.o470.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Sync.o470.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateThread.o470.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/package/package_ti.targets.rts470.o470.dep" src="package/package_ti.targets.rts470.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/LoggerSys.o470.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Gate.o470.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/xdc_noinit.o470.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateH.o470.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Memory.o470.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SyncSemThread.o470.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SyncNull.o470.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SyncGeneric.o470.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Rta.o470.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Error.o470.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Semaphore.o470.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SemThread.o470.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Log.o470.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Core_params.o470.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/LoggerBuf.o470.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Text.o470.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/GateNull.o470.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Cache.o470.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/SysStd.o470.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Core_mem.o470.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts470.a470e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/SysMin.o470e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Thread.o470e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateThreadSupportNull.o470e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Assert.o470e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/boot.o470e.dep" src="boot.asm"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/HeapStd.o470e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/HeapMin.o470e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Timestamp.o470e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/TimestampNull.o470e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/CacheSupportNull.o470e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Diags.o470e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Startup.o470e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateProcessSupportNull.o470e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/TimestampStd.o470e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/System.o470e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SemProcess.o470e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Core_label.o470e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateProcess.o470e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Sync.o470e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateThread.o470e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/package/package_ti.targets.rts470.o470e.dep" src="package/package_ti.targets.rts470.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/LoggerSys.o470e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Gate.o470e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/xdc_noinit.o470e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateH.o470e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Memory.o470e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SyncSemThread.o470e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SyncNull.o470e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SyncGeneric.o470e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Rta.o470e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Error.o470e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Semaphore.o470e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SemThread.o470e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Log.o470e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Core_params.o470e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/LoggerBuf.o470e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Text.o470e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/GateNull.o470e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Cache.o470e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/SysStd.o470e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Core_mem.o470e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts470.ae470.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/SysMin.oe470.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Thread.oe470.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateThreadSupportNull.oe470.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Assert.oe470.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/boot.oe470.dep" src="boot.asm"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/HeapStd.oe470.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/HeapMin.oe470.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Timestamp.oe470.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/TimestampNull.oe470.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/CacheSupportNull.oe470.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Diags.oe470.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Startup.oe470.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateProcessSupportNull.oe470.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/TimestampStd.oe470.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/System.oe470.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SemProcess.oe470.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Core_label.oe470.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateProcess.oe470.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Sync.oe470.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateThread.oe470.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/package/package_ti.targets.rts470.oe470.dep" src="package/package_ti.targets.rts470.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/LoggerSys.oe470.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Gate.oe470.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/xdc_noinit.oe470.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/GateH.oe470.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Memory.oe470.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SyncSemThread.oe470.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SyncNull.oe470.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SyncGeneric.oe470.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Rta.oe470.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Error.oe470.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Semaphore.oe470.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/SemThread.oe470.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Log.oe470.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Core_params.oe470.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/LoggerBuf.oe470.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Text.oe470.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/GateNull.oe470.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/knl/Cache.oe470.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/SysStd.oe470.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts470/xdc/runtime/Core_mem.oe470.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="package/rel/ti_targets_rts470.tar.gz.dep" src="package/rel/ti_targets_rts470.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.TMS470"
+            version="ti.targets.TMS470{1,0,4.5,0"
+            platform="ti.platforms.sim470xx"
+            isa="470"
+            suffix="470"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts470">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.TMS470_big_endian"
+            version="ti.targets.TMS470_big_endian{1,0,4.5,0"
+            platform="ti.platforms.sim470xx"
+            isa="470"
+            suffix="470e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts470">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.TMS470"
+            version="ti.targets.elf.TMS470{1,0,4.6,0"
+            platform="ti.platforms.sim470xx"
+            isa="470"
+            suffix="e470"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/ti.targets.rts470"
+        pname="lib/ti.targets.rts470.a470"
+        profile="whole_program"
+        target="ti.targets.TMS470"/>
+    <library name="lib/ti.targets.rts470"
+        pname="lib/ti.targets.rts470.a470e"
+        profile="whole_program"
+        target="ti.targets.TMS470_big_endian"/>
+    <library name="lib/ti.targets.rts470"
+        pname="lib/ti.targets.rts470.ae470"
+        profile="whole_program"
+        target="ti.targets.elf.TMS470"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_targets_rts470"
+        pname="../../../../exports/ti_targets_rts470.tar.gz"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="boot.asm"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/ti.targets.rts470.ae470"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/ti.targets.rts470.a470"/>
+        <file name="lib/ti.targets.rts470.a470e"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

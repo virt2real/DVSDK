@@ -1,0 +1,823 @@
+<html>
+<head>
+<title>module ti.sdo.ce.osal.Global</title>
+<meta name="description" content="Global OS Abstract Layer Configuration">
+<link rel="stylesheet" type="text/css" href="../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.sdo.ce.osal.</span><span class="xdoc-id">Global</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/IOsal.html" title="interface IOsal"><img class="xdocHdrArrow" src="../../../../Arrow_left.png"/></a></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/package.html" title="package ti.sdo.ce.osal"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html">index URL</a></div>
+<p class="xdocHdrSummary">Global OS Abstract Layer Configuration</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/osal/Global-src.html"><span class="xdocLabelFile">ti/sdo/ce/osal/Global.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Global</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> Global = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.sdo.ce.osal.Global'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><i>values of type <a class="xdocSynGo" href="#.Runtime.Env">Global.<span class="xdoc-id">RuntimeEnv</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;All runtime OSs that are abstracted by this package</span></span></a></i>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Runtime.Env">Global.<span class="xdoc-id">NONE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;no OS; threads are not truly supported</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Runtime.Env">Global.<span class="xdoc-id">DSPBIOS</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Runtime.Env">Global.<span class="xdoc-id">LINUX</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Linux</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Runtime.Env">Global.<span class="xdoc-id">DSPLINK_BIOS</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSPLINK + BIOS (DSP)</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Runtime.Env">Global.<span class="xdoc-id">DSPLINK_LINUX</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSPLINK + Linux (Arm)</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Runtime.Env">Global.<span class="xdoc-id">WINCE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Windows CE</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Runtime.Env">Global.<span class="xdoc-id">DSPLINK_WINCE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSPLINK + Windows CE (Arm)</span></span></a>;
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#arm.Comm.Msg.Size">Global.<span class="xdoc-id">armCommMsgSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Default size for the Arm-DSP communication messages (MSGQ messages)</span></span></a> = <i><span class="xdoc-kw2">UInt32</span></i> 4 * 1024;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#arm.Comm.Num.Msgs">Global.<span class="xdoc-id">armCommNumMsgs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Number of &lt;commMsgSize&gt;-sized messages used for Arm-DSP communication</span></span></a> = <i><span class="xdoc-kw2">UInt32</span></i> 64;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#comm.Locate.Retries">Global.<span class="xdoc-id">commLocateRetries</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Number of times to retry Comm_locate() -- to find DSP server's MSGQ --
+  before giving up</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 20;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#default.Mem.Seg.Id">Global.<span class="xdoc-id">defaultMemSegId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Default ID of the memory segment from which to allocate space
+  (for Memory_alloc/free() calls, as opposed to Memory_segAlloc/Free()).
+  Typically it's the segment where all other code and data go</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#dsp.Comm.Num.Msg.Queues">Global.<span class="xdoc-id">dspCommNumMsgQueues</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Number of message queues (that can receive and store messages) on the
+  DSP side. Each DSP node (task) needs one message queue</span></span></a> = <i><span class="xdoc-kw2">UInt32</span></i> 64;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#dsp.Comm.Use.Exact.Match">Global.<span class="xdoc-id">dspCommUseExactMatch</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Indicates that "exact match" must be used for comm messages allocated
+  on the DSP side</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#dsp.Configure.Msgq.And.Pool">Global.<span class="xdoc-id">dspConfigureMsgqAndPool</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Set to true by default, instructs this module to generate code that
+  configures BIOS MSGQ and POOL modules: symbols MSGQ_config and
+  POOL_config. If set to false, and if BIOS is configured to use MSGQ,
+  user application must define these symbols</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#dsp.Use.Msgq.And.Pool">Global.<span class="xdoc-id">dspUseMsgqAndPool</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;If set to false, instructs Codecs Engine to cut out MSGQ and POOL
+  references completely from the final image</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#embed.Build.Info">Global.<span class="xdoc-id">embedBuildInfo</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Indication whether to embed build info (packages and their directories)
+  into the generated executable for debugging/diagnostic purposes.
+  Setting this to 'false' may reduce the static data size by around 1K.
+  Applies to all configurations</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#enable.Logging">Global.<span class="xdoc-id">enableLogging</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;If set to true, enable data generation necessary for CE benchmarking
+  analysis</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#log.Name">Global.<span class="xdoc-id">logName</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name of buffer used for capturing benchmarking data</span></span></a> = <i><span class="xdoc-kw2">String</span></i> "ti_sdo_ce_osal_LOG_Buffer";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#log.Seg">Global.<span class="xdoc-id">logSeg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Memory segment for the buffer used for capturing benchmarking data</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#log.Size">Global.<span class="xdoc-id">logSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of buffer used for capturing benchmarking data</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 256;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#log.Type">Global.<span class="xdoc-id">logType</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Type of buffer used for capturing benchmarking data</span></span></a> = <i><span class="xdoc-kw2">String</span></i> "circular";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#os">Global.<span class="xdoc-id">os</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;A specific OSAL implementations "Settings" module, for example,
+  ti.sdo.ce.osal.bios.Settings or ti.sdo.ce.osal.linux.Settings.
+  To set the OS of the executable to BIOS, set Global.os to:
+  xdc.useModule('ti.sdo.ce.osal.bios.Settings')</span></span></a> = <i><a class="xdoc-link" href="../../../../ti/sdo/ce/osal/IOsal.html#.Module" title="ti.sdo.ce.osal.IOsal.Module">IOsal.Module</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#power.Save.Memory.Block.Name">Global.<span class="xdoc-id">powerSaveMemoryBlockName</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;The name of the segment to which power should be saved; if left null,
+  will default to defaultMemSegId</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#runtime.Env">Global.<span class="xdoc-id">runtimeEnv</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;The runtime OS used to implement the abstractions provided by
+  this package</span></span></a> = <i><a class="xdoc-link" href="../../../../ti/sdo/ce/osal/Global.html#.Runtime.Env" title="ti.sdo.ce.osal.Global.RuntimeEnv">Global.RuntimeEnv</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#trace.Buffer.Size">Global.<span class="xdoc-id">traceBufferSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of the server trace buffer, in MAUs</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 32768;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#use.Link.Arbiter">Global.<span class="xdoc-id">useLinkArbiter</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Control flag to indicate if Codec Engine should use the Link Arbiter
+  Daemon (LAD) to arbitrate DSPLINK APIs that need arbitration.  Set to
+  false means LAD should not be used; set to true means LAD should be
+  used</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../ti/sdo/ce/osal/Global-src.html"><span class="xdocLabelFile">ti/sdo/ce/osal/Global.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../../ti/sdo/ce/osal/package.html" title="ti.sdo.ce.osal">ti.sdo.ce.osal</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Global</span></go> {
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">enum</span> <a class="xdocSynGo" href="#.Runtime.Env"><span class="xdoc-id">RuntimeEnv</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;All runtime OSs that are abstracted by this package</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Runtime.Env"><span class="xdoc-id">NONE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;no OS; threads are not truly supported</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Runtime.Env"><span class="xdoc-id">DSPBIOS</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Runtime.Env"><span class="xdoc-id">LINUX</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Linux</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Runtime.Env"><span class="xdoc-id">DSPLINK_BIOS</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSPLINK + BIOS (DSP)</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Runtime.Env"><span class="xdoc-id">DSPLINK_LINUX</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSPLINK + Linux (Arm)</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Runtime.Env"><span class="xdoc-id">WINCE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Windows CE</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Runtime.Env"><span class="xdoc-id">DSPLINK_WINCE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSPLINK + Windows CE (Arm)</span></span></a>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">UInt32</span>&nbsp;<a class="xdocSynGo" href="#arm.Comm.Msg.Size"><span class="xdoc-id">armCommMsgSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Default size for the Arm-DSP communication messages (MSGQ messages)</span></span></a> = 4 * 1024;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">UInt32</span>&nbsp;<a class="xdocSynGo" href="#arm.Comm.Num.Msgs"><span class="xdoc-id">armCommNumMsgs</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Number of &lt;commMsgSize&gt;-sized messages used for Arm-DSP communication</span></span></a> = 64;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#comm.Locate.Retries"><span class="xdoc-id">commLocateRetries</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Number of times to retry Comm_locate() -- to find DSP server's MSGQ --
+  before giving up</span></span></a> = 20;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#default.Mem.Seg.Id"><span class="xdoc-id">defaultMemSegId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Default ID of the memory segment from which to allocate space
+  (for Memory_alloc/free() calls, as opposed to Memory_segAlloc/Free()).
+  Typically it's the segment where all other code and data go</span></span></a> = <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">UInt32</span>&nbsp;<a class="xdocSynGo" href="#dsp.Comm.Num.Msg.Queues"><span class="xdoc-id">dspCommNumMsgQueues</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Number of message queues (that can receive and store messages) on the
+  DSP side. Each DSP node (task) needs one message queue</span></span></a> = 64;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#dsp.Comm.Use.Exact.Match"><span class="xdoc-id">dspCommUseExactMatch</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Indicates that "exact match" must be used for comm messages allocated
+  on the DSP side</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#dsp.Configure.Msgq.And.Pool"><span class="xdoc-id">dspConfigureMsgqAndPool</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Set to true by default, instructs this module to generate code that
+  configures BIOS MSGQ and POOL modules: symbols MSGQ_config and
+  POOL_config. If set to false, and if BIOS is configured to use MSGQ,
+  user application must define these symbols</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#dsp.Use.Msgq.And.Pool"><span class="xdoc-id">dspUseMsgqAndPool</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;If set to false, instructs Codecs Engine to cut out MSGQ and POOL
+  references completely from the final image</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#embed.Build.Info"><span class="xdoc-id">embedBuildInfo</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Indication whether to embed build info (packages and their directories)
+  into the generated executable for debugging/diagnostic purposes.
+  Setting this to 'false' may reduce the static data size by around 1K.
+  Applies to all configurations</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#enable.Logging"><span class="xdoc-id">enableLogging</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;If set to true, enable data generation necessary for CE benchmarking
+  analysis</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#log.Name"><span class="xdoc-id">logName</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Name of buffer used for capturing benchmarking data</span></span></a> = "ti_sdo_ce_osal_LOG_Buffer";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#log.Seg"><span class="xdoc-id">logSeg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Memory segment for the buffer used for capturing benchmarking data</span></span></a> = <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#log.Size"><span class="xdoc-id">logSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of buffer used for capturing benchmarking data</span></span></a> = 256;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#log.Type"><span class="xdoc-id">logType</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Type of buffer used for capturing benchmarking data</span></span></a> = "circular";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../../ti/sdo/ce/osal/IOsal.html#.Module" title="ti.sdo.ce.osal.IOsal.Module">IOsal.Module</a>&nbsp;<a class="xdocSynGo" href="#os"><span class="xdoc-id">os</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;A specific OSAL implementations "Settings" module, for example,
+  ti.sdo.ce.osal.bios.Settings or ti.sdo.ce.osal.linux.Settings.
+  To set the OS of the executable to BIOS, set Global.os to:
+  xdc.useModule('ti.sdo.ce.osal.bios.Settings')</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#power.Save.Memory.Block.Name"><span class="xdoc-id">powerSaveMemoryBlockName</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;The name of the segment to which power should be saved; if left null,
+  will default to defaultMemSegId</span></span></a> = <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../../ti/sdo/ce/osal/Global.html#.Runtime.Env" title="ti.sdo.ce.osal.Global.RuntimeEnv">Global.RuntimeEnv</a>&nbsp;<a class="xdocSynGo" href="#runtime.Env"><span class="xdoc-id">runtimeEnv</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;The runtime OS used to implement the abstractions provided by
+  this package</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#trace.Buffer.Size"><span class="xdoc-id">traceBufferSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of the server trace buffer, in MAUs</span></span></a> = 32768;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#use.Link.Arbiter"><span class="xdoc-id">useLinkArbiter</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Control flag to indicate if Codec Engine should use the Link Arbiter
+  Daemon (LAD) to arbitrate DSPLINK APIs that need arbitration.  Set to
+  false means LAD should not be used; set to true means LAD should be
+  used</span></span></a> = <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Runtime.Env"></a>
+<a class="xdocAnchor" id=".N.O.N.E"></a>
+<a class="xdocAnchor" id=".D.S.P.B.I.O.S"></a>
+<a class="xdocAnchor" id=".L.I.N.U.X"></a>
+<a class="xdocAnchor" id=".D.S.P.L.I.N.K_.B.I.O.S"></a>
+<a class="xdocAnchor" id=".D.S.P.L.I.N.K_.L.I.N.U.X"></a>
+<a class="xdocAnchor" id=".W.I.N.C.E"></a>
+<a class="xdocAnchor" id=".D.S.P.L.I.N.K_.W.I.N.C.E"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">enum</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">RuntimeEnv</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#.Runtime.Env">index URL</a></div>
+<p class="xdocHdrSummary">All runtime OSs that are abstracted by this package</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><i>values of type Global.<span class="xdoc-id">RuntimeEnv</span></i>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Global.<span class="xdoc-id">NONE</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;no OS; threads are not truly supported</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Global.<span class="xdoc-id">DSPBIOS</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;DSP/BIOS</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Global.<span class="xdoc-id">LINUX</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Linux</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Global.<span class="xdoc-id">DSPLINK_BIOS</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;DSPLINK + BIOS (DSP)</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Global.<span class="xdoc-id">DSPLINK_LINUX</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;DSPLINK + Linux (Arm)</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Global.<span class="xdoc-id">WINCE</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Windows CE</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> Global.<span class="xdoc-id">DSPLINK_WINCE</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;DSPLINK + Windows CE (Arm)</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">SEE</div>
+<div class="xdocText"><a class="xdoc-link" href="../../../../runtimeEnv/package.html" title="runtimeEnv">runtimeEnv</a></div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="arm.Comm.Msg.Size"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">armCommMsgSize</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#arm.Comm.Msg.Size">index URL</a></div>
+<p class="xdocHdrSummary">Default size for the Arm-DSP communication messages (MSGQ messages)</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">armCommMsgSize</span> = <i><span class="xdoc-kw2">UInt32</span></i> 4 * 1024;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPLINK_LINUX</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="arm.Comm.Num.Msgs"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">armCommNumMsgs</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#arm.Comm.Num.Msgs">index URL</a></div>
+<p class="xdocHdrSummary">Number of &lt;commMsgSize&gt;-sized messages used for Arm-DSP communication</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">armCommNumMsgs</span> = <i><span class="xdoc-kw2">UInt32</span></i> 64;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPLINK_LINUX</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="comm.Locate.Retries"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">commLocateRetries</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#comm.Locate.Retries">index URL</a></div>
+<p class="xdocHdrSummary">Number of times to retry Comm_locate() -- to find DSP server's MSGQ --
+  before giving up</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">commLocateRetries</span> = <i><span class="xdoc-kw2">Int</span></i> 20;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPLINK_LINUX</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="default.Mem.Seg.Id"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">defaultMemSegId</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#default.Mem.Seg.Id">index URL</a></div>
+<p class="xdocHdrSummary">Default ID of the memory segment from which to allocate space
+  (for Memory_alloc/free() calls, as opposed to Memory_segAlloc/Free()).
+  Typically it's the segment where all other code and data go</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">defaultMemSegId</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">If left as "null", the system will try to find a BIOS segment named
+  "DDR" or "DDR2" and assign its name to this field. In the future
+  this auto-find feature may be removed, so it's best that user .cfg
+  script set this value directly to what they know is appropriate segment.</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS or
+  runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="dsp.Comm.Num.Msg.Queues"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">dspCommNumMsgQueues</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#dsp.Comm.Num.Msg.Queues">index URL</a></div>
+<p class="xdocHdrSummary">Number of message queues (that can receive and store messages) on the
+  DSP side. Each DSP node (task) needs one message queue</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">dspCommNumMsgQueues</span> = <i><span class="xdoc-kw2">UInt32</span></i> 64;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS or
+  runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="dsp.Comm.Use.Exact.Match"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">dspCommUseExactMatch</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#dsp.Comm.Use.Exact.Match">index URL</a></div>
+<p class="xdocHdrSummary">Indicates that "exact match" must be used for comm messages allocated
+  on the DSP side</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">dspCommUseExactMatch</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="dsp.Configure.Msgq.And.Pool"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">dspConfigureMsgqAndPool</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#dsp.Configure.Msgq.And.Pool">index URL</a></div>
+<p class="xdocHdrSummary">Set to true by default, instructs this module to generate code that
+  configures BIOS MSGQ and POOL modules: symbols MSGQ_config and
+  POOL_config. If set to false, and if BIOS is configured to use MSGQ,
+  user application must define these symbols</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">dspConfigureMsgqAndPool</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS or
+  runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="dsp.Use.Msgq.And.Pool"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">dspUseMsgqAndPool</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#dsp.Use.Msgq.And.Pool">index URL</a></div>
+<p class="xdocHdrSummary">If set to false, instructs Codecs Engine to cut out MSGQ and POOL
+  references completely from the final image</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">dspUseMsgqAndPool</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="embed.Build.Info"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">embedBuildInfo</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#embed.Build.Info">index URL</a></div>
+<p class="xdocHdrSummary">Indication whether to embed build info (packages and their directories)
+  into the generated executable for debugging/diagnostic purposes.
+  Setting this to 'false' may reduce the static data size by around 1K.
+  Applies to all configurations</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">embedBuildInfo</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="enable.Logging"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">enableLogging</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#enable.Logging">index URL</a></div>
+<p class="xdocHdrSummary">If set to true, enable data generation necessary for CE benchmarking
+  analysis</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">enableLogging</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS or
+  runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="log.Name"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">logName</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#log.Name">index URL</a></div>
+<p class="xdocHdrSummary">Name of buffer used for capturing benchmarking data</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">logName</span> = <i><span class="xdoc-kw2">String</span></i> "ti_sdo_ce_osal_LOG_Buffer";
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">In BIOS environments, this is the name of the BIOS LOG.</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS or
+  runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="log.Seg"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">logSeg</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#log.Seg">index URL</a></div>
+<p class="xdocHdrSummary">Memory segment for the buffer used for capturing benchmarking data</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">logSeg</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS or
+  runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="log.Size"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">logSize</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#log.Size">index URL</a></div>
+<p class="xdocHdrSummary">Size of buffer used for capturing benchmarking data</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">logSize</span> = <i><span class="xdoc-kw2">Int</span></i> 256;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS or
+  runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="log.Type"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">logType</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#log.Type">index URL</a></div>
+<p class="xdocHdrSummary">Type of buffer used for capturing benchmarking data</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">logType</span> = <i><span class="xdoc-kw2">String</span></i> "circular";
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This can be either "fixed" or "circular".</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS or
+  runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="os"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">os</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#os">index URL</a></div>
+<p class="xdocHdrSummary">A specific OSAL implementations "Settings" module, for example,
+  ti.sdo.ce.osal.bios.Settings or ti.sdo.ce.osal.linux.Settings.
+  To set the OS of the executable to BIOS, set Global.os to:
+  xdc.useModule('ti.sdo.ce.osal.bios.Settings')</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">os</span> = <i><a class="xdoc-link" href="../../../../ti/sdo/ce/osal/IOsal.html#.Module" title="ti.sdo.ce.osal.IOsal.Module">IOsal.Module</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">When this config param is used, the {@ link ti.sdo.ce.ipc.Settings#ipc
+  config param must also be set.</div>
+<div class="xdocText">This should only be used to explicitly configure the OSAL to
+  a package not provided with Codec Engine.  To use an OSAL provided
+  by Codec Engine, it's recommended to configure the OSAL using
+  the runtimeEnv config param instead of this one.</div>
+<div class="xdocText">See {@ link http://wiki.davincidsp.com/index.php?title=CE_Config_Updates
+  for more details}</div>
+<span id="xdoc-sect-2"></span>
+<div class="xdocSect">SEE</div>
+<div class="xdocText"><a class="xdoc-link" href="../../../../runtimeEnv/package.html" title="runtimeEnv">runtimeEnv</a></div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="power.Save.Memory.Block.Name"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">powerSaveMemoryBlockName</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#power.Save.Memory.Block.Name">index URL</a></div>
+<p class="xdocHdrSummary">The name of the segment to which power should be saved; if left null,
+  will default to defaultMemSegId</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">powerSaveMemoryBlockName</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This feature may not be available on all devices.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="runtime.Env"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">runtimeEnv</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#runtime.Env">index URL</a></div>
+<p class="xdocHdrSummary">The runtime OS used to implement the abstractions provided by
+  this package</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">runtimeEnv</span> = <i><a class="xdoc-link" href="../../../../ti/sdo/ce/osal/Global.html#.Runtime.Env" title="ti.sdo.ce.osal.Global.RuntimeEnv">Global.RuntimeEnv</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">SEE</div>
+<div class="xdocText"><a class="xdoc-link" href="RuntimeEnv.html" title="RuntimeEnv">RuntimeEnv</a></div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="trace.Buffer.Size"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">traceBufferSize</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#trace.Buffer.Size">index URL</a></div>
+<p class="xdocHdrSummary">Size of the server trace buffer, in MAUs</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">traceBufferSize</span> = <i><span class="xdoc-kw2">Int</span></i> 32768;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">The server trace buffer is a circular buffer of characters written
+  to by clients of ti.sdo.ce.osal.Trace (and ti.sdo.utils.trace.GT) and
+  read by the Engine_*Trace() methods.</div>
+<div class="xdocText">All the trace data in the target memory is stored into a globally
+  visible character buffer
+       Char Global_traceBuffer[ &lt;traceBufferSize&gt; ];</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS or
+  runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="use.Link.Arbiter"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">Global.</span><span class="xdoc-id">useLinkArbiter</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../ti/sdo/ce/osal/Global.html" title="module Global"><img class="xdocHdrArrow" src="../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../index.html#ti/sdo/ce/osal/Global.html#use.Link.Arbiter">index URL</a></div>
+<p class="xdocHdrSummary">Control flag to indicate if Codec Engine should use the Link Arbiter
+  Daemon (LAD) to arbitrate DSPLINK APIs that need arbitration.  Set to
+  false means LAD should not be used; set to true means LAD should be
+  used</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Global.<span class="xdoc-id">useLinkArbiter</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This feature may not be available on all devices.</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPLINK_LINUX</div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:31 GMT</div>
+</div></div></body>
+</html>

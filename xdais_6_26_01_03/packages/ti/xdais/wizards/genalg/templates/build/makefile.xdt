@@ -1,0 +1,119 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+
+# your XDCTOOLS installation directory
+% if (!this.xdcVersOK) {
+    $(error assign XDC_INSTALL_DIR to xdctools_3_16 or higher, then delete this error)
+XDC_INSTALL_DIR=<your_XDCTOOLS_installation_directory>
+% }
+% else {
+XDC_INSTALL_DIR=`this.xdcInstall`
+% }
+
+# your XDAIS installation directory
+XDAIS_INSTALL_DIR=`this.xdaisInstall`
+
+# Uncomment this for verbose builds
+#XDCOPTIONS=v
+
+% // Do we need to test that this.cgTools is set?  And if not, add something
+% // like CODEGEN_INSTALL_DIR=___Add_your_cgtools_here___ ?
+% var xdcArgs = '';
+% var C64P = false;
+% var C674 = false;
+% var v5T = false;
+% for (var i = 0; i < this.targets.length; i++) {
+%     if (!C64P && this.targets[i].cgTools == 'C64P') {
+%         C64P = true;
+%     }
+%     else if (!C674 && this.targets[i].cgTools == 'C674') {
+%         C674 = true;
+%     }
+%     else if (!v5T && this.targets[i].cgTools == 'v5T') {
+%         v5T = true;
+%     }
+% }
+% if (C64P || C674) {
+CODEGEN_INSTALL_DIR=`this.cgTools`
+% }
+% if (v5T) {
+CSTOOL_DIR=`this.v5TcgTools`
+% }
+
+# If we're a subcomponent, allow larger product settings to override our
+# defaults.  The variable $(RULES_MAKE) can be overridden on the 'make'
+# command-line if the location below is not correct (for example, if you
+# want to use a Rules.make from some other location.
+RULES_MAKE := $(CE_INSTALL_DIR)/../Rules.make
+ifneq ($(wildcard $(RULES_MAKE)),)
+include $(RULES_MAKE)
+endif
+
+% if (C64P) {
+CGTOOLS_C64P=$(CODEGEN_INSTALL_DIR)
+%     xdcArgs += 'CGTOOLS_C64P=\\"$(CGTOOLS_C64P)\\"';
+% }
+% if (C674) {
+CGTOOLS_C674=$(CODEGEN_INSTALL_DIR)
+%     if (xdcArgs.length) {
+%        xdcArgs += ' ';
+%     }
+%     xdcArgs += ' CGTOOLS_C674=\\"$(CGTOOLS_C674)\\"';
+% }
+% if (v5T) {
+CGTOOLS_V5T=$(CSTOOL_DIR)
+%     if (xdcArgs.length) {
+%        xdcArgs += ' ';
+%     }
+%     xdcArgs += 'CGTOOLS_V5T=\\"$(CGTOOLS_V5T)\\" CC_V5T="bin/arm-none-linux-gnueabi-gcc"';
+% }
+
+XDCARGS=`xdcArgs`
+
+XDCPATH=$(XDAIS_INSTALL_DIR)/packages
+
+all:
+	"$(XDC_INSTALL_DIR)/xdc" XDCOPTIONS=$(XDCOPTIONS) XDCARGS="$(XDCARGS)" --xdcpath="$(XDCPATH)" release
+
+clean:
+	"$(XDC_INSTALL_DIR)/xdc" XDCOPTIONS=$(XDCOPTIONS) clean
+
+%%{
+/*
+ * @(#) ti.xdais.wizards.genalg; 1, 0, 0, 0,37; 9-18-2010 14:46:44; /db/wtree/library/trees/dais/dais-t03x/src/ xlibrary
+
+ */
+
+%%}

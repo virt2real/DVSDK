@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xdc.runtime" version="2, 0, 0, 0" producerId="undefined">
+    <units>
+        <interface name="IModule"/>
+        <interface name="IInstance"/>
+        <interface name="IHeap"/>
+        <interface name="ILogger"/>
+        <interface name="ISystemSupport"/>
+        <interface name="IGateProvider"/>
+        <interface name="ITimestampClient"/>
+        <interface name="ITimestampProvider"/>
+        <module name="Assert"/>
+        <module name="Core"/>
+        <module name="Defaults"/>
+        <module name="Diags"/>
+        <module name="Error"/>
+        <module name="Gate"/>
+        <module name="GateNull"/>
+        <module name="Log"/>
+        <module name="LoggerBuf"/>
+        <module name="LoggerSys"/>
+        <module name="Main"/>
+        <module name="Memory"/>
+        <module name="HeapMin"/>
+        <module name="HeapStd"/>
+        <module name="Rta"/>
+        <module name="Startup"/>
+        <module name="Reset"/>
+        <module name="System"/>
+        <module name="SysStd"/>
+        <module name="SysMin"/>
+        <module name="Text"/>
+        <module name="Timestamp"/>
+        <module name="TimestampNull"/>
+        <module name="TimestampStd"/>
+        <module name="Types"/>
+    </units>
+    <sources>
+        <srcFile name="xdc_init.cpp"/>
+        <srcFile name="build.xs"/>
+        <srcFile name="TimestampStd.c"/>
+        <srcFile name="xdc_noinit.c"/>
+        <srcFile name="Gate.c"/>
+        <srcFile name="Rta.c"/>
+        <srcFile name="Memory.c"/>
+        <srcFile name="HeapStd.c"/>
+        <srcFile name="LoggerSys.c"/>
+        <srcFile name="HeapMin.c"/>
+        <srcFile name="Log__epilogue.h"/>
+        <srcFile name="Log.c"/>
+        <srcFile name="Startup.c"/>
+        <srcFile name="Diags__epilogue.h"/>
+        <srcFile name="Gate__prologue.h"/>
+        <srcFile name="Startup.xdt"/>
+        <srcFile name="Diags.c"/>
+        <srcFile name="java/package.jar"/>
+        <srcFile name="Error__epilogue.h"/>
+        <srcFile name="Core_params.c"/>
+        <srcFile name="Assert__prologue.h"/>
+        <srcFile name="xdc.h"/>
+        <srcFile name="Reset.xdt"/>
+        <srcFile name="System.xdt"/>
+        <srcFile name="Text.c"/>
+        <srcFile name="Types__epilogue.h"/>
+        <srcFile name="Log__prologue.h"/>
+        <srcFile name="SysStd.c"/>
+        <srcFile name="GateNull.c"/>
+        <srcFile name="Assert.c"/>
+        <srcFile name="LoggerBuf.c"/>
+        <srcFile name="Core_mem.c"/>
+        <srcFile name="SysMin.c"/>
+        <srcFile name="Diags__prologue.h"/>
+        <srcFile name="Error__prologue.h"/>
+        <srcFile name="Diags.xdt"/>
+        <srcFile name="TimestampNull.c"/>
+        <srcFile name="System.c"/>
+        <srcFile name="Timestamp.c"/>
+        <srcFile name="Gate__epilogue.h"/>
+        <srcFile name="Error.c"/>
+        <srcFile name="Core_label.c"/>
+        <srcFile name="Types__prologue.h"/>
+        <srcFile name="Assert__epilogue.h"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/xdc_runtime.tar.gz.dep" src="package/rel/xdc_runtime.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xdc_runtime"
+        pname="xdc_runtime.tar.gz"
+        label="default"
+        relScript="tisb/release/what/what.rel">
+        <file name="package/package.rel.dot"/>
+        <file name="xdc_init.cpp"/>
+        <file name="build.xs"/>
+        <file name="TimestampStd.c"/>
+        <file name="xdc_noinit.c"/>
+        <file name="Gate.c"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="Rta.c"/>
+        <file name="HeapStd.c"/>
+        <file name="Memory.c"/>
+        <file name="LoggerSys.c"/>
+        <file name="HeapMin.c"/>
+        <file name="Log__epilogue.h"/>
+        <file name="Log.c"/>
+        <file name="Startup.c"/>
+        <file name="Diags__epilogue.h"/>
+        <file name="Gate__prologue.h"/>
+        <file name="Startup.xdt"/>
+        <file name="Diags.c"/>
+        <file name="java/package.jar"/>
+        <file name="Error__epilogue.h"/>
+        <file name="Core_params.c"/>
+        <file name="Assert__prologue.h"/>
+        <file name="xdc.h"/>
+        <file name="Reset.xdt"/>
+        <file name="System.xdt"/>
+        <file name="Text.c"/>
+        <file name="Types__epilogue.h"/>
+        <file name="Log__prologue.h"/>
+        <file name="SysStd.c"/>
+        <file name="GateNull.c"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="Assert.c"/>
+        <file name="Core_mem.c"/>
+        <file name="LoggerBuf.c"/>
+        <file name="SysMin.c"/>
+        <file name="Diags__prologue.h"/>
+        <file name="Error__prologue.h"/>
+        <file name="Diags.xdt"/>
+        <file name="TimestampNull.c"/>
+        <file name="package/package.bld.xml"/>
+        <file name="System.c"/>
+        <file name="Timestamp.c"/>
+        <file name="Gate__epilogue.h"/>
+        <file name="Error.c"/>
+        <file name="Core_label.c"/>
+        <file name="Types__prologue.h"/>
+        <file name="Assert__epilogue.h"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

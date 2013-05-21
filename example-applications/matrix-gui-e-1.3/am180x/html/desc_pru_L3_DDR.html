@@ -1,0 +1,89 @@
+<!--                                                                           -->
+<!--                                                                           -->
+<!-- {module name} dhrystone description                                       -->
+<!--                                                                           -->
+<!-- {module description} Template for QT GUI interface                        -->
+<!--                                                                           -->
+<!-- Copyright (C) {YEAR} Texas Instruments Incorporated - http://www.ti.com/  -->
+<!--                                                                           -->
+<!--                                                                           -->
+<!--  Redistribution and use in source and binary forms, with or without       -->
+<!--  modification, are permitted provided that the following conditions       -->
+<!--  are met:                                                                 -->
+<!--                                                                           -->
+<!--    Redistributions of source code must retain the above copyright         -->
+<!--    notice, this list of conditions and the following disclaimer.          -->
+<!--                                                                           -->
+<!--    Redistributions in binary form must reproduce the above copyright      -->
+<!--    notice, this list of conditions and the following disclaimer in the    -->
+<!--    documentation and/or other materials provided with the                 -->
+<!--    distribution.                                                          -->
+<!--                                                                           -->
+<!--    Neither the name of Texas Instruments Incorporated nor the names of    -->
+<!--    its contributors may be used to endorse or promote products derived    -->
+<!--    from this software without specific prior written permission.          -->
+<!--                                                                           -->
+<!--  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS      -->
+<!--  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT        -->
+<!--  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR    -->
+<!--  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT     -->
+<!--  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,    -->
+<!--  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT         -->
+<!--  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,    -->
+<!--  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY    -->
+<!--  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT      -->
+<!--  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE    -->
+<!--  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.     -->
+<!--                                                                           -->
+<!--                                                                           -->
+<head>
+  <title>Test Description</title>
+  <link rel="stylesheet" href="/usr/share/matrix/html/matrix.css" />
+</head>
+
+<body>
+  <div class="topBar">
+    <object>
+    </object>
+  </div>
+  <div class="topBar">
+    <object >
+    </object >
+  </div>
+  <div id="header">PRU</div>
+  <div class="topBar">
+    <object type="application/x-matrix" >
+      <param name="iconName" value="/usr/share/matrix/images/multi-icon.png" />
+      <param name="appName" value="Close" />
+    </object>
+  </div>
+  <div class="topBar">
+    <object>
+    </object>
+  </div>
+
+<h1> PRU - Memory Access using L3 and DDR </h1>
+
+<p>In this example, the PRU reads three values from external DDR memory and stores these values 
+in shared L3 using programmable constant table entries. The example initially 
+loads 3 values into the external DDR RAM. The PRU configures its Constant 
+Table Programmable Pointer Register 1 (CTPPR_1) to point to appropriate 
+locations in the DDR memory and the L3 memory. The values are then read from 
+the DDR memory and stored into the L3 memory using the values in the 30th and 
+31st entries of the constant table.</p>
+
+<p>See the PRU Software examples project in the SDK under example-applications.
+The source code for both the ARM and the PRU can be found there. </p>
+<h2> You can find a more detailed description here: 
+http://processors.wiki.ti.com/index.php/PRU_Linux-based_Example_Code
+</h2>
+
+<div class="run">
+    <object type="application/x-matrix" >
+      <param name="iconName" value="/usr/share/matrix/images/run-icon.png" />
+      <param name="appName" value="Description" />
+    </object>
+</div>
+
+</body>
+</html>

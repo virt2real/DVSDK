@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xdc" version="1, 1, 1" producerId="undefined">
+    <units>
+        <interface name="IPackage"/>
+    </units>
+    <sources>
+        <srcFile name="std.h"/>
+        <srcFile name="om2.xs"/>
+        <srcFile name="program.h"/>
+        <srcFile name="xs.js"/>
+        <srcFile name="IPackage.xs"/>
+        <srcFile name="xmlgen2.xs"/>
+        <srcFile name="xmlgen.xs"/>
+        <srcFile name="template.xs"/>
+        <srcFile name="xdc.tci"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/xdc.tar.gz.dep" src="package/rel/xdc.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xdc"
+        pname="xdc.tar.gz"
+        label="default"
+        relScript="tisb/release/what/what.rel">
+        <file name="std.h"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="om2.xs"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="program.h"/>
+        <file name="package/package.rel.dot"/>
+        <file name="xs.js"/>
+        <file name="IPackage.xs"/>
+        <file name="xmlgen2.xs"/>
+        <file name="package/package.bld.xml"/>
+        <file name="xmlgen.xs"/>
+        <file name="xdc.tci"/>
+        <file name="template.xs"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

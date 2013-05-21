@@ -1,0 +1,414 @@
+<html><head><title>module ti.sdo.fc.dman3.DMAN3</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* 
+</span>     2    <span class="comment"> * Copyright (c) 2010, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> * 
+</span>    32    <span class="comment"> */</span>
+    33    <span class="xdoc">/*!
+</span>    34    <span class="xdoc"> *  ======== DMAN3 ========
+</span>    35    <span class="xdoc"> *  EDMA3 QDMA resource manager.
+</span>    36    <span class="xdoc"> */</span>
+    37    @Template(<span class="string">"./DMAN3.xdt"</span>)
+    38    
+    39    <span class=key>metaonly</span> <span class=key>module</span> DMAN3 {
+    40    
+    41        <span class="xdoc">/*!
+</span>    42    <span class="xdoc">     *  ======= customDmaLib =======
+</span>    43    <span class="xdoc">     *  Set this to TRUE if a custom library is being used to perform DMA  
+</span>    44    <span class="xdoc">     *  transfers. In this case, qdma channels will have to be partitioned 
+</span>    45    <span class="xdoc">     *  into scratch groups using the numQdmaGroup configuration.
+</span>    46    <span class="xdoc">     */</span>  
+    47        <span class=key>config</span> Bool customDmaLib; 
+    48    
+    49        <span class="comment">/* DMAN3 configuration settings for memory requirements */</span>
+    50        <span class="xdoc">/*!
+</span>    51    <span class="xdoc">     *  ======== heapInternal ========
+</span>    52    <span class="xdoc">     *  Heap ID for dynamic allocation of DMAN3 objects.
+</span>    53    <span class="xdoc">     *
+</span>    54    <span class="xdoc">     *  This must be allocated in L1D Internal RAM.
+</span>    55    <span class="xdoc">     *
+</span>    56    <span class="xdoc">     *  This parameter is unused when DMAN3 is used in a Linux environment.
+</span>    57    <span class="xdoc">     *
+</span>    58    <span class="xdoc">     *  This parameter is set to `DMAN3_HEAP_INTERNAL`.
+</span>    59    <span class="xdoc">     */</span>
+    60        <span class=key>config</span> String heapInternal = <span class="string">"DMAN3_heapInternal_undefined"</span>;
+    61    
+    62        <span class="xdoc">/*!
+</span>    63    <span class="xdoc">     *  ======== heapExternal ========
+</span>    64    <span class="xdoc">     *  Heap ID for dyn allocation of private DMAN3 data structures.
+</span>    65    <span class="xdoc">     *
+</span>    66    <span class="xdoc">     *  This parameter is unused when DMAN3 is used in a Linux environment.
+</span>    67    <span class="xdoc">     *
+</span>    68    <span class="xdoc">     *  This parameter is set to `DMAN3_HEAP_EXTERNAL`.
+</span>    69    <span class="xdoc">     */</span>
+    70        <span class=key>config</span> String heapExternal = <span class="string">"DMAN3_heapExternal_undefined"</span>;
+    71    
+    72        <span class="xdoc">/*!
+</span>    73    <span class="xdoc">     *  ======== scratchAllocFxn ========
+</span>    74    <span class="xdoc">     *  Function for allocating IDMA3 channel object's "env" in scratch
+</span>    75    <span class="xdoc">     *  memory.
+</span>    76    <span class="xdoc">     */</span>
+    77        <span class=key>config</span> String scratchAllocFxn = <span class=key>null</span>;
+    78    
+    79        <span class="xdoc">/*!
+</span>    80    <span class="xdoc">     *  ======== scratchFreeFxn ========
+</span>    81    <span class="xdoc">     *  Function for freeing IDMA3 channel object's "env" that was allocated
+</span>    82    <span class="xdoc">     *  in scratch memory.
+</span>    83    <span class="xdoc">     */</span>
+    84        <span class=key>config</span> String scratchFreeFxn = <span class=key>null</span>;
+    85    
+    86        <span class="xdoc">/*!
+</span>    87    <span class="xdoc">     *  ======== idma3Internal ========
+</span>    88    <span class="xdoc">     *  Use the internal memory heap for dynamic allocation of IDMA3 objects.
+</span>    89    <span class="xdoc">     *
+</span>    90    <span class="xdoc">     *  A value of `false` means that IDMA3 objects will be allocated
+</span>    91    <span class="xdoc">     *  in the heap specified by {<b>@link</b> #heapExternal}. If the
+</span>    92    <span class="xdoc">     *  value is `true`, IDMA3 objects will be
+</span>    93    <span class="xdoc">     *  allocated in the heap specified by {<b>@link</b> #heapInternal}.
+</span>    94    <span class="xdoc">     */</span>
+    95        <span class=key>config</span> <span class=key>bool</span> idma3Internal = <span class=key>true</span>;
+    96    
+    97        <span class="xdoc">/*!
+</span>    98    <span class="xdoc">     *  ======== cpu ========
+</span>    99    <span class="xdoc">     *  Use the non-EDMA3, CPU version of DMAN3.  
+</span>   100    <span class="xdoc">     */</span>
+   101        <span class=key>config</span> <span class=key>bool</span> cpu = <span class=key>false</span>; 
+   102    
+   103        <span class="xdoc">/*! 
+</span>   104    <span class="xdoc">     *  ======= useExternalRM =======
+</span>   105    <span class="xdoc">     *  Boolean flag indicating if the EDMA3 Low Level 
+</span>   106    <span class="xdoc">     *  Resource Manager should be used to manage EDMA3
+</span>   107    <span class="xdoc">     *  resources. If this flag is set to true, the SOC 
+</span>   108    <span class="xdoc">     *  specific settings are not required to be set in 
+</span>   109    <span class="xdoc">     *  this module. The ti.sdo.fc.edma3.Settings module
+</span>   110    <span class="xdoc">     *  should be set up correctly 
+</span>   111    <span class="xdoc">     */</span> 
+   112        <span class=key>config</span> <span class=key>bool</span> useExternalRM = <span class=key>false</span>;
+   113    
+   114        <span class="xdoc">/*!
+</span>   115    <span class="xdoc">     *  ======== numQdmaChannels ========
+</span>   116    <span class="xdoc">     *  The number of Physical QDMA channels that are assigned to
+</span>   117    <span class="xdoc">     *  DMAN3 via configuration. These channels will be granted either 
+</span>   118    <span class="xdoc">     *  as scratch or persistently as part of IDMA3 handles.   
+</span>   119    <span class="xdoc">     *
+</span>   120    <span class="xdoc">     *  This parameter is set to `DMAN3_NUM_QDMA_CHANNELS`.
+</span>   121    <span class="xdoc">     */</span>
+   122        <span class=key>config</span> UInt numQdmaChannels = 4;
+   123    
+   124        <span class="comment">/* If DMAN3.useExternalRM is set to true, the SOC specific settings below
+</span>   125    <span class="comment">       are ignored.
+</span>   126    <span class="comment">    */</span>
+   127        <span class="comment">/* SOC specific settings for EDMA3 */</span>
+   128    
+   129        <span class="xdoc">/*!
+</span>   130    <span class="xdoc">     *  ======== qdmaPaRamBase ========
+</span>   131    <span class="xdoc">     *  Physical base address of the PARAM0 in the EDMA3/QDMA
+</span>   132    <span class="xdoc">     *  hardware whose resources are being managed by DMAN3.
+</span>   133    <span class="xdoc">     *
+</span>   134    <span class="xdoc">     *  This parameter is set to `DMAN3_QDMA_PARAM_BASE`.
+</span>   135    <span class="xdoc">     */</span>
+   136        <span class=key>config</span> Ptr  qdmaPaRamBase =  0x01C04000;
+   137    
+   138        <span class="xdoc">/*!
+</span>   139    <span class="xdoc">     *  ======== maxPaRamEntries ========
+</span>   140    <span class="xdoc">     *  Total number of PARAM Table entries on the target hardware.
+</span>   141    <span class="xdoc">     *  (eg, for IVA2, Davinci this is 128, for Himalaya, this is 256).
+</span>   142    <span class="xdoc">     *
+</span>   143    <span class="xdoc">     *  This parameter is set to `DMAN3_MAX_PARAM_ENTRIES`.
+</span>   144    <span class="xdoc">     */</span>
+   145        <span class=key>config</span> UInt maxPaRamEntries = 128;
+   146    
+   147        <span class="xdoc">/*!
+</span>   148    <span class="xdoc">     *  ======== maxQdmaChannels ========
+</span>   149    <span class="xdoc">     *  The total number of Physical QDMA channels available on the
+</span>   150    <span class="xdoc">     *  target hardware (eg, 8 for DaVinci, 4 for IVA2).
+</span>   151    <span class="xdoc">     *
+</span>   152    <span class="xdoc">     *  This parameter is set to `DMAN3_MAX_QDMA_CHANNELS`.
+</span>   153    <span class="xdoc">     */</span>
+   154        <span class=key>config</span> UInt maxQdmaChannels = 8;
+   155    
+   156       <span class="xdoc">/*!
+</span>   157    <span class="xdoc">    *  ======= maxTCs ========
+</span>   158    <span class="xdoc">    *  Maximum number of transfer controllers on this SOC
+</span>   159    <span class="xdoc">    */</span>
+   160        <span class=key>config</span> UInt maxTCs = 8;
+   161    
+   162        <span class="comment">/* DMAN3 resource configuration settings */</span>
+   163        <span class="comment">/* If DMAN3.useExternalRM is set to true, the resource specific settings 
+</span>   164    <span class="comment">       below are ignored.
+</span>   165    <span class="comment">       Instead setup the ti.sdo.fc.edma3.Settings module with the EDMA3
+</span>   166    <span class="comment">       that you would like to make available to this region */</span> 
+   167    
+   168        <span class="xdoc">/*!
+</span>   169    <span class="xdoc">     *  ======== paRamBaseIndex ========
+</span>   170    <span class="xdoc">     *  (0 &gt; value &gt; 255) represents the first PARAM TABLE ENTRY
+</span>   171    <span class="xdoc">     *  NUMBER that is assigned by configuration for exclusive DMAN3 allocation.
+</span>   172    <span class="xdoc">     *
+</span>   173    <span class="xdoc">     *  Typically, addresses (PaRam sets) between 0 and 63 are reserved for use
+</span>   174    <span class="xdoc">     *  by drivers that need EDMA/chaining capabilities.
+</span>   175    <span class="xdoc">     *
+</span>   176    <span class="xdoc">     *  Additionally, on some multi-core devices (e.g. DM644x), PaRams are
+</span>   177    <span class="xdoc">     *  shared between the different cores (e.g. ARM and C64+).  In these
+</span>   178    <span class="xdoc">     *  cases, an executable will be configured for each core, and each
+</span>   179    <span class="xdoc">     *  executable should configure only the DMAN3 resources which will be used
+</span>   180    <span class="xdoc">     *  on that core.  E.g., on DM644x, the C64+ executable should
+</span>   181    <span class="xdoc">     *  be configured to avoid using what the ARM uses.  Note that on
+</span>   182    <span class="xdoc">     *  OMAP2430, the ARM doesn't have access to EDMA so all PaRam sets
+</span>   183    <span class="xdoc">     *  are available for the C64+ device.
+</span>   184    <span class="xdoc">     *
+</span>   185    <span class="xdoc">     *  This parameter is set to `DMAN3_PARAM_BASE_INDEX`.
+</span>   186    <span class="xdoc">     */</span>
+   187        <span class=key>config</span> UInt paRamBaseIndex =  96;
+   188    
+   189        <span class="xdoc">/*!
+</span>   190    <span class="xdoc">     *  ======== numPaRamEntries ========
+</span>   191    <span class="xdoc">     *  Number of PARAM Table entries starting at DMAN3_PARAM_BASE_INDEX
+</span>   192    <span class="xdoc">     *  assigned by configuration for exclusive DMAN3 allocation.
+</span>   193    <span class="xdoc">     *
+</span>   194    <span class="xdoc">     *  This parameter is set to `DMAN3_NUM_CONTIGUOUS_PARAM_ENTRIES`.
+</span>   195    <span class="xdoc">     */</span>
+   196        <span class=key>config</span> UInt numPaRamEntries = 32;
+   197    
+   198        <span class="xdoc">/*!
+</span>   199    <span class="xdoc">     *  ======== nullPaRamIndex ========
+</span>   200    <span class="xdoc">     *  Index of PARAM to be reserved as a "null" PaRam. This index will be
+</span>   201    <span class="xdoc">     *  used to set QCHMAP when the corresponding QDMA channel is not active.
+</span>   202    <span class="xdoc">     *  The value of nullPaRamIndex should be outside of the range of
+</span>   203    <span class="xdoc">     *  PaRam indices alloted to DMAN3, i.e., nullPaRamIndex should be less
+</span>   204    <span class="xdoc">     *  than paRamBaseIndex, or greater than paRamBaseIndex + numPaRamEntries.
+</span>   205    <span class="xdoc">     *  If PaRam registers are shared between two processors (eg, an Arm
+</span>   206    <span class="xdoc">     *  and a DSP), make sure the nullPaRamIndex is not used by the other
+</span>   207    <span class="xdoc">     *  processor.
+</span>   208    <span class="xdoc">     *     
+</span>   209    <span class="xdoc">     *  This parameter is set to `DMAN3_NULLPARAMINDEX`.
+</span>   210    <span class="xdoc">     */</span>
+   211        <span class=key>config</span> UInt nullPaRamIndex = 0;
+   212    
+   213        <span class="xdoc">/*!
+</span>   214    <span class="xdoc">     *  ======== qdmaChannels ========
+</span>   215    <span class="xdoc">     *  Array containing list of physical QDMA channels assigned to DMAN3.
+</span>   216    <span class="xdoc">     *
+</span>   217    <span class="xdoc">     *  This array is of size `DMAN3_NUM_QDMA_CHANNELS`
+</span>   218    <span class="xdoc">     *  (configured by {<b>@link</b> #numQdmaChannels}).
+</span>   219    <span class="xdoc">     *
+</span>   220    <span class="xdoc">     *  This parameter is set to `DMAN3_QDMA_CHANNELS[]`.
+</span>   221    <span class="xdoc">     *
+</span>   222    <span class="xdoc">     *  <b>@see</b> numQdmaChannels
+</span>   223    <span class="xdoc">     */</span>
+   224        <span class=key>config</span> UInt qdmaChannels[] = [0, 1, 2, 3];
+   225    
+   226        <span class="xdoc">/*!
+</span>   227    <span class="xdoc">     *  ======== tccAllocationMaskH ========
+</span>   228    <span class="xdoc">     *  32-bit bitmask representing configuration provided list of TCCs
+</span>   229    <span class="xdoc">     *  for exclusive DMAN3 allocation.
+</span>   230    <span class="xdoc">     *
+</span>   231    <span class="xdoc">     *  For example, for TCC's in the range 0-31 the Low Mask
+</span>   232    <span class="xdoc">     *  (tccAllocationMaskL) is configured so that a '1' in bit position 'i'
+</span>   233    <span class="xdoc">     *  indicates the TCC 'i' is assigned to DMAN3.
+</span>   234    <span class="xdoc">     *
+</span>   235    <span class="xdoc">     *  This parameter is set to `DMAN3_TCC_FREEMASK_H`.
+</span>   236    <span class="xdoc">     */</span>
+   237        <span class=key>config</span> UInt tccAllocationMaskH = 0xffffffff;
+   238    
+   239        <span class="xdoc">/*!
+</span>   240    <span class="xdoc">     *  ======== tccAllocationMaskL ========
+</span>   241    <span class="xdoc">     *  32-bit bitmask representing configuration provided list of TCCs
+</span>   242    <span class="xdoc">     *  for exclusive DMAN3 allocation.
+</span>   243    <span class="xdoc">     *
+</span>   244    <span class="xdoc">     *  For example, for TCC's in the range 0-31 the Low Mask
+</span>   245    <span class="xdoc">     *  (tccAllocationMaskL) is configured so that a '1' in bit position 'i'
+</span>   246    <span class="xdoc">     *  indicates the TCC 'i' is assigned to DMAN3.
+</span>   247    <span class="xdoc">     *
+</span>   248    <span class="xdoc">     *  This parameter is set to `DMAN3_TCC_FREEMASK_L`.
+</span>   249    <span class="xdoc">     */</span>
+   250        <span class=key>config</span> UInt tccAllocationMaskL = 0x00000000;
+   251    
+   252        <span class="xdoc">/*!
+</span>   253    <span class="xdoc">     *  ======= qdmaQueueMap ========
+</span>   254    <span class="xdoc">     *  Array contaning the mapping from QDMA Channels to Event Queues
+</span>   255    <span class="xdoc">     *
+</span>   256    <span class="xdoc">     *  Indicates mapping of all "qdmaChannels" defined above to
+</span>   257    <span class="xdoc">     *  particular Event Queue.  For example, `channelQueueMap[0]`
+</span>   258    <span class="xdoc">     *  specifies queue number for `qdmaChannel[0]`, etc.
+</span>   259    <span class="xdoc">     *
+</span>   260    <span class="xdoc">     *  Defaults map all qdmaChannels to Queue# 1
+</span>   261    <span class="xdoc">     */</span>
+   262        <span class=key>config</span> UInt qdmaQueueMap[] = [1,1,1,1,1,1,1,1];
+   263    
+   264        <span class="xdoc">/*!
+</span>   265    <span class="xdoc">     *  ======= queueTCMap ========
+</span>   266    <span class="xdoc">     * Array contaning the mapping from Event Queues to Transfer Controllers
+</span>   267    <span class="xdoc">     *
+</span>   268    <span class="xdoc">     * Indicates mapping of individual hardware Event Queues to the Transfer
+</span>   269    <span class="xdoc">     * Controllers.
+</span>   270    <span class="xdoc">     */</span>
+   271        <span class=key>config</span> UInt queueTCMap[] = [0, 1, 2, 3, 4, 5, 6, 7];
+   272    
+   273        <span class="xdoc">/*!
+</span>   274    <span class="xdoc">     *  ======= queuePri ========
+</span>   275    <span class="xdoc">     * Array contaning priorities of the event queues
+</span>   276    <span class="xdoc">     *
+</span>   277    <span class="xdoc">     * Indicates the priority accorded to each physical event queue.
+</span>   278    <span class="xdoc">     */</span>
+   279        <span class=key>config</span> UInt queuePri[] = [3, 7, 0, 0, 0, 0, 0, 0];
+   280    
+   281        <span class="comment">/* These const values must match those in dman3.h */</span>
+   282    
+   283        <span class=key>const</span> Int MAXGROUPS = 20;  <span class="xdoc">/*! Maximum number of groups for sharing
+</span>   284    <span class="xdoc">                                 TCCs and parameter RAM. */</span>
+   285    
+   286        <span class="comment">/* DMAN3 configuration settings  for scratch groups */</span>
+   287    
+   288        <span class="xdoc">/*!
+</span>   289    <span class="xdoc">     *  ======== numTccGroup ========
+</span>   290    <span class="xdoc">     *  Arrays containing the number of TCC that will be assigned to groups for
+</span>   291    <span class="xdoc">     *  sharing
+</span>   292    <span class="xdoc">     *
+</span>   293    <span class="xdoc">     *  Channels created with a given group ID will use TCCs and PaRams
+</span>   294    <span class="xdoc">     *  allocated for that group ID, and may share them with other channels
+</span>   295    <span class="xdoc">     *  created with the same group ID.
+</span>   296    <span class="xdoc">     *
+</span>   297    <span class="xdoc">     *  This parameter is set to `DMAN3_NUMTCC_GROUP`.
+</span>   298    <span class="xdoc">     */</span>
+   299        <span class=key>config</span> Int numTccGroup[MAXGROUPS] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0,
+   300                0, 0, 0, 0, 0, 0, 0,];
+   301    
+   302        <span class="xdoc">/*!
+</span>   303    <span class="xdoc">     *  ======== numPaRamGroup ========
+</span>   304    <span class="xdoc">     *  Arrays containing the number of PaRam entries that will be assigned to
+</span>   305    <span class="xdoc">     * groups for sharing.
+</span>   306    <span class="xdoc">     *
+</span>   307    <span class="xdoc">     *  Channels created with a given group ID will use TCCs and PaRams
+</span>   308    <span class="xdoc">     *  allocated for that group ID, and may share them with other channels
+</span>   309    <span class="xdoc">     *  created with the same group ID.
+</span>   310    <span class="xdoc">     *
+</span>   311    <span class="xdoc">     *  This parameter is set to `DMAN3_NUMPARAM_GROUP`.
+</span>   312    <span class="xdoc">     */</span>
+   313        <span class=key>config</span> Int numPaRamGroup[MAXGROUPS]= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0,
+   314                0, 0, 0, 0, 0, 0, 0,] ;
+   315    
+   316        <span class="xdoc">/*!
+</span>   317    <span class="xdoc">     *  ======= numQdmaGroup =======
+</span>   318    <span class="xdoc">     *  Arrays containing the number of Qdma channels that will be assigned to 
+</span>   319    <span class="xdoc">     *  groups for sharing.
+</span>   320    <span class="xdoc">     *
+</span>   321    <span class="xdoc">     *  This configuration is required ONLY if the application uses atleast one 
+</span>   322    <span class="xdoc">     *  custom (non-ACPY3) DMA library that will request QDMA channels from
+</span>   323    <span class="xdoc">     *  DMAN3.  In this case, the configuration param "customDmaLib" should be 
+</span>   324    <span class="xdoc">     *  set to true.
+</span>   325    <span class="xdoc">     *
+</span>   326    <span class="xdoc">     *  Channels created with a given group ID will use TCCs and PaRams 
+</span>   327    <span class="xdoc">     *  allocated for that grup ID, and may share them with other channels  
+</span>   328    <span class="xdoc">     *  created with the same group ID. Qdma channels may be shared across
+</span>   329    <span class="xdoc">     *  algorithms and scratch groups if all algorithms use the same ACPY3
+</span>   330    <span class="xdoc">     *  library. But if even one algorithm uses a custom DMA library, Qdma
+</span>   331    <span class="xdoc">     *  channels should be distribued among scratch groups like other EDMA3
+</span>   332    <span class="xdoc">     *  resources. 
+</span>   333    <span class="xdoc">     */</span>
+   334        <span class=key>config</span> Int numQdmaGroup[MAXGROUPS]; 
+   335    
+   336        <span class="comment">/*
+</span>   337    <span class="comment">     * TODO:  These "Strings" should be Ints... how do we get a handle to
+</span>   338    <span class="comment">     * the BIOS objects in javascript-land?
+</span>   339    <span class="comment">     */</span>
+   340    
+   341        <span class="xdoc">/*!
+</span>   342    <span class="xdoc">     *  ======== debug ========
+</span>   343    <span class="xdoc">     *  Enable the debug profile of the DMAN3 library.
+</span>   344    <span class="xdoc">     *
+</span>   345    <span class="xdoc">     *  This will likely result in a larger and slower library being linked in.
+</span>   346    <span class="xdoc">     */</span>
+   347        <span class=key>config</span> <span class=key>bool</span> debug = <span class=key>false</span>;
+   348    
+   349        <span class="xdoc">/*!
+</span>   350    <span class="xdoc">     *  ======== trace ========
+</span>   351    <span class="xdoc">     *  Enable trace support
+</span>   352    <span class="xdoc">     */</span>
+   353        <span class=key>config</span> <span class=key>bool</span> trace = <span class=key>false</span>;
+   354    
+   355        <span class="xdoc">/*!
+</span>   356    <span class="xdoc">     *  ======== ipcKeyBase ========
+</span>   357    <span class="xdoc">     *  Linux only. Base value of keys of Linux IPC objects used by
+</span>   358    <span class="xdoc">     *  DMAN3. The IPC objects created by DMAN3 will use keys starting at this
+</span>   359    <span class="xdoc">     *  value, and incrementing with each new object. There are currently
+</span>   360    <span class="xdoc">     *  three IPC objects, so keys in the range of ipcKeyBase to ipcKeyBase + 2
+</span>   361    <span class="xdoc">     *  will be reserved for DMAN3. The default value of ipcKeyBase is
+</span>   362    <span class="xdoc">     *  ascii code for "NAMD".
+</span>   363    <span class="xdoc">     *
+</span>   364    <span class="xdoc">     *  WARNING: This value should only be changed if it conflicts with
+</span>   365    <span class="xdoc">     *  another IPC key in the system that cannot be changed. If this value
+</span>   366    <span class="xdoc">     *  is changed, all programs using DMAN3 that will be run simultaneously
+</span>   367    <span class="xdoc">     *  must have the ipcKeyBase configured to the new value.
+</span>   368    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   369    <span class="xdoc">     */</span>
+   370        <span class=key>config</span> UInt ipcKeyBase = 0x4e414d44;
+   371    
+   372        <span class="xdoc">/*!
+</span>   373    <span class="xdoc">     *  ======== allowUnshared ========
+</span>   374    <span class="xdoc">     *  Allow DMAN3-related resources to be granted to an algorithm, even
+</span>   375    <span class="xdoc">     *  if there are not enough resources configured into the shared
+</span>   376    <span class="xdoc">     *  groupId which the algorithm is a member of.
+</span>   377    <span class="xdoc">     *
+</span>   378    <span class="xdoc">     *  If this property is set to `false`, the DMAN3 library will fail
+</span>   379    <span class="xdoc">     *  to grant DMA channels to an algorithm requesting more TCCs or
+</span>   380    <span class="xdoc">     *  PaRams then the number configured for its scratch group.
+</span>   381    <span class="xdoc">     *
+</span>   382    <span class="xdoc">     *  If this property is `true`, and an algorithm requests more TCCs or
+</span>   383    <span class="xdoc">     *  PaRams than the number configured for its scratch group, DMAN3 will
+</span>   384    <span class="xdoc">     *  do either of the following:
+</span>   385    <span class="xdoc">     *  <b>@p(nlist)</b>
+</span>   386    <span class="xdoc">     *     - If no algorithm is currently instantiated for the given scratch
+</span>   387    <span class="xdoc">     *       group, DMAN3 will bump up the number of TCCs and PaRams to the
+</span>   388    <span class="xdoc">     *       maximum of the number configured and that requested by the
+</span>   389    <span class="xdoc">     *       algorithm, for the scratch group. This will remain in effect
+</span>   390    <span class="xdoc">     *       until all algorithms for that scratch group are deleted.
+</span>   391    <span class="xdoc">     *     - If an algorithm has already been granted DMA channels for the
+</span>   392    <span class="xdoc">     *       given scratch group (so the number of TCCs and PaRams for that
+</span>   393    <span class="xdoc">     *       scratch group has already been determined by (1) above), and the
+</span>   394    <span class="xdoc">     *       number of TCCs or PaRams for the scratch group is insufficient for
+</span>   395    <span class="xdoc">     *       the algorithm currently requesting DMA channels, DMAN3 will
+</span>   396    <span class="xdoc">     *       allocate new TCCs and PaRams if available. These new TCCs and
+</span>   397    <span class="xdoc">     *       PaRams will not be shared by any other algorithm.
+</span>   398    <span class="xdoc">     */</span>
+   399        <span class=key>config</span> <span class=key>bool</span> allowUnshared = <span class=key>true</span>;
+   400    
+   401    }
+   402    <span class="comment">/*
+</span>   403    <span class="comment"> *  @(#) ti.sdo.fc.dman3; 1, 0, 4,300; 12-1-2010 17:24:24; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+</span>   404    <span class="comment">
+</span>   405    <span class="comment"> */</span>
+   406    
+</pre>
+</body></html>

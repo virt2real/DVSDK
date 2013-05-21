@@ -1,0 +1,1423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.targets.rts6000" version="1, 0, 0, 0" producerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="xdc/runtime/SysMin.c"/>
+        <srcFile name="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="xdc/runtime/Assert.c"/>
+        <srcFile name="xdc/runtime/HeapStd.c"/>
+        <srcFile name="xdc/runtime/HeapMin.c"/>
+        <srcFile name="xdc/runtime/Timestamp.c"/>
+        <srcFile name="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="xdc/runtime/Diags.c"/>
+        <srcFile name="xdc/runtime/Startup.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="xdc/runtime/System.c"/>
+        <srcFile name="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="xdc/runtime/Core_label.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="xdc/runtime/Gate.c"/>
+        <srcFile name="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="xdc/runtime/Memory.c"/>
+        <srcFile name="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="boot.c"/>
+        <srcFile name="xdc/runtime/Rta.c"/>
+        <srcFile name="xdc/runtime/Error.c"/>
+        <srcFile name="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="xdc/runtime/Log.c"/>
+        <srcFile name="xdc/runtime/Core_params.c"/>
+        <srcFile name="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="xdc/runtime/Text.c"/>
+        <srcFile name="xdc/runtime/GateNull.c"/>
+        <srcFile name="autoinit.c"/>
+        <srcFile name="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="xdc/runtime/SysStd.c"/>
+        <srcFile name="xdc/runtime/Core_mem.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/ti.targets.rts6000.ae64T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.oe64T.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.oe64T.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.oe64T.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.oe64T.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.oe64T.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.oe64T.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.oe64T.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.oe64T.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.oe64T.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.oe64T.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.oe64T.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.oe64T.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.oe64T.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.oe64T.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.oe64T.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.oe64T.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.oe64T.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.oe64T.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.oe64T.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.oe64T.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.oe64T.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.oe64T.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.oe64T.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.oe64T.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.oe64T.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.oe64T.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.oe64T.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.oe64T.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.oe64T.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.oe64T.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.oe64T.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.oe64T.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.oe64T.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.oe64T.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.oe64T.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.oe64T.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.oe64T.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.oe64T.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.oe64T.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.oe64T.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a67e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o67e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o67e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o67e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o67e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o67e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o67e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o67e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o67e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o67e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o67e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o67e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o67e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o67e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o67e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o67e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o67e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o67e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o67e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o67e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o67e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o67e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o67e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o67e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o67e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o67e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o67e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o67e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o67e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o67e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o67e.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o67e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o67e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o67e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o67e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o67e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o67e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o67e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o67e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o67e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o67e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a64e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o64e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o64e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o64e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o64e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o64e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o64e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o64e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o64e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o64e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o64e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o64e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o64e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o64e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o64e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o64e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o64e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o64e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o64e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o64e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o64e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o64e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o64e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o64e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o64e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o64e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o64e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o64e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o64e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o64e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o64e.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o64e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o64e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o64e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o64e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o64e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o64e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o64e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o64e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o64e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o64e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.ae67P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.oe67P.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.oe67P.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.oe67P.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/boot.ae64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.oe64P.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.oe64P.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.oe64P.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/boot.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o674.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o674.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o674.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/boot.ae64T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.oe64T.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.oe64T.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.oe64T.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a62.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o62.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o62.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o62.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o62.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o62.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o62.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o62.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o62.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o62.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o62.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o62.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o62.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o62.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o62.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o62.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o62.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o62.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o62.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o62.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o62.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o62.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o62.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o62.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o62.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o62.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o62.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o62.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o62.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o62.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o62.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o62.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o62.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o62.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o62.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o62.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o62.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o62.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o62.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o62.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o62.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a64.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o64.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o64.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o64.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o64.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o64.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o64.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o64.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o64.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o64.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o64.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o64.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o64.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o64.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o64.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o64.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o64.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o64.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o64.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o64.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o64.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o64.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o64.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o64.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o64.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o64.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o64.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o64.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o64.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o64.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o64.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o64.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o64.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o64.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o64.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o64.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o64.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o64.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o64.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o64.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o64.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a67.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o67.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o67.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o67.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o67.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o67.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o67.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o67.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o67.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o67.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o67.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o67.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o67.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o67.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o67.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o67.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o67.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o67.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o67.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o67.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o67.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o67.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o67.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o67.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o67.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o67.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o67.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o67.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o67.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o67.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o67.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o67.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o67.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o67.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o67.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o67.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o67.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o67.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o67.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o67.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o67.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a64Pe.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o64Pe.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o64Pe.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o64Pe.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o64Pe.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o64Pe.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o64Pe.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o64Pe.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o64Pe.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o64Pe.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o64Pe.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o64Pe.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o64Pe.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o64Pe.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o64Pe.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o64Pe.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o64Pe.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o64Pe.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o64Pe.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o64Pe.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o64Pe.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o64Pe.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o64Pe.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o64Pe.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o64Pe.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o64Pe.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o64Pe.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o64Pe.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o64Pe.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o64Pe.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o64Pe.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o64Pe.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o64Pe.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o64Pe.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o64Pe.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o64Pe.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o64Pe.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o64Pe.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o64Pe.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o64Pe.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o64Pe.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.a67P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o67P.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o67P.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o67P.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/boot.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o64P.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o64P.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o64P.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a62e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o62e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o62e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o62e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o62e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o62e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o62e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o62e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o62e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o62e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o62e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o62e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o62e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o62e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o62e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o62e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o62e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o62e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o62e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o62e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o62e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o62e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o62e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o62e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o62e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o62e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o62e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o62e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o62e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o62e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o62e.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o62e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o62e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o62e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o62e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o62e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o62e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o62e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o62e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o62e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o62e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.a64T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o64T.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o64T.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o64T.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/ti.targets.rts6000.ae64Pe.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.oe64Pe.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.oe64Pe.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.oe64Pe.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.oe64Pe.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.oe64Pe.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.oe64Pe.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.oe64Pe.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.oe64Pe.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.oe64Pe.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.oe64Pe.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.oe64Pe.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.oe64Pe.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.oe64Pe.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.oe64Pe.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.oe64Pe.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.oe64Pe.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.oe64Pe.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.oe64Pe.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.oe64Pe.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.oe64Pe.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.oe64Pe.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.oe64Pe.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.oe64Pe.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.oe64Pe.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.oe64Pe.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.oe64Pe.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.oe64Pe.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.oe64Pe.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.oe64Pe.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.oe64Pe.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.oe64Pe.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.oe64Pe.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.oe64Pe.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.oe64Pe.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.oe64Pe.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.oe64Pe.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.oe64Pe.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.oe64Pe.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.oe64Pe.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.oe64Pe.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.a64Pe.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o64Pe.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o64Pe.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o64Pe.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o674.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o674.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o674.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o674.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o674.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o674.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o674.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o674.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o674.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o674.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o674.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o674.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o674.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o674.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o674.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o674.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o674.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o674.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o674.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o674.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o674.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o674.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o674.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o674.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o674.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o674.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o674.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o674.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o674.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o674.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o674.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o674.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o674.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o674.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o674.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o674.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o674.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o674.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o674.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o674.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.a62.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o62.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o62.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o62.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a674e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o674e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o674e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o674e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o674e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o674e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o674e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o674e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o674e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o674e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o674e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o674e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o674e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o674e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o674e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o674e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o674e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o674e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o674e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o674e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o674e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o674e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o674e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o674e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o674e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o674e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o674e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o674e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o674e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o674e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o674e.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o674e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o674e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o674e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o674e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o674e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o674e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o674e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o674e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o674e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o674e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.a64.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o64.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o64.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o64.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/boot.ae64Pe.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.oe64Pe.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.oe64Pe.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.oe64Pe.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/boot.a67e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o67e.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o67e.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o67e.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/boot.a67.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o67.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o67.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o67.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/boot.a64e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o64e.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o64e.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o64e.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/ti.targets.rts6000.ae674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.oe674.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.oe674.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.oe674.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.oe674.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.oe674.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.oe674.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.oe674.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.oe674.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.oe674.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.oe674.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.oe674.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.oe674.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.oe674.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.oe674.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.oe674.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.oe674.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.oe674.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.oe674.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.oe674.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.oe674.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.oe674.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.oe674.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.oe674.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.oe674.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.oe674.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.oe674.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.oe674.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.oe674.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.oe674.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.oe674.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.oe674.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.oe674.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.oe674.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.oe674.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.oe674.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.oe674.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.oe674.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.oe674.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.oe674.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.oe674.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a64Te.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o64Te.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o64Te.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o64Te.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o64Te.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o64Te.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o64Te.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o64Te.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o64Te.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o64Te.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o64Te.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o64Te.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o64Te.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o64Te.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o64Te.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o64Te.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o64Te.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o64Te.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o64Te.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o64Te.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o64Te.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o64Te.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o64Te.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o64Te.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o64Te.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o64Te.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o64Te.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o64Te.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o64Te.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o64Te.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o64Te.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o64Te.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o64Te.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o64Te.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o64Te.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o64Te.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o64Te.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o64Te.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o64Te.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o64Te.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o64Te.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts6000.ae674e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.oe674e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.oe674e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.oe674e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.oe674e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.oe674e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.oe674e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.oe674e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.oe674e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.oe674e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.oe674e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.oe674e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.oe674e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.oe674e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.oe674e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.oe674e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.oe674e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.oe674e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.oe674e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.oe674e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.oe674e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.oe674e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.oe674e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.oe674e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.oe674e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.oe674e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.oe674e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.oe674e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.oe674e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.oe674e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.oe674e.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.oe674e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.oe674e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.oe674e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.oe674e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.oe674e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.oe674e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.oe674e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.oe674e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.oe674e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.oe674e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.a674e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o674e.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o674e.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o674e.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/boot.ae674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.oe674.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.oe674.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.oe674.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/ti.targets.rts6000.ae64Te.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.oe64Te.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.oe64Te.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.oe64Te.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.oe64Te.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.oe64Te.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.oe64Te.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.oe64Te.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.oe64Te.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.oe64Te.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.oe64Te.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.oe64Te.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.oe64Te.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.oe64Te.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.oe64Te.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.oe64Te.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.oe64Te.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.oe64Te.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.oe64Te.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.oe64Te.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.oe64Te.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.oe64Te.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.oe64Te.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.oe64Te.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.oe64Te.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.oe64Te.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.oe64Te.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.oe64Te.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.oe64Te.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.oe64Te.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.oe64Te.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.oe64Te.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.oe64Te.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.oe64Te.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.oe64Te.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.oe64Te.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.oe64Te.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.oe64Te.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.oe64Te.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.oe64Te.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.oe64Te.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.a64Te.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o64Te.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o64Te.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o64Te.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a67P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o67P.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o67P.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o67P.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o67P.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o67P.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o67P.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o67P.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o67P.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o67P.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o67P.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o67P.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o67P.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o67P.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o67P.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o67P.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o67P.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o67P.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o67P.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o67P.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o67P.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o67P.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o67P.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o67P.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o67P.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o67P.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o67P.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o67P.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o67P.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o67P.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o67P.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o67P.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o67P.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o67P.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o67P.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o67P.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o67P.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o67P.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o67P.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o67P.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o67P.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.ae674e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.oe674e.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.oe674e.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.oe674e.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o64P.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o64P.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o64P.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o64P.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o64P.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o64P.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o64P.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o64P.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o64P.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o64P.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o64P.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o64P.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o64P.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o64P.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o64P.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o64P.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o64P.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o64P.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o64P.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o64P.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o64P.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o64P.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o64P.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o64P.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o64P.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o64P.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o64P.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o64P.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o64P.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o64P.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o64P.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o64P.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o64P.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o64P.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o64P.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o64P.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o64P.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o64P.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o64P.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o64P.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts6000.a64T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.o64T.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.o64T.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.o64T.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.o64T.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.o64T.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.o64T.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.o64T.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.o64T.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.o64T.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.o64T.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.o64T.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.o64T.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.o64T.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.o64T.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.o64T.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.o64T.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.o64T.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.o64T.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.o64T.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.o64T.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.o64T.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.o64T.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.o64T.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.o64T.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.o64T.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.o64T.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.o64T.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.o64T.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.o64T.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.o64T.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.o64T.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.o64T.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.o64T.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.o64T.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.o64T.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.o64T.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.o64T.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.o64T.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.o64T.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.o64T.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.ae64Te.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.oe64Te.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.oe64Te.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.oe64Te.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="lib/ti.targets.rts6000.ae67P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.oe67P.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.oe67P.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.oe67P.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.oe67P.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.oe67P.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.oe67P.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.oe67P.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.oe67P.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.oe67P.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.oe67P.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.oe67P.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.oe67P.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.oe67P.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.oe67P.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.oe67P.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.oe67P.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.oe67P.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.oe67P.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.oe67P.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.oe67P.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.oe67P.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.oe67P.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.oe67P.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.oe67P.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.oe67P.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.oe67P.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.oe67P.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.oe67P.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.oe67P.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.oe67P.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.oe67P.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.oe67P.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.oe67P.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.oe67P.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.oe67P.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.oe67P.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.oe67P.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.oe67P.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.oe67P.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.oe67P.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts6000.ae64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysMin.oe64P.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Thread.oe64P.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThreadSupportNull.oe64P.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Assert.oe64P.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapStd.oe64P.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/HeapMin.oe64P.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Timestamp.oe64P.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampNull.oe64P.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/CacheSupportNull.oe64P.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Diags.oe64P.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Startup.oe64P.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcessSupportNull.oe64P.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/TimestampStd.oe64P.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/System.oe64P.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemProcess.oe64P.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_label.oe64P.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateProcess.oe64P.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Sync.oe64P.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateThread.oe64P.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerSys.oe64P.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Gate.oe64P.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/xdc_noinit.oe64P.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/GateH.oe64P.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Memory.oe64P.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncSemThread.oe64P.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncNull.oe64P.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SyncGeneric.oe64P.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Rta.oe64P.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Error.oe64P.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/package/package_ti.targets.rts6000.oe64P.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Semaphore.oe64P.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/SemThread.oe64P.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Log.oe64P.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_params.oe64P.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/LoggerBuf.oe64P.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Text.oe64P.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/GateNull.oe64P.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/knl/Cache.oe64P.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/SysStd.oe64P.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts6000/xdc/runtime/Core_mem.oe64P.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.a62e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/boot.o62e.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/boot/autoinit.o62e.dep" src="autoinit.c"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.rts6000.o62e.dep" src="package/package_ti.targets.rts6000.c"/>
+        <srcFile name="package/rel/ti_targets_rts6000.tar.gz.dep" src="package/rel/ti_targets_rts6000.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.elf.C67P"
+            version="ti.targets.elf.C67P{1,0,7.0,0"
+            platform="ti.platforms.sim6xxx:TMS320C6727"
+            isa="67P"
+            suffix="e67P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/7.0.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C64P"
+            version="ti.targets.elf.C64P{1,0,7.0,0"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="e64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/7.0.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C67P"
+            version="ti.targets.C67P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320C6727"
+            isa="67P"
+            suffix="67P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P_big_endian"
+            version="ti.targets.C64P_big_endian{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64Pe"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C64T"
+            version="ti.targets.elf.C64T{1,0,7.0,0"
+            platform="ti.platforms.qtTesla"
+            isa="64T"
+            suffix="e64T"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/7.0.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64T"
+            version="ti.targets.C64T{1,0,7.0,0"
+            platform="ti.platforms.qtTesla"
+            isa="64T"
+            suffix="64T"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/7.0.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C62_big_endian"
+            version="ti.targets.C62_big_endian{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320C6211"
+            isa="62"
+            suffix="62e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C62"
+            version="ti.targets.C62{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320C6211"
+            isa="62"
+            suffix="62"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,9"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.9/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64"
+            version="ti.targets.C64{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320C6416"
+            isa="64"
+            suffix="64"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C67"
+            version="ti.targets.C67{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320C6713"
+            isa="67"
+            suffix="67"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C64T_big_endian"
+            version="ti.targets.elf.C64T_big_endian{1,0,7.0,0"
+            platform="ti.platforms.qtTesla"
+            isa="64T"
+            suffix="e64Te"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/7.0.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C674"
+            version="ti.targets.elf.C674{1,0,7.0,0"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="e674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/7.0.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C67_big_endian"
+            version="ti.targets.C67_big_endian{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320C6713"
+            isa="67"
+            suffix="67e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64_big_endian"
+            version="ti.targets.C64_big_endian{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320C6416"
+            isa="64"
+            suffix="64e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C674_big_endian"
+            version="ti.targets.elf.C674_big_endian{1,0,7.0,0"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="e674e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/7.0.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64T_big_endian"
+            version="ti.targets.C64T_big_endian{1,0,7.0,0"
+            platform="ti.platforms.qtTesla"
+            isa="64T"
+            suffix="64Te"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/7.0.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C64P_big_endian"
+            version="ti.targets.elf.C64P_big_endian{1,0,7.0,0"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="e64Pe"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/7.0.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674_big_endian"
+            version="ti.targets.C674_big_endian{1,0,6.1,9"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.9/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.ae64T"
+        profile="whole_program"
+        target="ti.targets.elf.C64T"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a67e"
+        profile="whole_program"
+        target="ti.targets.C67_big_endian"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a64e"
+        profile="whole_program"
+        target="ti.targets.C64_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae67P"
+        profile="whole_program"
+        target="ti.targets.elf.C67P"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae64P"
+        profile="whole_program"
+        target="ti.targets.elf.C64P"/>
+    <library name="lib/boot"
+        pname="lib/boot.a674"
+        profile="whole_program"
+        target="ti.targets.C674"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae64T"
+        profile="whole_program"
+        target="ti.targets.elf.C64T"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a62"
+        profile="whole_program"
+        target="ti.targets.C62"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a64"
+        profile="whole_program"
+        target="ti.targets.C64"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a67"
+        profile="whole_program"
+        target="ti.targets.C67"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a64Pe"
+        profile="whole_program"
+        target="ti.targets.C64P_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.a67P"
+        profile="whole_program"
+        target="ti.targets.C67P"/>
+    <library name="lib/boot"
+        pname="lib/boot.a64P"
+        profile="whole_program"
+        target="ti.targets.C64P"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a62e"
+        profile="whole_program"
+        target="ti.targets.C62_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.a64T"
+        profile="whole_program"
+        target="ti.targets.C64T"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.ae64Pe"
+        profile="whole_program"
+        target="ti.targets.elf.C64P_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.a64Pe"
+        profile="whole_program"
+        target="ti.targets.C64P_big_endian"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a674"
+        profile="whole_program"
+        target="ti.targets.C674"/>
+    <library name="lib/boot"
+        pname="lib/boot.a62"
+        profile="whole_program"
+        target="ti.targets.C62"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a674e"
+        profile="whole_program"
+        target="ti.targets.C674_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.a64"
+        profile="whole_program"
+        target="ti.targets.C64"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae64Pe"
+        profile="whole_program"
+        target="ti.targets.elf.C64P_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.a67e"
+        profile="whole_program"
+        target="ti.targets.C67_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.a67"
+        profile="whole_program"
+        target="ti.targets.C67"/>
+    <library name="lib/boot"
+        pname="lib/boot.a64e"
+        profile="whole_program"
+        target="ti.targets.C64_big_endian"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.ae674"
+        profile="whole_program"
+        target="ti.targets.elf.C674"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a64Te"
+        profile="whole_program"
+        target="ti.targets.C64T_big_endian"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.ae674e"
+        profile="whole_program"
+        target="ti.targets.elf.C674_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.a674e"
+        profile="whole_program"
+        target="ti.targets.C674_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae674"
+        profile="whole_program"
+        target="ti.targets.elf.C674"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.ae64Te"
+        profile="whole_program"
+        target="ti.targets.elf.C64T_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.a64Te"
+        profile="whole_program"
+        target="ti.targets.C64T_big_endian"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a67P"
+        profile="whole_program"
+        target="ti.targets.C67P"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae674e"
+        profile="whole_program"
+        target="ti.targets.elf.C674_big_endian"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a64P"
+        profile="whole_program"
+        target="ti.targets.C64P"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.a64T"
+        profile="whole_program"
+        target="ti.targets.C64T"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae64Te"
+        profile="whole_program"
+        target="ti.targets.elf.C64T_big_endian"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.ae67P"
+        profile="whole_program"
+        target="ti.targets.elf.C67P"/>
+    <library name="lib/ti.targets.rts6000"
+        pname="lib/ti.targets.rts6000.ae64P"
+        profile="whole_program"
+        target="ti.targets.elf.C64P"/>
+    <library name="lib/boot"
+        pname="lib/boot.a62e"
+        profile="whole_program"
+        target="ti.targets.C62_big_endian"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_targets_rts6000"
+        pname="../../../../exports/ti_targets_rts6000.tar.gz"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.rel.dot"/>
+        <file name="lib/ti.targets.rts6000.ae64T"/>
+        <file name="lib/ti.targets.rts6000.a67e"/>
+        <file name="lib/ti.targets.rts6000.a64e"/>
+        <file name="lib/boot.ae67P"/>
+        <file name="lib/boot.ae64P"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/boot.a674"/>
+        <file name="lib/boot.ae64T"/>
+        <file name="lib/ti.targets.rts6000.a62"/>
+        <file name="lib/ti.targets.rts6000.a64"/>
+        <file name="lib/ti.targets.rts6000.a67"/>
+        <file name="lib/ti.targets.rts6000.a64Pe"/>
+        <file name="lib/boot.a67P"/>
+        <file name="lib/boot.a64P"/>
+        <file name="lib/ti.targets.rts6000.a62e"/>
+        <file name="lib/boot.a64T"/>
+        <file name="lib/ti.targets.rts6000.ae64Pe"/>
+        <file name="lib/boot.a64Pe"/>
+        <file name="lib/ti.targets.rts6000.a674"/>
+        <file name="lib/boot.a62"/>
+        <file name="lib/ti.targets.rts6000.a674e"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/boot.a64"/>
+        <file name="lib/boot.ae64Pe"/>
+        <file name="lib/boot.a67e"/>
+        <file name="lib/boot.a67"/>
+        <file name="lib/boot.a64e"/>
+        <file name="lib/ti.targets.rts6000.ae674"/>
+        <file name="lib/ti.targets.rts6000.a64Te"/>
+        <file name="lib/ti.targets.rts6000.ae674e"/>
+        <file name="boot.c"/>
+        <file name="lib/boot.a674e"/>
+        <file name="lib/boot.ae674"/>
+        <file name="lib/ti.targets.rts6000.ae64Te"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/boot.a64Te"/>
+        <file name="lib/ti.targets.rts6000.a67P"/>
+        <file name="lib/boot.ae674e"/>
+        <file name="lib/ti.targets.rts6000.a64P"/>
+        <file name="lib/ti.targets.rts6000.a64T"/>
+        <file name="lib/boot.ae64Te"/>
+        <file name="autoinit.c"/>
+        <file name="lib/ti.targets.rts6000.ae67P"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/ti.targets.rts6000.ae64P"/>
+        <file name="lib/boot.a62e"/>
+        <file name="package/package.ext.xml"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

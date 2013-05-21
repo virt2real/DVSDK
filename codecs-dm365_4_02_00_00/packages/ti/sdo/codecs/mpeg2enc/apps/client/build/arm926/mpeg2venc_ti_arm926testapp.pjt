@@ -1,0 +1,55 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="D:\work\DM360\GA_TESTING\mpeg2_encoder\mpeg2_encoder\client\build\arm926\"
+ProjectType=Executable
+CPUFamily=TMS470R2X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Project Dependencies]
+Source="..\..\..\..\dma\src\build\dma_ti_dm510.pjt"
+Source="..\..\..\Src\Build\ARM926\mpeg2venc_ti_arm926.pjt"
+
+["..\..\..\..\dma\src\build\dma_ti_dm510.pjt" Settings]
+MatchConfigName=true
+
+["..\..\..\Src\Build\ARM926\mpeg2venc_ti_arm926.pjt" Settings]
+MatchConfigName=true
+
+[Source Files]
+Source="..\..\..\Lib\dma_ti_dm510.lib"
+Source="..\..\..\Lib\mpeg2venc_ti_arm926.lib"
+Source="..\..\Test\Src\hdvicp_framework.c"
+Source="..\..\Test\Src\mpeg2venc_ti_api.c"
+Source="..\..\Test\Src\mpeg2venc_ti_arm926testapp.c"
+Source="..\..\Test\Src\mpeg2venc_ti_formatconvt.c"
+Source="..\..\Test\Src\testapp_arm926intc.c"
+Source="..\..\Test\Src\testapp_idma.c"
+Source="..\..\Test\Src\testapp_inthandler.asm"
+Source="..\..\Test\Src\testapp_intvecs.asm"
+Source="..\..\Test\Src\testapp_mmutable.asm"
+Source="cmd\mpeg2venc_ti_arm926.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\obj" -i"$(Proj_dir)\..\..\Test\Inc" -i"$(Proj_dir)\..\..\..\Csp\kld" -i"%FC_INSTALL_DIR%\fctools\packages" -i"%FC_INSTALL_DIR%\packages" -i"$(Proj_dir)\..\..\..\..\Csp\csl_xena\" -i"$(Proj_dir)\..\..\..\..\Csp\kld" -i"$(Proj_dir)\..\..\..\Inc" -i"$(Proj_dir)\..\..\..\..\Csp\csl_xena\csl_reg" -d"_DEBUG" -d"ON_LINUX" -d"DM360_IPC_INTC_ENABLE" -d"ARM926_ENABLE_CACHE" -d"ENABLE_MEMCONV" -u"DEVICE_ID_CHECK" -mc -me -mv5e -ms --abi=ti_arm9_abi
+
+["Compiler" Settings: "Release"]
+Options=-fr"$(Proj_dir)\obj" -i"$(Proj_dir)\..\..\Test\Inc" -i"$(Proj_dir)\..\..\..\Csp\kld" -i"%FC_INSTALL_DIR%\fctools\packages" -i"%FC_INSTALL_DIR%\packages" -i"$(Proj_dir)\..\..\..\..\Csp\csl_xena\" -i"$(Proj_dir)\..\..\..\..\Csp\kld" -i"$(Proj_dir)\..\..\..\Inc" -i"$(Proj_dir)\..\..\..\..\Csp\csl_xena\csl_reg" -d"DM360_IPC_INTC_ENABLE" -d"ARM926_ENABLE_CACHE" -d"ENABLE_MEMCONV" -d"ON_LINUX" -u"DEVICE_ID_CHECK" -mc -me -mv5e -ms --abi=ti_arm9_abi
+
+["Linker" Settings: "Debug"]
+Options=-c -m"$(Proj_dir)\map\mpeg2venc_ti_arm926testapp.map" -o"$(Proj_dir)\out\mpeg2venc_ti_arm926testapp.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m"$(Proj_dir)\map\mpeg2venc_ti_arm926testapp.map" -o"$(Proj_dir)\out\mpeg2venc_ti_arm926testapp.out" -w -x
+
+["cmd\mpeg2venc_ti_arm926.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["cmd\mpeg2venc_ti_arm926.cmd" Settings: "Release"]
+LinkOrder=1
+

@@ -1,0 +1,219 @@
+; General settings that can be overwritten in the host code
+; that calls the AISGen library.
+[General]
+; Can be 8 or 16 - used in emifa
+busWidth=8            
+
+; SPIMASTER,I2CMASTER,EMIFA,NAND,EMAC,UART,PCI,HPI,USB,MMC_SD,VLYNQ,RAW
+BootMode=none
+
+; 8,16,24 - used for SPI,I2C
+;AddrWidth=8          
+
+; NO_CRC,SECTION_CRC,SINGLE_CRC
+crcCheckType=NO_CRC
+
+; TRUE/ON or FALSE/OFF
+seqReadEn=ON
+
+; Specify the symbol name for the boot finalize function
+;FinalFxnSymbolName=none
+
+
+; Security settings (keys, options, list of sections to encrypt, etc.)
+[Security]
+
+; Security Type: GENERIC, CUSTOM, NONE
+securityType=GENERIC
+
+; Boot Exit Type: NONSECURE, SECUREWITHSK, SECURENOSK
+; NONSECURE = Device switches from secure type to non-secure type, jumping to loaded code 
+;             (no secure kernel since no longer secure device).
+; SECUREWITHSK = Device remains as secure type, secure kernel is loaded, allowing run-time
+;                security context switching.
+bootExitType = SECUREWITHSK
+
+; Option to include in the generated key header the flag to force the JTAG off
+;genericJTAGForceOff=FALSE
+
+; Encrypt section list (ALL or comma-separated list of section names)
+;encryptSections=ALL
+
+; CEK used for AES encryption of data - must be string of 32 hexadecimal characters
+encryptionKey=4A7E1F56AE545D487C452388A65B0C05
+
+; Debug key
+keyEncryptionKey=0B94A91D33E597097F6C426F8F016872
+
+; SHA Algorithm Selection
+genericSHASelection = SHA1
+
+; Binary file containing secure key header for generic device
+;genKeyHeaderFileName=gen_keyhdr_unencrypted.bin
+
+
+
+; This section allows setting the PLL0 system clock with a  
+; specified multiplier and divider as shown. The clock source
+; can also be chosen for internal or external.
+;           |------24|------16|-------8|-------0|
+; PLL0CFG0: | CLKMODE| PLLM   | PREDIV | POSTDIV|
+; PLL0CFG1: | RSVD   | PLLDIV1| PLLDIV3| PLLDIV7|
+;[PLL0CONFIG]
+;PLL0CFG0 = 0x00130001
+;PLL0CFG1 = 0x00000104
+
+; This section allows setting up the PLL1. Usually this will 
+; take place as part of the EMIF3a DDR setup. The format of
+; the input args is as follows:
+;           |------24|------16|-------8|-------0|
+; PLL1CFG0: |    PLLM| POSTDIV| PLLDIV1| PLLDIV2|
+; PLL1CFG1: |           RSVD           | PLLDIV3|
+;[PLL1CONFIG]
+;PLL1CFG0 = 0x00000000
+;PLL1CFG1 = 0x00000000
+
+; This section lets us configure the peripheral interface
+; of the current booting peripheral (I2C, SPI, or UART).
+; Use with caution. The format of the PERIPHCLKCFG field 
+; is as follows:
+; SPI:        |------24|------16|-------8|-------0|
+;             |           RSVD           |PRESCALE|
+;
+; I2C:        |------24|------16|-------8|-------0|
+;             |  RSVD  |PRESCALE|  CLKL  |  CLKH  |
+;
+; UART:       |------24|------16|-------8|-------0|
+;             | RSVD   |  OSR   |  DLH   |  DLL   |
+;[PERIPHCLKCFG]
+;PERIPHCLKCFG = 0x00000000
+
+
+; This section can be used to configure the PLL1 and the EMIF3a registers
+; for starting the DDR2 interface. 
+; See PLL1CONFIG section for the format of the PLL1CFG fields.
+;            |------24|------16|-------8|-------0|
+; PLL1CFG0:  |              PLL1CFG              |
+; PLL1CFG1:  |              PLL1CFG              |
+; DDRPHYC1R: |             DDRPHYC1R             |
+; SDCR:      |              SDCR                 |
+; SDTIMR:    |              SDTIMR               |
+; SDTIMR2:   |              SDTIMR2              |
+; SDRCR:     |              SDRCR                |
+; CLK2XSRC:  |             CLK2XSRC              |
+;[EMIF3DDR]
+;PLL1CFG0 = 0x13010001
+;PLL1CFG1 = 0x00000002
+;DDRPHYC1R = 0x000000C4
+;SDCR = 0x08134632
+;SDTIMR = 0x26922A09
+;SDTIMR2 = 0x0014C722
+;SDRCR = 0x00000492
+;CLK2XSRC = 0x00000000
+
+; This section can be used to configure the EMIFA to use 
+; CS0 as an SDRAM interface.  The fields required to do this
+; are given below.
+;                     |------24|------16|-------8|-------0|
+; SDBCR:              |               SDBCR               |
+; SDTIMR:             |               SDTIMR              |
+; SDRSRPDEXIT:        |             SDRSRPDEXIT           |
+; SDRCR:              |               SDRCR               |
+; DIV4p5_CLK_ENABLE:  |         DIV4p5_CLK_ENABLE         |
+;[EMIF25SDRAM]
+;SDBCR = 0x00004421
+;SDTIMR = 0x42215810
+;SDRSRPDEXIT = 0x00000009
+;SDRCR = 0x00000410
+;DIV4p5_CLK_ENABLE = 0x00000001
+
+; This section can be used to configure the async chip selects
+; of the EMIFA (CS2-CS5).  The fields required to do this
+; are given below.
+;           |------24|------16|-------8|-------0|
+; A1CR:     |                A1CR               |
+; A2CR:     |                A2CR               |
+; A3CR:     |                A3CR               |
+; A4CR:     |                A4CR               |
+; NANDFCR:  |              NANDFCR              |
+;[EMIF25ASYNC]
+;A1CR = 0x00000000
+;A2CR = 0x00000000
+;A3CR = 0x00000000
+;A4CR = 0x00000000
+;NANDFCR = 0x00000000
+
+; This section should be used in place of PLL0CONFIG when
+; the I2C, SPI, or UART modes are being used.  This ensures that 
+; the system PLL and the peripheral's clocks are changed together.
+; See PLL0CONFIG section for the format of the PLL0CFG fields.
+; See PERIPHCLKCFG section for the format of the CLKCFG field.
+;               |------24|------16|-------8|-------0|
+; PLL0CFG0:     |              PLL0CFG              |
+; PLL0CFG1:     |              PLL0CFG              |
+; PERIPHCLKCFG: |              CLKCFG               |
+;[PLLANDCLOCKCONFIG]
+;PLL0CFG0 = 0x00000000
+;PLL0CFG1 = 0x00000000
+;PERIPHCLKCFG = 0x00000000
+
+; This section should be used to setup the power state of modules
+; of the two PSCs.  This section can be included multiple times to
+; allow the configuration of any or all of the device modules.
+;           |------24|------16|-------8|-------0|
+; LPSCCFG:  | PSCNUM | MODULE |   PD   | STATE  |
+;[PSCCONFIG]
+;LPSCCFG = 0x01030003
+
+; This section allows setting of a single PINMUX register.
+; This section can be included multiple times to allow setting
+; as many PINMUX registers as needed.
+;         |------24|------16|-------8|-------0|
+; REGNUM: |              regNum               |
+; MASK:   |               mask                |
+; VALUE:  |              value                |
+;[PINMUX]
+;REGNUM = 5
+;MASK = 0x00FF0000
+;VALUE = 0x00880000
+
+; No Params required - simply include this section for the fast boot function to be called
+;[FASTBOOT]
+
+; This section allows configuration of one the systme IOPUs.
+; The iopuNum field must be valid (0-5) and then mppaStart
+; and mppaend fields allow setting a range of mppa MMRs to the 
+; same supplied mppa value.
+; IOPUSELECT: |  RSVD  | iopuNum| mppaStart |  mppaEnd  |
+; MPPAVALUE:  |              mppaValue                  |
+;[IOPUCONFIG]
+;IOPUSELECT = 0x00030001
+;MPPAVALUE  = 0xFFFFFFFF
+
+; This section allow setting the MPU1 or MPU2. If the 
+; rangenum is out of the allowed range then all the ranges
+; (including the fixed range) take the start, end, and 
+; protection values.
+;            |------24|------16|----------8|----------0|
+; MPUSELECT: |      RSVD       |   mpuNum  | rangeNum  |
+; STARTADDR: |              startAddr                  |
+; ENDADDR:   |               endAddr                   |
+; MPPAVALUE: |              mppaValue                  |
+;[MPUCONFIG]
+;MPUSELECT = 0x000001FF
+;STARTADDR = 0x00000000
+;ENDADDR   = 0x00000000
+;MPPAVALUE = 0xFFFFFFFF
+
+; This function allows the user to selectively open up the
+; the debug TAPs of the device.  Since the function is not
+; executed until the signature is checked, it does not 
+; pose a security issue.
+;          |------24|------16|----------8|----------0|
+; TAPSCFG: |      RSVD       |       tapscfg         |
+[TAPSCONFIG]
+TAPSCFG = 0x0000FFFF
+
+
+
+

@@ -1,0 +1,36 @@
+
+Matrix Graphical User Interface (GUI) project build instructions:
+
+NOTE: the Makefile.build will be invoked from inside the Eclipse tool.
+
+If building the project outside the ti-sdk environment:
+ - you can use qmake to genrate the makefile
+ - you can use or ignore the Makefile.build
+
+If you wish to use Makefile.build: Build procedure outside the ti-sdk:
+
+NOTE:  You will need to modify the Makefile.build file and set the 
+       following paths:
+
+    1.  ENV_SETUP - This should be set to the location of the 
+                    environment-setup file in the Arago SDK.  You may
+                    also need to modify paths in the environment-setup
+                    file if building outside the SDK.
+    2.  DESTDIR   - This should point to the root of your target file
+                    system where you want this matrix GUI application
+                    to be installed.
+
+qmake2 // This must be invoked from the directory where the matrix_gui.pro 
+          resides
+
+To Build:
+make -f Makefile.build all
+
+To Clean:
+make -f Makefile.build clean
+
+To Build Debug version:
+make -f Makefile.build debug
+
+To Build Release version:
+make -f Makefile.build release

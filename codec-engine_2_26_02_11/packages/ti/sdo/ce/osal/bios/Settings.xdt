@@ -1,0 +1,118 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    /*
+     *  ======== Settings.xdt ========
+     *  Generate the config structure for osal.bios module
+     */
+    var Settings = this;
+    var nHeaps = 0;
+    var heapNames = new Array();
+
+    /* Get the names of all the heaps */
+    var memInsts = $$legacy.prog.module("MEM").instances();
+    for (var i = 0; i < memInsts.length; i++) {
+        var inst = memInsts[i];
+        if (inst.createHeap &&
+                (inst != $$legacy.prog.module("MEM").instance("MEM_NULL"))) {
+            heapNames[nHeaps] = inst.name;
+            nHeaps++;
+        }
+    }
+%%}
+
+% if (Settings.enableLogging == true) {
+/*
+ * ======== Socrates logging configuration ========
+ */
+#include <ti/sdo/ce/osal/Log.h>
+#include <ti/bios/include/log.h>
+
+extern far LOG_Obj `Settings.logName`;
+far Log_Handle ti_sdo_ce_dvtLog = (Log_Handle)&`Settings.logName`;
+
+% }
+% else {
+#include <ti/sdo/ce/osal/Log.h>
+
+Log_Handle ti_sdo_ce_dvtLog = NULL;
+% }
+
+/* Number of BIOS heaps */
+Int Memory_numHeaps = `nHeaps`;
+
+/* Array containing the names of the BIOS heaps. */
+String Memory_heapNames[`nHeaps`];
+
+/*
+ *  These arrays will contain the original base address and size of each heap.
+ */
+Uint32 Memory_heapBases[`nHeaps`];
+Uint32 Memory_heapSizes[`nHeaps`];
+
+/*
+ *  BIOS heap segments.
+ */
+% for (var i = 0; i < nHeaps; i++) {
+extern Int `heapNames[i]`;
+% }
+%
+
+/*
+ *  ======== ti_sdo_ce_osal_bios_init ========
+ *  Generated init function for BIOS OSAL.
+ */
+Void ti_sdo_ce_osal_bios_init()
+{
+% for (var i = 0; i < nHeaps; i++) {
+    Memory_heapNames[`heapNames[i]`] = "`heapNames[i]`";
+% }
+}
+
+% /* for BIOS builds (w/ or w/o dsplink) define the tracebuffer and its size */
+/*
+ *  Definition of the globally visible character buffer holding all trace
+ *  data
+ */
+Char Global_traceBuffer[`Settings.traceBufferSize`];
+Int  Global_traceBufferSize = `Settings.traceBufferSize`;
+
+%%{
+/*
+ * @(#) ti.sdo.ce.osal.bios; 2, 0, 1,182; 12-2-2010 21:24:43; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

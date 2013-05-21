@@ -1,0 +1,5 @@
+set serverip 172.24.133.121
+set bootargs 'console=ttyS0,115200n8 noinitrd rw root=/dev/nfs nfsroot=172.24.190.197:/usr/dvsdk/install/opt/mv_pro_5.0/montavista/pro/devkit/arm/v5t_le/target *(rw,insecure,sync,no_root_squash),nolock mem=120M ip=dhcp'
+set bootfile uImage
+dhcp
+bootm

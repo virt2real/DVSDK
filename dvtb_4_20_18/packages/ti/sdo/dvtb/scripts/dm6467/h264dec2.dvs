@@ -1,0 +1,42 @@
+############################################################
+# H264 Decode: Read encoded file, decode and dump 
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp h264dec2 codec h264dec
+
+# Specify the parameters
+setp h264dec2 maxWidth 1920
+setp h264dec2 maxHeight 1088
+setp h264dec2 maxFrameRate 30000
+setp h264dec2 maxBitRate 10000000
+setp h264dec2 dataEndianness 1
+setp h264dec2 forceChromaFormat 9
+setp h264dec2 displayDelay 16
+setp h264dec2 presetLevelIdc 11
+setp h264dec2 presetProfileIdc 3
+setp h264dec2 temporalDirModePred 1
+setp h264dec2 decodeHeader 0
+setp h264dec2 displayWidth 0
+setp h264dec2 frameSkipMode 0
+setp h264dec2 frameOrder 0
+setp h264dec2 newFrameFlag 0
+setp h264dec2 mbDataFlag 0
+setp h264dec2 numFrames 30
+
+#specify vpbe parameters
+#setp vpbe width 1920
+#setp vpbe height 1080
+#setp vpbe std 2
+#setp vpbe output 3
+
+# Trigger the decode+display scenario
+func h264dec2 -s ./data/videos/davincieffect_1080i_30fps.264 -t test.yuv
+

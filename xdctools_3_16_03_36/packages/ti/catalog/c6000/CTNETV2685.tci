@@ -1,0 +1,36 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== CTNETV2685.tci ========
+ *
+ */
+
+utils.importFile("ti/catalog/c6000/C6452.tci");
+
+/*
+ *  ======== CTNETV2685 ========
+ */
+function CTNETV2685(name, parent)
+{
+    /* Since 6452 and TNETV2685 are same from the configuration point of view,
+     * instead of duplicating code, the TNETV2685 device is configured using the
+     * code for 6452 and then only deviceName is changed.
+     */
+
+    C6452.apply(this, [name, parent]);
+    this.deviceName = "TNETV2685";
+}
+/*
+ *  @(#) ti.catalog.c6000; 1, 0, 0, 0,226; 2-23-2010 16:50:37; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

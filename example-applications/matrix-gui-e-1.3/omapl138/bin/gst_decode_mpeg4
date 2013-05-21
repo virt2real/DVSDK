@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# boot PCM and DAC volume to full
+amixer -q sset 'PCM' 127
+amixer -q sset 'Line DAC' 127
+
+/etc/init.d/loadmodule-rc restart
+
+gst-launch -v filesrc location=/usr/share/ti/data/videos/davincieffect_480x272.mp4 \
+num-buffers=4000 ! qtdemux name=demux demux.audio_00 ! queue \
+max-size-buffers=8000 max-size-time=0 max-size-bytes=0 ! TIAuddec1 ! \
+alsasink demux.video_00 ! queue ! TIViddec2 ! TIC6xColorspace \
+engineName=codecServer ! queue ! tidisplaysink2 
+

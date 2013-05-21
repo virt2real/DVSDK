@@ -1,0 +1,673 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0070)http://dev2dev.bea.com/products/wlworkshop/articles/JSchneider_XML.jsp -->
+<HTML lang=en xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>WebLogic Workshop 7.0</TITLE>
+<META http-equiv=content-type content="text/html; charset=iso-8859-1">
+<META http-equiv=pragma content=no-cache>
+<META http-equiv=Content-Language content=en-us><!--link rel="stylesheet" href="/images/styles.css" -->
+<STYLE type=text/css media=all>@import url( http://dev2dev.bea.com/homepage/fonts.css );
+</STYLE>
+
+<SCRIPT language=javascript src="e4x_files/mainlib.js"></SCRIPT>
+
+<META content=dev2dev name=decorator>
+<META content=wlw70 name=breadcrumb>
+<META content=true name=notPrintable>
+<META content=true name=noCommentsEmail>
+<META content="MSHTML 6.00.2800.1458" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<DIV class=hide><A title="Skip navigation" accessKey=2 
+href="http://dev2dev.bea.com/products/wlworkshop/articles/JSchneider_XML.jsp#wrap">Skip 
+navigation</A>.</DIV>
+<DIV id=header>
+<FORM name=gs action=http://google.bea.com/search method=get>
+<DIV class=unb tabIndex=1><IMG class=slogan alt="By Developers, For Developers" 
+src="e4x_files/slogan.gif"> 
+<DIV class=buttons><A 
+onclick="beaCTT(this, 'D2D', 'Fr:topnav not logged in To:dlc home', 'dev2dev navbar');" 
+href="http://commerce.bea.com/"><IMG height=20 alt=Download 
+src="e4x_files/button_download.gif" width=80 border=0></A> <A 
+onclick="beaCTT(this, 'D2D', 'Fr:topnav not logged in To:edocs home', 'dev2dev navbar');" 
+href="http://edocs.bea.com/"><IMG height=20 alt=Documentation 
+src="e4x_files/button_documentation.gif" width=108 border=0></A> <A 
+onclick="beaCTT(this, 'D2D', 'Fr:topnav not logged in To:support home', 'dev2dev navbar');" 
+href="http://support.bea.com/"><IMG height=20 alt=Support 
+src="e4x_files/button_support.gif" width=74 border=0></A> <A 
+href="http://dev2dev.bea.com/administration/login.jsp?dest=http%3A%2F%2Fdev2dev.bea.com%3A80%2Fproducts%2Fwlworkshop%2Farticles%2FJSchneider_XML.jsp"><IMG 
+height=20 alt="Log In" src="e4x_files/button_login.gif" width=55 border=0></A> 
+<A 
+href="http://dev2dev.bea.com/administration/registration.jsp?dest=http%3A%2F%2Fdev2dev.bea.com%3A80%2Fproducts%2Fwlworkshop%2Farticles%2FJSchneider_XML.jsp"><IMG 
+height=20 alt=Register src="e4x_files/button_register.gif" width=79 
+border=0></A> </DIV></DIV>
+<DIV class=headergraphics><A href="http://dev2dev.bea.com/"><IMG 
+class=graphicdev2dev height=57 alt="BEA dev2dev" src="e4x_files/header_d2d.gif" 
+width=596 border=0></A> <A 
+onclick="beaCTT(this, 'D2D', 'Fr:topnav not logged in To:bea dot com home', 'dev2dev navbar');" 
+href="http://www.bea.com/"><IMG class=graphicbea height=57 alt=BEA.com 
+src="e4x_files/head_bea.gif" width=204 border=0></A> </DIV>
+<DIV class=redline><IMG height=6 alt="" src="e4x_files/line_red.gif" width=800 
+border=0></DIV>
+<DIV class=graybar>
+<DIV class=topnav><A href="http://dev2dev.bea.com/index.jsp">Home</A> 
+&nbsp;|&nbsp; <A 
+onclick="beaCTT(this, 'D2D', 'Fr:topnav not logged in To:all products page', 'dev2dev navbar');" 
+href="http://dev2dev.bea.com/products/all.jsp">Dev Centers</A> &nbsp;|&nbsp; <A 
+onclick="beaCTT(this, 'D2D', 'Fr:topnav not logged in To:code library', 'dev2dev navbar');" 
+href="http://dev2dev.bea.com/code/">Code Library</A> &nbsp;|&nbsp; <A 
+onclick="beaCTT(this, 'D2D', 'Fr:topnav not logged in To:community index', 'dev2dev navbar');" 
+href="http://dev2dev.bea.com/community/">Community</A> &nbsp;|&nbsp; <A 
+onclick="beaCTT(this, 'D2D', 'Fr:topnav not logged in To:newsgroup home', 'dev2dev navbar');" 
+href="http://forums.bea.com/cgi-bin/dnewsweb">Newsgroups</A> </DIV>
+<DIV class=searchbox><INPUT class=formclass size=25 name=q> <INPUT 
+style="PADDING-LEFT: 3px" type=image src="e4x_files/button_search.gif" name=bntg 
+img> </DIV></DIV>
+<DIV class=twodots></DIV><INPUT type=hidden value=latin1 name=ie> <INPUT 
+type=hidden value=bea name=site> <INPUT type=hidden value=xml_no_dtd 
+name=output> <INPUT type=hidden value=bea name=client> <INPUT type=hidden 
+value=lang_en name=lr> <INPUT type=hidden 
+value=http://dev2dev.bea.com/images/dev2dev.xsl name=proxystylesheet> <INPUT 
+type=hidden value=latin1 name=oe> <INPUT type=hidden name=restrict> <INPUT 
+type=hidden value=p name=filter> <INPUT type=hidden value=5 name=numgm> <INPUT 
+type=hidden value=d2d name=source> </FORM></DIV>
+<DIV id=wrap>
+<DIV class=breadcrumb><A href="http://dev2dev.bea.com/index.jsp">dev2dev 
+Home</A> &gt; <A href="http://dev2dev.bea.com/products/all.jsp">Dev Centers</A> 
+&gt; WebLogic Workshop 7.0<BR></DIV>
+<DIV id=summary><IMG alt="WebLogic Workshop 7.0" 
+src="e4x_files/h1_weblogic_workshop_70.gif"> 
+<DIV 
+class=title_line></DIV><!-- New Section Product Description goes here --></DIV>
+<DIV id=content><!-- New Section - Current Headlines -->
+<H3>Native XML Scripting in BEA WebLogic Workshop</H3><BR>By John 
+Schneider<BR><BR>It’s no secret - XML’s popularity has skyrocketed, making it a 
+significant part of our daily jobs. How much time have you spent in the last 
+year pouring over XML-related specifications; learning new ways to create, 
+navigate, and manipulate XML data; and trying to decipher and debug that XSLT or 
+DOM code you (or that new guy) wrote a few months ago? <BR><BR>Have you ever 
+stopped to wonder whether all these new XML concepts, processing models, and 
+languages are really necessary? After all, you’ve been creating, navigating, and 
+manipulating similarly complex data structures using objects for years. Isn’t 
+there some way to flatten the XML learning curve and simplify XML processing by 
+leveraging your existing programming skills and knowledge? <BR><BR>Take heart. 
+Several companies have been collaborating to create a technology we call native 
+XML scripting to do just that. BEA is the first to include native XML scripting 
+in their products, but you will be seeing a lot more of it. In fact, ECMA plans 
+to include it in future versions of the popular ECMAScript language (a.k.a. 
+JavaScript). <BR><BR>This article will review some of the challenges associated 
+with existing XML technologies, introduce you to native XML scripting, and 
+describe a powerful, but little-known way to use native XML scripting in BEA 
+WebLogic Workshop. <BR><BR><B>XSLT</B> <BR><BR>Let’s start by taking a look at 
+an example problem designed to show the simplicity of XSLT (taken from the XSLT 
+tutorial at <A 
+href="http://www.ibiblio.org/xml/books/bible2/chapters/ch17.html#d1e531">http://www.ibiblio.org/xml/books/bible2/chapters/ch17.html#d1e531</A>). 
+Given the following XML document, <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> &lt;PERIODIC_TABLE&gt;
+   &lt;ATOM STATE="GAS"&gt;
+     &lt;NAME&gt;Hydrogen&lt;/NAME&gt;
+     &lt;SYMBOL&gt;H&lt;/SYMBOL&gt;
+     &lt;ATOMIC_NUMBER&gt;1&lt;/ATOMIC_NUMBER&gt;
+     &lt;ATOMIC_WEIGHT&gt;1.00794&lt;/ATOMIC_WEIGHT&gt;
+     &lt;BOILING_POINT UNITS="Kelvin"&gt;20.28&lt;/BOILING_POINT&gt;
+     &lt;MELTING_POINT UNITS="Kelvin"&gt;13.81&lt;/MELTING_POINT&gt;
+     &lt;DENSITY UNITS="grams/cubic centimeter"&gt;
+       &lt;!-- At 300K, 1 atm --&gt;
+       0.0000899
+     &lt;/DENSITY&gt;
+   &lt;/ATOM&gt;
+   &lt;ATOM STATE="GAS"&gt;
+     &lt;NAME&gt;Helium&lt;/NAME&gt;
+     &lt;SYMBOL&gt;He&lt;/SYMBOL&gt;
+     &lt;ATOMIC_NUMBER&gt;2&lt;/ATOMIC_NUMBER&gt;
+     &lt;ATOMIC_WEIGHT&gt;4.0026&lt;/ATOMIC_WEIGHT&gt;
+     &lt;BOILING_POINT UNITS="Kelvin"&gt;4.216&lt;/BOILING_POINT&gt;
+     &lt;MELTING_POINT UNITS="Kelvin"&gt;0.95&lt;/MELTING_POINT&gt;
+     &lt;DENSITY UNITS="grams/cubic centimeter"&gt;&lt;!-- At 300K --&gt;
+       0.0001785
+     &lt;/DENSITY&gt;
+   &lt;/ATOM&gt;
+</PRE></TD></TR></TBODY></TABLE><BR>we’d like create an HTML view of the 
+document in the following form: <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;html&gt;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;P&gt;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hydrogen
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.00794
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20.28
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.81
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0000899
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/P&gt;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;P&gt;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helium
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;He
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.0026
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.216
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.95
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0001785
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/P&gt;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/html&gt;
+</PRE></TD></TR></TBODY></TABLE><BR>We can perform this task using the following 
+XSLT code: <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> &lt;?xml version="1.0"?&gt;
+ &lt;xsl:stylesheet version="1.0"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+   &lt;xsl:template match="PERIODIC_TABLE"&gt;
+     &lt;html&gt;
+       &lt;xsl:apply-templates/&gt;
+     &lt;/html&gt;
+   &lt;/xsl:template&gt;
+   &lt;xsl:template match="ATOM"&gt;
+     &lt;P&gt;
+       &lt;xsl:apply-templates/&gt;
+     &lt;/P&gt;
+   &lt;/xsl:template&gt;
+ &lt;/xsl:stylesheet&gt;
+</PRE></TD></TR></TBODY></TABLE><BR>To be fair, we’ve selected one of the 
+simplest XSLT examples possible. Anyone who has used XSLT for real-world 
+projects will testify that most XSLT code is significantly more complex than 
+this example. Nonetheless, even with this simple example, it is obvious that 
+XSLT is unlike familiar programming languages (Java, Visual Basic, C, etc.). The 
+expression language and syntax are completely different. The programming model 
+is declarative instead of procedural. The processing model is by default 
+recursive instead of sequential. In addition, there are several new and 
+unfamiliar concepts (templates, nodes, priority rules, etc.). 
+<BR><BR>Consequently, the learning curve for XSLT is quite high, and deciphering 
+it can be a challenge for newcomers. In fact, creating, deciphering, and 
+modifying complex XSLT examples can test the mettle of even the best application 
+developers. To exacerbate this problem, familiar design, development, debugging, 
+profiling, and testing tools used to aid the creation of robust code cannot be 
+used with XSLT. <BR><BR><B>The DOM</B><BR><BR>Application developers may feel 
+more at home with the DOM. It allows programmers to use a familiar programming 
+language to create, navigate, and manipulate XML via a tree-based API. For 
+example, the problem above can be solved with the following DOM code fragment. 
+<BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> public Document toHTML(Document srcDoc) throws Exception {
+     Document destDoc = srcDoc.getImplementation().createDocument("","HTML",null);
+     Node root = destDoc.getFirstChild();
+
+     Node node = srcDoc.getFirstChild().getFirstChild();
+
+     while (node != null) {
+       if (node.getNodeName().equals("ATOM")) {
+         Node pNode = destDoc.createElement("P");
+         root.appendChild(pNode);
+
+         Node tempNode = node.getFirstChild();
+         while (tempNode != null) {
+           if (tempNode.getNodeType() == Node.ELEMENT_NODE) {
+             Node n = tempNode.getFirstChild();
+             while (n != null) {
+               if (n.getNodeType() == Node.TEXT_NODE) {
+                 Node tValue = destDoc.createTextNode(n.getNodeValue() + "\n");
+                 pNode.appendChild(tValue);
+               }
+
+               n = n.getNextSibling();
+             }
+           }
+
+           tempNode = tempNode.getNextSibling();
+         }
+       }
+
+       node = node.getNextSibling();
+     }
+
+   return destDoc;
+ }
+</PRE></TD></TR></TBODY></TABLE><BR>This code is more familiar; however, the 
+logic of the program is almost completely overwhelmed and obscured by tree 
+navigation logic and DOM API calls. Consequently, creating, reading, and 
+maintaining the code is tedious, time consuming and error prone. In addition, 
+the DOM requires the programmer to learn and adopt a tree-based object model and 
+a relatively extensive API for performing operations on this object model. 
+<BR><BR><B>Introducing Native XML Scripting</B> <BR><BR>While designing native 
+XML scripting, our objective was to drastically simplify writing code to create, 
+navigate, and manipulate XML by eliminating some of the challenges described 
+above. Above all, we wanted a solution that was familiar and intuitive to 
+developers, minimizing the need for specialized knowledge and flattening the XML 
+learning curve. The result is code that is easy to read, write, and maintain 
+without a huge stack of reference manuals by your side. <BR><BR>For example, the 
+following native XML script can address the problem introduced above: <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR>
+  <TR>
+    <TD>&nbsp;&nbsp;<CODE>function toHTML(srcDoc) {</CODE></TD>
+    <TD><CODE>&nbsp;</CODE></TD></TR>
+  <TR>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>var destDoc = 
+    &lt;html/&gt;;</CODE></TD>
+    <TD><CODE>&nbsp;&nbsp;// Start with an empty HTML document</CODE></TD></TR>
+  <TR>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE><B>for</B> (var atom <B>in</B> 
+      srcDoc..ATOM) {</CODE></TD>
+    <TD><CODE>&nbsp;&nbsp;// Loop through each ATOM tag in the 
+      source<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XML</CODE></TD></TR>
+  <TR>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>var ptext = ""; 
+      {</CODE></TD>
+  <TR>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE><B>for</B>(var 
+      item in atom.children())</CODE></TD>
+    <TD><CODE>&nbsp;&nbsp;// Loop through each child of this atom</CODE></TD></TR>
+  <TR>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>ptext 
+      += item + "\n";</CODE></TD>
+    <TD><CODE>&nbsp;&nbsp;// and concatentate the text values</CODE></TD></TR>
+  <TR>
+    <TD>&nbsp;&nbsp;&nbsp;</TD></TR>
+  <TR>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>destDoc[destDoc.length] 
+      =</CODE></TD>
+    <TD><CODE>&nbsp;&nbsp;// Append paragraph containing text values to 
+    </CODE></TD></TR>
+  <TR>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>&lt;P&gt;{ptext}&lt;/P&gt;;</CODE></TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>HTML</CODE></TD></TR></CODE></TD>
+  <TR>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;<CODE>}</CODE></TD></TR>
+  <TR>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;<CODE>return destDoc;</CODE></TD></TR>
+  <TR>
+    <TD><CODE>&nbsp;}</CODE></TD></TR></TBODY></TABLE><BR><BR>Even though the code 
+above uses several advanced features from native XML scripting, it is simpler, 
+more compact, and more familiar to the average programmer than the equivalent 
+XSLT or DOM code. The logic of the code is not obscured by tree navigation 
+logic, and it can be easily debugged using conventional debugging tools. 
+<BR><BR>The code above should look particularly familiar to anyone who knows 
+ECMAScript (a.k.a. JavaScript). Native XML scripting is based on and extends the 
+popular ECMAScript language available in Web browsers and many environments 
+where XML is found. It extends ECMAScript by adding several key language 
+features, including native XML data types and operators that make XML a 
+first-class citizen. Let’s take a closer look at some of the features of native 
+XML scripting for creating, navigating, filtering, iterating through, and 
+modifying XML documents. <BR><BR><B>Creating XML</B> <BR><BR>The first thing 
+that may strike you as interesting in the example above occurs on line two. On 
+the right-hand side of the assignment operator, we see the XML literal, 
+<CODE>&lt;html/&gt;</CODE>. XML literals are used to create XML values, just 
+like numeric and string literals are used to create numeric and string values. 
+This eliminates the need to invoke an XML parser or use DOM methods to manually 
+construct an XML value by inserting nodes into a tree structure. <BR><BR>Any 
+legal XML value can be used as an XML literal, including those that span 
+multiple lines. For example, the following code constructs an XML value 
+representing a periodic table and assigns it to the variable x. <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> var x = &lt;PERIODIC_TABLE&gt;
+           &lt;ATOM STATE="GAS"&gt;
+             &lt;NAME&gt;Hydrogen&lt;/NAME&gt;
+             &lt;SYMBOL&gt;H&lt;/SYMBOL&gt;
+             &lt;ATOMIC_NUMBER&gt;1&lt;/ATOMIC_NUMBER&gt;
+             &lt;ATOMIC_WEIGHT&gt;1.00794&lt;/ATOMIC_WEIGHT&gt;
+             &lt;BOILING_POINT UNITS="Kelvin"&gt;20.28&lt;/BOILING_POINT&gt;
+             &lt;MELTING_POINT UNITS="Kelvin"&gt;13.81&lt;/MELTING_POINT&gt;
+             &lt;DENSITY UNITS="grams/cubic centimeter"&gt;
+               &lt;!-- At 300K, 1 atm --&gt;
+               0.0000899
+             &lt;/DENSITY&gt;
+           &lt;/ATOM&gt;
+         &lt;/PERIODIC_TABLE&gt;;
+</PRE></TD></TR></TBODY></TABLE><BR><B>Navigating XML</B> <BR><BR>A very common 
+task in XML processing is navigation. Native XML scripting addresses this 
+problem by adopting the familiar dot operator ".", commonly used for accessing 
+the fields, methods and properties of an object, for accessing the children of 
+an XML value. In addition, it adds a new dot-dot operator ".." for accessing 
+descendents (i.e., children, grandchildren, etc.) of an XML value. These 
+operators are conceptually similar to the "/" and "//" operators found in XPath, 
+but they use syntax designed to be more intuitive for developers familiar with 
+navigating objects (and they don’t conflict with the use of "/" and "//" for 
+numeric division and comments). <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> var y = &lt;employees&gt;
+           &lt;employee&gt;
+             &lt;name&gt;Joe&lt;/name&gt;
+             &lt;age&gt;28&lt;/age&gt;
+             &lt;hobbies&gt;
+   	       &lt;favorite&gt;
+                  &lt;name&gt;Sailing&lt;/name&gt;
+ 	       &lt;/favorite&gt;
+               &lt;others&gt;
+                  &lt;name&gt;Reading&lt;/name&gt;
+                  &lt;name&gt;Running&lt;/name&gt;
+   	       &lt;/others&gt;
+             &lt;/hobbies&gt;
+             &lt;department&gt;
+               &lt;name&gt;Engineering&lt;/name&gt;
+             &lt;/department&gt;
+ 	   &lt;/employee&gt;
+         &lt;/employees&gt;;
+
+ var name = y.employees.employee.name;		// Evaluates to the value "Joe"
+ var age = y.employees.employee.age;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Evaluates to the value "28"
+</PRE></TD></TR></TBODY></TABLE><BR>As the example above demonstrates, accessing 
+the value of a child XML element is just like accessing a field or property of 
+an object. At first glance, it may seem like the same result could be achieved 
+by mapping the XML onto a standard object; however, there are important 
+differences between XML objects and the objects we’ve come to know and love. For 
+example, XML objects allow us to preserve and control the ordering of child XML 
+elements, whereas object properties and fields have no concept of order. As 
+another example, XML objects can contain several elements with the same name, 
+which is not allowed for fields or properties of standard objects. 
+<BR><BR>Continuing our example above, the following code demonstrates the 
+dot-dot (or descendent) operator: <BR><BR>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#cccccc border=0>
+  <TBODY>
+  <TR>
+    <TD>&nbsp;&nbsp;<CODE>var names = y..name;</CODE></TD>
+    <TD><CODE>&nbsp;&nbsp;// Returns a list of all "names" in the 
+      document</CODE><BR><CODE>&nbsp;&nbsp;// I.e., ["Joe", "Sailing", 
+      "Reading", "Running", 
+      </CODE><BR><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Engineering"]</CODE></TD></TR>
+  <TR>
+    <TD>&nbsp;&nbsp;<CODE>var hobbyNames = </CODE></TD>
+    <TD><CODE>&nbsp;&nbsp;// Returns a list of all hobby names in the 
+      document</CODE></TD></TR>
+  <TR>
+    <TD><CODE>&nbsp;&nbsp;y..hobbies..name;</CODE></TD>
+    <TD><CODE>&nbsp;&nbsp;// I.e., ["Sailing", "Reading", 
+  "Running"]</CODE></TD></TR></TBODY></TABLE><BR><BR>This feature makes it easier 
+to find XML elements in a document without specifying the complete containment 
+hierarchy from the document root. You may have noticed that Line 3 in our first 
+native XML scripting example above used the dot-dot (or descendent) operator to 
+find all the elements named "ATOM" in the source XML document. 
+<BR><BR><B>Filtering XML</B> <BR><BR>Native XML scripting also introduces a 
+filtering operator for identifying elements with contents that match specific 
+criteria. Given an expression of the form xmlList.( booleanTest ), the filtering 
+operator applies the booleanTest to each item in the xmlList and returns a new 
+list containing all the matching items. For example, take a look at the 
+following XML Script: <BR><BR>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#cccccc><BR><PRE class=code> var y = &lt;employees&gt;
+           &lt;employee&gt;
+             &lt;department id="200"&gt;Product Management&lt;/department&gt;
+             &lt;name&gt;Joe&lt;/name&gt;
+             &lt;age&gt;28&lt;/age&gt;
+           &lt;/employee&gt;
+           &lt;employee&gt;
+             &lt;department id="500"&gt;Engineering&lt;/department&gt;
+             &lt;name&gt;Bill&lt;/name&gt;
+             &lt;age&gt;34&lt;/age&gt;
+           &lt;/employee&gt;
+           &lt;employee&gt;
+             &lt;department id="500"&gt;Engineering&lt;/department&gt;
+             &lt;name&gt;Mary&lt;/name&gt;
+             &lt;age&gt;29&lt;/age&gt;
+           &lt;/employee&gt;
+           &lt;employee&gt;
+             &lt;department id="500"&gt;Engineering&lt;/department&gt;
+             &lt;name&gt;Ken&lt;/name&gt;
+             &lt;age&gt;24&lt;/age&gt;
+           &lt;/employee&gt;
+         &lt;/employees&gt;;
+
+ var over27inEng = y.employees.employee.(department.@id == 500 &amp;&amp; age &gt; 27);
+</PRE></TD></TR></TBODY></TABLE><BR>The last line in this script finds all 
+employees in department 500 who are older than 27. After executing this line, 
+the variable over27inEng will contain a list referencing the second and third 
+&lt;employee&gt; elements in the document containing information about Bill and 
+Mary respectively. I.e., <BR><BR>
+<TABLE cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#cccccc><BR><PRE class=code> over27inEng[0] <IMG src="e4x_files/Arrow.jpg" border=0> &lt;employee&gt;
+                    &lt;department id="500"&gt;Engineering&lt;/department&gt;
+                    &lt;name&gt;Bill&lt;/name&gt;
+                    &lt;age&gt;34&lt;/age&gt;
+                        &lt;/employee&gt;
+
+ over27inEng[1] <IMG src="e4x_files/Arrow.jpg" border=0> &lt;employee&gt;
+                    &lt;department id="500"&gt;Engineering&lt;/department&gt;
+                    &lt;name&gt;Mary&lt;/name&gt;
+                    &lt;age&gt;29&lt;/age&gt;
+</PRE></TD></TR></TBODY></TABLE><BR>You may have also noticed that the last line 
+in the above script uses the notation "@id" to access the attribute named ID. 
+This nomenclature is a standard part of native XML scripting borrowed from 
+XPath. <BR><BR><B>Iterating Through XML Lists</B> <BR><BR>When an operator 
+returns a list of items, it is often useful to iterate through the list 
+performing the same set of operations on each item. As you may have noticed in 
+our first example, native XML scripting reuses familiar looping constructs for 
+this purpose. For example, given an XML value pointing to the root element of a 
+purchase order in the following format: <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> &lt;order&gt;
+   &lt;customer&gt;
+     &lt;name&gt;I. Wannabuy&lt;/name&gt;
+     &lt;address&gt;
+       &lt;street&gt;53 Party Lane&lt;/street&gt;
+       &lt;city&gt;Anywhere&lt;/city&gt;
+       &lt;state&gt;CA&lt;/state&gt;
+       &lt;zip&gt;12345&lt;/zip&gt;
+     &lt;/address&gt;
+   &lt;/customer&gt;
+   &lt;item id="4365"&gt;
+     &lt;description&gt;Large Purple Dinosaur, Generic&lt;/description&gt;
+     &lt;quantity&gt;35&lt;/quantity&gt;
+     &lt;price&gt;24.99&lt;/price&gt;
+   &lt;/item&gt;
+   &lt;item id="9986"&gt;
+     &lt;description&gt;Catapult&lt;/description&gt;
+     &lt;quantity&gt;1&lt;/quantity&gt;
+     &lt;price&gt;149.95&lt;/price&gt;
+   &lt;/item&gt;
+   &lt;item id="5765"&gt;
+     &lt;description&gt;300 foot measuring tape&lt;/description&gt;
+     &lt;quantity&gt;1&lt;/quantity&gt;
+     &lt;price&gt;9.95&lt;/price&gt;
+   &lt;/item&gt;
+ &lt;/order&gt;
+</PRE></TD></TR></TBODY></TABLE><BR>The following function calculates the total 
+price by iterating through the items. <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> function calcTotal(order) {
+   var total = 0;
+   for (var item in order.item)
+     total += item.price * item.quantity;
+
+   return total;
+ }
+</PRE></TD></TR></TBODY></TABLE><BR>Note that this code looks exactly like the 
+script you would write to perform the same operation on a "order" object 
+containing an "item" array. Consequently, this code is very easy for the average 
+application developer to write, understand, and maintain even without any 
+special XML training. <BR><BR><B>Modifying XML</B> <BR><BR>Up to this point, 
+you’ve seen how to create, navigate, filter, and iterate through XML documents. 
+To modify an XML document all you have to do is specify the portion you want to 
+modify on the left-hand side of an assignment statement just like you would with 
+an object. As an illustration, consider the following examples: <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> // change the price of the third item in the order
+ order..item[2].price = "8.99";
+
+ // add an id attribute of the second item in the order
+ order..item[1].@id = 12345;
+
+ // change the age of the employee named Ken
+ y.employees.employee.(name == "Ken").age = "27";
+
+ // replace the second employee with a new one named Fred
+ y.employees.employee[1] = &lt;employee&gt;
+ 	&lt;department id="500"&gt;Engineering&lt;department&gt;
+         &lt;name&gt;Fred&lt;/name&gt;
+         &lt;age&gt;36&lt;/age&gt;
+ &lt;/employee&gt;;
+</PRE></TD></TR></TBODY></TABLE><BR>You can also delete portions of an XML 
+document using the delete operator. For example: <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> // delete the third employee
+ delete y.employees.employee[2];
+</PRE></TD></TR></TBODY></TABLE><BR><B>Building Classes with Native XML 
+Scripting</B> <BR><BR>Now that we’ve whet your appetite, let’s take a look at 
+one of the little-known ways to use native XML scripting in WebLogic Workshop. 
+The WebLogic Workshop documentation talks a lot about using native XML scripting 
+from within XML Maps. However, few people know that you can also build entire 
+classes with native XML scripting and call them from your JWS file. 
+<BR><BR>Creating classes with native XML scripting is amazingly simple. In fact, 
+you may have already done it without even knowing! Every JavaScript for XML 
+(JSX) file you create in WebLogic Workshop is automatically compiled into a 
+standard Java class when it is first used. The classname is derived from the JSX 
+filename and the package name is derived from the directory structure. For 
+example, given the project Test with the following structure, <BR><BR>
+<CENTER><IMG src="e4x_files/Article_Native_XML.jpg" 
+border=1></CENTER><BR><BR>WebLogic Workshop automatically compiles the 
+Employee.jsx file into a class called Employee in the util package. Therefore, 
+we can import it into our JWS Web service using the following directive: 
+<BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> // import our new JavaScript for XML file
+ import util.Employee;
+</PRE></TD></TR></TBODY></TABLE><BR>When compiling the JSX file, WebLogic 
+Workshop automatically generates a constructor and exposes each function 
+declared in the file as a member function of the class. For example, given the 
+following Employee.jsx file, <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> // Construct an empty employee element
+ var xmlDoc = &lt;employee&gt;&lt;name/&gt;&lt;age/&gt;&lt;/employee&gt;;
+
+ // Set the employee name
+ function setName (name) {
+        xmlDoc.employee.name = name;
+ }
+
+ // Set the employee age
+ function setAge (age) {
+        xmlDoc.employee.age = age;
+ }
+
+ // Add an arbitrary annotation to the end of the employee document
+ function annotate(annotation, value) {
+        xmlDoc[xmlDoc.length] = &lt;{annotation}&gt;{value}&lt;/{annotation}&gt;;
+ }
+
+ // return a standard W3C DOM Node representation of the employee element
+ function toNode () {
+ return xmlDoc.employee.domNode();
+ }
+</PRE></TD></TR></TBODY></TABLE><BR>WebLogic Workshop will create a single 
+constructor with no parameters containing all initialization code defined in the 
+global scope (i.e., not inside a function body). In the example above, the 
+constructor will contain the single line of code: <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> // Construct an empty employee element
+ var xmlDoc = &lt;employee&gt;&lt;name/&gt;&lt;age/&gt;&lt;/employee&gt;;
+</PRE></TD></TR></TBODY></TABLE><BR>In addition, WebLogic Workshop will create 
+public member functions named setName(), setAge(), annotate() and toNode() 
+corresponding to each function defined in the JSX file. All parameters and 
+return values for the generated member function are of type java.lang.Object. 
+The resulting class may be used within a JWS file just like familiar Java 
+classes. For example, the following JWS method exercises all of the functions 
+defined in Employee.jsx above: <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code>    /**
+     * @jws:operation
+     * @jws:protocol soap-style="document"
+     */
+    public Node testEmployee() throws Exception {
+        Employee e = new Employee();
+        e.setName("Bill");
+        e.setAge(new Integer(20));
+
+        e.annotate("hobby", "Sailing");
+        e.annotate("hobby", "Golfing");
+
+        return (Node)e.toNode();
+    }
+</PRE></TD></TR></TBODY></TABLE><BR>On invocation, this Web service operations 
+returns the following XML document wrapped in a SOAP envelope: <BR><BR>
+<TABLE width="100%" bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR><PRE class=code> &lt;employee&gt;
+        &lt;name&gt;Bill&lt;/name&gt;
+        &lt;age&gt;20&lt;/age&gt;
+        &lt;hobby&gt;Sailing&lt;/hobby&gt;
+        &lt;hobby&gt;Golfing&lt;/hobby&gt;
+ &lt;/employee&gt;
+</PRE></TD></TR></TBODY></TABLE><BR>You may have noticed our use of the curly 
+braces "{ " }" in the annotate() function above. Curly braces can be used 
+anywhere inside an XML literal to dynamically compute parts of it. Any legal 
+JavaScript expression can be used inside the curly braces. <BR><BR>Note that 
+unlike static Java objects, the structure of native XML scripting objects can be 
+modified dynamically at runtime. This dynamic nature allows us to tap into more 
+of the flexibility of XML without learning a totally new language or large set 
+of APIs. <BR><BR><B>Conclusion</B> <BR><BR>In this article, I’ve reviewed some 
+of the familiar challenges inherent in current XML technologies, given you a 
+taste of the power and simplicity of native XML scripting, and shown you how tap 
+into it using WebLogic Workshop. We’ve seen the promise of native XML scripting 
+to drastically simplify creating, navigating, and manipulating XML. We’ve also 
+seen how it leverages existing developer knowledge by reusing familiar 
+constructs and extending them to simplify common XML operations like searching 
+and filtering. <BR><BR>That said, we’ve only scratched the surface. Native XML 
+scripting also includes support for XML namespaces, Xpath, and a variety of 
+built-in operators and methods to simplify common XML tasks. You can find a lot 
+more information about these and other features in your WebLogic Workshop 
+documentation under the headings Handling XML with ECMAScript Extensions and 
+Functions for Manipulating XML. You can also find several additional examples of 
+JSX files in the samples project provided with WebLogic Workshop. Give it a try 
+and let us know what you think! <BR><BR>
+<H3>About the Author</H3><BR>John Schneider is a Chief Technologist at 
+AgileDelta. He has a great enthusiasm for XML, Web services, and the future 
+architectures they enable for sharing information and business logic. He is 
+currently leading ECMA’s newly established ECMAScript for XML (E4X) group to 
+create a global standard for native XML scripting. He has also participated in 
+the design of the XML Query and XML Schema languages and was selected to 
+represent the lead several international technology initiatives related to XML, 
+messaging and data interoperability representing the United States. He has B.S. 
+and M.S. degrees in Computer Science and has been developing new technologies 
+for over 20 years. Copyright © 2002 SYS-CON Media, Inc.<BR><BR><BR></DIV></DIV>
+<DIV id=footer><A href="http://www.bea.com/contact/index.shtml">Contact 
+BEA</A>&nbsp;&nbsp;&nbsp; <A 
+href="http://dev2dev.bea.com/sitemap/index.jsp">Site Map</A>&nbsp;&nbsp;&nbsp; 
+<A href="http://dev2dev.bea.com/index.xml">RSS</A>&nbsp;&nbsp;&nbsp; <A 
+href="http://dev2dev.bea.com/surveys/feedback.jsp?highlight=feedback">Feedback</A>&nbsp;&nbsp;&nbsp; 
+<A 
+href="http://www.bea.com/framework.jsp?CNT=privacy.htm&amp;FP=/content/legal/">Privacy</A>&nbsp;&nbsp;&nbsp; 
+© 2004 BEA Systems&nbsp;&nbsp;&nbsp; <A href="http://dev2dev.bea.com.cn/"><IMG 
+alt="dev2dev China" src="e4x_files/intl_cn.gif"></A>&nbsp;&nbsp;&nbsp; <A 
+href="http://www.beasys.co.jp/dev2dev/"><IMG alt="dev2dev Japan" 
+src="e4x_files/intl_jp.gif"></A> 
+<DIV class=twodots><IMG height=4 alt="" src="e4x_files/_.gif" width=300></DIV>
+<DIV class=redline><IMG height=4 alt="" src="" width=200></DIV></DIV><!-- START OF Data Collection Server TAG -->
+<SCRIPT language=JavaScript src="e4x_files/wt_util.js"></SCRIPT>
+
+<SCRIPT language=JavaScript>
+<!-- 
+dcs_TAG(TagPath);
+//-->
+</SCRIPT>
+<NOSCRIPT><IMG height=1 src="e4x_files/njs.gif" width=1 border=0 name=DCSIMG> 
+</NOSCRIPT><!-- END OF Data Collection Server TAG --></BODY></HTML>

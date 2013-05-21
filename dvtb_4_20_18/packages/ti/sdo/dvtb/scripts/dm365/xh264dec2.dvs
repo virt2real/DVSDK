@@ -1,0 +1,52 @@
+############################################################
+# video decode and dump
+#
+# Please ensure that you set the appropriate codec and 
+# change the path of input/output files used here with the 
+# path of input/output files required to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp h264dec2 codec                      h264dec2
+
+# specify the parameters
+setp h264dec2 maxHeight                  720
+setp h264dec2 maxWidth                   1280
+setp h264dec2 maxFrameRate               30000
+setp h264dec2 maxBitRate                 10485760
+setp h264dec2 dataEndianness             1
+setp h264dec2 forceChromaFormat          9
+setp h264dec2 decodeHeader               0
+setp h264dec2 displayWidth               0
+setp h264dec2 frameSkipMode              0
+setp h264dec2 frameOrder                 0
+setp h264dec2 newFrameFlag               0
+setp h264dec2 mbDataFlag                 0
+setp h264dec2 displayDelay               0
+setp h264dec2 hdvicpHandle               0
+setp h264dec2 resetHDVICPeveryFrame      0
+setp h264dec2 disableHDVICPeveryFrame    1
+setp h264dec2 numFrames                  30
+
+# Configure VPBE parameters
+#setp vpbe standard 3
+#setp vpbe output 3
+#setp vpbe opMode 1
+
+#setp vpbe cropEnable 0
+#setp vpbe cropCapLeft 0
+#setp vpbe cropCapTop 32
+#setp vpbe cropCapWidth 720
+#setp vpbe cropCapHeight 700
+
+getp h264dec2
+getp vpbe
+
+# Trigger the decode + playback scenario
+#func h264dec2 -s <input stream name>
+
+# Trigger the decode + dump scenario
+func h264dec2 -s data/videos/davincieffect.264 -t test.yuv

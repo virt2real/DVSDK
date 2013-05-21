@@ -1,0 +1,59 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * The following comment is used by the Graphical Config Tool:
+ * !DESCRIPTION 2XXX! controlCARD 28346 (300 MHz) with 256K bytes of off-chip SRAM memory. 
+ * !NAME! ti.platforms.control28346
+ */
+
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+var mem_ext = [];
+
+mem_ext[0] = {
+    comment: "This object defines space for the DSP's off-chip memory",
+    name: "SRAM",
+    base: 0x200000,
+    len:  0x20000,
+    space: "code/data"
+};
+
+var device_regs = {
+    pllcr: 29,          /* n+1 = 15 */
+    plldiv: 2,
+    clkin: 20000
+};
+
+var params = {
+    clockRate: 300.0000,        /* ((29 + 1) * 20MHz) / 2 = 300MHz */
+    catalogName: "ti.catalog.c2800",
+    deviceName: "28346",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+/*
+ *  @(#) ti.platforms.control28346; 1, 0, 0,43; 2-23-2010 16:59:05; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

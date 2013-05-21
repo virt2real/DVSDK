@@ -1,0 +1,49 @@
+%%{
+/* 
+ *  Copyright (c) 2008 Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ * 
+ * */
+%%}
+%var ts = this.loadRom ? '' : 'type = NOLOAD';
+    .fixedCode : > `utils.toHex(this.$capsule._romAsm.fixedCodeAddr)` `ts`
+    {
+        *(.fixedCode)
+    }
+
+%if (this.loadFixedDataAddr == undefined) {
+    GROUP : load = `utils.toHex(this.$capsule._romAsm.fixedDataAddr)`
+%}
+%else {
+    GROUP : load = `utils.toHex(this.loadFixedDataAddr)`, run = `utils.toHex(this.$capsule._romAsm.fixedDataAddr)`
+%}
+    {
+        .fixedData:modobj__C : type = DSECT { *(.fixedData:modobj__C) }
+        .modobj__C :
+        {
+%for each (var sn in this.$capsule._romAsm.sectNamesC) {
+            . = align(4);
+            *(.modobj__C:`sn`)
+%}    
+        }
+        .fixedData:modobj__V : type = DSECT { *(.fixedData:modobj__V) }
+        .modobj__V :
+        {
+%for each (var sn in this.$capsule._romAsm.sectNamesV) {
+            *(.modobj__V:`sn`)
+%}  
+        }
+        .fixedData:far : { *(.fixedData:far) }
+    }
+%%{
+/*
+ * @(#) ti.targets; 1, 0, 3,385; 2-24-2010 16:24:16; /db/ztree/library/trees/xdctargets/xdctargets-b36x/src/
+ */
+
+%%}

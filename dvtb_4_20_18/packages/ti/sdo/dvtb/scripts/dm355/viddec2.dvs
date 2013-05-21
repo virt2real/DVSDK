@@ -1,0 +1,31 @@
+############################################################
+# video decode and dump
+#
+# Please ensure that you set the appropriate codec and 
+# change the path of input/output files used here with the 
+# path of input/output files required to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name decode
+
+# Specify the decoder to be used
+setp viddec2 codec mpeg4dec
+
+# Specify the parameters
+setp viddec2 maxHeight 480
+setp viddec2 maxWidth 720
+setp viddec2 maxFrameRate 30000
+setp viddec2 maxBitRate 6000000
+setp viddec2 dataEndianness 1
+setp viddec2 forceChromaFormat 4
+setp viddec2 decodeHeader 0
+setp viddec2 displayWidth 0
+setp viddec2 frameSkipMode 0
+setp viddec2 frameOrder 0
+setp viddec2 newFrameFlag 0
+setp viddec2 mbDataFlag 0
+setp viddec2 numFrames 100
+
+# Trigger the decode + playback scenario
+func viddec2 -s ./data/videos/davincieffect_ntsc.mpeg4 -t out_720x480_422i.yuv

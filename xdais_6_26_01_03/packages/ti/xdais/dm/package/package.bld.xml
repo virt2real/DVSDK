@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.xdais.dm" version="1, 0, 5" producerId="xdais_6_26_01_03">
+    <units>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_xdais_dm.tar.dep" src="package/rel/ti_xdais_dm.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_xdais_dm"
+        pname="ti_xdais_dm.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.rel.dot"/>
+        <file name="ispeech1_amr.h"/>
+        <file name="ispeech.h"/>
+        <file name="iimgdec.h"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="ivideo.h"/>
+        <file name="ividenc.h"/>
+        <file name="iauddec.h"/>
+        <file name="ispeech1.h"/>
+        <file name="isphenc1.h"/>
+        <file name="ispeech1_g723.h"/>
+        <file name="split/ividdec2.h"/>
+        <file name="isphdec1.h"/>
+        <file name="isphenc.h"/>
+        <file name="iaudio.h"/>
+        <file name="ispeech1_smv.h"/>
+        <file name="docs/XDM_UsersGuide.pdf"/>
+        <file name="xdm.h"/>
+        <file name="ividenc1.h"/>
+        <file name="iaudenc1.h"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="ividanalytics.h"/>
+        <file name="ividdec.h"/>
+        <file name="iauddec1.h"/>
+        <file name="ispeech1_pcm.h"/>
+        <file name="ividdec1.h"/>
+        <file name="ispeech1_g726.h"/>
+        <file name="iimgenc.h"/>
+        <file name="iuniversal.h"/>
+        <file name="ividtranscode.h"/>
+        <file name="ividdec2.h"/>
+        <file name="iimgenc1.h"/>
+        <file name="isphdec.h"/>
+        <file name="package/package.bld.xml"/>
+        <file name="iaudenc.h"/>
+        <file name="iimgdec1.h"/>
+        <file name="ispeech1_evrc.h"/>
+        <file name="docs/xdm1_differences.pdf"/>
+        <file name="package/build.cfg"/>
+        <file name="ispeech1_wbamr.h"/>
+        <file name="package/package.ext.xml"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

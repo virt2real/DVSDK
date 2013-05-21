@@ -1,0 +1,12 @@
+Package: gst-plugins-good
+Version: 0.10.25-r11.0-arago4.6
+Description: Plugins for GStreamer
+Section: multimedia
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: dm365-evm
+OE: gst-plugins-good
+Homepage: http://www.gstreamer.net/
+Build: install/afa4844
+Source: http://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-0.10.25.tar.bz2;name=archive file://0001-v4l2src-add-input-src-property-to-specify-capture-in.patch file://0002-v4l2src-keep-track-of-the-input-ID-that-will-be-used.patch file://0003-v4l2src-make-sure-capture-buffer-size-is-aligned-on-.patch file://0004-osssink-handle-all-supported-sample-rates.patch file://0005-v4l2src-add-support-for-DaVinci-platforms-using-MVL-.patch file://0006-v4l2src-support-NV12-capture-on-DM365-using-the-IPIP.patch file://0007-v4l2src-accept-EPERM-as-a-non-fatal-error-for-VIDIOC.patch file://0008-v4l2src-try-progressive-mode-first-for-component-inp.patch file://0009-v4l2src-add-support-for-NV16-colorspace.patch file://0010-v4l2src-set-bytesperline-and-sizeimage-before-callin.patch file://0011-v4l2src-update-gst_v4l2_get_norm-to-handle-DM6467T-a.patch file://0012-v4l2src-add-V4L2-ioctl-calls-to-initialize-capture-d.patch file://0013-v4l2src-disable-video-device-polling-by-default-on-D.patch file://0014-v4l2src-Skip-detection-of-private-controls.patch file://0015-v4l2src-Remove-short-circuit-of-VIDIOC_S_FMT-call.patch file://0016-v4l2src-add-feature-to-artifically-lower-framerate-b.patch file://0017-v4l2src-always-set-the-desired-framerate-on-DM365.patch

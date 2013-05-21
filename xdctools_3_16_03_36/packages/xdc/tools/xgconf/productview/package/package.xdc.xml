@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name='xdc.tools.xgconf.productview' release='' xmlns='xdc/services/spec'>
+    <imports name='xdc.tools'/>
+    <autodoc tag='_nodoc'>
+    </autodoc>
+    <module name='Main' extends='xdc.tools.ICmd' hostonly='1' instance='1'>
+        <config name='usage' line='-1' hostonly='1' override='1' type='K%21String%21%24%5BK%21%21%5D' code='As' init='%5B%24%2B%27xs+xdc.tools.xgconf.productview+--packagePath+%3Cpackage_path%3E+%3Cproductview+module0%3E+..+%3Cproductview+moduleN%3E%27%24-%5D'>
+        </config>
+        <config name='packagePath' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%24Knull' instance='1'>
+        </config>
+    </module>
+</package>

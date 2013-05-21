@@ -1,0 +1,110 @@
+<?xml version='1.0'?>
+<package name='ti.sdoarch.standards.pkg' release='1, 0, 0' xmlns='xdc/services/spec'>
+    <imports name='xdc.runtime'/>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++SDO+Architecture+Team+Package+Standard'/>
+    </autodoc>
+    <autodoc tag='details'>
+        <comment line='-1' text='++This+package+contains+the+SDO+Architecture+Team%27s+Package+Standard%3A+a'/>
+        <comment line='-1' text='++set+of+rules+and+guidelines+used+to+deploy+production+quality+real-time'/>
+        <comment line='-1' text='++target+content.'/>
+    </autodoc>
+    <autodoc tag='details'>
+        <comment line='-1' text='++The+files+in+this+package+are+not+licensed%3B+i.e.%2C+they+are+in+the+public'/>
+        <comment line='-1' text='++domain.'/>
+    </autodoc>
+    <interface name='IVersion' extends='xdc.runtime.IModule'>
+        <autodoc tag='summary'>
+            <comment line='-1' text='++Standard+package+version+number+interface'/>
+        </autodoc>
+        <autodoc tag='details'>
+            <comment line='-1' text='++This+interface+is+part+of+the+SDO+Package+Standard.++Each+conformant'/>
+            <comment line='-1' text='++package+that+supplies+a+version+number+contains+a+module+named'/>
+            <comment line='-1' text='++%60Version%60+that+implements+this+interface.++In+other+words%2C'/>
+        </autodoc>
+        <autodoc tag='details' mode='blist'>
+            <comment line='-1' text='++++++-+the+package%27s+%60package.xdc%60+file+declares+%60Version%60+as+one+of+it%27s'/>
+            <comment line='-1' text='++++++++modules'/>
+            <comment line='-1' text='++++++-+the+package+contains+a+spec+for+the+%60Version%60+module+%28named'/>
+            <comment line='-1' text='++++++++%60Version.xdc%60%29+and+a+header+generated+from+this+spec+%28named'/>
+            <comment line='-1' text='++++++++%60Version.h%60%29'/>
+            <comment line='-1' text='++++++-+the+%60Version.xdc%60+file+may+optionally+be+generated+from+the'/>
+            <comment line='-1' text='++++++++%60ti%2Fsdoarch%2Fstandards%2Fpkg%2FVersion.xdt%60+template+when+the+package%27s'/>
+            <comment line='-1' text='++++++++build+script+runs.'/>
+        </autodoc>
+        <autodoc tag='details'>
+            <comment line='-1' text='++This+interface+defines+a+set+of+values+that+are+used+to+'/>
+        </autodoc>
+        <autodoc tag='details' mode='nlist'>
+            <comment line='-1' text='++++++-+informally+communicate+the+%22degree%22+of+change+between+successive'/>
+            <comment line='-1' text='++++++++releases+of+a+package%2C'/>
+            <comment line='-1' text='++++++-+provide+a+%22key%22+that+enables+the+producer+to+unambigeously+identify'/>
+            <comment line='-1' text='++++++++the+sources+%28and+tools%29+used+to+produce+the+package%2C+and'/>
+            <comment line='-1' text='++++++-+enable+consumers+to+easily+communicate+to+producers+the+version%28s%29'/>
+            <comment line='-1' text='++++++++of+the+package%28s%29+they+are+using.'/>
+        </autodoc>
+        <const name='MAJOR' line='-1' type='K%21UInt16%21%24' code='n'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='++Major+version+number'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='++This+number+should+be+changed+when+major+changes+in+the+package'/>
+                <comment line='-1' text='++occur.+Examples+include+adding+new+modules%2C+adding+substantial+new'/>
+                <comment line='-1' text='++features+to+the+algorithm%28s%29.'/>
+            </autodoc>
+        </const>
+        <const name='MINOR' line='-1' type='K%21UInt16%21%24' code='n'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='++Minor+version+number'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='++This+number+should+be+changed+when+minor+changes+in+the+package'/>
+                <comment line='-1' text='++occur.+Examples+include+minor+changes+to+the+existing+APIs%2C'/>
+                <comment line='-1' text='++adding+minor+features+to+the+algorithms%28s%29+including+expanding+the'/>
+                <comment line='-1' text='++configuration+options.'/>
+            </autodoc>
+        </const>
+        <const name='PATCH' line='-1' type='K%21UInt16%21%24' code='n'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='++Patch+level'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='++This+number+should+be+changed+when+bug+fixes+or+performance'/>
+                <comment line='-1' text='++improvements+are+introduced.+There+should+be+no+changes+in+the+APIs'/>
+                <comment line='-1' text='++in+this+case.'/>
+            </autodoc>
+        </const>
+        <const name='WIDTH' line='-1' type='K%21UInt16%21%24' code='n'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='++Minimum+width+of+print+fields'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='++When+denoting+version+numbers+using+%27.%27+to+separate+fields'/>
+                <comment line='-1' text='++there+is+a+danger+of+confusing+version+%226.1%22+and+version+%226.10%22%3B'/>
+                <comment line='-1' text='++because%2C+in+decimal+notation+6.1+%3D%3D+6.10.++To+avoid'/>
+                <comment line='-1' text='++this+confusion%2C+it+is+common+practice+to+adopt+a+fixed+minimum+field'/>
+                <comment line='-1' text='++width+that%27s+when+printing+version+dimensions+%28other+than+MAJOR%29%3B'/>
+                <comment line='-1' text='++e.g.%2C+rather+than+printing+%226.1%22%2C+if+WIDTH+%3D%3D+2+then+the+version+would'/>
+                <comment line='-1' text='++be+displayed+as+%226.01%22.'/>
+            </autodoc>
+        </const>
+        <fxn name='getString' line='-1' hostonly='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='++Returns+a+string+representation+of+the+version'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='++This+method+return+a+string+of+the+form%3A'/>
+            </autodoc>
+            <autodoc tag='details' mode='code'>
+                <comment line='-1' text='++++++MAJOR%3Csep%3EMINOR%3Csep%3EPATCH'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='++where+%60MAJOR%60%2C+%60MINOR%60%2C+and+%60PATCH%60+are'/>
+                <comment line='-1' text='++the+values+sepcified+in+this+interface+and+%60%3Csep%3E%60+is+the+%28optional%29'/>
+                <comment line='-1' text='++argument+to+this+method.++If+%60separator%60+is+not+supplied+%28or+is'/>
+                <comment line='-1' text='++%60null%60%29%2C+%60%3Csep%3E%60+defaults+to+%60%27.%27%60.'/>
+            </autodoc>
+            <arg name='separator' line='-1'/>
+        </fxn>
+    </interface>
+</package>

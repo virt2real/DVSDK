@@ -1,0 +1,241 @@
+<html>
+<head>
+<title>module ti.sdo.fc.utils.gtinfra.GTINFRA</title>
+<link rel="stylesheet" type="text/css" href="../../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.sdo.fc.utils.gtinfra.</span><span class="xdoc-id">GTINFRA</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/fc/utils/gtinfra/package.html" title="package ti.sdo.fc.utils.gtinfra"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/fc/utils/gtinfra/GTINFRA.html">index URL</a></div>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA-src.html"><span class="xdocLabelFile">ti/sdo/fc/utils/gtinfra/GTINFRA.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">GTINFRA</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> GTINFRA = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.sdo.fc.utils.gtinfra.GTINFRA'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><i>values of type <a class="xdocSynGo" href="#.Runtime.Env">GTINFRA.<span class="xdoc-id">RuntimeEnv</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;</span></span></a></i>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Runtime.Env" title="ti.sdo.fc.utils.gtinfra.GTINFRA.RuntimeEnv">GTINFRA.<span class="xdoc-id">NONE</span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Runtime.Env" title="ti.sdo.fc.utils.gtinfra.GTINFRA.RuntimeEnv">GTINFRA.<span class="xdoc-id">DSPBIOS</span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Runtime.Env" title="ti.sdo.fc.utils.gtinfra.GTINFRA.RuntimeEnv">GTINFRA.<span class="xdoc-id">WINCE</span></a>;
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#debug">GTINFRA.<span class="xdoc-id">debug</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#default.Mem.Seg.Id">GTINFRA.<span class="xdoc-id">defaultMemSegId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Default ID of the memory segment from which to allocate space
+  (for Memory_alloc/free() calls, as opposed to Memory_segAlloc/Free()).
+  Typically it's the segment where all other code and data go</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#runtime.Env">GTINFRA.<span class="xdoc-id">runtimeEnv</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;</span></span></a> = <i><a class="xdoc-link" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA.html#.Runtime.Env" title="ti.sdo.fc.utils.gtinfra.GTINFRA.RuntimeEnv">GTINFRA.RuntimeEnv</a></i> <a class="xdoc-link" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA.html#.N.O.N.E" title="ti.sdo.fc.utils.gtinfra.GTINFRA.NONE">GTINFRA.NONE</a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#trace.Buffer.Size">GTINFRA.<span class="xdoc-id">traceBufferSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of the server trace buffer, in MAUs</span></span></a> = <i><span class="xdoc-kw2">Int</span></i> 32768;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA-src.html"><span class="xdocLabelFile">ti/sdo/fc/utils/gtinfra/GTINFRA.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../../../ti/sdo/fc/utils/gtinfra/package.html" title="ti.sdo.fc.utils.gtinfra">ti.sdo.fc.utils.gtinfra</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">GTINFRA</span></go> {
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">enum</span> <a class="xdocSynGo" href="#.Runtime.Env"><span class="xdoc-id">RuntimeEnv</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Runtime.Env" title="ti.sdo.fc.utils.gtinfra.GTINFRA.RuntimeEnv"><span class="xdoc-id">NONE</span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Runtime.Env" title="ti.sdo.fc.utils.gtinfra.GTINFRA.RuntimeEnv"><span class="xdoc-id">DSPBIOS</span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Runtime.Env" title="ti.sdo.fc.utils.gtinfra.GTINFRA.RuntimeEnv"><span class="xdoc-id">WINCE</span></a>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#debug"><span class="xdoc-id">debug</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;</span></span></a> = <span class="xdoc-kw2">false</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#default.Mem.Seg.Id"><span class="xdoc-id">defaultMemSegId</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Default ID of the memory segment from which to allocate space
+  (for Memory_alloc/free() calls, as opposed to Memory_segAlloc/Free()).
+  Typically it's the segment where all other code and data go</span></span></a> = <span class="xdoc-kw2">null</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA.html#.Runtime.Env" title="ti.sdo.fc.utils.gtinfra.GTINFRA.RuntimeEnv">GTINFRA.RuntimeEnv</a>&nbsp;<a class="xdocSynGo" href="#runtime.Env"><span class="xdoc-id">runtimeEnv</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;</span></span></a> = <a class="xdoc-link" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA.html#.N.O.N.E" title="ti.sdo.fc.utils.gtinfra.GTINFRA.NONE">GTINFRA.NONE</a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Int</span>&nbsp;<a class="xdocSynGo" href="#trace.Buffer.Size"><span class="xdoc-id">traceBufferSize</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Size of the server trace buffer, in MAUs</span></span></a> = 32768;
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Runtime.Env"></a>
+<a class="xdocAnchor" id=".N.O.N.E"></a>
+<a class="xdocAnchor" id=".D.S.P.B.I.O.S"></a>
+<a class="xdocAnchor" id=".W.I.N.C.E"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">enum</span> <span class="xdoc-id">GTINFRA.</span><span class="xdoc-id">RuntimeEnv</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA.html" title="module GTINFRA"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/fc/utils/gtinfra/GTINFRA.html#.Runtime.Env">index URL</a></div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><i>values of type GTINFRA.<span class="xdoc-id">RuntimeEnv</span></i>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> GTINFRA.<span class="xdoc-id">NONE</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> GTINFRA.<span class="xdoc-id">DSPBIOS</span>;
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> GTINFRA.<span class="xdoc-id">WINCE</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="debug"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">GTINFRA.</span><span class="xdoc-id">debug</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA.html" title="module GTINFRA"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/fc/utils/gtinfra/GTINFRA.html#debug">index URL</a></div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>GTINFRA.<span class="xdoc-id">debug</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">false</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="default.Mem.Seg.Id"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">GTINFRA.</span><span class="xdoc-id">defaultMemSegId</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA.html" title="module GTINFRA"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/fc/utils/gtinfra/GTINFRA.html#default.Mem.Seg.Id">index URL</a></div>
+<p class="xdocHdrSummary">Default ID of the memory segment from which to allocate space
+  (for Memory_alloc/free() calls, as opposed to Memory_segAlloc/Free()).
+  Typically it's the segment where all other code and data go</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>GTINFRA.<span class="xdoc-id">defaultMemSegId</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">null</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">If left as "null", the system will try to find a BIOS segment named
+  "DDR" or "DDR2" and assign its name to this field. In the future
+  this auto-find feature may be removed, so it's best that user .cfg
+  script set this value directly to what they know is appropriate segment.</div>
+<div class="xdocText">Applies only to configurations where runtimeEnv == DSPBIOS or
+  runtimeEnv == DSPLINK_BIOS</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="runtime.Env"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">GTINFRA.</span><span class="xdoc-id">runtimeEnv</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA.html" title="module GTINFRA"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/fc/utils/gtinfra/GTINFRA.html#runtime.Env">index URL</a></div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>GTINFRA.<span class="xdoc-id">runtimeEnv</span> = <i><a class="xdoc-link" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA.html#.Runtime.Env" title="ti.sdo.fc.utils.gtinfra.GTINFRA.RuntimeEnv">GTINFRA.RuntimeEnv</a></i> <a class="xdoc-link" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA.html#.N.O.N.E" title="ti.sdo.fc.utils.gtinfra.GTINFRA.NONE">GTINFRA.NONE</a>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="trace.Buffer.Size"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">GTINFRA.</span><span class="xdoc-id">traceBufferSize</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../ti/sdo/fc/utils/gtinfra/GTINFRA.html" title="module GTINFRA"><img class="xdocHdrArrow" src="../../../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../index.html#ti/sdo/fc/utils/gtinfra/GTINFRA.html#trace.Buffer.Size">index URL</a></div>
+<p class="xdocHdrSummary">Size of the server trace buffer, in MAUs</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>GTINFRA.<span class="xdoc-id">traceBufferSize</span> = <i><span class="xdoc-kw2">Int</span></i> 32768;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<div id="xdocDate">generated on Wed, 01 Dec 2010 01:28:43 GMT</div>
+</div></div></body>
+</html>

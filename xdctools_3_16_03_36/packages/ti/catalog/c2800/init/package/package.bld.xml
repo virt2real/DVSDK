@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.catalog.c2800.init" version="1, 0, 0" producerId="undefined">
+    <units>
+        <module name="Boot"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.catalog.c2800.init.c"/>
+        <srcFile name="Boot.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/Boot.a28.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/Boot/package/package_ti.catalog.c2800.init.o28.dep" src="package/package_ti.catalog.c2800.init.c"/>
+        <srcFile name="package/lib/lib/Boot/Boot.o28.dep" src="Boot.c"/>
+        <srcFile name="lib/Boot.a28L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/Boot/package/package_ti.catalog.c2800.init.o28L.dep" src="package/package_ti.catalog.c2800.init.c"/>
+        <srcFile name="package/lib/lib/Boot/Boot.o28L.dep" src="Boot.c"/>
+        <srcFile name="lib/Boot.a28FP.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/Boot/package/package_ti.catalog.c2800.init.o28FP.dep" src="package/package_ti.catalog.c2800.init.c"/>
+        <srcFile name="package/lib/lib/Boot/Boot.o28FP.dep" src="Boot.c"/>
+        <srcFile name="package/rel/ti_catalog_c2800_init.tar.dep" src="package/rel/ti_catalog_c2800_init.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C28_float"
+            version="ti.targets.C28_float{1,0,5.2,1"
+            platform="ti.platforms.sim28xx"
+            isa="28FP"
+            suffix="28FP"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c28/5.2.1/Linux"
+            os="undefined"
+            rts="ti.targets.rts2800">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="large"/>
+        </target>
+        <target name="ti.targets.C28_large"
+            version="ti.targets.C28_large{1,0,5.2,1"
+            platform="ti.platforms.sim28xx"
+            isa="28"
+            suffix="28L"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c28/5.2.1/Linux"
+            os="undefined"
+            rts="ti.targets.rts2800">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="large"/>
+        </target>
+        <target name="ti.targets.C28"
+            version="ti.targets.C28{1,0,5.2,1"
+            platform="ti.platforms.sim28xx"
+            isa="28"
+            suffix="28"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c28/5.2.1/Linux"
+            os="undefined"
+            rts="ti.targets.rts2800">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/Boot"
+        pname="lib/Boot.a28"
+        profile="whole_program_debug"
+        target="ti.targets.C28"/>
+    <library name="lib/Boot"
+        pname="lib/Boot.a28L"
+        profile="whole_program_debug"
+        target="ti.targets.C28_large"/>
+    <library name="lib/Boot"
+        pname="lib/Boot.a28FP"
+        profile="whole_program_debug"
+        target="ti.targets.C28_float"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_catalog_c2800_init"
+        pname="../../../../../exports/ti_catalog_c2800_init.tar"
+        label="default"
+        relScript="/db/ztree/library/trees/platform/platform-k32x/src/tisb/release/epl/copyright.rel">
+        <file name="lib/Boot.a28FP"/>
+        <file name="_Gpio.h"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/Boot.a28L"/>
+        <file name="_Xintf.h"/>
+        <file name="lib/Boot.a28"/>
+        <file name="package/package.bld.xml"/>
+        <file name="Boot.c"/>
+        <file name="_SysCtrl.h"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

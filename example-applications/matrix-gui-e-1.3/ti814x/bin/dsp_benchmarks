@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd /usr/share/ti/dsp-benchmark-apps
+modprobe cmemk phys_start=0x8a600000 phys_end=0x8b000000 pools=20x4096
+./dsp_benchmark_app
+rmmod cmemk

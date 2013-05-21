@@ -1,0 +1,65 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ *  ======== local.tcf ========
+ */
+
+/* get the platform name specified in the build script */
+var platform = environment["config.platform"];
+var platShortName = platform.match(/[^\.]+$/);
+
+/* Import the platform's .tci file that will load the platform */
+utils.importFile("ti/sdo/ce/examples/buildutils/app_"+ platShortName + ".tci");
+
+/* import bios configuration for the ti.sdo.ce.osal package */
+utils.importFile("ti/sdo/ce/osal/bios/bios.tci");
+
+/* set all BIOS data and code sections to be in DDR2 */
+bios.setMemDataHeapSections(prog, bios.DDR2);
+bios.setMemDataNoHeapSections(prog, bios.DDR2);
+bios.setMemCodeSections(prog, bios.DDR2);
+
+/*  you can selectively override DDR2 default set above, e.g.
+ *  bios.MEM.MALLOCSEG = bios.<some segment name>;
+ *  bios.MEM.BIOSOBJSEG = bios.<some segment name>;
+ *  bios.TSK.STACKSEG = bios.<some segment name>;
+ */
+
+if (config.hasReportedError == false) {
+    prog.gen();
+}
+/*
+ *  @(#) ti.sdo.ce.examples.apps.image_copy; 1, 0, 0,263; 12-2-2010 21:19:52; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+

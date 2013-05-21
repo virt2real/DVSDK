@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.node" version="1, 0, 0" producerId="codec_engine_2_26_02_11">
+    <units>
+        <module name="NODE"/>
+    </units>
+    <sources>
+        <srcFile name="node_stat.c"/>
+        <srcFile name="node_getpri.c"/>
+        <srcFile name="node_start.c"/>
+        <srcFile name="node_dele.c"/>
+        <srcFile name="node_exec.c"/>
+        <srcFile name="node_init.c"/>
+        <srcFile name="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="node_crea.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/node.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/node/node_stat.ov4TCE.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/release/node/node_getpri.ov4TCE.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/release/node/node_start.ov4TCE.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/release/node/node_dele.ov4TCE.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/release/node/node_exec.ov4TCE.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/release/node/node_init.ov4TCE.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/release/node/package/package_ti.sdo.ce.node.ov4TCE.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/release/node/node_crea.ov4TCE.dep" src="node_crea.c"/>
+        <srcFile name="lib/release/node.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/node/node_stat.o64P.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/release/node/node_getpri.o64P.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/release/node/node_start.o64P.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/release/node/node_dele.o64P.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/release/node/node_exec.o64P.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/release/node/node_init.o64P.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/release/node/package/package_ti.sdo.ce.node.o64P.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/release/node/node_crea.o64P.dep" src="node_crea.c"/>
+        <srcFile name="lib/debug/node.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/node/node_stat.ov4TCE.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_getpri.ov4TCE.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_start.ov4TCE.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_dele.ov4TCE.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_exec.ov4TCE.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_init.ov4TCE.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/debug/node/package/package_ti.sdo.ce.node.ov4TCE.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_crea.ov4TCE.dep" src="node_crea.c"/>
+        <srcFile name="lib/release/node.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/node/node_stat.o470uC.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/release/node/node_getpri.o470uC.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/release/node/node_start.o470uC.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/release/node/node_dele.o470uC.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/release/node/node_exec.o470uC.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/release/node/node_init.o470uC.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/release/node/package/package_ti.sdo.ce.node.o470uC.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/release/node/node_crea.o470uC.dep" src="node_crea.c"/>
+        <srcFile name="lib/debug/node.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/node/node_stat.o86U.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_getpri.o86U.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_start.o86U.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_dele.o86U.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_exec.o86U.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_init.o86U.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/debug/node/package/package_ti.sdo.ce.node.o86U.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_crea.o86U.dep" src="node_crea.c"/>
+        <srcFile name="lib/debug/node.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/node/node_stat.o470uC.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_getpri.o470uC.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_start.o470uC.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_dele.o470uC.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_exec.o470uC.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_init.o470uC.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/debug/node/package/package_ti.sdo.ce.node.o470uC.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_crea.o470uC.dep" src="node_crea.c"/>
+        <srcFile name="lib/debug/node.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/node/node_stat.ov5T.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_getpri.ov5T.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_start.ov5T.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_dele.ov5T.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_exec.ov5T.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_init.ov5T.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/debug/node/package/package_ti.sdo.ce.node.ov5T.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_crea.ov5T.dep" src="node_crea.c"/>
+        <srcFile name="lib/release/node.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/node/node_stat.o86U.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/release/node/node_getpri.o86U.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/release/node/node_start.o86U.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/release/node/node_dele.o86U.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/release/node/node_exec.o86U.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/release/node/node_init.o86U.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/release/node/package/package_ti.sdo.ce.node.o86U.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/release/node/node_crea.o86U.dep" src="node_crea.c"/>
+        <srcFile name="lib/debug/node.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/node/node_stat.o674.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_getpri.o674.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_start.o674.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_dele.o674.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_exec.o674.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_init.o674.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/debug/node/package/package_ti.sdo.ce.node.o674.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_crea.o674.dep" src="node_crea.c"/>
+        <srcFile name="lib/release/node.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/node/node_stat.ov5T.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/release/node/node_getpri.ov5T.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/release/node/node_start.ov5T.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/release/node/node_dele.ov5T.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/release/node/node_exec.ov5T.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/release/node/node_init.ov5T.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/release/node/package/package_ti.sdo.ce.node.ov5T.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/release/node/node_crea.ov5T.dep" src="node_crea.c"/>
+        <srcFile name="lib/debug/node.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/node/node_stat.o64P.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_getpri.o64P.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_start.o64P.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_dele.o64P.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_exec.o64P.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_init.o64P.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/debug/node/package/package_ti.sdo.ce.node.o64P.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/debug/node/node_crea.o64P.dep" src="node_crea.c"/>
+        <srcFile name="lib/release/node.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/node/node_stat.o674.dep" src="node_stat.c"/>
+        <srcFile name="package/lib/lib/release/node/node_getpri.o674.dep" src="node_getpri.c"/>
+        <srcFile name="package/lib/lib/release/node/node_start.o674.dep" src="node_start.c"/>
+        <srcFile name="package/lib/lib/release/node/node_dele.o674.dep" src="node_dele.c"/>
+        <srcFile name="package/lib/lib/release/node/node_exec.o674.dep" src="node_exec.c"/>
+        <srcFile name="package/lib/lib/release/node/node_init.o674.dep" src="node_init.c"/>
+        <srcFile name="package/lib/lib/release/node/package/package_ti.sdo.ce.node.o674.dep" src="package/package_ti.sdo.ce.node.c"/>
+        <srcFile name="package/lib/lib/release/node/node_crea.o674.dep" src="node_crea.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_node.tar.dep" src="package/rel/ti_sdo_ce_node.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/node"
+        pname="lib/release/node.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/node"
+        pname="lib/release/node.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/node"
+        pname="lib/debug/node.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/node"
+        pname="lib/release/node.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/node"
+        pname="lib/debug/node.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/node"
+        pname="lib/debug/node.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/node"
+        pname="lib/debug/node.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/node"
+        pname="lib/release/node.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/node"
+        pname="lib/debug/node.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/release/node"
+        pname="lib/release/node.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/node"
+        pname="lib/debug/node.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/node"
+        pname="lib/release/node.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_node"
+        pname="ti_sdo_ce_node.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="node_init.c"/>
+        <file name="node_dele.c"/>
+        <file name="lib/release/node.a86U"/>
+        <file name="lib/release/node.av5T"/>
+        <file name="lib/release/node.a674"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/debug/node.av4TCE"/>
+        <file name="node_stat.c"/>
+        <file name="lib/debug/node.a86U"/>
+        <file name="lib/debug/node.av5T"/>
+        <file name="lib/release/node.av4TCE"/>
+        <file name="lib/debug/node.a674"/>
+        <file name="lib/debug/node.a470uC"/>
+        <file name="node_exec.c"/>
+        <file name="package/package.rel.dot"/>
+        <file name="node_crea.c"/>
+        <file name="lib/release/node.a470uC"/>
+        <file name="_node.h"/>
+        <file name="node_start.c"/>
+        <file name="node_getpri.c"/>
+        <file name="lib/release/node.a64P"/>
+        <file name="package/build.cfg"/>
+        <file name="node.h"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/node.a64P"/>
+        <file name="package/package_ti.sdo.ce.node.c"/>
+        <file name="package.bld"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

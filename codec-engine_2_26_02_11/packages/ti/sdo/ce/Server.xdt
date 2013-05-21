@@ -1,0 +1,200 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    /*
+     *  ======== Server.xdt ========
+     *  Generate the tables necessary for the DSP Server
+     *
+     *  These tables are used by the RMS server thread.
+     */
+
+    var Server = this;
+
+    var algRecs = {};  /* Need this to get typeTab string for each alg */
+
+    function getStackSize(alg)
+    {
+        var configuredSize = alg.threadAttrs.stackSize;
+        var min = alg.mod.getStackSize(xdc.om['xdc.cfg.Program']);
+
+        if (configuredSize == null) {
+            /*
+             * configuredSize wasn't set by the integrator; use the
+             * value defined by the codec.
+             */
+            configuredSize = min + Server.stackSizePad;
+        }
+
+        if (configuredSize < min) {
+            print("Warning: the stack size specified for " + alg.mod.$name
+                + " (" + configuredSize + ") is less than its required "
+                + "minimum size (" + min  + ")!  Stack size set to "
+                + configuredSize + ".");
+        }
+
+        return (configuredSize);
+    }
+
+    for (var i = 0; i < Server.algs.length; i++) {
+        var alg = Server.algs[i];
+        var rec = mkAlgRec(alg);
+
+        algRecs[alg.mod.ialgFxns] = rec;
+        print("algRecs[" + alg.mod.ialgFxns + "] = " + rec.typeTab);
+    }
+
+    /*
+     *  ======== mkAlgRec ========
+     *  construct typetable for each algorithm.  This table is used to
+     *  ensure that client apps can't inadvertently bind a video algorithm to
+     *  a speech API, for example.
+     */
+    function mkAlgRec(alg)
+    {
+        var mod = alg.mod;
+        var typeTab = [];
+        var result = {};
+        for (var obj = mod.$orig.$super; obj != null; obj = obj.$super) {
+            var type = "" + obj.$type;
+            if (type == "ti.sdo.ce.ICodec.Module") {
+                break;
+            }
+            type = type.substr(0, type.lastIndexOf('.'));
+            typeTab.push(type);
+        }
+        typeTab.reverse();
+
+        result.typeTab = typeTab.join(";");
+        return (result);
+    }
+
+%%}
+/*
+ *  ======== Server Configuration ========
+ *  Do not modify following; it is automatically generated from the template
+ *  Server.xdt in the ti.sdo.ce package and will be overwritten next time the
+ *  executable is configured
+ */
+#include <ti/sdo/ce/node/node.h>
+#include <ti/sdo/ce/rms.h>
+
+Int ti_sdo_ce_Server_skelCachingPolicy = `Server.skelCachingPolicy`;
+
+%for (var i = 0; i < Server.algs.length; i++) {
+%    var alg = Server.algs[i];
+%    var attrs = alg.threadAttrs;
+%    var stackSize = getStackSize(alg);
+%
+%    if (attrs.stackMemId == undefined) {
+%        throw('Error: server configuration failed to set required ' +
+%            '"stackMemId" field for "' + alg.name + '" algorithm.');
+%    }
+%    if (attrs.priority == undefined) {
+%        throw('Error: server configuration failed to set required ' +
+%            '"priority" field for "' + alg.name + '" algorithm.');
+%    }
+static NODE_Attrs nodeAttrs`i` = {
+    `attrs.priority`, `stackSize`, `attrs.stackMemId`
+};
+extern SKEL_Fxns `alg.mod.serverFxns`;
+
+%}
+
+/*  table of all "codec server" nodes available in this server */
+NODE_Desc RMS_nodeTab[] = {
+%for (var i = 0; i < Server.algs.length; i++) {
+%    var alg = Server.algs[i];
+%    var tab = algRecs[alg.mod.ialgFxns].typeTab;
+%    var protocolVer = alg.mod.rpcProtocolVersion == undefined ? -1 : alg.mod.rpcProtocolVersion;
+    {
+        "`alg.name`",			/* Name */
+        {`alg.mod.getUUID()`U},			/* uuid */
+        &`alg.mod.serverFxns`,			/* skel fxns */
+        &nodeAttrs`i`,			/* params */
+        `protocolVer`,						/* protocol */
+        "`alg.mod.stubFxns`",			/* Name of stub fxns */
+        "`tab`"},			/* typeTab string */
+%}
+    {NULL}  /* NULL terminate RMS_nodeTab[] */
+};
+
+%%{
+    /* final check: make sure all UUIDs are unique */
+    for (var i = 0; i < Server.algs.length; i++) {
+        for (var j = i + 1; j < Server.algs.length; j++) {
+            if (Server.algs[i].mod.getUUID() == Server.algs[j].mod.getUUID()) {
+                throw "------------------------------------------- " +
+                    "Error (please read this carefully): UUID values for " +
+                    "codecs '" +
+                    Server.algs[i].mod.$name + "' and '" +
+                    Server.algs[j].mod.$name + "' are identical (both are " +
+                    Server.algs[i].mod.getUUID() + "). The two codecs' UUIDs "+
+                    "must be different (unique) and they are not. Typically " +
+                    "a codec does not define the codec UUID field, and " +
+                    "lets the Codec Engine pick a UUID for it. Codec Engine " +
+                    "does that by calculating the CRC of the codec's name and "+
+                    "assigns the CRC value to the UUID; so it could be that " +
+                    "these two codecs happened to have the same CRC value. "  +
+                    "Or, it could happen that the UUIDs for the two codecs " +
+                    "were human defined and they ended up being the same. "  +
+                    "Either way ---- please asign a different " +
+                    "UUID value to one of the codecs. One way to do that is " +
+                    "to add the following statement at the end of your server "+
+                    "configuration script (.cfg file): " +
+                    "\"xdc.om['" + Server.algs[i].mod.$name + "']." +
+                    "uuid = " + (Server.algs[i].mod.getUUID() + 1) + ";\" " +
+                    "This line changes the first codec's UUID value to +1 " +
+                    "than what it is now, which should be enough to resolve " +
+                    "this conflict. (If it isn't, try different values until " +
+                    "you get different ones.) Once you build, you must also " +
+                    "let the users of your server (codec combo) know what " +
+                    "UUID to use for the codec whose UUID you changed. ";
+            }
+        }
+    }
+%%}
+
+RMS_Config RMS_config = {
+    `Server.threadAttrs.priority`,          /* RMS server's priority */
+    `Server.threadAttrs.stackSize`,         /* RMS server's stack size */
+    `Server.threadAttrs.stackMemId`,        /* RMS server's stack memory seg */
+};
+%%{
+/*
+ * @(#) ti.sdo.ce; 1, 0, 6,432; 12-2-2010 21:19:08; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

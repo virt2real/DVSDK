@@ -1,0 +1,13 @@
+Package: task-arago-toolchain-host
+Version: 1.0-r3.6
+Description: Host packages for a standalone Arago SDK or external toolchain
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: unknown
+Architecture: i686-armv5te-sdk
+OE: task-arago-toolchain-host
+Homepage: unknown
+Build: install/afa4844
+Depends: pkgconfig-sdk, opkg-sdk, libtool-sdk
+Source: file:///sdk/build/DVSDK_4_02/4_02_00_06/arago-install/arago/recipes/tasks/task-arago-toolchain-host.bb

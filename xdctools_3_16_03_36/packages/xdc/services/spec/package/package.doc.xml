@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='xdc.services.spec' nodoc='0' root='../../../' summary='Java+classes+to+access+XDCspec+information'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Erequires%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fshelf%2Fpackage.html%22+title%3D%22xdc.shelf%22%3Exdc.shelf%3C%2Fa%3E%3B'/>
+    <line blank='1' always='0'/>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc.services.spec%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+0%2C+0%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <docSect name='details'>
+        <docPara content='This+package+contains+several+Java+classes+that+enable+clients+to%0A++retrieve+inforation+about+modules%2C+interfaces%2C+and+packages+from+their%0A++specification+files+%28i.e.%2C+%3Ctt%3E*.xdc%3C%2Ftt%3E+files%29.++Being+Java+classes%2C+the+APIs%0A++provided+are+available+to+both+Java+applications+and+XDCscripts+%28via+the%0A++%3Ctt%3E%24spec%3C%2Ftt%3E+property+of+the+module%2C+interface%2C+or+package%29.'/>
+        <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3E%3Ca+class%3D%22xdoc-linkFile%22+href%3D%22.%2Fdoc-files%2Fjavadoc%2Fxdc%2Fservices%2Fspec%2FPkg.html%22+title%3D%22.%2Fdoc-files%2Fjavadoc%2Fxdc%2Fservices%2Fspec%2FPkg.html%22%3E%5BPkg%5D%3C%2Fa%3E%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A+++++++Package+related+information+available+from+a+package%27s+%3Ctt%3E%24spec%3C%2Ftt%3E%0A++++++++property.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3E%3Ca+class%3D%22xdoc-linkFile%22+href%3D%22.%2Fdoc-files%2Fjavadoc%2Fxdc%2Fservices%2Fspec%2FUnit.html%22+title%3D%22.%2Fdoc-files%2Fjavadoc%2Fxdc%2Fservices%2Fspec%2FUnit.html%22%3E%5BUnit%5D%3C%2Fa%3E%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++Module+%28or+interface%29+related+information+available+from+a%0A++++++++module%27s+%28or+interface%27s%29+%3Ctt%3E%24spec%3C%2Ftt%3E+property.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+    </docSect>
+    <docSect name='Note'>
+        <docPara content='When+accessing+the+Java+methods+provided+by+this+package+via+XDCscript%2C%0A++you+can+either+either+use+their+liternames+%28e.g.%2C+%3Ctt%3EgetName%28%29%3C%2Ftt%3E%29+or+use%0A++the+JavaBeans+pattern+of+getters+and+setters+in+which+the+method%0A++%3Ctt%3EgetName%28%29%3C%2Ftt%3E+can+be+accessed+via+just+%3Ctt%3Ename%3C%2Ftt%3E.++The+examples+below+provide%0A++examples+of+how+this+pattern+can+be+used.'/>
+    </docSect>
+    <docSect name='XDCscript Examples'>
+        <docPara content='Get+the+declared+name+of+a+module%3A'/>
+        <docPara content='%3CPRE+class%3D%22Example%22%3E++++++var+Mod+%3D+xdc.module%28%27pkg.Mod%27%29%3B%0A++++++print%28%22Module+declared+as+%22+%2B+Mod.%24spec.getName%28%29%29%3B%0A%3C%2FPRE%3E'/>
+        <docPara content='This+same+example+can+be+written+using+the+JavaBean+pattern+as+follows%3A'/>
+        <docPara content='%3CPRE+class%3D%22Example%22%3E++++++var+Mod+%3D+xdc.module%28%27pkg.Mod%27%29%3B%0A++++++print%28%22Module+declared+as+%22+%2B+Mod.%24spec.name%29%3B%0A%3C%2FPRE%3E'/>
+    </docSect>
+    <docSect name='see'>
+        <docPara content='%3Ca+class%3D%22xdoc-linkFile%22+href%3D%22.%2Fdoc-files%2Fjavadoc%2Findex.html%22+title%3D%22.%2Fdoc-files%2Fjavadoc%2Findex.html%22%3EJavadoc%3C%2Fa%3E'/>
+    </docSect>
+</package>

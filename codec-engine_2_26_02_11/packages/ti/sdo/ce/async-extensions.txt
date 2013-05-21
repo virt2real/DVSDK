@@ -1,0 +1,531 @@
+
+Introduction
+============
+
+With the introduction of asynchronous VISA support, codec classes have the
+opportunity to implement an asynchronous "process()" method.  As opposed to
+the synchronous paradigm, which submits input and receives output upon
+returning, the asynchronous paradigm allows returning immediately after
+input has been submitted, along with allowing output retrieval at a later
+time.  Using the asynchronous paradigm, an application can submit multiple
+input buffers before retrieving the corresponding output buffers.  For those
+familiar with DSP/BIOS, this paradigm is analogous to the SIO ISSUERECLAIM
+model.
+
+The asynchronous paradigm applies only to remote codecs, whereby a call to
+the "<CODECCLASS>_process()" function on the host processor results in an
+RPC-type call to the corresponding function on the DSP.  Therefore, only the
+codec class stubs file is affected.  In order to add this support, you
+will need to modify the <codecclass>_stubs.c file, and take some slightly
+modified content from the <codecclass>.c file.  There are no modifications
+needed for the remote codec code.
+
+In order to implement the asynchronous paradigm, you will need to create
+two API functions:
+	- <codecclass>_processAsync()
+	- <codecclass>_processWait()
+Essentially, these two functions comprise the top and bottom halves,
+respectively, of the stub file's process() function, with the call to
+VISA_call() replaced by
+	VISA_callAsync();
+	return;
+in the processAsync() function, and a call to
+	VISA_wait();
+to start the processWait() function.
+
+For the remote synchronous paradigm, application calls to the
+	<codecclass>_process()
+function result in a sub-call to the "process()" function in the stubs
+file, with the former function being defined in the <codecclass>.c file.
+Typically, a stubs file will implement just the functions that are specified
+by an xDM-typed data structure, and different versions of the xDM interface
+standard specify different function templates, but we are not introducing a
+new xDM interface for the purpose of asynchronous support, so we are left to
+work within the xDM 1.0 interface standard.
+
+Due to the fact that we can't expand the xDM interface, the new functions
+are be completely implemented in the stubs file, creating a situation
+where APIs in the stubs file are directly called by the application (as
+opposed to being called by the APIs in the <codecclass>.c file).
+
+Detailing the IAUDDEC1 asynchronous interface
+=============================================
+
+The IAUDDEC1 interface contains a file named auddec1_stubs.c which implements
+the stub functions that allow a local application to call a remote codec.
+This file defines two functions, process() & control(), that are called by way
+of the IAUDDEC1_Fxns AUDDEC1_STUBS function structure.  The asynchronous
+paradigm doesn't affect the process() & control() functions themselves, but
+since the asynchronous functions can be derived from the process() function,
+we will detail only that function.  Having said that, you will probably want
+to modify the process() function in order to factor out code in common with
+the new asynchronous functions.
+
+The AUDDEC1 process() function is defined as follows:
+
+static XDAS_Int32 process(IAUDENC1_Handle h, XDM1_BufDesc *inBufs,
+    XDM1_BufDesc *outBufs, IAUDENC1_InArgs *inArgs, IAUDENC1_OutArgs *outArgs)
+{
+    XDAS_Int32 retVal;
+    _AUDENC1_Msg *msg;
+    VISA_Handle visa = (VISA_Handle)h;
+
+    `marshall arguments into an _AUDDEC1_Msg message`
+
+    /* send the message to the skeleton and wait for completion */
+    retVal = VISA_call(visa, (VISA_Msg *)&msg);
+
+    /*
+     * Regardless of return value, unmarshall outArgs.
+     */
+    `unmarshall _AUDDEC1_Msg message into arguments`
+
+exit:
+    return (retVal);
+}
+
+The pseudo-code in backquotes above is too lengthy to be presented here, so
+for the sake of brevity you are referred to the source code in the
+auddec1_stubs.c file.
+
+This function is called by the front-end function AUDDEC1_process(), as
+follows:
+
+XDAS_Int32 AUDDEC1_process(AUDDEC1_Handle handle, XDM1_BufDesc *inBufs,
+    XDM1_BufDesc *outBufs, AUDDEC1_InArgs *inArgs, AUDDEC1_OutArgs *outArgs)
+{
+    XDAS_Int32 retVal = AUDDEC1_EFAIL;
+
+    AUDDEC1_InArgs refInArgs;
+
+    /*
+     * Note, we do this because someday we may allow dynamically changing
+     * the global 'VISA_isChecked()' value on the fly.  If we allow that,
+     * we need to ensure the value stays consistent in the context of this call.
+     */
+    Bool checked = VISA_isChecked();
+
+    GT_5trace(CURTRACE, GT_ENTER, "AUDDEC1_process> "
+        "Enter (handle=0x%x, inBufs=0x%x, outBufs=0x%x, inArgs=0x%x, "
+        "outArgs=0x%x)\n", handle, inBufs, outBufs, inArgs, outArgs);
+
+    if (handle) {
+        IAUDDEC1_Fxns *fxns =
+            (IAUDDEC1_Fxns *)VISA_getAlgFxns((VISA_Handle)handle);
+        IAUDDEC1_Handle alg = VISA_getAlgHandle((VISA_Handle)handle);
+
+        if (fxns && (alg != NULL)) {
+            Log_printf(ti_sdo_ce_dvtLog, "%s", (Arg)"AUDDEC1:process",
+                (Arg)handle, (Arg)0);
+
+            if (checked) {
+
+                /*
+                 * Validate inBufs and outBufs.
+                 */
+                XdmUtils_validateSparseBufDesc1(inBufs, "inBufs");
+                XdmUtils_validateSparseBufDesc1(outBufs, "outBufs");
+
+                /*
+                 * Zero out the outArgs struct (except for .size field);
+                 * it's write-only to the codec, so the app shouldn't pass
+                 * values through it, nor should the codec expect to
+                 * receive values through it.
+                 */
+                memset((void *)((XDAS_Int32)(outArgs) + sizeof(outArgs->size)),
+                    0, (sizeof(*outArgs) - sizeof(outArgs->size)));
+
+                /*
+                 * Make a reference copy of inArgs so we can check that
+                 * the codec didn't modify them during process().
+                 */
+                refInArgs = *inArgs;
+            }
+
+            VISA_enter((VISA_Handle)handle);
+            retVal = fxns->process(alg, inBufs, outBufs, inArgs, outArgs);
+            VISA_exit((VISA_Handle)handle);
+
+            if (checked) {
+                /* ensure the codec didn't modify the read-only inArgs */
+                if (memcmp(&refInArgs, inArgs, sizeof(*inArgs)) != 0) {
+                    GT_1trace(CURTRACE, GT_7CLASS,
+                        "ERROR> codec (0x%x) modified read-only inArgs "
+                        "struct!\n", handle);
+                }
+            }
+
+        }
+    }
+
+    GT_2trace(CURTRACE, GT_ENTER, "AUDDEC1_process> "
+        "Exit (handle=0x%x, retVal=0x%x)\n", handle, retVal);
+
+    return (retVal);
+}
+
+We will need to create a new front-end API AUDDEC1_processAsync(), based on
+the AUDDEC1_process() API.  This new API is defined in the auddec1_stubs.c
+file, as opposed to AUDDEC1_process() which is defined in the auddec1.c file.
+This new front-end function will directly call another function,
+processAsync(), as opposed to calling a stub function through the function
+structure (and, in fact, there is no structure element for an asynchronous
+process function, since we're not expanding the xDM function structure).
+
+Let's start with the back-end API processAsync().  This function is defined
+by taking the "top half" of the process() function and replacing the call to
+VISA_call() with a call to VISA_callAsync(), as follows:
+
+static XDAS_Int32 processAsync(IAUDENC1_Handle h, XDM1_BufDesc *inBufs,
+    XDM1_BufDesc *outBufs, IAUDENC1_InArgs *inArgs, IAUDENC1_OutArgs *outArgs)
+{
+    XDAS_Int32 retVal;
+    _AUDENC1_Msg *msg;
+    VISA_Handle visa = (VISA_Handle)h;
+
+    `marshall arguments into an _AUDDEC1_Msg message`
+
+    /* send the message to the skeleton */
+    retVal = VISA_callAsync(visa, (VISA_Msg *)&msg);
+
+    return (retVal);
+}
+
+Moving on to the back-end API processWait(), this function is defined by
+taking the "bottom half" of the process() function and replacing the call to
+VISA_call() with a call to VISA_wait(), as follows:
+
+static XDAS_Int32 processWait(IAUDENC1_Handle h, XDM1_BufDesc *inBufs,
+    XDM1_BufDesc *outBufs, IAUDENC1_InArgs *inArgs, IAUDENC1_OutArgs *outArgs,
+    UInt timeout)
+{
+    XDAS_Int32 retVal;
+    _AUDENC1_Msg *msg;
+    VISA_Handle visa = (VISA_Handle)h;
+
+    /* wait for completion of "last" message */
+    retVal = VISA_wait(visa, (VISA_Msg *)&msg, timeout);
+
+    /*
+     * Regardless of return value, unmarshall outArgs.
+     */
+    `unmarshall _AUDDEC1_Msg message into arguments`
+
+    return (retVal);
+}
+
+There are a few more steps that these new functions can perform to tighten
+up the interface.  One of these steps is for processWait() to ensure that
+the correct type of command is contained in the returned message.  The
+process() function issues a message with the command _AUDDEC1_CPROCESS, and
+the control() function issues a message with the command _AUDDEC1_CCONTROL.
+In correct usage, the control() function synchronously receives the message
+that it submitted to the remote codec (a _AUDDEC1_CCONTROL command), however,
+if any _AUDDEC1_CPROCESS commands have not been waited upon, and therefore
+remain in the queue, a call to the control() function will retrieve this
+message instead of the _AUDDEC1_CCONTROL message that it submitted, which is
+certainly not the correct thing to do.  We therefore ensure, in processWait(),
+that the returned message contains a _AUDDEC1_CPROCESS command, and we enhance
+the existing control() function (which we have otherwise not modified) with a
+check for a _AUDDEC1_CCONTROL command in the returned message after the call
+to VISA_call().  The only thing we can do when the wrong type of message is
+received is to abort the application (with a call to GT_assert()), since the
+messaging pipeline has become irretrievably out of sync.
+
+The pseodo-code statements above (in backquotes) correspond to all the code in
+the process() function before and after the call to VISA_call().  Since that
+code is common for both the process() and processAsync()/processWait()
+functions, we create two new functions that encapsulate the common
+functionality.  We will call these functions marshallMsg() and unmarshallMsg(),
+since those names describe well the majority of the functionality they perform.
+While previously inlined in the process() function, any failure in this
+portion of the code would jump past the subsequent VISA_call() operation and
+clean up before returning.  Since this code is now in a separate function,
+some of this cleanup is performed in the new function and a return value
+informs the caller of success or failure.  If marshallMsg() fails, the
+subsequent VISA API call should not be performed.  The result of unmarshallMsg,
+however, is not needed, so it is made a void return and does not affect the
+return value of the function that calls it.
+
+marshallMsg() allocates a VISA_Msg that is normally freed by unmarshallMsg().
+In the case that a failure occurs in marshallMsg() *after* the message is
+allocated, marshallMsg() needs to free it before returning as part of its
+self-contained cleanup that we mentioned above.
+
+We're not including listings of marshallMsg() and unmarshallMsg(), since they
+are lengthy and don't need modification from the form in which they existed
+while inlined in the process() function, except for some error-checking and
+corresoponding error return values and cleanup.
+
+Detailing the asynchronous interface "front-end" functions
+==========================================================
+
+Stub functions have previously always been called by way of only the function
+structure, which allows the front-end API to call either to a codec itself or
+to a stub function which relays a message to the remote codec server.  Since
+asynchronous processing applies only to remote codecs, the new asynchronous
+front-end APIs are implemented directly in the stub function file, which
+allows them to directly perform the message relay functionality to the remote
+codec server (instead of calling through a function pointer).
+
+The following is the source code for the new AUDDEC1_processAsync() API:
+
+XDAS_Int32 AUDDEC1_processAsync(AUDDEC1_Handle handle, XDM1_BufDesc *inBufs,
+    XDM1_BufDesc *outBufs, AUDDEC1_InArgs *inArgs, AUDDEC1_OutArgs *outArgs)
+{
+    XDAS_Int32 retVal = AUDDEC1_EFAIL;
+
+    /*
+     * Note, we do this because someday we may allow dynamically changing
+     * the global 'VISA_isChecked()' value on the fly.  If we allow that,
+     * we need to ensure the value stays consistent in the context of this call.
+     */
+    Bool checked = VISA_isChecked();
+
+    GT_5trace(CURTRACE, GT_ENTER, "AUDDEC1_processAsync> "
+        "Enter (handle=0x%x, inBufs=0x%x, outBufs=0x%x, inArgs=0x%x, "
+        "outArgs=0x%x)\n", handle, inBufs, outBufs, inArgs, outArgs);
+
+    if (handle) {
+        IAUDDEC1_Handle alg = VISA_getAlgHandle((VISA_Handle)handle);
+
+        if (alg != NULL) {
+            if (checked) {
+
+                /*
+                 * Validate inBufs and outBufs.
+                 */
+                XdmUtils_validateSparseBufDesc1(inBufs, "inBufs");
+                XdmUtils_validateSparseBufDesc1(outBufs, "outBufs");
+
+                /*
+                 * Zero out the outArgs struct (except for .size field);
+                 * it's write-only to the codec, so the app shouldn't pass
+                 * values through it, nor should the codec expect to
+                 * receive values through it.
+                 */
+                memset((void *)((XDAS_Int32)(outArgs) + sizeof(outArgs->size)),
+                    0, (sizeof(*outArgs) - sizeof(outArgs->size)));
+            }
+
+            retVal = processAsync(alg, inBufs, outBufs, inArgs, outArgs);
+        }
+    }
+
+    GT_2trace(CURTRACE, GT_ENTER, "AUDDEC1_processAsync> "
+        "Exit (handle=0x%x, retVal=0x%x)\n", handle, retVal);
+
+    return (retVal);
+}
+
+The following are the code elements that exist in AUDDEC1_process() but
+not in AUDDEC1_processAsync():
+	+ IAUDDEC1_Fxns *fxn = VISA_getAlgFxns() - not needed since
+	AUDDEC1_processAsync() makes a direct call to the processAsync()
+	function.
+	+ refInArgs = *inArgs - not needed since AUDDEC1_processWait()
+	performs this step (and the later memcmp() operation).
+	+ VISA_enter()/VISA_exit() surrounding processAsync() call - not
+	needed since this functionality must be performed on the processor
+	that hosts the codec itself.
+
+The following is the source code for the new AUDDEC1_processAsync() API:
+
+XDAS_Int32 AUDDEC1_processWait(AUDDEC1_Handle h, XDM1_BufDesc *inBufs,
+    XDM1_BufDesc *outBufs, AUDDEC1_InArgs *inArgs, AUDDEC1_OutArgs *outArgs,
+    UInt timeout)
+{
+    XDAS_Int32 retVal = AUDDEC1_EFAIL;
+    AUDDEC1_InArgs refInArgs;
+
+    /*
+     * Note, we do this because someday we may allow dynamically changing
+     * the global 'VISA_isChecked()' value on the fly.  If we allow that,
+     * we need to ensure the value stays consistent in the context of this call.
+     */
+    Bool checked = VISA_isChecked();
+
+    GT_5trace(CURTRACE, GT_ENTER, "AUDDEC1_processWait> "
+        "Enter (handle=0x%x, inBufs=0x%x, outBufs=0x%x, inArgs=0x%x, "
+        "outArgs=0x%x)\n", h, inBufs, outBufs, inArgs, outArgs);
+
+    if (h) {
+        IAUDDEC1_Handle alg = VISA_getAlgHandle((VISA_Handle)h);
+
+        if (alg != NULL) {
+            if (checked) {
+                /*
+                 * Make a reference copy of inArgs so we can check that
+                 * the codec didn't modify them.
+                 */
+                refInArgs = *inArgs;
+            }
+
+            retVal = processWait(alg, inBufs, outBufs, inArgs, outArgs,
+                                 timeout);
+
+            if (checked) {
+                /* ensure the codec didn't modify the read-only inArgs */
+                if (memcmp(&refInArgs, inArgs, sizeof(*inArgs)) != 0) {
+                    GT_1trace(CURTRACE, GT_7CLASS,
+                        "ERROR> codec (0x%x) modified read-only inArgs "
+                        "struct!\n", h);
+                }
+            }
+
+        }
+    }
+
+    GT_2trace(CURTRACE, GT_ENTER, "AUDDEC1_processWait> "
+        "Exit (handle=0x%x, retVal=0x%x)\n", h, retVal);
+
+    return (retVal);
+}
+
+The following are the code elements that exist in AUDDEC1_process() but
+not in AUDDEC1_processWait():
+	+ IAUDDEC1_Fxns *fxn = VISA_getAlgFxns() - not needed since
+	AUDDEC1_processWait() makes a direct call to the processWait()
+	function.
+	+ XdmUtils_validateSparseBufDesc1() - not needed since
+	AUDDEC1_processAsync() already validated inBufs & outBufs (which must
+	be the same for the subsequent AUDDEC1_processWait() call).
+	+ memset(outArgs, 0) - not needed since AUDDEC1_processAsync() already
+	did this (and outArgs must be the same for the subsequent
+	AUDDEC1_processWait() call).
+	+ VISA_enter()/VISA_exit() surrounding processAsync() call - not
+	needed since this functionality must be performed on the processor
+	that hosts the codec itself.
+
+As you can see, the new front-end APIs are pared-down versions of the existing
+AUDDEC1_process() API.
+
+Using the new asynchronous paradigm in an application
+=====================================================
+
+The audio1_copy app.c can be modified to perform asynchronous access to the
+remote codec.  This modification must add complexity since more operations
+are required and more buffers are involved.
+
+The basic loop of the audio1_copy app.c program is as follows:
+	for (n = 0; fread(input) == 1; n++) {
+		AUDENC1_process(input, encoded);
+		AUDDEC1_process(encoded, output);
+		fwrite(output);
+	}
+This loop operates on a single set of input/encoded/output buffers, one each.
+For discussion purposes, the encoded buffer serves as both an encoder output
+and a decoder input, allowing us to save one buffer and its corresponding
+memcpy() from encoder output to decoder input.
+
+To make the above loop asynchronous more buffers must be allocated.  Since the
+main goal of using the asynchronous paradigm is to allow multi-buffering, the
+minimum amount of buffers would be 2 each of encoder-input/encoder-output &
+decoder-input/decoder-output.  Since the encoder-output and decoder-input can
+be the same buffers, we can again eliminate one buffer for a total of 7.  The
+goal is to submit input to a codec as quickly as possible, and retrieve output
+only when no more input buffers are available (or, said another way, we
+allocate and submit as many buffers as we want to submit before retrieving the
+first one).
+
+We also need prolog/epilog sections before the main loop, to fill/drain the
+input/output, respectively.  This causes the basic design to be:
+
+	fread(input);
+	AUDENC1_processAsync(input, encoded);
+	fread(input);
+	AUDENC1_processAsync(input, encoded);
+	AUDENC1_processWait(input, encoded);
+	AUDDEC1_processAsync(encoded, output);
+	for (n = 0; fread(input) == 1; n++) {
+		AUDENC1_processAsync(input, encoded);
+		AUDENC1_processWait(input, encoded);
+		AUDDEC1_processAsync(encoded, output);
+		AUDDEC1_processWait(encoded, output);
+		fwrite(output);
+	}
+	AUDENC1_processWait(input, encoded);
+	AUDDEC1_processAsync(encoded, output);
+	AUDDEC1_processWait(encoded, output);
+	fwrite(output);
+	AUDDEC1_processWait(encoded, output);
+	fwrite(output);
+
+The usage of input/encoded/output as parameters without further qualification
+is for readability purposes.  In actuality, there are 2 input buffers, 3
+encoded buffers, and 2 output buffers.  The application will cycle through
+these buffers independently of each other.  For instance, after using input
+buffers 1 & 2, input buffer 1 will next be used, but for the encoded buffers
+it will cycle back to encoded buffer 1 after using encoded buffers 1, 2, & 3.
+
+In sequential fashion, the loop above unrolls to the following usage of
+buffer indices (indented portion is run by the "for" loop):
+
+	fread(input[0]);
+	AUDENC1_processAsync(input[0], encoded[0]);
+	fread(input[1]);
+	AUDENC1_processAsync(input[1], encoded[1]);
+	AUDENC1_processWait(input[0], encoded[0]);
+	AUDDEC1_processAsync(encoded[0], output[0]);
+		fread(input[0]);
+		AUDENC1_processAsync(input[0], encoded[2]);
+		AUDENC1_processWait(input[1], encoded[1]);
+		AUDDEC1_processAsync(encoded[1], output[1]);
+		AUDDEC1_processWait(encoded[0], output[0]);
+		fwrite(output[0]);
+		fread(input[1]);
+		AUDENC1_processAsync(input[1], encoded[0]);
+		AUDENC1_processWait(input[0], encoded[2]);
+		AUDDEC1_processAsync(encoded[2], output[0]);
+		AUDDEC1_processWait(encoded[1], output[1]);
+		fwrite(output[1]);
+		fread(input[0]);
+		AUDENC1_processAsync(input[0], encoded[1]);
+		AUDENC1_processWait(input[1], encoded[0]);
+		AUDDEC1_processAsync(encoded[0], output[1]);
+		AUDDEC1_processWait(encoded[2], output[0]);
+		fwrite(output[0]);
+		fread(input[1]);
+		AUDENC1_processAsync(input[1], encoded[2]);
+		AUDENC1_processWait(input[0], encoded[1]);
+		AUDDEC1_processAsync(encoded[1], output[0]);
+		AUDDEC1_processWait(encoded[0], output[1]);
+		fwrite(output[1]);
+		fread(input[0]);
+		AUDENC1_processAsync(input[0], encoded[0]);
+		AUDENC1_processWait(input[1], encoded[2]);
+		AUDDEC1_processAsync(encoded[2], output[1]);
+		AUDDEC1_processWait(encoded[1], output[0]);
+		fwrite(output[0]);
+	AUDENC1_processWait(input[0], encoded[0]);
+	AUDDEC1_processAsync(encoded[0], output[0]);
+	AUDDEC1_processWait(encoded[2], output[1]);
+	fwrite(output[1]);
+	AUDDEC1_processWait(encoded[0], output[0]);
+	fwrite(output[0]);
+
+The number of iterations above is chosen to exemplify that the buffer
+indeces get "back in sync" after becoming "out of sync".
+
+A simpler, and more "real", example involves reading input, passing it to
+a decoder or encoder, and writing output.  For a synchronous application, the
+code would be:
+
+	fread(input);
+	AUDENC1_process(input, encoded);
+	fwrite(encoded);
+	fread(input);
+	AUDENC1_process(input, encoded);
+	fwrite(encoded);
+
+Its corresponding asynchronous version:
+
+	fread(input[0]);
+	AUDENC1_processAsync(input[0], encoded[0]);
+	fread(input[1]);
+	AUDENC1_processAsync(input[1], encoded[1]);
+	AUDENC1_processWait(input[0], encoded[0]);
+	fwrite(encoded[0]);
+	AUDENC1_processWait(input[1], encoded[1]);
+	fwrite(encoded[1]);
+

@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="" label="" date="" buildCount="" producerId="">
+<package name="ti.sdo.fc.dman3.examples.fastcopy"
+    version="1, 0, 0"/>
+<imports>
+</imports>
+<references>
+    <package name="ti.sdo.fc.dman3"
+        version="1, 0, 4, 1291166661000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="DMAN3.xdt"/>
+        <file name="dman3.h"/>
+        <file name="lib/debug/dman3Cfg.a64P"/>
+        <file name="lib/debug/dman3Cfg.a674"/>
+        <file name="lib/debug_trace/dman3Cfg.a64P"/>
+        <file name="lib/debug_trace/dman3Cfg.a674"/>
+        <file name="lib/debug_trace/dman3RMCfg.a64P"/>
+        <file name="lib/debug_trace/dman3RMCfg.a674"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.psl"
+        version="5, 0, 0, 0, 1190669467089"
+        providerId="/db/vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages">
+        <file name="package.xs"/>
+        <file name="psl.xdt"/>
+    </package>
+    <package name="gnu.targets"
+        version="1, 0, 1, 1254761371234"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Linux86.xs"/>
+        <file name="MVArm9.xs"/>
+        <file name="Mingw.xs"/>
+        <file name="UCArm9.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.bios"
+        version="5, 2, 5, 19, 1251816047962"
+        providerId="/db/vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages">
+        <file name="Build.xs"/>
+        <file name="bios.tci"/>
+        <file name="bios.xdt"/>
+        <file name="config/bios_2430.tci"/>
+        <file name="config/bios_3430.tci"/>
+        <file name="config/bios_3530.tci"/>
+        <file name="config/bios_6424.tci"/>
+        <file name="config/bios_6452.tci"/>
+        <file name="config/bios_6455.tci"/>
+        <file name="config/bios_6747.tci"/>
+        <file name="config/bios_6748.tci"/>
+        <file name="config/bios_DA830.tci"/>
+        <file name="config/bios_DM420.tci"/>
+        <file name="config/bios_DM6437.tci"/>
+        <file name="config/bios_DM6467.tci"/>
+        <file name="config/bios_DM648.tci"/>
+        <file name="config/bios_L137.tci"/>
+        <file name="config/bios_TCI6482.tci"/>
+        <file name="include/_hook.h"/>
+        <file name="include/_log.h"/>
+        <file name="include/atm.h"/>
+        <file name="include/buf.h62"/>
+        <file name="include/c62.h62"/>
+        <file name="include/c64.h64"/>
+        <file name="include/c6x.h62"/>
+        <file name="include/chk.h62"/>
+        <file name="include/clk.h62"/>
+        <file name="include/clk2430.h64P"/>
+        <file name="include/clkC6000.h62"/>
+        <file name="include/clkDA700.h62"/>
+        <file name="include/clkDM420.h62"/>
+        <file name="include/confbeg.s62"/>
+        <file name="include/confend.s62"/>
+        <file name="include/dev.h62"/>
+        <file name="include/dgn.h62"/>
+        <file name="include/dhl.h62"/>
+        <file name="include/dio.h62"/>
+        <file name="include/dpi.h62"/>
+        <file name="include/ecm.h62"/>
+        <file name="include/fxn.h"/>
+        <file name="include/fxn.h62"/>
+        <file name="include/gbl.h62"/>
+        <file name="include/gio.h62"/>
+        <file name="include/hook.h62"/>
+        <file name="include/hst.h"/>
+        <file name="include/hst.h62"/>
+        <file name="include/hwi.h"/>
+        <file name="include/hwi.h62"/>
+        <file name="include/idl.h62"/>
+        <file name="include/isrc.h62"/>
+        <file name="include/knl.h"/>
+        <file name="include/knl.h62"/>
+        <file name="include/lck.h62"/>
+        <file name="include/lnk.h62"/>
+        <file name="include/log.h"/>
+        <file name="include/log.h62"/>
+        <file name="include/mbx.h62"/>
+        <file name="include/mem.h"/>
+        <file name="include/mem.h62"/>
+        <file name="include/msgq.h62"/>
+        <file name="include/obj.h"/>
+        <file name="include/obj.h62"/>
+        <file name="include/pip.h"/>
+        <file name="include/pip.h62"/>
+        <file name="include/pool.h62"/>
+        <file name="include/prd.h"/>
+        <file name="include/prd.h62"/>
+        <file name="include/pwrm.h62"/>
+        <file name="include/que.h"/>
+        <file name="include/que.h62"/>
+        <file name="include/rta.h62"/>
+        <file name="include/rtdx.h62"/>
+        <file name="include/sem.h"/>
+        <file name="include/sem.h62"/>
+        <file name="include/sio.h62"/>
+        <file name="include/std.h"/>
+        <file name="include/std.h62"/>
+        <file name="include/sts.h"/>
+        <file name="include/sts.h62"/>
+        <file name="include/swi.h"/>
+        <file name="include/swi.h62"/>
+        <file name="include/sys.h"/>
+        <file name="include/sys.h62"/>
+        <file name="include/tistdtypes.h"/>
+        <file name="include/trc.h"/>
+        <file name="include/trc.h62"/>
+        <file name="include/trg.h"/>
+        <file name="include/tsk.h"/>
+        <file name="include/tsk.h62"/>
+        <file name="include/udev.h62"/>
+        <file name="include/vers.h62"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0, 1254957695155"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.platforms.evm3530"
+        version="1, 0, 0, 1254955742441"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/6.1.5/Linux/"
+        trgs="ti.targets.C674">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0, 1254957692499"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.pscl"
+        version="1, 0, 0, 0, 1251816060802"
+        providerId="/db/vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages">
+        <file name="package.xs"/>
+        <file name="pscl.xdt"/>
+    </package>
+    <package name="ti.sdo.fc.utils.api"
+        version="1, 0, 0, 1291083314000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="alg.h"/>
+        <file name="lib/debug/api.a64P"/>
+        <file name="lib/debug/api.a674"/>
+        <file name="lib/debug_trace/api.a674"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.xdais"
+        version="1, 2.0, 1, 1272987831928"
+        providerId="/db/atree/library/trees/fc/fc-p01x/imports">
+        <file name="ialg.h"/>
+        <file name="idma3.h"/>
+        <file name="ires.h"/>
+        <file name="ires_common.h"/>
+        <file name="package.xs"/>
+        <file name="xdas.h"/>
+    </package>
+    <package name="xdc.rov"
+        version="1, 0, 0, 1254957684155"
+        providerId="xdccore">
+        <file name="Model.xs"/>
+        <file name="Program.xs"/>
+        <file name="StateReader.xs"/>
+        <file name="StructureDecoder.xs"/>
+        <file name="ViewXml.xs"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 1, 1254957667146"
+        providerId="xdccore">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+        <file name="xmlgen2.xs"/>
+    </package>
+    <package name="ti.platforms.evmDM6467"
+        version="1, 0, 0, 0, 1254955138639"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/6.0.16/Linux/"
+        trgs="ti.targets.C64P">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="gnu.targets.arm"
+        version="1, 0, 0, 0, 1254762022855"
+        providerId="xdccore">
+        <file name="GCArmv6.xs"/>
+        <file name="GCArmv7A.xs"/>
+    </package>
+    <package name="ti.rtdx"
+        version="2, 0, 0, 5, 1229454511824"
+        providerId="/db/vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages">
+        <file name="Settings.xs"/>
+        <file name="lib/debug/rtdx.a64P"/>
+        <file name="lib/debug/rtdx.a674"/>
+        <file name="package.xs"/>
+        <file name="rtdx.xdt"/>
+    </package>
+    <package name="ti.platforms.dsk6455"
+        version="1, 0, 0, 1254955102329"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+    </package>
+    <package name="ti.sdo.utils.trace"
+        version="1, 0, 0, 1291083321000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="GT.xdt"/>
+        <file name="gt.h"/>
+        <file name="lib/release/gt.a64P"/>
+        <file name="lib/release/gt.a674"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0, 1254957688697"
+        providerId="xdccore">
+        <file name="Clock.xs"/>
+        <file name="Trace.xs"/>
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.pmi"
+        version="1, 0, 0, 0, 1251816055410"
+        providerId="/db/vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages">
+        <file name="package.xs"/>
+        <file name="pmi.xdt"/>
+    </package>
+    <package name="xdc.cfg"
+        version="1, 0, 2, 0, 1254957673849"
+        providerId="xdccore">
+        <file name="Main.xs"/>
+        <file name="Program.xdt"/>
+        <file name="Program.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.edma3.rm"
+        version="01, 03, 08, 1276531399079"
+        providerId="edma3_lld_01_03_08_04">
+        <file name="RM.xdt"/>
+        <file name="edma3_common.h"/>
+        <file name="edma3_rm.h"/>
+        <file name="lib/c6455/Debug/edma3_rm_bios.lib"/>
+        <file name="lib/c6748/Debug/edma3_rm_bios.lib"/>
+        <file name="lib/dm6437/Debug/edma3_rm_bios.lib"/>
+        <file name="lib/dm6446/Debug/edma3_rm_bios.lib"/>
+        <file name="lib/dm6467/Debug/edma3_rm_bios.lib"/>
+        <file name="lib/dm648/Debug/edma3_rm_bios.lib"/>
+        <file name="lib/omap2430/Debug/edma3_rm_bios.lib"/>
+        <file name="lib/omap3430/Debug/edma3_rm_bios.lib"/>
+        <file name="lib/omap35xx/Debug/edma3_rm_bios.lib"/>
+        <file name="lib/omapl137/Debug/edma3_rm_bios.lib"/>
+        <file name="lib/omapl138/Debug/edma3_rm_bios.lib"/>
+        <file name="package.xs"/>
+        <file name="src/edma3_rl_cc.h"/>
+        <file name="src/edma3_rl_tc.h"/>
+        <file name="src/edma3resmgr.h"/>
+    </package>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0, 1254957691859"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.catalog.arm"
+        version="1, 0, 1, 0, 1254955674790"
+        providerId="xdccore">
+        <file name="CortexM3.xs"/>
+        <file name="ILM3Sx7xx.xs"/>
+        <file name="ILM3Sx9xx.xs"/>
+        <file name="ILM3SxBxx.xs"/>
+        <file name="IOMAP2x3x.xs"/>
+        <file name="IOMAP3xxx.xs"/>
+        <file name="ITMS320DA8xx.xs"/>
+        <file name="TMS320C1030.xs"/>
+        <file name="TMS320C5912.xs"/>
+        <file name="TMS320CDM355.xs"/>
+        <file name="TMS320CDM510.xs"/>
+        <file name="TMS320CDM6446.xs"/>
+        <file name="TMS320CDM6467.xs"/>
+        <file name="TMS320CDM730.xs"/>
+        <file name="TMS320CDM740.xs"/>
+        <file name="TMS320DM357.xs"/>
+        <file name="TMS320DM365.xs"/>
+        <file name="TMS470R10.xs"/>
+        <file name="TMS570LS20216.xs"/>
+        <file name="TMS570PSF762.xs"/>
+        <file name="TNETV107X.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.utils.gtinfra"
+        version="1, 0, 0, 1291083317000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="GTINFRA.xdt"/>
+        <file name="lib/debug/gt_noOs.a64P"/>
+        <file name="lib/debug/gt_noOs.a674"/>
+        <file name="lib/debug_trace/gt_noOs.a674"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.catalog.c6000"
+        version="1, 0, 0, 0, 1254954931976"
+        providerId="xdccore">
+        <file name="C2430.tci"/>
+        <file name="C3430.tci"/>
+        <file name="C3530.tci"/>
+        <file name="C6424.tci"/>
+        <file name="C6455.tci"/>
+        <file name="C64P.tci"/>
+        <file name="C6748.tci"/>
+        <file name="CDA830.tci"/>
+        <file name="CDM420.tci"/>
+        <file name="CDM6437.tci"/>
+        <file name="CDM6467.tci"/>
+        <file name="CDM648.tci"/>
+        <file name="CTCI6482.tci"/>
+        <file name="IAntara.xs"/>
+        <file name="IDaVinci.xs"/>
+        <file name="IHimalaya.xs"/>
+        <file name="IOMAP2x3x.xs"/>
+        <file name="IOMAP3xxx.xs"/>
+        <file name="ITMS320C642x.xs"/>
+        <file name="ITMS320C64_128K.xs"/>
+        <file name="ITMS320C64_1M.xs"/>
+        <file name="ITMS320C64_256K.xs"/>
+        <file name="ITMS320C64_512K.xs"/>
+        <file name="ITMS320C6x0x.xs"/>
+        <file name="ITMS320C6x1x.xs"/>
+        <file name="ITMS320CDM6467.xs"/>
+        <file name="ITMS320CDRA44x.xs"/>
+        <file name="ITMS320CDRA45x.xs"/>
+        <file name="ITMS320CDRx40x.xs"/>
+        <file name="ITMS320CTCI6484.xs"/>
+        <file name="ITMS320CTCI6486.xs"/>
+        <file name="ITMS320CTCI648x.xs"/>
+        <file name="ITMS320CTCI6496.xs"/>
+        <file name="ITMS320CTCI6497.xs"/>
+        <file name="ITMS320DA8xx.xs"/>
+        <file name="TMS320C6421.xs"/>
+        <file name="TMS320C6428.xs"/>
+        <file name="TMS320C6452.xs"/>
+        <file name="TMS320C6454.xs"/>
+        <file name="TMS320CDM6431.xs"/>
+        <file name="TMS320CDM647.xs"/>
+        <file name="TMS320CDM648.xs"/>
+        <file name="TMS320CDM730.xs"/>
+        <file name="TMS320CDM740.xs"/>
+        <file name="TMS320CF761990.xs"/>
+        <file name="TMS320CTNETV2685.xs"/>
+        <file name="TNETV107X.xs"/>
+        <file name="c6x.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.targets.arm"
+        version="2, 0, 1, 0, 1254761376888"
+        providerId="xdccore">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.ires"
+        version="1, 0, 0, 1291083282000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="iresman.h"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.bld"
+        version="1, 0, 2, 1254957676628"
+        providerId="xdccore">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.utils"
+        version="1, 0, 2, 1291083313000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="utils.xs"/>
+    </package>
+    <package name="ti.platforms.evmOMAPL137"
+        version="1, 0, 0, 1254955830018"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+    </package>
+    <package name="ti.platforms.sdp2430"
+        version="1, 0, 0, 1254955117352"
+        providerId="xdccore">
+        <file name="Platform.tci"/>
+        <file name="Platform.xs"/>
+    </package>
+    <package name="ti.sdo.fc.edma3"
+        version="3, 0, 0, 1291083276000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="Settings.xdt"/>
+        <file name="edma3_config.h"/>
+        <file name="lib/debug/edma3.a64P"/>
+        <file name="lib/debug/edma3.a674"/>
+        <file name="lib/debug_trace/edma3.a674"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.platforms.evmDM6446"
+        version="1, 0, 0, 1, 1254955111830"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+    </package>
+    <package name="xdc.runtime"
+        version="2, 0, 0, 0, 1254957688197"
+        providerId="xdccore">
+        <file name="Assert.xs"/>
+        <file name="Defaults.xs"/>
+        <file name="Diags.xs"/>
+        <file name="Error.xs"/>
+        <file name="Gate.xs"/>
+        <file name="GateNull.xs"/>
+        <file name="HeapMin.xs"/>
+        <file name="HeapStd.xs"/>
+        <file name="IGateProvider.xs"/>
+        <file name="ILogger.xs"/>
+        <file name="Log.xs"/>
+        <file name="LoggerBuf.xs"/>
+        <file name="LoggerSys.xs"/>
+        <file name="Memory.xs"/>
+        <file name="Rta.xs"/>
+        <file name="Startup.xs"/>
+        <file name="SysMin.xs"/>
+        <file name="System.xs"/>
+        <file name="Text.xs"/>
+        <file name="Timestamp.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="microsoft.targets.arm"
+        version="1, 0, 0, 0, 1254761374830"
+        providerId="xdccore">
+        <file name="WinCE.xs"/>
+    </package>
+    <package name="ti.sdo.fc.memutils"
+        version="1, 0, 0, 1291083299000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="lib/debug/memutils.a64P"/>
+        <file name="lib/debug/memutils.a674"/>
+        <file name="lib/debug_trace/memutils.a674"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.platforms.evm6748"
+        version="1, 0, 0, 1254955172614"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+    </package>
+    <package name="ti.targets.rts6000"
+        version="1, 0, 0, 0, 1254762093898"
+        providerId="xdccore">
+        <file name="lib/boot.a64P"/>
+        <file name="lib/boot.a674"/>
+        <file name="lib/ti.targets.rts6000.a64P"/>
+        <file name="lib/ti.targets.rts6000.a674"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.platforms.evmDM6437"
+        version="1, 0, 0, 1254955114339"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+    </package>
+    <package name="ti.sdo.fc.global"
+        version="1, 0, 0, 1291083279000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="Settings.xdt"/>
+    </package>
+    <package name="ti.platforms.evmOMAPL138"
+        version="1, 0, 0, 1254955830465"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+    </package>
+    <package name="xdc.platform"
+        version="1, 0, 1, 0, 1254957678104"
+        providerId="xdccore">
+        <file name="ExeContext.xs"/>
+        <file name="IPlatform.xs"/>
+        <file name="Utils.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="microsoft.targets"
+        version="1, 0, 2, 0, 1254761371234"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Win32.xs"/>
+        <file name="_utils.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.rman"
+        version="2, 0, 0, 1291083301000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="rman.h"/>
+    </package>
+    <package name="ti.platforms.sdp3430"
+        version="1, 0, 0, 1254955124787"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+    </package>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 1254957708059"
+        providerId="xdccore">
+        <file name="java/antlr.jar"/>
+        <file name="java/ecj.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/jsr173_api.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+    </package>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0, 1254957699053"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.targets"
+        version="1, 0, 3, 1254761375030"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="MSP430.xs"/>
+        <file name="linkUtils.xs"/>
+        <file name="linkcmd.xdt"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="ti.sdo.fc.dskt2"
+        version="1, 0, 4, 1291083276000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="DSKT2.link.xdt"/>
+        <file name="DSKT2.xdt"/>
+        <file name="dskt2.h"/>
+        <file name="lib/debug/dskt2.a64P"/>
+        <file name="lib/debug/dskt2.a674"/>
+        <file name="lib/debug_trace/dskt2.a674"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.acpy3"
+        version="1, 0, 4, 1291166661000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="ACPY3.xdt"/>
+        <file name="acpy3.h"/>
+        <file name="acpy3_complete.h"/>
+        <file name="acpy3_fastconfigure16b.h"/>
+        <file name="acpy3_fastconfigure32b.h"/>
+        <file name="acpy3_fastsetfinal.h"/>
+        <file name="acpy3_instr.h"/>
+        <file name="acpy3_qdma.h"/>
+        <file name="acpy3_qdma_arm.h"/>
+        <file name="acpy3_setfinal.h"/>
+        <file name="acpy3_start.h"/>
+        <file name="acpy3_util.h"/>
+        <file name="acpy3_wait.h"/>
+        <file name="lib/debug/acpy3.a64P"/>
+        <file name="lib/debug/acpy3.a674"/>
+        <file name="lib/debug_trace/acpy3.a64P"/>
+        <file name="lib/debug_trace/acpy3.a674"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.platforms.generic"
+        version="1, 0, 0, 1, 1254955060254"
+        providerId="xdccore">
+        <file name="Platform.tcp"/>
+    </package>
+    <package name="ti.platforms.evmDM648"
+        version="1, 0, 0, 1254955116246"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+    </package>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include/utils.tci"/>
+        <xdcCorePkg version="16, 0, 1, 0, 1254957675604" producerId="ndefined" buildCount="218" releaseName="xdc_corevers" label="default" date="1254957675604"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/atree/library/trees/fc/fc-p01x/src/config.bld"/>
+</orphans>
+</release>

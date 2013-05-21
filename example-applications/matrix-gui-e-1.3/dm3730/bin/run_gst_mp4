@@ -1,0 +1,14 @@
+#!/bin/sh
+/etc/init.d/loadmodule-rc restart
+
+default_display="`cat /sys/devices/platform/omapdss/manager0/display`"
+if [ "$default_display" = "dvi" ]; then
+	filename="/usr/share/ti/data/videos/davincieffect_h264_aac.mp4"
+	gst-launch filesrc location=$filename ! qtdemux name=demux demux.audio_00 ! queue max-size-buffers=8000 max-size-time=0 max-size-bytes=0 ! TIAuddec1 ! alsasink demux.video_00 ! queue ! TIViddec2 padAllocOutbufs=TRUE ! TIDmaiVideoSink videoStd=720P_60 videoOutput=AUTO numBufs=5
+
+else
+	filename="/usr/share/ti/data/videos/davincieffect_vga30.mp4"
+	gst-launch filesrc location=$filename ! qtdemux name=demux demux.audio_00 ! queue max-size-buffers=8000 max-size-time=0 max-size-bytes=0 ! TIAuddec1 ! alsasink demux.video_00 ! queue ! TIViddec2 ! TIDmaiVideoSink videoStd=VGA videoOutput=LCD rotation=270 numBufs=3
+fi
+
+

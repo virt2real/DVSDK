@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.memutils" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="MEMUTILS"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="memutils_bios.c"/>
+        <srcFile name="memutils_cmem.c"/>
+        <srcFile name="memutils_std.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/memutils_std.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/package/package_ti.sdo.fc.memutils.ov5T.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/memutils_std.ov5T.dep" src="memutils_std.c"/>
+        <srcFile name="lib/release/memutils.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils/package/package_ti.sdo.fc.memutils.ov4TCE.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils/memutils_std.ov4TCE.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug/memutils_std.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/package/package_ti.sdo.fc.memutils.o470MV.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/memutils_std.o470MV.dep" src="memutils_std.c"/>
+        <srcFile name="lib/release/memutils_std.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils_std/package/package_ti.sdo.fc.memutils.o86U.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils_std/memutils_std.o86U.dep" src="memutils_std.c"/>
+        <srcFile name="lib/release/memutils.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils/memutils_bios.o674.dep" src="memutils_bios.c"/>
+        <srcFile name="package/lib/lib/release/memutils/package/package_ti.sdo.fc.memutils.o674.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="lib/trace/memutils_std.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/package/package_ti.sdo.fc.memutils.o9t.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/memutils_std.o9t.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug/memutils_std.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/package/package_ti.sdo.fc.memutils.ov4TCE.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/memutils_std.ov4TCE.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug_trace/memutils.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/package/package_ti.sdo.fc.memutils.o470MV.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/memutils_cmem.o470MV.dep" src="memutils_cmem.c"/>
+        <srcFile name="lib/debug/memutils_std.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/package/package_ti.sdo.fc.memutils.o9t.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/memutils_std.o9t.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug_trace/memutils.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/package/package_ti.sdo.fc.memutils.ov4TCE.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/memutils_std.ov4TCE.dep" src="memutils_std.c"/>
+        <srcFile name="lib/release/memutils_std.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils_std/package/package_ti.sdo.fc.memutils.o64P.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils_std/memutils_std.o64P.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug_trace/memutils_std.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/package/package_ti.sdo.fc.memutils.o674.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/memutils_std.o674.dep" src="memutils_std.c"/>
+        <srcFile name="lib/trace/memutils.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils/package/package_ti.sdo.fc.memutils.o470MV.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils/memutils_cmem.o470MV.dep" src="memutils_cmem.c"/>
+        <srcFile name="lib/release/memutils.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils/package/package_ti.sdo.fc.memutils.ov5T.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils/memutils_cmem.ov5T.dep" src="memutils_cmem.c"/>
+        <srcFile name="lib/trace/memutils.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils/package/package_ti.sdo.fc.memutils.ov4TCE.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils/memutils_std.ov4TCE.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug/memutils_std.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/package/package_ti.sdo.fc.memutils.o86U.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/memutils_std.o86U.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug_trace/memutils_std.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/package/package_ti.sdo.fc.memutils.ov5T.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/memutils_std.ov5T.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug/memutils_std.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/package/package_ti.sdo.fc.memutils.o64P.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/memutils_std.o64P.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug/memutils.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils/memutils_bios.o674.dep" src="memutils_bios.c"/>
+        <srcFile name="package/lib/lib/debug/memutils/package/package_ti.sdo.fc.memutils.o674.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="lib/debug_trace/memutils_std.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/package/package_ti.sdo.fc.memutils.o9t.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/memutils_std.o9t.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug/memutils.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils/package/package_ti.sdo.fc.memutils.o470uC.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils/memutils_cmem.o470uC.dep" src="memutils_cmem.c"/>
+        <srcFile name="lib/release/memutils.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils/memutils_bios.o64P.dep" src="memutils_bios.c"/>
+        <srcFile name="package/lib/lib/release/memutils/package/package_ti.sdo.fc.memutils.o64P.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="lib/debug_trace/memutils_std.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/package/package_ti.sdo.fc.memutils.o86U.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/memutils_std.o86U.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug/memutils.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils/package/package_ti.sdo.fc.memutils.ov5T.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils/memutils_cmem.ov5T.dep" src="memutils_cmem.c"/>
+        <srcFile name="lib/trace/memutils_std.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/package/package_ti.sdo.fc.memutils.o470uC.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/memutils_std.o470uC.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug_trace/memutils_std.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/package/package_ti.sdo.fc.memutils.o64P.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/memutils_std.o64P.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug_trace/memutils_std.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/package/package_ti.sdo.fc.memutils.o470uC.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/memutils_std.o470uC.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug/memutils.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils/package/package_ti.sdo.fc.memutils.o470MV.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils/memutils_cmem.o470MV.dep" src="memutils_cmem.c"/>
+        <srcFile name="lib/debug/memutils.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils/package/package_ti.sdo.fc.memutils.ov4TCE.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils/memutils_std.ov4TCE.dep" src="memutils_std.c"/>
+        <srcFile name="lib/trace/memutils_std.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/package/package_ti.sdo.fc.memutils.o470MV.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/memutils_std.o470MV.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug_trace/memutils_std.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/package/package_ti.sdo.fc.memutils.o470MV.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/memutils_std.o470MV.dep" src="memutils_std.c"/>
+        <srcFile name="lib/trace/memutils_std.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/package/package_ti.sdo.fc.memutils.ov4TCE.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/memutils_std.ov4TCE.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug/memutils.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils/memutils_bios.o64P.dep" src="memutils_bios.c"/>
+        <srcFile name="package/lib/lib/debug/memutils/package/package_ti.sdo.fc.memutils.o64P.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="lib/debug_trace/memutils_std.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/package/package_ti.sdo.fc.memutils.ov4TCE.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils_std/memutils_std.ov4TCE.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug_trace/memutils.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/memutils_bios.o674.dep" src="memutils_bios.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/package/package_ti.sdo.fc.memutils.o674.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="lib/trace/memutils_std.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/package/package_ti.sdo.fc.memutils.o674.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/memutils_std.o674.dep" src="memutils_std.c"/>
+        <srcFile name="lib/trace/memutils.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils/memutils_bios.o674.dep" src="memutils_bios.c"/>
+        <srcFile name="package/lib/lib/trace/memutils/package/package_ti.sdo.fc.memutils.o674.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="lib/debug_trace/memutils.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/package/package_ti.sdo.fc.memutils.ov5T.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/memutils_cmem.ov5T.dep" src="memutils_cmem.c"/>
+        <srcFile name="lib/trace/memutils_std.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/package/package_ti.sdo.fc.memutils.ov5T.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/memutils_std.ov5T.dep" src="memutils_std.c"/>
+        <srcFile name="lib/trace/memutils.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils/package/package_ti.sdo.fc.memutils.ov5T.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils/memutils_cmem.ov5T.dep" src="memutils_cmem.c"/>
+        <srcFile name="lib/release/memutils_std.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils_std/package/package_ti.sdo.fc.memutils.o674.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils_std/memutils_std.o674.dep" src="memutils_std.c"/>
+        <srcFile name="lib/release/memutils_std.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils_std/package/package_ti.sdo.fc.memutils.o470uC.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils_std/memutils_std.o470uC.dep" src="memutils_std.c"/>
+        <srcFile name="lib/release/memutils.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils/package/package_ti.sdo.fc.memutils.o470uC.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils/memutils_cmem.o470uC.dep" src="memutils_cmem.c"/>
+        <srcFile name="lib/release/memutils_std.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils_std/package/package_ti.sdo.fc.memutils.o9t.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils_std/memutils_std.o9t.dep" src="memutils_std.c"/>
+        <srcFile name="lib/release/memutils_std.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils_std/package/package_ti.sdo.fc.memutils.ov5T.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils_std/memutils_std.ov5T.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug/memutils_std.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/package/package_ti.sdo.fc.memutils.o470uC.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/memutils_std.o470uC.dep" src="memutils_std.c"/>
+        <srcFile name="lib/trace/memutils_std.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/package/package_ti.sdo.fc.memutils.o86U.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/memutils_std.o86U.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug/memutils_std.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/package/package_ti.sdo.fc.memutils.o674.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug/memutils_std/memutils_std.o674.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug_trace/memutils.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/package/package_ti.sdo.fc.memutils.o470uC.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/memutils_cmem.o470uC.dep" src="memutils_cmem.c"/>
+        <srcFile name="lib/release/memutils_std.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils_std/package/package_ti.sdo.fc.memutils.o470MV.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils_std/memutils_std.o470MV.dep" src="memutils_std.c"/>
+        <srcFile name="lib/debug_trace/memutils.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/memutils_bios.o64P.dep" src="memutils_bios.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memutils/package/package_ti.sdo.fc.memutils.o64P.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="lib/trace/memutils_std.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/package/package_ti.sdo.fc.memutils.o64P.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils_std/memutils_std.o64P.dep" src="memutils_std.c"/>
+        <srcFile name="lib/release/memutils_std.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils_std/package/package_ti.sdo.fc.memutils.ov4TCE.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils_std/memutils_std.ov4TCE.dep" src="memutils_std.c"/>
+        <srcFile name="lib/trace/memutils.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils/memutils_bios.o64P.dep" src="memutils_bios.c"/>
+        <srcFile name="package/lib/lib/trace/memutils/package/package_ti.sdo.fc.memutils.o64P.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="lib/release/memutils.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memutils/package/package_ti.sdo.fc.memutils.o470MV.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/release/memutils/memutils_cmem.o470MV.dep" src="memutils_cmem.c"/>
+        <srcFile name="lib/trace/memutils.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memutils/package/package_ti.sdo.fc.memutils.o470uC.dep" src="package/package_ti.sdo.fc.memutils.c"/>
+        <srcFile name="package/lib/lib/trace/memutils/memutils_cmem.o470uC.dep" src="memutils_cmem.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_memutils.tar.dep" src="package/rel/ti_sdo_fc_memutils.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.Arm9t"
+            version="ti.targets.arm.Arm9t{1,0,4.5,0"
+            platform="ti.platforms.evmDM355"
+            isa="v5T"
+            suffix="9t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,0"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/memutils_std"
+        pname="lib/debug/memutils_std.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/memutils"
+        pname="lib/release/memutils.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/memutils_std"
+        pname="lib/debug/memutils_std.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/memutils_std"
+        pname="lib/release/memutils_std.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/memutils"
+        pname="lib/release/memutils.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/memutils_std"
+        pname="lib/trace/memutils_std.a9t"
+        profile="trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug/memutils_std"
+        pname="lib/debug/memutils_std.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug_trace/memutils"
+        pname="lib/debug_trace/memutils.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/memutils_std"
+        pname="lib/debug/memutils_std.a9t"
+        profile="debug"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug_trace/memutils"
+        pname="lib/debug_trace/memutils.av4TCE"
+        profile="debug_trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/memutils_std"
+        pname="lib/release/memutils_std.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/memutils_std"
+        pname="lib/debug_trace/memutils_std.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/memutils"
+        pname="lib/trace/memutils.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/memutils"
+        pname="lib/release/memutils.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/memutils"
+        pname="lib/trace/memutils.av4TCE"
+        profile="trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/memutils_std"
+        pname="lib/debug/memutils_std.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug_trace/memutils_std"
+        pname="lib/debug_trace/memutils_std.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/memutils_std"
+        pname="lib/debug/memutils_std.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/memutils"
+        pname="lib/debug/memutils.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/memutils_std"
+        pname="lib/debug_trace/memutils_std.a9t"
+        profile="debug_trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug/memutils"
+        pname="lib/debug/memutils.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/memutils"
+        pname="lib/release/memutils.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/memutils_std"
+        pname="lib/debug_trace/memutils_std.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/memutils"
+        pname="lib/debug/memutils.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/memutils_std"
+        pname="lib/trace/memutils_std.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/memutils_std"
+        pname="lib/debug_trace/memutils_std.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/memutils_std"
+        pname="lib/debug_trace/memutils_std.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/memutils"
+        pname="lib/debug/memutils.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/memutils"
+        pname="lib/debug/memutils.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/trace/memutils_std"
+        pname="lib/trace/memutils_std.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/memutils_std"
+        pname="lib/debug_trace/memutils_std.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/memutils_std"
+        pname="lib/trace/memutils_std.av4TCE"
+        profile="trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/memutils"
+        pname="lib/debug/memutils.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/memutils_std"
+        pname="lib/debug_trace/memutils_std.av4TCE"
+        profile="debug_trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug_trace/memutils"
+        pname="lib/debug_trace/memutils.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/memutils_std"
+        pname="lib/trace/memutils_std.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/memutils"
+        pname="lib/trace/memutils.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/memutils"
+        pname="lib/debug_trace/memutils.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/memutils_std"
+        pname="lib/trace/memutils_std.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/memutils"
+        pname="lib/trace/memutils.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/memutils_std"
+        pname="lib/release/memutils_std.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/release/memutils_std"
+        pname="lib/release/memutils_std.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/memutils"
+        pname="lib/release/memutils.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/memutils_std"
+        pname="lib/release/memutils_std.a9t"
+        profile="release"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/memutils_std"
+        pname="lib/release/memutils_std.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/memutils_std"
+        pname="lib/debug/memutils_std.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/memutils_std"
+        pname="lib/trace/memutils_std.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/memutils_std"
+        pname="lib/debug/memutils_std.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/memutils"
+        pname="lib/debug_trace/memutils.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/memutils_std"
+        pname="lib/release/memutils_std.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/memutils"
+        pname="lib/debug_trace/memutils.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/memutils_std"
+        pname="lib/trace/memutils_std.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/memutils_std"
+        pname="lib/release/memutils_std.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/trace/memutils"
+        pname="lib/trace/memutils.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/memutils"
+        pname="lib/release/memutils.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/memutils"
+        pname="lib/trace/memutils.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_memutils"
+        pname="ti_sdo_fc_memutils.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.rel.dot"/>
+        <file name="lib/debug/memutils_std.av5T"/>
+        <file name="lib/release/memutils.av4TCE"/>
+        <file name="lib/debug/memutils_std.a470MV"/>
+        <file name="lib/release/memutils_std.a86U"/>
+        <file name="lib/release/memutils.a674"/>
+        <file name="lib/debug/memutils_std.av4TCE"/>
+        <file name="lib/trace/memutils_std.a9t"/>
+        <file name="lib/debug_trace/memutils.a470MV"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/debug/memutils_std.a9t"/>
+        <file name="lib/debug_trace/memutils.av4TCE"/>
+        <file name="lib/release/memutils_std.a64P"/>
+        <file name="lib/debug_trace/memutils_std.a674"/>
+        <file name="lib/trace/memutils.a470MV"/>
+        <file name="lib/release/memutils.av5T"/>
+        <file name="lib/trace/memutils.av4TCE"/>
+        <file name="lib/debug/memutils_std.a86U"/>
+        <file name="lib/debug_trace/memutils_std.av5T"/>
+        <file name="lib/debug/memutils_std.a64P"/>
+        <file name="lib/debug/memutils.a674"/>
+        <file name="lib/debug_trace/memutils_std.a9t"/>
+        <file name="lib/debug/memutils.a470uC"/>
+        <file name="lib/release/memutils.a64P"/>
+        <file name="lib/debug_trace/memutils_std.a86U"/>
+        <file name="lib/debug/memutils.av5T"/>
+        <file name="package.bld"/>
+        <file name="lib/trace/memutils_std.a470uC"/>
+        <file name="lib/debug_trace/memutils_std.a64P"/>
+        <file name="lib/debug_trace/memutils_std.a470uC"/>
+        <file name="memutils_cmem.c"/>
+        <file name="memutils.h"/>
+        <file name="memutils_bios.c"/>
+        <file name="lib/debug/memutils.a470MV"/>
+        <file name="lib/debug/memutils.av4TCE"/>
+        <file name="lib/trace/memutils_std.a470MV"/>
+        <file name="lib/debug_trace/memutils_std.a470MV"/>
+        <file name="lib/trace/memutils_std.av4TCE"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/memutils.a64P"/>
+        <file name="lib/debug_trace/memutils_std.av4TCE"/>
+        <file name="lib/debug_trace/memutils.a674"/>
+        <file name="lib/trace/memutils_std.a674"/>
+        <file name="lib/trace/memutils.a674"/>
+        <file name="lib/debug_trace/memutils.av5T"/>
+        <file name="lib/trace/memutils_std.av5T"/>
+        <file name="lib/trace/memutils.av5T"/>
+        <file name="memutils_std.c"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/release/memutils_std.a674"/>
+        <file name="lib/release/memutils_std.a470uC"/>
+        <file name="package/package_ti.sdo.fc.memutils.c"/>
+        <file name="lib/release/memutils.a470uC"/>
+        <file name="lib/release/memutils_std.a9t"/>
+        <file name="lib/release/memutils_std.av5T"/>
+        <file name="lib/debug/memutils_std.a470uC"/>
+        <file name="lib/trace/memutils_std.a86U"/>
+        <file name="lib/debug/memutils_std.a674"/>
+        <file name="lib/debug_trace/memutils.a470uC"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/release/memutils_std.a470MV"/>
+        <file name="lib/debug_trace/memutils.a64P"/>
+        <file name="lib/trace/memutils_std.a64P"/>
+        <file name="lib/release/memutils_std.av4TCE"/>
+        <file name="lib/trace/memutils.a64P"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/release/memutils.a470MV"/>
+        <file name="lib/trace/memutils.a470uC"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

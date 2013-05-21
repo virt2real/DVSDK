@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.rman.examples.addrspace" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="app.c"/>
+        <srcFile name="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/addrspace_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/addrspace_wince_exe.c"/>
+        <srcFile name="package/cfg/bin/host_platforms_PC/debug_trace/addrspace_x86U.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="ires_algorithm.cfg"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/bin/host_platforms_PC/debug_trace/addrspace_x86U.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/host_platforms_PC/debug_trace/addrspace_x86U.o86U.dep" src="package/cfg/bin/host_platforms_PC/debug_trace/addrspace_x86U.c"/>
+        <srcFile name="package/cfg/bin/host_platforms_PC/debug_trace/addrspace/app.o86U.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/host_platforms_PC/debug_trace/addrspace/ires_algorithm.o86U.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/host_platforms_PC/debug_trace/addrspace_x86U.dep" src="package/cfg/bin/host_platforms_PC/debug_trace/addrspace_x86U.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/addrspace_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/addrspace_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug_trace/addrspace_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/addrspace/app.ov5T.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/addrspace/ires_algorithm.ov5T.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM365/debug_trace/addrspace_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM365/debug_trace/addrspace_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/addrspace_wince_exe.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/addrspace/app.ov4TCE.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/addrspace/ires_algorithm.ov4TCE.dep" src="ires_algorithm.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/addrspace_wince_exe.ov4TCE.dep" src="package/cfg/bin/ti_platforms_evm3530/debug_trace/addrspace_wince_exe.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/addrspace_wince_exe.dep" src="package/cfg/bin/ti_platforms_evm3530/debug_trace/addrspace_wince_exe.cfg"/>
+        <srcFile name="package/rel/ti_sdo_fc_rman_examples_addrspace.tar.dep" src="package/rel/ti_sdo_fc_rman_examples_addrspace.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,0"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="bin/host_platforms_PC/debug_trace/addrspace"
+        pname="bin/host_platforms_PC/debug_trace/addrspace.x86U"
+        target="gnu.targets.Linux86"
+        platform="host.platforms.PC"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/host_platforms_PC/debug_trace/addrspace_x86U.cfg"
+        xCfgPrefix="package/cfg/bin/host_platforms_PC/debug_trace/addrspace_x86U"
+        cfgScript="ires_algorithm.cfg"
+        cfgArgs="%7BchipType%3A%20%22PC%22%7D"
+        />
+    <executable name="bin/ti_platforms_evmDM365/debug_trace/addrspace"
+        pname="bin/ti_platforms_evmDM365/debug_trace/addrspace.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM365"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM365/debug_trace/addrspace_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM365/debug_trace/addrspace_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        cfgArgs="%7BchipType%3A%20%22evmDM365%22%7D"
+        />
+    <executable name="bin/ti_platforms_evm3530/debug_trace/addrspace"
+        pname="bin/ti_platforms_evm3530/debug_trace/addrspace_wince.exe"
+        target="microsoft.targets.arm.WinCE"
+        platform="ti.platforms.evm3530"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/debug_trace/addrspace_wince_exe.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/debug_trace/addrspace_wince_exe"
+        cfgScript="ires_algorithm.cfg"
+        cfgArgs="%7BchipType%3A%20%22evm3530%22%7D"
+        />
+    </executables>
+    <tests>
+    <test exeName="bin/host_platforms_PC/debug_trace/addrspace.x86U"
+        args=""
+        groupName="bin/host_platforms_PC/debug_trace/addrspace.x86U"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM365/debug_trace/addrspace.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM365/debug_trace/addrspace.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/debug_trace/addrspace_wince.exe"
+        args=""
+        groupName="bin/ti_platforms_evm3530/debug_trace/addrspace_wince.exe"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_rman_examples_addrspace"
+        pname="ti_sdo_fc_rman_examples_addrspace.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

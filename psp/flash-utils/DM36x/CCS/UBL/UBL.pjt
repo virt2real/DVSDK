@@ -1,0 +1,427 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="Z:\dm365\Arago_Release\flash-utils\DM36x\CCS\UBL\"
+ProjectType=Executable
+CPUFamily=TMS470R2X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Config="BOOT_NAND"
+Config="BOOT_NAND_ARM216_DDR173_OSC19P2"
+Config="BOOT_NAND_ARM216_DDR173_OSC24"
+Config="BOOT_NAND_ARM270_DDR216_OSC24"
+Config="BOOT_NAND_ARM297_DDR270_OSC24"
+Config="BOOT_NAND_ARM297_DDR277_OSC27"
+Config="BOOT_NAND_ARM432_DDR340_OSC24"
+Config="BOOT_NOR"
+Config="BOOT_SDMMC"
+Config="BOOT_SDMMC_ARM216_DDR173_OSC19P2"
+Config="BOOT_SDMMC_ARM216_DDR173_OSC24"
+Config="BOOT_SDMMC_ARM270_DDR216_OSC24"
+Config="BOOT_SDMMC_ARM297_DDR270_OSC24"
+Config="BOOT_SDMMC_ARM297_DDR277_OSC27"
+Config="BOOT_SDMMC_ARM432_DDR340_OSC24"
+
+[Source Files]
+Source="..\..\..\Common\arch\arm926ejs\src\boot.c"
+Source="..\..\..\Common\arch\arm926ejs\src\selfcopy.c"
+Source="..\..\..\Common\drivers\src\nand.c"
+Source="..\..\..\Common\drivers\src\nor.c"
+Source="..\..\..\Common\drivers\src\sdmmc.c"
+Source="..\..\..\Common\gnu\src\debug.c"
+Source="..\..\..\Common\gnu\src\uart.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\..\Common\ubl\src\nandboot.c"
+Source="..\..\..\Common\ubl\src\norboot.c"
+Source="..\..\..\Common\ubl\src\sdmmcboot.c"
+Source="..\..\..\Common\ubl\src\uartboot.c"
+Source="..\..\..\Common\ubl\src\ubl.c"
+Source="..\..\Common\src\device.c"
+Source="..\..\Common\src\device_nand.c"
+Source="UBL.cmd"
+
+["BOOT_NAND" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\NAND\UBL_DM36x_NAND.bin $(Proj_dir)\NAND\UBL_DM36x_NAND.out;Run=Always
+
+["BOOT_NAND_ARM216_DDR173_OSC19P2" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\NAND_ARM216_DDR173_OSC19P2\UBL_DM36x_NAND_ARM216_DDR173_OSC19P2.bin $(Proj_dir)\NAND_ARM216_DDR173_OSC19P2\UBL_DM36x_NAND_ARM216_DDR173_OSC19P2.out;Run=Always
+
+["BOOT_NAND_ARM216_DDR173_OSC24" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\NAND_ARM216_DDR173_OSC24\UBL_DM36x_NAND_ARM216_DDR173_OSC24.bin $(Proj_dir)\NAND_ARM216_DDR173_OSC24\UBL_DM36x_NAND_ARM216_DDR173_OSC24.out;Run=Always
+
+["BOOT_NAND_ARM270_DDR216_OSC24" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\NAND_ARM270_DDR216_OSC24\UBL_DM36x_NAND_ARM270_DDR216_OSC24.bin $(Proj_dir)\NAND_ARM270_DDR216_OSC24\UBL_DM36x_NAND_ARM270_DDR216_OSC24.out;Run=Always
+
+["BOOT_NAND_ARM297_DDR270_OSC24" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\NAND_ARM297_DDR270_OSC24\UBL_DM36x_NAND_ARM297_DDR270_OSC24.bin $(Proj_dir)\NAND_ARM297_DDR270_OSC24\UBL_DM36x_NAND_ARM297_DDR270_OSC24.out;Run=Always
+
+["BOOT_NAND_ARM297_DDR277_OSC27" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\NAND_ARM297_DDR277_OSC27\UBL_DM36x_NAND_ARM297_DDR277_OSC27.bin $(Proj_dir)\NAND_ARM297_DDR277_OSC27\UBL_DM36x_NAND_ARM297_DDR277_OSC27.out;Run=Always
+
+["BOOT_NAND_ARM432_DDR340_OSC24" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\NAND_ARM432_DDR340_OSC24\UBL_DM36x_NAND_ARM432_DDR340_OSC24.bin $(Proj_dir)\NAND_ARM432_DDR340_OSC24\UBL_DM36x_NAND_ARM432_DDR340_OSC24.out;Run=Always
+
+["BOOT_NOR" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\NOR\UBL_DM36x_NOR.bin $(Proj_dir)\NOR\UBL_DM36x_NOR.out;Run=Always
+
+["BOOT_SDMMC" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\SDMMC\UBL_DM36x_SDMMC.bin $(Proj_dir)\SDMMC\UBL_DM36x_SDMMC.out;Run=Always
+
+["BOOT_SDMMC_ARM216_DDR173_OSC19P2" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\SDMMC_ARM216_DDR173_OSC19P2\UBL_DM36x_SDMMC_ARM216_DDR173_OSC19P2.bin $(Proj_dir)\SDMMC_ARM216_DDR173_OSC19P2\UBL_DM36x_SDMMC_ARM216_DDR173_OSC19P2.out;Run=Always
+
+["BOOT_SDMMC_ARM216_DDR173_OSC24" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\SDMMC_ARM216_DDR173_OSC24\UBL_DM36x_SDMMC_ARM216_DDR173_OSC24.bin $(Proj_dir)\SDMMC_ARM216_DDR173_OSC24\UBL_DM36x_SDMMC_ARM216_DDR173_OSC24.out;Run=Always
+
+["BOOT_SDMMC_ARM270_DDR216_OSC24" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\SDMMC_ARM270_DDR216_OSC24\UBL_DM36x_SDMMC_ARM270_DDR216_OSC24.bin $(Proj_dir)\SDMMC_ARM270_DDR216_OSC24\UBL_DM36x_SDMMC_ARM270_DDR216_OSC24.out;Run=Always
+
+["BOOT_SDMMC_ARM297_DDR270_OSC24" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\SDMMC_ARM297_DDR270_OSC24\UBL_DM36x_SDMMC_ARM297_DDR270_OSC24.bin $(Proj_dir)\SDMMC_ARM297_DDR270_OSC24\UBL_DM36x_SDMMC_ARM297_DDR270_OSC24.out;Run=Always
+
+["BOOT_SDMMC_ARM297_DDR277_OSC27" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\SDMMC_ARM297_DDR277_OSC27\UBL_DM36x_SDMMC_ARM297_DDR277_OSC27.bin $(Proj_dir)\SDMMC_ARM297_DDR277_OSC27\UBL_DM36x_SDMMC_ARM297_DDR277_OSC27.out;Run=Always
+
+["BOOT_SDMMC_ARM432_DDR340_OSC24" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\UBL2BIN.cmd -o=$(Proj_dir)\SDMMC_ARM432_DDR340_OSC24\UBL_DM36x_SDMMC_ARM432_DDR340_OSC24.bin $(Proj_dir)\SDMMC_ARM432_DDR340_OSC24\UBL_DM36x_SDMMC_ARM432_DDR340_OSC24.out;Run=Always
+
+["Compiler" Settings: "BOOT_NAND"]
+Options=-o3 -fr"$(Proj_dir)\NAND" -fs"$(Proj_dir)\NAND" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NAND_ARM216_DDR173_OSC19P2"]
+Options=-o3 -fr"$(Proj_dir)\NAND_ARM216_DDR173_OSC19P2" -fs"$(Proj_dir)\NAND_ARM216_DDR173_OSC19P2" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"ARM216_DDR173_OSC19P2" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NAND_ARM216_DDR173_OSC24"]
+Options=-o3 -fr"$(Proj_dir)\NAND_ARM216_DDR173_OSC24" -fs"$(Proj_dir)\NAND_ARM216_DDR173_OSC24" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"ARM216_DDR173_OSC24" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NAND_ARM270_DDR216_OSC24"]
+Options=-o3 -fr"$(Proj_dir)\NAND_ARM270_DDR216_OSC24" -fs"$(Proj_dir)\NAND_ARM270_DDR216_OSC24" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"ARM270_DDR216_OSC24" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NAND_ARM297_DDR270_OSC24"]
+Options=-o3 -fr"$(Proj_dir)\NAND_ARM297_DDR270_OSC24" -fs"$(Proj_dir)\NAND_ARM297_DDR270_OSC24" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"ARM297_DDR270_OSC24" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NAND_ARM297_DDR277_OSC27"]
+Options=-o3 -fr"$(Proj_dir)\NAND_ARM297_DDR277_OSC27" -fs"$(Proj_dir)\NAND_ARM297_DDR277_OSC27" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"ARM297_DDR277_OSC27" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NAND_ARM432_DDR340_OSC24"]
+Options=-o3 -fr"$(Proj_dir)\NAND_ARM432_DDR340_OSC24" -fs"$(Proj_dir)\NAND_ARM432_DDR340_OSC24" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"ARM432_DDR340_OSC24" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NOR"]
+Options=-o3 -fr"$(Proj_dir)\NOR" -fs"$(Proj_dir)\NOR" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_SDMMC"]
+Options=-o3 -fr"$(Proj_dir)\SDMMC" -fs"$(Proj_dir)\SDMMC" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_SD_MMC" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC19P2"]
+Options=-o3 -fr"$(Proj_dir)\SDMMC_ARM216_DDR173_OSC19P2" -fs"$(Proj_dir)\SDMMC_ARM216_DDR173_OSC19P2" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_SD_MMC" -d"ARM216_DDR173_OSC19P2" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC24"]
+Options=-o3 -fr"$(Proj_dir)\SDMMC_ARM216_DDR173_OSC24" -fs"$(Proj_dir)\SDMMC_ARM216_DDR173_OSC24" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_SD_MMC" -d"ARM216_DDR173_OSC24" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_SDMMC_ARM270_DDR216_OSC24"]
+Options=-o3 -fr"$(Proj_dir)\SDMMC_ARM270_DDR216_OSC24" -fs"$(Proj_dir)\SDMMC_ARM270_DDR216_OSC24" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_SD_MMC" -d"ARM270_DDR216_OSC24" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_SDMMC_ARM297_DDR270_OSC24"]
+Options=-o3 -fr"$(Proj_dir)\SDMMC_ARM297_DDR270_OSC24" -fs"$(Proj_dir)\SDMMC_ARM297_DDR270_OSC24" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_SD_MMC" -d"ARM297_DDR270_OSC24" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_SDMMC_ARM297_DDR277_OSC27"]
+Options=-o3 -fr"$(Proj_dir)\SDMMC_ARM297_DDR277_OSC27" -fs"$(Proj_dir)\SDMMC_ARM297_DDR277_OSC27" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_SD_MMC" -d"ARM297_DDR277_OSC27" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_SDMMC_ARM432_DDR340_OSC24"]
+Options=-o3 -fr"$(Proj_dir)\SDMMC_ARM432_DDR340_OSC24" -fs"$(Proj_dir)\SDMMC_ARM432_DDR340_OSC24" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_SD_MMC" -d"ARM432_DDR340_OSC24" -me -mv5e --abi=eabi --symdebug:none
+
+["Linker" Settings: "BOOT_NAND"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND\UBL_DM36x_NAND.map" -o"$(Proj_dir)\NAND\UBL_DM36x_NAND.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NAND_ARM216_DDR173_OSC19P2"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND_ARM216_DDR173_OSC19P2\UBL_DM36x_NAND_ARM216_DDR173_OSC19P2.map" -o"$(Proj_dir)\NAND_ARM216_DDR173_OSC19P2\UBL_DM36x_NAND_ARM216_DDR173_OSC19P2.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NAND_ARM216_DDR173_OSC24"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND_ARM216_DDR173_OSC24\UBL_DM36x_NAND_ARM216_DDR173_OSC24.map" -o"$(Proj_dir)\NAND_ARM216_DDR173_OSC24\UBL_DM36x_NAND_ARM216_DDR173_OSC24.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NAND_ARM270_DDR216_OSC24"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND_ARM270_DDR216_OSC24\UBL_DM36x_NAND_ARM270_DDR216_OSC24.map" -o"$(Proj_dir)\NAND_ARM270_DDR216_OSC24\UBL_DM36x_NAND_ARM270_DDR216_OSC24.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NAND_ARM297_DDR270_OSC24"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND_ARM297_DDR270_OSC24\UBL_DM36x_NAND_ARM297_DDR270_OSC24.map" -o"$(Proj_dir)\NAND_ARM297_DDR270_OSC24\UBL_DM36x_NAND_ARM297_DDR270_OSC24.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NAND_ARM297_DDR277_OSC27"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND_ARM297_DDR277_OSC27\UBL_DM36x_NAND_ARM297_DDR277_OSC27.map" -o"$(Proj_dir)\NAND_ARM297_DDR277_OSC27\UBL_DM36x_NAND_ARM297_DDR277_OSC27.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NAND_ARM432_DDR340_OSC24"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND_ARM432_DDR340_OSC24\UBL_DM36x_NAND_ARM432_DDR340_OSC24.map" -o"$(Proj_dir)\NAND_ARM432_DDR340_OSC24\UBL_DM36x_NAND_ARM432_DDR340_OSC24.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NOR"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR\UBL_DM36x_NOR.map" -o"$(Proj_dir)\NOR\UBL_DM36x_NOR.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_SDMMC"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\SDMMC\UBL_DM36x_SDMMC.map" -o"$(Proj_dir)\SDMMC\UBL_DM36x_SDMMC.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC19P2"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\SDMMC_ARM216_DDR173_OSC19P2\UBL_DM36x_SDMMC_ARM216_DDR173_OSC19P2.map" -o"$(Proj_dir)\SDMMC_ARM216_DDR173_OSC19P2\UBL_DM36x_SDMMC_ARM216_DDR173_OSC19P2.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC24"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\SDMMC_ARM216_DDR173_OSC24\UBL_DM36x_SDMMC_ARM216_DDR173_OSC24.map" -o"$(Proj_dir)\SDMMC_ARM216_DDR173_OSC24\UBL_DM36x_SDMMC_ARM216_DDR173_OSC24.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_SDMMC_ARM270_DDR216_OSC24"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\SDMMC_ARM270_DDR216_OSC24\UBL_DM36x_SDMMC_ARM270_DDR216_OSC24.map" -o"$(Proj_dir)\SDMMC_ARM270_DDR216_OSC24\UBL_DM36x_SDMMC_ARM270_DDR216_OSC24.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_SDMMC_ARM297_DDR270_OSC24"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\SDMMC_ARM297_DDR270_OSC24\UBL_DM36x_SDMMC_ARM297_DDR270_OSC24.map" -o"$(Proj_dir)\SDMMC_ARM297_DDR270_OSC24\UBL_DM36x_SDMMC_ARM297_DDR270_OSC24.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_SDMMC_ARM297_DDR277_OSC27"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\SDMMC_ARM297_DDR277_OSC27\UBL_DM36x_SDMMC_ARM297_DDR277_OSC27.map" -o"$(Proj_dir)\SDMMC_ARM297_DDR277_OSC27\UBL_DM36x_SDMMC_ARM297_DDR277_OSC27.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_SDMMC_ARM432_DDR340_OSC24"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\SDMMC_ARM432_DDR340_OSC24\UBL_DM36x_SDMMC_ARM432_DDR340_OSC24.map" -o"$(Proj_dir)\SDMMC_ARM432_DDR340_OSC24\UBL_DM36x_SDMMC_ARM432_DDR340_OSC24.out" -x --retain="*(.selfcopy)"
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_NOR"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_SDMMC"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC19P2"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_SDMMC_ARM270_DDR216_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_SDMMC_ARM297_DDR270_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_SDMMC_ARM297_DDR277_OSC27"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_SDMMC_ARM432_DDR340_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_NAND"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_NAND_ARM216_DDR173_OSC19P2"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_NAND_ARM216_DDR173_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_NAND_ARM270_DDR216_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_NAND_ARM297_DDR270_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_NAND_ARM297_DDR277_OSC27"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_NAND_ARM432_DDR340_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_SDMMC"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC19P2"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_SDMMC_ARM270_DDR216_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_SDMMC_ARM297_DDR270_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_SDMMC_ARM297_DDR277_OSC27"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_SDMMC_ARM432_DDR340_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\sdmmc.c" Settings: "BOOT_NAND"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\sdmmc.c" Settings: "BOOT_NAND_ARM216_DDR173_OSC19P2"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\sdmmc.c" Settings: "BOOT_NAND_ARM216_DDR173_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\sdmmc.c" Settings: "BOOT_NAND_ARM270_DDR216_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\sdmmc.c" Settings: "BOOT_NAND_ARM297_DDR270_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\sdmmc.c" Settings: "BOOT_NAND_ARM297_DDR277_OSC27"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\sdmmc.c" Settings: "BOOT_NAND_ARM432_DDR340_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\sdmmc.c" Settings: "BOOT_NOR"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_NOR"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_SDMMC"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC19P2"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_SDMMC_ARM270_DDR216_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_SDMMC_ARM297_DDR270_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_SDMMC_ARM297_DDR277_OSC27"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_SDMMC_ARM432_DDR340_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_NAND"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_NAND_ARM216_DDR173_OSC19P2"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_NAND_ARM216_DDR173_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_NAND_ARM270_DDR216_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_NAND_ARM297_DDR270_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_NAND_ARM297_DDR277_OSC27"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_NAND_ARM432_DDR340_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_SDMMC"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC19P2"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_SDMMC_ARM270_DDR216_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_SDMMC_ARM297_DDR270_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_SDMMC_ARM297_DDR277_OSC27"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_SDMMC_ARM432_DDR340_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\sdmmcboot.c" Settings: "BOOT_NAND"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\sdmmcboot.c" Settings: "BOOT_NAND_ARM216_DDR173_OSC19P2"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\sdmmcboot.c" Settings: "BOOT_NAND_ARM216_DDR173_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\sdmmcboot.c" Settings: "BOOT_NAND_ARM270_DDR216_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\sdmmcboot.c" Settings: "BOOT_NAND_ARM297_DDR270_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\sdmmcboot.c" Settings: "BOOT_NAND_ARM297_DDR277_OSC27"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\sdmmcboot.c" Settings: "BOOT_NAND_ARM432_DDR340_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\sdmmcboot.c" Settings: "BOOT_NOR"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_NOR"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_SDMMC"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC19P2"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_SDMMC_ARM270_DDR216_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_SDMMC_ARM297_DDR270_OSC24"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_SDMMC_ARM297_DDR277_OSC27"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_SDMMC_ARM432_DDR340_OSC24"]
+ExcludeFromBuild=true
+
+["UBL.cmd" Settings: "BOOT_NAND"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_NAND_ARM216_DDR173_OSC19P2"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_NAND_ARM216_DDR173_OSC24"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_NAND_ARM270_DDR216_OSC24"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_NAND_ARM297_DDR270_OSC24"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_NAND_ARM297_DDR277_OSC27"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_NAND_ARM432_DDR340_OSC24"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_NOR"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_SDMMC"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC19P2"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_SDMMC_ARM216_DDR173_OSC24"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_SDMMC_ARM270_DDR216_OSC24"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_SDMMC_ARM297_DDR270_OSC24"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_SDMMC_ARM297_DDR277_OSC27"]
+LinkOrder=1
+
+["UBL.cmd" Settings: "BOOT_SDMMC_ARM432_DDR340_OSC24"]
+LinkOrder=1
+

@@ -1,0 +1,39 @@
+/*
+ *  Copyright 2010 by Texas Instruments Incorporated.
+ *
+ */
+
+/*
+ *  ======== package.bld ========
+ *
+ */
+
+Pkg.makeEpilogue = "include custom.mak";
+Pkg.otherFiles = ['cof.h', 'java/package.jar'];
+
+var SOURCES   = ["cof.c", "cof_syms.c", "cof_std.c"];
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+    
+    if (targ.name == "Sparc" || targ.name == "Linux86" || 
+        targ.name == "MVArm9") {
+        var tilib = Pkg.addLibrary("lib/cof_ti", targ, {
+                        profile: "debug", defs: "-D_TI_"});
+        tilib.addObjects(SOURCES);
+    }
+
+    if (targ.name == "VC98") {
+        var tilibd = Pkg.addLibrary("lib/debug/cof_ti", targ, {
+                         profile: "debug", suffix: ".lib", defs:"-D_TI_"});
+        tilibd.addObjects(SOURCES);
+
+        var tilibr = Pkg.addLibrary("lib/release/cof_ti", targ, {
+                         profile: "release", suffix: ".lib", defs: "-D_TI_"});
+        tilibr.addObjects(SOURCES);
+    }
+}
+/*
+ *  @(#) ti.targets.omf.cof; 1,0,0,32; 2-24-2010 16:41:13; /db/ztree/library/trees/xdctargets/xdctargets-b36x/src/
+ */
+

@@ -1,0 +1,59 @@
+############################################################
+# Encode Audio: Read from file, encode and dump
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp aaclcenc1 codec aaclcenc1
+
+# Specify the codec parameters
+setp aaclcenc1 seconds 10
+setp aaclcenc1 sampleRate 44100 
+setp aaclcenc1 bitRate 64000
+setp aaclcenc1 channelMode 1
+setp aaclcenc1 dataEndianness 2
+setp aaclcenc1 encMode 0
+setp aaclcenc1 inputFormat 1
+setp aaclcenc1 inputBitsPerSample 16
+setp aaclcenc1 maxBitRate 144000
+setp aaclcenc1 dualMonoMode 0
+setp aaclcenc1 crcFlag 0
+setp aaclcenc1 ancFlag 1
+setp aaclcenc1 lfeFlag 0 
+setp aaclcenc1 noChannels 2
+setp aaclcenc1 aacClassic 0 
+setp aaclcenc1 psEnable 0
+setp aaclcenc1 dualMono 0
+setp aaclcenc1 downmix 0
+setp aaclcenc1 useSpeechConfig 0 
+setp aaclcenc1 fNoStereoPreprocessing 0
+setp aaclcenc1 invQuant 2 
+setp aaclcenc1 useTns 1
+setp aaclcenc1 use_ADTS 1
+setp aaclcenc1 use_ADIF 0
+setp aaclcenc1 full_bandwidth 0
+setp aaclcenc1 i_channels_mask 0
+setp aaclcenc1 i_num_coupling_chan 0
+setp aaclcenc1 write_program_config_element 0
+setp aaclcenc1 dynamicparams.sampleRate 44100
+setp aaclcenc1 dynamicparams.bitRate 64000
+setp aaclcenc1 dynamicparams.channelMode 1
+setp aaclcenc1 dynamicparams.lfeFlag 0
+setp aaclcenc1 dynamicparams.dualMonoMode 0
+setp aaclcenc1 dynamicparams.inputBitsPerSample 16
+
+# Specify the driver parameters
+#setp audio device plughw:0,0
+#setp audio format 2
+#setp audio samplerate 44100
+#setp audio channels 2
+#setp audio type 0
+
+# Trigger the decode+playback scenario
+func aaclcenc1 -s input_44k.pcm -t test.aac

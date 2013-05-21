@@ -1,0 +1,63 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+var mem_ext = [];
+
+mem_ext[0] = {
+    comment: "4Mbytes - 256Kbytes of External memory",
+    name: "SDRAM",
+    base:0x040000,      /* byte address */
+    len: 0x3c0000,      /* length in bytes */
+    space: "code/data"
+};
+
+mem_ext[1] = {
+    comment: "2Mbytes of Flash memory",
+    name: "FLASH",
+    base: 0x400000,     /* byte address */
+    len:  0x200000,     /* length in bytes */
+    space: "code/data"
+};
+
+/* Specify the Memory Mapped Registers default values */
+var device_regs = {
+    clkmd: 0x2512,
+    st3_55: null
+};
+
+var params = {
+    clockRate: 120.0000,
+    catalogName: "ti.catalog.c5500",
+    deviceName: "5509",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+
+print("Warning: evm5509 platform has been deprecated.")
+print("It will not be supported in later releases of DSP/BIOS.");
+/*
+ *  @(#) ti.platforms.evm5509; 1, 0, 0,276; 2-23-2010 16:53:19; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

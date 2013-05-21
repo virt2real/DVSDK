@@ -1,0 +1,43 @@
+############################################################
+# Capture video for 10 seconds and encode with MPEG4 encoder
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp videnc1 codec h264enc
+
+# specify the parameters
+setp videnc1 encodingPreset 0
+setp videnc1 rateControlPreset 1
+setp videnc1 maxHeight 240
+setp videnc1 maxWidth 320
+setp videnc1 maxFrameRate 30000
+setp videnc1 maxBitRate 2000000
+setp videnc1 dataEndianness 1
+setp videnc1 maxInterFrameInterval 1
+setp videnc1 inputChromaFormat 4
+setp videnc1 inputContentType 0
+setp videnc1 reconChromaFormat -1
+setp videnc1 inputHeight 240
+setp videnc1 inputWidth 320
+setp videnc1 refFrameRate 30000
+setp videnc1 targetFrameRate 30000
+setp videnc1 targetBitRate 2000000
+setp videnc1 intraFrameInterval 30
+setp videnc1 generateHeader 0
+setp videnc1 captureWidth 0
+setp videnc1 forceFrame 0
+setp videnc1 interFrameInterval 1
+setp videnc1 mbDataFlag 0
+setp videnc1 framePitch 720
+setp videnc1 numFrames 300
+
+# Start the capture+encode operation
+func videnc1 -s \input\input_320x240_422i.yuv -t \output\h264-encode.264
+

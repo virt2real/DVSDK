@@ -1,0 +1,15 @@
+#!/bin/sh
+cd /usr/share/ti/dvsdk-demos/
+killall matrix_guiE
+cat /dev/zero > /dev/fb0
+/etc/init.d/loadmodule-rc restart
+default_display="`cat /sys/devices/platform/omapdss/manager0/display`"
+if [ "$default_display" = "dvi" ]; then
+	./decode -o -v /usr/share/ti/data/videos/davincieffect.264 -a /usr/share/ti/data/sounds/davincieffect_lc.aac -O system
+else
+	./decode -o -v /usr/share/ti/data/videos/davincieffect_480p30.264 -a /usr/share/ti/data/sounds/davincieffect_lc.aac
+   fbset -depth 16
+fi
+
+/etc/init.d/matrix-gui-e start
+

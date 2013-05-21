@@ -1,0 +1,41 @@
+#!/usr/bin/ksh -p
+#
+#  This shell script runs the C6x standalone simulator.  This script exists 
+#  only because the script that is part of the CG tools requires modification
+#  to run!  If that script is changed to not require modification, we can get
+#  rid out this script and use the script in the CG tools.
+#
+#  Usage:  exec6x [opts ...] prog
+#
+#  where opts are simulator options understood by the simulator.
+#
+#  Note: the directory containing this script is added to the
+#        LD_LIBRARY_PATH .
+
+usage="usage: exec6x [opts ...] prog"
+
+ROOT=${0%/*}
+if [ "$ROOT" = "$0" ]; then
+    prog=`whence $0` >/dev/null 2>&1
+    ROOT=${prog%/*}
+fi
+
+opts=""
+while [ $# -ge 1 ]; do
+    case $1 in
+	-root ) ROOT="$2/bin"; shift;shift;;
+	 -*   ) opts="$opts $1"; shift;;
+	 *    ) break;
+    esac
+done
+
+LD_LIBRARY_PATH="${ROOT}:${LD_LIBRARY_PATH}"; export LD_LIBRARY_PATH
+
+if [ $# -lt 1 ]; then
+    echo "error: $usage"
+    exit 1
+fi
+prog=$1
+shift
+
+${ROOT}/load6xexe -q -t 120 $opts $prog "$@"

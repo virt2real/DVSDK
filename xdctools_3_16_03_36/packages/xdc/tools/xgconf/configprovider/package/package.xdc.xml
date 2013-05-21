@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name='xdc.tools.xgconf.configprovider' release='1, 0, 0, 0' xmlns='xdc/services/spec'>
+    <imports name='xdc.tools' version=''/>
+    <imports name='xdc.shelf' version=''/>
+    <imports name='xdc.tools.xgconf.modeldata' version=''/>
+    <imports name='xdc.services.spec' version=''/>
+    <autodoc tag='_nodoc'>
+        <comment line='-1' text='++XGCONF+prototype+configuration+provider+'/>
+    </autodoc>
+    <module name='ConfigProvider' hostonly='1' instance='1'>
+        <autodoc tag='summary'>
+            <comment line='-1' text='++Provides+a+ContentProvider+that+serves+up'/>
+            <comment line='-1' text='++the+exported+contents+of+an+xdc+configuration.'/>
+            <comment line='-1' text='++This+Module+is+experimental+and+subject+to+change.'/>
+        </autodoc>
+        <fxn name='create' line='-1' hostonly='1' type='K%21create%21' code='C' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+instance+creation+function+'/>
+            </autodoc>
+            <autodoc tag='params' arg='fileName'>
+                <comment line='-1' text='++++++++Config+File+name'/>
+            </autodoc>
+            <autodoc tag='params' arg='exeName'>
+                <comment line='-1' text='+++++++++Executable+name'/>
+            </autodoc>
+            <autodoc tag='params' arg='pkgName'>
+                <comment line='-1' text='+++++++++Package+name'/>
+            </autodoc>
+            <autodoc tag='params' arg='pkgRep'>
+                <comment line='-1' text='++++++++++Optional+additional+package+repository+path'/>
+            </autodoc>
+            <arg name='fileName' line='-1' hostonly='1' type='K%21String%21%24' code='s' init=''>
+            </arg>
+            <arg name='exeName' line='-1' hostonly='1' type='K%21String%21%24' code='s' init=''>
+            </arg>
+            <arg name='pkgName' line='-1' hostonly='1' type='K%21String%21%24' code='s' init=''>
+            </arg>
+            <arg name='cfgScript' line='-1' hostonly='1' type='K%21String%21%24' code='s' init=''>
+            </arg>
+        </fxn>
+        <enum name='Ops' line='-1' hostonly='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='++Filter+function+operation+modes.+'/>
+            </autodoc>
+            <enumval name='OP_GETVALUES' line='-1' hostonly='1'>
+                <autodoc tag='summary'>
+                    <comment line='-1' text='+Get+allowed+value+list.+'/>
+                </autodoc>
+            </enumval>
+            <enumval name='OP_VALIDATE' line='-1' hostonly='1'>
+                <autodoc tag='summary'>
+                    <comment line='-1' text='+Validate+choice+and+return+js+rval+'/>
+                </autodoc>
+            </enumval>
+        </enum>
+        <typedef name='CFGFILTERFXN' line='-1' hostonly='1' type='K%21Any%21%28*%24%29%28K%21Int%21%2CK%21String%21%2CK%21String%21%29' code='PFa'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+Config+param+value-filter+function+type+definition'/>
+            </autodoc>
+            <autodoc tag='params' arg='operation'>
+                <comment line='-1' text='++++++++++Config+operation+type'/>
+            </autodoc>
+            <autodoc tag='params' arg='configParam'>
+                <comment line='-1' text='++++++++Config+param+name'/>
+            </autodoc>
+            <autodoc tag='params' arg='value'>
+                <comment line='-1' text='++++++++++++++Value+for+set'/>
+            </autodoc>
+            <autodoc tag='returns' arg='results'>
+                <comment line='-1' text='+++++++++++Depends+on+operation+-+string+array+on+get%2C+string+on+set'/>
+            </autodoc>
+        </typedef>
+        <config name='breakAfterUserScript' line='-1' hostonly='1' type='K%21Bool%21%24' code='b' init='%24Kfalse' instance='1'>
+        </config>
+        <fxn name='loadCfgModel' line='-1' hostonly='1' type='K%21Any%21%24' code='a' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+Get+the+Configuration+Model'/>
+            </autodoc>
+        </fxn>
+        <fxn name='runCFFxn' line='-1' hostonly='1' type='K%21Any%21%24' code='a' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+Run+a+function+in+the+current+configuration+to+get+valid+choices+or+set+results'/>
+            </autodoc>
+            <autodoc tag='params' arg='mobjId'>
+                <comment line='-1' text='++++++++++Fully+qualified+model+object+id+-+including+%23nn+if+instance'/>
+            </autodoc>
+            <autodoc tag='params' arg='fxn'>
+                <comment line='-1' text='Name+of+function+to+invoke+must+match+CFGFILTERFXN+signature'/>
+            </autodoc>
+            <autodoc tag='params' arg='op'>
+                <comment line='-1' text='++++++++++++++Operation+id+-+0%3A+get%3B+1%3A+set+-+Ops+enum'/>
+            </autodoc>
+            <autodoc tag='params' arg='cfgparam'>
+                <comment line='-1' text='++++++++Configuration+parameter+whose+information+is+requested'/>
+            </autodoc>
+            <autodoc tag='params' arg='value'>
+                <comment line='-1' text='+++++++++++Selected+value+for+set+command+-+ignored+if+get'/>
+            </autodoc>
+            <autodoc tag='returns' arg='results'>
+                <comment line='-1' text='++++++++Depends+on+operation+-+s%2Fb+string+array+on+get+and+string+on+set'/>
+            </autodoc>
+            <arg name='mobjId' line='-1' hostonly='1' type='K%21String%21%24' code='s' init=''>
+            </arg>
+            <arg name='modinst' line='-1' hostonly='1' type='K%21Int%21%24' code='n' init=''>
+            </arg>
+            <arg name='fxn' line='-1' hostonly='1' type='K%21String%21%24' code='s' init=''>
+            </arg>
+            <arg name='op' line='-1' hostonly='1' type='K%21Int%21%24' code='n' init=''>
+            </arg>
+            <arg name='cfgparam' line='-1' hostonly='1' type='K%21String%21%24' code='s' init=''>
+            </arg>
+            <arg name='value' line='-1' hostonly='1' type='K%21String%21%24' code='s' init=''>
+            </arg>
+        </fxn>
+        <fxn name='eval' line='-1' hostonly='1' type='K%21Any%21%24' code='a' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+Execute+an+XDCscript+expression+in+the+context+of+the'/>
+                <comment line='-1' text='+user%27s+configuration+script.'/>
+            </autodoc>
+            <arg name='expr' line='-1' hostonly='1' type='K%21String%21%24' code='s' init=''>
+            </arg>
+        </fxn>
+        <fxn name='_getValidateResults' line='-1' hostonly='1' type='K%21Any%21%24' code='a' instance='1'>
+            <autodoc tag='_nodoc'>
+            </autodoc>
+        </fxn>
+        <enumval name='OP_GETVALUES' line='-1' hostonly='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+Get+allowed+value+list.+'/>
+            </autodoc>
+        </enumval>
+        <enumval name='OP_VALIDATE' line='-1' hostonly='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+Validate+choice+and+return+js+rval+'/>
+            </autodoc>
+        </enumval>
+    </module>
+    <module name='Main' extends='xdc.tools.ICmd' hostonly='1' instance='1'>
+        <autodoc tag='summary'>
+            <comment line='-1' text='+++XGCONF+Parser+prototype+package+main'/>
+        </autodoc>
+        <config name='usage' line='-1' hostonly='1' override='1' type='K%21String%21%24%5BK%21%21%5D' code='As' init='%5B%24%2B%27%5B-e+executableName%5D+%5B-s+script%5D+%5B-f+fileName%5D+packagename%27%24-%5D'>
+        </config>
+        <config name='executableName' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%24Knull' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='Executable+name+-+required+if+package+has+multiple+executables'/>
+            </autodoc>
+        </config>
+        <config name='cfgFileName' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%24Knull' instance='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='File+name+-+required+if+package+has+multiple+executables'/>
+            </autodoc>
+        </config>
+        <config name='cfgScript' line='-1' hostonly='1' type='K%21String%21%24' code='s' init='%24Knull' instance='1'>
+        </config>
+        <fxn name='addXGConfJars' line='-1' hostonly='1' type='K%21Void%21%24' code='v' instance='1'>
+        </fxn>
+    </module>
+    <module name='Contrib' hostonly='1'>
+        <config name='breakAfterUserScript' line='-1' hostonly='1' type='K%21Bool%21%24' code='b' init='%24Kfalse'>
+        </config>
+        <fxn name='execConfig' line='-1' hostonly='1'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='+Execute+the+config+model.'/>
+            </autodoc>
+            <arg name='exeName' line='-1'/>
+            <arg name='pkgName' line='-1'/>
+            <arg name='cfgScript' line='-1'/>
+        </fxn>
+    </module>
+</package>

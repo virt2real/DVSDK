@@ -1,0 +1,53 @@
+############################################################
+# Decode JPEG Image from a file
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp jpegdec1 codec jpegdec1
+
+#specify image decoder parameters
+setp jpegdec1 maxHeight                  720
+setp jpegdec1 maxWidth                   1280
+setp jpegdec1 maxScans                   1
+setp jpegdec1 dataEndianness             1
+setp jpegdec1 forceChromaFormat          9
+setp jpegdec1 numAU                      0
+setp jpegdec1 decodeHeader               0
+setp jpegdec1 displayWidth               1280
+setp jpegdec1 halfBufCB                  0
+setp jpegdec1 halfBufCBarg               0
+setp jpegdec1 disableEOI                 0
+setp jpegdec1 resizeOption               0
+setp jpegdec1 subRegionUpLeftX           0
+setp jpegdec1 subRegionUpLeftY           0
+setp jpegdec1 subRegionDownRightX        0
+setp jpegdec1 subRegionDownRightY        0
+setp jpegdec1 rotation                   0
+
+# Configure VPBE parameters
+#setp vpbe standard 3
+#setp vpbe output 3
+#setp vpbe opMode 1
+
+#setp vpbe cropEnable 0
+#setp vpbe cropCapLeft 0
+#setp vpbe cropCapTop 32
+#setp vpbe cropCapWidth 720
+#setp vpbe cropCapHeight 700
+
+getp imgdec1
+getp vpbe
+
+# Trigger the decode + playback scenario
+#func jpegdec1 -s <input file name>
+
+# Trigger the decode + dump scenario
+func jpegdec1 -s input-720p.jpg -t output-720p.yuv
+

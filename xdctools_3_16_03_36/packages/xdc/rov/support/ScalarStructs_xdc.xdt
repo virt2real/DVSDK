@@ -1,0 +1,29 @@
+/* --COPYRIGHT--,EPL
+ *  Copyright (c) 2008 Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ * 
+ * --/COPYRIGHT--*/
+/*! @_nodoc */
+module ScalarStructs {
+	
+                %for (var i = 0; i < $args.length; i++) {
+                    %var T = $args[i];
+    /*! @_nodoc */
+    struct S_`T` {
+	`T` elem;
+    };
+
+                %}	
+}
+%%{
+/*
+ * @(#) xdc.rov.support; 1, 0, 0,237; 2-22-2010 10:33:39; /db/ztree/library/trees/xdc/xdc-u17x/src/packages/
+ */
+
+%%}

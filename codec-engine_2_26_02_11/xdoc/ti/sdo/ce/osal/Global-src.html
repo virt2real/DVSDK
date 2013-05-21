@@ -1,0 +1,386 @@
+<html><head><title>module ti.sdo.ce.osal.Global</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* 
+</span>     2    <span class="comment"> * Copyright (c) 2010, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> * 
+</span>    32    <span class="comment"> */</span>
+    33    
+    34    <span class="xdoc">/*!
+</span>    35    <span class="xdoc"> *  ======== Global ========
+</span>    36    <span class="xdoc"> *  Global OS Abstract Layer Configuration
+</span>    37    <span class="xdoc"> */</span>
+    38    @Template(<span class="string">"./Global.xdt"</span>)
+    39    
+    40    <span class=key>metaonly</span> <span class=key>module</span> Global {
+    41    
+    42        <span class="xdoc">/*!
+</span>    43    <span class="xdoc">     *  ======== os ========
+</span>    44    <span class="xdoc">     *  A specific OSAL implementations "Settings" module, for example,
+</span>    45    <span class="xdoc">     *  ti.sdo.ce.osal.bios.Settings or ti.sdo.ce.osal.linux.Settings.
+</span>    46    <span class="xdoc">     *  To set the OS of the executable to BIOS, set Global.os to:
+</span>    47    <span class="xdoc">     *  xdc.useModule('ti.sdo.ce.osal.bios.Settings').
+</span>    48    <span class="xdoc">     *
+</span>    49    <span class="xdoc">     *  When this config param is used, the {@ link ti.sdo.ce.ipc.Settings#ipc
+</span>    50    <span class="xdoc">     *  config param must also be set.
+</span>    51    <span class="xdoc">     *
+</span>    52    <span class="xdoc">     *  This should only be used to explicitly configure the OSAL to
+</span>    53    <span class="xdoc">     *  a package not provided with Codec Engine.  To use an OSAL provided
+</span>    54    <span class="xdoc">     *  by Codec Engine, it's recommended to configure the OSAL using
+</span>    55    <span class="xdoc">     *  the runtimeEnv config param instead of this one.
+</span>    56    <span class="xdoc">     *
+</span>    57    <span class="xdoc">     *  See {@ link http://wiki.davincidsp.com/index.php?title=CE_Config_Updates
+</span>    58    <span class="xdoc">     *  for more details}
+</span>    59    <span class="xdoc">     *
+</span>    60    <span class="xdoc">     *  <b>@see</b> runtimeEnv
+</span>    61    <span class="xdoc">     */</span>
+    62        <span class=key>config</span> IOsal.Module os;
+    63    
+    64        <span class="xdoc">/*!
+</span>    65    <span class="xdoc">     *  ======== RuntimeOS ========
+</span>    66    <span class="xdoc">     *  All runtime OSs that are abstracted by this package.
+</span>    67    <span class="xdoc">     *
+</span>    68    <span class="xdoc">     *  <b>@see</b> runtimeEnv
+</span>    69    <span class="xdoc">     */</span>
+    70        <span class=key>enum</span> RuntimeEnv {
+    71            NONE          = 0,   <span class="xdoc">/*! no OS; threads are not truly supported */</span>
+    72            DSPBIOS       = 1,   <span class="xdoc">/*! DSP/BIOS  */</span>
+    73            LINUX         = 2,   <span class="xdoc">/*! Linux */</span>
+    74            DSPLINK_BIOS  = 3,   <span class="xdoc">/*! DSPLINK + BIOS (DSP) */</span>
+    75            DSPLINK_LINUX = 4,   <span class="xdoc">/*! DSPLINK + Linux (Arm) */</span>
+    76            WINCE         = 5,   <span class="xdoc">/*! Windows CE */</span>
+    77            DSPLINK_WINCE = 6    <span class="xdoc">/*! DSPLINK + Windows CE (Arm) */</span>
+    78        };
+    79    
+    80        <span class="comment">/* Arm-side DSPLink configuration - Deprecated!! */</span>
+    81    
+    82        <span class="xdoc">/*!
+</span>    83    <span class="xdoc">     *  ======== DEFAULT_ARMDSPLINKCONFIG ========
+</span>    84    <span class="xdoc">     *  List of DSP memory segments and other parameters for DspLink
+</span>    85    <span class="xdoc">     *  configuration suitable for most "out of the box" DaVinci
+</span>    86    <span class="xdoc">     *  DSP servers.
+</span>    87    <span class="xdoc">     *  Note there must be exactly one segment of each of these types:
+</span>    88    <span class="xdoc">     *  "main", "system", and "reset".
+</span>    89    <span class="xdoc">     *
+</span>    90    <span class="xdoc">     *  Obsolete. This is now part of the ipc module.
+</span>    91    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>    92    <span class="xdoc">     */</span>
+    93        <span class=key>const</span> ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig
+    94            DEFAULT_ARMDSPLINKCONFIG = {
+    95            memTable: [
+    96                [<span class="string">"DDRALGHEAP"</span>, {addr: 0x88000000, size: 0x07A00000, type: <span class="string">"other"</span>}],
+    97                [<span class="string">"DDR2"</span>,       {addr: 0x8FA00000, size: 0x00400000, type: <span class="string">"main"</span> }],
+    98                [<span class="string">"DSPLINKMEM"</span>, {addr: 0x8FE00000, size: 0x00100000, type: <span class="string">"link"</span> }],
+    99                [<span class="string">"RESETCTRL"</span>,  {addr: 0x8FF00000, size: 0x00000080, type: <span class="string">"reset"</span>}],
+   100            ],
+   101            doPowerControl : <span class=key>false</span>,
+   102        };
+   103    
+   104        <span class="xdoc">/*!
+</span>   105    <span class="xdoc">     *  ======== armDspLinkConfig ========
+</span>   106    <span class="xdoc">     *  Arm-side DSPLINK configuration; if left undefined will be set to
+</span>   107    <span class="xdoc">     *  DEFAULT_ARMDSPLINKCONFIG, but with a warning. OBSOLETE -- used for
+</span>   108    <span class="xdoc">     *  compatibiility with CE 1.20 Arm app config scripts only; CE2.00 and
+</span>   109    <span class="xdoc">     *  later scripts should configure individual servers through
+</span>   110    <span class="xdoc">     *  the same-named field in the Engine instance.
+</span>   111    <span class="xdoc">     *
+</span>   112    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPLINK_LINUX
+</span>   113    <span class="xdoc">     *
+</span>   114    <span class="xdoc">     *  Obsolete. This is now part of the ipc module.
+</span>   115    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   116    <span class="xdoc">     */</span>
+   117        <span class=key>config</span> ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig armDspLinkConfig;
+   118    
+   119        <span class="xdoc">/*!
+</span>   120    <span class="xdoc">     *  ======== runtimeEnv ========
+</span>   121    <span class="xdoc">     *  The runtime OS used to implement the abstractions provided by
+</span>   122    <span class="xdoc">     *  this package.
+</span>   123    <span class="xdoc">     *
+</span>   124    <span class="xdoc">     *  <b>@see</b> RuntimeEnv
+</span>   125    <span class="xdoc">     */</span>
+   126        <span class=key>config</span> RuntimeEnv runtimeEnv;
+   127    
+   128        <span class="xdoc">/*!
+</span>   129    <span class="xdoc">     *  ======== defaultMemSegId ========
+</span>   130    <span class="xdoc">     *  Default ID of the memory segment from which to allocate space
+</span>   131    <span class="xdoc">     *  (for Memory_alloc/free() calls, as opposed to Memory_segAlloc/Free()).
+</span>   132    <span class="xdoc">     *  Typically it's the segment where all other code and data go.
+</span>   133    <span class="xdoc">     *
+</span>   134    <span class="xdoc">     *  If left as "null", the system will try to find a BIOS segment named
+</span>   135    <span class="xdoc">     *  "DDR" or "DDR2" and assign its name to this field. In the future
+</span>   136    <span class="xdoc">     *  this auto-find feature may be removed, so it's best that user .cfg
+</span>   137    <span class="xdoc">     *  script set this value directly to what they know is appropriate segment.
+</span>   138    <span class="xdoc">     *
+</span>   139    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS or
+</span>   140    <span class="xdoc">     *  runtimeEnv == DSPLINK_BIOS
+</span>   141    <span class="xdoc">     */</span>
+   142        <span class=key>config</span> String defaultMemSegId = <span class=key>null</span>;
+   143    
+   144        <span class="xdoc">/*!
+</span>   145    <span class="xdoc">     *  ======== armCommMsgSize ========
+</span>   146    <span class="xdoc">     *  Default size for the Arm-DSP communication messages (MSGQ messages).
+</span>   147    <span class="xdoc">     *
+</span>   148    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPLINK_LINUX
+</span>   149    <span class="xdoc">     */</span>
+   150        <span class=key>config</span> UInt32 armCommMsgSize = 4 * 1024;
+   151    
+   152        <span class="xdoc">/*!
+</span>   153    <span class="xdoc">     *  ======== armCommNumMsgs ========
+</span>   154    <span class="xdoc">     *  Number of &lt;commMsgSize&gt;-sized messages used for Arm-DSP communication.
+</span>   155    <span class="xdoc">     *
+</span>   156    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPLINK_LINUX
+</span>   157    <span class="xdoc">     */</span>
+   158        <span class=key>config</span> UInt32 armCommNumMsgs = 64;
+   159    
+   160        <span class="xdoc">/*!
+</span>   161    <span class="xdoc">     *  ======== dspCommNumMsgQueues ========
+</span>   162    <span class="xdoc">     *  Number of message queues (that can receive and store messages) on the
+</span>   163    <span class="xdoc">     *  DSP side. Each DSP node (task) needs one message queue.
+</span>   164    <span class="xdoc">     *
+</span>   165    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS or
+</span>   166    <span class="xdoc">     *  runtimeEnv == DSPLINK_BIOS
+</span>   167    <span class="xdoc">     */</span>
+   168        <span class=key>config</span> UInt32 dspCommNumMsgQueues = 64;
+   169    
+   170        <span class="xdoc">/*!
+</span>   171    <span class="xdoc">     *  ======== dspCommUseExactMatch ========
+</span>   172    <span class="xdoc">     *  Indicates that "exact match" must be used for comm messages allocated
+</span>   173    <span class="xdoc">     *  on the DSP side.
+</span>   174    <span class="xdoc">     *
+</span>   175    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPLINK_BIOS
+</span>   176    <span class="xdoc">     */</span>
+   177        <span class=key>config</span> Bool dspCommUseExactMatch = <span class=key>true</span>;
+   178    
+   179        <span class="xdoc">/*!
+</span>   180    <span class="xdoc">     *  ======== dspConfigureMsgqAndPool ========
+</span>   181    <span class="xdoc">     *  Set to true by default, instructs this module to generate code that
+</span>   182    <span class="xdoc">     *  configures BIOS MSGQ and POOL modules: symbols MSGQ_config and
+</span>   183    <span class="xdoc">     *  POOL_config. If set to false, and if BIOS is configured to use MSGQ,
+</span>   184    <span class="xdoc">     *  user application must define these symbols.
+</span>   185    <span class="xdoc">     *
+</span>   186    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS or
+</span>   187    <span class="xdoc">     *  runtimeEnv == DSPLINK_BIOS
+</span>   188    <span class="xdoc">     */</span>
+   189        <span class=key>config</span> <span class=key>bool</span> dspConfigureMsgqAndPool = <span class=key>true</span>;
+   190    
+   191        <span class="xdoc">/*!
+</span>   192    <span class="xdoc">     *  ======== dspUseMsgqAndPool ========
+</span>   193    <span class="xdoc">     *  If set to false, instructs Codecs Engine to cut out MSGQ and POOL
+</span>   194    <span class="xdoc">     *  references completely from the final image.
+</span>   195    <span class="xdoc">     *
+</span>   196    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS.
+</span>   197    <span class="xdoc">     */</span>
+   198        <span class=key>config</span> <span class=key>bool</span> dspUseMsgqAndPool = <span class=key>true</span>;
+   199    
+   200        <span class="xdoc">/*!
+</span>   201    <span class="xdoc">     *  ======== dspCommMsgSize ========
+</span>   202    <span class="xdoc">     *  Default size for the inter-DSP communication messages (MSGQ messages).
+</span>   203    <span class="xdoc">     *
+</span>   204    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS
+</span>   205    <span class="xdoc">     *  in special circumstances.
+</span>   206    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   207    <span class="xdoc">     */</span>
+   208        <span class=key>config</span> UInt32 dspCommMsgSize = 1024;
+   209    
+   210        <span class="xdoc">/*!
+</span>   211    <span class="xdoc">     *  ======== dspCommNumMsgs ========
+</span>   212    <span class="xdoc">     *  Number of &lt;commMsgSize&gt;-sized messages used for Arm-DSP communication.
+</span>   213    <span class="xdoc">     *
+</span>   214    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS
+</span>   215    <span class="xdoc">     *  in special circumstances.
+</span>   216    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   217    <span class="xdoc">     */</span>
+   218        <span class=key>config</span> UInt32 dspCommNumMsgs = 64;
+   219    
+   220        <span class="xdoc">/*!
+</span>   221    <span class="xdoc">     *  ======== usePowerManagement ========
+</span>   222    <span class="xdoc">     *  If set to true, will attempt to include power-management code
+</span>   223    <span class="xdoc">     *  where applicable.
+</span>   224    <span class="xdoc">     *
+</span>   225    <span class="xdoc">     *  This feature may not be available on all devices.
+</span>   226    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   227    <span class="xdoc">     */</span>
+   228        <span class=key>config</span> <span class=key>bool</span> usePowerManagement;
+   229    
+   230        <span class="xdoc">/*!
+</span>   231    <span class="xdoc">     *  ======== powerSaveMemoryBlockName ========
+</span>   232    <span class="xdoc">     *  The name of the segment to which power should be saved; if left null,
+</span>   233    <span class="xdoc">     *  will default to defaultMemSegId.
+</span>   234    <span class="xdoc">     *
+</span>   235    <span class="xdoc">     *  This feature may not be available on all devices.
+</span>   236    <span class="xdoc">     */</span>
+   237        <span class=key>config</span> String powerSaveMemoryBlockName = <span class=key>null</span>;
+   238    
+   239        <span class="xdoc">/*!
+</span>   240    <span class="xdoc">     *  ======== useLinkArbiter ========
+</span>   241    <span class="xdoc">     *  Control flag to indicate if Codec Engine should use the Link Arbiter
+</span>   242    <span class="xdoc">     *  Daemon (LAD) to arbitrate DSPLINK APIs that need arbitration.  Set to
+</span>   243    <span class="xdoc">     *  false means LAD should not be used; set to true means LAD should be
+</span>   244    <span class="xdoc">     *  used.
+</span>   245    <span class="xdoc">     *
+</span>   246    <span class="xdoc">     *  This feature may not be available on all devices.
+</span>   247    <span class="xdoc">     *
+</span>   248    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPLINK_LINUX
+</span>   249    <span class="xdoc">     */</span>
+   250        <span class=key>config</span> Bool useLinkArbiter = <span class=key>false</span>;
+   251    
+   252        <span class="xdoc">/*!
+</span>   253    <span class="xdoc">     *  ======== commLocateRetries ========
+</span>   254    <span class="xdoc">     *  Number of times to retry Comm_locate() -- to find DSP server's MSGQ --
+</span>   255    <span class="xdoc">     *  before giving up.
+</span>   256    <span class="xdoc">     *
+</span>   257    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPLINK_LINUX
+</span>   258    <span class="xdoc">     */</span>
+   259        <span class=key>config</span> <span class=key>int</span> commLocateRetries = 20;
+   260    
+   261        <span class="xdoc">/*!
+</span>   262    <span class="xdoc">     *  ======== traceBufferSize ========
+</span>   263    <span class="xdoc">     *  Size of the server trace buffer, in MAUs.
+</span>   264    <span class="xdoc">     *
+</span>   265    <span class="xdoc">     *  The server trace buffer is a circular buffer of characters written
+</span>   266    <span class="xdoc">     *  to by clients of ti.sdo.ce.osal.Trace (and ti.sdo.utils.trace.GT) and
+</span>   267    <span class="xdoc">     *  read by the Engine_*Trace() methods.
+</span>   268    <span class="xdoc">     *
+</span>   269    <span class="xdoc">     *  All the trace data in the target memory is stored into a globally
+</span>   270    <span class="xdoc">     *  visible character buffer
+</span>   271    <span class="xdoc">     *       Char Global_traceBuffer[ &lt;traceBufferSize&gt; ];
+</span>   272    <span class="xdoc">     *
+</span>   273    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS or
+</span>   274    <span class="xdoc">     *  runtimeEnv == DSPLINK_BIOS
+</span>   275    <span class="xdoc">     */</span>
+   276        <span class=key>config</span> Int traceBufferSize = 32768;
+   277    
+   278        <span class="xdoc">/*!
+</span>   279    <span class="xdoc">     *  ======== enableLogging ========
+</span>   280    <span class="xdoc">     *  If set to true, enable data generation necessary for CE benchmarking
+</span>   281    <span class="xdoc">     *  analysis.
+</span>   282    <span class="xdoc">     *
+</span>   283    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS or
+</span>   284    <span class="xdoc">     *  runtimeEnv == DSPLINK_BIOS
+</span>   285    <span class="xdoc">     */</span>
+   286        <span class=key>config</span> <span class=key>bool</span> enableLogging = <span class=key>true</span>;
+   287    
+   288        <span class="xdoc">/*!
+</span>   289    <span class="xdoc">     *  ======== logName ========
+</span>   290    <span class="xdoc">     *  Name of buffer used for capturing benchmarking data.
+</span>   291    <span class="xdoc">     *
+</span>   292    <span class="xdoc">     *  In BIOS environments, this is the name of the BIOS LOG.
+</span>   293    <span class="xdoc">     *
+</span>   294    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS or
+</span>   295    <span class="xdoc">     *  runtimeEnv == DSPLINK_BIOS
+</span>   296    <span class="xdoc">     */</span>
+   297        <span class=key>config</span> String logName = <span class="string">"ti_sdo_ce_osal_LOG_Buffer"</span>;
+   298    
+   299        <span class="xdoc">/*!
+</span>   300    <span class="xdoc">     *  ======== logSize ========
+</span>   301    <span class="xdoc">     *  Size of buffer used for capturing benchmarking data.
+</span>   302    <span class="xdoc">     *
+</span>   303    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS or
+</span>   304    <span class="xdoc">     *  runtimeEnv == DSPLINK_BIOS
+</span>   305    <span class="xdoc">     */</span>
+   306        <span class=key>config</span> <span class=key>int</span> logSize = 256;
+   307    
+   308        <span class="xdoc">/*!
+</span>   309    <span class="xdoc">     *  ======== logType ========
+</span>   310    <span class="xdoc">     *  Type of buffer used for capturing benchmarking data.
+</span>   311    <span class="xdoc">     *
+</span>   312    <span class="xdoc">     *  This can be either "fixed" or "circular".
+</span>   313    <span class="xdoc">     *
+</span>   314    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS or
+</span>   315    <span class="xdoc">     *  runtimeEnv == DSPLINK_BIOS
+</span>   316    <span class="xdoc">     */</span>
+   317        <span class=key>config</span> String logType = <span class="string">"circular"</span>;
+   318    
+   319        <span class="xdoc">/*!
+</span>   320    <span class="xdoc">     *  ======== logSeg ========
+</span>   321    <span class="xdoc">     *  Memory segment for the buffer used for capturing benchmarking data.
+</span>   322    <span class="xdoc">     *
+</span>   323    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS or
+</span>   324    <span class="xdoc">     *  runtimeEnv == DSPLINK_BIOS
+</span>   325    <span class="xdoc">     */</span>
+   326        <span class=key>config</span> String logSeg = <span class=key>null</span>;
+   327    
+   328        <span class="xdoc">/*!
+</span>   329    <span class="xdoc">     *  ======== skipVirtualAddressTranslation ========
+</span>   330    <span class="xdoc">     *  If set to true, will make Memory_getBufferPhysicalAddress()
+</span>   331    <span class="xdoc">     *  skip address translation and return the given address as the
+</span>   332    <span class="xdoc">     *  physical address. Needed when the VISA calls are made with
+</span>   333    <span class="xdoc">     *  physical buffer addresses instead of virtual ones, specifically
+</span>   334    <span class="xdoc">     *  in the multi-process-via-kernel-driver case.
+</span>   335    <span class="xdoc">     *
+</span>   336    <span class="xdoc">     *  Applies only to environments where virtual memory is used (e.g. Linux)
+</span>   337    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   338    <span class="xdoc">     */</span>
+   339        <span class=key>config</span> <span class=key>bool</span> skipVirtualAddressTranslation = <span class=key>false</span>;
+   340    
+   341        <span class="xdoc">/*!
+</span>   342    <span class="xdoc">     *  ======== embedBuildInfo ========
+</span>   343    <span class="xdoc">     *  Indication whether to embed build info (packages and their directories)
+</span>   344    <span class="xdoc">     *  into the generated executable for debugging/diagnostic purposes.
+</span>   345    <span class="xdoc">     *  Setting this to 'false' may reduce the static data size by around 1K.
+</span>   346    <span class="xdoc">     *  Applies to all configurations.
+</span>   347    <span class="xdoc">     */</span>
+   348        <span class=key>config</span> Bool embedBuildInfo = <span class=key>true</span>;
+   349    
+   350        <span class="xdoc">/*!
+</span>   351    <span class="xdoc">     *  ======== addObjectToProgramInfoFile ========
+</span>   352    <span class="xdoc">     *  Internal method for adding an object to an XML-like program info file
+</span>   353    <span class="xdoc">     *  created alongside the executable
+</span>   354    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   355    <span class="xdoc">     */</span>
+   356        <span class=key>function</span> addObjectToProgramInfoFile( objName, obj );
+   357    
+   358        <span class="xdoc">/*!
+</span>   359    <span class="xdoc">     *  ======== parseInfoFile ========
+</span>   360    <span class="xdoc">     *  Internal method for parsing an XML-like server program file
+</span>   361    <span class="xdoc">     *  that lies alongside the executable
+</span>   362    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   363    <span class="xdoc">     */</span>
+   364        <span class=key>function</span> parseInfoFile( infoFile );
+   365    
+   366        <span class="xdoc">/*!
+</span>   367    <span class="xdoc">     *  ======== validate ========
+</span>   368    <span class="xdoc">     *  Internal validate method (see package.xs)
+</span>   369    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   370    <span class="xdoc">     */</span>
+   371        <span class=key>function</span> validate();
+   372    
+   373    }
+   374    <span class="comment">/*
+</span>   375    <span class="comment"> *  @(#) ti.sdo.ce.osal; 2, 0, 2,427; 12-2-2010 21:24:38; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+</span>   376    <span class="comment">
+</span>   377    <span class="comment"> */</span>
+   378    
+</pre>
+</body></html>

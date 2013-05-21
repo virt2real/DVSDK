@@ -1,0 +1,72 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    /*
+     *  Generate run-time config settings for VISA codecs of this type
+     */
+%%}
+
+% for (var codec in this.codecsList) {
+/* this data structure has codec-specific names and values, but class-specific
+ * fields -- it's indentical to struct IVIDENC1_CodecClassConfig from videnc1.h.
+ * Its name doesn't matter, only that the address of data is captured in the
+ * "codecClassConfig" field of the algorithm description
+ */    
+struct `codec`_CodecClassConfig {
+    Bool manageInBufsCache   [ XDM_MAX_IO_BUFFERS ];  
+    Bool manageOutBufsCache  [ XDM_MAX_IO_BUFFERS ];  
+} `codec`_codecClassConfig = {
+%     
+%     var manageInBufsCache    = this.codecsList[ codec ].manageInBufsCache;
+%     var manageOutBufsCache   = this.codecsList[ codec ].manageOutBufsCache;
+%     var sin    = "{"; 
+%     var sout   = "{"; 
+%     for (var j = 0; j < manageInBufsCache.length; j++) {
+%         sin    += (manageInBufsCache[j]    ? "TRUE" : "FALSE") + ",";
+%         sout   += (manageOutBufsCache[j]   ? "TRUE" : "FALSE") + ",";
+%     }
+%     sin    = sin.replace( /,$/, "}" );
+%     sout   = sout.replace( /,$/, "}" );
+    `sin`,
+    `sout`
+};
+% }
+%%{
+/*
+ * @(#) ti.sdo.ce.video1; 1, 0, 2,269; 12-2-2010 21:28:26; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

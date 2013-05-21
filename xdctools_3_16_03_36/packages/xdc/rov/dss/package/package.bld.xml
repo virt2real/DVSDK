@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xdc.rov.dss" version="1, 0, 0" producerId="undefined">
+    <units>
+        <module name="Main"/>
+        <module name="SymbolTable"/>
+        <module name="CallBack"/>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/xdc_rov_dss,src.tar.dep" src="package/rel/xdc_rov_dss,src.xdc.inc"/>
+        <srcFile name="package/rel/xdc_rov_dss.tar.dep" src="package/rel/xdc_rov_dss.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xdc_rov_dss,src"
+        pname="../../../../exports/xdc_rov_dss,src.tar"
+        label="undefined"
+    >
+        <file name="run_64sim.bat"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="run.bat"/>
+        <file name="java/package.jar"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    <release name="xdc_rov_dss"
+        pname="../../../../exports/xdc_rov_dss.tar"
+        label="default"
+    >
+        <file name="run_64sim.bat"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="run.bat"/>
+        <file name="java/package.jar"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,1430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.acpy3" version="1, 0, 4" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="ACPY3"/>
+    </units>
+    <sources>
+        <srcFile name="acpy3_wait_arm.c"/>
+        <srcFile name="acpy3_fastconfigure16b.c"/>
+        <srcFile name="acpy3_fastsetfinal.c"/>
+        <srcFile name="acpy3_arm.c"/>
+        <srcFile name="acpy3_wait.c"/>
+        <srcFile name="acpy3_completelinked.c"/>
+        <srcFile name="acpy3_waitlinked.c"/>
+        <srcFile name="acpy3_instr.c"/>
+        <srcFile name="acpy3_init.c"/>
+        <srcFile name="acpy3.c"/>
+        <srcFile name="acpy3_fastconfigure32b.c"/>
+        <srcFile name="acpy3_wait_cpucopy.c"/>
+        <srcFile name="acpy3_start_arm.c"/>
+        <srcFile name="acpy3_config.c"/>
+        <srcFile name="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="acpy3_configure.c"/>
+        <srcFile name="acpy3_setfinal.c"/>
+        <srcFile name="acpy3_complete.c"/>
+        <srcFile name="acpy3_qdma_arm.c"/>
+        <srcFile name="acpy3_start_cpucopy.c"/>
+        <srcFile name="acpy3_waitlinked_arm.c"/>
+        <srcFile name="gt_dais.c"/>
+        <srcFile name="acpy3_qdma.c"/>
+        <srcFile name="acpy3_start.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug_trace/acpy3.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_wait_cpucopy.o470uC.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastconfigure16b.o470uC.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_completelinked.o470uC.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastsetfinal.o470uC.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_complete.o470uC.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_config.o470uC.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_qdma_arm.o470uC.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastconfigure32b.o470uC.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_wait_arm.o470uC.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_configure.o470uC.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_start_arm.o470uC.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_waitlinked_arm.o470uC.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_setfinal.o470uC.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_init.o470uC.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/package/package_ti.sdo.fc.acpy3.o470uC.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_start_cpucopy.o470uC.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_arm.o470uC.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug/acpy3cpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait_cpucopy.o86U.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure16b.o86U.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_completelinked.o86U.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastsetfinal.o86U.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_complete.o86U.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_config.o86U.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_qdma_arm.o86U.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure32b.o86U.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait_arm.o86U.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_configure.o86U.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start_arm.o86U.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_waitlinked_arm.o86U.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_setfinal.o86U.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_init.o86U.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/package/package_ti.sdo.fc.acpy3.o86U.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start_cpucopy.o86U.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_arm.o86U.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/release/acpy3.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_wait_cpucopy.o470MV.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastconfigure16b.o470MV.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_completelinked.o470MV.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastsetfinal.o470MV.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_complete.o470MV.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_config.o470MV.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_qdma_arm.o470MV.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastconfigure32b.o470MV.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_wait_arm.o470MV.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_configure.o470MV.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_start_arm.o470MV.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_waitlinked_arm.o470MV.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_setfinal.o470MV.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_init.o470MV.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/package/package_ti.sdo.fc.acpy3.o470MV.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_start_cpucopy.o470MV.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_arm.o470MV.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug/acpy3instrumented.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_instr.o64P.dep" src="acpy3_instr.c"/>
+        <srcFile name="lib/release/acpy3.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_wait_cpucopy.ov4TCE.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastconfigure16b.ov4TCE.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_completelinked.ov4TCE.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastsetfinal.ov4TCE.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_complete.ov4TCE.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_config.ov4TCE.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_qdma_arm.ov4TCE.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastconfigure32b.ov4TCE.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_wait_arm.ov4TCE.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_configure.ov4TCE.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_start_arm.ov4TCE.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_waitlinked_arm.ov4TCE.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_setfinal.ov4TCE.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_init.ov4TCE.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/package/package_ti.sdo.fc.acpy3.ov4TCE.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_start_cpucopy.ov4TCE.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_arm.ov4TCE.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug/acpy3cpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/debug_trace/acpy3cpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/trace/acpy3cpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/trace/acpy3instrumented.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_instr.o64P.dep" src="acpy3_instr.c"/>
+        <srcFile name="lib/debug_trace/acpy3.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_wait_cpucopy.o470MV.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastconfigure16b.o470MV.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_completelinked.o470MV.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastsetfinal.o470MV.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_complete.o470MV.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_config.o470MV.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_qdma_arm.o470MV.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastconfigure32b.o470MV.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_wait_arm.o470MV.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_configure.o470MV.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_start_arm.o470MV.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_waitlinked_arm.o470MV.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_setfinal.o470MV.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_init.o470MV.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/package/package_ti.sdo.fc.acpy3.o470MV.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_start_cpucopy.o470MV.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_arm.o470MV.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/release/acpy3cpu.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait_cpucopy.o470uC.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure16b.o470uC.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_completelinked.o470uC.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastsetfinal.o470uC.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_complete.o470uC.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_config.o470uC.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_qdma_arm.o470uC.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure32b.o470uC.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait_arm.o470uC.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_configure.o470uC.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start_arm.o470uC.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_waitlinked_arm.o470uC.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_setfinal.o470uC.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_init.o470uC.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/package/package_ti.sdo.fc.acpy3.o470uC.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start_cpucopy.o470uC.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_arm.o470uC.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug_trace/acpy3.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_wait_cpucopy.ov4TCE.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastconfigure16b.ov4TCE.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_completelinked.ov4TCE.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastsetfinal.ov4TCE.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_complete.ov4TCE.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_config.ov4TCE.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_qdma_arm.ov4TCE.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastconfigure32b.ov4TCE.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_wait_arm.ov4TCE.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_configure.ov4TCE.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_start_arm.ov4TCE.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_waitlinked_arm.ov4TCE.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_setfinal.ov4TCE.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_init.ov4TCE.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/package/package_ti.sdo.fc.acpy3.ov4TCE.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_start_cpucopy.ov4TCE.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_arm.ov4TCE.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug/acpy3.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/debug_trace/acpy3cpu.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait_cpucopy.o470uC.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure16b.o470uC.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_completelinked.o470uC.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastsetfinal.o470uC.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_complete.o470uC.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_config.o470uC.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_qdma_arm.o470uC.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure32b.o470uC.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait_arm.o470uC.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_configure.o470uC.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start_arm.o470uC.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_waitlinked_arm.o470uC.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_setfinal.o470uC.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_init.o470uC.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.o470uC.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start_cpucopy.o470uC.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_arm.o470uC.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug_trace/acpy3instrumented.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_instr.o674.dep" src="acpy3_instr.c"/>
+        <srcFile name="lib/trace/acpy3.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/release/acpy3cpu.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait_cpucopy.o470MV.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure16b.o470MV.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_completelinked.o470MV.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastsetfinal.o470MV.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_complete.o470MV.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_config.o470MV.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_qdma_arm.o470MV.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure32b.o470MV.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait_arm.o470MV.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_configure.o470MV.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start_arm.o470MV.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_waitlinked_arm.o470MV.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_setfinal.o470MV.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_init.o470MV.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/package/package_ti.sdo.fc.acpy3.o470MV.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start_cpucopy.o470MV.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_arm.o470MV.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/trace/acpy3cpu.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait_cpucopy.o470uC.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure16b.o470uC.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_completelinked.o470uC.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastsetfinal.o470uC.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_complete.o470uC.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_config.o470uC.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_qdma_arm.o470uC.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure32b.o470uC.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait_arm.o470uC.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_configure.o470uC.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start_arm.o470uC.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_waitlinked_arm.o470uC.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_setfinal.o470uC.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_init.o470uC.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.o470uC.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start_cpucopy.o470uC.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_arm.o470uC.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/release/acpy3cpu.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait_cpucopy.ov4TCE.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure16b.ov4TCE.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_completelinked.ov4TCE.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastsetfinal.ov4TCE.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_complete.ov4TCE.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_config.ov4TCE.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_qdma_arm.ov4TCE.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure32b.ov4TCE.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait_arm.ov4TCE.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_configure.ov4TCE.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start_arm.ov4TCE.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_waitlinked_arm.ov4TCE.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_setfinal.ov4TCE.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_init.ov4TCE.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/package/package_ti.sdo.fc.acpy3.ov4TCE.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start_cpucopy.ov4TCE.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_arm.ov4TCE.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug_trace/acpy3cpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait_cpucopy.o86U.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure16b.o86U.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_completelinked.o86U.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastsetfinal.o86U.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_complete.o86U.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_config.o86U.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_qdma_arm.o86U.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure32b.o86U.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait_arm.o86U.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_configure.o86U.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start_arm.o86U.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_waitlinked_arm.o86U.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_setfinal.o86U.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_init.o86U.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.o86U.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start_cpucopy.o86U.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_arm.o86U.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/trace/acpy3cpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait_cpucopy.o86U.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure16b.o86U.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_completelinked.o86U.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastsetfinal.o86U.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_complete.o86U.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_config.o86U.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_qdma_arm.o86U.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure32b.o86U.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait_arm.o86U.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_configure.o86U.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start_arm.o86U.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_waitlinked_arm.o86U.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_setfinal.o86U.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_init.o86U.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.o86U.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start_cpucopy.o86U.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_arm.o86U.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/release/acpy3.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/debug_trace/acpy3cpu.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait_cpucopy.o470MV.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure16b.o470MV.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_completelinked.o470MV.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastsetfinal.o470MV.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_complete.o470MV.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_config.o470MV.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_qdma_arm.o470MV.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure32b.o470MV.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait_arm.o470MV.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_configure.o470MV.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start_arm.o470MV.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_waitlinked_arm.o470MV.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_setfinal.o470MV.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_init.o470MV.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.o470MV.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start_cpucopy.o470MV.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_arm.o470MV.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug/acpy3.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_wait_cpucopy.o470uC.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastconfigure16b.o470uC.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_completelinked.o470uC.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastsetfinal.o470uC.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_complete.o470uC.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_config.o470uC.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_qdma_arm.o470uC.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastconfigure32b.o470uC.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_wait_arm.o470uC.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_configure.o470uC.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_start_arm.o470uC.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_waitlinked_arm.o470uC.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_setfinal.o470uC.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_init.o470uC.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/package/package_ti.sdo.fc.acpy3.o470uC.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_start_cpucopy.o470uC.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_arm.o470uC.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug_trace/acpy3cpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/debug_trace/acpy3cpu.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait_cpucopy.ov4TCE.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure16b.ov4TCE.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_completelinked.ov4TCE.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastsetfinal.ov4TCE.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_complete.ov4TCE.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_config.ov4TCE.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_qdma_arm.ov4TCE.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_fastconfigure32b.ov4TCE.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_wait_arm.ov4TCE.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_configure.ov4TCE.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start_arm.ov4TCE.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_waitlinked_arm.ov4TCE.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_setfinal.ov4TCE.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_init.ov4TCE.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.ov4TCE.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_start_cpucopy.ov4TCE.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3cpu/acpy3_arm.ov4TCE.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/trace/acpy3cpu.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait_cpucopy.o470MV.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure16b.o470MV.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_completelinked.o470MV.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastsetfinal.o470MV.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_complete.o470MV.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_config.o470MV.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_qdma_arm.o470MV.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure32b.o470MV.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait_arm.o470MV.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_configure.o470MV.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start_arm.o470MV.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_waitlinked_arm.o470MV.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_setfinal.o470MV.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_init.o470MV.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.o470MV.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start_cpucopy.o470MV.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_arm.o470MV.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/trace/acpy3cpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/trace/acpy3cpu.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait_cpucopy.ov4TCE.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure16b.ov4TCE.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_completelinked.ov4TCE.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastsetfinal.ov4TCE.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_complete.ov4TCE.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_config.ov4TCE.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_qdma_arm.ov4TCE.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_fastconfigure32b.ov4TCE.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_wait_arm.ov4TCE.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_configure.ov4TCE.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start_arm.ov4TCE.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_waitlinked_arm.ov4TCE.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_setfinal.ov4TCE.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_init.ov4TCE.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/package/package_ti.sdo.fc.acpy3.ov4TCE.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_start_cpucopy.ov4TCE.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3cpu/acpy3_arm.ov4TCE.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/release/acpy3cpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/debug/acpy3.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_wait_cpucopy.o470MV.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastconfigure16b.o470MV.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_completelinked.o470MV.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastsetfinal.o470MV.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_complete.o470MV.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_config.o470MV.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_qdma_arm.o470MV.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastconfigure32b.o470MV.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_wait_arm.o470MV.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_configure.o470MV.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_start_arm.o470MV.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_waitlinked_arm.o470MV.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_setfinal.o470MV.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_init.o470MV.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/package/package_ti.sdo.fc.acpy3.o470MV.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_start_cpucopy.o470MV.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_arm.o470MV.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/trace/acpy3.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_wait_cpucopy.o470uC.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastconfigure16b.o470uC.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_completelinked.o470uC.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastsetfinal.o470uC.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_complete.o470uC.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_config.o470uC.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_qdma_arm.o470uC.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastconfigure32b.o470uC.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_wait_arm.o470uC.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_configure.o470uC.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_start_arm.o470uC.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_waitlinked_arm.o470uC.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_setfinal.o470uC.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_init.o470uC.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/package/package_ti.sdo.fc.acpy3.o470uC.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_start_cpucopy.o470uC.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_arm.o470uC.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug/acpy3.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_wait_cpucopy.ov4TCE.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastconfigure16b.ov4TCE.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_completelinked.ov4TCE.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastsetfinal.ov4TCE.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_complete.ov4TCE.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_config.ov4TCE.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_qdma_arm.ov4TCE.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastconfigure32b.ov4TCE.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_wait_arm.ov4TCE.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_configure.ov4TCE.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_start_arm.ov4TCE.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_waitlinked_arm.ov4TCE.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_setfinal.ov4TCE.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_init.ov4TCE.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/package/package_ti.sdo.fc.acpy3.ov4TCE.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_start_cpucopy.ov4TCE.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_arm.ov4TCE.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/release/acpy3instrumented.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_instr.o674.dep" src="acpy3_instr.c"/>
+        <srcFile name="lib/debug_trace/acpy3instrumented.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3instrumented/acpy3_instr.o64P.dep" src="acpy3_instr.c"/>
+        <srcFile name="lib/debug/acpy3cpu.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait_cpucopy.o470uC.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure16b.o470uC.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_completelinked.o470uC.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastsetfinal.o470uC.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_complete.o470uC.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_config.o470uC.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_qdma_arm.o470uC.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure32b.o470uC.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait_arm.o470uC.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_configure.o470uC.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start_arm.o470uC.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_waitlinked_arm.o470uC.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_setfinal.o470uC.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_init.o470uC.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/package/package_ti.sdo.fc.acpy3.o470uC.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start_cpucopy.o470uC.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_arm.o470uC.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug_trace/acpy3.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/release/acpy3.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/debug/acpy3instrumented.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3instrumented/acpy3_instr.o674.dep" src="acpy3_instr.c"/>
+        <srcFile name="lib/trace/acpy3.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_wait_cpucopy.o470MV.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastconfigure16b.o470MV.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_completelinked.o470MV.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastsetfinal.o470MV.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_complete.o470MV.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_config.o470MV.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_qdma_arm.o470MV.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastconfigure32b.o470MV.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_wait_arm.o470MV.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_configure.o470MV.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_start_arm.o470MV.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_waitlinked_arm.o470MV.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_setfinal.o470MV.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_init.o470MV.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/package/package_ti.sdo.fc.acpy3.o470MV.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_start_cpucopy.o470MV.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_arm.o470MV.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/trace/acpy3.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_wait_cpucopy.ov4TCE.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastconfigure16b.ov4TCE.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_completelinked.ov4TCE.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastsetfinal.ov4TCE.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_complete.ov4TCE.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_config.ov4TCE.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_qdma_arm.ov4TCE.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastconfigure32b.ov4TCE.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_wait_arm.ov4TCE.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_configure.ov4TCE.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_start_arm.ov4TCE.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_waitlinked_arm.ov4TCE.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_setfinal.ov4TCE.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_init.ov4TCE.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/package/package_ti.sdo.fc.acpy3.ov4TCE.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_start_cpucopy.ov4TCE.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_arm.ov4TCE.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug/acpy3cpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/release/acpy3cpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait_cpucopy.o86U.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure16b.o86U.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_completelinked.o86U.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastsetfinal.o86U.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_complete.o86U.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_config.o86U.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_qdma_arm.o86U.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure32b.o86U.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait_arm.o86U.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_configure.o86U.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start_arm.o86U.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_waitlinked_arm.o86U.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_setfinal.o86U.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_init.o86U.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/package/package_ti.sdo.fc.acpy3.o86U.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start_cpucopy.o86U.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_arm.o86U.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug/acpy3cpu.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait_cpucopy.ov4TCE.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure16b.ov4TCE.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_completelinked.ov4TCE.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastsetfinal.ov4TCE.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_complete.ov4TCE.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_config.ov4TCE.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_qdma_arm.ov4TCE.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure32b.ov4TCE.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait_arm.ov4TCE.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_configure.ov4TCE.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start_arm.ov4TCE.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_waitlinked_arm.ov4TCE.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_setfinal.ov4TCE.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_init.ov4TCE.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/package/package_ti.sdo.fc.acpy3.ov4TCE.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start_cpucopy.ov4TCE.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_arm.ov4TCE.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/debug/acpy3cpu.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait_cpucopy.o470MV.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure16b.o470MV.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_completelinked.o470MV.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastsetfinal.o470MV.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_complete.o470MV.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_config.o470MV.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_qdma_arm.o470MV.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_fastconfigure32b.o470MV.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_wait_arm.o470MV.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_configure.o470MV.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start_arm.o470MV.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_waitlinked_arm.o470MV.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_setfinal.o470MV.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_init.o470MV.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/package/package_ti.sdo.fc.acpy3.o470MV.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_start_cpucopy.o470MV.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3cpu/acpy3_arm.o470MV.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/trace/acpy3instrumented.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3instrumented/acpy3_instr.o674.dep" src="acpy3_instr.c"/>
+        <srcFile name="lib/release/acpy3cpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3cpu/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/release/acpy3.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_wait_cpucopy.o470uC.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastconfigure16b.o470uC.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_completelinked.o470uC.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastsetfinal.o470uC.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_complete.o470uC.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_config.o470uC.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_qdma_arm.o470uC.dep" src="acpy3_qdma_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_fastconfigure32b.o470uC.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_wait_arm.o470uC.dep" src="acpy3_wait_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_configure.o470uC.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_start_arm.o470uC.dep" src="acpy3_start_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_waitlinked_arm.o470uC.dep" src="acpy3_waitlinked_arm.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_setfinal.o470uC.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_init.o470uC.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/package/package_ti.sdo.fc.acpy3.o470uC.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_start_cpucopy.o470uC.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3/acpy3_arm.o470uC.dep" src="acpy3_arm.c"/>
+        <srcFile name="lib/release/acpy3instrumented.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="package/lib/lib/release/acpy3instrumented/acpy3_instr.o64P.dep" src="acpy3_instr.c"/>
+        <srcFile name="lib/debug/acpy3.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug/acpy3/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/debug_trace/acpy3.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_wait_cpucopy.o64P.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastconfigure16b.o64P.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_completelinked.o64P.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastsetfinal.o64P.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_qdma.o64P.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_complete.o64P.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3.o64P.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_config.o64P.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_fastconfigure32b.o64P.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_waitlinked.o64P.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_start.o64P.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_configure.o64P.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_setfinal.o64P.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_init.o64P.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/package/package_ti.sdo.fc.acpy3.o64P.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_start_cpucopy.o64P.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/debug_trace/acpy3/acpy3_wait.o64P.dep" src="acpy3_wait.c"/>
+        <srcFile name="lib/trace/acpy3.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_wait_cpucopy.o674.dep" src="acpy3_wait_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastconfigure16b.o674.dep" src="acpy3_fastconfigure16b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_completelinked.o674.dep" src="acpy3_completelinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastsetfinal.o674.dep" src="acpy3_fastsetfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_qdma.o674.dep" src="acpy3_qdma.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_complete.o674.dep" src="acpy3_complete.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3.o674.dep" src="acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_config.o674.dep" src="acpy3_config.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_fastconfigure32b.o674.dep" src="acpy3_fastconfigure32b.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_waitlinked.o674.dep" src="acpy3_waitlinked.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_start.o674.dep" src="acpy3_start.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_configure.o674.dep" src="acpy3_configure.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_setfinal.o674.dep" src="acpy3_setfinal.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_init.o674.dep" src="acpy3_init.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/package/package_ti.sdo.fc.acpy3.o674.dep" src="package/package_ti.sdo.fc.acpy3.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_start_cpucopy.o674.dep" src="acpy3_start_cpucopy.c"/>
+        <srcFile name="package/lib/lib/trace/acpy3/acpy3_wait.o674.dep" src="acpy3_wait.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_acpy3.tar.dep" src="package/rel/ti_sdo_fc_acpy3.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug_trace/acpy3"
+        pname="lib/debug_trace/acpy3.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/acpy3cpu"
+        pname="lib/debug/acpy3cpu.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/acpy3"
+        pname="lib/release/acpy3.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/acpy3instrumented"
+        pname="lib/debug/acpy3instrumented.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/acpy3"
+        pname="lib/release/acpy3.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/acpy3cpu"
+        pname="lib/debug/acpy3cpu.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/acpy3cpu"
+        pname="lib/debug_trace/acpy3cpu.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/acpy3cpu"
+        pname="lib/trace/acpy3cpu.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/acpy3instrumented"
+        pname="lib/trace/acpy3instrumented.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/acpy3"
+        pname="lib/debug_trace/acpy3.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/acpy3cpu"
+        pname="lib/release/acpy3cpu.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/acpy3"
+        pname="lib/debug_trace/acpy3.av4TCE"
+        profile="debug_trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/acpy3"
+        pname="lib/debug/acpy3.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/acpy3cpu"
+        pname="lib/debug_trace/acpy3cpu.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/acpy3instrumented"
+        pname="lib/debug_trace/acpy3instrumented.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/acpy3"
+        pname="lib/trace/acpy3.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/acpy3cpu"
+        pname="lib/release/acpy3cpu.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/acpy3cpu"
+        pname="lib/trace/acpy3cpu.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/acpy3cpu"
+        pname="lib/release/acpy3cpu.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug_trace/acpy3cpu"
+        pname="lib/debug_trace/acpy3cpu.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/acpy3cpu"
+        pname="lib/trace/acpy3cpu.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/acpy3"
+        pname="lib/release/acpy3.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/acpy3cpu"
+        pname="lib/debug_trace/acpy3cpu.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/acpy3"
+        pname="lib/debug/acpy3.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/acpy3cpu"
+        pname="lib/debug_trace/acpy3cpu.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/acpy3cpu"
+        pname="lib/debug_trace/acpy3cpu.av4TCE"
+        profile="debug_trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/trace/acpy3cpu"
+        pname="lib/trace/acpy3cpu.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/acpy3cpu"
+        pname="lib/trace/acpy3cpu.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/acpy3cpu"
+        pname="lib/trace/acpy3cpu.av4TCE"
+        profile="trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/acpy3cpu"
+        pname="lib/release/acpy3cpu.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/acpy3"
+        pname="lib/debug/acpy3.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/acpy3"
+        pname="lib/trace/acpy3.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/acpy3"
+        pname="lib/debug/acpy3.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/acpy3instrumented"
+        pname="lib/release/acpy3instrumented.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/acpy3instrumented"
+        pname="lib/debug_trace/acpy3instrumented.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/acpy3cpu"
+        pname="lib/debug/acpy3cpu.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/acpy3"
+        pname="lib/debug_trace/acpy3.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/release/acpy3"
+        pname="lib/release/acpy3.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/acpy3instrumented"
+        pname="lib/debug/acpy3instrumented.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/acpy3"
+        pname="lib/trace/acpy3.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/acpy3"
+        pname="lib/trace/acpy3.av4TCE"
+        profile="trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/acpy3cpu"
+        pname="lib/debug/acpy3cpu.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/release/acpy3cpu"
+        pname="lib/release/acpy3cpu.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/acpy3cpu"
+        pname="lib/debug/acpy3cpu.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/acpy3cpu"
+        pname="lib/debug/acpy3cpu.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/acpy3instrumented"
+        pname="lib/trace/acpy3instrumented.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/release/acpy3cpu"
+        pname="lib/release/acpy3cpu.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/acpy3"
+        pname="lib/release/acpy3.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/acpy3instrumented"
+        pname="lib/release/acpy3instrumented.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/acpy3"
+        pname="lib/debug/acpy3.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/acpy3"
+        pname="lib/debug_trace/acpy3.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/acpy3"
+        pname="lib/trace/acpy3.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_acpy3"
+        pname="ti_sdo_fc_acpy3.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/release/acpy3cpu.a674"/>
+        <file name="acpy3_fastsetfinal.c"/>
+        <file name="lib/debug_trace/acpy3cpu.a64P"/>
+        <file name="lib/debug_trace/acpy3instrumented.a674"/>
+        <file name="acpy3_fastsetfinal.h"/>
+        <file name="lib/debug_trace/acpy3.a64P"/>
+        <file name="lib/debug/acpy3.av4TCE"/>
+        <file name="lib/release/acpy3cpu.a86U"/>
+        <file name="acpy3_init.c"/>
+        <file name="lib/release/acpy3instrumented.a674"/>
+        <file name="lib/trace/acpy3cpu.av4TCE"/>
+        <file name="lib/debug/acpy3cpu.a470MV"/>
+        <file name="gt_dais.c"/>
+        <file name="lib/debug/acpy3.a470MV"/>
+        <file name="lib/release/acpy3.a470uC"/>
+        <file name="acpy3_fastconfigure32b.c"/>
+        <file name="acpy3_start.c"/>
+        <file name="acpy3_fastconfigure32b.h"/>
+        <file name="lib/debug/acpy3cpu.av4TCE"/>
+        <file name="acpy3_start.h"/>
+        <file name="lib/trace/acpy3cpu.a470MV"/>
+        <file name="acpy3_start_arm.c"/>
+        <file name="lib/release/acpy3cpu.a470uC"/>
+        <file name="lib/debug_trace/acpy3cpu.av4TCE"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="acpy3_util.h"/>
+        <file name="lib/debug/acpy3instrumented.a674"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/debug_trace/acpy3cpu.a470MV"/>
+        <file name="acpy3_waitlinked.c"/>
+        <file name="lib/debug/acpy3cpu.a64P"/>
+        <file name="acpy3_qdma_arm.c"/>
+        <file name="lib/trace/acpy3.av4TCE"/>
+        <file name="acpy3_config.c"/>
+        <file name="package.bld"/>
+        <file name="lib/trace/acpy3cpu.a64P"/>
+        <file name="acpy3_qdma_arm.h"/>
+        <file name="lib/debug_trace/acpy3cpu.a674"/>
+        <file name="acpy3_qdma.c"/>
+        <file name="lib/debug_trace/acpy3.a674"/>
+        <file name="acpy3.c"/>
+        <file name="acpy3_qdma.h"/>
+        <file name="lib/trace/acpy3.a470MV"/>
+        <file name="acpy3_arm.c"/>
+        <file name="lib/trace/acpy3.a64P"/>
+        <file name="acpy3.h"/>
+        <file name="lib/debug_trace/acpy3cpu.a86U"/>
+        <file name="lib/release/acpy3.a64P"/>
+        <file name="acpy3_instr.c"/>
+        <file name="acpy3_instr.h"/>
+        <file name="lib/debug/acpy3cpu.a470uC"/>
+        <file name="lib/debug/acpy3.a470uC"/>
+        <file name="acpy3_wait_cpucopy.c"/>
+        <file name="lib/debug_trace/acpy3.av4TCE"/>
+        <file name="lib/trace/acpy3cpu.a470uC"/>
+        <file name="acpy3_wait.c"/>
+        <file name="acpy3_start_cpucopy.c"/>
+        <file name="lib/trace/acpy3instrumented.a64P"/>
+        <file name="acpy3_waitlinked_arm.c"/>
+        <file name="acpy3_wait.h"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/debug_trace/acpy3.a470MV"/>
+        <file name="lib/debug/acpy3.a64P"/>
+        <file name="package/package_ti.sdo.fc.acpy3.c"/>
+        <file name="acpy3_fastconfigure16b.c"/>
+        <file name="acpy3_complete.c"/>
+        <file name="lib/debug_trace/acpy3cpu.a470uC"/>
+        <file name="lib/release/acpy3cpu.a64P"/>
+        <file name="lib/release/acpy3.av4TCE"/>
+        <file name="acpy3_fastconfigure16b.h"/>
+        <file name="acpy3_complete.h"/>
+        <file name="lib/debug/acpy3cpu.a674"/>
+        <file name="lib/debug_trace/acpy3instrumented.a64P"/>
+        <file name="lib/trace/acpy3cpu.a674"/>
+        <file name="lib/release/acpy3.a470MV"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/release/acpy3cpu.av4TCE"/>
+        <file name="lib/debug/acpy3cpu.a86U"/>
+        <file name="lib/release/acpy3instrumented.a64P"/>
+        <file name="lib/trace/acpy3.a674"/>
+        <file name="package/build.cfg"/>
+        <file name="acpy3_setfinal.c"/>
+        <file name="lib/trace/acpy3cpu.a86U"/>
+        <file name="lib/release/acpy3.a674"/>
+        <file name="acpy3_setfinal.h"/>
+        <file name="lib/trace/acpy3.a470uC"/>
+        <file name="lib/release/acpy3cpu.a470MV"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="acpy3_lock.h"/>
+        <file name="acpy3_wait_arm.c"/>
+        <file name="lib/debug/acpy3instrumented.a64P"/>
+        <file name="lib/trace/acpy3instrumented.a674"/>
+        <file name="acpy3_completelinked.c"/>
+        <file name="lib/debug/acpy3.a674"/>
+        <file name="acpy3_configure.c"/>
+        <file name="lib/debug_trace/acpy3.a470uC"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

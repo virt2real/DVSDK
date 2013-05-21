@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>package ti.sdo.ce.examples.codecs.viddec2split_copy</title>
+<meta name="description" content="Simple Codec Engine compatible 'wrapper package', enabling the VIDDEC2_COPY split codecs distributed with xDAIS to be integrated into a Codec Engine-based system">
+<link rel="stylesheet" type="text/css" href="../../../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">package</span> <span class="xdoc-id">ti.sdo.ce.examples.codecs.viddec2split_copy</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../../../../ti/sdo/ce/examples/codecs/viddec2split_copy/VIDDEC2BACK_COPY.html" title="module VIDDEC2BACK_COPY"><img class="xdocHdrArrow" src="../../../../../../Arrow_right.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../../index.html#ti/sdo/ce/examples/codecs/viddec2split_copy/package.html">index URL</a></div>
+<p class="xdocHdrSummary">Simple Codec Engine compatible 'wrapper package',
+  enabling the VIDDEC2_COPY split codecs
+  distributed with xDAIS to be integrated into a Codec Engine-based
+  system</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdoc-desc">Additional documentation</a></li>
+</ul>
+<div class="xdocBrief">
+This codec illustrates how to provide Codec Engine-specific
+  packaging around an existing algorithm.  It also demonstrates how
+  a single codec package can supply more than one codec - in this
+  case, both the encoder and decoder codecs are supported by this
+  single codec package.
+[&nbsp;<a class="xdocBrief" href="#xdoc-desc">more</a>&nbsp;...&nbsp;]
+</div>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../../ti/sdo/ce/examples/codecs/viddec2split_copy/package-src.html"><span class="xdocLabelFile">ti/sdo/ce/examples/codecs/viddec2split_copy/package.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">requires</span> <a class="xdoc-link" href="../../../../../../ti/xdais/dm/examples/viddec2split_copy/package.html" title="ti.xdais.dm.examples.viddec2split_copy">ti.xdais.dm.examples.viddec2split_copy</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <go><span class="xdoc-id">ti.sdo.ce.examples.codecs.viddec2split_copy</span></go> [1, 0, 0] {
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">module</span> <a class='xdocSynGo' href='../../../../../../ti/sdo/ce/examples/codecs/viddec2split_copy/VIDDEC2BACK_COPY.html' title='ti.sdo.ce.examples.codecs.viddec2split_copy.VIDDEC2BACK_COPY'><span class="xdoc-id">VIDDEC2BACK_COPY</span>;</a>
+</div>
+<div class='xdocSynSum'><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;VIDDEC2BACK_COPY specification</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">module</span> <a class='xdocSynGo' href='../../../../../../ti/sdo/ce/examples/codecs/viddec2split_copy/VIDDEC2FRONT_COPY.html' title='ti.sdo.ce.examples.codecs.viddec2split_copy.VIDDEC2FRONT_COPY'><span class="xdoc-id">VIDDEC2FRONT_COPY</span>;</a>
+</div>
+<div class='xdocSynSum'><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;VIDDEC2FRONT_COPY specification</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<span id="xdoc-desc"></span>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This codec illustrates how to provide Codec Engine-specific
+  packaging around an existing algorithm.  It also demonstrates how
+  a single codec package can supply more than one codec - in this
+  case, both the encoder and decoder codecs are supported by this
+  single codec package.</div>
+<div class="xdocText">Five files are required to integrate into the Codec Engine:</div>
+<div class="xdocText"><DL><DT> <tt>package.xdc</tt></DT><DD>
+	    This file is required to declare a globally unique name
+	    for this package and to list all codec interfaces
+	    available.  This package has two interfaces, VIDDEC2FRONT_COPY and
+	    VIDDEC2BACK_COPY.
+</DD><DT> <tt>VIDDEC2FRONT_COPY.xdc</tt></DT><DD>
+	    This file defines the VIDDEC2FRONT_COPY codec, which implements
+	    the ti.sdo.ce.video2.IVIDDEC2FRONT interface.
+</DD><DT> <tt>VIDDEC2FRONT_COPY.xs</tt></DT><DD>
+	    This file implements the functions required by the IVIDDEC2FRONT
+	    interface; these functions enable the codec to describe its
+	    non-functional requirements such as stack size.
+</DD><DT> <tt>VIDDEC2BACK_COPY.xdc</tt></DT><DD>
+	    This file defines the VIDDEC2BACK_COPY codec, which implements
+	    the ti.sdo.ce.video2.IVIDDEC2BACK interface.
+</DD><DT> <tt>VIDDEC2BACK.xs</tt></DT><DD>
+	    This file implements the functions required by the IVIDDEC2BACK
+	    interface; these functions enable the codec to describe its
+	    non-functional requirements such as stack size.
+
+  Integration into the Codec Engine requires no change to the codecs
+  libraries.
+ 
+</DD></DL></div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:24 GMT</div>
+</div></div></body>
+</html>

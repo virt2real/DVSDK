@@ -1,0 +1,2007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.targets.arm.rtsarm" version="1, 0, 0, 0" producerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="xdc/runtime/SysMin.c"/>
+        <srcFile name="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="xdc/runtime/Assert.c"/>
+        <srcFile name="xdc/runtime/HeapStd.c"/>
+        <srcFile name="xdc/runtime/HeapMin.c"/>
+        <srcFile name="xdc/runtime/Timestamp.c"/>
+        <srcFile name="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="xdc/runtime/Diags.c"/>
+        <srcFile name="xdc/runtime/Startup.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="xdc/runtime/System.c"/>
+        <srcFile name="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="xdc/runtime/Core_label.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="xdc/runtime/Gate.c"/>
+        <srcFile name="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="xdc/runtime/Memory.c"/>
+        <srcFile name="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="boot.asm"/>
+        <srcFile name="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="xdc/runtime/Rta.c"/>
+        <srcFile name="xdc/runtime/Error.c"/>
+        <srcFile name="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="xdc/runtime/Log.c"/>
+        <srcFile name="xdc/runtime/Core_params.c"/>
+        <srcFile name="auto_init.asm"/>
+        <srcFile name="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="xdc/runtime/Text.c"/>
+        <srcFile name="xdc/runtime/GateNull.c"/>
+        <srcFile name="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="xdc/runtime/SysStd.c"/>
+        <srcFile name="xdc/runtime/Core_mem.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/boot.aer4ft.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oer4ft.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oer4ft.dep" src="boot.asm"/>
+        <srcFile name="lib/boot.am3e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.om3e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.om3e.dep" src="boot.asm"/>
+        <srcFile name="lib/boot.ae470.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oe470.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oe470.dep" src="boot.asm"/>
+        <srcFile name="lib/boot.ae7.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oe7.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oe7.dep" src="boot.asm"/>
+        <srcFile name="lib/auto_init.ae7e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oe7e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oe7e.dep" src="auto_init.asm"/>
+        <srcFile name="lib/auto_init.ar4t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.or4t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.or4t.dep" src="auto_init.asm"/>
+        <srcFile name="lib/boot.ae9.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oe9.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oe9.dep" src="boot.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.a11.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.o11.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.o11.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.o11.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.o11.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.o11.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.o11.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.o11.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.o11.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.o11.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.o11.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.o11.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.o11.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.o11.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.o11.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.o11.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.o11.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.o11.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.o11.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.o11.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.o11.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.o11.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.o11.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.o11.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.o11.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.o11.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.o11.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.o11.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.o11.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.o11.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.o11.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.o11.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.o11.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.o11.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.o11.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.o11.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.o11.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.o11.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.o11.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.o11.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.o11.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/auto_init.ae7.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oe7.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oe7.dep" src="auto_init.asm"/>
+        <srcFile name="lib/auto_init.ae9.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oe9.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oe9.dep" src="auto_init.asm"/>
+        <srcFile name="lib/boot.ar4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.or4.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.or4.dep" src="boot.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.aer4e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oer4e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oer4e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oer4e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oer4e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oer4e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oer4e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oer4e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oer4e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oer4e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oer4e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oer4e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oer4e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oer4e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oer4e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oer4e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oer4e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oer4e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oer4e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oer4e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oer4e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oer4e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oer4e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oer4e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oer4e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oer4e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oer4e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oer4e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oer4e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oer4e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oer4e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oer4e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oer4e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oer4e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oer4e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oer4e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oer4e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oer4e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oer4e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oer4e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oer4e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/auto_init.ar4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.or4.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.or4.dep" src="auto_init.asm"/>
+        <srcFile name="lib/boot.aer4te.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oer4te.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oer4te.dep" src="boot.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.aer4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oer4.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oer4.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oer4.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oer4.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oer4.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oer4.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oer4.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oer4.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oer4.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oer4.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oer4.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oer4.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oer4.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oer4.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oer4.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oer4.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oer4.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oer4.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oer4.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oer4.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oer4.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oer4.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oer4.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oer4.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oer4.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oer4.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oer4.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oer4.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oer4.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oer4.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oer4.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oer4.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oer4.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oer4.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oer4.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oer4.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oer4.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oer4.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oer4.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oer4.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.o9t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.o9t.dep" src="boot.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.aer4t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oer4t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oer4t.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oer4t.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oer4t.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oer4t.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oer4t.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oer4t.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oer4t.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oer4t.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oer4t.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oer4t.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oer4t.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oer4t.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oer4t.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oer4t.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oer4t.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oer4t.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oer4t.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oer4t.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oer4t.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oer4t.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oer4t.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oer4t.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oer4t.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oer4t.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oer4t.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oer4t.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oer4t.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oer4t.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oer4t.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oer4t.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oer4t.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oer4t.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oer4t.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oer4t.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oer4t.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oer4t.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oer4t.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oer4t.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oer4t.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.ar4te.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.or4te.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.or4te.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.or4te.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.or4te.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.or4te.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.or4te.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.or4te.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.or4te.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.or4te.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.or4te.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.or4te.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.or4te.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.or4te.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.or4te.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.or4te.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.or4te.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.or4te.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.or4te.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.or4te.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.or4te.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.or4te.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.or4te.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.or4te.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.or4te.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.or4te.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.or4te.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.or4te.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.or4te.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.or4te.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.or4te.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.or4te.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.or4te.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.or4te.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.or4te.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.or4te.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.or4te.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.or4te.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.or4te.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.or4te.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.or4te.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/auto_init.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.o9t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.o9t.dep" src="auto_init.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.a11e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.o11e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.o11e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.o11e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.o11e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.o11e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.o11e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.o11e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.o11e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.o11e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.o11e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.o11e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.o11e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.o11e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.o11e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.o11e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.o11e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.o11e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.o11e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.o11e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.o11e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.o11e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.o11e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.o11e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.o11e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.o11e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.o11e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.o11e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.o11e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.o11e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.o11e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.o11e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.o11e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.o11e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.o11e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.o11e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.o11e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.o11e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.o11e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.o11e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.o11e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.aer4fe.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oer4fe.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oer4fe.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oer4fe.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oer4fe.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oer4fe.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oer4fe.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oer4fe.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oer4fe.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oer4fe.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oer4fe.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oer4fe.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oer4fe.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oer4fe.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oer4fe.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oer4fe.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oer4fe.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oer4fe.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oer4fe.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oer4fe.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oer4fe.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oer4fe.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oer4fe.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oer4fe.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oer4fe.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oer4fe.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oer4fe.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oer4fe.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oer4fe.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oer4fe.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oer4fe.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oer4fe.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oer4fe.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oer4fe.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oer4fe.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oer4fe.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oer4fe.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oer4fe.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oer4fe.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oer4fe.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oer4fe.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.ae9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oe9t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oe9t.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oe9t.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oe9t.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oe9t.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oe9t.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oe9t.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oe9t.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oe9t.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oe9t.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oe9t.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oe9t.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oe9t.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oe9t.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oe9t.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oe9t.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oe9t.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oe9t.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oe9t.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oe9t.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oe9t.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oe9t.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oe9t.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oe9t.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oe9t.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oe9t.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oe9t.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oe9t.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oe9t.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oe9t.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oe9t.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oe9t.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oe9t.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oe9t.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oe9t.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oe9t.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oe9t.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oe9t.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oe9t.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oe9t.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.a7e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.o7e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.o7e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.o7e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.o7e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.o7e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.o7e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.o7e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.o7e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.o7e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.o7e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.o7e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.o7e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.o7e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.o7e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.o7e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.o7e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.o7e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.o7e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.o7e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.o7e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.o7e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.o7e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.o7e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.o7e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.o7e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.o7e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.o7e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.o7e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.o7e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.o7e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.o7e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.o7e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.o7e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.o7e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.o7e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.o7e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.o7e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.o7e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.o7e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.o7e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.am3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.om3.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.om3.dep" src="boot.asm"/>
+        <srcFile name="lib/boot.ar4e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.or4e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.or4e.dep" src="boot.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.a7.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.o7.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.o7.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.o7.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.o7.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.o7.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.o7.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.o7.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.o7.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.o7.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.o7.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.o7.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.o7.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.o7.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.o7.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.o7.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.o7.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.o7.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.o7.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.o7.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.o7.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.o7.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.o7.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.o7.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.o7.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.o7.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.o7.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.o7.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.o7.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.o7.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.o7.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.o7.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.o7.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.o7.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.o7.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.o7.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.o7.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.o7.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.o7.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.o7.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.o7.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/auto_init.aem3e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oem3e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oem3e.dep" src="auto_init.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.a9.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.o9.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.o9.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.o9.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.o9.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.o9.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.o9.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.o9.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.o9.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.o9.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.o9.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.o9.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.o9.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.o9.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.o9.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.o9.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.o9.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.o9.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.o9.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.o9.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.o9.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.o9.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.o9.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.o9.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.o9.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.o9.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.o9.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.o9.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.o9.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.o9.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.o9.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.o9.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.o9.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.o9.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.o9.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.o9.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.o9.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.o9.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.o9.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.o9.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.o9.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/auto_init.aer4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oer4.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oer4.dep" src="auto_init.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.aer4ft.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oer4ft.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oer4ft.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oer4ft.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oer4ft.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oer4ft.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oer4ft.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oer4ft.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oer4ft.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oer4ft.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oer4ft.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oer4ft.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oer4ft.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oer4ft.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oer4ft.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oer4ft.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oer4ft.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oer4ft.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oer4ft.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oer4ft.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oer4ft.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oer4ft.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oer4ft.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oer4ft.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oer4ft.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oer4ft.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oer4ft.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oer4ft.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oer4ft.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oer4ft.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oer4ft.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oer4ft.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oer4ft.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oer4ft.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oer4ft.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oer4ft.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oer4ft.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oer4ft.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oer4ft.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oer4ft.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oer4ft.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/auto_init.am3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.om3.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.om3.dep" src="auto_init.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oem3.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oem3.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oem3.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oem3.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oem3.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oem3.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oem3.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oem3.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oem3.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oem3.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oem3.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oem3.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oem3.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oem3.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oem3.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oem3.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oem3.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oem3.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oem3.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oem3.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oem3.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oem3.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oem3.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oem3.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oem3.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oem3.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oem3.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oem3.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oem3.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oem3.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oem3.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oem3.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oem3.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oem3.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oem3.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oem3.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oem3.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oem3.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oem3.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oem3.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.ar4t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.or4t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.or4t.dep" src="boot.asm"/>
+        <srcFile name="lib/boot.ae7e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oe7e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oe7e.dep" src="boot.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.ae470.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oe470.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oe470.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oe470.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oe470.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oe470.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oe470.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oe470.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oe470.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oe470.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oe470.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oe470.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oe470.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oe470.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oe470.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oe470.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oe470.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oe470.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oe470.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oe470.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oe470.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oe470.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oe470.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oe470.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oe470.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oe470.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oe470.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oe470.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oe470.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oe470.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oe470.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oe470.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oe470.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oe470.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oe470.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oe470.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oe470.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oe470.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oe470.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oe470.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oe470.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/auto_init.a11e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.o11e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.o11e.dep" src="auto_init.asm"/>
+        <srcFile name="lib/boot.aem3e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oem3e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oem3e.dep" src="boot.asm"/>
+        <srcFile name="lib/auto_init.ae9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oe9t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oe9t.dep" src="auto_init.asm"/>
+        <srcFile name="lib/boot.a7.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.o7.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.o7.dep" src="boot.asm"/>
+        <srcFile name="lib/boot.a9.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.o9.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.o9.dep" src="boot.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.am3e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.om3e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.om3e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.om3e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.om3e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.om3e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.om3e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.om3e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.om3e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.om3e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.om3e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.om3e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.om3e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.om3e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.om3e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.om3e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.om3e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.om3e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.om3e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.om3e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.om3e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.om3e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.om3e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.om3e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.om3e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.om3e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.om3e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.om3e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.om3e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.om3e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.om3e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.om3e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.om3e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.om3e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.om3e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.om3e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.om3e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.om3e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.om3e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.om3e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.om3e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.ae7.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oe7.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oe7.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oe7.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oe7.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oe7.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oe7.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oe7.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oe7.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oe7.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oe7.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oe7.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oe7.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oe7.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oe7.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oe7.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oe7.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oe7.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oe7.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oe7.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oe7.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oe7.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oe7.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oe7.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oe7.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oe7.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oe7.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oe7.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oe7.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oe7.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oe7.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oe7.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oe7.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oe7.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oe7.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oe7.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oe7.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oe7.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oe7.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oe7.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oe7.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/auto_init.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oem3.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oem3.dep" src="auto_init.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.ae9.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oe9.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oe9.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oe9.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oe9.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oe9.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oe9.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oe9.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oe9.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oe9.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oe9.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oe9.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oe9.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oe9.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oe9.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oe9.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oe9.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oe9.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oe9.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oe9.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oe9.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oe9.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oe9.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oe9.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oe9.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oe9.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oe9.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oe9.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oe9.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oe9.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oe9.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oe9.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oe9.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oe9.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oe9.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oe9.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oe9.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oe9.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oe9.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oe9.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oe9.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.a11.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.o11.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.o11.dep" src="boot.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.aer4te.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oer4te.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oer4te.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oer4te.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oer4te.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oer4te.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oer4te.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oer4te.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oer4te.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oer4te.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oer4te.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oer4te.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oer4te.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oer4te.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oer4te.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oer4te.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oer4te.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oer4te.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oer4te.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oer4te.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oer4te.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oer4te.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oer4te.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oer4te.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oer4te.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oer4te.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oer4te.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oer4te.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oer4te.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oer4te.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oer4te.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oer4te.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oer4te.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oer4te.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oer4te.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oer4te.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oer4te.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oer4te.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oer4te.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oer4te.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oer4te.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/auto_init.aer4fe.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oer4fe.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oer4fe.dep" src="auto_init.asm"/>
+        <srcFile name="lib/auto_init.a11.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.o11.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.o11.dep" src="auto_init.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.ar4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.or4.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.or4.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.or4.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.or4.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.or4.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.or4.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.or4.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.or4.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.or4.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.or4.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.or4.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.or4.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.or4.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.or4.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.or4.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.or4.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.or4.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.or4.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.or4.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.or4.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.or4.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.or4.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.or4.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.or4.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.or4.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.or4.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.or4.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.or4.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.or4.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.or4.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.or4.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.or4.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.or4.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.or4.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.or4.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.or4.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.or4.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.or4.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.or4.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.or4.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/auto_init.am3e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.om3e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.om3e.dep" src="auto_init.asm"/>
+        <srcFile name="lib/auto_init.aer4e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oer4e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oer4e.dep" src="auto_init.asm"/>
+        <srcFile name="lib/boot.aer4fte.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oer4fte.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oer4fte.dep" src="boot.asm"/>
+        <srcFile name="lib/auto_init.aer4ft.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oer4ft.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oer4ft.dep" src="auto_init.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.o9t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.o9t.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.o9t.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.o9t.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.o9t.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.o9t.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.o9t.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.o9t.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.o9t.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.o9t.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.o9t.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.o9t.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.o9t.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.o9t.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.o9t.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.o9t.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.o9t.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.o9t.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.o9t.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.o9t.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.o9t.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.o9t.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.o9t.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.o9t.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.o9t.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.o9t.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.o9t.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.o9t.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.o9t.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.o9t.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.o9t.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.o9t.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.o9t.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.o9t.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.o9t.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.o9t.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.o9t.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.o9t.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.o9t.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.o9t.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.aer4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oer4.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oer4.dep" src="boot.asm"/>
+        <srcFile name="lib/auto_init.aer4t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oer4t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oer4t.dep" src="auto_init.asm"/>
+        <srcFile name="lib/auto_init.ar4te.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.or4te.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.or4te.dep" src="auto_init.asm"/>
+        <srcFile name="lib/boot.aer4e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oer4e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oer4e.dep" src="boot.asm"/>
+        <srcFile name="lib/boot.a11e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.o11e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.o11e.dep" src="boot.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.am3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.om3.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.om3.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.om3.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.om3.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.om3.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.om3.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.om3.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.om3.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.om3.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.om3.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.om3.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.om3.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.om3.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.om3.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.om3.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.om3.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.om3.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.om3.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.om3.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.om3.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.om3.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.om3.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.om3.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.om3.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.om3.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.om3.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.om3.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.om3.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.om3.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.om3.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.om3.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.om3.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.om3.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.om3.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.om3.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.om3.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.om3.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.om3.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.om3.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.om3.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.ae9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oe9t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oe9t.dep" src="boot.asm"/>
+        <srcFile name="lib/boot.a7e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.o7e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.o7e.dep" src="boot.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.ar4e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.or4e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.or4e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.or4e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.or4e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.or4e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.or4e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.or4e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.or4e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.or4e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.or4e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.or4e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.or4e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.or4e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.or4e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.or4e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.or4e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.or4e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.or4e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.or4e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.or4e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.or4e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.or4e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.or4e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.or4e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.or4e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.or4e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.or4e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.or4e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.or4e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.or4e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.or4e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.or4e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.or4e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.or4e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.or4e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.or4e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.or4e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.or4e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.or4e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.or4e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.aem3e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oem3e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oem3e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oem3e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oem3e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oem3e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oem3e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oem3e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oem3e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oem3e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oem3e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oem3e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oem3e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oem3e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oem3e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oem3e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oem3e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oem3e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oem3e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oem3e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oem3e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oem3e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oem3e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oem3e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oem3e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oem3e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oem3e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oem3e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oem3e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oem3e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oem3e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oem3e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oem3e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oem3e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oem3e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oem3e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oem3e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oem3e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oem3e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oem3e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oem3e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/boot.aer4t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oer4t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oer4t.dep" src="boot.asm"/>
+        <srcFile name="lib/boot.ar4te.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.or4te.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.or4te.dep" src="boot.asm"/>
+        <srcFile name="lib/auto_init.a7e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.o7e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.o7e.dep" src="auto_init.asm"/>
+        <srcFile name="lib/auto_init.aer4te.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oer4te.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oer4te.dep" src="auto_init.asm"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.ar4t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.or4t.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.or4t.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.or4t.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.or4t.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.or4t.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.or4t.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.or4t.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.or4t.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.or4t.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.or4t.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.or4t.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.or4t.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.or4t.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.or4t.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.or4t.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.or4t.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.or4t.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.or4t.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.or4t.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.or4t.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.or4t.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.or4t.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.or4t.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.or4t.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.or4t.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.or4t.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.or4t.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.or4t.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.or4t.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.or4t.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.or4t.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.or4t.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.or4t.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.or4t.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.or4t.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.or4t.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.or4t.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.or4t.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.or4t.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.or4t.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.ae7e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oe7e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oe7e.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oe7e.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oe7e.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oe7e.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oe7e.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oe7e.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oe7e.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oe7e.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oe7e.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oe7e.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oe7e.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oe7e.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oe7e.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oe7e.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oe7e.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oe7e.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oe7e.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oe7e.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oe7e.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oe7e.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oe7e.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oe7e.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oe7e.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oe7e.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oe7e.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oe7e.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oe7e.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oe7e.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oe7e.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oe7e.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oe7e.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oe7e.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oe7e.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oe7e.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oe7e.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oe7e.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oe7e.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oe7e.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oe7e.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.arm.rtsarm.aer4fte.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/package/package_ti.targets.arm.rtsarm.oer4fte.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysMin.oer4fte.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Thread.oer4fte.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThreadSupportNull.oer4fte.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Assert.oer4fte.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapStd.oer4fte.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/HeapMin.oer4fte.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Timestamp.oer4fte.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampNull.oer4fte.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/CacheSupportNull.oer4fte.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Diags.oer4fte.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Startup.oer4fte.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcessSupportNull.oer4fte.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/TimestampStd.oer4fte.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/System.oer4fte.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemProcess.oer4fte.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_label.oer4fte.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateProcess.oer4fte.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Sync.oer4fte.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateThread.oer4fte.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerSys.oer4fte.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Gate.oer4fte.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/xdc_noinit.oer4fte.dep" src="xdc/runtime/xdc_noinit.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/GateH.oer4fte.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Memory.oer4fte.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncSemThread.oer4fte.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncNull.oer4fte.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SyncGeneric.oer4fte.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Rta.oer4fte.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Error.oer4fte.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Semaphore.oer4fte.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/SemThread.oer4fte.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Log.oer4fte.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_params.oer4fte.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/LoggerBuf.oer4fte.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Text.oer4fte.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/GateNull.oer4fte.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/knl/Cache.oer4fte.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/SysStd.oer4fte.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.arm.rtsarm/xdc/runtime/Core_mem.oer4fte.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/auto_init.aer4fte.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oer4fte.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oer4fte.dep" src="auto_init.asm"/>
+        <srcFile name="lib/boot.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oem3.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oem3.dep" src="boot.asm"/>
+        <srcFile name="lib/auto_init.ae470.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.oe470.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.oe470.dep" src="auto_init.asm"/>
+        <srcFile name="lib/boot.aer4fe.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/boot/package/package_ti.targets.arm.rtsarm.oer4fe.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/boot/boot.oer4fe.dep" src="boot.asm"/>
+        <srcFile name="lib/auto_init.a7.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.o7.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.o7.dep" src="auto_init.asm"/>
+        <srcFile name="lib/auto_init.a9.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.o9.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.o9.dep" src="auto_init.asm"/>
+        <srcFile name="lib/auto_init.ar4e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auto_init/package/package_ti.targets.arm.rtsarm.or4e.dep" src="package/package_ti.targets.arm.rtsarm.c"/>
+        <srcFile name="package/lib/lib/auto_init/auto_init.or4e.dep" src="auto_init.asm"/>
+        <srcFile name="package/rel/ti_targets_arm_rtsarm.tar.gz.dep" src="package/rel/ti_targets_arm_rtsarm.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.Arm9t"
+            version="ti.targets.arm.Arm9t{1,0,4.5,0"
+            platform="ti.platforms.sim470xx"
+            isa="v5T"
+            suffix="9t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,4.6,0"
+            platform="ti.platforms.simDucati"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.Arm7"
+            version="ti.targets.arm.Arm7{1,0,4.5,0"
+            platform="ti.platforms.sim470xx"
+            isa="v4T"
+            suffix="7"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.Arm9t"
+            version="ti.targets.arm.elf.Arm9t{1,0,4.6,0"
+            platform="ti.platforms.sim470xx"
+            isa="v5T"
+            suffix="e9t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.Arm9"
+            version="ti.targets.arm.Arm9{1,0,4.5,0"
+            platform="ti.platforms.sim470xx"
+            isa="v5T"
+            suffix="9"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.Arm11"
+            version="ti.targets.arm.Arm11{1,0,4.5,0"
+            platform="ti.platforms.sim470xx"
+            isa="v6"
+            suffix="11"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.R4"
+            version="ti.targets.arm.R4{1,0,4.5,0"
+            platform="ti.platforms.evmTMS570"
+            isa="v7R"
+            suffix="r4"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.R4_big_endian"
+            version="ti.targets.arm.elf.R4_big_endian{1,0,4.6,0"
+            platform="ti.platforms.evmTMS570"
+            isa="v7R"
+            suffix="er4e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.Arm11_big_endian"
+            version="ti.targets.arm.Arm11_big_endian{1,0,4.5,0"
+            platform="ti.platforms.sim470xx"
+            isa="v6"
+            suffix="11e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.R4F_big_endian"
+            version="ti.targets.arm.elf.R4F_big_endian{1,0,4.6,0"
+            platform="ti.platforms.evmTMS570"
+            isa="v7R"
+            suffix="er4fe"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.R4_big_endian"
+            version="ti.targets.arm.R4_big_endian{1,0,4.5,0"
+            platform="ti.platforms.evmTMS570"
+            isa="v7R"
+            suffix="r4e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.R4"
+            version="ti.targets.arm.elf.R4{1,0,4.6,0"
+            platform="ti.platforms.evmTMS570"
+            isa="v7R"
+            suffix="er4"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.Arm7_big_endian"
+            version="ti.targets.arm.Arm7_big_endian{1,0,4.5,0"
+            platform="ti.platforms.sim470xx"
+            isa="v4T"
+            suffix="7e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M3_big_endian"
+            version="ti.targets.arm.elf.M3_big_endian{1,0,4.6,0"
+            platform="ti.platforms.simDucati"
+            isa="v7M"
+            suffix="em3e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.M3_big_endian"
+            version="ti.targets.arm.M3_big_endian{1,0,4.5,0"
+            platform="ti.platforms.simDucati"
+            isa="v7M"
+            suffix="m3e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.TMS470"
+            version="ti.targets.elf.TMS470{1,0,4.6,0"
+            platform="ti.platforms.sim470xx"
+            isa="470"
+            suffix="e470"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.Arm7_big_endian"
+            version="ti.targets.arm.elf.Arm7_big_endian{1,0,4.6,0"
+            platform="ti.platforms.sim470xx"
+            isa="v4T"
+            suffix="e7e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.R4t_big_endian"
+            version="ti.targets.arm.elf.R4t_big_endian{1,0,4.6,0"
+            platform="ti.platforms.evmTMS570"
+            isa="v7R"
+            suffix="er4te"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.R4t"
+            version="ti.targets.arm.elf.R4t{1,0,4.6,0"
+            platform="ti.platforms.evmTMS570"
+            isa="v7R"
+            suffix="er4t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.R4Ft"
+            version="ti.targets.arm.elf.R4Ft{1,0,4.6,0"
+            platform="ti.platforms.evmTMS570"
+            isa="v7R"
+            suffix="er4ft"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.R4t"
+            version="ti.targets.arm.R4t{1,0,4.5,0"
+            platform="ti.platforms.evmTMS570"
+            isa="v7R"
+            suffix="r4t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.Arm7"
+            version="ti.targets.arm.elf.Arm7{1,0,4.6,0"
+            platform="ti.platforms.sim470xx"
+            isa="v4T"
+            suffix="e7"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.R4Ft_big_endian"
+            version="ti.targets.arm.elf.R4Ft_big_endian{1,0,4.6,0"
+            platform="ti.platforms.evmTMS570"
+            isa="v7R"
+            suffix="er4fte"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.Arm9"
+            version="ti.targets.arm.elf.Arm9{1,0,4.6,0"
+            platform="ti.platforms.sim470xx"
+            isa="v5T"
+            suffix="e9"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.R4t_big_endian"
+            version="ti.targets.arm.R4t_big_endian{1,0,4.5,0"
+            platform="ti.platforms.evmTMS570"
+            isa="v7R"
+            suffix="r4te"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.M3"
+            version="ti.targets.arm.M3{1,0,4.5,0"
+            platform="ti.platforms.simDucati"
+            isa="v7M"
+            suffix="m3"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/boot"
+        pname="lib/boot.aer4ft"
+        profile="release"
+        target="ti.targets.arm.elf.R4Ft"/>
+    <library name="lib/boot"
+        pname="lib/boot.am3e"
+        profile="release"
+        target="ti.targets.arm.M3_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae470"
+        profile="release"
+        target="ti.targets.elf.TMS470"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae7"
+        profile="release"
+        target="ti.targets.arm.elf.Arm7"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.ae7e"
+        profile="release"
+        target="ti.targets.arm.elf.Arm7_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.ar4t"
+        profile="release"
+        target="ti.targets.arm.R4t"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae9"
+        profile="release"
+        target="ti.targets.arm.elf.Arm9"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.a11"
+        profile="whole_program"
+        target="ti.targets.arm.Arm11"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.ae7"
+        profile="release"
+        target="ti.targets.arm.elf.Arm7"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.ae9"
+        profile="release"
+        target="ti.targets.arm.elf.Arm9"/>
+    <library name="lib/boot"
+        pname="lib/boot.ar4"
+        profile="release"
+        target="ti.targets.arm.R4"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.aer4e"
+        profile="whole_program"
+        target="ti.targets.arm.elf.R4_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.ar4"
+        profile="release"
+        target="ti.targets.arm.R4"/>
+    <library name="lib/boot"
+        pname="lib/boot.aer4te"
+        profile="release"
+        target="ti.targets.arm.elf.R4t_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.aer4"
+        profile="whole_program"
+        target="ti.targets.arm.elf.R4"/>
+    <library name="lib/boot"
+        pname="lib/boot.a9t"
+        profile="release"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.aer4t"
+        profile="whole_program"
+        target="ti.targets.arm.elf.R4t"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.ar4te"
+        profile="whole_program"
+        target="ti.targets.arm.R4t_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.a9t"
+        profile="release"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.a11e"
+        profile="whole_program"
+        target="ti.targets.arm.Arm11_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.aer4fe"
+        profile="whole_program"
+        target="ti.targets.arm.elf.R4F_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.ae9t"
+        profile="whole_program"
+        target="ti.targets.arm.elf.Arm9t"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.a7e"
+        profile="whole_program"
+        target="ti.targets.arm.Arm7_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.am3"
+        profile="release"
+        target="ti.targets.arm.M3"/>
+    <library name="lib/boot"
+        pname="lib/boot.ar4e"
+        profile="release"
+        target="ti.targets.arm.R4_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.a7"
+        profile="whole_program"
+        target="ti.targets.arm.Arm7"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.aem3e"
+        profile="release"
+        target="ti.targets.arm.elf.M3_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.a9"
+        profile="whole_program"
+        target="ti.targets.arm.Arm9"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.aer4"
+        profile="release"
+        target="ti.targets.arm.elf.R4"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.aer4ft"
+        profile="whole_program"
+        target="ti.targets.arm.elf.R4Ft"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.am3"
+        profile="release"
+        target="ti.targets.arm.M3"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.aem3"
+        profile="whole_program"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/boot"
+        pname="lib/boot.ar4t"
+        profile="release"
+        target="ti.targets.arm.R4t"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae7e"
+        profile="release"
+        target="ti.targets.arm.elf.Arm7_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.ae470"
+        profile="whole_program"
+        target="ti.targets.elf.TMS470"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.a11e"
+        profile="release"
+        target="ti.targets.arm.Arm11_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.aem3e"
+        profile="release"
+        target="ti.targets.arm.elf.M3_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.ae9t"
+        profile="release"
+        target="ti.targets.arm.elf.Arm9t"/>
+    <library name="lib/boot"
+        pname="lib/boot.a7"
+        profile="release"
+        target="ti.targets.arm.Arm7"/>
+    <library name="lib/boot"
+        pname="lib/boot.a9"
+        profile="release"
+        target="ti.targets.arm.Arm9"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.am3e"
+        profile="whole_program"
+        target="ti.targets.arm.M3_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.ae7"
+        profile="whole_program"
+        target="ti.targets.arm.elf.Arm7"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.aem3"
+        profile="release"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.ae9"
+        profile="whole_program"
+        target="ti.targets.arm.elf.Arm9"/>
+    <library name="lib/boot"
+        pname="lib/boot.a11"
+        profile="release"
+        target="ti.targets.arm.Arm11"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.aer4te"
+        profile="whole_program"
+        target="ti.targets.arm.elf.R4t_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.aer4fe"
+        profile="release"
+        target="ti.targets.arm.elf.R4F_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.a11"
+        profile="release"
+        target="ti.targets.arm.Arm11"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.ar4"
+        profile="whole_program"
+        target="ti.targets.arm.R4"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.am3e"
+        profile="release"
+        target="ti.targets.arm.M3_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.aer4e"
+        profile="release"
+        target="ti.targets.arm.elf.R4_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.aer4fte"
+        profile="release"
+        target="ti.targets.arm.elf.R4Ft_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.aer4ft"
+        profile="release"
+        target="ti.targets.arm.elf.R4Ft"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.a9t"
+        profile="whole_program"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/boot"
+        pname="lib/boot.aer4"
+        profile="release"
+        target="ti.targets.arm.elf.R4"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.aer4t"
+        profile="release"
+        target="ti.targets.arm.elf.R4t"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.ar4te"
+        profile="release"
+        target="ti.targets.arm.R4t_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.aer4e"
+        profile="release"
+        target="ti.targets.arm.elf.R4_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.a11e"
+        profile="release"
+        target="ti.targets.arm.Arm11_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.am3"
+        profile="whole_program"
+        target="ti.targets.arm.M3"/>
+    <library name="lib/boot"
+        pname="lib/boot.ae9t"
+        profile="release"
+        target="ti.targets.arm.elf.Arm9t"/>
+    <library name="lib/boot"
+        pname="lib/boot.a7e"
+        profile="release"
+        target="ti.targets.arm.Arm7_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.ar4e"
+        profile="whole_program"
+        target="ti.targets.arm.R4_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.aem3e"
+        profile="whole_program"
+        target="ti.targets.arm.elf.M3_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.aer4t"
+        profile="release"
+        target="ti.targets.arm.elf.R4t"/>
+    <library name="lib/boot"
+        pname="lib/boot.ar4te"
+        profile="release"
+        target="ti.targets.arm.R4t_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.a7e"
+        profile="release"
+        target="ti.targets.arm.Arm7_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.aer4te"
+        profile="release"
+        target="ti.targets.arm.elf.R4t_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.ar4t"
+        profile="whole_program"
+        target="ti.targets.arm.R4t"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.ae7e"
+        profile="whole_program"
+        target="ti.targets.arm.elf.Arm7_big_endian"/>
+    <library name="lib/ti.targets.arm.rtsarm"
+        pname="lib/ti.targets.arm.rtsarm.aer4fte"
+        profile="whole_program"
+        target="ti.targets.arm.elf.R4Ft_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.aer4fte"
+        profile="release"
+        target="ti.targets.arm.elf.R4Ft_big_endian"/>
+    <library name="lib/boot"
+        pname="lib/boot.aem3"
+        profile="release"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.ae470"
+        profile="release"
+        target="ti.targets.elf.TMS470"/>
+    <library name="lib/boot"
+        pname="lib/boot.aer4fe"
+        profile="release"
+        target="ti.targets.arm.elf.R4F_big_endian"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.a7"
+        profile="release"
+        target="ti.targets.arm.Arm7"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.a9"
+        profile="release"
+        target="ti.targets.arm.Arm9"/>
+    <library name="lib/auto_init"
+        pname="lib/auto_init.ar4e"
+        profile="release"
+        target="ti.targets.arm.R4_big_endian"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_targets_arm_rtsarm"
+        pname="../../../../../exports/ti_targets_arm_rtsarm.tar.gz"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/boot.aer4ft"/>
+        <file name="auto_init.asm"/>
+        <file name="lib/boot.am3e"/>
+        <file name="lib/boot.ae470"/>
+        <file name="lib/boot.ae7"/>
+        <file name="lib/auto_init.ae7e"/>
+        <file name="lib/auto_init.ar4t"/>
+        <file name="lib/boot.ae9"/>
+        <file name="lib/ti.targets.arm.rtsarm.a11"/>
+        <file name="lib/auto_init.ae7"/>
+        <file name="lib/auto_init.ae9"/>
+        <file name="lib/boot.ar4"/>
+        <file name="lib/ti.targets.arm.rtsarm.aer4e"/>
+        <file name="lib/auto_init.ar4"/>
+        <file name="lib/boot.aer4te"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/ti.targets.arm.rtsarm.aer4"/>
+        <file name="lib/boot.a9t"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/ti.targets.arm.rtsarm.aer4t"/>
+        <file name="lib/ti.targets.arm.rtsarm.ar4te"/>
+        <file name="lib/auto_init.a9t"/>
+        <file name="lib/ti.targets.arm.rtsarm.a11e"/>
+        <file name="lib/ti.targets.arm.rtsarm.aer4fe"/>
+        <file name="lib/ti.targets.arm.rtsarm.ae9t"/>
+        <file name="lib/ti.targets.arm.rtsarm.a7e"/>
+        <file name="lib/boot.am3"/>
+        <file name="lib/boot.ar4e"/>
+        <file name="lib/ti.targets.arm.rtsarm.a7"/>
+        <file name="lib/auto_init.aem3e"/>
+        <file name="lib/ti.targets.arm.rtsarm.a9"/>
+        <file name="lib/auto_init.aer4"/>
+        <file name="lib/ti.targets.arm.rtsarm.aer4ft"/>
+        <file name="lib/auto_init.am3"/>
+        <file name="lib/ti.targets.arm.rtsarm.aem3"/>
+        <file name="lib/boot.ar4t"/>
+        <file name="lib/boot.ae7e"/>
+        <file name="lib/ti.targets.arm.rtsarm.ae470"/>
+        <file name="lib/auto_init.a11e"/>
+        <file name="lib/boot.aem3e"/>
+        <file name="lib/auto_init.ae9t"/>
+        <file name="lib/boot.a7"/>
+        <file name="lib/boot.a9"/>
+        <file name="lib/ti.targets.arm.rtsarm.am3e"/>
+        <file name="lib/ti.targets.arm.rtsarm.ae7"/>
+        <file name="lib/auto_init.aem3"/>
+        <file name="lib/ti.targets.arm.rtsarm.ae9"/>
+        <file name="lib/boot.a11"/>
+        <file name="lib/ti.targets.arm.rtsarm.aer4te"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/auto_init.aer4fe"/>
+        <file name="lib/auto_init.a11"/>
+        <file name="lib/ti.targets.arm.rtsarm.ar4"/>
+        <file name="boot.asm"/>
+        <file name="lib/auto_init.am3e"/>
+        <file name="lib/boot.aer4fte"/>
+        <file name="lib/auto_init.aer4e"/>
+        <file name="lib/auto_init.aer4ft"/>
+        <file name="lib/ti.targets.arm.rtsarm.a9t"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/boot.aer4"/>
+        <file name="lib/auto_init.aer4t"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/auto_init.ar4te"/>
+        <file name="lib/boot.aer4e"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/boot.a11e"/>
+        <file name="lib/ti.targets.arm.rtsarm.am3"/>
+        <file name="lib/boot.ae9t"/>
+        <file name="lib/boot.a7e"/>
+        <file name="lib/ti.targets.arm.rtsarm.ar4e"/>
+        <file name="lib/ti.targets.arm.rtsarm.aem3e"/>
+        <file name="lib/boot.aer4t"/>
+        <file name="lib/boot.ar4te"/>
+        <file name="lib/auto_init.a7e"/>
+        <file name="lib/auto_init.aer4te"/>
+        <file name="lib/ti.targets.arm.rtsarm.ar4t"/>
+        <file name="lib/ti.targets.arm.rtsarm.ae7e"/>
+        <file name="lib/ti.targets.arm.rtsarm.aer4fte"/>
+        <file name="lib/auto_init.aer4fte"/>
+        <file name="lib/boot.aem3"/>
+        <file name="lib/auto_init.ae470"/>
+        <file name="lib/boot.aer4fe"/>
+        <file name="lib/auto_init.a7"/>
+        <file name="lib/auto_init.a9"/>
+        <file name="lib/auto_init.ar4e"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

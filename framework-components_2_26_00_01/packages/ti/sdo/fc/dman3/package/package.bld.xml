@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.dman3" version="1, 0, 4" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="DMAN3"/>
+    </units>
+    <sources>
+        <srcFile name="dman3_init.c"/>
+        <srcFile name="gt_dais.c"/>
+        <srcFile name="bios_rts.c"/>
+        <srcFile name="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="dman3_api.c"/>
+        <srcFile name="dman3_initImpl.c"/>
+        <srcFile name="dman3_externalRM_api.c"/>
+        <srcFile name="dman3.c"/>
+        <srcFile name="rmm.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/dman3Cfg.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_init.o470uC.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3Cfgcpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3RMCfg.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/dman3_externalRM_api.o64P.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/dman3_externalRM_initImpl.o64P.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3.ov4TCE.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_init.ov4TCE.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/bios_rts.ov4TCE.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_api.ov4TCE.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/rmm.ov4TCE.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_initImpl.ov4TCE.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/package/package_ti.sdo.fc.dman3.ov4TCE.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3.ov4TCE.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_init.ov4TCE.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3/bios_rts.ov4TCE.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_api.ov4TCE.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3/rmm.ov4TCE.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_initImpl.ov4TCE.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3/package/package_ti.sdo.fc.dman3.ov4TCE.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_init.o470MV.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3Cfgcpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/dman3.o86U.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/dman3_api.o86U.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/dman3_initImpl.o86U.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o86U.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_init.o470MV.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3cpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3Cfg.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3cpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_init.o470uC.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3Cfg.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3Cfg.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3RMCfg.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/dman3_externalRM_api.o674.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/dman3_externalRM_initImpl.o674.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3cpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3.o86U.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_init.o86U.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_api.o86U.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_initImpl.o86U.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/package/package_ti.sdo.fc.dman3.o86U.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3cpu.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_init.o470MV.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3RM.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/dman3_externalRM_api.o64P.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/dman3_externalRM_initImpl.o64P.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3cpu.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_init.o470uC.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3RMCfg.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/dman3_externalRM_api.o674.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/dman3_externalRM_initImpl.o674.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3cpu.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_init.o470MV.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3RM.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/dman3_externalRM_api.o674.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/dman3_externalRM_initImpl.o674.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3Cfgcpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3Cfg.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3.ov4TCE.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/bios_rts.ov4TCE.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3_api.ov4TCE.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/rmm.ov4TCE.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3_initImpl.ov4TCE.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/package/package_ti.sdo.fc.dman3.ov4TCE.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3cpu.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_init.o470MV.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3Cfgcpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3Cfgcpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3RMCfg.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/dman3_externalRM_api.o674.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/dman3_externalRM_initImpl.o674.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RMCfg/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3Cfg.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3.ov4TCE.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/bios_rts.ov4TCE.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3_api.ov4TCE.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/rmm.ov4TCE.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3_initImpl.ov4TCE.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/package/package_ti.sdo.fc.dman3.ov4TCE.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3Cfg.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3Cfgcpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/dman3.o86U.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/dman3_api.o86U.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/dman3_initImpl.o86U.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o86U.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3Cfg.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3Cfg.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3.ov4TCE.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/bios_rts.ov4TCE.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3_api.ov4TCE.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/rmm.ov4TCE.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3_initImpl.ov4TCE.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/package/package_ti.sdo.fc.dman3.ov4TCE.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3Cfg.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3Cfg.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3cpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_init.o470uC.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3cpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_init.o470uC.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3Cfg.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3cpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3Cfg.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3RM.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/dman3_externalRM_api.o64P.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/dman3_externalRM_initImpl.o64P.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3.ov4TCE.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_init.ov4TCE.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/bios_rts.ov4TCE.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_api.ov4TCE.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/rmm.ov4TCE.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_initImpl.ov4TCE.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/package/package_ti.sdo.fc.dman3.ov4TCE.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3RM.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3RM/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/dman3_externalRM_api.o64P.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/dman3_externalRM_initImpl.o64P.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3RMCfg.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/dman3_externalRM_api.o64P.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/dman3_externalRM_initImpl.o64P.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3RM.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/dman3_externalRM_api.o674.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/dman3_externalRM_initImpl.o674.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RM/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3cpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3.o86U.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_init.o86U.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_api.o86U.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_initImpl.o86U.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/package/package_ti.sdo.fc.dman3.o86U.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_init.o470MV.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3cpu.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_init.o470uC.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3Cfgcpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfgcpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3Cfgcpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3cpu.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_init.o470uC.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3Cfgcpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3cpu.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_init.o470uC.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3cpu/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3Cfgcpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/dman3.o86U.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/dman3_api.o86U.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/dman3_initImpl.o86U.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o86U.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfgcpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3Cfgcpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/dman3.o86U.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/dman3_api.o86U.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/dman3_initImpl.o86U.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o86U.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfgcpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3Cfg.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_init.o470MV.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3cpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3cpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3Cfg.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3.ov4TCE.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_init.ov4TCE.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/bios_rts.ov4TCE.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_api.ov4TCE.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/rmm.ov4TCE.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/dman3_initImpl.ov4TCE.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/package/package_ti.sdo.fc.dman3.ov4TCE.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3Cfg.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3Cfg/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3cpu.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3cpu.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3.o470MV.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_init.o470MV.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_api.o470MV.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/dman3_initImpl.o470MV.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/package/package_ti.sdo.fc.dman3.o470MV.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3cpu/gt_dais.o470MV.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3Cfg.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfg/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3Cfg.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3.o470uC.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3_api.o470uC.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3_initImpl.o470uC.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/package/package_ti.sdo.fc.dman3.o470uC.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/gt_dais.o470uC.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3Cfg.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3_api.o674.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/dman3_initImpl.o674.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3Cfg/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3RMCfg.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/dman3_externalRM_api.o64P.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/dman3_externalRM_initImpl.o64P.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RMCfg/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug_trace/dman3RM.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/dman3_externalRM_api.o674.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/dman3_externalRM_initImpl.o674.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug_trace/dman3RM/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3cpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3.o86U.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_init.o86U.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_api.o86U.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/dman3_initImpl.o86U.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/package/package_ti.sdo.fc.dman3.o86U.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3cpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3RM.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3RM/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/dman3_init.o674.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/dman3_externalRM_api.o674.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/dman3_externalRM_initImpl.o674.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3RM/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3RMCfg.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/dman3.o674.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/dman3_externalRM_api.o674.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/package/package_ti.sdo.fc.dman3.o674.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/dman3_externalRM_initImpl.o674.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3RMCfg/gt_dais.o674.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3cpu.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3.o86U.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_init.o86U.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_api.o86U.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/dman3_initImpl.o86U.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/package/package_ti.sdo.fc.dman3.o86U.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3cpu/gt_dais.o86U.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3RMCfg.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/dman3_externalRM_api.o64P.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/dman3_externalRM_initImpl.o64P.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3RMCfg/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/release/dman3Cfg.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3.ov4TCE.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/bios_rts.ov4TCE.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3_api.ov4TCE.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/rmm.ov4TCE.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/dman3_initImpl.ov4TCE.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/package/package_ti.sdo.fc.dman3.ov4TCE.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/release/dman3Cfg/gt_dais.ov4TCE.dep" src="gt_dais.c"/>
+        <srcFile name="lib/debug/dman3RM.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/dman3_init.o64P.dep" src="dman3_init.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/dman3_externalRM_api.o64P.dep" src="dman3_externalRM_api.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/dman3_externalRM_initImpl.o64P.dep" src="dman3_externalRM_initImpl.c"/>
+        <srcFile name="package/lib/lib/debug/dman3RM/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="lib/trace/dman3Cfgcpu.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/dman3.o64P.dep" src="dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/dman3_api.o64P.dep" src="dman3_api.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/dman3_initImpl.o64P.dep" src="dman3_initImpl.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/package/package_ti.sdo.fc.dman3.o64P.dep" src="package/package_ti.sdo.fc.dman3.c"/>
+        <srcFile name="package/lib/lib/trace/dman3Cfgcpu/gt_dais.o64P.dep" src="gt_dais.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_dman3.tar.dep" src="package/rel/ti_sdo_fc_dman3.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/dman3Cfg"
+        pname="lib/release/dman3Cfg.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/dman3"
+        pname="lib/debug/dman3.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/dman3Cfgcpu"
+        pname="lib/debug/dman3Cfgcpu.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/dman3RMCfg"
+        pname="lib/debug_trace/dman3RMCfg.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/dman3"
+        pname="lib/debug_trace/dman3.av4TCE"
+        profile="debug_trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/dman3"
+        pname="lib/release/dman3.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug_trace/dman3"
+        pname="lib/debug_trace/dman3.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/dman3Cfgcpu"
+        pname="lib/debug/dman3Cfgcpu.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/dman3"
+        pname="lib/release/dman3.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/dman3"
+        pname="lib/release/dman3.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/dman3cpu"
+        pname="lib/release/dman3cpu.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/release/dman3Cfg"
+        pname="lib/release/dman3Cfg.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/dman3cpu"
+        pname="lib/debug_trace/dman3cpu.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/dman3"
+        pname="lib/trace/dman3.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/dman3Cfg"
+        pname="lib/debug/dman3Cfg.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/dman3Cfg"
+        pname="lib/trace/dman3Cfg.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/dman3"
+        pname="lib/debug_trace/dman3.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/dman3RMCfg"
+        pname="lib/debug/dman3RMCfg.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/release/dman3cpu"
+        pname="lib/release/dman3cpu.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/dman3cpu"
+        pname="lib/trace/dman3cpu.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/dman3RM"
+        pname="lib/trace/dman3RM.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/dman3"
+        pname="lib/trace/dman3.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/dman3cpu"
+        pname="lib/release/dman3cpu.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/dman3RMCfg"
+        pname="lib/trace/dman3RMCfg.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/dman3cpu"
+        pname="lib/debug/dman3cpu.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/dman3RM"
+        pname="lib/debug/dman3RM.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/dman3Cfgcpu"
+        pname="lib/trace/dman3Cfgcpu.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/dman3Cfg"
+        pname="lib/trace/dman3Cfg.av4TCE"
+        profile="trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug_trace/dman3cpu"
+        pname="lib/debug_trace/dman3cpu.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/dman3Cfgcpu"
+        pname="lib/release/dman3Cfgcpu.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/dman3Cfgcpu"
+        pname="lib/debug_trace/dman3Cfgcpu.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/dman3RMCfg"
+        pname="lib/debug_trace/dman3RMCfg.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/dman3Cfg"
+        pname="lib/debug/dman3Cfg.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/trace/dman3Cfg"
+        pname="lib/trace/dman3Cfg.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/dman3Cfgcpu"
+        pname="lib/trace/dman3Cfgcpu.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/dman3Cfg"
+        pname="lib/release/dman3Cfg.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/dman3Cfg"
+        pname="lib/debug_trace/dman3Cfg.av4TCE"
+        profile="debug_trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/dman3Cfg"
+        pname="lib/debug/dman3Cfg.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/dman3"
+        pname="lib/debug/dman3.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/dman3Cfg"
+        pname="lib/debug_trace/dman3Cfg.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/dman3cpu"
+        pname="lib/debug/dman3cpu.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/dman3"
+        pname="lib/release/dman3.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/dman3"
+        pname="lib/debug_trace/dman3.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/dman3cpu"
+        pname="lib/trace/dman3cpu.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/dman3"
+        pname="lib/release/dman3.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/dman3Cfg"
+        pname="lib/release/dman3Cfg.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/dman3cpu"
+        pname="lib/debug_trace/dman3cpu.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/dman3Cfg"
+        pname="lib/debug_trace/dman3Cfg.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/dman3RM"
+        pname="lib/debug_trace/dman3RM.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/dman3"
+        pname="lib/debug/dman3.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/dman3RM"
+        pname="lib/release/dman3RM.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/dman3RMCfg"
+        pname="lib/release/dman3RMCfg.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/dman3RM"
+        pname="lib/trace/dman3RM.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/dman3"
+        pname="lib/trace/dman3.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/dman3cpu"
+        pname="lib/debug_trace/dman3cpu.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/dman3"
+        pname="lib/debug/dman3.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/dman3cpu"
+        pname="lib/trace/dman3cpu.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/dman3Cfgcpu"
+        pname="lib/debug/dman3Cfgcpu.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/dman3Cfgcpu"
+        pname="lib/release/dman3Cfgcpu.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/dman3cpu"
+        pname="lib/debug/dman3cpu.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/dman3Cfgcpu"
+        pname="lib/debug_trace/dman3Cfgcpu.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/dman3cpu"
+        pname="lib/debug_trace/dman3cpu.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/dman3Cfgcpu"
+        pname="lib/release/dman3Cfgcpu.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug_trace/dman3Cfgcpu"
+        pname="lib/debug_trace/dman3Cfgcpu.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/dman3Cfg"
+        pname="lib/trace/dman3Cfg.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/dman3"
+        pname="lib/trace/dman3.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/dman3"
+        pname="lib/debug/dman3.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/release/dman3cpu"
+        pname="lib/release/dman3cpu.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/dman3cpu"
+        pname="lib/debug/dman3cpu.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/dman3Cfg"
+        pname="lib/debug/dman3Cfg.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/dman3"
+        pname="lib/trace/dman3.av4TCE"
+        profile="trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/dman3Cfg"
+        pname="lib/debug/dman3Cfg.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/dman3cpu"
+        pname="lib/trace/dman3cpu.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/release/dman3cpu"
+        pname="lib/release/dman3cpu.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/dman3Cfg"
+        pname="lib/trace/dman3Cfg.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/dman3Cfg"
+        pname="lib/debug_trace/dman3Cfg.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/dman3"
+        pname="lib/debug_trace/dman3.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/dman3Cfg"
+        pname="lib/debug_trace/dman3Cfg.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/dman3RMCfg"
+        pname="lib/debug/dman3RMCfg.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/dman3RM"
+        pname="lib/debug_trace/dman3RM.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/dman3cpu"
+        pname="lib/debug/dman3cpu.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/dman3RM"
+        pname="lib/release/dman3RM.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/release/dman3RMCfg"
+        pname="lib/release/dman3RMCfg.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/dman3cpu"
+        pname="lib/trace/dman3cpu.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/dman3RMCfg"
+        pname="lib/trace/dman3RMCfg.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/dman3Cfg"
+        pname="lib/release/dman3Cfg.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/dman3RM"
+        pname="lib/debug/dman3RM.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/dman3Cfgcpu"
+        pname="lib/trace/dman3Cfgcpu.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_dman3"
+        pname="ti_sdo_fc_dman3.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/release/dman3Cfg.a470MV"/>
+        <file name="lib/debug/dman3.a470uC"/>
+        <file name="dman3_externalRM_api.c"/>
+        <file name="lib/debug/dman3Cfgcpu.a674"/>
+        <file name="lib/debug_trace/dman3RMCfg.a64P"/>
+        <file name="lib/debug_trace/dman3.av4TCE"/>
+        <file name="dman3.tci"/>
+        <file name="lib/release/dman3.av4TCE"/>
+        <file name="rmm.c"/>
+        <file name="rmm.h"/>
+        <file name="lib/debug_trace/dman3.a470MV"/>
+        <file name="lib/debug/dman3Cfgcpu.a86U"/>
+        <file name="lib/release/dman3.a470MV"/>
+        <file name="gt_dais.c"/>
+        <file name="dman3_initImpl.c"/>
+        <file name="lib/release/dman3.a64P"/>
+        <file name="lib/release/dman3cpu.a674"/>
+        <file name="package/package_ti.sdo.fc.dman3.c"/>
+        <file name="lib/release/dman3Cfg.a64P"/>
+        <file name="lib/debug_trace/dman3cpu.a64P"/>
+        <file name="lib/trace/dman3.a470uC"/>
+        <file name="lib/debug/dman3Cfg.a674"/>
+        <file name="lib/trace/dman3Cfg.a674"/>
+        <file name="lib/debug_trace/dman3.a674"/>
+        <file name="dman3_c.tpl"/>
+        <file name="lib/debug/dman3RMCfg.a674"/>
+        <file name="lib/release/dman3cpu.a86U"/>
+        <file name="lib/trace/dman3cpu.a470MV"/>
+        <file name="lib/trace/dman3RM.a64P"/>
+        <file name="lib/trace/dman3.a64P"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/release/dman3cpu.a470uC"/>
+        <file name="_rmm.h"/>
+        <file name="lib/trace/dman3RMCfg.a674"/>
+        <file name="dman3_externalRM_initImpl.c"/>
+        <file name="lib/debug/dman3cpu.a470MV"/>
+        <file name="lib/debug/dman3RM.a674"/>
+        <file name="lib/trace/dman3Cfgcpu.a674"/>
+        <file name="lib/trace/dman3Cfg.av4TCE"/>
+        <file name="lib/debug_trace/dman3cpu.a470MV"/>
+        <file name="lib/release/dman3Cfgcpu.a64P"/>
+        <file name="lib/debug_trace/dman3Cfgcpu.a64P"/>
+        <file name="package.bld"/>
+        <file name="lib/debug_trace/dman3RMCfg.a674"/>
+        <file name="lib/debug/dman3Cfg.av4TCE"/>
+        <file name="lib/trace/dman3Cfg.a470MV"/>
+        <file name="lib/trace/dman3Cfgcpu.a86U"/>
+        <file name="lib/release/dman3Cfg.a470uC"/>
+        <file name="lib/debug_trace/dman3Cfg.av4TCE"/>
+        <file name="lib/debug/dman3Cfg.a470MV"/>
+        <file name="lib/debug/dman3.a64P"/>
+        <file name="lib/debug_trace/dman3Cfg.a470MV"/>
+        <file name="lib/debug/dman3cpu.a64P"/>
+        <file name="lib/release/dman3.a674"/>
+        <file name="lib/debug_trace/dman3.a470uC"/>
+        <file name="lib/trace/dman3cpu.a64P"/>
+        <file name="lib/release/dman3.a470uC"/>
+        <file name="lib/release/dman3Cfg.a674"/>
+        <file name="lib/debug_trace/dman3cpu.a674"/>
+        <file name="lib/debug_trace/dman3Cfg.a64P"/>
+        <file name="lib/debug_trace/dman3RM.a64P"/>
+        <file name="lib/debug/dman3.av4TCE"/>
+        <file name="dman3_externalRM_impl.h"/>
+        <file name="lib/release/dman3RM.a64P"/>
+        <file name="lib/release/dman3RMCfg.a64P"/>
+        <file name="lib/trace/dman3RM.a674"/>
+        <file name="lib/trace/dman3.a674"/>
+        <file name="lib/debug_trace/dman3cpu.a86U"/>
+        <file name="dman3_cmd.tpl"/>
+        <file name="dman3_init.c"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/debug/dman3.a470MV"/>
+        <file name="lib/trace/dman3cpu.a470uC"/>
+        <file name="lib/debug/dman3Cfgcpu.a64P"/>
+        <file name="lib/release/dman3Cfgcpu.a674"/>
+        <file name="lib/debug/dman3cpu.a470uC"/>
+        <file name="lib/debug_trace/dman3Cfgcpu.a674"/>
+        <file name="lib/debug_trace/dman3cpu.a470uC"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/release/dman3Cfgcpu.a86U"/>
+        <file name="lib/debug_trace/dman3Cfgcpu.a86U"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/trace/dman3Cfg.a470uC"/>
+        <file name="lib/trace/dman3.a470MV"/>
+        <file name="lib/debug/dman3.a674"/>
+        <file name="dman3.c"/>
+        <file name="lib/release/dman3cpu.a64P"/>
+        <file name="lib/debug/dman3cpu.a674"/>
+        <file name="dman3.h"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/dman3Cfg.a470uC"/>
+        <file name="lib/trace/dman3.av4TCE"/>
+        <file name="lib/debug/dman3Cfg.a64P"/>
+        <file name="lib/trace/dman3cpu.a674"/>
+        <file name="lib/release/dman3cpu.a470MV"/>
+        <file name="lib/trace/dman3Cfg.a64P"/>
+        <file name="lib/debug_trace/dman3Cfg.a470uC"/>
+        <file name="lib/debug_trace/dman3.a64P"/>
+        <file name="lib/debug_trace/dman3Cfg.a674"/>
+        <file name="lib/debug/dman3RMCfg.a64P"/>
+        <file name="lib/debug_trace/dman3RM.a674"/>
+        <file name="lib/debug/dman3cpu.a86U"/>
+        <file name="bios_rts.c"/>
+        <file name="lib/release/dman3RM.a674"/>
+        <file name="lib/release/dman3RMCfg.a674"/>
+        <file name="lib/trace/dman3cpu.a86U"/>
+        <file name="bios_rts.h"/>
+        <file name="lib/trace/dman3RMCfg.a64P"/>
+        <file name="lib/release/dman3Cfg.av4TCE"/>
+        <file name="lib/debug/dman3RM.a64P"/>
+        <file name="lib/trace/dman3Cfgcpu.a64P"/>
+        <file name="dman3_impl.h"/>
+        <file name="dman3_api.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,80 @@
+############################################################
+# video read and encode 
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp mpeg4enc1 codec mpeg4enc1
+
+# specify the parameters
+setp mpeg4enc1 encodingPreset             2
+setp mpeg4enc1 rateControlPreset          1
+setp mpeg4enc1 maxHeight                  1088
+setp mpeg4enc1 maxWidth                   1920
+setp mpeg4enc1 maxFrameRate               30000
+setp mpeg4enc1 maxBitRate                 4000000
+setp mpeg4enc1 dataEndianness             1
+setp mpeg4enc1 maxInterFrameInterval      0
+setp mpeg4enc1 inputChromaFormat          9
+setp mpeg4enc1 inputContentType           0
+setp mpeg4enc1 reconChromaFormat          9
+setp mpeg4enc1 inputHeight                1088
+setp mpeg4enc1 inputWidth                 1920
+setp mpeg4enc1 refFrameRate               30000
+setp mpeg4enc1 targetFrameRate            30000
+setp mpeg4enc1 targetBitRate              4000000
+setp mpeg4enc1 intraFrameInterval         30
+setp mpeg4enc1 generateHeader             0
+setp mpeg4enc1 captureWidth               1280
+setp mpeg4enc1 forceFrame                 0
+setp mpeg4enc1 interFrameInterval         0
+setp mpeg4enc1 mbDataFlag                 0
+setp mpeg4enc1 extsubWindowHeight         1088
+setp mpeg4enc1 extsubWindowWidth          1920
+setp mpeg4enc1 extrotation                0
+setp mpeg4enc1 extvbvSize                 22
+setp mpeg4enc1 extsvhMode                 0
+setp mpeg4enc1 extIFrameBitRateBiasFactor 256
+setp mpeg4enc1 extPFrameBitRateBiasFactor 256
+setp mpeg4enc1 extpeakBufWindow           2
+setp mpeg4enc1 extminBitRate              2000000
+setp mpeg4enc1 extintraAlgo               0
+setp mpeg4enc1 extnumMBRows               1
+setp mpeg4enc1 extinitQ                   0
+setp mpeg4enc1 extrcQMax                  31
+setp mpeg4enc1 extrcQMin                  1
+setp mpeg4enc1 extintraFrameQP            0
+setp mpeg4enc1 extinterFrameQP            0
+setp mpeg4enc1 extrateFix                 0
+setp mpeg4enc1 extrateFixRange            0
+setp mpeg4enc1 extmeAlgo                  0
+setp mpeg4enc1 extskipMBAlgo              0
+setp mpeg4enc1 extunrestrictedMV          0
+setp mpeg4enc1 extmvDataEnable            0
+setp mpeg4enc1 numFrames                  30
+
+# Configure VPFE parameters
+#setp vpfe input        2
+#setp vpfe standard     1
+#setp vpfe format       8
+
+#setp vpfe cropEnable 0
+#setp vpfe cropCapLeft 0
+#setp vpfe cropCapTop 32
+#setp vpfe cropCapWidth 160
+#setp vpfe cropCapHeight 320
+
+#setp vpfe width        1280
+#setp vpfe height       720
+
+# Trigger the capture+encode operation
+#func mpeg4enc1 -t <output file name>
+
+# Trigger the file-read+encode operation
+func mpeg4enc1 -s input_1920x1088_420SP.yuv -t test.m4v

@@ -1,0 +1,5 @@
+#!/bin/sh
+cd /usr/share/ti/dvsdk-demos/
+/etc/init.d/loadmodule-rc restart
+./edge_detection  -O auto -n 500
+

@@ -1,0 +1,103 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== CTCI6484.tci ========
+ *  The chip configuration settings are based on document SPRS246A
+ *
+ */
+
+/*
+ *  Load C64P.tci arch file
+ */
+utils.loadArch("64P", "ti.catalog.c6000");
+
+/*
+ *  ======== CTCI6484 ========
+ */
+function CTCI6484(name, parent)
+{
+    /*
+     * The 'this' refers to the cpu object created in the platform file.
+     * The apply function is a way to execute a function with a specific
+     * 'this' pointer. It's used to initialize CTCI6484 base on a C64P.
+     */
+    C64P.apply(this, [name, parent]);
+
+    /*
+     * This field is used to include bios settings for this device.
+     */
+    this.deviceName = "TCI6484";
+
+    /* cpu registers */
+    this.registers = [];
+
+    /*
+     * This associative array defines the on-chip physical memory segments
+     * indexed by the segment name.  
+     */
+    this.memBlock = [];
+    
+    this.memBlock["IRAM"] = {
+        comment: "Internal 2MB L2 RAM/CACHE",
+        name: "IRAM",
+        base: 0x00800000,
+        len:  0x00200000,
+        space: "code/data"
+    };
+    
+    this.memBlock["L1PSRAM"] = {
+        comment: "Internal 32K RAM/CACHE L1 Program Memory in Region 1",
+        name: "L1PSRAM",
+        base: 0x00E00000,
+        len:  0x00008000,
+        space: "code"
+    };
+
+    this.memBlock["L1DSRAM"] = {
+        comment: "Internal 32K RAM/CACHE L1 Data Memory in Region 1",
+        name: "L1DSRAM",
+        base: 0x00F00000,
+        len:  0x00008000,
+        space: "data"
+    };
+
+    this.memBlock["L3ROM"] = {
+        comment: "Internal 64KB L3 ROM",
+        name: "L3ROM",
+        base: 0x3c000000,
+        len:  0x00010000,
+        space: "code/data"
+    };
+    
+    /* Define On-chip Memory Map */
+    this.mem = [];
+
+    this.mem[0] = [
+        this.memBlock["L1PSRAM"],
+        this.memBlock["L1DSRAM"],
+        this.memBlock["IRAM"]
+    ];
+
+    /*
+     * ======== getMemoryMap ========
+     * This method returns the on-chip memory map.
+     */
+    this.getMemoryMap = function ()
+    {
+        return(this.mem[0]);
+    };
+}
+/*
+ *  @(#) ti.catalog.c6000; 1, 0, 0, 0,226; 2-23-2010 16:50:37; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

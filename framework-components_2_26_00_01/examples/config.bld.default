@@ -1,0 +1,264 @@
+/*
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+/*
+ *  ======== config.bld ========
+ * User note: YOU MUST MODIFY THIS FILE TO SPECIFY THE COMPILER TOOL PATHS.
+ *
+ * Edit this file to specify compiler toolchain paths, and any custom
+ * compiler/linker options.
+ */
+
+var Build = xdc.module("xdc.bld.BuildEnvironment");
+
+/* common definitions used when setting profiles for each target */
+var dDefs  = " -DDBC_ASSERTS=1 -DGT_ASSERT=0 -DGT_TRACE=0";
+var rDefs  = " -DDBC_ASSERTS=0 -DGT_ASSERT=0 -DGT_TRACE=0";
+var dTDefs = " -DDBC_ASSERTS=1 -DGT_ASSERT=1 -DGT_TRACE=1";
+var rTDefs = " -DDBC_ASSERTS=0 -DGT_ASSERT=1 -DGT_TRACE=1";
+
+var tiRemarks =  " " +
+   "-pdr "     + // display diagnostic remarks
+   "-pden "    + // display diagnostic numeric Id (to identify diagnostics)
+   "-pds=880 " + // variable never referenced
+//   "-pds=552 " + // variable set but not used
+//   "-pds=238 " + // Supress controlling expression is constant
+   "-pds=452 " + // Supress long long non-standard type
+   "-pds=195 " + // Supress 'zero used for undefined preproc... id (setjmp.h)'
+   "";
+
+/*
+ *  ======== C64P target ========
+ *  Modify rootDir with the paths for the compiler toolchain, and also modify
+ *  any custom compiler/linker options.
+ */
+var C64P = xdc.useModule('ti.targets.C64P');
+C64P.rootDir = "/db/toolsrc/library/vendors2005/ti/c6x/6.0.16/Linux";
+C64P.ccOpts.prefix += tiRemarks;
+
+/* add trace-related profiles */
+C64P.profiles["trace"] = C64P.profiles["release"];
+C64P.profiles["debug_trace"] = C64P.profiles["debug"];
+
+/* augment all profiles with -D's we use in MFP */
+C64P.profiles["debug"].compileOpts.defs += dDefs;
+C64P.profiles["debug_trace"].compileOpts.defs += dTDefs;
+C64P.profiles["release"].compileOpts.defs = rDefs;
+C64P.profiles["trace"].compileOpts.defs = rTDefs;
+
+/*
+ *  ======== Primus ========
+ */
+var C674 = xdc.useModule('ti.targets.C674');
+C674.rootDir = "/db/toolsrc/library/vendors2005/ti/c6x/6.1.5/Linux";
+
+C674.ccOpts.suffix = "-mi10 -mo " + tiRemarks;
+
+C674.profiles["debug_trace"] = C674.profiles["debug"];
+C674.profiles["trace"] = C674.profiles["release"];
+
+C674.profiles["debug"].compileOpts.defs += dDefs;
+C674.profiles["debug_trace"].compileOpts.defs += dTDefs;
+C674.profiles["release"].compileOpts.defs = rDefs;
+C674.profiles["trace"].compileOpts.defs = rTDefs;
+
+
+/*
+ *  ======== M3 target ========
+ */
+var tiArm = xdc.useModule('ti.targets.arm.Arm9t');
+tiArm.platform = "ti.platforms.evmDM355";
+tiArm.rootDir = "/db/toolsrc/library/vendors2005/ti/arm/4.5.0/Linux/";
+tiArm.ccOpts.prefix += tiRemarks;
+
+tiArm.profiles["trace"] = tiArm.profiles["release"];
+tiArm.profiles["debug_trace"] = tiArm.profiles["debug"];
+
+tiArm.profiles["debug"].compileOpts.defs += dDefs;
+tiArm.profiles["debug_trace"].compileOpts.defs += dTDefs;
+tiArm.profiles["release"].compileOpts.defs = rDefs;
+tiArm.profiles["trace"].compileOpts.defs = rTDefs;
+
+/*
+ *  ======== Arm9t ========
+ */
+var Arm9t = xdc.useModule('ti.targets.arm.Arm9t');
+
+Arm9t.rootDir = "/db/toolsrc/library/vendors2005/ti/arm/4.5.0/Linux/";
+Arm9t.ccOpts.suffix += tiRemarks;
+
+Arm9t.profiles["debug_trace"] = Arm9t.profiles["debug"];
+Arm9t.profiles["trace"] = Arm9t.profiles["release"];
+
+Arm9t.profiles["debug"].compileOpts.defs += dDefs;
+Arm9t.profiles["debug_trace"].compileOpts.defs += dTDefs;
+Arm9t.profiles["release"].compileOpts.defs = rDefs;
+Arm9t.profiles["trace"].compileOpts.defs = rTDefs;
+/*
+ *  ======== Linux86 host target ========
+ */
+var Linux86 = xdc.useModule('gnu.targets.Linux86');
+Linux86.rootDir = "/db/toolsrc/library/vendors2005/" +
+    "opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu";
+Linux86.lnkOpts.suffix += " -lpthread";
+
+/* add trace-related profiles */
+Linux86.profiles["trace"] = Linux86.profiles["release"];
+Linux86.profiles["debug_trace"] = Linux86.profiles["debug"];
+
+/* augment all profiles with -D's we use in MFP */
+Linux86.profiles["debug"].compileOpts.defs += dDefs;
+Linux86.profiles["debug_trace"].compileOpts.defs += dTDefs;
+Linux86.profiles["release"].compileOpts.defs = rDefs;
+Linux86.profiles["trace"].compileOpts.defs = rTDefs;
+
+
+/*
+ *  ======== MVArm9 ========
+ */
+var MVArm9 = xdc.useModule('gnu.targets.MVArm9');
+MVArm9.rootDir = "/db/toolsrc/library/vendors2005/" +
+        "mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le";
+MVArm9.ccOpts.prefix += " "
+    // options that check quality/strictness of code
+    + "-Wall "
+    // supress some warnings caused by .xdc.h files
+    + "-fno-strict-aliasing ";
+
+/* remove reference to C++ from opts */
+MVArm9.lnkOpts.suffix = MVArm9.lnkOpts.suffix.replace("-lstdc++", "");
+
+/* add pthreads */
+MVArm9.lnkOpts.suffix += " -lpthread";
+
+/* add trace-related profiles */
+MVArm9.profiles["trace"] = MVArm9.profiles["release"];
+MVArm9.profiles["debug_trace"] = MVArm9.profiles["debug"];
+
+/* augment all profiles with -D's we use in MFP */
+MVArm9.profiles["debug"].compileOpts.defs += dDefs;
+MVArm9.profiles["debug_trace"].compileOpts.defs += dTDefs;
+MVArm9.profiles["release"].compileOpts.defs = rDefs;
+MVArm9.profiles["trace"].compileOpts.defs = rTDefs;
+
+
+/*
+ *  ======== UCArm9 ========
+ */
+var UCArm9 = xdc.useModule('gnu.targets.UCArm9');
+UCArm9.rootDir = "/db/toolsrc/library/vendors2005/" +
+    "opensource/buildroot/10122007/build_arm/staging_dir/usr";
+UCArm9.ccOpts.prefix += " -D_REENTRANT ";
+
+/* add pthreads */
+UCArm9.lnkOpts.suffix += " -lpthread";
+
+/* add trace-related profiles */
+UCArm9.profiles["trace"] = UCArm9.profiles["release"];
+UCArm9.profiles["debug_trace"] = UCArm9.profiles["debug"];
+
+/* augment all profiles with -D's we use in MFP */
+UCArm9.profiles["debug"].compileOpts.defs += dDefs;
+UCArm9.profiles["debug_trace"].compileOpts.defs += dTDefs;
+UCArm9.profiles["release"].compileOpts.defs = rDefs;
+UCArm9.profiles["trace"].compileOpts.defs = rTDefs;
+
+/*
+ *  ======== WinCE target ========
+ */
+
+var WinCE = xdc.useModule('microsoft.targets.arm.WinCE');
+WinCE.rootDir = "C:/WINCE600";
+WinCE.projectRoot = "C:/WINCE600";
+WinCE.execExt = "_wince.exe";
+
+WinCE.profiles["debug"].linkOpts += " -libpath:$(rootDir)/OSDesigns/"
+        + "EVM_3530/EVM_3530/Wince600/TI_EVM_3530_ARMV4I/cesysgen/sdk/lib/"
+        + "ARMV4I/debug";
+WinCE.profiles["release"].linkOpts += " -libpath:$(rootDir)/OSDesigns/"
+        + "EVM_3530/EVM_3530/Wince600/TI_EVM_3530_ARMV4I/cesysgen/sdk/lib/"
+        + "ARMV4I/retail";
+WinCE.includeOpts = "-I" + WinCE.rootDir + "/PUBLIC/COMMON/SDK/INC";
+
+WinCE.profiles["debug_trace"] = WinCE.profiles["debug"];
+WinCE.profiles["trace"] = WinCE.profiles["release"];
+
+WinCE.profiles["debug"].compileOpts.defs += " -DGT_ASSERT=0 -DGT_TRACE=0";
+WinCE.profiles["debug_trace"].compileOpts.defs +=" -DGT_ASSERT=1 -DGT_TRACE=1";
+WinCE.profiles["release"].compileOpts.defs = "-DGT_ASSERT=0 -DGT_TRACE=0";
+WinCE.profiles["trace"].compileOpts.defs = " -DGT_ASSERT=1 -DGT_TRACE=1";
+
+/* remove profiles we don't use */
+delete C674.profiles["coverage"];
+delete C674.profiles["profile"];
+delete C674.profiles["whole_program"];
+delete C674.profiles["whole_program_debug"];
+delete tiArm.profiles["coverage"];
+delete tiArm.profiles["profile"];
+delete tiArm.profiles["whole_program"];
+delete tiArm.profiles["whole_program_debug"];
+delete Arm9t.profiles["coverage"];
+delete Arm9t.profiles["profile"];
+delete Arm9t.profiles["whole_program"];
+delete Arm9t.profiles["whole_program_debug"];
+delete C64P.profiles["coverage"];
+delete C64P.profiles["profile"];
+delete C64P.profiles["whole_program"];
+delete C64P.profiles["whole_program_debug"];
+delete UCArm9.profiles["coverage"];
+delete UCArm9.profiles["profile"];
+delete UCArm9.profiles["whole_program"];
+delete UCArm9.profiles["whole_program_debug"];
+delete MVArm9.profiles["coverage"];
+delete MVArm9.profiles["profile"];
+delete MVArm9.profiles["whole_program"];
+delete MVArm9.profiles["whole_program_debug"];
+
+delete WinCE.profiles["coverage"];
+delete WinCE.profiles["profile"];
+delete WinCE.profiles["whole_program"];
+delete WinCE.profiles["whole_program_debug"];
+
+/*
+ *  ======== Build.targets ========
+ *  This array define the list of targets for the build (it overrides any
+ *  XDCTARGETS setting)
+ *  Edit this list to add or remove any targets that you do/do not want to
+ *  build for.
+ */
+Build.targets = [
+    C64P,
+    MVArm9,
+    UCArm9,
+    C674,
+    tiArm,
+    WinCE,
+];

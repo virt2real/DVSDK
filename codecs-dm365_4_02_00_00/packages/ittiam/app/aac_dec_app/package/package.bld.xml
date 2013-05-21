@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ittiam.app.aac_dec_app" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="app.c"/>
+        <srcFile name="ia_enhaacplus_dec_error_handler.c"/>
+        <srcFile name="ceapp.c"/>
+        <srcFile name="package/cfg/aac_dec_app_x470MV.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="aac_dec_app.cfg"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/aac_dec_app_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/aac_dec_app/app.o470MV.dep" src="app.c"/>
+        <srcFile name="package/cfg/aac_dec_app/ceapp.o470MV.dep" src="ceapp.c"/>
+        <srcFile name="package/cfg/aac_dec_app/ia_enhaacplus_dec_error_handler.o470MV.dep" src="ia_enhaacplus_dec_error_handler.c"/>
+        <srcFile name="package/cfg/aac_dec_app_x470MV.o470MV.dep" src="package/cfg/aac_dec_app_x470MV.c"/>
+        <srcFile name="package/cfg/aac_dec_app_x470MV.dep" src="package/cfg/aac_dec_app_x470MV.cfg"/>
+        <srcFile name="package/rel/ittiam_app_aac_dec_app.tar.dep" src="package/rel/ittiam_app_aac_dec_app.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evmDM365"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/home/dm365/mv_pro_5_0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="aac_dec_app"
+        pname="aac_dec_app.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM365"
+        profile="release"
+        xCfgScript="package/cfg/aac_dec_app_x470MV.cfg"
+        xCfgPrefix="package/cfg/aac_dec_app_x470MV"
+        cfgScript="aac_dec_app.cfg"
+        />
+    </executables>
+    <tests>
+    <test exeName="aac_dec_app.x470MV"
+        args=""
+        groupName="aac_dec_app.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ittiam_app_aac_dec_app"
+        pname="ittiam_app_aac_dec_app.tar"
+        label="default"
+    >
+        <file name="package.bld"/>
+        <file name="ia_enhaacplus_dec_error_handler.c"/>
+        <file name="ia_error_standards.h"/>
+        <file name="ia_type_def.h"/>
+        <file name="enhaacpdec_ittiam.h"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="package.xdc"/>
+        <file name="aac_dec_app.x470MV"/>
+        <file name="package/package.bld.xml"/>
+        <file name="app.c"/>
+        <file name="ia_error_handler.h"/>
+        <file name="ienhaacpdec.h"/>
+        <file name="aac_dec_app.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="ceapp.c"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

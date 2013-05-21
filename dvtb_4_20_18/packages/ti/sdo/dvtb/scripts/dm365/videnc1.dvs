@@ -1,0 +1,60 @@
+############################################################
+# video read from file and encode 
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp videnc1 codec h264enc1
+
+# specify the parameters
+setp videnc1 encodingPreset          0
+setp videnc1 rateControlPreset       5
+setp videnc1 maxHeight               1088
+setp videnc1 maxWidth                1920
+setp videnc1 maxFrameRate            30000
+setp videnc1 maxBitRate              4000000
+setp videnc1 dataEndianness          1
+setp videnc1 maxInterFrameInterval   0
+setp videnc1 inputChromaFormat       9
+setp videnc1 inputContentType        0
+setp videnc1 reconChromaFormat       9
+setp videnc1 topFieldFirstFlag       0
+setp videnc1 inputHeight             1088
+setp videnc1 inputWidth              1920
+setp videnc1 refFrameRate            30000
+setp videnc1 targetFrameRate         30000
+setp videnc1 targetBitRate           4000000
+setp videnc1 intraFrameInterval      30
+setp videnc1 generateHeader          0
+setp videnc1 captureWidth            0
+setp videnc1 forceFrame              0
+setp videnc1 interFrameInterval      0
+setp videnc1 mbDataFlag              0
+setp videnc1 numFrames               30
+
+# Configure VPFE parameters
+#setp vpfe width        1280
+#setp vpfe height       720
+
+#setp vpfe input        2
+#setp vpfe standard     1
+#setp vpfe format       8
+
+#setp vpfe cropEnable 0
+#setp vpfe cropCapLeft 0
+#setp vpfe cropCapTop 32
+#setp vpfe cropCapWidth 160
+#setp vpfe cropCapHeight 320
+
+
+# Trigger the capture+encode operation
+#func videnc1 -t <output file name>
+
+# Trigger the file-read+encode operation
+func videnc1 -s input_1920x1088_420SP.yuv -t test.264

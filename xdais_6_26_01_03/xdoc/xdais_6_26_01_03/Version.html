@@ -1,0 +1,403 @@
+<html>
+<head>
+<title>module xdais_6_26_01_03.Version</title>
+<meta name="description" content="Version for the xdais_6_26_01_03 package">
+<link rel="stylesheet" type="text/css" href="../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">module</span> <span class="xdoc-id">xdais_6_26_01_03.</span><span class="xdoc-id">Version</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../xdais_6_26_01_03/package.html" title="package xdais_6_26_01_03"><img class="xdocHdrArrow" src="../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../index.html#xdais_6_26_01_03/Version.html">index URL</a></div>
+<p class="xdocHdrSummary">Version for the xdais_6_26_01_03 package</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#targ-synop">C synopsis</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../xdais_6_26_01_03/Version-src.html"><span class="xdocLabelFile">xdais_6_26_01_03/Version.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Version</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt>//&nbsp;inherits <a class="xdoc-link" href="../ti/sdoarch/standards/pkg/IVersion.html" title="ti.sdoarch.standards.pkg.IVersion">ti.sdoarch.standards.pkg.IVersion</a></div>
+<div class='xdocSynSum'><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;inherits <a class="xdoc-link" href="../xdc/runtime/IModule.html" title="xdc.runtime.IModule">xdc.runtime.IModule</a></div>
+</div>
+<span id='targ-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-targ2">C</span></tt> synopsis</td>
+<td class="xdocLabelRight">target-domain</td>
+</tr></table>
+<div class="xdocSynT">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw3">#include</span> <span class="xdoc-id">&lt;xdais_6_26_01_03/Version.h&gt;</span>
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw3">#define</span> <a class="xdocSynGo" href="#.M.A.J.O.R"><span class="xdoc-id">Version_MAJOR</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Major version number</span></span></a>  (<i><span class="xdoc-kw2">UInt16</span></i>)6
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw3">#define</span> <a class="xdocSynGo" href="#.M.I.N.O.R"><span class="xdoc-id">Version_MINOR</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Minor version number</span></span></a>  (<i><span class="xdoc-kw2">UInt16</span></i>)26
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw3">#define</span> <a class="xdocSynGo" href="#.P.A.T.C.H"><span class="xdoc-id">Version_PATCH</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Patch level</span></span></a>  (<i><span class="xdoc-kw2">UInt16</span></i>)01
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw3">#define</span> <a class="xdocSynGo" href="#.W.I.D.T.H"><span class="xdoc-id">Version_WIDTH</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Minimum width of print fields</span></span></a>  (<i><span class="xdoc-kw2">UInt16</span></i>)2
+</div>
+<div class='xdocSynHdr'>module-wide built-ins</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdoc-link" href="../xdc/runtime/Types.html#.Module.Id" title="xdc.runtime.Types.ModuleId">Types_ModuleId</a> <a class="xdocSynGo" href="#module-wide_built-ins"><span class="xdoc-id">Version_Module_id</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Get this module's unique id</span></span></a>( );
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw2">Bool</span> <a class="xdocSynGo" href="#module-wide_built-ins"><span class="xdoc-id">Version_Module_startupDone</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Test if this module has completed startup</span></span></a>( );
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdoc-link" href="../xdc/runtime/IHeap.html#per-instance_object_types" title="xdc.runtime.IHeap.Handle">IHeap_Handle</a> <a class="xdocSynGo" href="#module-wide_built-ins"><span class="xdoc-id">Version_Module_heap</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;The heap from which this module allocates memory</span></span></a>( );
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw2">Bool</span> <a class="xdocSynGo" href="#module-wide_built-ins"><span class="xdoc-id">Version_Module_hasMask</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Test whether this module has a diagnostics mask</span></span></a>( );
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw2">Bits16</span> <a class="xdocSynGo" href="#module-wide_built-ins"><span class="xdoc-id">Version_Module_getMask</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Returns the diagnostics mask for this module</span></span></a>( );
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw2">Void</span> <a class="xdocSynGo" href="#module-wide_built-ins"><span class="xdoc-id">Version_Module_setMask</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Set the diagnostics mask for this module</span></span></a>( <span class="xdoc-kw2">Bits16</span> <span class="xdoc-id">mask</span> );
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> Version = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'xdais_6_26_01_03.Version'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.M.A.J.O.R">Version.<span class="xdoc-id">MAJOR</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Major version number</span></span></a> = 6;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.M.I.N.O.R">Version.<span class="xdoc-id">MINOR</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Minor version number</span></span></a> = 26;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.P.A.T.C.H">Version.<span class="xdoc-id">PATCH</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Patch level</span></span></a> = 01;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.W.I.D.T.H">Version.<span class="xdoc-id">WIDTH</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Minimum width of print fields</span></span></a> = 2;
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#common$">Version.<span class="xdoc-id">common$</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Common module configuration parameters</span></span></a> = <i><a class="xdoc-link" href="../xdc/runtime/Types.html#.Common$" title="xdc.runtime.Types.Common$">Types.Common$</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class='xdocSynHdr'>module-wide functions</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#get.String">Version.<span class="xdoc-id">getString</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Returns a string representation of the version</span></span></a>( <i><span class="xdoc-kw2">Any</span></i> <go><span class="xdoc-id">separator</span></go> ) <i>returns</i> <i><span class="xdoc-kw2">Any</span></i>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../xdais_6_26_01_03/Version-src.html"><span class="xdocLabelFile">xdais_6_26_01_03/Version.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../xdais_6_26_01_03/package.html" title="xdais_6_26_01_03">xdais_6_26_01_03</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Version</span></go><span class="xdoc-kw1"> inherits </span><a class="xdoc-link" href="../ti/sdoarch/standards/pkg/IVersion.html" title="ti.sdoarch.standards.pkg.IVersion">IVersion</a> {
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">override </span><span class="xdoc-kw1">const</span> <span class="xdoc-kw2">UInt16</span>&nbsp;<a class="xdocSynGo" href="#.M.A.J.O.R"><span class="xdoc-id">MAJOR</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Major version number</span></span></a> = 6;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">override </span><span class="xdoc-kw1">const</span> <span class="xdoc-kw2">UInt16</span>&nbsp;<a class="xdocSynGo" href="#.M.I.N.O.R"><span class="xdoc-id">MINOR</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Minor version number</span></span></a> = 26;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">override </span><span class="xdoc-kw1">const</span> <span class="xdoc-kw2">UInt16</span>&nbsp;<a class="xdocSynGo" href="#.P.A.T.C.H"><span class="xdoc-id">PATCH</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Patch level</span></span></a> = 01;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">override </span><span class="xdoc-kw1">const</span> <span class="xdoc-kw2">UInt16</span>&nbsp;<a class="xdocSynGo" href="#.W.I.D.T.H"><span class="xdoc-id">WIDTH</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Minimum width of print fields</span></span></a> = 2;
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../xdc/runtime/Types.html#.Common$" title="xdc.runtime.Types.Common$">Types.Common$</a>&nbsp;<a class="xdocSynGo" href="#common$"><span class="xdoc-id">common$</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Common module configuration parameters</span></span></a>;
+</div>
+<div class='xdocSynHdr'>module-wide functions</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">metaonly </span><a class="xdocSynGo" href="#get.String"><span class="xdoc-kw1">function </span><span class="xdoc-id">getString</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Returns a string representation of the version</span></span></a>( <go><span class="xdoc-id">separator</span></go> );
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".M.A.J.O.R"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">const</span> <span class="xdoc-id">Version.</span><span class="xdoc-id">MAJOR</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../xdais_6_26_01_03/Version.html" title="module Version"><img class="xdocHdrArrow" src="../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../index.html#xdais_6_26_01_03/Version.html#.M.A.J.O.R">index URL</a></div>
+<p class="xdocHdrSummary">Major version number</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> Version.<span class="xdoc-id">MAJOR</span> = 6;
+</div>
+</div>
+<span id='targ-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-targ2">C</span></tt> synopsis</td>
+<td class="xdocLabelRight">target-domain</td>
+</tr></table>
+<div class="xdocSynT">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw3">#define</span> <span class="xdoc-id">Version_MAJOR</span>  (<i><span class="xdoc-kw2">UInt16</span></i>)6
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This number should be changed when major changes in the package
+  occur. Examples include adding new modules, adding substantial new
+  features to the algorithm(s).</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".M.I.N.O.R"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">const</span> <span class="xdoc-id">Version.</span><span class="xdoc-id">MINOR</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../xdais_6_26_01_03/Version.html" title="module Version"><img class="xdocHdrArrow" src="../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../index.html#xdais_6_26_01_03/Version.html#.M.I.N.O.R">index URL</a></div>
+<p class="xdocHdrSummary">Minor version number</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> Version.<span class="xdoc-id">MINOR</span> = 26;
+</div>
+</div>
+<span id='targ-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-targ2">C</span></tt> synopsis</td>
+<td class="xdocLabelRight">target-domain</td>
+</tr></table>
+<div class="xdocSynT">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw3">#define</span> <span class="xdoc-id">Version_MINOR</span>  (<i><span class="xdoc-kw2">UInt16</span></i>)26
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This number should be changed when minor changes in the package
+  occur. Examples include minor changes to the existing APIs,
+  adding minor features to the algorithms(s) including expanding the
+  configuration options.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".P.A.T.C.H"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">const</span> <span class="xdoc-id">Version.</span><span class="xdoc-id">PATCH</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../xdais_6_26_01_03/Version.html" title="module Version"><img class="xdocHdrArrow" src="../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../index.html#xdais_6_26_01_03/Version.html#.P.A.T.C.H">index URL</a></div>
+<p class="xdocHdrSummary">Patch level</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> Version.<span class="xdoc-id">PATCH</span> = 01;
+</div>
+</div>
+<span id='targ-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-targ2">C</span></tt> synopsis</td>
+<td class="xdocLabelRight">target-domain</td>
+</tr></table>
+<div class="xdocSynT">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw3">#define</span> <span class="xdoc-id">Version_PATCH</span>  (<i><span class="xdoc-kw2">UInt16</span></i>)01
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This number should be changed when bug fixes or performance
+  improvements are introduced. There should be no changes in the APIs
+  in this case.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".W.I.D.T.H"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">const</span> <span class="xdoc-id">Version.</span><span class="xdoc-id">WIDTH</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../xdais_6_26_01_03/Version.html" title="module Version"><img class="xdocHdrArrow" src="../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../index.html#xdais_6_26_01_03/Version.html#.W.I.D.T.H">index URL</a></div>
+<p class="xdocHdrSummary">Minimum width of print fields</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> Version.<span class="xdoc-id">WIDTH</span> = 2;
+</div>
+</div>
+<span id='targ-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-targ2">C</span></tt> synopsis</td>
+<td class="xdocLabelRight">target-domain</td>
+</tr></table>
+<div class="xdocSynT">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw3">#define</span> <span class="xdoc-id">Version_WIDTH</span>  (<i><span class="xdoc-kw2">UInt16</span></i>)2
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">When denoting version numbers using '.' to separate fields
+  there is a danger of confusing version "6.1" and version "6.10";
+  because, in decimal notation 6.1 == 6.10.  To avoid
+  this confusion, it is common practice to adopt a fixed minimum field
+  width that's when printing version dimensions (other than MAJOR);
+  e.g., rather than printing "6.1", if WIDTH == 2 then the version would
+  be displayed as "6.01".</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="common$"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-id">Version.</span><span class="xdoc-id">common$</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../xdais_6_26_01_03/Version.html" title="module Version"><img class="xdocHdrArrow" src="../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../index.html#xdais_6_26_01_03/Version.html#common$">index URL</a></div>
+<p class="xdocHdrSummary">Common module configuration parameters</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Version.<span class="xdoc-id">common$</span> = <i><a class="xdoc-link" href="../xdc/runtime/Types.html#.Common$" title="xdc.runtime.Types.Common$">Types.Common$</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">All modules have this configuration parameter.  Its name
+  contains the '$' character to ensure it does not conflict with
+  configuration parameters declared by the module.  This allows
+  new configuration parameters to be added in the future without
+  any chance of breaking existing modules.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="get.String"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-id">Version.</span><span class="xdoc-id">getString</span>( )&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../xdais_6_26_01_03/Version.html" title="module Version"><img class="xdocHdrArrow" src="../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../index.html#xdais_6_26_01_03/Version.html#get.String">index URL</a></div>
+<p class="xdocHdrSummary">Returns a string representation of the version</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>Version.<span class="xdoc-id">getString</span>( <i><span class="xdoc-kw2">Any</span></i> <span class="xdoc-id">separator</span> ) <i>returns</i> <i><span class="xdoc-kw2">Any</span></i>
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This method return a string of the form:</div>
+<div class="xdocText"><PRE class="Example">      MAJOR&lt;sep&gt;MINOR&lt;sep&gt;PATCH
+</PRE></div>
+<div class="xdocText">where <tt>MAJOR</tt>, <tt>MINOR</tt>, and <tt>PATCH</tt> are
+  the values sepcified in this interface and <tt>&lt;sep&gt;</tt> is the (optional)
+  argument to this method.  If <tt>separator</tt> is not supplied (or is
+  <tt>null</tt>), <tt>&lt;sep&gt;</tt> defaults to <tt>'.'</tt>.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="module-wide_built-ins"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdocSynSum">module-wide built-ins</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../xdais_6_26_01_03/Version.html" title="module Version"><img class="xdocHdrArrow" src="../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../index.html#xdais_6_26_01_03/Version.html#module-wide_built-ins">index URL</a></div>
+<p class="xdocHdrSummary"></p>
+<span id='targ-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-targ2">C</span></tt> synopsis</td>
+<td class="xdocLabelRight">target-domain</td>
+</tr></table>
+<div class="xdocSynT">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><a class="xdoc-link" href="../xdc/runtime/Types.html#.Module.Id" title="xdc.runtime.Types.ModuleId">Types_ModuleId</a> <span class="xdoc-id">Version_Module_id</span>( );
+</div>
+<div class='xdocSynSum'><tt></tt><tt></tt>//&nbsp;Get this module's unique id</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw2">Bool</span> <span class="xdoc-id">Version_Module_startupDone</span>( );
+</div>
+<div class='xdocSynSum'><tt></tt><tt></tt>//&nbsp;Test if this module has completed startup</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><a class="xdoc-link" href="../xdc/runtime/IHeap.html#per-instance_object_types" title="xdc.runtime.IHeap.Handle">IHeap_Handle</a> <span class="xdoc-id">Version_Module_heap</span>( );
+</div>
+<div class='xdocSynSum'><tt></tt><tt></tt>//&nbsp;The heap from which this module allocates memory</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw2">Bool</span> <span class="xdoc-id">Version_Module_hasMask</span>( );
+</div>
+<div class='xdocSynSum'><tt></tt><tt></tt>//&nbsp;Test whether this module has a diagnostics mask</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw2">Bits16</span> <span class="xdoc-id">Version_Module_getMask</span>( );
+</div>
+<div class='xdocSynSum'><tt></tt><tt></tt>//&nbsp;Returns the diagnostics mask for this module</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw2">Void</span> <span class="xdoc-id">Version_Module_setMask</span>( <span class="xdoc-kw2">Bits16</span> <span class="xdoc-id">mask</span> );
+</div>
+<div class='xdocSynSum'><tt></tt><tt></tt>//&nbsp;Set the diagnostics mask for this module</div>
+</div>
+</div>
+<div id="xdocDate">generated on Sat, 18 Sep 2010 21:47:30 GMT</div>
+</div></div></body>
+</html>

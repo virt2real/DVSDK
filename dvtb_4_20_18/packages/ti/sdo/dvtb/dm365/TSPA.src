@@ -1,0 +1,124 @@
+#
+# TSPA.src
+#
+# DM365 Source files corresponding to TSPA codecs
+#
+# Copyright (C) 2010 Texas Instruments Incorporated - http://www.ti.com/ 
+# 
+# 
+#  Redistribution and use in source and binary forms, with or without 
+#  modification, are permitted provided that the following conditions 
+#  are met:
+#
+#    Redistributions of source code must retain the above copyright 
+#    notice, this list of conditions and the following disclaimer.
+#
+#    Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the 
+#    documentation and/or other materials provided with the   
+#    distribution.
+#
+#    Neither the name of Texas Instruments Incorporated nor the names of
+#    its contributors may be used to endorse or promote products derived
+#    from this software without specific prior written permission.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+#  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+#  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+#  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+#  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+#  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+#  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+#  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+#  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+
+#===== TSPA_SRCVPATH - list of directories to search for pal source files.
+TSPA_SRCVPATH=linux:../core/linux:../core/common
+
+#===== pal_SRC - list of common sources files
+TSPA_SOURCE= \
+	dvtbMain.c \
+	dvtbApisDispatcher.c \
+	dvtbAppExit.c \
+	dvtbAppInit.c \
+	dvtbDM365Utils.c \
+	dvtbFuncDispatcher.c \
+	dvtbH264Capture1.c \
+	dvtbH264Dec2.c \
+	dvtbH264Enc1.c \
+	dvtbH264Play2.c \
+	dvtbImgCapture1.c \
+	dvtbImgDisplay1.c \
+	dvtbJPEGCapture1.c \
+	dvtbJPEGDec1.c \
+	dvtbJPEGDisplay1.c \
+	dvtbJPEGEnc1.c \
+	dvtbMPEG2Dec2.c \
+	dvtbMPEG2Play2.c \
+	dvtbMPEG4HDVICPCapture1.c \
+	dvtbMPEG4HDVICPDec2.c \
+	dvtbMPEG4HDVICPEnc1.c \
+	dvtbMPEG4HDVICPPlay2.c \
+	dvtbMPEG4Capture1.c \
+	dvtbMPEG4Dec2.c \
+	dvtbMPEG4Enc1.c \
+	dvtbMPEG4Play2.c \
+	dvtbMPEG2Enc1.c \
+	dvtbMPEG2Capture1.c \
+	dvtbParam.c \
+	dvtbPreviewer.c \
+	dvtbResizer.c \
+	dvtbSetParam.c \
+	dvtbV4L2VPBEFeatures.c \
+	dvtbV4L2VPFEFeatures.c \
+	dvtbVidCapture1.c \
+	dvtbVidPlay2.c \
+	dvtbAudCapture1Core.c \
+	dvtbAudDec1.c \
+	dvtbAudEnc1.c \
+	dvtbAudPlay1Core.c \
+	dvtbEngine.c \
+	dvtbGetParam.c \
+	dvtbImgCapture1Core.c \
+	dvtbImgDec1.c \
+	dvtbImgDisplay1Core.c \
+	dvtbImgEnc1.c \
+	dvtbMemory.c \
+	dvtbSetParam.c \
+	dvtbSphCapture1.c \
+	dvtbSphCapture1Core.c \
+	dvtbSphDec1.c \
+	dvtbSphEnc1.c \
+	dvtbSphPlay1.c \
+	dvtbSphPlay1Core.c \
+	dvtbThread.c \
+	dvtbUtils.c \
+	dvtbVidCapture1Core.c \
+	dvtbVidDec2.c \
+	dvtbVidEnc1.c \
+	dvtbVidPlay2Core.c \
+	dvtbDispatcher.c \
+	dvtbVersion.c \
+	dvtbVC1Dec2.c \
+	dvtbVC1Play2.c \
+	dvtbAudPlay1.c \
+	dvtbAudCapture1.c \
+	dvtbAACHEDec1.c \
+	dvtbAACHEPlay1Core.c \
+	dvtbAACHEPlay1.c \
+	dvtbAACHEEnc1.c \
+	dvtbAACHECapture1.c \
+	dvtbMP3Dec1.c \
+	dvtbMP3Play1Core.c \
+	dvtbMP3Play1.c \
+	dvtbMP3Enc1.c \
+	dvtbMP3Capture1.c \
+	dvtbWMADec1.c \
+	dvtbWMAPlay1Core.c \
+	dvtbWMAPlay1.c \
+	dvtbWMAEnc1.c \
+	dvtbWMACapture1.c \

@@ -1,0 +1,50 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectName="BIOSDMATest"
+ProjectDir="dm6446_bios\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="InstrumentedDebug"
+Config="InstrumentedRelease"
+Config="Release"
+
+[Project Dependencies]
+Source="..\fcpy_ti64.pjt"
+
+["..\fcpy_ti64.pjt" Settings]
+MatchConfigName=true
+
+[Source Files]
+Source="..\fastcopytest.c"
+Source="..\fcpy.c"
+Source="..\ifcpy.c"
+Source="..\mySem.c"
+Source="dman3_config.c"
+Source="dman3_lld_config.c"
+Source="fastcopytest.tcf"
+Source="fastcopytest.cmd"
+
+[Generated Files]
+Source="fastcopytestcfg.s62"
+Source="fastcopytestcfg_c.c"
+
+["Compiler" Settings: "Debug"]
+Options=-g -eoo64P -fr"$(Proj_dir)\Debug" -i"." -i"%FC_INSTALL_DIR%/packages" -i"%XDAIS_INSTALL_DIR%/packages" -i"%XDC_INSTALL_DIR%/packages" -i"%EDMA3_LLD_INSTALL_DIR%/packages" -d"NON_RTSC_CONFIGURATION" -d"xdc_target_types__=ti/targets/std.h" -d"GT_CONFIG" -d"EDMA3_CONFIG" -mv6400+
+
+
+["Compiler" Settings: "Release"]
+Options=-o2 -eoo64Py -fr"$(Proj_dir)\Release" -i"." -i"%FC_INSTALL_DIR%/packages" -i"%XDAIS_INSTALL_DIR%/packages" -i"%XDC_INSTALL_DIR%/packages" -i"%EDMA3_LLD_INSTALL_DIR%/packages" -d"NON_RTSC_CONFIGURATION" -d"xdc_target_types__=ti/targets/std.h" -d"EDMA3_CONFIG"  -mv6400+
+
+["Linker" Settings: "Debug"]
+Options=-q -c -m".\DebugRM\fastcopytest-llrm.map" -o".\DebugRM\fastcopytest-llrm.out" -x -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/acpy3/lib/debug_trace" -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/dman3/lib/debug_trace" -i"%FC_INSTALL_DIR%/packages/ti/sdo/utils/trace/lib/debug" -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/utils/api/lib/debug_trace" -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/utils/gtinfra/lib/debug_trace" -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/edma3/lib/debug_trace" -i"%EDMA3_LLD_INSTALL_DIR%/packages/ti/sdo/edma3/rm/lib/dm6446/Debug" -l"acpy3.a64P" -l"dman3RM.a64P" -l"gt.a64P" -l"api.a64P" -l"gt_noOs.a64P" -l"edma3.a64P" -l"edma3_rm_bios.lib"
+
+["Linker" Settings: "Release"]
+Options=-q -c -m".\release\fastcopytest.map" -o".\release\fastcopytest.out" -x -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/acpy3/lib/release" -i"%FC_INSTALL_DIR%/packages/ti/sdo/fc/dman3/lib/release" -i"%FC_INSTALL_DIR%/packages/ti/sdo/utils/trace/lib/release" -i"%EDMA3_LLD_INSTALL_DIR%/packages/ti/sdo/edma3/rm/lib/dm6446/Release"  -l"%FC_INSTALL_DIR%/packages/ti/sdo/fc/utils/api/lib/release/" -l"acpy3.a64P" -l"dman3.a64P" -l"gt.a64P" -l"api.a64P"  -l"edma3.a64P" -l"edma3_rm_bios.lib"
+

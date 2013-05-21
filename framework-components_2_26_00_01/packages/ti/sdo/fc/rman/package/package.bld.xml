@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.rman" version="2, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="RMAN"/>
+    </units>
+    <sources>
+        <srcFile name="rman_staticConfig.c"/>
+        <srcFile name="rman_config.c"/>
+        <srcFile name="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="rman.c"/>
+        <srcFile name="rman_yield.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/rman.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rman/rman.ov5T.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_config.ov5T.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug/rman/package/package_ti.sdo.fc.rman.ov5T.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_staticConfig.ov5T.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug_trace/rman.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman.ov4TCE.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_config.ov4TCE.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/package/package_ti.sdo.fc.rman.ov4TCE.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_staticConfig.ov4TCE.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/trace/rman.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rman/rman.o86U.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_config.o86U.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/trace/rman/package/package_ti.sdo.fc.rman.o86U.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_staticConfig.o86U.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug/rman.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rman/rman.o674.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_config.o674.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug/rman/package/package_ti.sdo.fc.rman.o674.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_yield.o674.dep" src="rman_yield.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_staticConfig.o674.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/trace/rman.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rman/rman.ov5T.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_config.ov5T.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/trace/rman/package/package_ti.sdo.fc.rman.ov5T.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_staticConfig.ov5T.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/trace/rman.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rman/rman.o674.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_config.o674.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/trace/rman/package/package_ti.sdo.fc.rman.o674.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_yield.o674.dep" src="rman_yield.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_staticConfig.o674.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug_trace/rman.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman.o470uC.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_config.o470uC.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/package/package_ti.sdo.fc.rman.o470uC.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_staticConfig.o470uC.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug_trace/rman.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman.o470MV.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_config.o470MV.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/package/package_ti.sdo.fc.rman.o470MV.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_staticConfig.o470MV.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/release/rman.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rman/rman.o9t.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_config.o9t.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/release/rman/package/package_ti.sdo.fc.rman.o9t.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_staticConfig.o9t.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug/rman.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rman/rman.ov4TCE.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_config.ov4TCE.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug/rman/package/package_ti.sdo.fc.rman.ov4TCE.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_staticConfig.ov4TCE.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug_trace/rman.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman.o9t.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_config.o9t.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/package/package_ti.sdo.fc.rman.o9t.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_staticConfig.o9t.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug/rman.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rman/rman.o470uC.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_config.o470uC.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug/rman/package/package_ti.sdo.fc.rman.o470uC.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_staticConfig.o470uC.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug/rman.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rman/rman.o470MV.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_config.o470MV.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug/rman/package/package_ti.sdo.fc.rman.o470MV.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_staticConfig.o470MV.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug_trace/rman.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman.o64P.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_config.o64P.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/package/package_ti.sdo.fc.rman.o64P.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_yield.o64P.dep" src="rman_yield.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_staticConfig.o64P.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug/rman.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rman/rman.o9t.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_config.o9t.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug/rman/package/package_ti.sdo.fc.rman.o9t.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_staticConfig.o9t.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/release/rman.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rman/rman.o64P.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_config.o64P.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/release/rman/package/package_ti.sdo.fc.rman.o64P.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_yield.o64P.dep" src="rman_yield.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_staticConfig.o64P.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/trace/rman.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rman/rman.ov4TCE.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_config.ov4TCE.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/trace/rman/package/package_ti.sdo.fc.rman.ov4TCE.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_staticConfig.ov4TCE.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug/rman.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rman/rman.o64P.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_config.o64P.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug/rman/package/package_ti.sdo.fc.rman.o64P.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_yield.o64P.dep" src="rman_yield.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_staticConfig.o64P.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/trace/rman.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rman/rman.o64P.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_config.o64P.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/trace/rman/package/package_ti.sdo.fc.rman.o64P.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_yield.o64P.dep" src="rman_yield.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_staticConfig.o64P.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug_trace/rman.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman.o86U.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_config.o86U.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/package/package_ti.sdo.fc.rman.o86U.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_staticConfig.o86U.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/trace/rman.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rman/rman.o470uC.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_config.o470uC.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/trace/rman/package/package_ti.sdo.fc.rman.o470uC.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_staticConfig.o470uC.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/trace/rman.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rman/rman.o470MV.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_config.o470MV.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/trace/rman/package/package_ti.sdo.fc.rman.o470MV.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_staticConfig.o470MV.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug_trace/rman.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman.ov5T.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_config.ov5T.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/package/package_ti.sdo.fc.rman.ov5T.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_staticConfig.ov5T.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug_trace/rman.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman.o674.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_config.o674.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/package/package_ti.sdo.fc.rman.o674.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_yield.o674.dep" src="rman_yield.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rman/rman_staticConfig.o674.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/release/rman.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rman/rman.o86U.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_config.o86U.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/release/rman/package/package_ti.sdo.fc.rman.o86U.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_staticConfig.o86U.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/trace/rman.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rman/rman.o9t.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_config.o9t.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/trace/rman/package/package_ti.sdo.fc.rman.o9t.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/trace/rman/rman_staticConfig.o9t.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/release/rman.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rman/rman.ov5T.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_config.ov5T.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/release/rman/package/package_ti.sdo.fc.rman.ov5T.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_staticConfig.ov5T.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/release/rman.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rman/rman.ov4TCE.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_config.ov4TCE.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/release/rman/package/package_ti.sdo.fc.rman.ov4TCE.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_staticConfig.ov4TCE.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/release/rman.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rman/rman.o674.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_config.o674.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/release/rman/package/package_ti.sdo.fc.rman.o674.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_yield.o674.dep" src="rman_yield.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_staticConfig.o674.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/release/rman.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rman/rman.o470uC.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_config.o470uC.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/release/rman/package/package_ti.sdo.fc.rman.o470uC.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_staticConfig.o470uC.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/release/rman.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rman/rman.o470MV.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_config.o470MV.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/release/rman/package/package_ti.sdo.fc.rman.o470MV.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/release/rman/rman_staticConfig.o470MV.dep" src="rman_staticConfig.c"/>
+        <srcFile name="lib/debug/rman.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rman/rman.o86U.dep" src="rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_config.o86U.dep" src="rman_config.c"/>
+        <srcFile name="package/lib/lib/debug/rman/package/package_ti.sdo.fc.rman.o86U.dep" src="package/package_ti.sdo.fc.rman.c"/>
+        <srcFile name="package/lib/lib/debug/rman/rman_staticConfig.o86U.dep" src="rman_staticConfig.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_rman.tar.dep" src="package/rel/ti_sdo_fc_rman.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.Arm9t"
+            version="ti.targets.arm.Arm9t{1,0,4.5,0"
+            platform="ti.platforms.evmDM355"
+            isa="v5T"
+            suffix="9t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,0"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/rman"
+        pname="lib/debug/rman.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/rman"
+        pname="lib/debug_trace/rman.av4TCE"
+        profile="debug_trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/trace/rman"
+        pname="lib/trace/rman.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/rman"
+        pname="lib/debug/rman.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/rman"
+        pname="lib/trace/rman.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/rman"
+        pname="lib/trace/rman.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/rman"
+        pname="lib/debug_trace/rman.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/rman"
+        pname="lib/debug_trace/rman.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/rman"
+        pname="lib/release/rman.a9t"
+        profile="release"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug/rman"
+        pname="lib/debug/rman.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug_trace/rman"
+        pname="lib/debug_trace/rman.a9t"
+        profile="debug_trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug/rman"
+        pname="lib/debug/rman.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/rman"
+        pname="lib/debug/rman.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/rman"
+        pname="lib/debug_trace/rman.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/rman"
+        pname="lib/debug/rman.a9t"
+        profile="debug"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/rman"
+        pname="lib/release/rman.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/rman"
+        pname="lib/trace/rman.av4TCE"
+        profile="trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/rman"
+        pname="lib/debug/rman.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/rman"
+        pname="lib/trace/rman.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/rman"
+        pname="lib/debug_trace/rman.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/rman"
+        pname="lib/trace/rman.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/rman"
+        pname="lib/trace/rman.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/rman"
+        pname="lib/debug_trace/rman.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/rman"
+        pname="lib/debug_trace/rman.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/release/rman"
+        pname="lib/release/rman.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/rman"
+        pname="lib/trace/rman.a9t"
+        profile="trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/rman"
+        pname="lib/release/rman.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/rman"
+        pname="lib/release/rman.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/rman"
+        pname="lib/release/rman.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/release/rman"
+        pname="lib/release/rman.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/rman"
+        pname="lib/release/rman.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/rman"
+        pname="lib/debug/rman.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_rman"
+        pname="ti_sdo_fc_rman.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.rel.dot"/>
+        <file name="lib/trace/rman.a470uC"/>
+        <file name="rman.h"/>
+        <file name="lib/release/rman.a674"/>
+        <file name="lib/trace/rman.a9t"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/release/rman.a9t"/>
+        <file name="lib/release/rman.av5T"/>
+        <file name="lib/debug/rman.a470MV"/>
+        <file name="lib/debug/rman.av4TCE"/>
+        <file name="lib/trace/rman.a470MV"/>
+        <file name="lib/trace/rman.av4TCE"/>
+        <file name="lib/release/rman.a86U"/>
+        <file name="lib/release/rman.a64P"/>
+        <file name="lib/debug/rman.a674"/>
+        <file name="package.bld"/>
+        <file name="lib/trace/rman.a674"/>
+        <file name="lib/debug/rman.av5T"/>
+        <file name="lib/trace/rman.av5T"/>
+        <file name="lib/debug_trace/rman.a9t"/>
+        <file name="lib/debug_trace/rman.a470uC"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug_trace/rman.a674"/>
+        <file name="lib/debug/rman.a86U"/>
+        <file name="rman_staticConfig.c"/>
+        <file name="package/package_ti.sdo.fc.rman.c"/>
+        <file name="lib/trace/rman.a86U"/>
+        <file name="lib/debug/rman.a64P"/>
+        <file name="lib/release/rman.a470uC"/>
+        <file name="rman_config.c"/>
+        <file name="lib/trace/rman.a64P"/>
+        <file name="lib/debug_trace/rman.av5T"/>
+        <file name="lib/debug_trace/rman.a470MV"/>
+        <file name="lib/debug_trace/rman.av4TCE"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/release/rman.a470MV"/>
+        <file name="lib/release/rman.av4TCE"/>
+        <file name="lib/debug_trace/rman.a86U"/>
+        <file name="lib/debug_trace/rman.a64P"/>
+        <file name="package/build.cfg"/>
+        <file name="rman.c"/>
+        <file name="lib/debug/rman.a9t"/>
+        <file name="lib/debug/rman.a470uC"/>
+        <file name="rman_yield.c"/>
+        <file name="package/package.ext.xml"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

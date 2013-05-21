@@ -1,0 +1,77 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== CTesla.tci ========
+ *
+ */
+
+/*
+ *  Load C64P.tci arch file
+ */
+utils.loadArch("64P", "ti.catalog.c6000");
+
+/*
+ *  ======== CTesla ========
+ */
+function CTesla(name, parent)
+{
+    /*
+     * The 'this' refers to the cpu object created in the platform file.
+     * The apply function is a way to execute a function with a specific
+     * 'this' pointer. It's used to initialize CTesla base on a C64P.
+     */
+    C64P.apply(this, [name, parent]);
+
+    /*
+     * This field is used to include bios settings for this device.
+     */
+    this.deviceName = "Tesla";
+
+    /* cpu registers */
+    this.registers = [];
+
+    /*
+     * This associative array defines the on-chip physical memory segments
+     * indexed by the segment name.  
+     */
+    this.memBlock = [];
+    
+    this.memBlock["L2SRAM"] = {
+        comment: "Shared 256KB SRAM",
+        name: "IRAM",
+        base: 0x10900000,
+        len:  0x00040000,
+        space: "code/data"
+    };
+    
+    /* Define On-chip Memory Map */
+    this.mem = [];
+
+    this.mem[0] = [
+        this.memBlock["L2SRAM"],
+    ];
+
+    /*
+     * ======== getMemoryMap ========
+     * This method returns the on-chip memory map.
+     */
+    this.getMemoryMap = function ()
+    {
+        return(this.mem[0]);
+    };
+
+}
+/*
+ *  @(#) ti.catalog.c6000.nda; 1, 0, 0, 0,105; 2-23-2010 16:58:53; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

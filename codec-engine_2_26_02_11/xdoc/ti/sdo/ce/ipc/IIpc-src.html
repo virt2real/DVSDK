@@ -1,0 +1,137 @@
+<html><head><title>interface ti.sdo.ce.ipc.IIpc</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* 
+</span>     2    <span class="comment"> * Copyright (c) 2010, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> * 
+</span>    32    <span class="comment"> */</span>
+    33    <span class="xdoc">/*!
+</span>    34    <span class="xdoc"> *  ======== IOsal ========
+</span>    35    <span class="xdoc"> *  OSAL interface
+</span>    36    <span class="xdoc"> *
+</span>    37    <span class="xdoc"> */</span>
+    38    <span class=key>metaonly</span> <span class=key>interface</span> IIpc
+    39    {
+    40        <span class="xdoc">/*!
+</span>    41    <span class="xdoc">     *  ======== ArmDspLinkConfigMemTableEntry ========
+</span>    42    <span class="xdoc">     *  Description of one DSP memory segment entry.
+</span>    43    <span class="xdoc">     *
+</span>    44    <span class="xdoc">     *  <b>@field(addr)</b>   The beginning address of the segment
+</span>    45    <span class="xdoc">     *  <b>@field(gppAddr)</b> The GPP physical address of the segment (when needed)
+</span>    46    <span class="xdoc">     *  <b>@field(size)</b>   Size of the segment in bytes
+</span>    47    <span class="xdoc">     *  <b>@field(type)</b>   One of the following types:
+</span>    48    <span class="xdoc">     *                 "main"     -- main code/data segment (i.e. DDR2)
+</span>    49    <span class="xdoc">     *                 "link"     -- DSPLINKMEM segment
+</span>    50    <span class="xdoc">     *                 "reset"    -- RESETCTRL segment
+</span>    51    <span class="xdoc">     *                 "poolmem"  -- POOLMEM segment
+</span>    52    <span class="xdoc">     *                 "code"     -- dsp code/data, must map into GPP space
+</span>    53    <span class="xdoc">     *                 "other"    -- anything else
+</span>    54    <span class="xdoc">     */</span>
+    55        <span class=key>struct</span> ArmDspLinkConfigMemTableEntry {
+    56            UInt32 addr;
+    57            UInt32 gppAddr;
+    58            UInt32 size;
+    59            String type;
+    60        }
+    61    
+    62        <span class="xdoc">/*!
+</span>    63    <span class="xdoc">     *  ======== DspManagement ========
+</span>    64    <span class="xdoc">     *  Value for controlling DSP from ARM w/ DspLink
+</span>    65    <span class="xdoc">     *
+</span>    66    <span class="xdoc">     *  <b>@field(BootAndLoadDsp)</b>    DspLink boots DSP and loads executable
+</span>    67    <span class="xdoc">     *  <b>@field(BootDspAutonomously)</b>    DspLink boots DSP w/o loading executable
+</span>    68    <span class="xdoc">     *  <b>@field(None)</b>    DspLink neither boots DSP nor loads executable
+</span>    69    <span class="xdoc">     */</span>
+    70        <span class=key>enum</span> DspManagement {
+    71            BootAndLoadDsp,
+    72            BootDspAutonomously,
+    73            None
+    74        };
+    75    
+    76        <span class="xdoc">/*!
+</span>    77    <span class="xdoc">     *  ======== ArmDspLinkConfig ========
+</span>    78    <span class="xdoc">     *  Configuration for the DspLink on the Arm side
+</span>    79    <span class="xdoc">     *
+</span>    80    <span class="xdoc">     *  Of the many fields that Link exposes for configuration,
+</span>    81    <span class="xdoc">     *  selected ones are exposed through this interface.
+</span>    82    <span class="xdoc">     *
+</span>    83    <span class="xdoc">     *  <b>@field(memTable)</b>    Memory table, describing all DSP segments.
+</span>    84    <span class="xdoc">     *                      NOTE: segments "DDR2" (or whatever is the name of
+</span>    85    <span class="xdoc">     *                      the main segment), "DSPLINKMEM", and
+</span>    86    <span class="xdoc">     *                      "RESETCTRL" must be present
+</span>    87    <span class="xdoc">     *
+</span>    88    <span class="xdoc">     *  <b>@field(doPowerControl)</b>    Flag indicating if Link should implement
+</span>    89    <span class="xdoc">     *                      power control of DSP.
+</span>    90    <span class="xdoc">     *
+</span>    91    <span class="xdoc">     *  <b>@field(dspManagement)</b>    Flag indicating how Link should boot/load DSP
+</span>    92    <span class="xdoc">     */</span>
+    93        <span class=key>struct</span> ArmDspLinkConfig {
+    94            ArmDspLinkConfigMemTableEntry memTable[string];
+    95            Bool doPowerControl;
+    96            DspManagement dspManagement;
+    97            <span class="comment">/* TODO:M add other select params here... */</span>
+    98        }
+    99    
+   100        <span class="xdoc">/*!
+</span>   101    <span class="xdoc">     *  ======== LinkConfigEntry ========
+</span>   102    <span class="xdoc">     *  This structure associates a sever executable with an ipc link
+</span>   103    <span class="xdoc">     *  configuration. The type of the linkCfg field is left as "Any",
+</span>   104    <span class="xdoc">     *  since it will depend on the module that implements the IIpc
+</span>   105    <span class="xdoc">     *  interface. This is an internal field used only by codec engine
+</span>   106    <span class="xdoc">     *  scripting.
+</span>   107    <span class="xdoc">     *
+</span>   108    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   109    <span class="xdoc">     */</span>
+   110        <span class=key>struct</span> LinkConfigEntry {
+   111            string serverName;              <span class="comment">/* Name of the server executable */</span>
+   112            ArmDspLinkConfig    linkCfg;         <span class="comment">/* Link configuration */</span>
+   113        }
+   114    
+   115        <span class="xdoc">/*!
+</span>   116    <span class="xdoc">     *  ======== linkConfigs ========
+</span>   117    <span class="xdoc">     *  Link configurations per server; if left undefined will be
+</span>   118    <span class="xdoc">     *  set to DEFAULT_ARMDSPLINKCONFIG, but with a warning. This is an
+</span>   119    <span class="xdoc">     *  internal field, set by the Engine scripting.
+</span>   120    <span class="xdoc">     *
+</span>   121    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   122    <span class="xdoc">     */</span>
+   123        <span class=key>config</span> LinkConfigEntry linkConfigs[string];
+   124    }
+   125    <span class="comment">/*
+</span>   126    <span class="comment"> *  @(#) ti.sdo.ce.ipc; 2, 0, 1,183; 12-2-2010 21:24:05; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+</span>   127    <span class="comment">
+</span>   128    <span class="comment"> */</span>
+   129    
+</pre>
+</body></html>

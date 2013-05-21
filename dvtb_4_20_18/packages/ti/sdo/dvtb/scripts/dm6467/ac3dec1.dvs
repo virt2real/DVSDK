@@ -1,0 +1,43 @@
+############################################################
+# Decode AC3 Audio: Read from file, decode and dump
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp ac3dec1 codec dolbyac3dec
+
+# Specify the codec parameters
+setp ac3dec1 outputPCMWidth 16
+setp ac3dec1 pcmFormat 1
+setp ac3dec1 dataEndianness 1
+setp ac3dec1 desiredChannelMode 1 
+setp ac3dec1 lfeFlag 0 
+setp ac3dec1 aux 0 
+setp ac3dec1 sourceDual 0 
+setp ac3dec1 sourceKaraoke 3 
+setp ac3dec1 downSampleSbrFlag 0
+setp ac3dec1 operationMode 2 
+setp ac3dec1 dynrngScaleHiQ6 1
+setp ac3dec1 dynrngScaleLoQ6 1
+setp ac3dec1 RFModeGainApply 0
+setp ac3dec1 dlgNormApply 0
+setp ac3dec1 stereomod 0 
+setp ac3dec1 adconvtyp 0
+setp ac3dec1 inbufsize 4096
+setp ac3dec1 outbufsize 36864
+
+# Specify the driver parameters
+#setp audio device plughw:0,0
+#setp audio format 2
+#setp audio samplerate 44100
+#setp audio channels 2
+#setp audio type 0
+
+# Trigger the decode+playback scenario
+func ac3dec1 -s input.ac3 -t test.pcm

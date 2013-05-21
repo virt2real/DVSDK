@@ -1,0 +1,155 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+
+# your XDCTOOLS installation directory
+XDC_INSTALL_DIR=`this.xdcInstall`
+
+# set this to your codec engine installation
+CE_INSTALL_DIR = `this.ceInstall`
+
+# set this to your BIOS installation
+BIOS_INSTALL_DIR = `this.biosInstall`
+
+% if (this.fcInstall) {
+# set this to your framework components installation
+FC_INSTALL_DIR = `this.fcInstall`
+
+% }
+% if (this.xdaisInstall) {
+# set this to your xdais installation
+XDAIS_INSTALL_DIR = `this.xdaisInstall`
+
+% }
+% if (this.biosUtilsInstall) {
+# set this to your Bios Utils installation
+BIOSUTILS_INSTALL_DIR = `this.biosUtilsInstall`
+
+% }
+% if (this.enablePwr && this.lpmInstall) {
+# set this to your Local Power Manager installation
+LPM_INSTALL_DIR = `this.lpmInstall`
+
+% }
+% if (this.configuresEdma3 && this.edma3LldInstall) {
+# set this to your EDAMA3LLD installation
+EDMA3_LLD_INSTALL_DIR = `this.edma3LldInstall`
+
+% }
+% var cetoolsFile = null;
+% if (this.cetoolsInstall) {
+%     cetoolsFile = java.io.File(this.cetoolsInstall);
+% }
+% var usesCeTools = false;
+% if (this.fcInstall && java.io.File(this.fcInstall).equals(cetoolsFile) ||
+%     this.xdaisInstall && java.io.File(this.xdaisInstall).equals(cetoolsFile) ||
+%     this.biosUtilsInstall && java.io.File(this.biosUtilsInstall).equals(cetoolsFile) ||
+%     this.enablePwr && this.lpmInstall && java.io.File(this.lpmInstall).equals(cetoolsFile) ||
+%     this.configuresEdma3 && this.edma3LldInstall && java.io.File(this.edma3LldInstall).equals(cetoolsFile)) {
+%
+%     usesCeTools = true;
+% }
+
+% if (usesCeTools) {
+# set this to your codec engine cetools installation
+CETOOLS_INSTALL_DIR = `this.cetoolsInstall`
+
+%}
+# set this to your DSPLink installation.  Note that it must contain
+# a directory named "dsplink".  Some installations of DSPLink include a
+# packages/ subdirectory before the "dsplink/" directory; if your DSPLink
+# distribution has this packages/ subdirectory, you must add it to the
+# end of your DSPLINK_INSTALL_DIR variable, like this:
+LINK_INSTALL_DIR = `this.dsplinkInstall`
+
+% if (this.cgTools) {
+CODEGEN_INSTALL_DIR=`this.cgTools`
+% }
+
+#uncomment this for verbose builds
+#XDCOPTIONS=v
+
+# If we're a subcomponent, allow larger product settings to override our
+# defaults.  The variable $(RULES_MAKE) can be overridden on the 'make'
+# command-line if the location below is not correct (for example, if you
+# want to use a Rules.make from some other location.
+RULES_MAKE := $(CE_INSTALL_DIR)/../Rules.make
+ifneq ($(wildcard $(RULES_MAKE)),)
+include $(RULES_MAKE)
+endif
+
+XDCARGS=CODEGEN_INSTALL_DIR=\"$(CODEGEN_INSTALL_DIR)\"
+
+% var xdcpath = this.xdcpath;
+% if (usesCeTools) {
+%     xdcpath = '$(CETOOLS_INSTALL_DIR)/packages;' + xdcpath;
+% }
+% if (this.fcInstall && !java.io.File(this.fcInstall).equals(cetoolsFile)) {
+%     xdcpath = '$(FC_INSTALL_DIR)/packages;' + xdcpath;
+% }
+% if (this.xdaisInstall && !java.io.File(this.xdaisInstall).equals(cetoolsFile)) {
+%     xdcpath = '$(XDAIS_INSTALL_DIR)/packages;' + xdcpath;
+% }
+% if (this.biosUtilsInstall && !java.io.File(this.biosUtilsInstall).equals(cetoolsFile)) {
+%     xdcpath = '$(BIOSUTILS_INSTALL_DIR)/packages;' + xdcpath;
+% }
+% if (this.enablePwr && this.lpmInstall && !java.io.File(this.lpmInstall).equals(cetoolsFile)) {
+%     xdcpath = '$(LPM_INSTALL_DIR)/packages;' + xdcpath;
+% }
+% if (this.configuresEdma3 && this.edma3LldInstall && !java.io.File(this.edma3LldInstall).equals(cetoolsFile)) {
+%     xdcpath = '$(EDMA3_LLD_INSTALL_DIR)/packages;' + xdcpath;
+% }
+# Construct XDCPATH from the paths above - this is the path containing
+# dependencies required for this Server
+% if (java.io.File(this.dsplinkInstall + '/packages').exists()) {
+XDCPATH=$(XDC_INSTALL_DIR)/packages;$(CE_INSTALL_DIR)/packages;$(BIOS_INSTALL_DIR)/packages;$(LINK_INSTALL_DIR)/packages;`xdcpath`
+% }
+% else {
+XDCPATH=$(XDC_INSTALL_DIR)/packages;$(CE_INSTALL_DIR)/packages;$(BIOS_INSTALL_DIR)/packages;$(LINK_INSTALL_DIR);`xdcpath`
+% }
+
+all:
+	"$(XDC_INSTALL_DIR)/xdc" XDCOPTIONS=$(XDCOPTIONS) XDCARGS="$(XDCARGS)" --xdcpath="$(XDCPATH)" release
+
+clean:
+	"$(XDC_INSTALL_DIR)/xdc" XDCOPTIONS=$(XDCOPTIONS) clean
+
+
+%%{
+/*
+ * @(#) ti.sdo.ce.wizards.genserver; 1, 0, 0,84; 12-2-2010 21:28:48; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

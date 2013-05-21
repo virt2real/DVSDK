@@ -1,0 +1,83 @@
+/*
+ * dvtbSphEnc.h
+ *
+ * XDM0.9 Speech Encode Interface
+ *
+ * Copyright (C) 2010 Texas Instruments Incorporated - http://www.ti.com/
+ * 
+ * 
+ *  Redistribution and use in source and binary forms, with or without 
+ *  modification, are permitted provided that the following conditions 
+ *  are met:
+ *
+ *    Redistributions of source code must retain the above copyright 
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ *    Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the 
+ *    documentation and/or other materials provided with the   
+ *    distribution.
+ *
+ *    Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ *  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ *  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ *  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+ *  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ *  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ *  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+ *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+ *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+*/
+
+#ifndef _DVEVM_ST_SPH_ENC_H
+#define _DVEVM_ST_SPH_ENC_H
+
+#include "dvtbGlobal.h"
+#include "dvtbEngine.h"
+#include <ti/sdo/ce/speech/sphenc.h>
+
+#define SPHENC_FRAME_SIZE       (80)
+
+#define SPHENC_CL               (1)
+#define SPHENC_PT               (0)
+#define SPHENC_VS               (0)
+#define DEFAULT_SPHENC_TIME     (10)
+
+typedef struct
+{
+  char sencName[MAX_NAME_LEN];
+  unsigned int seconds;                 /* Number of seconds for audio capture */
+  SPHENC_Params sencParams;
+  SPHENC_Status sencStatus;
+  SPHENC_DynamicParams sencDynParams;
+  SPHENC_InArgs sencInArgs;
+  SPHENC_OutArgs sencOutArgs;
+
+
+  DvevmStBuffer inBuf;
+  DvevmStBuffer outBuf;
+
+  Engine_Handle ceHdl;
+  SPHENC_Handle sencHdl;
+} DvevmStSphEncInfo;
+
+DvevmStRetCode
+dvtb_sphEncInit(DvevmStSphEncInfo *se);
+
+DvevmStRetCode
+dvtb_sphEncEncode(DvevmStSphEncInfo *se);
+
+DvevmStRetCode
+dvtb_sphEncControl(DvevmStSphEncInfo *se);
+
+DvevmStRetCode
+dvtb_sphEncClose(DvevmStSphEncInfo *se);
+
+#endif

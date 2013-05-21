@@ -1,0 +1,85 @@
+############################################################
+# video read and encode 
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp mpeg4hdvicpenc1 codec mpeg4hdvicpenc1
+
+# specify the parameters
+setp mpeg4hdvicpenc1 encodingPreset             3
+setp mpeg4hdvicpenc1 rateControlPreset          0
+setp mpeg4hdvicpenc1 maxHeight                  1088
+setp mpeg4hdvicpenc1 maxWidth                   1920
+setp mpeg4hdvicpenc1 maxFrameRate               30000
+setp mpeg4hdvicpenc1 maxBitRate                 4000000
+setp mpeg4hdvicpenc1 dataEndianness             1
+setp mpeg4hdvicpenc1 maxInterFrameInterval      0
+setp mpeg4hdvicpenc1 inputChromaFormat          9
+setp mpeg4hdvicpenc1 inputContentType           0
+setp mpeg4hdvicpenc1 reconChromaFormat          9
+setp mpeg4hdvicpenc1 inputHeight                1088
+setp mpeg4hdvicpenc1 inputWidth                 1920
+setp mpeg4hdvicpenc1 refFrameRate               30000
+setp mpeg4hdvicpenc1 targetFrameRate            30000
+setp mpeg4hdvicpenc1 targetBitRate              4000000
+setp mpeg4hdvicpenc1 intraFrameInterval         30
+setp mpeg4hdvicpenc1 generateHeader             0
+setp mpeg4hdvicpenc1 captureWidth               0
+setp mpeg4hdvicpenc1 forceFrame                 0
+setp mpeg4hdvicpenc1 interFrameInterval         0
+setp mpeg4hdvicpenc1 mbDataFlag                 0
+setp mpeg4hdvicpenc1 extMPEG4_mode              1 
+setp mpeg4hdvicpenc1 extlevelIdc                5
+setp mpeg4hdvicpenc1 extuseVOS                  1
+setp mpeg4hdvicpenc1 extuseGOV                  0
+setp mpeg4hdvicpenc1 extuseDataPartition        0
+setp mpeg4hdvicpenc1 extuseRVLC                 0
+setp mpeg4hdvicpenc1 extaspectRatio             1
+setp mpeg4hdvicpenc1 extpixelRange              1
+setp mpeg4hdvicpenc1 exttimerResolution         30000
+setp mpeg4hdvicpenc1 extME_Type                 0
+setp mpeg4hdvicpenc1 extUMV                     1  
+setp mpeg4hdvicpenc1 extEncQuality_mode         0
+setp mpeg4hdvicpenc1 extFour_MV_mode            0
+setp mpeg4hdvicpenc1 extPacketSize              0
+setp mpeg4hdvicpenc1 extqpIntra                 8
+setp mpeg4hdvicpenc1 extqpInter                 8
+setp mpeg4hdvicpenc1 extairRate                 0
+setp mpeg4hdvicpenc1 extuseHEC                  0
+setp mpeg4hdvicpenc1 extuseGOBSync              0
+setp mpeg4hdvicpenc1 extRcAlgo                  8
+setp mpeg4hdvicpenc1 extQPMax                   31
+setp mpeg4hdvicpenc1 extQPMin                   2
+setp mpeg4hdvicpenc1 extmaxDelay                1000
+setp mpeg4hdvicpenc1 extqpInit                  8 
+setp mpeg4hdvicpenc1 extPerceptualRC            0
+setp mpeg4hdvicpenc1 extreset_vIMCOP_every_frame 1
+setp mpeg4hdvicpenc1 extmvSADoutFlag            0
+setp mpeg4hdvicpenc1 numFrames                  30
+
+# Configure VPFE parameters
+#setp vpfe input        2
+#setp vpfe standard     1
+#setp vpfe format       8
+
+#setp vpfe cropEnable 0
+#setp vpfe cropCapLeft 0
+#setp vpfe cropCapTop 32
+#setp vpfe cropCapWidth 160
+#setp vpfe cropCapHeight 320
+
+#setp vpfe width        1280
+#setp vpfe height       720
+
+# Trigger the capture+encode operation
+#func mpeg4enc1 -t <output file name>
+
+# Trigger the file-read+encode operation
+func mpeg4hdvicpenc1 -s input_1920x1088_420SP.yuv -t test.m4v

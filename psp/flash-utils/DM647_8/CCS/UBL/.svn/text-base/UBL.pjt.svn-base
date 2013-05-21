@@ -1,0 +1,38 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="U:\GForge\cat_flashutils\trunk\DM647_8\CCS\UBL\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="DDR_512MB"
+Config="Debug"
+
+[Source Files]
+Source="..\..\..\Common\src\nor.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\Common\src\device.c"
+Source="..\..\Common\src\i2c_ecp.c"
+Source="src\ais.c"
+Source="src\debug.c"
+Source="src\norboot.c"
+Source="src\uart.c"
+Source="src\ubl.c"
+Source="UBL.cmd"
+
+["Compiler" Settings: "DDR_512MB"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -d"_DEBUG" -d"DDR_512MB" -mv6400+
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -d"_DEBUG" -mv6400+
+
+["Linker" Settings: "DDR_512MB"]
+Options=-c -m".\Debug\UBL_512MB.map" -o".\Debug\UBL_512MB.out" -w -x
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\UBL.map" -o".\Debug\UBL.out" -w -x
+

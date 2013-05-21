@@ -1,0 +1,167 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="U:\GForge\cat_flashutils\trunk\DM644x\CCS\UBL\"
+ProjectType=Executable
+CPUFamily=TMS470R2X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="BOOT_NAND"
+Config="BOOT_NAND_DM6441"
+Config="BOOT_NAND_DM6441LV"
+Config="BOOT_NAND_DM644x_810MHz"
+Config="BOOT_NOR"
+Config="BOOT_NOR_DM6441"
+Config="BOOT_NOR_DM6441LV"
+Config="BOOT_NOR_DM644x_810MHz"
+
+[Source Files]
+Source="..\..\..\Common\arch\arm926ejs\src\boot.c"
+Source="..\..\..\Common\arch\arm926ejs\src\selfcopy.c"
+Source="..\..\..\Common\drivers\src\nand.c"
+Source="..\..\..\Common\drivers\src\nor.c"
+Source="..\..\..\Common\gnu\src\debug.c"
+Source="..\..\..\Common\gnu\src\uart.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\..\Common\ubl\src\nandboot.c"
+Source="..\..\..\Common\ubl\src\norboot.c"
+Source="..\..\..\Common\ubl\src\uartboot.c"
+Source="..\..\..\Common\ubl\src\ubl.c"
+Source="..\..\Common\src\device.c"
+Source="..\..\Common\src\device_nand.c"
+Source="ubl.cmd"
+
+["BOOT_NAND" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\ubl_DM644x_nand.bin $(Proj_dir)\NAND\ubl_DM644x_nand.out;Run=Always
+
+["BOOT_NAND_DM6441" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\ubl_DM6441_nand.bin $(Proj_dir)\NAND_6441\ubl_DM6441_nand.out;Run=Always
+
+["BOOT_NAND_DM6441LV" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\ubl_DM6441LV_nand.bin $(Proj_dir)\NAND_6441LV\ubl_DM6441LV_nand.out;Run=Always
+
+["BOOT_NAND_DM644x_810MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\ubl_DM644x_810MHz_nand.bin $(Proj_dir)\NAND_6446_V21\ubl_DM644x_810MHz_nand.out;Run=Always
+
+["BOOT_NOR" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\ubl_DM644x_nor.bin $(Proj_dir)\NOR\ubl_DM644x_nor.out;Run=Always
+
+["BOOT_NOR_DM6441" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\ubl_DM6441_nor.bin $(Proj_dir)\NOR_6441\ubl_DM6441_nor.out;Run=Always
+
+["BOOT_NOR_DM6441LV" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\ubl_DM6441LV_nor.bin $(Proj_dir)\NOR_6441LV\ubl_DM6441LV_nor.out;Run=Always
+
+["BOOT_NOR_DM644x_810MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\ubl_DM644x_810MHz_nor.bin $(Proj_dir)\NOR_6446_V21\ubl_DM644x_810MHz_nor.out;Run=Always
+
+["Compiler" Settings: "BOOT_NAND"]
+Options=-o3 -fr"$(Proj_dir)\NAND" -fs"$(Proj_dir)\NAND" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NAND_DM6441"]
+Options=-o3 -fr"$(Proj_dir)\NAND_6441" -fs"$(Proj_dir)\NAND_6441" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM6441" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NAND_DM6441LV"]
+Options=-o3 -fr"$(Proj_dir)\NAND_6441LV" -fs"$(Proj_dir)\NAND_6441LV" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM6441_LV" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NAND_DM644x_810MHz"]
+Options=-o3 -fr"$(Proj_dir)\NAND_6446_V21" -fs"$(Proj_dir)\NAND_6446_V21" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NAND" -d"DM644x_810MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NOR"]
+Options=-o3 -fr"$(Proj_dir)\NOR" -fs"$(Proj_dir)\NOR" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NOR_DM6441"]
+Options=-o3 -fr"$(Proj_dir)\NOR_6441" -fs"$(Proj_dir)\NOR_6441" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -d"DM6441" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NOR_DM6441LV"]
+Options=-o3 -fr"$(Proj_dir)\NOR_6441LV" -fs"$(Proj_dir)\NOR_6441LV" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -d"DM6441_LV" -me -mv5e --abi=eabi --symdebug:none
+
+["Compiler" Settings: "BOOT_NOR_DM644x_810MHz"]
+Options=-o3 -fr"$(Proj_dir)\NOR_6446_V21" -fs"$(Proj_dir)\NOR_6446_V21" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -d"DM644x_810MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Linker" Settings: "BOOT_NAND"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND\ubl_DM644x_nand.map" -o"$(Proj_dir)\NAND\ubl_DM644x_nand.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NAND_DM6441"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND_6441\ubl_DM6441_nand.map" -o"$(Proj_dir)\NAND_6441\ubl_DM6441_nand.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NAND_DM6441LV"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND_6441LV\ubl_DM6441LV_nand.map" -o"$(Proj_dir)\NAND_6441LV\ubl_DM6441LV_nand.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NAND_DM644x_810MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NAND_6446_V21\ubl_DM644x_810MHz_nand.map" -o"$(Proj_dir)\NAND_6446_V21\ubl_DM644x_810MHz_nand.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NOR"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR\ubl_DM644x_nor.map" -o"$(Proj_dir)\NOR\ubl_DM644x_nor.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NOR_DM6441"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR_6441\ubl_DM6441_nor.map" -o"$(Proj_dir)\NOR_6441\ubl_DM6441_nor.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NOR_DM6441LV"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR_6441LV\ubl_DM6441LV_nor.map" -o"$(Proj_dir)\NOR_6441LV\ubl_DM6441LV_nor.out" -x --retain="*(.selfcopy)"
+
+["Linker" Settings: "BOOT_NOR_DM644x_810MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR_6446_V21\ubl_DM644x_810MHz_nor.map" -o"$(Proj_dir)\NOR_6446_V21\ubl_DM644x_810MHz_nor.out" -x --retain="*(.selfcopy)"
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_NOR"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_NOR_DM6441"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_NOR_DM6441LV"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nand.c" Settings: "BOOT_NOR_DM644x_810MHz"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_NAND"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_NAND_DM6441"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_NAND_DM6441LV"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\drivers\src\nor.c" Settings: "BOOT_NAND_DM644x_810MHz"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_NOR"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_NOR_DM6441"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_NOR_DM6441LV"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\nandboot.c" Settings: "BOOT_NOR_DM644x_810MHz"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_NAND"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_NAND_DM6441"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_NAND_DM6441LV"]
+ExcludeFromBuild=true
+
+["..\..\..\Common\ubl\src\norboot.c" Settings: "BOOT_NAND_DM644x_810MHz"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_NOR"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_NOR_DM6441"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_NOR_DM6441LV"]
+ExcludeFromBuild=true
+
+["..\..\Common\src\device_nand.c" Settings: "BOOT_NOR_DM644x_810MHz"]
+ExcludeFromBuild=true
+

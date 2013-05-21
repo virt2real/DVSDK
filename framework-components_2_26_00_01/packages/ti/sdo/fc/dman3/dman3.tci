@@ -1,0 +1,938 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ *  ======== dman3.tci ========
+ */
+
+var SEGZERO = prog.module("MEM").instance("SEGZERO");
+var MAXGROUPS = 20;
+
+var $$name = "DMAN3";
+
+var $$label = "Properties for DSP Bridge DMAN3 module";
+
+/* Global properties for DMAN3 object */
+var $$global = [
+        {
+            name : "EDMA3BASE",
+            val  : 0x01C00000,
+            label: "EDMA3 registers base address (DSP byte address)",
+            type : "Hexadecimal",
+            /* TBD: May need error checking test here */
+        },
+        {
+            name : "MAXPARAMENTRIES",
+            val  : 128,
+            label: "Total number of PaRam entries",
+            type : "Integer",
+            test : ["setMaxPaRamEntries"],
+        },
+        {
+            name : "PARAMBASEINDEX",
+            val  : 96,
+            label: "First PaRAM table entry for DMAN3 use",
+            type : "Integer",
+            test : ["setPaRAMBaseIndex"],
+        },
+        {
+            name : "NUMPARAMENTRIES",
+            val  : 32,
+            label: "Number of PaRAM table entries for DMAN3 use",
+            type : "Integer",
+            test : ["setNumPaRAMEntries"],
+        },
+        {
+            name : "NULLPARAMINDEX",
+            val  : 0,
+            label: "Index of null PaRAM",
+            type : "Integer",
+            test : ["setNullPaRamIndex"],
+        },
+        {
+            name : "MAXQDMACHANNELS",
+            val  : 4,
+            label: "Total number of QDMA channels",
+            type : "Integer",
+            test : ["setMaxQdmaChannels"],
+        },
+        {
+            name : "USEQDMA0",
+            val  : true,
+            label: "QDMA channel 0 used by DMAN3",
+            type : "Boolean",
+        },
+        {
+            name : "USEQDMA1",
+            val  : true,
+            label: "QDMA channel 1 used by DMAN3",
+            type : "Boolean",
+        },
+        {
+            name : "USEQDMA2",
+            val  : true,
+            label: "QDMA channel 2 used by DMAN3",
+            type : "Boolean",
+        },
+        {
+            name : "USEQDMA3",
+            val  : true,
+            label: "QDMA channel 3 used by DMAN3",
+            type : "Boolean",
+        },
+        {
+            name : "USEQDMA4",
+            val  : false,
+            label: "QDMA channel 4 used by DMAN3",
+            type : "Boolean",
+        },
+        {
+            name : "USEQDMA5",
+            val  : false,
+            label: "QDMA channel 5 used by DMAN3",
+            type : "Boolean",
+        },
+        {
+            name : "USEQDMA6",
+            val  : false,
+            label: "QDMA channel 6 used by DMAN3",
+            type : "Boolean",
+        },
+        {
+            name : "USEQDMA7",
+            val  : false,
+            label: "QDMA channel 7 used by DMAN3",
+            type : "Boolean",
+        },
+        {
+            name : "TCC_FREEMASK_HIGH",
+            val  : 0x0,
+            label: "Bit mask of available TCCs (32-63)",
+            type : "Hexadecimal",
+            test : ["setTccFreeMask"],
+        },
+        {
+            name : "TCC_FREEMASK_LOW",
+            val  : 0xffffffff,
+            label: "Bit mask of available TCCs (0-31)",
+            type : "Hexadecimal",
+            test : ["setTccFreeMask"],
+        },
+        {
+            /* TBD: set to MEM.SEGZERO in CDB; figure out conversion */
+            name : "INTERNALHEAP",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Internal memory segment for DMAN3 allocation (must be in L1D)",
+            type : "Object",
+            test : ["isMemSegment", "hasHeap"],
+        },
+        {
+            /* TBD: set to MEM.SEGZERO in CDB; figure out conversion */
+            name : "EXTERNALHEAP",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Memory segment for DMAN3 allocation",
+            type : "Object",
+            test : ["isMemSegment", "hasHeap"],
+        },
+        {
+            name : "IDMA3INTERNAL",
+            val  : true,
+            label: "Allocate IDMA3 channels in internal memory",
+            type : "Boolean",
+        },
+        {
+            name : "SCRATCHALLOCFXN",
+            val  : null,
+            label: "Function for allocating IDMA3 env in scratch memory",
+            type : "Object",
+            test : ["checkScratchFxn"],
+        },
+        {
+            name : "SCRATCHFREEFXN",
+            val  : null,
+            label: "Function for freeing IDMA3 env from scratch memory",
+            type : "Object",
+            test : ["checkScratchFxn"],
+        },
+        {
+            name : "USECPUCOPY",
+            val  : false,
+            label: "Use CPU copy to transfer data",
+            type : "Boolean",
+        },
+        {
+            name : "ALLOWUNSHARED",
+            val  : true,
+            label: "Allow unshared TCCs or PaRams to be granted",
+            type : "Boolean",
+        },
+        {
+            name : "USEEXTERNALRM",
+            val  : false,
+            label: "Use External Resource Manager to manage scratch resources",
+            type : "Boolean",
+        },
+            /* Removed packed/masked TCCS groups. */
+        {
+            name : "NUMTCCS_GROUP0",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 0",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP1",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 1",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP2",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 2",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP3",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 3",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP4",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 4",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP5",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 5",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP6",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 6",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP7",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 7",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP8",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 8",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP9",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 9",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP10",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 10",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP11",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 11",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP12",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 12",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP13",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 13",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP14",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 14",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP15",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 15",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP16",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 16",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP17",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 17",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP18",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 18",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMTCCS_GROUP19",
+            val  : 0,
+            label: "Number of TCCs to assign to group ID 19",
+            type : "Integer",
+            test : ["checkNumTccs"],
+        },
+        {
+            name : "NUMPARAMS_GROUP0",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 0",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP1",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 1",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP2",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 2",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP3",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 3",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP4",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 4",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP5",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 5",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP6",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 6",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP7",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 7",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP8",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 8",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP9",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 9",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP10",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 10",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP11",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 11",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP12",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 12",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP13",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 13",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP14",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 14",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP15",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 15",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP16",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 16",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP17",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 17",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP18",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 18",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "NUMPARAMS_GROUP19",
+            val  : 0,
+            label: "Number of PaRams to aassign to group ID 19",
+            type : "Integer",
+            test : ["checkNumPaRams"],
+        },
+        {
+            name : "MAXTCS",
+            val  : 8,
+            label: "Total number of TCs",
+            type : "Integer",
+            test : ["setMaxTcs"],
+        },
+        {
+            name : "EVENTQUEUE_QDMA0",
+            val  : 1,
+            label: "Event Queue number associated with QDMA Channel 0",
+            type : "Integer",
+            test : ["checkEventQueue"],
+        },
+        {
+            name : "EVENTQUEUE_QDMA1",
+            val  : 1,
+            label: "Event Queue number associated with QDMA Channel 1",
+            type : "Integer",
+            test : ["checkEventQueue"],
+        },
+        {
+            name : "EVENTQUEUE_QDMA2",
+            val  : 1,
+            label: "Event Queue number associated with QDMA Channel 2",
+            type : "Integer",
+            test : ["checkEventQueue"],
+        },
+        {
+            name : "EVENTQUEUE_QDMA3",
+            val  : 1,
+            label: "Event Queue number associated with QDMA Channel 3",
+            type : "Integer",
+            test : ["checkEventQueue"],
+        },
+        {
+            name : "EVENTQUEUE_QDMA4",
+            val  : 1,
+            label: "Event Queue number associated with QDMA Channel 4",
+            type : "Integer",
+            test : ["checkEventQueue"],
+        },
+        {
+            name : "EVENTQUEUE_QDMA5",
+            val  : 1,
+            label: "Event Queue number associated with QDMA Channel 5",
+            type : "Integer",
+            test : ["checkEventQueue"],
+        },
+        {
+            name : "EVENTQUEUE_QDMA6",
+            val  : 1,
+            label: "Event Queue number associated with QDMA Channel 6",
+            type : "Integer",
+            test : ["checkEventQueue"],
+        },
+        {
+            name : "EVENTQUEUE_QDMA7",
+            val  : 1,
+            label: "Event Queue number associated with QDMA Channel 7",
+            type : "Integer",
+            test : ["checkEventQueue"],
+        },
+        {
+            name : "TCNUM_EVENTQUEUE0",
+            val  : 0,
+            label: "TC number associated with Event Queue 0",
+            type : "Integer",
+            test : ["checkTCMap"],
+        },
+        {
+            name : "TCNUM_EVENTQUEUE1",
+            val  : 1,
+            label: "TC number associated with Event Queue 1",
+            type : "Integer",
+            test : ["checkTCMap"],
+        },
+        {
+            name : "TCNUM_EVENTQUEUE2",
+            val  : 2,
+            label: "TC number associated with Event Queue 2",
+            type : "Integer",
+            test : ["checkTCMap"],
+        },
+        {
+            name : "TCNUM_EVENTQUEUE3",
+            val  : 3,
+            label: "TC number associated with Event Queue 3",
+            type : "Integer",
+            test : ["checkTCMap"],
+        },
+        {
+            name : "TCNUM_EVENTQUEUE4",
+            val  : 4,
+            label: "TC number associated with Event Queue 4",
+            type : "Integer",
+            test : ["checkTCMap"],
+        },
+        {
+            name : "TCNUM_EVENTQUEUE5",
+            val  : 5,
+            label: "TC number associated with Event Queue 5",
+            type : "Integer",
+            test : ["checkTCMap"],
+        },
+        {
+            name : "TCNUM_EVENTQUEUE6",
+            val  : 6,
+            label: "TC number associated with Event Queue 6",
+            type : "Integer",
+            test : ["checkTCMap"],
+        },
+        {
+            name : "TCNUM_EVENTQUEUE7",
+            val  : 7,
+            label: "TC number associated with Event Queue 7",
+            type : "Integer",
+            test : ["checkTCMap"],
+        },
+        {
+            name : "PRIORITY_EVENTQUEUE0",
+            val  : 3,
+            label: "Priority associated with Event Queue 0",
+            type : "Integer",
+        },
+        {
+            name : "PRIORITY_EVENTQUEUE1",
+            val  : 7,
+            label: "Priority associated with Event Queue 1",
+            type : "Integer",
+        },
+        {
+            name : "PRIORITY_EVENTQUEUE2",
+            val  : 0,
+            label: "Priority associated with Event Queue 2",
+            type : "Integer",
+        },
+        {
+            name : "PRIORITY_EVENTQUEUE3",
+            val  : 0,
+            label: "Priority associated with Event Queue 3",
+            type : "Integer",
+        },
+        {
+            name : "PRIORITY_EVENTQUEUE4",
+            val  : 0,
+            label: "Priority associated with Event Queue 4",
+            type : "Integer",
+        },
+        {
+            name : "PRIORITY_EVENTQUEUE5",
+            val  : 0,
+            label: "Priority associated with Event Queue 5",
+            type : "Integer",
+        },
+        {
+            name : "PRIORITY_EVENTQUEUE6",
+            val  : 0,
+            label: "Priority associated with Event Queue 6",
+            type : "Integer",
+        },
+        {
+            name : "PRIORITY_EVENTQUEUE7",
+            val  : 0,
+            label: "Priority associated with Event Queue 7",
+            type : "Integer",
+        },
+            ];
+
+var $$template =
+    {
+        cSource : "ti/sdo/fc/dman3/dman3_c.tpl",
+        linker  : "ti/sdo/fc/dman3/dman3_cmd.tpl",
+    };
+
+/* Module's init function */
+var $$initFxn = prog.extern("DMAN3_initParams");
+
+/*
+ *  ======== Test Functions ========
+ */
+
+/*
+ *  ======== checkEventQueue ========
+ *  Make sure the TC Mapped to this event queue is not more than the maximum
+ *  Tccs
+ */
+function checkEventQueue(text, val)
+{
+    if (val > this.MAXTCS) {
+        throw (text + " Incorrect value of EVENTQUEUE_QDMAn" + val);
+    }
+    else {
+        if (val < 0) {
+            throw (text + " Value of EVENTQUEUE_QDMAn should be  >= 0");
+        }
+    }
+}
+
+/*
+ *  ======== checkTCMap ========
+ *  Make sure the TC Mapped to this event queue is not more than the maximum
+ *  Tccs
+ */
+function checkTCMap(text, val)
+{
+    if (val > this.MAXTCS) {
+        throw (text + " Incorrect value of TCNUM_EVENTQUEUEn" + val);
+    }
+    else {
+        if (val < 0) {
+            throw (text + " Value of TCNUM_EVENTQUEUEn should be  >= 0");
+        }
+    }
+}
+/*
+ *  ======== checkNumPaRams ========
+ *  Make sure the number of PaRams for a given scratch group is not more
+ *  than the total number of PaRams allocated to DMAN3.
+ */
+function checkNumPaRams (text, val)
+{
+    if (val > this.NUMPARAMENTRIES) {
+        throw (text + " Insufficient number of PaRams allocated DMAN3");
+    }
+    else if (val < 0) {
+            throw (text + " Number of PaRams must be >= 0");
+        }
+}
+
+/*
+ *  ======== setMaxTcs ========
+ *  Make sure the number of TCs is not more than 8
+ */
+function setMaxTcs (text, val)
+{
+    if (val > 8) {
+        throw (text + " Number of TCs must be <= 8");
+    }
+    else  if (val <= 0) {
+        throw (text + " must be greater than 0");
+    }
+}
+
+/*
+ *  ======== checkNumTccs ========
+ *  Make sure the number of TCCs for a given scratch group is not more
+ *  than the total number of TCCs allocated to DMAN3.
+ */
+function checkNumTccs (text, val)
+{
+    if (val > this.getNumDMAN3Tccs()) {
+        throw (text + " Insufficient number of TCCs allocated to DMAN3");
+    }
+    else {
+        if (val < 0) {
+            throw (text + " Number of TCCs must be >= 0");
+        }
+    }
+}
+
+function checkScratchFxn (text, val)
+{
+    if (((this.SCRATCHALLOCFXN != null) && (this.SCRATCHFREEFXN == null)) ||
+           ((this.SCRATCHALLOCFXN == null) && (this.SCRATCHFREEFXN != null))) {
+        var e = " Scratch alloc and free functions must both be null, ";
+        e += "or both non-null";
+        throw (text + e);
+    }
+}
+
+function setMaxPaRamEntries (text, val)
+{
+    var errMsg;
+
+    switch (val) {
+        case 16:
+        case 64:
+        case 128:
+        case 256:
+        case 512:
+            // good values
+            break;
+
+        default:
+            throw (text + " Value must be one of: " + "16,64,128,256,512");
+    }
+}
+
+// Number of PaRam entries for DMAN3
+function setNumPaRAMEntries (text, val)
+{
+    var errMsg;
+
+    if (val <= 0) {
+        throw (text + " must be greater than 0");
+    }
+    else {
+        if (val + this.PARAMBASEINDEX > this.MAXPARAMENTRIES) {
+            errMsg = text + " Out of range. Reduce it or decrease first ";
+            errMsg += "param table entry";
+            throw (errMsg);
+        }
+
+        if (val < this.getMaxDMAN3GroupParams()) {
+            errMsg = text + " Value too small - must be >= large value ";
+            errMsg += "for groups";
+            throw (errMsg);
+        }
+    }
+}
+
+// Set index of null PaRam
+function setNullPaRamIndex (text, val)
+{
+    var errMsg;
+
+    if (val < 0) {
+        throw (text + " must be greater than or equal to 0");
+    }
+    else {
+        if ((val >= this.PARAMBASEINDEX)  &&
+                (val < this.PARAMBASEINDEX + this.NUMPARAMENTRIES)) {
+            errMsg = text + " Must not overlap PaRam reserved for DMAN3";
+            errMsg += " channels.";
+            throw (errMsg);
+        }
+
+        if (val >= this.MAXPARAMENTRIES) {
+            errMsg = text + " Value must be less than total number of PaRams";
+            throw (errMsg);
+        }
+    }
+}
+
+// Set total number of QDMA channels on hardware
+function setMaxQdmaChannels (text, val)
+{
+    switch (val) {
+        case 0:
+            this.USEQDMA0 = 0;
+            this.USEQDMA1 = 0;
+        case 2:
+            this.USEQDMA2 = 0;
+            this.USEQDMA3 = 0;
+        case 4:
+            this.USEQDMA4 = 0;
+            this.USEQDMA5 = 0;
+        case 6:
+            this.USEQDMA6 = 0;
+            this.USEQDMA7 = 0;
+        case 8:
+            break;
+
+        default:
+            throw (text + " Value must be one of: 0,2,4,6,8");
+    }
+}
+
+function setPaRAMBaseIndex (text, val)
+{
+    var errMsg;
+
+    if (val < 0) {
+        throw (text + " must be greater than or equal to 0");
+    }
+    else {
+        if (val + this.NUMPARAMENTRIES > this.MAXPARAMENTRIES) {
+            errMsg = text + " Out of range. Reduce it or decrease number of ";
+            errMsg += "param table entries";
+            throw (errMsg);
+        }
+    }
+}
+
+function setTccFreeMask (text, val)
+{
+    if (this.getNumDMAN3Tccs() < this.getMaxDMAN3GroupTccs()) {
+        throw (text + " Insufficient number of Tccs (less than the max group)");
+    }
+}
+
+/*
+ *  ======== Internal Helper Function ========
+ */
+
+function getMaxDMAN3GroupParams ()
+{
+    var val = this.NUMPARAMS_GROUP0;
+
+    for (var i = 1; i < MAXGROUPS; i++) {
+        var name = "this.NUMPARAMS_GROUP" + i;
+        var n = eval(name);
+        val = (n > val) ? n : val;
+    }
+
+    //print("*** DMAN3 max group Params = " + val + " ***");
+    return (val);
+}
+
+function getMaxDMAN3GroupTccs ()
+{
+    var val = this.NUMTCCS_GROUP0;
+
+    for (var i = 1; i < MAXGROUPS; i++) {
+        var name = "this.NUMTCCS_GROUP" + i;
+        var n = eval(name);
+        val = (n > val) ? n : val;
+    }
+
+    //print("Max group TCCS: " + val);
+    return (val);
+}
+
+function getNumDMAN3Tccs ()
+{
+    var i = 0;
+    var counter = 0;
+
+    while (i < 32) {
+        if (this.TCC_FREEMASK_LOW & (1 << i)) {
+            counter++;
+        }
+
+        if (this.TCC_FREEMASK_HIGH & (1 << i)) {
+            counter++;
+        }
+
+        i++;
+    }
+
+    return (counter);
+}
+
+function getNumQDMA ()
+{
+    var i = 0;
+    var n = 0;
+
+    for (i = 0; i < this.MAXQDMACHANNELS; i++) {
+        var name = "this.USEQDMA" + i;
+        n += ((eval(name) == true) ? 1 : 0);
+    }
+
+    //print("getNumQDMA: " + n)
+    return (n);
+}
+
+
+/*
+ *  @(#) ti.sdo.fc.dman3; 1, 0, 4,300; 12-1-2010 17:24:25; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

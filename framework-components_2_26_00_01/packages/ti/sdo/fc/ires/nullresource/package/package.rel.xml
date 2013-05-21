@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="ti_sdo_fc_ires_nullresource" label="default" date="1291166719518" buildCount="171" producerId="framework_components_2_26_00_01">
+<package name="ti.sdo.fc.ires.nullresource"
+    version="1, 0, 0"/>
+<imports>
+</imports>
+<references>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/arm/4.5.0/Linux/"
+        trgs="ti.targets.arm.Arm9t">
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+    </targetRoot>
+    <package name="gnu.targets"
+        version="1, 0, 1, 1254761371234"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Linux86.h"/>
+        <file name="Linux86.xs"/>
+        <file name="MVArm9.h"/>
+        <file name="MVArm9.xs"/>
+        <file name="Mingw.xs"/>
+        <file name="UCArm9.h"/>
+        <file name="UCArm9.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="ti.sdo.fc.ires"
+        version="1, 0, 0, 1291166691000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="iresman.h"/>
+    </package>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0, 1254957691859"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.targets"
+        version="1, 0, 3, 1254761375030"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="MSP430.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/6.1.5/Linux/"
+        trgs="ti.targets.C674">
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu/"
+        trgs="gnu.targets.Linux86">
+        <file name="lib/gcc/i686-unknown-linux-gnu/4.1.0/include/stdarg.h"/>
+        <file name="lib/gcc/i686-unknown-linux-gnu/4.1.0/include/stddef.h"/>
+    </targetRoot>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 1254957708059"
+        providerId="xdccore">
+        <file name="java/antlr.jar"/>
+        <file name="java/ecj.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/jsr173_api.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0, 1254957688697"
+        providerId="xdccore">
+        <file name="Clock.xs"/>
+        <file name="Trace.xs"/>
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.targets.arm"
+        version="2, 0, 1, 0, 1254761376888"
+        providerId="xdccore">
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="gnu.targets.arm"
+        version="1, 0, 0, 0, 1254762022855"
+        providerId="xdccore">
+        <file name="GCArmv5T.h"/>
+        <file name="GCArmv6.xs"/>
+        <file name="GCArmv7A.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0, 1254957692499"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.sdo.utils.trace"
+        version="1, 0, 0, 1291083321000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name="gt.h"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le/"
+        trgs="gnu.targets.arm.GCArmv5T,gnu.targets.MVArm9">
+        <file name="lib/gcc/armv5tl-montavista-linux-gnueabi/4.2.0/include/stdarg.h"/>
+        <file name="lib/gcc/armv5tl-montavista-linux-gnueabi/4.2.0/include/stddef.h"/>
+    </targetRoot>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0, 1254957699053"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.xdais"
+        version="1, 2.0, 1, 1272987831928"
+        providerId="/db/atree/library/trees/fc/fc-p01x/imports">
+        <file name="ialg.h"/>
+        <file name="ires.h"/>
+        <file name="ires_common.h"/>
+    </package>
+    <package name="microsoft.targets"
+        version="1, 0, 2, 0, 1254761371234"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Win32.xs"/>
+        <file name="_utils.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/6.0.16/Linux/"
+        trgs="ti.targets.C64P">
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+    </targetRoot>
+    <targetRoot base="/db/toolsrc/library/vendors2005/opensource/buildroot/10122007/build_arm/staging_dir/usr/"
+        trgs="gnu.targets.UCArm9">
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stdarg.h"/>
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stddef.h"/>
+    </targetRoot>
+    <package name="xdc.bld"
+        version="1, 0, 2, 1254957676628"
+        providerId="xdccore">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0, 1254957695155"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="microsoft.targets.arm"
+        version="1, 0, 0, 0, 1254761374830"
+        providerId="xdccore">
+        <file name="WinCE.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 1, 1254957667146"
+        providerId="xdccore">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+        <file name="xmlgen2.xs"/>
+    </package>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include/utils.tci"/>
+        <xdcCorePkg version="16, 0, 1, 0, 1254957675604" producerId="ndefined" buildCount="218" releaseName="xdc_corevers" label="default" date="1254957675604"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/atree/library/trees/fc/fc-p01x/src/config.bld"/>
+</orphans>
+</release>

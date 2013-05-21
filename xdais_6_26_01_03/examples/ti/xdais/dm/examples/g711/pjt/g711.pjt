@@ -1,0 +1,37 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="$(Proj_dir)"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\g711enc_sun_ialg.c"
+Source="..\g711dec_sun_ialg.c"
+Source="..\g711_sun_internal.c"
+Source="..\g711enc_sun.h"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o../lib/debug/g711.a64P
+
+["Archiver" Settings: "Release"]
+Options=-r -o../lib/release/g711.a64P
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"%XDC_INSTALL_DIR%\packages" -i"%XDAIS_INSTALL_DIR%\packages" -d"_DEBUG" -d"xdc_target__=<ti/targets/std.h>" -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"%XDC_INSTALL_DIR%\packages" -i"%XDAIS_INSTALL_DIR%\packages" -d"xdc_target__=<ti/targets/std.h>" -mv6400+
+
+["..\g711enc_sun.h" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["..\g711enc_sun.h" Settings: "Release"]
+ExcludeFromBuild=true
+

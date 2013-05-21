@@ -1,0 +1,1039 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD><TITLE>Compliance and Performance Test Report</TITLE></HEAD>
+<BODY>
+
+<STYLE TYPE="text/css">
+<!--
+.indented
+   {
+   padding-left: 25pt;
+   padding-right: 25pt;
+   }
+-->
+</STYLE>
+
+<a name="Top of Page"></a>
+
+<TABLE BORDER="1" WIDTH="100%">
+  <TR>
+    <TD COLSPAN="2">
+      <CENTER><FONT SIZE="+2"><B>TMS320 DSP Algorithm Interoperability Standard</B></FONT></CENTER><BR>
+      <CENTER><FONT SIZE="+1"><B>QualiTI <a href="#compliance">Compliance</a> and <a href="#performance">Performance</a> Testing</B></font></CENTER><BR>
+    </TD>
+  </TR>
+  <TR>
+    <TD><B>Date</B></TD><TD>Mon Jul 27 2009 15:33:51 GMT+0530 (IST)</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Vendor</B></TD><TD>TI</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Algorithm</B></TD><TD>MP4VDEC</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Architecture</B></TD><TD>470</TD>
+  </TR>
+
+  <TR>
+    <TD><B>TI Compiler</B></TD><TD>false</TD>
+  </TR>
+  
+  <TR>
+    <TD><B>Library Format</B></TD><TD>ELF</TD>
+  </TR>
+  
+  <TR>
+    <TD><B>Compiler Version</B></TD><TD>UNKNOWN</TD>
+  </TR>
+  <TR>
+    <TD><B>Test Execution Log</B></TD><TD><a href="#Compiler Info">Test execution log for compiler info</a></TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="2">
+
+      <B>Algorithm Base Directory:</B><BR>
+
+      &nbsp;&nbsp;&nbsp;F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\mpeg4dec<BR>
+
+<BR>
+      <B>Algorithm Archive(s):</B><BR>
+
+      &nbsp;&nbsp;&nbsp;lib\libmp4dec.a<BR>
+<BR>
+      <B>Header File(s):</B><BR>
+      &nbsp;&nbsp;&nbsp;.\imp4vdec.h<BR>
+      &nbsp;&nbsp;&nbsp;.\ijpegdec.h<BR>
+<BR>
+    </TD>
+
+  </TR>
+
+
+      <TR>
+        <TD COLSPAN="2">
+        <a name=compliance>
+          <FONT SIZE="+1"><BR><br><CENTER><B>Compliance Test Report</B></CENTER><BR><br></font>
+        </a>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD><B>Test Results</B></TD>
+        <td>
+        <font color="#00A000">PASS: 3</font><br>
+        <font color="#FF0000"><B>FAIL: 0</b></font>
+        &nbsp;&nbsp;&nbsp; 
+        
+        <br>
+        Skipped: 0<br>
+        Not apply: 2<br>
+        <b>Total: 5</b><br>
+        </td>
+      </TR>
+      <TR>
+
+        <TD COLSPAN="2">
+            <B>Test Notes</B><BR>
+            &nbsp;&nbsp;&nbsp;This report has been generated with QualiTI Version 6.23 - the XDAIS compliance and performance test suite. <BR><BR>
+
+
+        </TD>
+      </TR>
+
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rules 8, 9 and 10">XDAIS Rules 8, 9, 10: Namespace compliance</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">(Rule 8) All external definitions must be either API identifiers or API and vendor prefixed.<br><br>(Rule 9) All undefined references must refer either to the operations specified in Appendix B (a subset of C runtime support library functions and a subset of the DSP/BIOS HWI API functions), or TI's DSPLIB or IMGLIB functions or other XDAIS-compliant modules.<br><br>(Rule 10) All modules must follow the eXpressDSP naming conventions for those external declarations disclosed to the client.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test passed.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rules 8, 9 and 10">XDAIS Rules 8, 9 and 10 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 12">XDAIS Rule 12: IALG interface implementation</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must implement the IALG interface.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test passed.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 12">XDAIS Rule 12 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 13+">XDAIS Rule 13+: correct linker section names</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">Each of the IALG methods implemented by an algorithm must be independently relocatable.<br><br>Additional rule: there should be no non-standard linker sections. (Standard linker sections are: ".cinit", ".switch", ".far", ".text", ".const", ".bss", ".pinit".)</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Currently, this test cannot be run on non-TI compiled libraries.  This rule is not relevant for ARM libraries since sections should be placed properly.<br><BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 13+">XDAIS Rule 13+ execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 25">XDAIS Rule 25: All C6x algorithms must be supplied in little-endian format</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All C6x algorithms must be supplied in little-endian format.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test passed.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 25">XDAIS Rule 25 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 26">XDAIS Rule 26: All static/global data must be far on c6x</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All C6x algorithms must access all static and global data as far data.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">This test does not apply since this is not a C6x architecture.<br><BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 26">XDAIS Rule 26 execution log</a><br>
+        </TD>
+      </TR>
+      <TR>
+        <TD COLSPAN="2">
+        <a name=performance>
+          <FONT SIZE="+1"><BR><br><CENTER><B>Performance Test Report</B></CENTER><BR><br></font>
+        </a>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD><B>Test Results</B></TD>
+        <td>
+        <font color="#00A000">PASS: 0</font><br>
+        <font color="#FF0000"><B>FAIL: 1</b></font>
+        &nbsp;&nbsp;&nbsp; [
+        <a href="#XDAIS Rules 21, 22">XDAIS Rules 21, 22<a>&nbsp;&nbsp;
+        ]
+        <br>
+        Skipped: 0<br>
+        Not apply: 1<br>
+        <b>Total: 2</b><br>
+        </td>
+      </TR>
+      <TR>
+
+        <TD COLSPAN="2">
+            <B>Test Notes</B><BR>
+            &nbsp;&nbsp;&nbsp;This report has been generated with QualiTI Version 6.23 - the XDAIS compliance and performance test suite. <BR><BR>
+
+
+        </TD>
+      </TR>
+
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 20">XDAIS Rule 20: must declare worst-case stack requirements</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must characterize their worst-case stack space memory requirements (including alignment).</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Currently, this test cannot be run on non-TI compiled libraries.  The test requires DWARF information that was not detected in this library.  You will need to calculate the worst case stack size using other means and report this in the data sheet.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 20">XDAIS Rule 20 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rules 21, 22">XDAIS Rules 21, 22: must characterize static data & program memory requirements</a></b><br><br>
+
+          <B>Report: </B> <font color="#FF0000"><B>Failed to execute</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must characterize their static data & program memory requirements</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test command execution failed -- most likely cgtools and/or utility executables could not be found. Please verify that the tools paths are correct.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rules 21, 22">XDAIS Rules 21, 22 execution log</a><br>
+        </TD>
+      </TR>
+</TABLE>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<a name="Compiler Info">Test execution log for <b>Compiler Info:</b></a><br>
+<PRE>
+Determining compiler info.
+
+Chcking if this library was created with a TI compiler...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\mpeg4dec\lib\libmp4dec.a" | "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" "&lt;ti_coff&gt;"
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46688.sh"
+This library was not  created with a TI compiler.
+
+Attempting to determine library format...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\mpeg4dec\lib\libmp4dec.a" | "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" -E "&lt;.*coff&gt;|&lt;.*elf&gt;"
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46689.sh"
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+The library is in ELF format.
+
+Attempting to determine the compiler version...
+ Running command:&gt; "find.exe" "GCC:" "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\mpeg4dec\lib\libmp4dec.a"|"F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" "GCC:"
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46690.sh"
+  FIND: Parameter format not correct
+The compiler is UNKNOWN.
+
+</PRE>
+<a href="#Top of Page">back</a><br>
+<hr>
+<a name="log XDAIS Rules 8, 9 and 10">Test execution log for <b>XDAIS Rules 8, 9 and 10:</b></a><br>
+<PRE>
+Running test 'XDAIS Rules 8, 9 and 10'
+Extracting names of global symbols defined by the algorithm...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\nm6x.exe" -g "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\mpeg4dec\lib\libmp4dec.a" | "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" " [TBCU] "
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46663.sh"
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000178 T MP4VDEC_TI_DM350_associate_globals_to_physical
+  00000104 T MP4VDEC_TI_pARMtoBimx
+  00000000 T MP4VDEC_TI_pARMtoBimx_D0
+  00000030 T MP4VDEC_TI_pARMtoBimx_D1
+  00000090 T MP4VDEC_TI_pARMtoBimx_OUT
+  00000000 U memcpy
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U MP4VDEC_TI_DM350_EDMA_Copy32
+  00000000 T MP4VDEC_TI_DM350_INIT_IMCOP_biMX_MODULE
+  00000074 T MP4VDEC_TI_DM350_INIT_IMCOP_iMX_MODULE
+  00000000 T MP4VDEC_TI_DATA_SWAP
+  0000001c T MP4VDEC_TI_DM350_BitstreamShowBitsByteAlign
+  0000006c T MP4VDEC_TI_DM350_BitstreamShowBitsByteAlignTT
+  00000000 U MP4VDEC_TI_DM350_CheckBitStuffing
+  0000011c T MP4VDEC_TI_DM350_INIT_IMCOP_BP
+  000002d0 T MP4VDEC_TI_DM350_INIT_IMCOP_BP_SVH
+  00000000 U MP4VDEC_TI_DM350_flush_bits
+  00000000 U MP4VDEC_TI_DM350_next_bits32
+  00000000 U MP4VDEC_TI_DM350_read_bits32
+  00000000 T MP4VDEC_TI_DM350_INIT_IMCOP_IDCT_MODULE
+  00000000 T MP4VDEC_TI_DM350_CFG_Write32
+  00000514 T MP4VDEC_TI_DM350_EDMA_ClearInterrupt
+  00000750 T MP4VDEC_TI_DM350_EDMA_Copy32
+  00000670 T MP4VDEC_TI_DM350_EDMA_DisableEvent
+  000004a4 T MP4VDEC_TI_DM350_EDMA_DisableInterrupt
+  000006e0 T MP4VDEC_TI_DM350_EDMA_EnableEvent
+  00000434 T MP4VDEC_TI_DM350_EDMA_EnableInterrupt
+  00000050 T MP4VDEC_TI_DM350_EDMA_MakeOptionParam
+  00000600 T MP4VDEC_TI_DM350_EDMA_SetEvent
+  000000f0 T MP4VDEC_TI_DM350_EDMA_SetPaRamEntry
+  0000038c T MP4VDEC_TI_DM350_EDMA_SetRegion2
+  00000584 T MP4VDEC_TI_DM350_EDMA_WaitInterrupt
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U MP4VDEC_TI_DM350_EDMA_EnableInterrupt
+  00000000 U MP4VDEC_TI_DM350_EDMA_MakeOptionParam
+  00000000 U MP4VDEC_TI_DM350_EDMA_SetPaRamEntry
+  00000000 U MP4VDEC_TI_DM350_EDMA_SetRegion2
+  0000345c T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT000_PreSetup
+  000023d0 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT001_PreSetup
+  00002308 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT002_PreSetup
+  0000223c T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT003_PreSetup
+  00002024 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT004B_PreSetup
+  00001de8 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT005B_PreSetup
+  00001a54 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT006B_PreSetup
+  00001438 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT007B_PreSetup
+  00003d70 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT008B_PreSetup
+  00003b58 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT009B_PreSetup
+  00000f5c T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT010C_PreSetup
+  00000d2c T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT011C_PreSetup
+  00001774 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT012C_PreSetup
+  00001168 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT013C_PreSetup
+  00003c5c T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT014A_PreSetup
+  00003a54 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT015A_PreSetup
+  00000ba4 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT016_PreSetup
+  000032c0 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT017_PreSetup
+  00002574 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT028_PreSetup
+  00002494 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT029_PreSetup
+  00003994 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM1_PreSetup
+  000038c0 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM2_PreSetup
+  000037ec T MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM3_PreSetup
+  00002c04 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_EndofCOPC_A_PreSetup
+  00002650 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_EndofCOPC_B_PreSetup
+  00000000 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_ODDCHROMA_PreSetup
+  00003640 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_BPS_PreSetup
+  00003568 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_DMA2_PreSetup
+  00003714 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_DMA_PreSetup
+  0000031c T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_STORECHROMA_EVEN_PreSetup
+  00000a4c T MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT0_PreSetup
+  00003168 T MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT1_PreSetup
+  00000608 T MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT2_PreSetup
+  000008ac T MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT_CHROMA_PreSetup
+  00003e8c T MP4VDEC_TI_DM350_INIT_EDMA_PaRAM
+  00003540 T MP4VDEC_TI_DM350_INIT_FILL_BITSTREAM_BUFFER
+  00000000 U MP4VDEC_TI_EDMA_EVEN_EVENT_CALL
+  00000000 U MP4VDEC_TI_EDMA_FILL_LOWER_BITSTREAM_BUFFER
+  00000000 U MP4VDEC_TI_EDMA_FILL_LOWER_BITSTREAM_BUFFER_POST
+  00000000 U MP4VDEC_TI_EDMA_FILL_UPPER_BITSTREAM_BUFFER
+  00000000 U MP4VDEC_TI_EDMA_FILL_UPPER_BITSTREAM_BUFFER_POST
+  00000000 U MP4VDEC_TI_EDMA_FilllBitstreamBuffer
+  00000000 U MP4VDEC_TI_EDMA_LOAD_BiMX_CODE
+  00000000 U MP4VDEC_TI_EDMA_LOAD_DCAC_MEM_A
+  00000000 U MP4VDEC_TI_EDMA_LOAD_DCAC_MEM_B
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_CbCr_INIT
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_B_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_B_UPDATE_2
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_C_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_C_UPDATE_2
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_B_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_B_UPDATE_2
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_C_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_C_UPDATE_2
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_Y_INIT
+  00000000 U MP4VDEC_TI_EDMA_ODD_EVENT_CALL
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_422MB_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_422MB_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_422MB_UPDATE_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_422MB_UPDATE_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_B_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_C_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_LAST
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_B_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_C_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_LAST
+  00000000 U MP4VDEC_TI_EDMA_STORE_DCAC_MEM_A
+  00000000 U MP4VDEC_TI_EDMA_STORE_DCAC_MEM_B
+  00000000 U MP4VDEC_TI_EDMA_SW_SEQ4_TO_BPS_COMMON
+  00000000 U MP4VDEC_TI_EDMA_SW_SEQ4_TO_BPVLD_EVEN
+  00000000 U MP4VDEC_TI_EDMA_SW_SEQ4_TO_BPVLD_ODD
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U MP4VDEC_TI_DM350_CFG_Write32
+  00000000 U MP4VDEC_TI_DM350_EDMA_EnableEvent
+  00000000 U MP4VDEC_TI_DM350_EDMA_EnableInterrupt
+  00000000 U MP4VDEC_TI_DM350_EDMA_SetRegion2
+  000015fc T MP4VDEC_TI_DM350_GEN_PaRAM_CHROMA_LAST_EVENT
+  00002594 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT000
+  000024a8 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT004B
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT004B_PreSetup
+  000023bc T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT005B
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT005B_PreSetup
+  00002244 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT006B
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT006B_PreSetup
+  000020cc T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT007B
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT007B_PreSetup
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT008B_PreSetup
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT009B_PreSetup
+  00001fe0 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT010C
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT010C_PreSetup
+  00001ef4 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT011C
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT011C_PreSetup
+  00001dac T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT012C
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT012C_PreSetup
+  00001c64 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT013C
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT013C_PreSetup
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT014A_PreSetup
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT015A_PreSetup
+  00001be4 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT016
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT016_PreSetup
+  00001b44 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT017
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT017_PreSetup
+  00001220 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT028
+  000011f0 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT029
+  0000273c T MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM1
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM1_PreSetup
+  000026f8 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM2
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM2_PreSetup
+  000026b4 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM3
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM3_PreSetup
+  00001410 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_EndofCOPC_A
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_EndofCOPC_A_PreSetup
+  00001250 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_EndofCOPC_B
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_EndofCOPC_B_PreSetup
+  0000262c T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_BPS
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_BPS_PreSetup
+  00002670 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_DMA
+  000025e8 T MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_DMA2
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_DMA2_PreSetup
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_DMA_PreSetup
+  00001a54 T MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT0
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT0_PreSetup
+  00001938 T MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT1
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT1_PreSetup
+  00001750 T MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT2
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT2_PreSetup
+  00001064 T MP4VDEC_TI_DM350_INIT_UPDATE_EDMA_PaRAM
+  00000000 T MP4VDEC_TI_DM350_SET_EDMA_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_422MB_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_422MB_IMG_C
+  00000000 U MP4VDEC_TI_DATA_SWAP
+  00000150 T MP4VDEC_TI_DM350_BitsToByteAlign
+  00000684 T MP4VDEC_TI_DM350_CheckBitStuffing
+  00000000 U MP4VDEC_TI_DM350_FillBitstreamBuffer
+  000005f4 T MP4VDEC_TI_DM350_FlushStuffForward
+  00000164 T MP4VDEC_TI_DM350_flush_bits
+  000001e8 T MP4VDEC_TI_DM350_next_bits
+  0000029c T MP4VDEC_TI_DM350_next_bits32
+  00000000 T MP4VDEC_TI_DM350_no_bits
+  00000374 T MP4VDEC_TI_DM350_read_bits
+  0000049c T MP4VDEC_TI_DM350_read_bits32
+  00000758 T MP4VDEC_TI_DM350_showbitsbytealign
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U MP4VDEC_TI_DM350_BitsToByteAlign
+  00000000 U MP4VDEC_TI_DM350_BitstreamShowBitsByteAlign
+  00000000 U MP4VDEC_TI_DM350_BitstreamShowBitsByteAlignTT
+  00000000 T MP4VDEC_TI_DM350_ComputeNBytes
+  00000a34 T MP4VDEC_TI_DM350_Define_VOP_Complexity_Estmn_Hdr
+  00000000 U MP4VDEC_TI_DM350_FlushStuffForward
+  00000058 T MP4VDEC_TI_DM350_GetH263VOP
+  000006ec T MP4VDEC_TI_DM350_GetMPEG4VOP
+  00000e8c T MP4VDEC_TI_DM350_GetUserData
+  00000fec T MP4VDEC_TI_DM350_GetVO
+  0000120c T MP4VDEC_TI_DM350_GetVOL
+  00000f58 T MP4VDEC_TI_DM350_GetVOS
+  000016e4 T MP4VDEC_TI_DM350_ResyncVOP
+  00000000 U MP4VDEC_TI_DM350_flush_bits
+  00000000 U MP4VDEC_TI_DM350_next_bits32
+  00000000 U MP4VDEC_TI_DM350_no_bits
+  00000000 U MP4VDEC_TI_DM350_read_bits
+  00000000 U MP4VDEC_TI_DM350_read_bits32
+  00000000 U MP4VDEC_TI_DM350_showbitsbytealign
+  00000bac T MP4VDEC_TI_GetVOPhdr
+  00001cb0 T MP4VDEC_TI_Gethdr
+  0000181c T MP4VDEC_TI_Getheader
+  00000d84 T MP4VDEC_TI_LookForMarker
+  000002b4 T MP4VDEC_TI_Read_VOP_Complexity_Estmn_Hdr
+  00000d0c T MP4VDEC_TI_user_data
+  0000024c T MP4VDEC_TI_DM350_HWSET_Copc_Init
+  00000000 T MP4VDEC_TI_DM350_HWSET_Copc_SwitchMemToHW
+  000003e8 T MP4VDEC_TI_DM350_INIT_COPC
+  00000000 T MP4VDEC_TI_SwitchSeqBuf4_MOD0
+  00000000 T MP4VDEC_TI_DM350_Initialize_ARM
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U MP4VDEC_TI_DM350_ComputeNBytes
+  00000000 U MP4VDEC_TI_DM350_DecodeDCI
+  00000000 U MP4VDEC_TI_DM350_EDMA_ClearInterrupt
+  00000000 U MP4VDEC_TI_DM350_EDMA_DisableEvent
+  00000000 U MP4VDEC_TI_DM350_EDMA_DisableInterrupt
+  00000000 U MP4VDEC_TI_DM350_EDMA_EnableEvent
+  00000000 U MP4VDEC_TI_DM350_EDMA_EnableInterrupt
+  00000000 U MP4VDEC_TI_DM350_EDMA_MakeOptionParam
+  00000000 U MP4VDEC_TI_DM350_EDMA_SetEvent
+  00000000 U MP4VDEC_TI_DM350_EDMA_SetPaRamEntry
+  00000000 U MP4VDEC_TI_DM350_EDMA_WaitInterrupt
+  00000120 T MP4VDEC_TI_DM350_EventClear
+  00000000 U MP4VDEC_TI_DM350_FillBitstreamBuffer0
+  00000520 T MP4VDEC_TI_DM350_FrameDecode
+  00000000 U MP4VDEC_TI_DM350_Getpicture
+  00000000 U MP4VDEC_TI_DM350_INIT_EDMA_PaRAM
+  00000000 U MP4VDEC_TI_DM350_INIT_FILL_BITSTREAM_BUFFER
+  00000000 U MP4VDEC_TI_DM350_INIT_IMCOP_IDCT_MODULE
+  00000000 U MP4VDEC_TI_DM350_INIT_IMCOP_IQ_MODULE
+  00000000 U MP4VDEC_TI_DM350_INIT_IMCOP_IQ_MODULE_SVH
+  00000000 U MP4VDEC_TI_DM350_INIT_IMCOP_VLD_MODULE
+  00000000 U MP4VDEC_TI_DM350_INIT_IMCOP_biMX_MODULE
+  00000000 U MP4VDEC_TI_DM350_INIT_IMCOP_iMX_MODULE
+  00000000 U MP4VDEC_TI_DM350_INIT_SEQUENCER
+  00000000 U MP4VDEC_TI_DM350_INIT_UPDATE_EDMA_PaRAM
+  00000000 U MP4VDEC_TI_DM350_INIT_UPDATE_IMCOP_VLD_MODULE
+  00000000 U MP4VDEC_TI_DM350_INIT_UPDATE_SEQUENCER
+  00000278 T MP4VDEC_TI_DM350_InitParams
+  00000000 U MP4VDEC_TI_DM350_Initialize_ARM
+  00000000 U MP4VDEC_TI_DM350_Recover_BPVLCD
+  00000000 U MP4VDEC_TI_DM350_next_bits32
+  00000000 U MP4VDEC_TI_DM350_switchMemToDMA
+  00000004 C MP4VDEC_TI_EDMA_EVEN_EVENT_CALL
+  00000004 C MP4VDEC_TI_EDMA_FILL_LOWER_BITSTREAM_BUFFER
+  00000004 C MP4VDEC_TI_EDMA_FILL_LOWER_BITSTREAM_BUFFER_POST
+  00000004 C MP4VDEC_TI_EDMA_FILL_UPPER_BITSTREAM_BUFFER
+  00000004 C MP4VDEC_TI_EDMA_FILL_UPPER_BITSTREAM_BUFFER_POST
+  00000004 C MP4VDEC_TI_EDMA_FilllBitstreamBuffer
+  00000004 C MP4VDEC_TI_EDMA_LOAD_BiMX_CODE
+  00000004 C MP4VDEC_TI_EDMA_LOAD_DCAC_MEM_A
+  00000004 C MP4VDEC_TI_EDMA_LOAD_DCAC_MEM_B
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_CbCr_INIT
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_B
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_B_UPDATE
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_B_UPDATE_2
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_C
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_C_UPDATE
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_C_UPDATE_2
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_B
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_B_UPDATE
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_B_UPDATE_2
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_C
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_C_UPDATE
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_C_UPDATE_2
+  00000004 C MP4VDEC_TI_EDMA_LOAD_REF_MB_Y_INIT
+  00000004 C MP4VDEC_TI_EDMA_ODD_EVENT_CALL
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_422MB_IMG_B
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_422MB_IMG_C
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_422MB_UPDATE_IMG_B
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_422MB_UPDATE_IMG_C
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_B
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_B_UPDATE
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_C
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_C_UPDATE
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_LAST
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_B
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_B_UPDATE
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_C
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_C_UPDATE
+  00000004 C MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_LAST
+  00000004 C MP4VDEC_TI_EDMA_SET_CLR_INT_REG
+  00000004 C MP4VDEC_TI_EDMA_STORE_DCAC_MEM_A
+  00000004 C MP4VDEC_TI_EDMA_STORE_DCAC_MEM_B
+  00000004 C MP4VDEC_TI_EDMA_SW_SEQ4_TO_BPS
+  00000004 C MP4VDEC_TI_EDMA_SW_SEQ4_TO_BPS_COMMON
+  00000004 C MP4VDEC_TI_EDMA_SW_SEQ4_TO_BPVLD_EVEN
+  00000004 C MP4VDEC_TI_EDMA_SW_SEQ4_TO_BPVLD_ODD
+  00000000 U MP4VDEC_TI_Getheader
+  0000011c T MP4VDEC_TI_Restore_Shadow_Reg
+  00000004 C MP4VDEC_TI_Seq_DATA
+  00000004 C MP4VDEC_TI_Seq_DATA2
+  00000004 C MP4VDEC_TI_Seq_DATA_ODD
+  00000000 T MP4VDEC_TI_SetGlobal_Region
+  00000000 U MP4VDEC_TI_initdecoder
+  00000000 U MEMUTILS_getPhysicalAddr
+  0000075c T MP4VDEC_TI_IMCOP_Mem_Init_phys
+  00000660 T MP4VDEC_TI_IMCOP_Mem_Init_virt
+  00000000 T MP4VDEC_TI_IMCOP_Reg_Init_phys
+  00000344 T MP4VDEC_TI_IMCOP_Reg_Init_virt
+  00000874 T MP4VDEC_TI_assignBuffAddr
+  00000001 C Data_420CbCr
+  00000001 C Data_420Y
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000218 T MP4VDEC_TI_DM350_420CbCr
+  000003ec T MP4VDEC_TI_DM350_420Y
+  00000000 U MP4VDEC_TI_DM350_CFG_Write32
+  00000000 U MP4VDEC_TI_DM350_ComputeNBytes
+  00000764 T MP4VDEC_TI_DM350_DecodeDCI
+  00000000 U MP4VDEC_TI_DM350_EDMA_ClearInterrupt
+  00000000 U MP4VDEC_TI_DM350_EDMA_DisableInterrupt
+  00000000 U MP4VDEC_TI_DM350_EDMA_EnableEvent
+  00000000 U MP4VDEC_TI_DM350_EDMA_EnableInterrupt
+  00000000 U MP4VDEC_TI_DM350_EDMA_MakeOptionParam
+  00000000 U MP4VDEC_TI_DM350_EDMA_SetEvent
+  00000000 U MP4VDEC_TI_DM350_EDMA_SetPaRamEntry
+  00000000 U MP4VDEC_TI_DM350_EDMA_WaitInterrupt
+  00000000 U MP4VDEC_TI_DM350_EventClear
+  000005a8 T MP4VDEC_TI_DM350_FillBitstreamBuffer
+  000022e0 T MP4VDEC_TI_DM350_FillBitstreamBuffer0
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_CHROMA_LAST_EVENT
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT000
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT004B
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT005B
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT006B
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT007B
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT010C
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT011C
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT012C
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT013C
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT016
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT017
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM1
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM2
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENTDUMM3
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_EndofCOPC_A
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_EndofCOPC_B
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_ODDCHROMA_PreSetup
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_BPS
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_DMA
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_SEQ4_SWITCH_TO_DMA2
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_EVENT_STORECHROMA_EVEN_PreSetup
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT0
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT1
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT2
+  00000000 U MP4VDEC_TI_DM350_GEN_PaRAM_LAST_EVENT_CHROMA_PreSetup
+  00000000 U MP4VDEC_TI_DM350_GetVO
+  00000000 U MP4VDEC_TI_DM350_GetVOL
+  00000000 U MP4VDEC_TI_DM350_GetVOS
+  0000224c T MP4VDEC_TI_DM350_Getpicture
+  00000000 U MP4VDEC_TI_DM350_INIT_COPC
+  00000000 U MP4VDEC_TI_DM350_INIT_FILL_BITSTREAM_BUFFER
+  00000000 U MP4VDEC_TI_DM350_INIT_IMCOP_BP
+  00000000 U MP4VDEC_TI_DM350_INIT_IMCOP_BP_SVH
+  00000000 U MP4VDEC_TI_DM350_INIT_IMCOP_VLD_MODULE
+  000008fc T MP4VDEC_TI_DM350_Recover_BPVLCD
+  00000000 U MP4VDEC_TI_DM350_SEQ_RUN
+  00000000 U MP4VDEC_TI_DM350_SEQ_RUN_CB
+  00000000 U MP4VDEC_TI_DM350_SET_EDMA_UPDATE
+  00000694 T MP4VDEC_TI_DM350_StartCodeSvhGobResync
+  00000000 U MP4VDEC_TI_DM350_flush_bits
+  00000000 U MP4VDEC_TI_DM350_next_bits32
+  00000000 U MP4VDEC_TI_DM350_read_bits32
+  00000000 U MP4VDEC_TI_DM350_switchMemToDMA
+  00000000 U MP4VDEC_TI_EDMA_LOAD_DCAC_MEM_A
+  00000000 U MP4VDEC_TI_EDMA_LOAD_DCAC_MEM_B
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_B_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_B_UPDATE_2
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_C_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_CbCr_IMG_C_UPDATE_2
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_B_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_B_UPDATE_2
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_C_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_LOAD_REF_MB_FOR_MC_Y_IMG_C_UPDATE_2
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_422MB_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_422MB_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_422MB_UPDATE_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_422MB_UPDATE_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_B_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_CbCr_IMG_C_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_B
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_B_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_C
+  00000000 U MP4VDEC_TI_EDMA_SAVE_RECON_MB_Y_IMG_C_UPDATE
+  00000000 U MP4VDEC_TI_EDMA_STORE_DCAC_MEM_A
+  00000000 U MP4VDEC_TI_EDMA_STORE_DCAC_MEM_B
+  00000bd8 T MP4VDEC_TI_GetPacket
+  00000000 U MP4VDEC_TI_Seq_DATA
+  00000000 U MP4VDEC_TI_Seq_DATA2
+  00000000 U MP4VDEC_TI_Seq_DATA_ODD
+  00000000 T MP4VDEC_TI_initdecoder
+  0000006c T MP4VDEC_TI_DM350_CopyQiqTable
+  00000384 T MP4VDEC_TI_DM350_INIT_IMCOP_IQ_MODULE
+  0000014c T MP4VDEC_TI_DM350_INIT_IMCOP_IQ_MODULE_SVH
+  00000000 T MP4VDEC_TI_DM350_switchMemToDMA
+  00000000 B MP4VDEC_TI_InvQCONT
+  00000002 C MP4VDEC_TI_sreg_qiq
+  00000000 U MP4VDEC_TI_tabMpeg4_inter_inv_q_mat
+  00000000 U MP4VDEC_TI_tabMpeg4_inter_q_mat
+  00000000 U MP4VDEC_TI_tabMpeg4_intra_inv_q_mat
+  00000000 U MP4VDEC_TI_tabMpeg4_intra_q_mat
+  00000000 U MP4VDEC_TI_tabQinv_tab
+  00000000 U MEMUTILS_getPhysicalAddr
+  0000046c T MP4VDEC_TI_DM350_GEN_SEQ_CODES00
+  00000418 T MP4VDEC_TI_DM350_GEN_SEQ_CODES01
+  00005288 T MP4VDEC_TI_DM350_GEN_SEQ_CODES06_BS
+  00000528 T MP4VDEC_TI_DM350_GEN_SEQ_CODES06_COPC
+  00005760 T MP4VDEC_TI_DM350_GEN_SEQ_CODES06_MAIN
+  00000260 T MP4VDEC_TI_DM350_GEN_SEQ_CODES21
+  000002a8 T MP4VDEC_TI_DM350_GEN_SEQ_ERROR_RESILIENCE
+  00000148 T MP4VDEC_TI_DM350_INIT_SEQUENCER
+  00005eac T MP4VDEC_TI_DM350_INIT_SEQUENCER_Generate_Code
+  00000054 T MP4VDEC_TI_DM350_INIT_UPDATE_SEQUENCER
+  00000000 U MP4VDEC_TI_DM350_SEQ_EDMA_AUTO_SWITCHING
+  00000000 U MP4VDEC_TI_DM350_SEQ_EDMA_AUTO_SWITCHING_INT
+  00000000 U MP4VDEC_TI_DM350_SEQ_EDMA_FILLFULLSTREAMBUF
+  00000000 U MP4VDEC_TI_DM350_SEQ_EDMA_FILLSTREAM_LOWERSIDE
+  00000000 U MP4VDEC_TI_DM350_SEQ_EDMA_FILLSTREAM_UPPERSIDE
+  00000000 U MP4VDEC_TI_DM350_SEQ_EDMA_LOAD_BiMXCODES
+  00000000 U MP4VDEC_TI_DM350_SEQ_EDMA_SAVE_LASTMB_OUT
+  00000000 T MP4VDEC_TI_DM350_SEQ_RUN
+  000004b0 T MP4VDEC_TI_DM350_SEQ_RUN_CB
+  00006104 T MP4VDEC_TI_GEN_SEQCODES
+  00000000 U MP4VDEC_TI_Seq_DATA
+  00000000 U MP4VDEC_TI_Seq_DATA2
+  00000000 U MP4VDEC_TI_Seq_DATA_ODD
+  00000000 U MP4VDEC_TI_seqcmd_ADD
+  00000000 U MP4VDEC_TI_seqcmd_ADD_P
+  00000000 U MP4VDEC_TI_seqcmd_AND
+  00000000 U MP4VDEC_TI_seqcmd_B
+  00000000 U MP4VDEC_TI_seqcmd_BN
+  00000000 U MP4VDEC_TI_seqcmd_BNC
+  00000000 U MP4VDEC_TI_seqcmd_BNZ
+  00000000 U MP4VDEC_TI_seqcmd_BZ
+  00000000 U MP4VDEC_TI_seqcmd_LD
+  00000000 U MP4VDEC_TI_seqcmd_LDINC_P
+  00000000 U MP4VDEC_TI_seqcmd_LDNOINC_P2
+  00000000 U MP4VDEC_TI_seqcmd_LD_NEW
+  00000000 U MP4VDEC_TI_seqcmd_LD_O
+  00000000 U MP4VDEC_TI_seqcmd_LSH
+  00000000 U MP4VDEC_TI_seqcmd_NOP
+  00000000 U MP4VDEC_TI_seqcmd_OR
+  00000000 U MP4VDEC_TI_seqcmd_RTI
+  00000000 U MP4VDEC_TI_seqcmd_ST
+  00000000 U MP4VDEC_TI_seqcmd_STINC_P
+  00000000 U MP4VDEC_TI_seqcmd_STOP
+  00000000 U MP4VDEC_TI_seqcmd_SUB
+  00000000 U MP4VDEC_TI_seqcmd_XOR
+  00000000 U MP4VDEC_TI_vicpsync_start
+  00000000 U MP4VDEC_TI_vicpsync_wait
+  00000000 U exit
+  00000000 U MEMUTILS_getPhysicalAddr
+  000006bc T MP4VDEC_TI_DM350_SEQ_EDMA_AUTO_SWITCHING
+  00000604 T MP4VDEC_TI_DM350_SEQ_EDMA_AUTO_SWITCHING_INT
+  00000a2c T MP4VDEC_TI_DM350_SEQ_EDMA_FILLFULLSTREAMBUF
+  00001080 T MP4VDEC_TI_DM350_SEQ_EDMA_FILLSTREAM_LOWERSIDE
+  00000ddc T MP4VDEC_TI_DM350_SEQ_EDMA_FILLSTREAM_UPPERSIDE
+  00000c30 T MP4VDEC_TI_DM350_SEQ_EDMA_LOAD_BiMXCODES
+  00000798 T MP4VDEC_TI_DM350_SEQ_EDMA_SAVE_LASTMB_OUT
+  00000268 T MP4VDEC_TI_seqcmd_ADD
+  000002e0 T MP4VDEC_TI_seqcmd_ADD_P
+  000002a4 T MP4VDEC_TI_seqcmd_ADD_P2
+  00000368 T MP4VDEC_TI_seqcmd_AND
+  00000458 T MP4VDEC_TI_seqcmd_ASH
+  00000538 T MP4VDEC_TI_seqcmd_B
+  00000588 T MP4VDEC_TI_seqcmd_BC
+  000005b0 T MP4VDEC_TI_seqcmd_BN
+  0000059c T MP4VDEC_TI_seqcmd_BNC
+  00000574 T MP4VDEC_TI_seqcmd_BNZ
+  000005c4 T MP4VDEC_TI_seqcmd_BPZ
+  000005d4 T MP4VDEC_TI_seqcmd_BRI
+  0000054c T MP4VDEC_TI_seqcmd_BV
+  00000560 T MP4VDEC_TI_seqcmd_BZ
+  00000038 T MP4VDEC_TI_seqcmd_LD
+  00000208 T MP4VDEC_TI_seqcmd_LDINC_P
+  00000220 T MP4VDEC_TI_seqcmd_LDNOINC_P2
+  0000006c T MP4VDEC_TI_seqcmd_LD_NEW
+  000000ec T MP4VDEC_TI_seqcmd_LD_O
+  0000016c T MP4VDEC_TI_seqcmd_LD_P
+  0000041c T MP4VDEC_TI_seqcmd_LSH
+  000004fc T MP4VDEC_TI_seqcmd_MULT
+  00000000 T MP4VDEC_TI_seqcmd_NOP
+  00000494 T MP4VDEC_TI_seqcmd_NORM
+  000004c8 T MP4VDEC_TI_seqcmd_NOT
+  000003a4 T MP4VDEC_TI_seqcmd_OR
+  000005f4 T MP4VDEC_TI_seqcmd_RTI
+  000005e4 T MP4VDEC_TI_seqcmd_RTN
+  00000002 C MP4VDEC_TI_seqcmd_SMEM
+  000001b4 T MP4VDEC_TI_seqcmd_ST
+  00000238 T MP4VDEC_TI_seqcmd_STINC_P
+  00000020 T MP4VDEC_TI_seqcmd_STOP
+  00000248 T MP4VDEC_TI_seqcmd_STRTN
+  000001e0 T MP4VDEC_TI_seqcmd_ST_BigBox_MEM
+  0000032c T MP4VDEC_TI_seqcmd_SUB
+  00000010 T MP4VDEC_TI_seqcmd_SYNC
+  000003e0 T MP4VDEC_TI_seqcmd_XOR
+  00000002 C MP4VDEC_TI_seqcmd_int_space
+  00000000 U MP4VDEC_TI_DM350_FrameDecode
+  00000000 U MP4VDEC_TI_DM350_InitParams
+  00000000 U MP4VDEC_TI_DM350_associate_globals_to_physical
+  00000000 U MP4VDEC_TI_IALG
+  00000000 U MP4VDEC_TI_Restore_Shadow_Reg
+  00000000 U MP4VDEC_TI_SetGlobal_Region
+  00000ef0 T MP4VDEC_TI_activate
+  00000008 T MP4VDEC_TI_alloc
+  00000b24 T MP4VDEC_TI_control
+  00000eb0 T MP4VDEC_TI_deactivate
+  00000108 T MP4VDEC_TI_decode
+  000000fc T MP4VDEC_TI_exit
+  00000f68 T MP4VDEC_TI_free
+  00000100 T MP4VDEC_TI_init
+  000006bc T MP4VDEC_TI_initObj
+  00000104 T MP4VDEC_TI_moved
+  00000000 T MP4VDEC_TI_numAlloc
+  00000000 U memset
+  00000000 U MP4VDEC_TI_GEN_SEQCODES
+  000003c8 T MP4VDEC_TI_activateAllResources
+  000003e8 T MP4VDEC_TI_activateResource
+  00000000 U MP4VDEC_TI_assignBuffAddr
+  000003d0 T MP4VDEC_TI_deactivateAllResources
+  000003f0 T MP4VDEC_TI_deactivateResource
+  000003e0 T MP4VDEC_TI_deinitResources
+  00000000 T MP4VDEC_TI_getResourceDescriptors
+  000003f8 T MP4VDEC_TI_initResources
+  000003c0 T MP4VDEC_TI_numResourceDescriptors
+  000003d8 T MP4VDEC_TI_reinitResources
+  00000000 U MP4VDEC_TI_activate
+  00000000 U MP4VDEC_TI_alloc
+  00000000 U MP4VDEC_TI_control
+  00000000 U MP4VDEC_TI_deactivate
+  00000000 U MP4VDEC_TI_decode
+  00000000 U MP4VDEC_TI_free
+  00000000 U MP4VDEC_TI_initObj
+  00000000 U MP4VDEC_TI_moved
+  00000000 U MP4VDEC_TI_numAlloc
+  00000040 T MP4VDEC_TI_vicpsync_start
+  00000000 T MP4VDEC_TI_vicpsync_wait
+  00000000 U VICPSYNC_start
+  00000000 U VICPSYNC_wait
+  00000000 U puts
+  00000040 T MP4VDEC_TI_DM350_INIT_IMCOP_VLD_MODULE
+  00000000 T MP4VDEC_TI_DM350_INIT_UPDATE_IMCOP_VLD_MODULE
+Verifying that all global symbols are named XXX_TI_xxx ...
+and that no blacklisted external references are made
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+
+</PRE>
+<a href="#XDAIS Rules 8, 9 and 10">back</a>
+<hr>
+<a name="log XDAIS Rule 12">Test execution log for <b>XDAIS Rule 12:</b></a><br>
+<PRE>
+Running test 'XDAIS Rule 12'
+Extracting names of global BSS data symbols...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\nm6x.exe" -g "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\mpeg4dec\lib\libmp4dec.a" | "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" " [BD] "
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46668.sh"
+  00000348 D MP4VDEC_TI_MC31_Round_Off_biMX_Code
+  00000b40 D MP4VDEC_TI_MC31_Round_Off_biMX_Code_UMV
+  000004ec D MP4VDEC_TI_MC31_Round_On_biMX_Code
+  00000d98 D MP4VDEC_TI_MC31_Round_On_biMX_Code_UMV
+  00000000 D MP4VDEC_TI_MC_Round_Off_biMX_Code
+  00000690 D MP4VDEC_TI_MC_Round_Off_biMX_Code_UMV
+  000001a4 D MP4VDEC_TI_MC_Round_On_biMX_Code
+  000008e8 D MP4VDEC_TI_MC_Round_On_biMX_Code_UMV
+  00000000 D MP4VDEC_TI_mask16
+  00000000 D glMask
+  00000000 B MP4VDEC_TI_InvQCONT
+  00000040 D MP4VDEC_TI_tabChrDCScaler
+  00000000 D MP4VDEC_TI_tabLumDCScaler
+  00000200 D MP4VDEC_TI_tabMpeg4_inter_inv_q_mat
+  00000100 D MP4VDEC_TI_tabMpeg4_inter_q_mat
+  00000180 D MP4VDEC_TI_tabMpeg4_intra_inv_q_mat
+  00000080 D MP4VDEC_TI_tabMpeg4_intra_q_mat
+  00000280 D MP4VDEC_TI_tabQinv_tab
+  00000000 D MP4VDEC_TI_IRES
+  0000002c D MP4VDEC_TI_IALG
+  00000000 D MP4VDEC_TI_IMP4VDEC
+  00000000 D MP4VDEC_TI_version
+Verifying that objects 'MP4VDEC_TI_IALG' and 'MP4VDEC_TI_IMP4VDEC' are defined...
+Data object 'MP4VDEC_TI_IALG' found.
+Data object 'MP4VDEC_TI_IMP4VDEC' found.
+
+</PRE>
+<a href="#XDAIS Rule 12">back</a>
+<hr>
+<a name="log XDAIS Rule 13+">Test execution log for <b>XDAIS Rule 13+:</b></a><br>
+<PRE>
+Currently, this test cannot be run on non-TI compiled libraries.
+
+</PRE>
+<a href="#XDAIS Rule 13+">back</a>
+<hr>
+<a name="log XDAIS Rule 20">Test execution log for <b>XDAIS Rule 20:</b></a><br>
+<PRE>
+Currently, this test cannot be run on non-TI compiled libraries.
+</PRE>
+<a href="#XDAIS Rule 20">back</a>
+<hr>
+<a name="log XDAIS Rules 21, 22">Test execution log for <b>XDAIS Rules 21, 22:</b></a><br>
+<PRE>
+Running test 'XDAIS Rules 21, 22'
+Using sectti on ofd output to find static data & program memory requirements...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none,sections,header "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\mpeg4dec\lib\libmp4dec.a" | "C:\USER_EDIT_THIS_PATH\cg_xml\bin\sectti.exe"
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46681.sh"
+  C:/USER_EDIT_THIS_PATH/cg_xml/bin/sectti.exe: not found
+Error: Command execution failed.
+
+</PRE>
+<a href="#XDAIS Rules 21, 22">back</a>
+<hr>
+<a name="log XDAIS Rule 25">Test execution log for <b>XDAIS Rule 25:</b></a><br>
+<PRE>
+Running test 'XDAIS Rule 25'
+Using ofd output to parse for endianness attribute...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none,header "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\mpeg4dec\lib\libmp4dec.a" | "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" "&lt;ei_data&gt;"
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46686.sh"
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+
+</PRE>
+<a href="#XDAIS Rule 25">back</a>
+<hr>
+<a name="log XDAIS Rule 26">Test execution log for <b>XDAIS Rule 26:</b></a><br>
+<PRE>
+This test does not apply since this is not a C6x architecture.
+
+</PRE>
+<a href="#XDAIS Rule 26">back</a>
+<hr>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</BODY>
+</HTML>
+
+
+
+

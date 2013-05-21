@@ -1,0 +1,99 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+
+%%{
+    /*
+     *  ======== ACPY3.xdt ========
+     *  Generate ACPY3 configuration and initialization structures
+     */
+    var ACPY3 = this.$package.ACPY3;
+
+    function su(segName) { /* "strip underscore" */
+        return (segName.charAt(0) == "_") ? segName.substr( 1 ) : segName;
+    }
+
+    var UTILS = xdc.loadCapsule('ti/sdo/fc/utils/utils.xs');
+
+%%}
+
+/* C code contribution from ti/sdo/fc/acpy3/ACPY3.xdt */
+
+#include <xdc/std.h>
+
+#ifdef xdc_target__isaCompatible_64P
+
+#include <ti/sdo/fc/acpy3/acpy3_qdma.h>
+__FAR__ ACPY3_QDMA_Config ACPY3_QDMA; 
+__FAR__ volatile ACPY3_QDMA_REG_Str *ACPY3_EDMA3BASE;
+#else
+
+#include <ti/sdo/fc/acpy3/acpy3_qdma_arm.h>
+ACPY3_QDMA_Config ACPY3_QDMA; 
+volatile ACPY3_QDMA_REG_Str *ACPY3_EDMA3BASE;
+volatile UInt32 * ACPY3_QDMAPARAMBASE;  
+#endif
+
+% if ((ACPY3.nullPaRam == undefined) || (ACPY3.edma3BaseAddress == undefined)) {
+extern UInt32 * _DMAN3_edma3Addr;
+extern UInt32 _DMAN3_nullPaRam;
+#ifndef xdc_target__isaCompatible_64P
+extern UInt32 * _DMAN3_paRamAddr;
+#endif
+% }
+
+Void _ACPY3_qdmaInit() 
+{
+% if ((ACPY3.nullPaRam == undefined) || (ACPY3.edma3BaseAddress == undefined)) {
+    ACPY3_QDMA.nullPaRamIndex = _DMAN3_nullPaRam; 
+    ACPY3_EDMA3BASE = (ACPY3_QDMA_REG_Str *)_DMAN3_edma3Addr;
+#ifndef xdc_target__isaCompatible_64P
+    ACPY3_QDMAPARAMBASE = (UInt32 *)_DMAN3_paRamAddr;
+#endif
+% }
+% else {
+    ACPY3_QDMA.nullPaRamIndex = `ACPY3.nullPaRam`; 
+    ACPY3_EDMA3BASE = (ACPY3_QDMA_REG_Str *)`ACPY3.edma3BaseAddress`;
+#ifndef xdc_target__isaCompatible_64P
+    ACPY3_QDMAPARAMBASE = (UInt32 *)`ACPY3.paRamBaseAddress`;
+#endif
+% }
+}
+%%{
+/*
+ * @(#) ti.sdo.fc.acpy3; 1, 0, 4,301; 12-1-2010 17:24:24; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+
+%%}

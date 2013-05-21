@@ -1,0 +1,127 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== CDA300.tci ========
+ *  The chip configuration settings are based on the document TMS320DA300 
+ *  Technical Reference Manual v1.9.1.
+ *
+ */
+
+/*
+ *  Load C55.tci arch file
+ */
+utils.loadArch("55", "ti.catalog.c5500");
+
+/*
+ *  ======== CDA300 ========
+ */
+function CDA300(name, parent)
+{
+    /*
+     *  The 'this' refers to the cpu object created in the platform file.
+     *  The apply function is a way to execute a function with a specific
+     *  'this' pointer. Its used to initialize CDA300 base on a C55.
+     */
+    C55.apply(this, [name, parent]);
+
+    /*
+     * This field is used to include bios settings for this device.
+     * If csl is available for this device, it will also be used to specify
+     * the csl name in the bios config file (*.cdb).
+     * The csl name will be "csl" + this.deviceName + ".lib"
+     */
+    this.deviceName = "DA300";
+
+    this.registers = [];
+
+     /*
+      *  This associative array defines the on-chip physical memory segments
+      *  indexed by the segment name.
+      *  Note:  All memory addresses here are defined in bytes.
+      */
+    this.memBlock = [];
+
+    /*
+     *  This memory segment is here only to show that the low addresses of
+     *  DARAM is reserved for the memory map registers (MMR).
+     *  This segment will not be included as part of the memory map returned
+     *  in the getMemoryMap() method.
+     */
+    this.memBlock["MMR"] = {
+        comment: "Memory Map Registers",
+        name: "MMR",
+        base: 0x0,
+        len:  0xC0,
+        space: "code/data"
+    };
+
+    this.memBlock["DARAM"] = {
+        comment: "24 blocks of 8K bytes on-chip Dual Access RAM",
+        name: "DARAM",
+        base: 0xC0,
+        len:  0x2FF40,
+        space: "code/data"
+    };
+
+    this.memBlock["ROM"] = {
+        comment: "64K bytes Zero-Wait-State On-Chip ROM",
+        name: "ROM",
+        base: 0xFF0000,
+        len:  0x010000,
+        space: "code/data"
+    };
+
+    /*
+     * This array contains the on-chip memory map(s).
+     * Each entry is indexed by the MPNMC bit of ST3_55 register.
+     */
+    this.mem = [];
+
+    /* MPNMC = 0 */
+    this.mem[0x0] = [
+        this.memBlock["DARAM"],
+        this.memBlock["ROM"]
+    ];
+
+    /* MPNMC = 1 */
+    this.mem[0x40] = [
+        this.memBlock["DARAM"]
+    ];
+
+    /*
+     * ======== getMemoryMap ========
+     * This method returns the memory map.
+     */
+    this.getMemoryMap = function ()
+    {
+        /* If st3_55 register is null return memory map with MPNMC = 1 */
+        if (this.registers.st3_55 == null) {
+            return(this.mem[0x40]);
+        }
+    
+        var st3_55BitMask = 0x0040;     // We only care about the MPNMC bit
+        var mpnmc = this.registers.st3_55 & st3_55BitMask;
+
+        if (this.mem[mpnmc] != null) {
+            return(this.mem[mpnmc]);
+        }
+
+        throw new Error("Invalid ST3_55 value: " + this.registers.st3_55);
+
+        return (null);
+    };
+}
+/*
+ *  @(#) ti.catalog.c5500; 1, 0, 0, 0,226; 2-23-2010 16:53:06; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

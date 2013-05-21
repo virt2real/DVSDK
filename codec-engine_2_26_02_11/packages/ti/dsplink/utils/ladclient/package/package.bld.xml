@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.dsplink.utils.ladclient" version="1, 0, 0" producerId="codec_engine_2_26_02_11">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.dsplink.utils.ladclient.c"/>
+        <srcFile name="ladclient_wince.c"/>
+        <srcFile name="ladclient.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/ladclient_3530.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ladclient_3530/package/package_ti.dsplink.utils.ladclient.ov4TCE.dep" src="package/package_ti.dsplink.utils.ladclient.c"/>
+        <srcFile name="package/lib/lib/release/ladclient_3530/ladclient_wince.ov4TCE.dep" src="ladclient_wince.c"/>
+        <srcFile name="lib/debug/ladclient_3530.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ladclient_3530/package/package_ti.dsplink.utils.ladclient.ov4TCE.dep" src="package/package_ti.dsplink.utils.ladclient.c"/>
+        <srcFile name="package/lib/lib/debug/ladclient_3530/ladclient_wince.ov4TCE.dep" src="ladclient_wince.c"/>
+        <srcFile name="lib/release/ladclient.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ladclient/package/package_ti.dsplink.utils.ladclient.o470uC.dep" src="package/package_ti.dsplink.utils.ladclient.c"/>
+        <srcFile name="package/lib/lib/release/ladclient/ladclient.o470uC.dep" src="ladclient.c"/>
+        <srcFile name="lib/release/ladclient_6446.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ladclient_6446/package/package_ti.dsplink.utils.ladclient.ov4TCE.dep" src="package/package_ti.dsplink.utils.ladclient.c"/>
+        <srcFile name="package/lib/lib/release/ladclient_6446/ladclient_wince.ov4TCE.dep" src="ladclient_wince.c"/>
+        <srcFile name="lib/debug/ladclient_6446.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ladclient_6446/package/package_ti.dsplink.utils.ladclient.ov4TCE.dep" src="package/package_ti.dsplink.utils.ladclient.c"/>
+        <srcFile name="package/lib/lib/debug/ladclient_6446/ladclient_wince.ov4TCE.dep" src="ladclient_wince.c"/>
+        <srcFile name="lib/debug/ladclient.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ladclient/package/package_ti.dsplink.utils.ladclient.ov5T.dep" src="package/package_ti.dsplink.utils.ladclient.c"/>
+        <srcFile name="package/lib/lib/debug/ladclient/ladclient.ov5T.dep" src="ladclient.c"/>
+        <srcFile name="lib/release/ladclient.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ladclient/package/package_ti.dsplink.utils.ladclient.ov5T.dep" src="package/package_ti.dsplink.utils.ladclient.c"/>
+        <srcFile name="package/lib/lib/release/ladclient/ladclient.ov5T.dep" src="ladclient.c"/>
+        <srcFile name="lib/debug/ladclient.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ladclient/package/package_ti.dsplink.utils.ladclient.o470uC.dep" src="package/package_ti.dsplink.utils.ladclient.c"/>
+        <srcFile name="package/lib/lib/debug/ladclient/ladclient.o470uC.dep" src="ladclient.c"/>
+        <srcFile name="package/rel/ti_dsplink_utils_ladclient.tar.dep" src="package/rel/ti_dsplink_utils_ladclient.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/ladclient_3530"
+        pname="lib/release/ladclient_3530.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/ladclient_3530"
+        pname="lib/debug/ladclient_3530.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/ladclient"
+        pname="lib/release/ladclient.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ladclient_6446"
+        pname="lib/release/ladclient_6446.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/ladclient_6446"
+        pname="lib/debug/ladclient_6446.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/ladclient"
+        pname="lib/debug/ladclient.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/ladclient"
+        pname="lib/release/ladclient.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/ladclient"
+        pname="lib/debug/ladclient.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_dsplink_utils_ladclient"
+        pname="ti_dsplink_utils_ladclient.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/release/ladclient.av5T"/>
+        <file name="ladclient.c"/>
+        <file name="lib/release/ladclient.a470uC"/>
+        <file name="lib/debug/ladclient_6446.av4TCE"/>
+        <file name="lib/debug/ladclient.a470uC"/>
+        <file name="ladclient.h"/>
+        <file name="package/package_ti.dsplink.utils.ladclient.c"/>
+        <file name="package/package.rel.dot"/>
+        <file name="ladclient_wince.c"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/release/ladclient_6446.av4TCE"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/ladclient.av5T"/>
+        <file name="lib/debug/ladclient_3530.av4TCE"/>
+        <file name="package.bld"/>
+        <file name="lib/release/ladclient_3530.av4TCE"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

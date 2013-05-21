@@ -1,0 +1,96 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+ %%}
+% for (init in this.algSectInit) {
+var `init` = "`this.algSectInit[init]`";
+% }
+/*
+ *  "Use" the various codec modules; i.e., implementation of codecs.
+ *  All these "xdc.useModule" commands provide a handle to the codecs,
+ *  which we'll use to initialize config params and add the codecs to
+ *  the Server.algs array.
+ */
+% for (var i = 0; i < this.cfgCodecs.length; i++) {
+%   var mod = this.cfgCodecs[i].substr(this.cfgCodecs[i].lastIndexOf('.') + 1).toUpperCase();
+    var `mod` = xdc.useModule('`this.cfgCodecs[i]`');
+
+%    if (this.configs[i]) {
+%        for (var j = 0; j < this.configs[i].configNames.length; j++) {
+%           if (this.configs[i].configValues[j]) {
+        `mod`.`this.configs[i].configNames[j]` = `this.configs[i].configValues[j]`;
+%           }
+%           else {
+        `mod`.`this.configs[i].configNames[j]` = undefined;
+%           }
+%        }
+%    }
+%    else {
+%       print("Error: The config parameters were not obtained from module, " 
+%       + this.cfgCodecs[i] + ", and must be manually entered in file config.cfg." );
+%    }
+
+%} 
+
+%var wizard_constants = xdc.loadCapsule('ti/sdo/ce/wizards/genserver/wizard_constants.xs');
+
+/*
+ * The array of algorithms this server can serve up.  This array also
+ * configures details about the threads which will be created to run the
+ * algorithms (e.g. stack sizes, priorities, etc.).
+ */
+Server.algs = [ 
+% for (var i = 0; i < this.cfgCodecs.length; i++) {
+%
+%   var mod = this.cfgCodecs[i].substr(this.cfgCodecs[i].lastIndexOf('.') + 1);
+%   var algVals = this.algVals[this.cfgCodecs[i]];
+    {name: "`algVals.name`", mod: `mod.toUpperCase()` , threadAttrs: {
+%if (algVals.stackSize == wizard_constants.DEFAULT_STACKSIZE) {
+        stackMemId: `algVals.stackMemId`, priority: Server.MINPRI + `algVals.pri`},
+%   }
+%else {
+        stackSize: `algVals.stackSize`, stackMemId: `algVals.stackMemId`, priority: Server.MINPRI + `algVals.pri`},
+%   }
+        groupId : `algVals.groupId`,
+    },
+
+%} 
+];
+
+%%{
+/*
+ * @(#) ti.sdo.ce.wizards.genserver; 1, 0, 0,84; 12-2-2010 21:28:48; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

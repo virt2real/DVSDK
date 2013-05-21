@@ -1,0 +1,33 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="U:\GForge\cat_flashutils\trunk\DM35x\CCS\NORWriter\"
+ProjectType=Executable
+CPUFamily=TMS470R2X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\Common\ccs\src\debug.c"
+Source="..\..\..\Common\drivers\src\nor.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\Common\src\device.c"
+Source="src\norwriter.c"
+Source="NORWriter.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\ccs\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"_DEBUG" -d"SKIP_LOW_LEVEL_INIT" -me -mv5e --abi=eabi
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\ccs\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"SKIP_LOW_LEVEL_INIT" -me -mv5e --abi=eabi
+
+["Linker" Settings: "Debug"]
+Options=--abi=eabi -cr -m".\Debug\NORWriter.map" -o".\Debug\NORWriter.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\NORWriter.map" -o".\Release\NORWriter.out" -w -x
+

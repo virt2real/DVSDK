@@ -1,0 +1,14 @@
+Package: gst-plugins-base-dev
+Version: 0.10.30-r11.0-arago4.6
+Description: Plugins for GStreamer
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: gst-plugins-base
+Homepage: http://www.gstreamer.net/
+Build: install/afa4844
+Depends: gst-plugins-base, libgstsdp-0.10-0, libgstpbutils-0.10-0, libgstvideo-0.10-0, libgstfft-0.10-0, libgstrtp-0.10-0, libgsttag-0.10-0, libgstrtsp-0.10-0, libgstcdda-0.10-0, libgstinterfaces-0.10-0, libgstapp-0.10-0, libgstriff-0.10-0, libgstnetbuffer-0.10-0, libgstaudio-0.10-0, libglib-2.0-dev, gstreamer-dev
+Recommends: gstreamer-dev, faac-dev, faad2-dev, libmikmod-dev, liboil-dev, libmad-dev, libid3tag-dev, udev-dev, alsa-lib-dev, libfreetype-dev
+Source: http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-0.10.30.tar.bz2;name=archive file://ivorbis-thumb.patch file://make382.patch

@@ -1,0 +1,280 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ *  ======== dskt2.tci ========
+ */
+
+var $$name = "DSKT2";
+
+var $$label = "Properties for xDAIS DSKT2 framework";
+
+/* Global properties for DSKT2 object */
+var $$global = [
+        {
+            // This property is no longer needed since all symbols that
+            // were formerly in the .dskt2 section are now defined in the
+            // generated linker command file.
+            name : "DSKT2SEG",
+            val  : prog.module("MEM").BIOSOBJSEG, //prog.module("MEM").DATASEG,
+            label: "Segment for DSKT2 data (.dskt2)",
+            type : "Object",
+            test : ["isMemDataSegment"],
+        },
+        {
+            name : "DARAM0SEG",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Memory segment for IALG_DARAM0",
+            type : "Object",
+            test : ["isMemSegment","hasHeap"],
+        },
+        {
+            name : "DARAM1SEG",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Memory segment for IALG_DARAM1",
+            type : "Object",
+            test : ["isMemSegment","hasHeap"],
+        },
+        {
+            name : "DARAM2SEG",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Memory segment for IALG_DARAM2",
+            type : "Object",
+            test : ["isMemSegment","hasHeap"],
+        },
+        {
+            name : "SARAM0SEG",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Memory segment for IALG_SARAM0",
+            type : "Object",
+            test : ["isMemSegment","hasHeap"],
+        },
+        {
+            name : "SARAM1SEG",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Memory segment for IALG_SARAM1",
+            type : "Object",
+            test : ["isMemSegment","hasHeap"],
+        },
+        {
+            name : "SARAM2SEG",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Memory segment for IALG_SARAM2",
+            type : "Object",
+            test : ["isMemSegment","hasHeap"],
+        },
+        {
+            name : "EXTERNALSEG",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Memory segment for IALG_EXTERNAL",
+            type : "Object",
+            test : ["isMemSegment","hasHeap"],
+        },
+        {
+            name : "IPROGSEG",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Memory segment for IALG_IPROG",
+            type : "Object",
+            test : ["isMemSegment","hasHeap"],
+        },
+        {
+            name : "EPROGSEG",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Memory segment for IALG_EPROG",
+            type : "Object",
+            test : ["isMemSegment","hasHeap"],
+        },
+        {
+            name : "OWNDATASEG",
+            val  : prog.module("MEM").BIOSOBJSEG,
+            label: "Memory segment for DSKT2 data structures",
+            type : "Object",
+            test : ["isMemSegment","hasHeap"],
+        },
+        {
+            name : "ALLOWEXTERNALSCRATCH",
+            val  : false,
+            label: "Allow External Memory for all IALG_SCRATCH requeusts",
+            type : "Boolean",
+        },
+        {
+            name : "CACHEWBINVFXN",
+            val  : null,
+            label: "Cache Writeback Invalidate Function",
+            type : "Object",
+        },
+            ];
+
+/* Per instance properties */
+var $$instance = [
+        {
+            name : "scrGroup0ScratchSize",
+            val  : 0,
+            label: "Scratch Group 0 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup1ScratchSize",
+            val  : 0,
+            label: "Scratch Group 1 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup2ScratchSize",
+            val  : 0,
+            label: "Scratch Group 2 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup3ScratchSize",
+            val  : 0,
+            label: "Scratch Group 3 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup4ScratchSize",
+            val  : 0,
+            label: "Scratch Group 4 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup5ScratchSize",
+            val  : 0,
+            label: "Scratch Group 5 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup6ScratchSize",
+            val  : 0,
+            label: "Scratch Group 6 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup7ScratchSize",
+            val  : 0,
+            label: "Scratch Group 7 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup8ScratchSize",
+            val  : 0,
+            label: "Scratch Group 8 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup9ScratchSize",
+            val  : 0,
+            label: "Scratch Group 9 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup10ScratchSize",
+            val  : 0,
+            label: "Scratch Group 10 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup11ScratchSize",
+            val  : 0,
+            label: "Scratch Group 11 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup12ScratchSize",
+            val  : 0,
+            label: "Scratch Group 12 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup13ScratchSize",
+            val  : 0,
+            label: "Scratch Group 13 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup14ScratchSize",
+            val  : 0,
+            label: "Scratch Group 14 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup15ScratchSize",
+            val  : 0,
+            label: "Scratch Group 15 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup16ScratchSize",
+            val  : 0,
+            label: "Scratch Group 16 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup17ScratchSize",
+            val  : 0,
+            label: "Scratch Group 17 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup18ScratchSize",
+            val  : 0,
+            label: "Scratch Group 18 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+        {
+            name : "scrGroup19ScratchSize",
+            val  : 0,
+            label: "Scratch Group 19 Scratch Size (MAUs)",
+            type : "Integer",
+        },
+            ];
+
+var $$template =
+    {
+        cSource : "ti/sdo/fc/dskt2/dskt2_c.tpl",
+        linker  : "ti/sdo/fc/dskt2/dskt2_cmd.tpl"
+    };
+
+/*
+ *  ======== Module Initialization ========
+ */
+function init ()
+{
+    /* Create a couple of DSKT2 objects */
+    this.create("DSKT2_daramScratch");
+    this.create("DSKT2_saramScratch");
+}
+/*
+ *  @(#) ti.sdo.fc.dskt2; 1, 0, 4,300; 12-1-2010 17:24:36; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

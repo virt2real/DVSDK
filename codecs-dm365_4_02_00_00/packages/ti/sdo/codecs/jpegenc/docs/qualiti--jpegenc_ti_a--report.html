@@ -1,0 +1,897 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD><TITLE>Compliance and Performance Test Report</TITLE></HEAD>
+<BODY>
+
+<STYLE TYPE="text/css">
+<!--
+.indented
+   {
+   padding-left: 25pt;
+   padding-right: 25pt;
+   }
+-->
+</STYLE>
+
+<a name="Top of Page"></a>
+
+<TABLE BORDER="1" WIDTH="100%">
+  <TR>
+    <TD COLSPAN="2">
+      <CENTER><FONT SIZE="+2"><B>TMS320 DSP Algorithm Interoperability Standard</B></FONT></CENTER><BR>
+      <CENTER><FONT SIZE="+1"><B>QualiTI <a href="#compliance">Compliance</a> and <a href="#performance">Performance</a> Testing</B></font></CENTER><BR>
+    </TD>
+  </TR>
+  <TR>
+    <TD><B>Date</B></TD><TD>Mon Jul 27 2009 15:32:27 GMT+0530 (IST)</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Vendor</B></TD><TD>TI</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Algorithm</B></TD><TD>JPEGENC</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Architecture</B></TD><TD>470</TD>
+  </TR>
+
+  <TR>
+    <TD><B>TI Compiler</B></TD><TD>false</TD>
+  </TR>
+  
+  <TR>
+    <TD><B>Library Format</B></TD><TD>ELF</TD>
+  </TR>
+  
+  <TR>
+    <TD><B>Compiler Version</B></TD><TD>UNKNOWN</TD>
+  </TR>
+  <TR>
+    <TD><B>Test Execution Log</B></TD><TD><a href="#Compiler Info">Test execution log for compiler info</a></TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="2">
+
+      <B>Algorithm Base Directory:</B><BR>
+
+      &nbsp;&nbsp;&nbsp;F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\jpegenc<BR>
+
+<BR>
+      <B>Algorithm Archive(s):</B><BR>
+
+      &nbsp;&nbsp;&nbsp;lib\libjpgenc.a<BR>
+<BR>
+      <B>Header File(s):</B><BR>
+      &nbsp;&nbsp;&nbsp;.\ijpegenc.h<BR>
+<BR>
+    </TD>
+
+  </TR>
+
+
+      <TR>
+        <TD COLSPAN="2">
+        <a name=compliance>
+          <FONT SIZE="+1"><BR><br><CENTER><B>Compliance Test Report</B></CENTER><BR><br></font>
+        </a>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD><B>Test Results</B></TD>
+        <td>
+        <font color="#00A000">PASS: 3</font><br>
+        <font color="#FF0000"><B>FAIL: 0</b></font>
+        &nbsp;&nbsp;&nbsp; 
+        
+        <br>
+        Skipped: 0<br>
+        Not apply: 2<br>
+        <b>Total: 5</b><br>
+        </td>
+      </TR>
+      <TR>
+
+        <TD COLSPAN="2">
+            <B>Test Notes</B><BR>
+            &nbsp;&nbsp;&nbsp;This report has been generated with QualiTI Version 6.23 - the XDAIS compliance and performance test suite. <BR><BR>
+
+
+        </TD>
+      </TR>
+
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rules 8, 9 and 10">XDAIS Rules 8, 9, 10: Namespace compliance</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">(Rule 8) All external definitions must be either API identifiers or API and vendor prefixed.<br><br>(Rule 9) All undefined references must refer either to the operations specified in Appendix B (a subset of C runtime support library functions and a subset of the DSP/BIOS HWI API functions), or TI's DSPLIB or IMGLIB functions or other XDAIS-compliant modules.<br><br>(Rule 10) All modules must follow the eXpressDSP naming conventions for those external declarations disclosed to the client.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test passed.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rules 8, 9 and 10">XDAIS Rules 8, 9 and 10 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 12">XDAIS Rule 12: IALG interface implementation</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must implement the IALG interface.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test passed.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 12">XDAIS Rule 12 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 13+">XDAIS Rule 13+: correct linker section names</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">Each of the IALG methods implemented by an algorithm must be independently relocatable.<br><br>Additional rule: there should be no non-standard linker sections. (Standard linker sections are: ".cinit", ".switch", ".far", ".text", ".const", ".bss", ".pinit".)</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Currently, this test cannot be run on non-TI compiled libraries.  This rule is not relevant for ARM libraries since sections should be placed properly.<br><BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 13+">XDAIS Rule 13+ execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 25">XDAIS Rule 25: All C6x algorithms must be supplied in little-endian format</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All C6x algorithms must be supplied in little-endian format.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test passed.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 25">XDAIS Rule 25 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 26">XDAIS Rule 26: All static/global data must be far on c6x</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All C6x algorithms must access all static and global data as far data.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">This test does not apply since this is not a C6x architecture.<br><BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 26">XDAIS Rule 26 execution log</a><br>
+        </TD>
+      </TR>
+      <TR>
+        <TD COLSPAN="2">
+        <a name=performance>
+          <FONT SIZE="+1"><BR><br><CENTER><B>Performance Test Report</B></CENTER><BR><br></font>
+        </a>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD><B>Test Results</B></TD>
+        <td>
+        <font color="#00A000">PASS: 0</font><br>
+        <font color="#FF0000"><B>FAIL: 1</b></font>
+        &nbsp;&nbsp;&nbsp; [
+        <a href="#XDAIS Rules 21, 22">XDAIS Rules 21, 22<a>&nbsp;&nbsp;
+        ]
+        <br>
+        Skipped: 0<br>
+        Not apply: 1<br>
+        <b>Total: 2</b><br>
+        </td>
+      </TR>
+      <TR>
+
+        <TD COLSPAN="2">
+            <B>Test Notes</B><BR>
+            &nbsp;&nbsp;&nbsp;This report has been generated with QualiTI Version 6.23 - the XDAIS compliance and performance test suite. <BR><BR>
+
+
+        </TD>
+      </TR>
+
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 20">XDAIS Rule 20: must declare worst-case stack requirements</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must characterize their worst-case stack space memory requirements (including alignment).</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Currently, this test cannot be run on non-TI compiled libraries.  The test requires DWARF information that was not detected in this library.  You will need to calculate the worst case stack size using other means and report this in the data sheet.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 20">XDAIS Rule 20 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rules 21, 22">XDAIS Rules 21, 22: must characterize static data & program memory requirements</a></b><br><br>
+
+          <B>Report: </B> <font color="#FF0000"><B>Failed to execute</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must characterize their static data & program memory requirements</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test command execution failed -- most likely cgtools and/or utility executables could not be found. Please verify that the tools paths are correct.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rules 21, 22">XDAIS Rules 21, 22 execution log</a><br>
+        </TD>
+      </TR>
+</TABLE>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<a name="Compiler Info">Test execution log for <b>Compiler Info:</b></a><br>
+<PRE>
+Determining compiler info.
+
+Chcking if this library was created with a TI compiler...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\jpegenc\lib\libjpgenc.a" | "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" "&lt;ti_coff&gt;"
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46560.sh"
+This library was not  created with a TI compiler.
+
+Attempting to determine library format...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\jpegenc\lib\libjpgenc.a" | "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" -E "&lt;.*coff&gt;|&lt;.*elf&gt;"
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46561.sh"
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+The library is in ELF format.
+
+Attempting to determine the compiler version...
+ Running command:&gt; "find.exe" "GCC:" "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\jpegenc\lib\libjpgenc.a"|"F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" "GCC:"
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46562.sh"
+  FIND: Parameter format not correct
+The compiler is UNKNOWN.
+
+</PRE>
+<a href="#Top of Page">back</a><br>
+<hr>
+<a name="log XDAIS Rules 8, 9 and 10">Test execution log for <b>XDAIS Rules 8, 9 and 10:</b></a><br>
+<PRE>
+Running test 'XDAIS Rules 8, 9 and 10'
+Extracting names of global symbols defined by the algorithm...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\nm6x.exe" -g "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\jpegenc\lib\libjpgenc.a" | "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" " [TBCU] "
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46535.sh"
+  00000020 T JPEGENC_TI_CFG_ClearField32
+  00000008 T JPEGENC_TI_CFG_Read32
+  00000010 T JPEGENC_TI_CFG_SetField32
+  00000000 T JPEGENC_TI_CFG_Write32
+  00000140 T JPEGENC_TI_EDMA_ClearInterrupt
+  00000318 T JPEGENC_TI_EDMA_ClearRegion2
+  000000d4 T JPEGENC_TI_EDMA_DisableEvent
+  00000164 T JPEGENC_TI_EDMA_DisableInterrupt
+  000000f8 T JPEGENC_TI_EDMA_EnableEvent
+  00000188 T JPEGENC_TI_EDMA_EnableInterrupt
+  00000274 T JPEGENC_TI_EDMA_GetInterrupt
+  000002dc T JPEGENC_TI_EDMA_GetPaRamDstAddr
+  00000034 T JPEGENC_TI_EDMA_MakeOptionParam
+  0000011c T JPEGENC_TI_EDMA_SetEvent
+  000001ac T JPEGENC_TI_EDMA_SetPaRamDstAddr
+  000001ec T JPEGENC_TI_EDMA_SetPaRamEntry
+  000001cc T JPEGENC_TI_EDMA_SetPaRamSrcAddr
+  000002f0 T JPEGENC_TI_EDMA_SetRegion2
+  00000298 T JPEGENC_TI_EDMA_WaitInterrupt
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 T JPEGENC_TI_HWSET_BigBox_JPEGE
+  00000000 U JPEGENC_TI_HWSET_Bimx_Init_JPEGEnc
+  00000000 U JPEGENC_TI_HWSET_Bp_Init_JPEGE
+  00000000 U JPEGENC_TI_HWSET_Copc_Init_JPEGE
+  00000000 U JPEGENC_TI_HWSET_Dct_Init_JPEGE
+  00000000 U JPEGENC_TI_HWSET_Qiq_Init_JPEGE
+  00000000 U JPEGENC_TI_HWSET_Vlcd_Init_JPEGE
+  00000000 U IMCOP_pMem16
+  00000000 T JPEGENC_TI_HWSET_Bimx_Init_JPEGEnc
+  00000038 T JPEGENC_TI_HWSET_Bimx_LoadCmd_JPEGEnc
+  00000148 T JPEGENC_TI_HWSET_Bimx_updateCmd_JPEGEnc
+  0000006c T JPEGENC_TI_HWSET_Bimx_updateFormat_JPEGEnc
+  000001f0 T JPEGENC_TI_pARMtoBimx
+  00000000 U Bimxenc_350_saturation
+  00000000 U Bimxenc_REFBbank
+  00000000 U Bimxenc_sleep
+  00000000 U IMCOP_pMem16
+  00000890 T JPEGENC_TI_HWSET_BiMX_Load_JPEG_Enc_Copy
+  00000000 T JPEGENC_TI_HWSET_BiMX_Load_JPEG_Enc_Copy420to422
+  00000520 T JPEGENC_TI_HWSET_BiMX_Load_JPEG_Enc_Copy_420SEMI_To_420
+  00000000 U JPEGENC_TI_pARMtoBimx
+  00000000 U bimx_enc
+  00000000 T JPEGENC_TI_HWSET_Bp_Init_JPEGE
+  00000114 T JPEGENC_TI_HWSET_Vlcd_Init_JPEGE
+  00000264 T JPEGENC_TI_HWSET_Vlcd_SetTable_JPEGE
+  00000000 U JPEGENC_TI_copy32
+  000002d4 T JPEGENC_TI_HWSET_Copc_Init_JPEGE
+  00000000 T JPEGENC_TI_HWSET_Copc_SwitchMemToDMA_Jpge
+  00000084 T JPEGENC_TI_HWSET_Copc_SwitchMemToHW_Jpge
+  00000000 T JPEGENC_TI_HWSET_Dct_Init_JPEGE
+  00000000 U IMGBUF_A_BASE
+  00000000 U Init_updnsmpl_point_op_Params
+  0000002c T JPEGENC_TI_HWSET_iMX_overlay
+  0000001c T JPEGENC_TI_HWSET_iMX_overlay_getBitmapByteOfst
+  00000000 T JPEGENC_TI_HWSET_iMX_overlay_getCmdLenBytes
+  00000008 T JPEGENC_TI_HWSET_iMX_overlay_getCoefLenBytes
+  00000014 T JPEGENC_TI_HWSET_iMX_overlay_getImgBufLenBytes
+  00000024 T JPEGENC_TI_HWSET_iMX_overlay_reset
+  00000ac8 T JPEGENC_TI_HWSET_iMX_overlay_setPtr
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U imxUpdate_InputPtr
+  00000000 U imxUpdate_OutPtr
+  00000000 U imxenc_YCbCrPack
+  00000000 U imxenc_array_op
+  00000000 U imxenc_array_scalar_op
+  00000000 U imxenc_cmdwrite
+  00000000 U imxenc_fillMem
+  00000000 U imxenc_jump
+  00000000 U imxenc_return
+  00000000 U imxenc_set_parameters_sign
+  00000000 U imxenc_sleep
+  00000000 U imxenc_tlu
+  00000000 U imxenc_updnsmpl_point_op
+  00000014 T JPEGENC_TI_HWSET_iMX_rotation
+  00000000 T JPEGENC_TI_HWSET_iMX_rotation_getCmdLenBytes
+  00000008 T JPEGENC_TI_HWSET_iMX_rotation_getCoefLenBytes
+  00000000 U imxenc_YCbCrPack
+  00000000 U imxenc_YCbCrUnpack
+  00000000 U imxenc_array_scalar_op
+  00000000 U imxenc_array_scalar_op_unpack
+  00000000 U imxenc_jump
+  00000000 U imxenc_nop
+  00000000 U imxenc_rotate
+  00000000 U imxenc_set_parameters_sign
+  00000000 U imxenc_sleep
+  00000000 T JPEGENC_TI_HWSET_Qiq_Init_JPEGE
+  00000140 T JPEGENC_TI_HWSET_Qiq_SetTable_JPEGE
+  00000000 U JPEGENC_TI_chro_q_mat
+  00000000 U JPEGENC_TI_luma_q_mat
+  00000000 U __aeabi_idiv
+  00000088 T JPEGENC_TI_flush_bits16
+  000000d8 T JPEGENC_TI_flush_bits_16
+  00000000 T JPEGENC_TI_next_bits16
+  0000011c T JPEGENC_TI_put_bits16
+  000002f4 T JPEGENC_TI_put_jpg_rstrt16
+  000000ac T JPEGENC_TI_ringbuf_change_direction
+  00000000 T JPEGENC_TI_ringbuf_play_init
+  0000006c T JPEGENC_TI_ringbuf_rec_init
+  00000194 T JPEGENC_TI_ringbuf_rec_post
+  00000000 U __aeabi_uidiv
+  00000000 T JPEGENC_TI_WriteJPEGHeader
+  00000000 U JPEGENC_TI_chro_q_mat
+  00000000 U JPEGENC_TI_luma_q_mat
+  00000000 U __aeabi_uidiv
+  00000000 U __aeabi_uidivmod
+  00000000 U memcpy
+  00000000 U memset
+  00000b34 T JPEGENC_TI_SEQ_GenCmd_MPEGEnc
+  00000b24 T JPEGENC_TI_SEQ_GetParam_Enc
+  00000000 T JPEGENC_TI_SEQ_Modify_JumpAddr
+  00000024 T JPEGENC_TI_SEQ_adjustOvlayVar
+  0000121c T JPEGENC_TI_SEQ_initCmdOvlay
+  00000168 T JPEGENC_TI_SEQ_initCmdOvlayDma
+  000001d8 T JPEGENC_TI_SEQ_resetCmd
+  00000058 T JPEGENC_TI_SEQ_resetCmdOvlay
+  00000ad8 T JPEGENC_TI_SEQ_resumeProc
+  00000000 U JPEGENC_TI_Seq_section0
+  00000000 U JPEGENC_TI_Seq_section0_size
+  00000004 C JPEGENC_TI_dat_eventID
+  00000004 C JPEGENC_TI_dat_runningFlag
+  00000000 U JPEGENC_TI_EDMA_ClearInterrupt
+  00000000 U JPEGENC_TI_EDMA_CopyToRingbuf_JPEGE
+  00000000 U JPEGENC_TI_EDMA_CopyToSeq4_JPEGE
+  00000000 U JPEGENC_TI_EDMA_GetInterrupt
+  00000000 U JPEGENC_TI_WriteJPEGHeader
+  00000000 T JPEGENC_TI_WritePictureHeaderJPEG
+  00000010 T JPEGENC_TI_WritePictureHeader_EDMA_JPEG
+  00000000 U MEMUTILS_cacheWb
+  00000000 U JPEGENC_TI_EDMA_ClearInterrupt
+  00000000 T JPEGENC_TI_EDMA_Copy32_JPEG
+  000004b0 T JPEGENC_TI_EDMA_CopyFromRingbuf_JPEGE
+  0000035c T JPEGENC_TI_EDMA_CopyToRingbuf_JPEGE
+  00000600 T JPEGENC_TI_EDMA_CopyToSeq4_JPEGE
+  000001b8 T JPEGENC_TI_EDMA_Copy_JPEGE
+  00000000 U JPEGENC_TI_EDMA_DisableEvent
+  00000000 U JPEGENC_TI_EDMA_DisableInterrupt
+  00000000 U JPEGENC_TI_EDMA_EnableEvent
+  00000000 U JPEGENC_TI_EDMA_EnableInterrupt
+  00000000 U JPEGENC_TI_EDMA_MakeOptionParam
+  000018dc T JPEGENC_TI_EDMA_Reset_Enc_JPEG
+  00000000 U JPEGENC_TI_EDMA_SetEvent
+  00000000 U JPEGENC_TI_EDMA_SetPaRamEntry
+  00000000 U JPEGENC_TI_EDMA_SetRegion2
+  000006c8 T JPEGENC_TI_EDMA_SetupTCC_Enc_JPEG
+  00001f00 T JPEGENC_TI_EDMA_Setup_Enc_JPEG
+  00000000 U JPEGENC_TI_EDMA_WaitInterrupt
+  00000000 U JPEGENC_TI_dat_eventID
+  00000000 U JPEGENC_TI_virt_ddr_start_addr
+  00000000 U MEMUTILS_cacheWb
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U JPEGENC_TI_EDMA_ClearInterrupt
+  00000000 U JPEGENC_TI_EDMA_CopyToSeq4_JPEGE
+  00000000 U JPEGENC_TI_EDMA_GetInterrupt
+  00000000 U JPEGENC_TI_EDMA_Reset_Enc_JPEG
+  00000000 U JPEGENC_TI_EDMA_SetEvent
+  00000000 U JPEGENC_TI_EDMA_SetupTCC_Enc_JPEG
+  00000000 U JPEGENC_TI_EDMA_Setup_Enc_JPEG
+  00000000 U JPEGENC_TI_EDMA_WaitInterrupt
+  00000000 U JPEGENC_TI_HWSET_BigBox_JPEGE
+  00000000 U JPEGENC_TI_HWSET_Bimx_updateCmd_JPEGEnc
+  00000000 U JPEGENC_TI_HWSET_Bimx_updateFormat_JPEGEnc
+  00000000 U JPEGENC_TI_HWSET_Bp_Init_JPEGE
+  00000000 U JPEGENC_TI_HWSET_Copc_Init_JPEGE
+  00000000 U JPEGENC_TI_HWSET_Copc_SwitchMemToDMA_Jpge
+  00000000 U JPEGENC_TI_HWSET_Copc_SwitchMemToHW_Jpge
+  00000000 U JPEGENC_TI_HWSET_Qiq_SetTable_JPEGE
+  00000000 U JPEGENC_TI_HWSET_iMX_overlay
+  00000000 U JPEGENC_TI_HWSET_iMX_rotation
+  00000000 T JPEGENC_TI_SWITCHMEM_BIMX
+  000000a0 T JPEGENC_TI_SWITCHMEM_IMX
+  00000000 U JPEGENC_TI_SetGlobal_Region
+  00000000 U JPEGENC_TI_SetTable_JPEG
+  00000000 U JPEGENC_TI_WritePictureHeaderJPEG
+  00000000 U JPEGENC_TI_WritePictureHeader_EDMA_JPEG
+  00000034 T JPEGENC_TI_abort
+  00000000 U JPEGENC_TI_calcPipelineDelay
+  00000000 U JPEGENC_TI_dat_eventID
+  00000000 U JPEGENC_TI_dat_runningFlag
+  00000000 U JPEGENC_TI_exit_JpegEnc
+  00000254 T JPEGENC_TI_generateHeader
+  0000088c T JPEGENC_TI_init1
+  000009a4 T JPEGENC_TI_initObj1
+  00000000 U JPEGENC_TI_initSeqProg
+  00000000 U JPEGENC_TI_mbLoop_EDMA_JPEG
+  000002c4 T JPEGENC_TI_reset
+  00000000 U JPEGENC_TI_resetSeqProg
+  00000000 U JPEGENC_TI_restoreSeq4_last_EDMA
+  00000000 U JPEGENC_TI_ringbuf_rec_init
+  000005b4 T JPEGENC_TI_setCustomQ
+  000000d4 T JPEGENC_TI_start
+  00000670 T JPEGENC_TI_updateParams
+  00000000 U exit
+  00000000 U imxenc_jump
+  00000000 U JPEGENC_TI_HWSET_Bimx_LoadCmd_JPEGEnc
+  00000000 U JPEGENC_TI_HWSET_Vlcd_SetTable_JPEGE
+  00000000 T JPEGENC_TI_SetGlobal_Region
+  00000624 T JPEGENC_TI_SetTable_JPEG
+  00000004 C CSL_COPC_REGS
+  00000004 C CSL_IMCOP_REGS
+  00000004 C CSL_IMX0_REGS
+  00000004 C CSL_IMX1_REGS
+  00000004 C CSL_IMX_REGS
+  00000004 C CSL_NF_REGS
+  00000004 C CSL_SEQ_REGS
+  00000004 C IMCOP_Mem_Ptr
+  00000004 C IMCOP_pMem
+  00000004 C IMCOP_pMem16
+  00000004 C IMCOP_pMem32
+  00000004 C IMCOP_pMem8
+  00000004 C IMCOP_pMemRaw
+  00000004 C IMCOP_pRegister
+  00000004 C IMCOP_psReg_BP
+  00000004 C IMCOP_psReg_BUFSW
+  00000004 C IMCOP_psReg_CFG
+  00000004 C IMCOP_psReg_CLKC
+  00000004 C IMCOP_psReg_COPC
+  00000004 C IMCOP_psReg_DCT
+  00000004 C IMCOP_psReg_INTC
+  00000004 C IMCOP_psReg_QIQ
+  00000004 C IMCOP_psReg_RC
+  00000004 C IMCOP_psReg_SEQ
+  00000004 C IMCOP_psReg_VLCD
+  00000004 C IMCOP_psReg_biMX
+  00000004 C IMCOP_psReg_iMX
+  00000004 C IMGBUF_A_BASE
+  00000004 C IMGBUF_BASE
+  00000004 C IMGBUF_B_BASE
+  00000004 C IMGBUF_C_BASE
+  00000004 C IMGBUF_D_BASE
+  00000004 C IMGBUF_E_BASE
+  00000000 T JPEGENC_TI_InitGlobalVars
+  00000004 C Mem_MemSpace
+  00000004 C Mem_SeqData
+  00000004 C Reg_regSpace
+  00000004 C Reg_regSpaceImcop
+  00000004 C edma_base_addr
+  00000004 C edma_param_base_addr
+  00000004 C imcop_cfg_base
+  00000004 C imgbuf_base
+  00000004 C imx_base
+  00000004 C virt_cer
+  00000004 C virt_cerh
+  00000004 C virt_dmaq4
+  00000004 C virt_drae2
+  00000004 C virt_drae2h
+  00000004 C virt_ecr
+  00000004 C virt_ecrh
+  00000004 C virt_eecr
+  00000004 C virt_eecrh
+  00000004 C virt_eer
+  00000004 C virt_eerh
+  00000004 C virt_eesr
+  00000004 C virt_eesrh
+  00000004 C virt_er
+  00000004 C virt_erh
+  00000004 C virt_esr
+  00000004 C virt_esrh
+  00000004 C virt_icr
+  00000004 C virt_icrh
+  00000004 C virt_iecr
+  00000004 C virt_iecrh
+  00000004 C virt_ier
+  00000004 C virt_ierh
+  00000004 C virt_iesr
+  00000004 C virt_iesrh
+  00000004 C virt_ipr
+  00000004 C virt_iprh
+  00000004 C virt_secr
+  00000004 C virt_secrh
+  00000004 C virt_seqdata_base
+  00000000 U JPEGENC_TI_EDMA_ClearInterrupt
+  00000000 U JPEGENC_TI_EDMA_CopyToRingbuf_JPEGE
+  00000000 U JPEGENC_TI_EDMA_DisableEvent
+  00000000 U JPEGENC_TI_EDMA_EnableEvent
+  00000000 U JPEGENC_TI_EDMA_GetInterrupt
+  00000000 U JPEGENC_TI_EDMA_WaitInterrupt
+  00000000 U JPEGENC_TI_SEQ_GenCmd_MPEGEnc
+  00000000 U JPEGENC_TI_SEQ_GetParam_Enc
+  00000000 U JPEGENC_TI_SEQ_adjustOvlayVar
+  00000000 U JPEGENC_TI_SEQ_resetCmd
+  00000000 U JPEGENC_TI_SEQ_resumeProc
+  00001d68 T JPEGENC_TI_SetCodecParamSequence
+  00000000 U JPEGENC_TI_calcPipelineDelay
+  00000000 U JPEGENC_TI_dat_eventID
+  00000000 T JPEGENC_TI_exit_JpegEnc
+  00000b2c T JPEGENC_TI_initSeqProg
+  000002c4 T JPEGENC_TI_mbLoop_EDMA_JPEG
+  00001040 T JPEGENC_TI_resetSeqProg
+  00001e34 T JPEGENC_TI_restoreSeq4_last_EDMA
+  00000000 U JPEGENC_TI_vicpsync_start
+  00000000 U JPEGENC_TI_vicpsync_wait
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U __aeabi_uidivmod
+  00000000 U exit
+  00000000 U memcpy
+  00000000 U JPEGENC_TI_HWSET_iMX_overlay_getBitmapByteOfst
+  00000000 U JPEGENC_TI_HWSET_iMX_overlay_getCmdLenBytes
+  00000000 U JPEGENC_TI_HWSET_iMX_overlay_getCoefLenBytes
+  00000000 U JPEGENC_TI_HWSET_iMX_overlay_getImgBufLenBytes
+  00000000 U JPEGENC_TI_HWSET_iMX_rotation_getCmdLenBytes
+  00000000 U JPEGENC_TI_HWSET_iMX_rotation_getCoefLenBytes
+  00000000 U JPEGENC_TI_IALG
+  000007f8 T JPEGENC_TI_MapAllUsedChannelsToQue0
+  00000000 U JPEGENC_TI_ac_ctl_tbl
+  00000000 U JPEGENC_TI_ac_dcd_tbl
+  00000000 U JPEGENC_TI_ac_uv
+  00000000 U JPEGENC_TI_ac_y
+  00002244 T JPEGENC_TI_activate
+  00000748 T JPEGENC_TI_alloc
+  00000008 T JPEGENC_TI_control
+  00000000 U JPEGENC_TI_dat_eventID
+  00000000 U JPEGENC_TI_dc_ctl_tbl
+  00000000 U JPEGENC_TI_dc_dcd_tbl
+  00000000 U JPEGENC_TI_dc_uv
+  00000000 U JPEGENC_TI_dc_y
+  0000213c T JPEGENC_TI_deactivate
+  00000800 T JPEGENC_TI_encode
+  000007f4 T JPEGENC_TI_exit
+  00000000 U JPEGENC_TI_exit_JpegEnc
+  00002150 T JPEGENC_TI_free
+  00000000 U JPEGENC_TI_generateHeader
+  00000000 U JPEGENC_TI_init1
+  00001c28 T JPEGENC_TI_initObj
+  00000000 U JPEGENC_TI_initObj1
+  000007fc T JPEGENC_TI_moved
+  00000000 T JPEGENC_TI_numAlloc
+  000020a0 T JPEGENC_TI_preProc_overlay_init
+  00000000 U JPEGENC_TI_reset
+  00000000 U JPEGENC_TI_setCustomQ
+  00000000 U JPEGENC_TI_start
+  00000000 U JPEGENC_TI_updateParams
+  00000004 C JPEGENC_TI_virt_ddr_start_addr
+  00000000 U MEMUTILS_cacheWb
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U __aeabi_idiv
+  00000000 U __aeabi_uidiv
+  00000000 U JPEGENC_TI_InitGlobalVars
+  00000284 T JPEGENC_TI_activateAllResources
+  000002a4 T JPEGENC_TI_activateResource
+  00000000 U JPEGENC_TI_assignBuffAddr
+  0000028c T JPEGENC_TI_deactivateAllResources
+  000002ac T JPEGENC_TI_deactivateResource
+  0000029c T JPEGENC_TI_deinitResources
+  00000000 T JPEGENC_TI_getResourceDescriptors
+  000002b4 T JPEGENC_TI_initResources
+  0000027c T JPEGENC_TI_numResourceDescriptors
+  00000294 T JPEGENC_TI_reinitResources
+  0000076c T JPEGENC_TI_IMCOP_Mem_Init_phys
+  00000670 T JPEGENC_TI_IMCOP_Mem_Init_virt
+  00000000 T JPEGENC_TI_IMCOP_Reg_Init_phys
+  00000348 T JPEGENC_TI_IMCOP_Reg_Init_virt
+  0000088c T JPEGENC_TI_assignBuffAddr
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U JPEGENC_TI_activate
+  00000000 U JPEGENC_TI_alloc
+  00000000 U JPEGENC_TI_control
+  00000000 U JPEGENC_TI_deactivate
+  00000000 U JPEGENC_TI_encode
+  00000000 U JPEGENC_TI_free
+  00000000 U JPEGENC_TI_initObj
+  00000000 U JPEGENC_TI_moved
+  00000000 U JPEGENC_TI_numAlloc
+  0000000c T JPEGENC_TI_vicpsync_start
+  00000000 T JPEGENC_TI_vicpsync_wait
+  00000000 U VICPSYNC_start
+  00000000 U VICPSYNC_wait
+  00000000 B JPEGENC_TI_Seq_section1
+  00000364 T JPEGENC_TI_CalcCheckSum
+  000003f8 T JPEGENC_TI_CalcCheckSum_EDMA
+  00000000 U JPEGENC_TI_EDMA_Copy32_JPEG
+  00000330 T JPEGENC_TI_calcPipelineDelay
+  000004c0 T JPEGENC_TI_copy32
+  00000230 T JPEGENC_TI_getEndPulseListDec
+  00000138 T JPEGENC_TI_getEndPulseListMovieEnc
+  00000000 T JPEGENC_TI_getEndPulseListStillEnc
+Verifying that all global symbols are named XXX_TI_xxx ...
+and that no blacklisted external references are made
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+
+</PRE>
+<a href="#XDAIS Rules 8, 9 and 10">back</a>
+<hr>
+<a name="log XDAIS Rule 12">Test execution log for <b>XDAIS Rule 12:</b></a><br>
+<PRE>
+Running test 'XDAIS Rule 12'
+Extracting names of global BSS data symbols...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\nm6x.exe" -g "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\jpegenc\lib\libjpgenc.a" | "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" " [BD] "
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46540.sh"
+  00000180 D JPEGENC_TI_chro_invq_mat
+  00000080 D JPEGENC_TI_chro_q_mat
+  00000100 D JPEGENC_TI_luma_invq_mat
+  00000000 D JPEGENC_TI_luma_q_mat
+  00000648 D JPEGENC_TI_ac_ctl_tbl
+  0000068c D JPEGENC_TI_ac_dcd_tbl
+  00000388 D JPEGENC_TI_ac_uv
+  000000c8 D JPEGENC_TI_ac_y
+  00000098 D JPEGENC_TI_dc_ctl_tbl
+  00000060 D JPEGENC_TI_dc_dcd_tbl
+  00000030 D JPEGENC_TI_dc_uv
+  00000000 D JPEGENC_TI_dc_y
+  00000000 D JPEGENC_TI_IRES
+  0000002c D JPEGENC_TI_IALG
+  00000000 D JPEGENC_TI_IJPEGENC
+  00000000 D JPEGENC_TI_Seq_section0
+  00000000 D JPEGENC_TI_Seq_section0_size
+  00000000 B JPEGENC_TI_Seq_section1
+  00000002 D JPEGENC_TI_Seq_section1_size
+  00000000 D JPEGENC_TI_version
+Verifying that objects 'JPEGENC_TI_IALG' and 'JPEGENC_TI_IJPEGENC' are defined...
+Data object 'JPEGENC_TI_IALG' found.
+Data object 'JPEGENC_TI_IJPEGENC' found.
+
+</PRE>
+<a href="#XDAIS Rule 12">back</a>
+<hr>
+<a name="log XDAIS Rule 13+">Test execution log for <b>XDAIS Rule 13+:</b></a><br>
+<PRE>
+Currently, this test cannot be run on non-TI compiled libraries.
+
+</PRE>
+<a href="#XDAIS Rule 13+">back</a>
+<hr>
+<a name="log XDAIS Rule 20">Test execution log for <b>XDAIS Rule 20:</b></a><br>
+<PRE>
+Currently, this test cannot be run on non-TI compiled libraries.
+</PRE>
+<a href="#XDAIS Rule 20">back</a>
+<hr>
+<a name="log XDAIS Rules 21, 22">Test execution log for <b>XDAIS Rules 21, 22:</b></a><br>
+<PRE>
+Running test 'XDAIS Rules 21, 22'
+Using sectti on ofd output to find static data & program memory requirements...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none,sections,header "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\jpegenc\lib\libjpgenc.a" | "C:\USER_EDIT_THIS_PATH\cg_xml\bin\sectti.exe"
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46553.sh"
+  C:/USER_EDIT_THIS_PATH/cg_xml/bin/sectti.exe: not found
+Error: Command execution failed.
+
+</PRE>
+<a href="#XDAIS Rules 21, 22">back</a>
+<hr>
+<a name="log XDAIS Rule 25">Test execution log for <b>XDAIS Rule 25:</b></a><br>
+<PRE>
+Running test 'XDAIS Rule 25'
+Using ofd output to parse for endianness attribute...
+ Running command:&gt; "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none,header "F:\Tej\project\TI_to_PP\dm365_codecs_01_00_02\packages\ti\sdo\codecs\jpegenc\lib\libjpgenc.a" | "F:\Tej\project\TI_to_PP\xdais_6_23\packages\ti\xdais\qualiti\bin\grep\grep.exe" "&lt;ei_data&gt;"
+                   (from "C:\Documents and Settings\tej pandey\Local Settings\Temp\qualiti_runcmd_46558.sh"
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+  &lt;ei_data&gt;ELFDATA2LSB&lt;/ei_data&gt;
+
+</PRE>
+<a href="#XDAIS Rule 25">back</a>
+<hr>
+<a name="log XDAIS Rule 26">Test execution log for <b>XDAIS Rule 26:</b></a><br>
+<PRE>
+This test does not apply since this is not a C6x architecture.
+
+</PRE>
+<a href="#XDAIS Rule 26">back</a>
+<hr>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</BODY>
+</HTML>
+
+
+
+

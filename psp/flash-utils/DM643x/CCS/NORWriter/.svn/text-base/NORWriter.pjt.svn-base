@@ -1,0 +1,34 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="U:\Work\svn\FlashUtils\trunk\DM643x\CCS\NORWriter\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\Common\drivers\src\nor.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\Common\src\device.c"
+Source="..\..\..\Common\ccs\src\debug.c"
+Source="src\norwriter.c"
+Source="NORWriter.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include"  -i"$(Proj_dir)\..\..\..\Common\ccs\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"_DEBUG" -d"SKIP_LOW_LEVEL_INIT" -ms1 -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include"  -i"$(Proj_dir)\..\..\..\Common\ccs\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"SKIP_LOW_LEVEL_INIT" -mv6400+
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\NORWriter.map" -o".\Debug\NORWriter.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\NORWriter.map" -o".\Release\NORWriter.out" -w -x
+

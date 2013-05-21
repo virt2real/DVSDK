@@ -1,0 +1,465 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><!-- /* * Copyright 2007 by Texas Instruments Incorporated . * * All rights reserved. Property of Texas Instruments Incorporated. * Restricted rights to use, duplicate or disclose this code are * granted through contract. * */ -->
+
+
+  
+
+
+  <title>XDC 3.00.03.21 Release Notes</title><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><!-- For now, we use the doxygen style sheet -->
+
+
+  <link href="doxygen.css" type="text/css" rel="stylesheet"></head>
+
+<body>
+
+<table width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td bgcolor="black" width="1"><a href="http://www.ti.com/"><img style="border: 0px solid ; width: 222px; height: 54px;" alt="Texas Instruments" src="docs/tilogo.gif"> </a></td>
+
+      <td bgcolor="red"><img style="width: 314px; height: 26px;" alt="Technology for Innovators(tm)" src="docs/titagline.gif">
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h1 align="center">XDC 3.00.03.21 Release Notes</h1>
+
+<h2 align="center">Dec 19, 2007</h2>
+
+<p align="center"> <a href="#General_Info">Introduction</a>,
+<a href="#Known_Issues">Known Issues</a>, <a href="#Documentation">Documentation</a>, <a href="#Whats_New">What's New</a>, <a href="#Compatibility">Upgrade &amp; Compatibility
+Information</a>, <a href="#Host_Support">Host
+Support</a>, <a href="#Dependencies">Dependencies</a>,
+<a href="#Device_Support">Device Support</a>, <a href="#Validation">Validation Info</a>, <a href="#Version">Version Information</a>, <a href="#Support">Technical Support</a>.
+</p>
+
+<hr>
+<h2><a name="General_Info">Introduction</a></h2>
+
+<p>eXpress DSP Components (XDC) is a standard for reusable
+software
+components, optimized for real-time embedded systems. XDC components
+have hardware-neutral formal interfaces, are configurable offline to
+optimize memory and performance, and support custom automation in the
+development environment via a scripting language.</p>
+
+<p>This XDC release includes the following sets of packages: </p>
+
+<ul>
+
+  <li><b>XDC core (<tt>xdc.*</tt>)</b> -
+the <tt><b>xdc</b></tt> and <tt><b>xs</b></tt>
+command line utilities for building packages and execting scripts,
+together with the packages that implement XDC itself;</li>
+
+  <li><b>User tools (<tt>xdc.tools.*</tt>)</b>
+- command-line and graphical utilities for working with packages and
+repositories;</li>
+
+  <li><b>Targets (<tt>*.targets.*</tt>)</b>
+- definitions for using various TI and third-party compiler tool chains
+with XDC;</li>
+
+  <li><b>Platforms (<tt>ti.platforms.*</tt>)</b>
+- definitions for linking and running code on various TI board-level
+hardware and simulator products using XDC.</li>
+
+</ul>
+
+<hr>
+<h2><a name="Known_Issues">Known Issues</a></h2>
+
+<p>None.</p>
+
+<hr>
+<h2><a name="Documentation">Documentation</a></h2>
+
+<p>The following documentation is available: </p>
+
+<ul>
+
+  <li><a href="docs/XDC_Getting_Started_Guide.pdf">XDC
+Getting Started Guide</a></li>
+
+  <li><a href="docs/userguide/XDC_User_Guide.pdf">XDC
+Consumer User's Guide</a></li>
+
+  <li><a href="docs/index.html">XDC Documents Index</a></li>
+
+</ul>
+
+<p>Release notes from previous releases are also available in the
+<a href="docs/relnotes_archive">relnotes_archive</a>
+directory. </p>
+
+<hr>
+<h2><a name="Whats_New">What's New</a></h2>
+
+<p>The following significant changes have been made since 3.00:</p>
+
+<ul>
+
+  <li>Device support for DM355 and DM510.</li>
+  <li>Bug fixes detailed below.</li>
+
+</ul>
+
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<div class="memitem">
+<h3>3.00.03.21 (This Release)</h3>
+
+<!-- *************************************************************** -->
+<h4>Targets</h4>
+<ul>
+  <li>in microsoft.targets, fixed _utils.xs to work with any
+      target that inherits from microsoft.targets.ITarget</li>
+  <li>fixed the incorrect 'name' parameter in arm/Arm9t target and a
+      bug in rtsarm9/boot.asm in thumb mode</li>
+  <li>added Int64 support for gnu.targets and microsoft.targets</li>
+  <li>built runtime for c28_float target using cg_tools 5.0.0B20</li>
+  <li>runtime built for MVArm9 and UCArm9 targets. UCAm9 is
+      built using gcc version 4.2.1</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Platforms</h4>
+<ul>
+  <li>added ti.platforms.app510 platform which use DM510</li>
+  <li>fixed evmDM355 platform to allow use with non-TI targets</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Catalogs</h4>
+<ul>
+  <li>added DM510 catalog device to ti.catalog.c470</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Runtime</h4>
+<ul>
+  <li>fixed bug in System_atExit(): it did not leave the system gate
+      in the event that it failed to save an atexit handler.</li>
+  <li>moved Text.put* functions from internal section to public
+      section so eliminate use of internal Text functions by modules
+      outside xdc.runtime</li>
+  <li>fixed Error.getCode() bug; SDSCM00021675</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Core</h4>
+<ul>
+  <li>Added debug trace support to tool</li>
+  <li>const data are now a part of the initialized section, and
+      therefore are not initialized through cinit; this fix solves
+      the problem when the actual data is not in the image, but the
+      cinit section contains initializers (SDSCM00018922)</li>
+  <li>fixed a bug in which the case-insensitivity of Windows file
+      names were spoofing the resolution of '.'-qualified names in
+      .xdc specs.  this allows, for instance, a package named 'test'
+      to contain a module named 'TEST'; this fix solves the case
+      where packages in different repositories with the "same" name
+      (module case) can be confused (SDSCM00021126).</li>
+  <li>fixed some bugs associated with spec-time initialization of
+      Instance/Handle configs using a "create" expression as an
+      initializer; one problem surfaced when the referenced module
+      itself inherited from an interface with a spec'd create();
+      another problem surfaced when the referenced module was named
+      via an import statement.  note that there is still an
+      outstanding problem with {...} initializers used with
+      Instance/Handle configs; while it "may" appear to work, the
+      underlying Mod.create() method is *not* being called, which
+      can in general compromise the integrity of these objects.</li>
+  <li>fixed config generation template to properly fail when
+      bogus platform name is provided</li>
+  <li>updated docs/build.ppt to reflect new target requirements</li>
+  <li>changed -g=i option to just -g in xdc/bld/xdc_rules.mak to
+      avoid current bug in xs	(and tconf).</li>
+  <li>fixed default IPlatform methods to give better error message</li>
+  <li>added the special function ModName_Module_id() for all target
+      modules, which returns this module's unique id;	the latter is
+      of type Types_ModuleId.  note that if common$.namedModule is
+      true for this module (the default), the value will actually be
+      a (unique) RopeId -- even if the ropes aren't loaded;
+      otherwise, this value will be a small serial number.</li>
+  <li>fixed in a bug in XDCscript support for 'instanceof' which
+      failed to handle struct types (or typedefs that resolve to
+      struct types).  now, one can say:  cfgValue instanceof Error.Id
+      to determine whether a given field is an Error.Id or not.</li>
+  <li>fixed bug in makefile generation when the same package is added
+      to two different repositories in a bundle; warnings were coming
+      from make about "ignoring old rules".</li>
+  <li>Reduced number of disk accesses while releasing packages.
+      In rel.tci, added an in-memory cache of directories already
+      known not to be in any package.</li>
+  <li>added Log_raise() to allow ILogger implementations to "stack"
+      without a proxy</li>
+  <li>fix bogus file handling in exec</li>
+  <li>added xdc_iargToPtr() and xdc_uargToPtr() macros to allow one
+      to portably conver an IArg to a Ptr without any compiler
+      warnings.</li>
+  <li>added System_a{printf, vprintf,sprintf,svprintf} - a variant
+      of the printf functions that assumes all arguments are of
+      type IArg.  This allows us to avoid forcing users to add
+      non-standard format specifiers in format strings.</li>
+  <li>fixed Log_print* to use more efficient write4 when possible</li>
+  <li>fixed xdc.rta.Decoder to not force JVM exit on simple errors,
+      added ability to enumerate modules and events, fixed access
+      rights for xdc.rta.HostEvent constructor</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Configuro</h4>
+<ul>
+  <li>Fixed operation with -Dconfig.importPath. Now
+      adds these onto the end of the package path, so
+      that .tci files are searched for in the same places as
+      everything else. Added --bios5 flag that includes
+      ti.bios/include directory in generated compiler.opt</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Configuro CCS 3.3 Integration</h4>
+<ul>
+  <li>always put selected BIOS packages/ dir on XDCPATH. Previously,
+      BIOS was only put on the package path if the --tcf flag was used.
+      This change supports DSP/BIOS 6</li>
+  <li>renamed Tconf tab to BIOS5 tab, and added --bios5 option that
+      includes ti.bios/include directory in generated compiler.opt</li>
+</ul>
+
+<!-- *************************************************************** -->
+<h4>Enhancements</h4>
+<p>The following minor enhancements were resolved:</p>
+<table width="100%">
+  <colgroup width="15%"></colgroup><tbody>
+
+
+  </tbody>
+</table>
+
+<!-- *************************************************************** -->
+<h4>Defects</h4>
+<p>The following defects were resolved:</p>
+<table width="100%">
+  <colgroup width="15%"></colgroup><tbody>
+
+    <tr>
+      <td>SDSCM00007080</td>
+      <td>XDC command help message is hard to find</td>
+    </tr>
+    <tr>
+      <td>SDSCM00015332</td>
+      <td>XDC Verbose option should print the full path to each package
+      it loads</td>
+    </tr>
+    <tr>
+      <td>SDSCM00018922</td>
+      <td>xdc.runtime.Text.isLoaded = false does not work</td>
+    </tr>
+    <tr>
+      <td>SDSCM00019111</td>
+      <td>Diags: Config Parameter "setMaskEnabled" has issues</td>
+    </tr>
+    <tr>
+      <td>SDSCM00019208</td>
+      <td>Both HeapMin and HeapStd do not allow 0 for the size (both
+      static and dynamic creates).</td>
+    </tr>
+    <tr>
+      <td>SDSCM00019240</td>
+      <td>HeapStd now keeps track of how much RTS memory it has used and
+      errors if too much is requested.</td>
+    </tr>
+    <tr>
+      <td>SDSCM00019775</td>
+      <td>Configuro Fails in CreateProcess() call in WindowsXP if XDCPATH
+      too long</td>
+    </tr>
+    <tr>
+      <td>SDSCM00019874</td>
+      <td>Added cdoc info for isBlocking.</td>
+    </tr>
+    <tr>
+      <td>SDSCM00019875</td>
+      <td>Added Memory_query function.</td>
+    </tr>
+    <tr>
+      <td>SDSCM00020681</td>
+      <td>Added assert in HeapStd_free if remainSize is greater than
+      startSize</td>
+    </tr>
+    <tr>
+      <td>SDSCM00021010</td>
+      <td>'Ptr' type for ti.targets.C28_float should be 2 words (not 1)</td>
+    </tr>
+    <tr>
+      <td>SDSCM00021126</td>
+      <td>name resolution fails on Windows</td>
+    </tr>
+    <tr>
+      <td>SDSCM00021632</td>
+      <td>System_atexit() always returns FALSE</td>
+    </tr>
+    <tr>
+      <td>SDSCM00021675</td>
+      <td>xdc.runtime.Error.getCode() always returns 0</td>
+    </tr>
+    <tr>
+      <td>SDSCM00021676</td>
+      <td>instanceof fails on structs</td>
+    </tr>
+    <tr>
+      <td>SDSCM00021972</td>
+      <td>Bad interaction with Linux automount directory during
+      package release</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+
+<hr>
+<h2><a name="Compatibility">Upgrade and
+Compatibility Information</a></h2>
+
+<p><b>Warning:</b> Beginning with XDC 2.95, XDC
+modules with target content (i.e. non-meta-only) are incompatible with
+non-metaonly modules from XDC 2.94 and earlier. Metaonly modules are
+not affected. Non-metaonly modules require at least a recompile.
+</p>
+
+<p><b>Warning:</b> Beginning with xdc-o02, internal C
+files generated when building package schemas are named
+package_&lt;package name&gt;.c instead of
+&lt;package_name&gt;.c. This may introduce incompatibilities
+with older xdc-n and xdc-o trees (XDC 2.X products). The compatibility
+with metaonly xdc-m packages (XDC 1.X products) is still maintained.
+</p>
+
+<h3>Compatibility Key Definitions</h3>
+
+<p>Compatibility keys are intentionally independent of Marketing
+product
+numbers and are intended to: </p>
+
+<ol>
+  <li>Enable tooling to identify incompatibilities between
+components, and </li>
+  <li>Convey a level of compatibility between different releases
+to set end user expectations. </li>
+</ol>
+
+<p>Compatibility keys are composed of 3 comma-delimited numbers -
+M,S,R - where: </p>
+
+<ul>
+  <li><b>M = Major</b>. A difference in M indicates a
+break in compatibility. </li>
+  <li><b>S = Source</b>. A difference in S indicates
+source compability. That is, the user's source doesn't require change,
+but <i>does</i> require rebuilding. </li>
+  <li><b>R = Radix</b>. A difference in R indicates
+an introduction of new features, but compatibility with previous
+interfaces has not broken. If libraries are provided by the package, an
+application must re-link with the new libraries, but not rebuild from
+source. </li>
+</ul>
+
+<hr>
+<h2><a name="Host_Support">Host Support</a></h2>
+
+<p>This release supports the following hosts:</p>
+<ul>
+  <li>Windows XP</li>
+  <li>RedHat Enterprise Linux 3</li>
+</ul>
+
+<hr>
+<h2><a name="Dependencies">Dependencies</a></h2>
+
+<p>This release requires the following other software components
+and tools versions to successfully function: </p>
+
+<ul>
+  <li>C6x Code Generation Tools version 5.3.0 or later. Version
+6.0.13 or later is required in order to use whole_program build profile.</li>
+  <li>C55 Code Generation Tools version 3.2.0. or later</li>
+  <li>TMS470 (Arm) Code Generation Tools version 4.5</li>
+  <li>GCC for x86 version 3.2.3 or later</li>
+  <li>GCC for ARM version 3.2.3 or later</li>
+</ul>
+
+<hr>
+<h2><a name="Device_Support">Device Support</a></h2>
+
+<p>This release supports the following device families: </p>
+<ul>
+  <li>C67P, C67, C64P, C64, C62 </li>
+  <li>C55P, C55, C54</li>
+  <li>C28</li>
+  <li>TMS470</li>
+  <li>Native development host (Windows, Linux)</li>
+</ul>
+
+<hr>
+<h2><a name="Validation">Validation Information</a></h2>
+
+<p>This release was built and validated against using the
+following components: </p>
+<ul>
+  <li>Code Composer Studio version 3.3</li>
+  <li>C6x Code Generation Tools version 6.0.7 and 6.0.13</li>
+  <li>C55 Code Generation Tools version 3.2.2</li>
+  <li>GCC for x86 version 3.2.3</li>
+  <li>GCC for ARM version 3.2.3</li>
+</ul>
+
+<hr>
+<h2><a name="Version">Version Information</a></h2>
+
+<p>This product's version follows a version format, <b>M.mm.pp.bb</b>,
+where <b>M</b> is a single digit Major number, <b>mm</b>
+is 2 digit minor number, <b>pp</b> is a 2 digit patch
+number, and <b>b</b> is an unrestricted set of digits used
+as an incrementing build counter. </p>
+
+<p>To support multiple side-by-side installations of the product,
+the product version is encoded in the top level directory, e.g. <b>xdc_3_00</b>.
+</p>
+
+<p>Subsequent releases of patch upgrades will be identified by
+the patch number, ex. XDC 3.00.03 with directory <b>xdc_3_00_03</b>.
+Typically, these patches only include critical bug fixes. </p>
+
+<p>Please note that version numbers and compatibility keys are
+NOT the same. For an explanation of compatibility keys, please refer to
+the 'Upgrade and Compatibility Information' section. </p>
+
+<hr>
+<h2><a name="Support">Technical Support</a></h2>
+
+<p>For technical support, contact <a href="mailto:rtsc_champs@list.ti.com">rtsc_champs@list.ti.com</a></p>
+
+<hr>
+<p>Last updated: Dec 19, 2007 Rev: h12</p>
+
+</div>
+
+</body></html></body>
+</html>

@@ -1,0 +1,124 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== C28022.tci ========
+ *
+ */
+  
+/*
+ *  Load C28.tci arch file
+ */
+utils.loadArch("28", "ti.catalog.c2800");
+
+/*
+ *  ======== C28022 ========
+ */
+function C28022(name, parent)
+{
+    /*
+     * The 'this' refers to the cpu object created in the platform file.
+     * The apply function is a way to execute a function with a specific
+     * 'this' pointer. Its used to initialize C28022 base on a C28.
+     */
+    C28.apply(this, [name, parent]);
+
+    /*
+     * This field is used to include bios settings for this device.
+     * If csl is available for this device, it will also be used to specify
+     * the csl name in the bios config file (*.cdb).
+     * The csl name will be "csl" + this.deviceName + ".lib"
+     */
+    this.deviceName = "28022";
+
+    this.registers = [];
+
+    /* This defines the on-chip physical memory blocks */
+    this.memBlock = [];
+
+    this.memBlock["MSARAM"] = {
+        comment: "On-Chip RAM Memory",
+        name: "MSARAM",
+        base: 0x00000000,
+        len:  0x00000800,
+        space: "data"
+    };
+
+    this.memBlock["PIEVECT"] = {
+        comment: "On-Chip PIEVECT RAM Memory",
+        name:    "PIEVECT",
+        base:    0x00000D00,
+        len:     0x00000100,
+        space:   "data"
+    };
+
+    this.memBlock["LSARAM"] = {
+        comment: "L0 SARAM (4K x 16)",
+        name: "LSARAM",
+        base: 0x00008000,
+        len:  0x00001000,
+        space: "code/data"
+    };
+
+    this.memBlock["OTP"] = {
+        comment: "1K X 16 OTP memory",
+        name: "OTP",
+        base: 0x003d7800,
+        len:  0x00000400,
+        space: "code"
+    };
+
+    this.memBlock["FLASH"] = {
+        comment: "16K X 16 Flash memory",
+        name: "FLASH",
+        base: 0x003f4000,
+        len:  0x00004000,
+        space: "code"
+    };
+
+    this.memBlock["BOOTROM"] = {
+        comment: "On-Chip Boot ROM",
+        name: "BOOTROM",
+        base: 0x003fe000,
+        len:  0x00001fc0, 
+        space: "code"
+    };
+
+    /*
+     *  This is where we define the list of on-chip memory maps.
+     *  Its possible to have more than one memory map even though in this
+     *  case we only have one defined.
+     */
+    this.mem = [];
+
+    this.mem[0x0] = [
+        this.memBlock["MSARAM"],
+        this.memBlock["PIEVECT"],
+        this.memBlock["LSARAM"],
+        this.memBlock["OTP"],
+        this.memBlock["FLASH"],
+        this.memBlock["BOOTROM"]
+    ];
+/*
+ * ======== getMemoryMap ========
+ * This method returns the memory map.
+ */
+this.getMemoryMap = function ()
+{
+    return (this.mem[0x0]);
+};
+
+}
+/*
+ *  @(#) ti.catalog.c2800; 1, 0, 0, 0,227; 2-23-2010 16:58:47; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

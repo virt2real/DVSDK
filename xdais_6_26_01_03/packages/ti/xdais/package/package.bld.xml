@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.xdais" version="1, 2.0, 1" producerId="xdais_6_26_01_03">
+    <units>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_xdais.tar.dep" src="package/rel/ti_xdais.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_xdais"
+        pname="ti_xdais.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="./idma.h"/>
+        <file name="./idma3.h"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="./ialg.h"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="./idma2.h"/>
+        <file name="./ires.h"/>
+        <file name="package/package.rel.dot"/>
+        <file name="./xdas.h"/>
+        <file name="./ires_common.h"/>
+        <file name="package/package.bld.xml"/>
+        <file name="./acpy2.h"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="./acpy.h"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

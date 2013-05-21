@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.ires.bufres" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="BUFRES"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="bufres.c"/>
+        <srcFile name="bufres_params.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/bufres.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bufres/package/package_ti.sdo.fc.ires.bufres.o64P.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres_params.o64P.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres.o64P.dep" src="bufres.c"/>
+        <srcFile name="lib/trace/bufres.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/bufres/package/package_ti.sdo.fc.ires.bufres.o86U.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres_params.o86U.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres.o86U.dep" src="bufres.c"/>
+        <srcFile name="lib/trace/bufres.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/bufres/package/package_ti.sdo.fc.ires.bufres.ov5T.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres_params.ov5T.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres.ov5T.dep" src="bufres.c"/>
+        <srcFile name="lib/debug_trace/bufres.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/package/package_ti.sdo.fc.ires.bufres.o9t.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres_params.o9t.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres.o9t.dep" src="bufres.c"/>
+        <srcFile name="lib/trace/bufres.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/bufres/package/package_ti.sdo.fc.ires.bufres.o674.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres_params.o674.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres.o674.dep" src="bufres.c"/>
+        <srcFile name="lib/debug_trace/bufres.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/package/package_ti.sdo.fc.ires.bufres.o64P.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres_params.o64P.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres.o64P.dep" src="bufres.c"/>
+        <srcFile name="lib/trace/bufres.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/bufres/package/package_ti.sdo.fc.ires.bufres.o9t.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres_params.o9t.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres.o9t.dep" src="bufres.c"/>
+        <srcFile name="lib/release/bufres.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bufres/package/package_ti.sdo.fc.ires.bufres.o9t.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres_params.o9t.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres.o9t.dep" src="bufres.c"/>
+        <srcFile name="lib/trace/bufres.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/bufres/package/package_ti.sdo.fc.ires.bufres.ov4TCE.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres_params.ov4TCE.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres.ov4TCE.dep" src="bufres.c"/>
+        <srcFile name="lib/release/bufres.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bufres/package/package_ti.sdo.fc.ires.bufres.o86U.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres_params.o86U.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres.o86U.dep" src="bufres.c"/>
+        <srcFile name="lib/release/bufres.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bufres/package/package_ti.sdo.fc.ires.bufres.ov5T.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres_params.ov5T.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres.ov5T.dep" src="bufres.c"/>
+        <srcFile name="lib/debug/bufres.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/bufres/package/package_ti.sdo.fc.ires.bufres.o64P.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres_params.o64P.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres.o64P.dep" src="bufres.c"/>
+        <srcFile name="lib/trace/bufres.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/bufres/package/package_ti.sdo.fc.ires.bufres.o470uC.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres_params.o470uC.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres.o470uC.dep" src="bufres.c"/>
+        <srcFile name="lib/release/bufres.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bufres/package/package_ti.sdo.fc.ires.bufres.o674.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres_params.o674.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres.o674.dep" src="bufres.c"/>
+        <srcFile name="lib/trace/bufres.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/bufres/package/package_ti.sdo.fc.ires.bufres.o470MV.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres_params.o470MV.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres.o470MV.dep" src="bufres.c"/>
+        <srcFile name="lib/debug/bufres.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/bufres/package/package_ti.sdo.fc.ires.bufres.ov4TCE.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres_params.ov4TCE.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres.ov4TCE.dep" src="bufres.c"/>
+        <srcFile name="lib/release/bufres.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bufres/package/package_ti.sdo.fc.ires.bufres.ov4TCE.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres_params.ov4TCE.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres.ov4TCE.dep" src="bufres.c"/>
+        <srcFile name="lib/debug_trace/bufres.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/package/package_ti.sdo.fc.ires.bufres.o86U.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres_params.o86U.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres.o86U.dep" src="bufres.c"/>
+        <srcFile name="lib/debug_trace/bufres.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/package/package_ti.sdo.fc.ires.bufres.ov5T.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres_params.ov5T.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres.ov5T.dep" src="bufres.c"/>
+        <srcFile name="lib/debug/bufres.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/bufres/package/package_ti.sdo.fc.ires.bufres.o470uC.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres_params.o470uC.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres.o470uC.dep" src="bufres.c"/>
+        <srcFile name="lib/debug/bufres.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/bufres/package/package_ti.sdo.fc.ires.bufres.o470MV.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres_params.o470MV.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres.o470MV.dep" src="bufres.c"/>
+        <srcFile name="lib/debug_trace/bufres.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/package/package_ti.sdo.fc.ires.bufres.o674.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres_params.o674.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres.o674.dep" src="bufres.c"/>
+        <srcFile name="lib/release/bufres.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bufres/package/package_ti.sdo.fc.ires.bufres.o470uC.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres_params.o470uC.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres.o470uC.dep" src="bufres.c"/>
+        <srcFile name="lib/release/bufres.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/bufres/package/package_ti.sdo.fc.ires.bufres.o470MV.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres_params.o470MV.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/release/bufres/bufres.o470MV.dep" src="bufres.c"/>
+        <srcFile name="lib/debug/bufres.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/bufres/package/package_ti.sdo.fc.ires.bufres.o86U.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres_params.o86U.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres.o86U.dep" src="bufres.c"/>
+        <srcFile name="lib/debug/bufres.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/bufres/package/package_ti.sdo.fc.ires.bufres.ov5T.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres_params.ov5T.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres.ov5T.dep" src="bufres.c"/>
+        <srcFile name="lib/debug/bufres.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/bufres/package/package_ti.sdo.fc.ires.bufres.o674.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres_params.o674.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres.o674.dep" src="bufres.c"/>
+        <srcFile name="lib/trace/bufres.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/bufres/package/package_ti.sdo.fc.ires.bufres.o64P.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres_params.o64P.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/trace/bufres/bufres.o64P.dep" src="bufres.c"/>
+        <srcFile name="lib/debug_trace/bufres.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/package/package_ti.sdo.fc.ires.bufres.ov4TCE.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres_params.ov4TCE.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres.ov4TCE.dep" src="bufres.c"/>
+        <srcFile name="lib/debug_trace/bufres.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/package/package_ti.sdo.fc.ires.bufres.o470uC.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres_params.o470uC.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres.o470uC.dep" src="bufres.c"/>
+        <srcFile name="lib/debug/bufres.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/bufres/package/package_ti.sdo.fc.ires.bufres.o9t.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres_params.o9t.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug/bufres/bufres.o9t.dep" src="bufres.c"/>
+        <srcFile name="lib/debug_trace/bufres.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/package/package_ti.sdo.fc.ires.bufres.o470MV.dep" src="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres_params.o470MV.dep" src="bufres_params.c"/>
+        <srcFile name="package/lib/lib/debug_trace/bufres/bufres.o470MV.dep" src="bufres.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_ires_bufres.tar.dep" src="package/rel/ti_sdo_fc_ires_bufres.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.Arm9t"
+            version="ti.targets.arm.Arm9t{1,0,4.5,0"
+            platform="ti.platforms.evmDM355"
+            isa="v5T"
+            suffix="9t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,0"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/bufres"
+        pname="lib/release/bufres.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/bufres"
+        pname="lib/trace/bufres.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/bufres"
+        pname="lib/trace/bufres.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/bufres"
+        pname="lib/debug_trace/bufres.a9t"
+        profile="debug_trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/trace/bufres"
+        pname="lib/trace/bufres.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/bufres"
+        pname="lib/debug_trace/bufres.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/bufres"
+        pname="lib/trace/bufres.a9t"
+        profile="trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/bufres"
+        pname="lib/release/bufres.a9t"
+        profile="release"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/trace/bufres"
+        pname="lib/trace/bufres.av4TCE"
+        profile="trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/bufres"
+        pname="lib/release/bufres.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/bufres"
+        pname="lib/release/bufres.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/bufres"
+        pname="lib/debug/bufres.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/bufres"
+        pname="lib/trace/bufres.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/bufres"
+        pname="lib/release/bufres.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/bufres"
+        pname="lib/trace/bufres.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/bufres"
+        pname="lib/debug/bufres.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/bufres"
+        pname="lib/release/bufres.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug_trace/bufres"
+        pname="lib/debug_trace/bufres.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug_trace/bufres"
+        pname="lib/debug_trace/bufres.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/bufres"
+        pname="lib/debug/bufres.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/bufres"
+        pname="lib/debug/bufres.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/bufres"
+        pname="lib/debug_trace/bufres.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/release/bufres"
+        pname="lib/release/bufres.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/bufres"
+        pname="lib/release/bufres.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/bufres"
+        pname="lib/debug/bufres.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/bufres"
+        pname="lib/debug/bufres.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/bufres"
+        pname="lib/debug/bufres.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/bufres"
+        pname="lib/trace/bufres.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/bufres"
+        pname="lib/debug_trace/bufres.av4TCE"
+        profile="debug_trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug_trace/bufres"
+        pname="lib/debug_trace/bufres.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/bufres"
+        pname="lib/debug/bufres.a9t"
+        profile="debug"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug_trace/bufres"
+        pname="lib/debug_trace/bufres.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_ires_bufres"
+        pname="ti_sdo_fc_ires_bufres.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.rel.dot"/>
+        <file name="lib/debug_trace/bufres.a470uC"/>
+        <file name="lib/trace/bufres.a470uC"/>
+        <file name="package/package_ti.sdo.fc.ires.bufres.c"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/debug/bufres.a86U"/>
+        <file name="lib/debug/bufres.a9t"/>
+        <file name="lib/trace/bufres.a86U"/>
+        <file name="lib/debug/bufres.a64P"/>
+        <file name="lib/debug_trace/bufres.a470MV"/>
+        <file name="lib/debug_trace/bufres.av4TCE"/>
+        <file name="lib/trace/bufres.a470MV"/>
+        <file name="lib/trace/bufres.a64P"/>
+        <file name="lib/trace/bufres.av4TCE"/>
+        <file name="lib/trace/bufres.a9t"/>
+        <file name="package.bld"/>
+        <file name="lib/release/bufres.a470uC"/>
+        <file name="lib/debug_trace/bufres.a674"/>
+        <file name="bufres.c"/>
+        <file name="lib/release/bufres.a674"/>
+        <file name="bufres.h"/>
+        <file name="lib/debug_trace/bufres.av5T"/>
+        <file name="lib/release/bufres.a470MV"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/release/bufres.av4TCE"/>
+        <file name="lib/release/bufres.av5T"/>
+        <file name="lib/release/bufres.a9t"/>
+        <file name="lib/debug/bufres.a470uC"/>
+        <file name="bufres_params.c"/>
+        <file name="lib/debug_trace/bufres.a86U"/>
+        <file name="lib/debug_trace/bufres.a64P"/>
+        <file name="lib/release/bufres.a86U"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/debug/bufres.a470MV"/>
+        <file name="lib/debug/bufres.av4TCE"/>
+        <file name="lib/release/bufres.a64P"/>
+        <file name="lib/debug/bufres.a674"/>
+        <file name="lib/trace/bufres.a674"/>
+        <file name="lib/debug_trace/bufres.a9t"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/debug/bufres.av5T"/>
+        <file name="lib/trace/bufres.av5T"/>
+        <file name="package/package.ext.xml"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

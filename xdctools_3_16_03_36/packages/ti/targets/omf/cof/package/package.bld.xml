@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.targets.omf.cof" version="" producerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/">
+    <units>
+        <module name="Settings"/>
+    </units>
+    <sources>
+        <srcFile name="cof_syms.c"/>
+        <srcFile name="cof.c"/>
+        <srcFile name="package/package_ti.targets.omf.cof.c"/>
+        <srcFile name="cof_std.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/cof_ti.a5.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/cof_ti/cof.o5.dep" src="cof.c"/>
+        <srcFile name="package/lib/lib/cof_ti/cof_syms.o5.dep" src="cof_syms.c"/>
+        <srcFile name="package/lib/lib/cof_ti/cof_std.o5.dep" src="cof_std.c"/>
+        <srcFile name="package/lib/lib/cof_ti/package/package_ti.targets.omf.cof.o5.dep" src="package/package_ti.targets.omf.cof.c"/>
+        <srcFile name="lib/debug/cof_ti.lib.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/cof_ti/cof.o86.dep" src="cof.c"/>
+        <srcFile name="package/lib/lib/debug/cof_ti/cof_syms.o86.dep" src="cof_syms.c"/>
+        <srcFile name="package/lib/lib/debug/cof_ti/cof_std.o86.dep" src="cof_std.c"/>
+        <srcFile name="package/lib/lib/debug/cof_ti/package/package_ti.targets.omf.cof.o86.dep" src="package/package_ti.targets.omf.cof.c"/>
+        <srcFile name="lib/release/cof_ti.lib.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/cof_ti/cof.o86.dep" src="cof.c"/>
+        <srcFile name="package/lib/lib/release/cof_ti/cof_syms.o86.dep" src="cof_syms.c"/>
+        <srcFile name="package/lib/lib/release/cof_ti/cof_std.o86.dep" src="cof_std.c"/>
+        <srcFile name="package/lib/lib/release/cof_ti/package/package_ti.targets.omf.cof.o86.dep" src="package/package_ti.targets.omf.cof.c"/>
+        <srcFile name="lib/cof_ti.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/cof_ti/cof.o470MV.dep" src="cof.c"/>
+        <srcFile name="package/lib/lib/cof_ti/cof_syms.o470MV.dep" src="cof_syms.c"/>
+        <srcFile name="package/lib/lib/cof_ti/cof_std.o470MV.dep" src="cof_std.c"/>
+        <srcFile name="package/lib/lib/cof_ti/package/package_ti.targets.omf.cof.o470MV.dep" src="package/package_ti.targets.omf.cof.c"/>
+        <srcFile name="lib/cof_ti.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/cof_ti/cof.o86U.dep" src="cof.c"/>
+        <srcFile name="package/lib/lib/cof_ti/cof_syms.o86U.dep" src="cof_syms.c"/>
+        <srcFile name="package/lib/lib/cof_ti/cof_std.o86U.dep" src="cof_std.c"/>
+        <srcFile name="package/lib/lib/cof_ti/package/package_ti.targets.omf.cof.o86U.dep" src="package/package_ti.targets.omf.cof.c"/>
+        <srcFile name="package/rel/ti_targets_omf_cof.tar.gz.dep" src="package/rel/ti_targets_omf_cof.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/gcc86U"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Sparc"
+            version="gnu.targets.Sparc{1,0,4.1,0"
+            platform="host.platforms.SUN"
+            isa="sparc"
+            suffix="5"
+            rootDir="/db/toolsrc/library/tools/default/gcc5"
+            os="Solaris"
+            rts="gnu.targets.rts5">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.VC98"
+            version="microsoft.targets.VC98{1,0,12.00,8168"
+            platform="host.platforms.PC"
+            isa="x86"
+            suffix="86"
+            rootDir="/db/toolsrc/library/tools/msvc32"
+            os="Windows"
+            rts="microsoft.targets.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,3.4,3"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl4.0/Linux/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/cof_ti"
+        pname="lib/cof_ti.a5"
+        profile="debug"
+        target="gnu.targets.Sparc"/>
+    <library name="lib/debug/cof_ti"
+        pname="lib/debug/cof_ti.lib"
+        profile="debug"
+        target="microsoft.targets.VC98"/>
+    <library name="lib/release/cof_ti"
+        pname="lib/release/cof_ti.lib"
+        profile="release"
+        target="microsoft.targets.VC98"/>
+    <library name="lib/cof_ti"
+        pname="lib/cof_ti.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/cof_ti"
+        pname="lib/cof_ti.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_targets_omf_cof"
+        pname="../../../../../exports/ti_targets_omf_cof.tar.gz"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/cof_ti.a86U"/>
+        <file name="lib/release/cof_ti.lib"/>
+        <file name="java/package.jar"/>
+        <file name="lib/cof_ti.a470MV"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/cof_ti.a5"/>
+        <file name="package/package.ext.xml"/>
+        <file name="cof.h"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/debug/cof_ti.lib"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

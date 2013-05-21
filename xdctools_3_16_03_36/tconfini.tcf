@@ -1,0 +1,197 @@
+/*
+ *  Copyright 2010 by Texas Instruments Incorporated.
+ *  @(#) XDC u17 02-22-2010 (xdc-u17)
+ */
+/*
+ *  ======== tconfini.tcf ========
+ *  Do not modify this file.  This is the startup script for the
+ *  tconf utility and is required for the proper operation of tconf.
+ *
+ *  tconf looks for this script along it search path and, if found, 
+ *  executes it prior to any other script.
+ *
+ *  After performing necessary initialization, this script loads the
+ *  site specific script tconflocal.tci (if it exists).  tconflocal.tci
+ *  may be modified to customize the execution environment for all
+ *  scripts.
+ *
+ *  The arguments[] array contains the arguments to the script to be
+ *  executed by tconf.
+ *
+ *  The environment[] array contains the Java "environment variables".
+ *  In addition, tconf defines the environment variable
+ *  "config.scriptName".  This is set to the name of the script passed
+ *  to tconf to run.  Thus the name of the script can be retrieved as
+ *  follows:
+ *
+ *      var scriptName = environment["config.scriptName"];
+ *
+ */
+
+
+/* load all Java-defined classes for the configuration object model */
+defineClass("config.Config");
+defineClass("config.Board");
+defineClass("config.Cpu");
+defineClass("config.Program");
+defineClass("config.Module");
+defineClass("config.Instance");
+defineClass("config.Extern");
+
+/*
+ *  Define basic shell functions.  We do this here to ensure that the
+ *  Rhino debugger sees these definitions (see comments in config.Shell)
+ */
+report = Packages.config.Shell.report;  /* report error or warning */
+
+/* if the shell doesn't provide a profile dump function */
+if (!("_profile" in this)) {
+    _profile = function (){};   /* make it a nop */
+}
+
+/* create an object to hold temporary bootstrap functions and variables */
+tconfini = {};
+
+/* define a load function that searches a path for the file to load */
+tconfini.load = function (fileName, path)
+{
+    var pathSep = environment["path.separator"];
+    var fileSep = environment["file.separator"];
+    var file = new java.io.File(fileName);
+
+    /* if path argument is not supplied, create a default path */
+    if (arguments.length < 2) {
+        path = environment["config.path"]
+                + pathSep + environment["config.rootDir"] + "/include";
+    }
+
+    /* search along path for specified file and load it (if found) */
+    var dirArray = path.split(pathSep);
+    for (var i = 0; i < dirArray.length; i++) {
+        file = new java.io.File(dirArray[i] + fileSep + fileName);
+        if (file.exists()) {
+            tconfini.utilsPath = file.getCanonicalPath();
+            load(tconfini.utilsPath);
+            return;
+        }
+    }
+
+    throw (new Error("Can't load " + fileName));
+}
+
+/*
+ *  For BIOS configuration scripts, execute -- if exists -- the tcfOpts.tci 
+ *  file located in the same directory where the .tcf script is located, 
+ *  to get the path contributions.
+ */ 
+tconfini.loadOpts = function ()
+{
+    if (environment["config.scriptName"].toLowerCase().match(/\.tcf$/)) {
+    
+        /* if the script name ends in ".tcf" */
+        var tcfDirFile = new java.io.File(
+                             environment["config.scriptName"]).getParentFile();
+        if (tcfDirFile == null) {
+            tcfDirFile = new java.io.File(".");
+        }
+        var tcfDir = tcfDirFile.getCanonicalPath();
+        var tcfImportPathFileName = tcfDir + "/tcfOpts.tci";
+        if (java.io.File(tcfImportPathFileName).exists()) {
+            var tcfImportPath = undefined;
+            
+            utils.importFile(tcfImportPathFileName);
+            if (tcfImportPath == undefined) {
+                tcfImportPath = "";
+            }
+            var tcfImportPaths = tcfImportPath.split(";");
+            for (var i = 0; i < tcfImportPaths.length; i++) {
+                var impDir = tcfImportPaths[i];
+                if (impDir == "") {
+                    continue;
+                }
+                /* don't add it if it's a duplicate */
+                var envPaths = environment["config.importPath"].split(";");
+                var found = false;
+                for (var j = 0; j < envPaths.length; j++) {
+                    if (impDir == envPaths[j]) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    break;
+                }
+                if (impDir.charAt(0) != "/"  &&
+                    impDir.charAt(0) != "\\" &&
+                    impDir.charAt(1) != ":") {
+                    /* this is a relative path */
+                    impDir = tcfDirFile.getPath() + "/" + impDir;
+                } 
+                impDir = java.io.File(impDir).getCanonicalPath() + "";
+                
+                environment["config.importPath"] += ";" + impDir;
+            }
+            print("tconfini-> Info: using the following search path: " + 
+                   (environment["os.name"].toLowerCase().match("win") == null ? 
+                       environment["config.importPath"] :
+                       environment["config.importPath"].replace(/\//g, "\\")
+                   ) 
+            );
+        }
+    }
+}
+
+/* load package of utility functions */
+tconfini.load("utils.tci");
+
+/* add the full path to the list of loaded files to ensure completeness  */
+utils.loadedFiles[tconfini.utilsPath] = String(tconfini.utilsPath);
+
+/*
+ *  Bind RTSC runtime to top-level scope (this scope may be a config.Shell
+ *  or a org.mozilla.javascript.tools.Global object).
+ */
+
+try {
+    var tmp;
+    if ((tmp = utils.findFile("xdc/services/global/java")) != null) {
+        addJars(tmp);
+        if ((tmp = utils.findFile("xdc/services/intern/xsr/java")) != null) {
+            addJars(tmp);
+            Packages.xdc.services.intern.xsr.Global.setTopScope(this);
+        }
+        else {
+            print("Warning: can't find xdc/services/intern/xsr/java");
+        }
+    }
+}
+catch (e) {
+    print(e);   /* we should never get here; should we fail?!?! */
+}
+
+/* create default "empty" global context for configuration scripts */
+var config = new Config("config_0");
+
+/* create global prog object variable */
+var prog;
+
+/* load global user init file (if it exists) */
+utils.importFile("tconflocal.tci", environment["config.importPath"], true);
+
+/* load "project specific" init file (if it exists) */
+tconfini.loadOpts();
+
+/*  if prog is not defined by init fxns above, create a default environment. */
+if (prog == null) {
+
+    /* create an empty board and cpu */
+    config.create("board_0");
+    config.board("board_0").create("cpu_0");
+    
+    /* create an empty program object */
+    prog = config.board("board_0").cpu("cpu_0").create(utils.getProgName());
+}
+
+/* delete bootstrap object (to minimize namespace pollution) */
+delete tconfini;
+

@@ -1,0 +1,165 @@
+# Example makefile showing how to provide all the required environment
+# variables for building the TI GStreamer plug-ins.
+#
+# The only customization required below is defining the DVSDK_PATH
+# and, if your DVSDK doesn't include DMAI, the set DMAI_INSTALL_DIR variable
+# appropriately.
+#
+# Copyright (C) 2009 Ridgerun 
+#
+
+.PHONY: default configure dm6446 omap3530 dm355 dm6467 dm365 omapl138 dm3730 dm368
+
+DVSDK_PATH=undefined
+DMAI_INSTALL_DIR=undefined
+
+ifeq ($(DVSDK_PATH),undefined)
+$(error You need to define the environment variable DVSDK_PATH)
+endif
+include $(DVSDK_PATH)/Rules.make
+
+ifeq ($(DMAI_INSTALL_DIR),undefined)
+$(error You need to define the environment variable DMAI_INSTALL_DIR)
+endif
+
+default:
+	@echo "Please specify the target: dm6446, omap3530, dm355, dm6467, dm6467t, dm365 omapl138"
+
+export GST_TI_PLATFORM=$(MAKECMDGOALS)
+export BIOS_INSTALL_DIR
+export CE_INSTALL_DIR
+export CMEM_INSTALL_DIR
+export CODEC_INSTALL_DIR
+export DMAI_INSTALL_DIR
+export FC_INSTALL_DIR
+export LINK_INSTALL_DIR
+export LINK_XDC_ROOT = $(LINK_INSTALL_DIR)/packages
+export LINUXKERNEL_INSTALL_DIR
+export LPM_INSTALL_DIR
+export MVTOOL_DIR
+export MVTOOL_PREFIX
+export XDAIS_INSTALL_DIR
+export XDC_INSTALL_DIR
+export EDMA3_LLD_INSTALL_DIR
+
+ifeq ($(GST_TI_PLATFORM), dm355)
+    export XDC_TARGET    = gnu.targets.arm.GCArmv5T
+    export XDC_PLATFORM  = ti.platforms.evmDM355
+    export MVTOOL_PREFIX = $(CSTOOL_PREFIX)
+    export MVTOOL_DIR    = $(CSTOOL_DIR)
+    export PLATFORM_XDC  = ${XDC_PLATFORM}
+    export CROSS_COMPILE = ${CSTOOL_PREFIX}
+endif
+
+ifeq ($(GST_TI_PLATFORM), dm6446)
+    export XDC_TARGET   = gnu.targets.MVArm9
+    export XDC_PLATFORM = ti.platforms.evmDM6446
+endif
+
+ifeq ($(GST_TI_PLATFORM), dm6467)
+    export XDC_TARGET   = gnu.targets.MVArm9
+    export XDC_PLATFORM = ti.platforms.evmDM6467
+endif
+
+ifeq ($(GST_TI_PLATFORM), dm6467t)
+    export XDC_TARGET    = gnu.targets.arm.GCArmv5T
+    export XDC_PLATFORM  = ti.platforms.evmDM6467
+    export LINK_XDC_ROOT = $(LINK_INSTALL_DIR)
+    export MVTOOL_PREFIX = $(CSTOOL_PREFIX)
+    export MVTOOL_DIR    = $(CSTOOL_DIR)
+    export PLATFORM_XDC  = ${XDC_PLATFORM}
+    export CROSS_COMPILE = ${CSTOOL_PREFIX}
+endif
+
+ifeq ($(GST_TI_PLATFORM), dm365)
+    export XDC_TARGET    = gnu.targets.arm.GCArmv5T
+    export XDC_PLATFORM  = ti.platforms.evmDM365
+    export MVTOOL_PREFIX = $(CSTOOL_PREFIX)
+    export MVTOOL_DIR    = $(CSTOOL_DIR)
+    export PLATFORM_XDC  = ${XDC_PLATFORM}
+    export CROSS_COMPILE = ${CSTOOL_PREFIX}
+endif
+
+ifeq ($(GST_TI_PLATFORM), dm368)
+    export XDC_TARGET    = gnu.targets.arm.GCArmv5T
+    export XDC_PLATFORM  = ti.platforms.evmDM365
+    export MVTOOL_PREFIX = $(CSTOOL_PREFIX)
+    export MVTOOL_DIR    = $(CSTOOL_DIR)
+    export PLATFORM_XDC  = ${XDC_PLATFORM}
+    export CROSS_COMPILE = ${CSTOOL_PREFIX}
+endif
+
+ifeq ($(GST_TI_PLATFORM), omapl138)
+    export XDC_TARGET    = gnu.targets.arm.GCArmv5T
+    export XDC_PLATFORM  = ti.platforms.evmOMAPL138
+    export MVTOOL_PREFIX = $(CSTOOL_PREFIX)
+    export MVTOOL_DIR    = $(CSTOOL_DIR)
+    export PLATFORM_XDC  = ${XDC_PLATFORM}
+    export CROSS_COMPILE = ${CSTOOL_PREFIX}
+    export LINK_XDC_ROOT = $(LINK_INSTALL_DIR)
+    export C6ACCEL_INSTALL_DIR
+    export C6ACCEL_PLATFORM = $(GST_TI_PLATFORM)
+    export ENABLE_C6ACCEL ="--enable-c6accel"
+endif
+
+ifeq ($(GST_TI_PLATFORM), omap3530)
+    export XDC_TARGET    = gnu.targets.arm.GCArmv5T
+    export XDC_PLATFORM  = ti.platforms.evm3530
+    export MVTOOL_PREFIX = $(CSTOOL_PREFIX)
+    export MVTOOL_DIR    = $(CSTOOL_DIR)
+    export PLATFORM_XDC  = ${XDC_PLATFORM}
+    export CROSS_COMPILE = ${CSTOOL_PREFIX}
+    export LINK_XDC_ROOT = $(LINK_INSTALL_DIR)
+    export C6ACCEL_INSTALL_DIR
+    export C6ACCEL_PLATFORM = $(GST_TI_PLATFORM)
+    export ENABLE_C6ACCEL ="--enable-c6accel"
+endif
+
+ifeq ($(GST_TI_PLATFORM), dm3730)
+    export XDC_TARGET    = gnu.targets.arm.GCArmv5T
+    export XDC_PLATFORM  = ti.platforms.evm3530
+    export MVTOOL_PREFIX = $(CSTOOL_PREFIX)
+    export MVTOOL_DIR    = $(CSTOOL_DIR)
+    export PLATFORM_XDC  = ${XDC_PLATFORM}
+    export CROSS_COMPILE = ${CSTOOL_PREFIX}
+    export LINK_XDC_ROOT = $(LINK_INSTALL_DIR)
+    export C6ACCEL_INSTALL_DIR
+    export C6ACCEL_PLATFORM = omap3530
+    export ENABLE_C6ACCEL ="--enable-c6accel"
+endif
+
+CPPFLAGS=-DPlatform_$(GST_TI_PLATFORM) 
+HOST=arm-none-linux-gnueabi
+
+configure:
+	./autogen.sh --noconfigure
+
+Makefile: configure
+	./configure CPPFLAGS="$(CPPFLAGS)" --host=$(HOST) $(ENABLE_C6ACCEL)
+
+omap3530: Makefile
+	$(MAKE) -f Makefile
+
+dm6446: Makefile
+	$(MAKE) -f Makefile
+
+dm6467: Makefile
+	$(MAKE) -f Makefile
+
+dm6467t: Makefile
+	$(MAKE) -f Makefile
+
+dm355: Makefile
+	$(MAKE) -f Makefile
+
+dm365: Makefile
+	$(MAKE) -f Makefile
+
+omapl138: Makefile
+	$(MAKE) -f Makefile
+
+dm3730: Makefile
+	$(MAKE) -f Makefile
+
+dm368: Makefile
+	$(MAKE) -f Makefile

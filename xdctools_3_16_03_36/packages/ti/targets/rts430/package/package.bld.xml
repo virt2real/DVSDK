@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.targets.rts430" version="1, 0, 0" producerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="xdc/runtime/SysMin.c"/>
+        <srcFile name="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="xdc/runtime/Assert.c"/>
+        <srcFile name="xdc/runtime/HeapStd.c"/>
+        <srcFile name="xdc/runtime/HeapMin.c"/>
+        <srcFile name="xdc/runtime/Timestamp.c"/>
+        <srcFile name="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="xdc/runtime/Diags.c"/>
+        <srcFile name="xdc/runtime/Startup.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="xdc/runtime/System.c"/>
+        <srcFile name="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="xdc/runtime/Core_label.c"/>
+        <srcFile name="pre_init.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/package_ti.targets.rts430.c"/>
+        <srcFile name="xdc/runtime/xdc_init.cpp"/>
+        <srcFile name="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="xdc/runtime/Gate.c"/>
+        <srcFile name="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="xdc/runtime/Memory.c"/>
+        <srcFile name="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="boot.c"/>
+        <srcFile name="xdc/runtime/Rta.c"/>
+        <srcFile name="xdc/runtime/Error.c"/>
+        <srcFile name="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="xdc/runtime/Log.c"/>
+        <srcFile name="xdc/runtime/Core_params.c"/>
+        <srcFile name="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="xdc/runtime/Text.c"/>
+        <srcFile name="xdc/runtime/GateNull.c"/>
+        <srcFile name="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="xdc/runtime/SysStd.c"/>
+        <srcFile name="xdc/runtime/Core_mem.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/ti.targets.rts430.a430XL.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/SysMin.o430XL.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Thread.o430XL.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateThreadSupportNull.o430XL.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Assert.o430XL.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/package/package_ti.targets.rts430.o430XL.dep" src="package/package_ti.targets.rts430.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/HeapStd.o430XL.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/HeapMin.o430XL.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Timestamp.o430XL.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/TimestampNull.o430XL.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/CacheSupportNull.o430XL.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Diags.o430XL.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Startup.o430XL.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateProcessSupportNull.o430XL.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/TimestampStd.o430XL.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/System.o430XL.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SemProcess.o430XL.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Core_label.o430XL.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/pre_init.o430XL.dep" src="pre_init.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateProcess.o430XL.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Sync.o430XL.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateThread.o430XL.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/xdc_init.o430XL.dep" src="xdc/runtime/xdc_init.cpp"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/LoggerSys.o430XL.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Gate.o430XL.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateH.o430XL.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Memory.o430XL.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SyncSemThread.o430XL.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SyncNull.o430XL.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SyncGeneric.o430XL.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/boot.o430XL.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Rta.o430XL.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Error.o430XL.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Semaphore.o430XL.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SemThread.o430XL.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Log.o430XL.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Core_params.o430XL.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/LoggerBuf.o430XL.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Text.o430XL.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/GateNull.o430XL.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Cache.o430XL.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/SysStd.o430XL.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Core_mem.o430XL.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts430.a430.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/SysMin.o430.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Thread.o430.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateThreadSupportNull.o430.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Assert.o430.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/package/package_ti.targets.rts430.o430.dep" src="package/package_ti.targets.rts430.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/HeapStd.o430.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/HeapMin.o430.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Timestamp.o430.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/TimestampNull.o430.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/CacheSupportNull.o430.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Diags.o430.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Startup.o430.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateProcessSupportNull.o430.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/TimestampStd.o430.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/System.o430.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SemProcess.o430.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Core_label.o430.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/pre_init.o430.dep" src="pre_init.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateProcess.o430.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Sync.o430.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateThread.o430.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/xdc_init.o430.dep" src="xdc/runtime/xdc_init.cpp"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/LoggerSys.o430.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Gate.o430.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateH.o430.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Memory.o430.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SyncSemThread.o430.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SyncNull.o430.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SyncGeneric.o430.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/boot.o430.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Rta.o430.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Error.o430.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Semaphore.o430.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SemThread.o430.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Log.o430.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Core_params.o430.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/LoggerBuf.o430.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Text.o430.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/GateNull.o430.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Cache.o430.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/SysStd.o430.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Core_mem.o430.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="lib/ti.targets.rts430.a430X.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/SysMin.o430X.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Thread.o430X.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateThreadSupportNull.o430X.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Assert.o430X.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/package/package_ti.targets.rts430.o430X.dep" src="package/package_ti.targets.rts430.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/HeapStd.o430X.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/HeapMin.o430X.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Timestamp.o430X.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/TimestampNull.o430X.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/CacheSupportNull.o430X.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Diags.o430X.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Startup.o430X.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateProcessSupportNull.o430X.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/TimestampStd.o430X.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/System.o430X.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SemProcess.o430X.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Core_label.o430X.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/pre_init.o430X.dep" src="pre_init.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateProcess.o430X.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Sync.o430X.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateThread.o430X.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/xdc_init.o430X.dep" src="xdc/runtime/xdc_init.cpp"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/LoggerSys.o430X.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Gate.o430X.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/GateH.o430X.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Memory.o430X.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SyncSemThread.o430X.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SyncNull.o430X.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SyncGeneric.o430X.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/boot.o430X.dep" src="boot.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Rta.o430X.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Error.o430X.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Semaphore.o430X.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/SemThread.o430X.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Log.o430X.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Core_params.o430X.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/LoggerBuf.o430X.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Text.o430X.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/GateNull.o430X.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/knl/Cache.o430X.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/SysStd.o430X.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/ti.targets.rts430/xdc/runtime/Core_mem.o430X.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="package/rel/ti_targets_rts430.tar.gz.dep" src="package/rel/ti_targets_rts430.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.MSP430_large_data"
+            version="ti.targets.MSP430_large_data{1,0,3.2,1"
+            platform="ti.platforms.exp430F5438"
+            isa="430"
+            suffix="430XL"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/MSP430/3.2.1/Linux"
+            os="undefined"
+            rts="ti.targets.rts430">
+            <model endian="little"
+                codeModel="large"
+                dataModel="large"/>
+        </target>
+        <target name="ti.targets.MSP430"
+            version="ti.targets.MSP430{1,0,3.2,1"
+            platform="ti.platforms.exp430F5438"
+            isa="430"
+            suffix="430"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/MSP430/3.2.1/Linux"
+            os="undefined"
+            rts="ti.targets.rts430">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.MSP430_large_code"
+            version="ti.targets.MSP430_large_code{1,0,3.2,1"
+            platform="ti.platforms.exp430F5438"
+            isa="430"
+            suffix="430X"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/MSP430/3.2.1/Linux"
+            os="undefined"
+            rts="ti.targets.rts430">
+            <model endian="little"
+                codeModel="large"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/ti.targets.rts430"
+        pname="lib/ti.targets.rts430.a430XL"
+        profile="whole_program"
+        target="ti.targets.MSP430_large_data"/>
+    <library name="lib/ti.targets.rts430"
+        pname="lib/ti.targets.rts430.a430"
+        profile="whole_program"
+        target="ti.targets.MSP430"/>
+    <library name="lib/ti.targets.rts430"
+        pname="lib/ti.targets.rts430.a430X"
+        profile="whole_program"
+        target="ti.targets.MSP430_large_code"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_targets_rts430"
+        pname="../../../../exports/ti_targets_rts430.tar.gz"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="pre_init.c"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/ti.targets.rts430.a430XL"/>
+        <file name="lib/ti.targets.rts430.a430"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/ti.targets.rts430.a430X"/>
+        <file name="package/package.bld.xml"/>
+        <file name="boot.c"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

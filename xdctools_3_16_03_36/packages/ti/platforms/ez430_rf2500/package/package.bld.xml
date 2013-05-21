@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.platforms.ez430_rf2500" version="1, 0, 0, 1" producerId="undefined">
+    <units>
+        <module name="Platform"/>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_platforms_ez430_rf2500.tar.dep" src="package/rel/ti_platforms_ez430_rf2500.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_platforms_ez430_rf2500"
+        pname="../../../../exports/ti_platforms_ez430_rf2500.tar"
+        label="default"
+        relScript="/db/ztree/library/trees/platform/platform-k32x/src/tisb/release/epl/copyright.rel">
+        <file name="linkcmd.xdt"/>
+        <file name="load_ccs.xs"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="tload.xs"/>
+        <file name="load.xs"/>
+        <file name="package/package.bld.xml"/>
+        <file name="load.bat"/>
+        <file name="TargetConfiguration.ccxml"/>
+        <file name="SystemSetup.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

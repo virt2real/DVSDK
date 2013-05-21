@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="host.platforms.SUN" version="1, 0, 0, 1" producerId="/db/ztree/library/trees/xdc/xdc-u17x/src/">
+    <units>
+        <module name="Platform"/>
+        <module name="SunSparc7"/>
+    </units>
+    <sources>
+        <srcFile name="Linux"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/host_platforms_SUN.tar.gz.dep" src="package/rel/host_platforms_SUN.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="host_platforms_SUN"
+        pname="host_platforms_SUN.tar.gz"
+        label="default"
+        relScript="tisb/release/what/what.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="Linux"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

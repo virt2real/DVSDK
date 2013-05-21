@@ -1,0 +1,35 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="U:\Work\svn\FlashUtils\trunk\DM647_8\CCS\DM648_NORWriter\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\Common\src\nor.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\Common\src\device.c"
+Source="..\..\Common\src\i2c_ecp.c"
+Source="..\Common\src\debug.c"
+Source="src\norwriter.c"
+Source="DM648_NORWriter.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\Common\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -d"_DEBUG" -d"SKIP_LOW_LEVEL_INIT" -ms1 -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -mv6400+
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\DM648_NORWriter.map" -o".\Debug\DM648_NORWriter.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\DM648_NORWriter.map" -o".\Release\DM648_NORWriter.out" -w -x
+

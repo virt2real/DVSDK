@@ -1,0 +1,93 @@
+%%{
+/*
+ *  Copyright 2010 by Texas Instruments Incorporated.
+ *
+ */
+
+%%}
+%%{
+    var rtsLib = this.build.target.rootDir + "/lib";
+    var chipType = prog.build.cfgArgs.chipType;
+    var debugFlag = prog.build.cfgArgs.debugFlag; 
+    var dskt2 = xdc.loadPackage("ti.sdo.fc.dskt2");
+    var acpy3 = xdc.loadPackage("ti.sdo.fc.acpy3");
+    var dman3 = xdc.loadPackage("ti.sdo.fc.dman3");
+    var gt = xdc.loadPackage("ti.sdo.utils.trace");
+    var gtinfra = xdc.loadPackage("ti.sdo.fc.utils.gtinfra");
+    var edma3 = xdc.loadPackage("ti.sdo.fc.edma3");
+    var api = xdc.loadPackage("ti.sdo.fc.utils.api");
+    var fastcopy = xdc.loadPackage("ti.sdo.fc.dman3.examples.fastcopy");
+    var dir = "";
+    if (debugFlag = true) {
+        dir += "/debug/";
+    }
+    else {
+        dir += "/release/";
+    }
+    if ((chipType == "omapL137") || (chipType == "6748") || (chipType == "omapL138")){
+        var libExt = ".a674";
+    }
+    else {
+        var libExt = ".a64P";
+    }
+
+%%}
+
+/* RTS library search path */
+-i"`rtsLib`"
+
+-i"`new java.io.File(acpy3.packageBase).getCanonicalPath()`/lib`dir`"
+%if (lldseting = "lld") {
+/* Print, set to LLD ON */
+-i"`new java.io.File(edma3.packageBase).getCanonicalPath()`/lib`dir`"
+%}
+-i"`new java.io.File(dman3.packageBase).getCanonicalPath()`/lib`dir`"
+-i"`new java.io.File(dskt2.packageBase).getCanonicalPath()`/lib`dir`"
+-i"`new java.io.File(gt.packageBase).getCanonicalPath()`/lib`dir`"
+-i"`new java.io.File(gtinfra.packageBase).getCanonicalPath()`/lib`dir`"
+-i"`new java.io.File(api.packageBase).getCanonicalPath()`/lib`dir`"
+-i"`new java.io.File(fastcopy.packageBase).getCanonicalPath()`/lib`dir`"
+
+-l"acpy3`libExt`"
+-l"dman3`libExt`"
+-l"gt_noOs`libExt`"
+-l"gt`libExt`"
+-l"dskt2`libExt`"
+-l"fcpy_ti`libExt`"
+-l"edma3`libExt`"
+-l"api`libExt`"
+/*  -l../../../../../../ti/sdo/fc/utils/api/lib/`dir`api`libExt`*/
+
+%if (chipType == "2430") {
+"2430_nobios/fastcopytest.cmd"
+%} else if (chipType == "dm6446") {
+"dm6446_nobios/fastcopytest.cmd"
+%} else if (chipType == "dm648") {
+"dm648_nobios/fastcopytest.cmd"
+%} else if (chipType == "dm6437") {
+"dm6437_nobios/fastcopytest.cmd"
+%} else if (chipType == "C6455") {
+"C6455_nobios/fastcopytest.cmd"
+%} else if (chipType == "dm6467") {
+"dm6467_nobios/fastcopytest.cmd"
+%} else if (chipType == "3430") {
+"3430_nobios/fastcopytest.cmd"
+%} else if (chipType == "3530") {
+"3530_nobios/fastcopytest.cmd"
+%} else if (chipType == "omapL137") {
+"omapL137_nobios/fastcopytest.cmd"
+%} else if (chipType == "omapL138") {
+"omapL138_nobios/fastcopytest.cmd"
+%} else if (chipType == "evm6748") {
+"evm6748_nobios/fastcopytest.cmd"
+%} else {
+% throw("Unknown chip type !" + chipType);
+%}
+ 
+%%{
+/*
+ * @(#) ti.sdo.fc.dman3.examples.fastcopy; 1, 0, 0,235; 12-1-2010 17:24:30; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+
+%%}

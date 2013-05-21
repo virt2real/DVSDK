@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>package ti.sdo.ce.examples.apps.audio1_ires</title>
+<meta name="description" content="Codec Engine encode-decode example which utilizes audio codecs that implement the 1.0 xDM audio interfaces">
+<link rel="stylesheet" type="text/css" href="../../../../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">package</span> <span class="xdoc-id">ti.sdo.ce.examples.apps.audio1_ires</span></td>
+<td class="xdocHdrArrow">&nbsp;&nbsp;&nbsp;</td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../../../../index.html#ti/sdo/ce/examples/apps/audio1_ires/package.html">index URL</a></div>
+<p class="xdocHdrSummary">Codec Engine encode-decode example which utilizes audio codecs that
+  implement the 1.0 xDM audio interfaces</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdoc-desc">Additional documentation</a></li>
+</ul>
+<div class="xdocBrief">
+This example builds using the XDC build tools, and is portable to
+  several execution environments.  The following files are
+  included in this package:
+[&nbsp;<a class="xdocBrief" href="#xdoc-desc">more</a>&nbsp;...&nbsp;]
+</div>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../../../../ti/sdo/ce/examples/apps/audio1_ires/package-src.html"><span class="xdocLabelFile">ti/sdo/ce/examples/apps/audio1_ires/package.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <go><span class="xdoc-id">ti.sdo.ce.examples.apps.audio1_ires</span></go> {
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<span id="xdoc-desc"></span>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This example builds using the XDC build tools, and is portable to
+  several execution environments.  The following files are
+  included in this package:</div>
+<div class="xdocText"><DL><DT> <tt>package.xdc</tt></DT><DD>
+	    This file is required to declare a globally unique name for this
+	    package.
+</DD><DT> <tt>package.bld</tt></DT><DD>
+	    This file is the build script describing the application to the
+	    XDC built tools.
+</DD><DT> <tt>makefile</tt></DT><DD>
+	    A usability makefile wrapper around the XDC build tools.
+</DD><DT> <tt>local.cfg</tt></DT><DD>
+	    The XDC configuration file for this executable, when configured
+	    to run "local" codecs.  This is the typical configuration for
+	    single processor excution environments.
+</DD><DT> <tt>local.tcf</tt></DT><DD>
+	    The BIOS configuration file for this executable.  This file is
+	    only necessary when building for a BIOS runtime environment.
+          It's base name must match that of the XDC config file.
+</DD><DT> <tt>remote.cfg</tt></DT><DD>
+	    The XDC configuration file for this executable, when configured
+	    to run "remote" codecs.  This is the typical configuration for
+	    multiple processor excution environments.
+</DD><DT> <tt>app.c</tt></DT><DD>
+	    The primary source file for this executable.
+</DD><DT> <tt>main.c</tt> and <tt>main_native.c</tt></DT><DD>
+	    The execution runtime-specific entry point for this executable.
+	    This isolates any runtime-specific startup code from the generic
+	    application.
+ 
+</DD></DL></div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:25 GMT</div>
+</div></div></body>
+</html>

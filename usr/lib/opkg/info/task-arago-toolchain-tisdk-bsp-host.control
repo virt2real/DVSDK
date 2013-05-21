@@ -1,0 +1,13 @@
+Package: task-arago-toolchain-tisdk-bsp-host
+Version: 1.0-r42.6
+Description: Task to build and install Board Support Package sources (or development header) packages on host
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: dm365-evm
+OE: task-arago-toolchain-tisdk-bsp-host
+Homepage: unknown
+Build: install/afa4844
+Recommends: ti-tisdk-licenses-src, u-boot-src, ti-tisdk-setup, linux-davinci-src, ti-tisdk-mksdboot, ti-board-utilities-dm36x-src, ti-linux-driver-examples-src, ti-tisdk-docs-hardcopy, ti-tisdk-docs-wiki
+Source: file:///sdk/build/DVSDK_4_02/4_02_00_06/arago-install/arago/recipes/tasks/task-arago-toolchain-tisdk-bsp-host.bb

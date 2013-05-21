@@ -1,0 +1,113 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tcp ========
+ *  This file defines the generic platform. To use the generic platform, a user
+ *  must call utils.loadPlatform("ti.platforms.generic", params), where params
+ *  is a required argument.
+ *
+ */
+
+/*
+ *  Create new config object
+ */
+config = new Config("config_0");
+
+/*
+ *  Create new board object
+ */
+config.create("board_0");
+
+if (utils.loadPlatform.params != null) {
+    var prm = utils.loadPlatform.params;
+}
+else {
+    throw new Error("Parameters must be specified for the generic platform.");
+}
+
+/* Before the parameters are passed to loadArch, the prefix "TMS320C" or the
+ * prefix "OMAP" must be stripped, in the case the parameters are coming from
+ * a RTSC build.
+ */
+try {
+    prm.deviceName = prm.deviceName.replace("TMS320C", "");
+    prm.deviceName = prm.deviceName.replace("TMS320", "");
+    prm.deviceName = prm.deviceName.replace("OMAP", "");
+}
+catch(e) {
+    throw new Error("A device name must be specified for the generic platform");
+}
+
+if (prm.catalogName == undefined) {
+    throw new Error("A catalog must be specified for the device "+
+        prm.deviceName);
+}
+
+if (prm.clockRate == undefined) {
+    throw new Error("The clock rate must be specified");
+}
+
+/*
+ *  Create new cpu object
+ */
+config.board("board_0").create("cpu_0",
+    utils.loadArch(prm.deviceName, prm.catalogName));
+
+/* Specify the clock rate of cpu on the board in Mhz */
+config.board("board_0").cpu("cpu_0").clockRate = prm.clockRate;
+
+/* Specify the regs */
+if (prm.regs != undefined) {
+    config.board("board_0").cpu("cpu_0").registers = prm.regs;
+}
+else {
+    config.board("board_0").cpu("cpu_0").registers = new Object();
+}
+
+/**
+ *  ======== board.getMemoryMap ========
+ *  Get the on-chip memory map of the platform.
+ *
+ *  @param platParams   optional object structure containing platform settings.
+ *           clockRate  The speed at which the DSP core is running.
+ *           mapMode    The MAP MODE value.
+ *
+ *  @return             the memory map of the platform.
+ */
+config.board("board_0").getMemoryMap = function (platParams)
+{
+    var cpu = config.board("board_0").cpu("cpu_0");
+    var map = [];
+
+    try {
+        for (var prop in utils.loadPlatform.params.mem) {
+            map[map.length] = utils.loadPlatform.params.mem[prop];
+        }
+    }
+    catch (e) {
+    }
+    
+    /*  get the on-chip memory map from the cpu definition chip.tci */
+    var onChipMap = cpu.getMemoryMap();
+
+    /*  append on-chip memory to memory map */
+    for (var i=0; i < onChipMap.length; i++) {
+        map[map.length] = onChipMap[i];
+    }
+    
+    return (map);
+};
+/*
+ *  @(#) ti.platforms.generic; 1, 0, 0, 1,277; 2-23-2010 16:51:51; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

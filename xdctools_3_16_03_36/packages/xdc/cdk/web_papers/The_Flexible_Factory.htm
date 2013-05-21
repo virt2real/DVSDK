@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0032)http://www.sdmagazine.com/print/ -->
+<HTML><HEAD><TITLE>The Flexible Factory</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1264" name=GENERATOR></HEAD>
+<BODY>
+<TABLE cellSpacing=1 cellPadding=1 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="30%"><A href="http://www.sdmagazine.com/"><IMG height=76 
+      src="The Flexible Factory_files/second_logo.gif" width=595 border=0> 
+    </A></TD>
+    <TD width="70%">&nbsp;</TD></TR></TBODY></TABLE>
+<P><I>Software Development</I><BR><A 
+href="http://www.sdmagazine.com/articles/2003/0312/">December 2003</A> </P><!--CHANGE TITLE, DATE, AND TOC LINK BELOW
+Arial
+Size: +2
+Color: CC0000
+Bold--><B><FONT face="Arial, Helvetica, sans-serif" color=#990033 size=+2>The 
+Flexible Factory</FONT></B> 
+<P><!-- ENTER DECK HERE
+Arial
+Size: +1
+Color: 666666 --><FONT face="Helvetica, Arial" color=#666633 size=+1>Today, 
+monolithic solutions are more the exception than the rule. Is a supply chain 
+based on software components finally emerging?</FONT></P>
+<P><!--Author
+Default Font
+Italic --><I>By Clemens Szyperski and David G. Messerschmitt</I> 
+<P>“Competition has been shown to be useful up to a certain point and no 
+further, but cooperation … begins where competition leaves off,” said Franklin 
+Roosevelt. Today, we commonly see solutions composed from multiple software 
+products by systems integrators or suppliers who license modules from other 
+sources. Just as Roosevelt observed so many years ago, cooperation is 
+increasingly important. But how do we arrive at automatically composable 
+solutions?</P>
+<P><B>Make vs. License Decisions</B>
+<P>Most new software is constructed on a base of existing software—a base that 
+may come from any number of places. Just as end users face the choice of making, 
+buying, licensing or subscribing to software, software suppliers face a similar 
+set of choices—and in the future, components will dramatically alter this 
+industry.</P>
+<P>There are three approaches for building software: handcrafting code, reusing 
+software or assembling components. Handcrafting means creating all the source 
+code for the initial version from scratch to the specific needs of the project, 
+updating it through multiple maintenance and version cycles. </P>
+<P>Reuse, as we define it here, means consciously sharing source code among 
+different projects in order to increase organizational and project productivity. 
+Thus, both the architecture and requirements for at least some individual 
+modules on one project anticipate the reuse of those modules in other projects. 
+A typical example is a <I>product line architecture</I>, in which some reusable 
+modules or components are explicitly shared. To render the code more suitable 
+for multiple uses, developers make their source code available to other projects 
+and allow modifications to that source code to fit any distinctive application 
+needs. Because it’s uncommon to share source code outside an organization 
+(except, of course, for open-source software), reuse normally occurs within one 
+IT shop. A notable exception is contract custom development, where one firm 
+contracts to another the creation of modules to specific requirements and 
+maintains ownership of the source code.</P>
+<P>Reused modules can be used in multiple contexts, even simultaneously. This is 
+very different from the material world, where <I>reuse</I> carries connotations 
+of recycling, and simultaneous uses of the same entity are generally impossible. 
+The difference between handcrafted and reusable software is mostly one of chance 
+or adequacy. If a particular module is highly specialized or complex, it 
+probably won’t fit in elsewhere. Providing a rich set of configuration options 
+that anticipate other contexts is one way to encourage reuse.</P>
+<P>The third approach is component assembly. In this extreme, during the course 
+of a project there is no need for implementing modules. Rather, you build the 
+system by taking existing modules (called <I>components</I>), configuring and 
+integrating them. These components can’t be modified, but are used “as is”; 
+typically, they’re acquired from a supplier rather than another project within 
+the same organization. To enhance its applicability to multiple projects without 
+modification, each component typically has many built-in configuration 
+options.</P>
+<P>Although the software community has seen many technologies and methodologies 
+aimed at increasing productivity and software quality, component software is the 
+most promising approach. It creates a supply chain for software, in which one 
+supplier assembles components acquired from other suppliers into its software 
+products. Competition is shifted from the system level to the component level, 
+resulting in improved quality-cost options.</P>
+<P>It’s rare to find any of the three options used exclusively; most often, 
+they’re combined. One organization may find that available components can 
+partially meet the needs of a particular project, so it supplements them with 
+handcrafted modules and modules reused from other projects.</P>
+<P><B>What Is a Component?</B>
+<P>Roughly speaking, a <I>software component</I> is a multi-use module: a module 
+suitable for composition into multiple applications. The difference between 
+software reuse and component assembly is subtle but crucial. There is no 
+universal agreement as to precisely what the term <I>component</I> denotes. 
+However, the benefits of components are potentially so great that it’s 
+worthwhile to strictly distinguish them from other modules, and to base the 
+definition on the needs of stakeholders (those provisioning, operating and using 
+them) and workings of the marketplace rather than the technology 
+characteristics. This leads us to five distinct properties: a component should 
+be multiple-use, non-context-specific, composable with other components, 
+encapsulated (cannot be modified or, typically, even examined) and a unit of 
+independent deployment and versioning.</P>
+<P>Components are created and licensed to be used as is to preserve a single 
+version for maintenance and upgrade. All five properties contribute to this 
+aspect, and indeed, encapsulation enforces it. Unlike a monolithic application 
+(which is also purchased and used as is), a component isn’t intended to be 
+useful in isolation; rather, its utility depends on its composition with other 
+components (or possibly other modules that aren’t components). A component 
+supplier has an incentive to reduce the context dependence to increase the size 
+of the market, balancing that property against the need for the component to add 
+value to the specific context. An additional implication is that, unlike 
+non-componentized systems, it should be possible during provisioning to mix and 
+match components from different vendors so as to move competition from the 
+system level down to the subsystem (component) level. It should also be possible 
+to replace or upgrade a single component independently of the remainder of a 
+system, even during the operations phase, thus reducing lock-in and giving 
+greater flexibility to evolve the system to match changing or expanding 
+requirements. In theory, the system can be gracefully evolved after deployment 
+by incrementally upgrading, replacing and adding components.</P>
+<P>The term <I>component assembly</I> should be thought of as a <I>hierarchical 
+composition</I> (like hierarchical decomposition, except moving bottom-up rather 
+than top-down). Even though a component as deployed is atomic (encapsulated and 
+displaying no visible internal structure), it may itself have been assembled 
+from components by its supplier. During provisioning, a component may be 
+purchased as is, configured for the specific platform and environment, and 
+assembled and integrated with other components. As part of the system management 
+function during operations, the component may be upgraded or replaced, or new 
+components added and assembled with existing components to evolve the 
+system.</P>
+<P><B>Overcoming the Initial Costs</B>
+<P>A component methodology demands discipline. Components are more costly to 
+develop and maintain than handcrafted or reusable modules. One rule of thumb 
+states that reusable software requires several times as much effort as similar 
+handcrafted software, and components much more. As a corollary, a reusable 
+module must be used in a few separate projects to break even; components even 
+more.</P>
+<P>If well executed, however, the compensatory benefits of components can be 
+substantial. Maintaining and upgrading a single component implementation across 
+many projects and organizations has obvious advantages. Upgrading the component 
+to match the expanding needs of one user can benefit others. The concentrated 
+maintenance on components that are widely deployed and tested can minimize 
+defects and improve quality. Components also offer a promising route to more 
+flexible systems that can evolve to match changing or expanding needs.</P>
+<P>In purely economic terms (neglecting technical and organizational 
+challenges), components are more promising than reuse as a way to increase 
+software development productivity, and they will more likely be purchased from 
+the outside. Project managers operate under strict budget and schedule 
+constraints, and developing either reusable or <I>multi-use modules</I> (<A 
+href="http://www.sdmagazine.com/documents/s=8958/sdm0312a/sdm0312a_f1.html">see 
+sidebar</A>) is likely to compromise those constraints. Rewards are very 
+difficult to create within a given development organization. While companies 
+have tried various ways of requiring or encouraging managers to consider reuse 
+or multiple uses, they are rarely effective.</P>
+<P>On the other hand, components are consistent with organizational separation. 
+A separate economic entity looks to maximize its revenue and profits, and thus 
+maximize the market potential of the software products that it develops. It thus 
+has an economic incentive to seek the maximum number of uses, amortizing the 
+extra development cost over increased sales. Where reuse allows the forking of 
+different variations on a reused module to meet the specific needs of future 
+projects, many of the economies of scale and quality advantages inherent in 
+components are lost. It’s hardly surprising that software reuse has been 
+disappointing in practice, while many hold out great hope for component 
+software.</P>
+<P><B>Another Industrial Revolution? </B>
+<P>Software components are like standard reusable parts—and as such, they could 
+spur an industrial revolution in software, shifting the emphasis from 
+handcrafting to assembly. This is especially compelling as a way to reduce the 
+time and cost of developing applications. It may even be feasible to enable end 
+users to assemble their own applications. This revolution probably won’t be 
+precipitous, but even so, it’s not an “all or nothing” situation since developed 
+and acquired modules can be mixed.</P>
+<P>There are important obstacles to an industrial revolution, however. The first 
+is the flawed analogy between a software program and a material product. If a 
+program were analogous to a material product or machine, it would consist of a 
+predefined set of modules (parts of a machine) interacting to achieve a higher 
+purpose. While software is indeed composed of a set of interacting modules, many 
+aspects of the dynamic configuration of an application’s architecture are 
+determined at the time of execution, not when the software is created. During 
+execution, a large set of modules is created dynamically and opportunistically 
+based on specific needs that can be identified only at that time.</P>
+<P>For example, a word processor may create millions of modules at execution 
+time tied to the specific content of the document being processed. For example, 
+each individual drawing in a document, and indeed each individual element 
+comprising that drawing (such as lines, circles and labels), is associated with 
+a software module created specifically to manage that element. The implementers 
+provide the set of <I>available</I> modules, and also specify a detailed plan by 
+which modules are created dynamically at execution time and interact to achieve 
+higher purposes.</P>
+<P>Implementing a modern software program is analogous not to a static 
+configuration of interacting parts, but rather to creating a plan for a very 
+flexible factory in the industrial economy. At the time of execution, programs 
+are universal factories that, by following specific plans, manufacture a wide 
+variety of immaterial artifacts on demand and then compose them to achieve 
+higher purposes. Therefore, in its manner of production, a program—the product 
+of development—isn’t comparable to a hardware product, but is more like a 
+<I>factory</I> for hardware components, and one that is highly flexible, at 
+that. The supply of raw materials in such a factory corresponds to the reusable 
+resources of IT: instruction cycles, storage capacity and communication 
+bandwidth. The units of production in this factory are dynamically assembled 
+modules dynamically derived from modules originally handcrafted or licensed as 
+components.</P>
+<P><B>The Flexible Factory</B>
+<P>There is a widespread belief that software engineering is an immature field 
+that has yet to catch up with more mature engineering disciplines, since there 
+remains such a deep reliance on handcrafting as a means of production. In light 
+of the nature of software, this belief is exaggerated at best. Other engineering 
+disciplines are similarly struggling when aiming at methods to systematically 
+create new factories, especially flexible ones. Amusingly, other engineering 
+disciplines, when faced with the problem of creating factories, sometimes look 
+to software engineering for insights. It’s an inherently difficult problem, one 
+unlikely to yield to simple solutions. Nevertheless, progress will be made, and 
+the market for components will expand.</P>
+<P><B>Where’s the Market? </B>
+<P>The second obstacle to an industrial revolution of software is the 
+availability of a rich and varied set of components for licensing. Purchasing 
+components in a marketplace is more promising than creating them yourself 
+because the former offers higher scale and significant economic benefit to the 
+developer/supplier. Such a component marketplace is blossoming, although 
+nascent. Component technologies are emerging based on Microsoft Windows (COM+ 
+and CLR) and Sun Microsystems’ Java (JavaBeans and Enterprise JavaBeans). 
+Several fast-growing markets now exist, and a number of companies have formed to 
+fill the need for merchant, broker and triage roles, including ComponentSource 
+and FlashLine. These firms provide an online marketplace where buyers and 
+sellers of components can come together.</P>
+<P>The first industrial revolution had the benefit of constraining complexity. 
+Similarly, by separating parts suppliers and offering each a larger market, 
+economic incentives today encourage suppliers to make their components easier to 
+use by abstracting interfaces and hiding complexities. New components will also 
+tend to use existing standard interfaces rather than creating new ones, reducing 
+interface proliferation. Thus, a component marketplace may ultimately be of 
+considerable help in containing software complexity, as it has for material 
+goods and services.</P>
+<P>Another—as yet unresolved—obstacle to an industrial software revolution is 
+managing trust and risk. When software is assembled from components purchased 
+from external suppliers, warranty and insurance models must mitigate the risk of 
+exposure and liability. Traditional warranty, liability and insurance concepts 
+must be redesigned to fit the peculiarities of software—an issue as important as 
+the technical challenges.</P>
+<P><B>Systemic Building Blocks</B>
+<P>An interesting parallel to component software may be biological evolution, 
+which can be modeled as a set of “integrative levels” (such as molecules, cells, 
+organisms and families) in which self-contained entities at each level consist 
+mainly of “innovative composition” of entities from the level below. Like new 
+business relationships in an industrial economy, nature seems to evolve ever 
+more complex entities in part by this innovative composition of existing 
+entities. The optimistic view is that components may unleash a similar wave of 
+innovation in software technology. </P>
+<HR>
+Bios: <BR><B>Clemens Szyperski</B> is a software architect at Microsoft in 
+Redmond, Wash., and a former associate professor at Queensland University of 
+Technology in Australia. He is the author of the Jolt award-winning <I>Component 
+Software: Beyond Object-Oriented Programming</I> (Addison-Wesley, 1997). He 
+holds a Ph.D. in computer science from the Swiss Federal Institute of Technology 
+(ETH) in Zurich. 
+<P></P>
+<P><B>David G. Messerschmitt</B> is the interim dean of the School of 
+Information Management and Systems at the University of California at Berkeley, 
+where his research focuses on the impact of economics on software and 
+telecommunications. He started his career at AT&amp;T Bell Laboratories and is 
+the recipient of the IEEE Alexander Graham Bell Medal. This article is abridged 
+from <I>Software Ecosystem: Understanding an Indispensable Technology and 
+Industry</I> (MIT Press, 2003). Reprinted with permission.<BR></P></BODY></HTML>

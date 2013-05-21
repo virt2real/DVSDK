@@ -1,0 +1,4 @@
+#!/bin/sh
+/etc/init.d/loadmodule-rc restart
+gst-launch filesrc location=/usr/share/ti/data/videos/davincieffect_vga30.mp4 ! qtdemux name=demux demux.audio_00 ! queue max-size-buffers=8000 max-size-time=0 max-size-bytes=0 ! TIAuddec1 ! alsasink demux.video_00 ! queue ! TIViddec2 ! TIDmaiVideoSink videoStd=VGA videoOutput=LCD rotation=270
+

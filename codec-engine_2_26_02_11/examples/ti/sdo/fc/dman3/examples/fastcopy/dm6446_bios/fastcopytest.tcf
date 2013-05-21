@@ -1,0 +1,126 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ *  ======== fastcopytest.tcf ========
+ *  Configuration script used to generate BIOS configuration files
+ *  for the DM6446 platform
+ */
+
+/*
+ *  Define the DaVinci platform, setup CLK rate, plat-specific memory
+ *  segments, registers, etc.
+ */
+params = {
+   clockRate:   450,
+   catalogName: "ti.catalog.c6000",
+   deviceName:  "DM420",
+   regs:        {},
+   mem_ext:     []
+};
+
+/*
+ *  Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+
+/*
+ *  Enable BIOS features needed for the test
+ *  Note: we do not do
+ *      bios.enableRtdx(prog)
+ *  here since we run the test on the simulator.
+ */
+bios.enableRealTimeAnalysis(prog);
+bios.enableMemoryHeaps(prog);
+bios.enableTskManager(prog);
+
+/*
+ *  Enable heaps in the IRAM (internal ram, fixed size)
+ *  and define the label for heap usage.
+ */
+bios.IRAM.createHeap      = true;
+bios.IRAM.enableHeapLabel = true;
+bios.IRAM["heapLabel"]    = prog.extern("EXTMEMHEAP");
+bios.IRAM.heapSize        = 0x8000;
+
+/*
+ *  Create external memory segment for this (simulated) board
+ *  Enable heaps in it and define the label for heap usage.
+ */
+var DDR = prog.module("MEM").create("DDR2");
+DDR.base             = 0x83F00000;
+DDR.len              = 0x0FFE00;     // may be much bigger -- this is sim
+//DDR.len              = 0x1FFE00;     // may be much bigger -- this is sim
+DDR.space            = "code/data";  // code/data so we can place code in it
+DDR.createHeap       = true;
+DDR.enableHeapLabel  = true;
+DDR["heapLabel"]     = prog.extern("EXTERNALHEAP");
+DDR.heapSize         = 0x8000;
+DDR.comment          = "DDR2";
+
+/*
+ *  Enable heaps in the L1DSRAM (internal L1 cache ram, fixed size)
+ *  and define the label for heap usage.
+ */
+bios.L1DSRAM.createHeap       = true;
+bios.L1DSRAM.enableHeapLabel  = true;
+bios.L1DSRAM["heapLabel"]     = prog.extern("L1DHEAP");
+bios.L1DSRAM.heapSize         = 0x800;
+
+/*
+ *  Create a custom LOG object
+ */
+bios.LOG_myLog = bios.LOG.create("LOG_myLog");
+bios.LOG_myLog.bufSeg = prog.get("IRAM");
+bios.LOG_myLog.bufLen = 0x80;
+
+/*
+ *  Specify that code and data go to DDR (external RAM) since internal RAM
+ *  (IRAM) has only 64K
+ */
+bios.setMemCodeSections (prog, DDR) ;
+bios.setMemDataNoHeapSections (prog, DDR) ;
+bios.setMemDataHeapSections (prog, DDR) ;
+
+/* healthy stack */
+bios.MEM.STACKSIZE = 0x10000;
+
+// !GRAPHICAL_CONFIG_TOOL_SCRIPT_INSERT_POINT!
+
+if (config.hasReportedError == false) {
+    prog.gen();
+}
+/*
+ *  @(#) ti.sdo.fc.dman3.examples.fastcopy; 1, 0, 0,235; 12-1-2010 17:24:29; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

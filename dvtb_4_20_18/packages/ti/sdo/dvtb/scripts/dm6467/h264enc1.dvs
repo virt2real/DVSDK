@@ -1,0 +1,68 @@
+############################################################
+# Read YUV and encode with H264 encoder
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp h264enc1 codec h264enc
+
+# specify the parameters
+setp h264enc1 encodingPreset 3
+setp h264enc1 rateControlPreset 1
+setp h264enc1 maxHeight 720
+setp h264enc1 maxWidth 1280
+setp h264enc1 maxFrameRate 30000
+setp h264enc1 maxBitRate 10000000
+setp h264enc1 dataEndianness 3
+setp h264enc1 maxInterFrameInterval 30
+setp h264enc1 inputChromaFormat 9
+setp h264enc1 inputContentType 0
+setp h264enc1 reconChromaFormat 1
+setp h264enc1 profileIdc 66 
+setp h264enc1 METype 1
+setp h264enc1 ScalingMatType 0
+setp h264enc1 ScalingFactor 0
+setp h264enc1 levelIdc 31
+setp h264enc1 EntropyCodingMode 0
+setp h264enc1 inputHeight 720
+setp h264enc1 inputWidth 1280
+setp h264enc1 refFrameRate 30000
+setp h264enc1 targetFrameRate 30000
+setp h264enc1 targetBitRate 10000000
+setp h264enc1 intraFrameInterval 30
+setp h264enc1 generateHeader 0
+setp h264enc1 captureWidth 0
+setp h264enc1 forceFrame -1
+setp h264enc1 interFrameInterval 0
+setp h264enc1 mbDataFlag 0
+setp h264enc1 OutBufSize -1 
+setp h264enc1 QPISlice 28
+setp h264enc1 QPSlice 28
+setp h264enc1 RateCtrlQpMax 51
+setp h264enc1 RateCtrlQpMin 0
+setp h264enc1 NumRowsInSlice 3
+setp h264enc1 LfDisableIdc 0 
+setp h264enc1 LFAlphaC0Offset 6
+setp h264enc1 LFBetaOffset 6
+setp h264enc1 ChromaQPOffset 0
+setp h264enc1 SecChromaQPOffset 0
+setp h264enc1 framePitch 1280
+setp h264enc1 numFrames 30
+
+
+#specify vpfe parameters
+#setp vpfe device /dev/video0
+#setp vpfe standard 4
+#setp vpfe format 7 
+#setp vpfe width 1280
+#setp vpfe height 720
+
+# Start the capture+encode operation
+func h264enc1 -s input_1280x720_yuv420.yuv -t h264ext-encode.264
+

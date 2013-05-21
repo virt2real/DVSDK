@@ -1,0 +1,48 @@
+#! /bin/sh
+
+matrixgui="/usr/bin/matrix_guiE"
+GUI_OPTS="-qws /usr/share/matrix/html/menu_main.html"
+MULTI_OPTS="Multi: LinuxFb:/dev/fb0 LinuxFb:/dev/fb1"
+PIDFILE="/var/run/matrix-gui-e.pid"
+
+test -x "$matrixgui" || exit 0
+
+#export TSLIB_TSDEVICE=/dev/input/touchscreen0
+#export QWS_MOUSE_PROTO=Tslib:/dev/input/touchscreen0
+export QWS_MOUSE_PROTO=Auto:/dev/input/mice
+
+case "$1" in
+  start)
+    if [ ! -f /etc/pointercal ] ; then
+        echo -n "Calibrating touchscreen (first time only)"
+        ts_calibrate
+        echo "."
+    fi
+
+	if [ -e $PIDFILE ]; then
+      PIDDIR=/proc/$(cat $PIDFILE)
+      if [ -d ${PIDDIR} -a  "$(readlink -f ${PIDDIR}/exe)" = "${matrixgui}" ]; then
+        echo "$DESC already started; not starting."
+      else
+        echo "Removing stale PID file $PIDFILE."
+        rm -f $PIDFILE
+      fi
+    fi
+
+    echo -n "Starting Matrix GUI application"
+    start-stop-daemon --start --quiet --background --exec $matrixgui -- -display "$MULTI_OPTS" $GUI_OPTS
+	pidof matrix_guiE > $PIDFILE
+    echo "."
+    ;;
+
+  stop)
+    echo -n "Stopping Matrix GUI application"
+    start-stop-daemon --stop --quiet --pidfile /var/run/matrix-gui-e.pid
+    echo "."
+    ;;
+  *)
+    echo "Usage: /etc/init.d/matrix-gui-e {start|stop}"
+    exit 1
+esac
+
+exit 0

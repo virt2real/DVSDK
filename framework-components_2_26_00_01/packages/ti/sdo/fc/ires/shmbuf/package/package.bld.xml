@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.ires.shmbuf" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="SHMBUF"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.fc.ires.shmbuf.c"/>
+        <srcFile name="shmbuf_params.c"/>
+        <srcFile name="shmbuf.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/shmbuf.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/package/package_ti.sdo.fc.ires.shmbuf.o470MV.dep" src="package/package_ti.sdo.fc.ires.shmbuf.c"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/shmbuf.o470MV.dep" src="shmbuf.c"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/shmbuf_params.o470MV.dep" src="shmbuf_params.c"/>
+        <srcFile name="lib/debug/shmbuf.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/package/package_ti.sdo.fc.ires.shmbuf.o470uC.dep" src="package/package_ti.sdo.fc.ires.shmbuf.c"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/shmbuf.o470uC.dep" src="shmbuf.c"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/shmbuf_params.o470uC.dep" src="shmbuf_params.c"/>
+        <srcFile name="lib/release/shmbuf.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/shmbuf/package/package_ti.sdo.fc.ires.shmbuf.o86U.dep" src="package/package_ti.sdo.fc.ires.shmbuf.c"/>
+        <srcFile name="package/lib/lib/release/shmbuf/shmbuf.o86U.dep" src="shmbuf.c"/>
+        <srcFile name="package/lib/lib/release/shmbuf/shmbuf_params.o86U.dep" src="shmbuf_params.c"/>
+        <srcFile name="lib/release/shmbuf.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/shmbuf/package/package_ti.sdo.fc.ires.shmbuf.o470MV.dep" src="package/package_ti.sdo.fc.ires.shmbuf.c"/>
+        <srcFile name="package/lib/lib/release/shmbuf/shmbuf.o470MV.dep" src="shmbuf.c"/>
+        <srcFile name="package/lib/lib/release/shmbuf/shmbuf_params.o470MV.dep" src="shmbuf_params.c"/>
+        <srcFile name="lib/release/shmbuf.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/shmbuf/package/package_ti.sdo.fc.ires.shmbuf.o470uC.dep" src="package/package_ti.sdo.fc.ires.shmbuf.c"/>
+        <srcFile name="package/lib/lib/release/shmbuf/shmbuf.o470uC.dep" src="shmbuf.c"/>
+        <srcFile name="package/lib/lib/release/shmbuf/shmbuf_params.o470uC.dep" src="shmbuf_params.c"/>
+        <srcFile name="lib/debug/shmbuf.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/package/package_ti.sdo.fc.ires.shmbuf.ov5T.dep" src="package/package_ti.sdo.fc.ires.shmbuf.c"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/shmbuf.ov5T.dep" src="shmbuf.c"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/shmbuf_params.ov5T.dep" src="shmbuf_params.c"/>
+        <srcFile name="lib/debug/shmbuf.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/package/package_ti.sdo.fc.ires.shmbuf.o86U.dep" src="package/package_ti.sdo.fc.ires.shmbuf.c"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/shmbuf.o86U.dep" src="shmbuf.c"/>
+        <srcFile name="package/lib/lib/debug/shmbuf/shmbuf_params.o86U.dep" src="shmbuf_params.c"/>
+        <srcFile name="lib/release/shmbuf.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/shmbuf/package/package_ti.sdo.fc.ires.shmbuf.ov5T.dep" src="package/package_ti.sdo.fc.ires.shmbuf.c"/>
+        <srcFile name="package/lib/lib/release/shmbuf/shmbuf.ov5T.dep" src="shmbuf.c"/>
+        <srcFile name="package/lib/lib/release/shmbuf/shmbuf_params.ov5T.dep" src="shmbuf_params.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_ires_shmbuf.tar.dep" src="package/rel/ti_sdo_fc_ires_shmbuf.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,0"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/shmbuf"
+        pname="lib/debug/shmbuf.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/shmbuf"
+        pname="lib/debug/shmbuf.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/shmbuf"
+        pname="lib/release/shmbuf.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/shmbuf"
+        pname="lib/release/shmbuf.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/shmbuf"
+        pname="lib/release/shmbuf.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/shmbuf"
+        pname="lib/debug/shmbuf.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/shmbuf"
+        pname="lib/debug/shmbuf.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/shmbuf"
+        pname="lib/release/shmbuf.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_ires_shmbuf"
+        pname="ti_sdo_fc_ires_shmbuf.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="shmbuf.c"/>
+        <file name="shmbuf.h"/>
+        <file name="shmbuf_params.c"/>
+        <file name="lib/debug/shmbuf.a470uC"/>
+        <file name="lib/debug/shmbuf.a86U"/>
+        <file name="lib/debug/shmbuf.av5T"/>
+        <file name="lib/release/shmbuf.a470uC"/>
+        <file name="lib/debug/shmbuf.a470MV"/>
+        <file name="lib/release/shmbuf.a470MV"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/release/shmbuf.a86U"/>
+        <file name="lib/release/shmbuf.av5T"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="package/package_ti.sdo.fc.ires.shmbuf.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

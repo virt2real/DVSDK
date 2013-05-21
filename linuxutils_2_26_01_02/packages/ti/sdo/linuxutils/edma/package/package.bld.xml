@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.linuxutils.edma" version="1, 0, 0" producerId="undefined">
+    <units>
+        <module name="EDMA"/>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_sdo_linuxutils_edma.tar.dep" src="package/rel/ti_sdo_linuxutils_edma.xdc.inc"/>
+        <srcFile name="package/rel/ti_sdo_linuxutils_edma,til.tar.dep" src="package/rel/ti_sdo_linuxutils_edma,til.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_linuxutils_edma"
+        pname="ti_sdo_linuxutils_edma.tar"
+        label="default"
+        relScript="ti/sdo/linuxutils/buildutils/copyright.rel">
+        <file name="Rules.make"/>
+        <file name="package/package.ext.xml"/>
+        <file name="apps/apitest/apitest.c"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="apps/insmod_rmmod/Makefile"/>
+        <file name="readme.txt"/>
+        <file name="include/edma.h"/>
+        <file name="src/module/edmak.c"/>
+        <file name="package/package.rel.dot"/>
+        <file name="apps/Makefile"/>
+        <file name="apps/dmafree/Makefile"/>
+        <file name="src/interface/Makefile"/>
+        <file name="Makefile"/>
+        <file name="src/module/Makefile"/>
+        <file name="lib"/>
+        <file name="apps/dmafree/dmafree.c"/>
+        <file name="src/interface/edma.c"/>
+        <file name="apps/apitest/Makefile"/>
+        <file name="package/build.cfg"/>
+        <file name="src/interface/edma.h"/>
+        <file name="src/Makefile"/>
+        <file name="package/package.bld.xml"/>
+        <file name="apps/insmod_rmmod/insmod_rmmod.sh"/>
+        <file name="package/package.cfg.xdc.inc"/>
+    </release>
+    <release name="ti_sdo_linuxutils_edma,til"
+        pname="ti_sdo_linuxutils_edma,til.tar"
+        label="TI license"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="Rules.make"/>
+        <file name="package/package.ext.xml"/>
+        <file name="apps/apitest/apitest.c"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="apps/insmod_rmmod/Makefile"/>
+        <file name="readme.txt"/>
+        <file name="include/edma.h"/>
+        <file name="src/module/edmak.c"/>
+        <file name="package/package.rel.dot"/>
+        <file name="apps/Makefile"/>
+        <file name="apps/dmafree/Makefile"/>
+        <file name="src/interface/Makefile"/>
+        <file name="Makefile"/>
+        <file name="src/module/Makefile"/>
+        <file name="lib"/>
+        <file name="apps/dmafree/dmafree.c"/>
+        <file name="src/interface/edma.c"/>
+        <file name="apps/apitest/Makefile"/>
+        <file name="package/build.cfg"/>
+        <file name="src/interface/edma.h"/>
+        <file name="src/Makefile"/>
+        <file name="package/package.bld.xml"/>
+        <file name="apps/insmod_rmmod/insmod_rmmod.sh"/>
+        <file name="package/package.cfg.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

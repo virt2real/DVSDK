@@ -1,0 +1,124 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+/* mkpkg's templates (found in /ti/sdo/ce/wizards/genserver/templates) can use
+any of the following variables via `this.variableName` */
+
+    this.serverName = this.arguments[0].serverName;
+    this.output = this.arguments[0].output;
+    this.platform = this.arguments[0].platform;
+    this.cfgCodecs = this.arguments[0].cfgCodecs;
+    this.cePackages = this.arguments[0].cePackages;
+    this.ceModules = this.arguments[0].ceModules;
+    this.groups = this.arguments[0].groups;
+    this.xdcInstall = this.arguments[0].xdcInstall;
+    this.xdcpath = this.arguments[0].searchPathArr.join(';');
+    this.idma3Fxns = this.arguments[0].idma3Fxns;
+    this.cgTools = this.arguments[0].cgTools;
+    this.ceInstall = this.arguments[0].ceInstall;
+    this.xdaisInstall = this.arguments[0].xdaisInstall;
+    this.biosInstall = this.arguments[0].biosInstall;
+    this.dsplinkInstall = this.arguments[0].dsplinkInstall;
+    this.fcInstall = this.arguments[0].fcInstall;
+    this.cetoolsInstall = this.arguments[0].cetoolsInstall;
+    this.algSectInit = this.arguments[0].algSectInit;
+    this.enablePwr = this.arguments[0].enablePwr;
+    this.iresImpl = this.arguments[0].iresImpl;
+    this.biosUtilsInstall = this.arguments[0].biosUtilsInstall;
+    this.edmaLldInstall = this.arguments[0].edmaLldInstall;
+    this.lpmInstall = this.arguments[0].lpmInstall;
+    this.debug = this.arguments[0].debug;
+
+
+/* configs are found within the codec package in the Module.XDC file.
+    config[i].configNames is an array of these config params names (e.g. "watermark"), 
+    config[i].configTypes is an array of their types (e.g. Boolean),
+    config[i].configValues is an array of their values (e.g. "true") */     
+    
+    this.configs = this.arguments[0].configs;
+    
+/* algorithm values */
+    this.algVals = this.arguments[0].algVals;
+
+/*  serverNameSuffix is the last segment (using periods as delimiters) of the 
+    server package name */
+       
+    this.serverNameSuffix = (this.serverName).substring( 
+        (this.serverName).lastIndexOf("."),(this.serverName).length);
+
+/* memory setup */
+    this.memConfig = this.arguments[0].memConfig[this.platform];
+    this.memComment = this.arguments[0].memComment;
+
+/* resource manager */
+this.useDMAN3 = this.arguments[0].useDMAN3 ? true : false;
+this.platformSupportsEdma = this.arguments[0].platformSupportsEdma;
+this.configuresEdma3 = this.arguments[0].configuresEdma3 ? true : false;
+%%}
+
+makefile.xdt -> makefile
+config.bld.xdt -> config.bld
+package.bld.xdt -> package.bld
+package.xdc.xdt -> package.xdc
+package.xs.xdt -> package.xs
+codec.cfg.xdt -> codec.cfg
+server.cfg.xdt -> server.cfg
+memmap.tci.xdt -> memmap.tci
+main.c.xdt -> main.c
+link.cmd
+
+% switch(this.platform) {
+% case "ti.platforms.evmDM6446":
+    ./ti.platforms.evmDM6446/server.tcf -> ./server.tcf
+%   break;
+% case "ti.platforms.evmDM6467":
+    ./ti.platforms.evmDM6467/server.tcf -> ./server.tcf
+%   break;
+% case "ti.platforms.evm3530":
+    ./ti.platforms.evm3530/server.tcf -> ./server.tcf
+%   break;
+% case "ti.platforms.evmOMAPL137":
+% case "ti.platforms.evmOMAPL138":
+    ./ti.platforms.evmOMAPL13x/server.tcf.xdt -> ./server.tcf
+%   break;
+% default:
+% }
+%%{
+/*
+ * @(#) ti.sdo.ce.wizards.genserver; 1, 0, 0,84; 12-2-2010 21:28:48; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

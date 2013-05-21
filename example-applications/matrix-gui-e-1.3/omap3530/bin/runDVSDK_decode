@@ -1,0 +1,9 @@
+#!/bin/sh
+cd /usr/share/ti/dvsdk-demos/
+killall matrix_guiE
+cat /dev/zero > /dev/fb0
+/etc/init.d/loadmodule-rc restart
+./decode -o -v /usr/share/ti/data/videos/davincieffect_480p30.264 -a /usr/share/ti/data/sounds/davincieffect_lc.aac
+fbset -depth 16
+/etc/init.d/matrix-gui-e start
+

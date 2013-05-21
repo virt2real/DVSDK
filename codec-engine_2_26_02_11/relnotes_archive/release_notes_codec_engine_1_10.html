@@ -1,0 +1,476 @@
+% // used to 'escape' the percent and backtick chars throughout
+% var PCT = '%';
+% var BKTK = '`';
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Codec Engine 1.10 Release Notes</title>
+    <!-- For now, we use the doxygen style sheet -->
+  <link type="text/css" rel="stylesheet" href="../docs/html/doxygen.css">
+</head>
+<body>
+<table width="100%">
+  <tbody>
+    <tr>
+      <td bgcolor="black" width="1">
+        <a href="http://www.ti.com">
+          <img border=0 src="../docs/html/tilogo.gif" alt="Texas Instruments">
+        </a>
+      </td>
+      <td bgcolor="red">
+        <img src="../docs/html/titagline.gif" alt="Technology for Innovators(tm)">
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h1>Codec Engine 1.10 Release</h1>
+<p>
+This Codec Engine Release is targetted to the DaVinci platforms,
+enabling users to instantiate and utilize both local and remote codecs.
+In addition to the heterogenous DM644x devices, it supports single
+processor environments as well; specifically Joule
+devices, ARM9 devices running Linux and x86 devices running Linux.
+</p>
+<p>
+This release note is divided into the following sections:
+<a href="#General_Info">General Info</a>,
+<a href="#Upgrade_Info">Upgrade Info</a>,
+<a href="#Whats_New">What's New</a>,
+<a href="#Device_Support">Device Support</a>,
+<a href="#Known_Issues">Known Issues</a>,
+<a href="#Validation">Validation Info</a>,
+<a href="#Documentation">Documentation</a>.
+</p>
+
+<hr>
+
+<h2><a name="General_Info">General Information</a></h2>
+<p>
+The Codec Engine is a software platform for algorithm execution that
+satisfies the following, high-level goals:
+</p>
+<ul>
+  <li><b>Robust</b> - drives pre-integrated components with fully
+characterized performance.</li>
+  <li><b>Easy to use</b> - app developers specify <i>what</i> needs to
+be run, but not <i>how</i> or <i>where</i>.</li>
+  <li><b>Extensible and Configurable</b> - new algorithms can be added
+by anyone, using standard tools and techniques.</li>
+  <li><b>Portable</b> - API's are target, platform, and in many cases
+  even codec independant.</li>
+</ul>
+
+<p>
+The Codec Engine consists of the following packages:
+</p>
+<ul>
+  <li><b><tt>ti.sdo.ce</tt></b> - The Codec Engine runtime.</li>
+  <li><b><tt>ti.sdo.ce.video</tt></b> - The Codec Engine video component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.image</tt></b> - The Codec Engine image component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.speech</tt></b> - The Codec Engine speech/voice component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.audio</tt></b> - The Codec Engine audio component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.osal</tt></b> - The Codec Engine OS Abstraction
+  Layer.  This package insulates CE from the OS it's running on, and
+  provides a few Modules for customers to use (e.g. Memory).</li>
+  <li><b><tt>ti.sdo.ce.utils.trace</tt></b> - The Codec Engine utility
+  package for trace.  This includes the TraceUtils module.  This makes
+  tracing features easier to use by an application.  It will be
+  supported in this release, but may be replaced in a future release
+  with an incompatible implementation.</li>
+</ul>
+
+<p>
+Additionally, this release of the Codec Engine supports the xDM 1.0
+beta interfaces included in xDAIS 5.10.  This support is provided in
+the following packages:
+</p>
+<ul>
+  <li><b><tt>ti.sdo.ce.video1</tt></b> - The Codec Engine video 1.0 component
+  (supporting the xDM 1.0 beta interfaces).  Both encode and decode
+  are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.image1</tt></b> - The Codec Engine image 1.0 component
+  (supporting the xDM 1.0 beta interfaces).  Both encode and decode
+  are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.speech1</tt></b> - The Codec Engine speech 1.0 component
+  (supporting the xDM 1.0 beta interfaces).  Both encode and decode
+  are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.audio1</tt></b> - The Codec Engine audio 1.0 component
+  (supporting the xDM 1.0 beta interfaces).  Both encode and decode
+  are supported, and an example is provided.</li>
+</ul>
+
+<hr>
+<h2><a name="Upgrade_Info">Upgrade Information</a></h2>
+<p>
+The Codec Engine packages are available in the "packages/"
+subdirectory of the product.  If you have a previous release of the
+Codec Engine product, you can install this release next to it, and
+modify your application and/or server builds to use this newer release.</p>
+<p>
+If you're using the DVEVM, this can be done by setting the
+<b>CE_INSTALL_DIR</b> variable in the <tt>Rules.make</tt> file at the
+top of the DVEVM distribution directory.</p>
+
+<h2><font color="red">Compatibility Breaks!</font></h2>
+<p>
+Some of the components Codec Engine builds upon have evolved and
+broken compatibility with previous releases.  Specifically, DSP/BIOS
+and some components within the XDC tools.  As a result, the customer
+upgrading from CE 1.02 to CE 1.10 may experience some of the following
+errors if they aren't using the correct versions of CE dependent components:
+</p>
+<ul>
+  <li>
+  When building a DSP-side executable, if you haven't updated to
+  BIOS 5.31.01 (or compatible), you may encounter a build error
+  similar to the following:<br><br>
+  <pre>
+    js: "/home/user/dvevm_1_10/xdctools_1_21/packages/xdc/cfg/cfg.js",
+    line 143: exception from uncaught JavaScript throw: Error:
+    incompatible use of package 'ti.bios', imported version
+    [5,2,2,20], ti.bios.utils was built with version [5, 2, 3, 11],
+    ti.sdo.ce.osal was built with version [5, 2, 3, 11],
+    ti.sdo.fc.dskt2 was built with version [5, 2, 3, 11],
+    ti.sdo.fc.dman3 was built with version [5, 2, 3, 11],
+    ti.sdo.fc.acpy3 was built with version [5, 2, 3, 11],
+    ti.sdo.ce.bioslog was built with version [5, 2, 3, 11]
+  </pre>
+  You'll need to update your build to utilize a version of DSP/BIOS
+  compatible with BIOS 5.31.01.
+  </li>
+  <li>
+    The GCC Monta Vista target (used to build ARM-side executables) has
+    broken compatibility in order to add support for Monta Vista's
+    Windows build environment.  This change requires CE 1.10 customers
+    to update to the XDC tools provided in BIOS 5.31.01 or later.  You
+    can set <b>XDC_INSTALL_DIR</b> to your environment's
+    <tt>bios_5_31_01/xdctools</tt>.<br><br>
+    Failure to update to
+    these new xdctools may result in strange errors when building the
+    updated examples, like the following:
+    <pre>
+    /db/toolsrc/library/vendors2005/mvl/arm/mvl4.0-new/montavista/pro
+    /devkit/arm/v5t_le/bin/../lib/gcc/armv5tl-montavista-linuxeabi/3.
+    4.3/../../../../armv5tl-montavista-linuxeabi/bin/ld:./ceapp_packa
+    ge/package/cfg/pkg_x470MV.xdl: file format not recognized; treati
+    ng as linker script
+    /db/toolsrc/library/vendors2005/mvl/arm/mvl4.0-new/montavista/pro
+    /devkit/arm/v5t_le/bin/../lib/gcc/armv5tl-montavista-linuxeabi/3.
+    4.3/../../../../armv5tl-montavista-linuxeabi/bin/ld:./ceapp_packa
+    ge/package/cfg/pkg_x470MV.xdl:2: parse error
+    collect2: ld returned 1 exit status
+    </pre>
+    Breaks occurred in 2 places; the examples have been updated to
+    reflect these changes:
+    <ol>
+      <li>
+      The <b>rootDir</b> configuration has "moved up" one level.
+      Codec Engine users typically configure this in <b>user.bld</b>,
+      and will have to set this variable one directory higher than
+      previous releases.
+      </li>
+      <li>
+      The format of the autogenerated linker command file (with the
+      <b>.xdl</b> extension) has changed in format.  As a result, when
+      adding this file to an application's link line, rather than the
+      previous technique of "cat'ing" the contents of the file onto
+      the link line, you now simply provide the name of the file.
+      <br><br>
+      That is, rather than the previous technique:
+      <pre>
+      $(LINK) `BKTK`cat $(XDL_FILE)`BKTK`
+      </pre>
+      do this instead:
+      <pre>
+      $(LINK) $(XDL_FILE)
+      </pre>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<hr>
+<h2><a name="Whats_New">What's New</a></h2>
+<p>The following significant changes have been made since 1.00.</p>
+
+<h3>1.10 (This Release)</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Updated to C6x Codegen 6.0.7</li>
+      <li>Updated to DSP/BIOS 5.31.01</li>
+      <li>Updated to Framework Components 1.10.01</li>
+      <li>Updated to xDAIS 5.10, which includes xDM 1.0 beta
+      interfaces</li>
+    </ul>
+  </li>
+  <li>CE Runtime
+    <ul>
+      <li>Added new methods to <tt>ti.sdo.ce.ICodec</tt> interface
+      (<tt>getCreationStackSize()</tt>,
+      <tt>getDaramScratchSize()</tt>, and
+      <tt>getSaramScratchSize()</tt>) to make Server configuration
+      easier.  When codecs implement these methods, the XDC Config Kit
+      is able to either:
+        <ol>
+          <li>Auto-generate the DSKT2 scratch configuration, or</li>
+          <li>Validate the scratch config (if the server integrator
+      wants to continue explicitly configuring those values).</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>VISA
+    <ul>
+      <li>Added support for xDM 1.0 Beta interfaces.  (Previous xDM
+      0.9 interfaces continue to be supported)
+    </ul>
+  </li>
+  <li>SPI (System Programming Interfaces)
+    <ul>
+      <li>Added <tt>VISA_setContext()</tt> and
+      <tt>VISA_getContext()</tt> services for stub/skeleton/API authors.
+    </ul>
+  </li>
+  <li>Documentation
+    <ul>
+      <li>Added "Adapter" application note describing how to integrate
+      non-xDM codecs, as well as a technique for adding pre- and post-
+      processing steps to existing codecs without modifying them.</li>
+    </ul>
+  </li>
+  <li>Examples
+    <ul>
+      <li>
+        Added new, Linux-only example demonstrating how users can
+        create a shared library from a single configuration, which can
+        then be used by multiple applications.
+      </li>
+      <li>
+        Added a new example, explicitly describing the steps taking
+        during configuration to better demonstrate the necessary
+        configuration steps for users who want to integrate this into
+        their own, custom build flows.
+      </li>
+      <li>
+        Modified example codecs, when possible, to utilize copy
+        codecs now distributed in xDAIS 5.10.  In this way, it's more
+        clearly described what little XDC packaging is required to
+        integrate an already XDC packaged Codec (independant of CE) into
+        the CE framework.
+      </li>
+    </ul>
+  </li>
+  <li>Defects
+    <ul>
+      <li>SDSCM00010422 - CE and CMEM should set the close-on-exec
+      flag on any open file handles</li>
+      <li>SDSCM00005810 - Additional C++ testing required</li>
+      <li>SDSCM00004993 - GT no longer supports wildcards as second
+      character</li>
+      <li>SDSCM00004805 - GT computes (a lot) during GT_?trace()</li>
+    </ul>
+  </li>
+  <li>Enhancements
+    <ul>
+      <li>SDSCM00010364 - GT needs productized</li>
+      <li>SDSCM00008121 - not possible to properly size RMS thread's
+      stack</li>
+      <li>SDSCM00007887 - Support VISA_getContext/setContext SPIs</li>
+      <li>SDSCM00006616 - CE should ensure unique UUIDs</li>
+      <li>SDSCM00003992 - Add pre- and/or post- process example to
+      codecs</li>
+      <li>SDSCM00002920 - ICodec should have a getScratchSize method</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>1.02</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Introduced <tt>ti.sdo.ce.utils.trace.TraceUtils</tt>
+      module.</li>
+      <li>Libraries are now provided in release builds.  Previously,
+      they were debug-only.</li>
+      <li>Introduced <tt>Engine_setTrace()</tt> API.</li>
+      <li>Added support for C++</li>
+    </ul>
+  </li>
+  <li>VISA Classes
+    <ul>
+      <li>Added extended xDM support to the remaining 3 classes
+      (AUDENC, VIDENC, and SPHENC).</li>
+    </ul>
+  </li>
+  <li>Documentation
+    <ul>
+      <li>Addition of System Programming Interface (SPI) Reference
+      Guide.</li>
+      <li>Codec Engine Server Integrator's Guide (SPRUED5)</li>
+      <li>Codec Engine Algorithm Creator User's Guide (SPRUED6)</li>
+      <li>Minor updates to the Codec Engine Application Developer's
+      Guide (SPRUE67A)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>1.01</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Many trace strings were modified/added.</li>
+      <li>C64P libraries built with 6.0.3 compiler.</li>
+    </ul>
+  </li>
+  <li>VISA Classes
+    <ul>
+      <li>Audio Encoding support has been added</li>
+      <li>Better compliance checking of "size" field.  This field
+      <i>must</i> be set correctly in the various VISA APIs, as it is
+      now used to determine how much data to provide to the
+      codecs.</li>
+      <li>Related to previous bullet, added extended xDM support to
+      VIDDEC, VIDENC, AUDDEC, IMGDEC, and SPHDEC classes.  There are
+      limits to the size of the extended structures, and they must not
+      contain pointers in the extended structures.</li>
+      <li>outArgs fixed to be provided in the case of a failed
+      process() call (enabling inspection of extendedError).</li>
+      <li>Removed cache alignment validation of input buffers.  When the
+      application can ensure cache coherence, these buffers need not be
+      aligned.</li>
+    </ul>
+  </li>
+  <li>Documentation
+    <ul>
+      <li>Minor updates to the Codec Engine Application Developer's
+      Guide (SPRUE67A)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h2><a name="Device_Support">Device Support</a></h2>
+<p>
+The following configurations are supported:
+</p>
+<ul>
+  <li>DaVinci hardware EVM, dual-processor configuration, running
+    <ul>
+      <li>ARM9 Linux, gcclib</li>
+      <li>C64+ DSP/BIOS</li>
+    </ul>
+  </li>
+  <li>Single processor configuration, specifically:
+    <ul>
+      <li>C64+ DSP/BIOS</li>
+      <li>ARM9 Linux, gcclib</li>
+      <li>ARM9 Linux, uclibc</li>
+      <li>x86 Linux, gcclib</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+<h2><a name="Known_Issues">Known Issues</a></h2>
+
+<h3>xDM 1.0 beta Support</h3>
+<ul>
+  <li>
+    The VISA 1.0 classes reflecting the xDM 1.0 beta interfaces don't
+    support "sparse" XDM_BufDesc structures.  They support multiple
+    buffers in XDM_BufDesc, but they must start at index 0 and end at
+    index numBufs - 1.  See the xDM 1.0 beta Reference Guide for more
+    details on the sparse nature of the XDM_BufDesc structure.
+  </li>
+</ul>
+
+<h3>x86 Linux support</h3>
+<ul>
+  <li>
+    Support for "native Linux" (x86) in the examples has been disabled
+    in examples/user.bld by default.  Build validation on some Linux
+    distributions failed, and as such it was removed from the
+    examples.  (Note that the examples ran, so this appears to be
+    purely build related, and is related to the fact that different
+    distributions place codegen in different locations).  Because it's
+    a popular feature, and works on many
+    distributions, the Codec Engine libraries for x86 are still
+    distributed, but this platform is not currently officially
+    supported.  We're working to resolve the issues and restore
+    functionality in a future Codec Engine release.
+  </li>
+</ul>
+<hr>
+<h2><a name="Validation">Validation</a></h2>
+<p>
+This release was built and validated against using the following
+components:
+</p>
+<ul>
+  <li>Dual-processor configuration validated on the DaVinci EVM
+  <ul>
+    <li>DSP/BIOS Link 1.30.08.02, configured for the
+    DaVinci EVM</li>
+    <li>DSP/BIOS 5.31.01</li>
+    <li>C6x Code Generation Tools version 6.0.7</li>
+    <li>MontaVista Linux v4.0</li>
+  </ul>
+  <li>Single-processor configuration validated on:
+    <ul>
+      <li>x86 Linux, gcclib:
+        <ul>
+          <li>Red Hat Enterprise Linux 3 (SMP)</li>
+        </ul>
+      </li>
+      <li>C64+ DSP/BIOS
+        <ul>
+          <li>DSP/BIOS 5.31.01</li>
+          <li>C6x Code Generation Tools version 6.0.7</li>
+        </ul>
+      </li>
+      <li>ARM9 Linux, gcclib
+        <ul>
+          <li>MontaVista Linux v4.0</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+<h2><a name="Documentation">Documentation</a></h2>
+<p>
+The following documentation is available in this release:
+</p>
+<ul>
+  <li>Codec Engine Application Developer's Guide</li>
+  <li>Codec Engine Server Integrator's Guide</li>
+  <li>Codec Engine Algorithm Creator User's Guide</li>
+  <li>Codec Engine Application Programming Interface (API) Reference
+  Guide (HTML | CHM)</li>
+  <li>Codec Engine System Programming Interface (SPI) Reference
+  Guide (HTML | CHM)</li>
+  <li>Configuration Reference Guide</li>
+  <li>Using Adapters to Run Existing xDAIS Algorithms with Codec
+  Engine App Note</li>
+</ul>
+
+<hr>
+<h2><a name="Examples">Examples</a></h2>
+<p>Codec Engine examples and instructions are located in the
+"examples" subdirectory.
+</p>
+<ul>
+  <li>Example Build Instructions</a></li>
+</ul>
+<hr>
+<p>Last updated: November 1, 2006
+</p>
+</body>
+</html>

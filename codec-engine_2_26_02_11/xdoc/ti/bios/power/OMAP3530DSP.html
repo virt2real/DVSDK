@@ -1,0 +1,607 @@
+<html>
+<head>
+<title>module ti.bios.power.OMAP3530DSP</title>
+<meta name="description" content="DSP configuration module for the OMAP3530 device">
+<link rel="stylesheet" type="text/css" href="../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.bios.power.</span><span class="xdoc-id">OMAP3530DSP</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP2530GPP.html" title="module OMAP2530GPP"><img class="xdocHdrArrow" src="../../../Arrow_left.png"/></a></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/package.html" title="package ti.bios.power"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530GPP.html" title="module OMAP3530GPP"><img class="xdocHdrArrow" src="../../../Arrow_right.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html">index URL</a></div>
+<p class="xdocHdrSummary">DSP configuration module for the OMAP3530 device</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+</ul>
+<div class="xdocBrief">
+Configuration parameters for the Local Power Manager running
+  on the DSP core of an OMAP3530 device.
+</div>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../ti/bios/power/OMAP3530DSP-src.html"><span class="xdocLabelFile">ti/bios/power/OMAP3530DSP.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">OMAP3530DSP</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt>//&nbsp;inherits <a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html" title="ti.bios.power.ITMS320CDM644x">ti.bios.power.ITMS320CDM644x</a></div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> OMAP3530DSP = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.bios.power.OMAP3530DSP'</span>);
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><i>values of type <a class="xdocSynGo" href="#.Opersys.Cfg">OMAP3530DSP.<span class="xdoc-id">OpersysCfg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Runtime Operating System</span></span></a></i>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Opersys.Cfg">OMAP3530DSP.<span class="xdoc-id">Opersys_PrOS_DaVinci</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;PrOS on DaVinci platform</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Opersys.Cfg">OMAP3530DSP.<span class="xdoc-id">Opersys_Linux</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Linux (HLOS)</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Opersys.Cfg">OMAP3530DSP.<span class="xdoc-id">Opersys_DSPBIOS</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS</span></span></a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><i>values of type <a class="xdocSynGo" href="#.Transport.Cfg">OMAP3530DSP.<span class="xdoc-id">TransportCfg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Transport Layer used between GPP and DSP</span></span></a></i>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Transport.Cfg">OMAP3530DSP.<span class="xdoc-id">Transport_Link_PrOS_DaVinci</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS Link for PrOS on DaVinci</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.Transport.Cfg">OMAP3530DSP.<span class="xdoc-id">Transport_Link_Linux</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS Link for Linux</span></span></a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> <a class="xdocSynGo" href="#.Runtime.Context">OMAP3530DSP.<span class="xdoc-id">RuntimeContext</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;dsp runtime context buffer</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Runtime.Context"><span class="xdoc-id">len</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;length of context buffer</span></span></a> = <i><span class="xdoc-kw2">UInt32</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Runtime.Context"><span class="xdoc-id">useUserFxns</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;override save/restore functions</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Runtime.Context"><span class="xdoc-id">saveFxn</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;context save function name</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<a class="xdocSynGo" href="#.Runtime.Context"><span class="xdoc-id">restoreFxn</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;context restore function name</span></span></a> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.C.O.N.T.E.X.T_.B.U.F.F.E.R_.M.A.X_.S.I.Z.E">OMAP3530DSP.<span class="xdoc-id">CONTEXT_BUFFER_MAX_SIZE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;maximum allowable size for context buffer</span></span></a> = <i><span class="xdoc-kw2">UInt</span></i> 0x40000;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">const</span> <a class="xdocSynGo" href="#.C.P.U_.N.A.M.E">OMAP3530DSP.<span class="xdoc-id">CPU_NAME</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;cpu name, useful for adding validation checks</span></span></a> = <i><span class="xdoc-kw2">String</span></i> "DSP";
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#dsp.R.C">OMAP3530DSP.<span class="xdoc-id">dspRC</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;default value for dsp runtime context buffer</span></span></a> = <i><a class="xdoc-link" href="../../../ti/bios/power/OMAP3530DSP.html#.Runtime.Context" title="ti.bios.power.OMAP3530DSP.RuntimeContext">OMAP3530DSP.RuntimeContext</a></i> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>len: 0x40000,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>useUserFxns: <span class="xdoc-kw2">false</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>saveFxn: "",
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>restoreFxn: ""
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#edma.Channel">OMAP3530DSP.<span class="xdoc-id">edmaChannel</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;default edma channel to use for save/restore transfers</span></span></a> = <i><span class="xdoc-kw2">UInt32</span></i> 45;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#opersys">OMAP3530DSP.<span class="xdoc-id">opersys</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Define which operating system is running on the CPU (required)</span></span></a> = <i><a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Opersys.Cfg" title="ti.bios.power.ITMS320CDM644x.OpersysCfg">ITMS320CDM644x.OpersysCfg</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#proxy.For">OMAP3530DSP.<span class="xdoc-id">proxyFor</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Proxy device used for new devices</span></span></a> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#stop.Bios.Clock.On.Hibernate">OMAP3530DSP.<span class="xdoc-id">stopBiosClockOnHibernate</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;stop BIOS clock when hibernating</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#stop.Cpu.Load.Monitor.On.Hibernate">OMAP3530DSP.<span class="xdoc-id">stopCpuLoadMonitorOnHibernate</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;stop CPU load monitoring when hibernating</span></span></a> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#target.Memory.Range.Name">OMAP3530DSP.<span class="xdoc-id">targetMemoryRangeName</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;name given to target memory range for storing context data</span></span></a> = <i><span class="xdoc-kw2">String</span></i> "";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#transport">OMAP3530DSP.<span class="xdoc-id">transport</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Define which transport layer is used (required)</span></span></a> = <i><a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Transport.Cfg" title="ti.bios.power.ITMS320CDM644x.TransportCfg">ITMS320CDM644x.TransportCfg</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><a class="xdocSynGo" href="#wugen.Event.Mask">OMAP3530DSP.<span class="xdoc-id">wugenEventMask</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;WUGEN wake event mask</span></span></a> = <i><span class="xdoc-kw2">UInt32</span>[3]</i> <span class="xdoc-kw2">undefined</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../ti/bios/power/OMAP3530DSP-src.html"><span class="xdocLabelFile">ti/bios/power/OMAP3530DSP.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../ti/bios/power/package.html" title="ti.bios.power">ti.bios.power</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">OMAP3530DSP</span></go><span class="xdoc-kw1"> inherits </span><a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html" title="ti.bios.power.ITMS320CDM644x">ITMS320CDM644x</a> {
+</div>
+<div class='xdocSynHdr'>module-wide constants & types</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">enum</span> <a class="xdocSynGo" href="#.Opersys.Cfg"><span class="xdoc-id">OpersysCfg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Runtime Operating System</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Opersys.Cfg"><span class="xdoc-id">Opersys_PrOS_DaVinci</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;PrOS on DaVinci platform</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Opersys.Cfg"><span class="xdoc-id">Opersys_Linux</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Linux (HLOS)</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Opersys.Cfg"><span class="xdoc-id">Opersys_DSPBIOS</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS</span></span></a>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">enum</span> <a class="xdocSynGo" href="#.Transport.Cfg"><span class="xdoc-id">TransportCfg</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Transport Layer used between GPP and DSP</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Transport.Cfg"><span class="xdoc-id">Transport_Link_PrOS_DaVinci</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS Link for PrOS on DaVinci</span></span></a>, 
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><a class="xdocSynGo" href="#.Transport.Cfg"><span class="xdoc-id">Transport_Link_Linux</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;DSP/BIOS Link for Linux</span></span></a>
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">struct</span> <a class="xdocSynGo" href="#.Runtime.Context"><span class="xdoc-id">RuntimeContext</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;dsp runtime context buffer</span></span></a> {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">UInt32</span>&nbsp;<a class="xdocSynGo" href="#.Runtime.Context"><span class="xdoc-id">len</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;length of context buffer</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#.Runtime.Context"><span class="xdoc-id">useUserFxns</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;override save/restore functions</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Runtime.Context"><span class="xdoc-id">saveFxn</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;context save function name</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.Runtime.Context"><span class="xdoc-id">restoreFxn</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;context restore function name</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class='xdocSynHdr'>module-wide config parameters</div>
+
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">UInt</span>&nbsp;<a class="xdocSynGo" href="#.C.O.N.T.E.X.T_.B.U.F.F.E.R_.M.A.X_.S.I.Z.E"><span class="xdoc-id">CONTEXT_BUFFER_MAX_SIZE</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;maximum allowable size for context buffer</span></span></a> = 0x40000;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">readonly </span><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#.C.P.U_.N.A.M.E"><span class="xdoc-id">CPU_NAME</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;cpu name, useful for adding validation checks</span></span></a> = "DSP";
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../ti/bios/power/OMAP3530DSP.html#.Runtime.Context" title="ti.bios.power.OMAP3530DSP.RuntimeContext">OMAP3530DSP.RuntimeContext</a>&nbsp;<a class="xdocSynGo" href="#dsp.R.C"><span class="xdoc-id">dspRC</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;default value for dsp runtime context buffer</span></span></a> = {
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>len: 0x40000,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>useUserFxns: <span class="xdoc-kw2">false</span>,
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>saveFxn: "",
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>restoreFxn: ""
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt>};
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">UInt32</span>&nbsp;<a class="xdocSynGo" href="#edma.Channel"><span class="xdoc-id">edmaChannel</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;default edma channel to use for save/restore transfers</span></span></a> = 45;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Opersys.Cfg" title="ti.bios.power.ITMS320CDM644x.OpersysCfg">ITMS320CDM644x.OpersysCfg</a>&nbsp;<a class="xdocSynGo" href="#opersys"><span class="xdoc-id">opersys</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Define which operating system is running on the CPU (required)</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#proxy.For"><span class="xdoc-id">proxyFor</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Proxy device used for new devices</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#stop.Bios.Clock.On.Hibernate"><span class="xdoc-id">stopBiosClockOnHibernate</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;stop BIOS clock when hibernating</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">Bool</span>&nbsp;<a class="xdocSynGo" href="#stop.Cpu.Load.Monitor.On.Hibernate"><span class="xdoc-id">stopCpuLoadMonitorOnHibernate</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;stop CPU load monitoring when hibernating</span></span></a> = <span class="xdoc-kw2">true</span>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">String</span>&nbsp;<a class="xdocSynGo" href="#target.Memory.Range.Name"><span class="xdoc-id">targetMemoryRangeName</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;name given to target memory range for storing context data</span></span></a> = "";
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Transport.Cfg" title="ti.bios.power.ITMS320CDM644x.TransportCfg">ITMS320CDM644x.TransportCfg</a>&nbsp;<a class="xdocSynGo" href="#transport"><span class="xdoc-id">transport</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;Define which transport layer is used (required)</span></span></a>;
+</div>
+<div class="xdocSynCode">
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><tt></tt><span class="xdoc-kw1">config</span> <span class="xdoc-kw2">UInt32</span>&nbsp;<a class="xdocSynGo" href="#wugen.Event.Mask"><span class="xdoc-id">wugenEventMask</span><span class="xdocSynHoverShadow"><span class="xdocSynHover">//&nbsp;WUGEN wake event mask</span></span></a>[3];
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<div id="xdocElems">
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Opersys.Cfg"></a>
+<a class="xdocAnchor" id=".Opersys_.Pr.O.S_.Da.Vinci"></a>
+<a class="xdocAnchor" id=".Opersys_.Linux"></a>
+<a class="xdocAnchor" id=".Opersys_.D.S.P.B.I.O.S"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">enum</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">OpersysCfg</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#.Opersys.Cfg">index URL</a></div>
+<p class="xdocHdrSummary">Runtime Operating System</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><i>values of type OMAP3530DSP.<span class="xdoc-id">OpersysCfg</span></i>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> OMAP3530DSP.<span class="xdoc-id">Opersys_PrOS_DaVinci</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;PrOS on DaVinci platform</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> OMAP3530DSP.<span class="xdoc-id">Opersys_Linux</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;Linux (HLOS)</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> OMAP3530DSP.<span class="xdoc-id">Opersys_DSPBIOS</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;DSP/BIOS</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Transport.Cfg"></a>
+<a class="xdocAnchor" id=".Transport_.Link_.Pr.O.S_.Da.Vinci"></a>
+<a class="xdocAnchor" id=".Transport_.Link_.Linux"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">enum</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">TransportCfg</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#.Transport.Cfg">index URL</a></div>
+<p class="xdocHdrSummary">Transport Layer used between GPP and DSP</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><i>values of type OMAP3530DSP.<span class="xdoc-id">TransportCfg</span></i>
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> OMAP3530DSP.<span class="xdoc-id">Transport_Link_PrOS_DaVinci</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;DSP/BIOS Link for PrOS on DaVinci</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><span class="xdoc-kw1">const</span> OMAP3530DSP.<span class="xdoc-id">Transport_Link_Linux</span>;
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;DSP/BIOS Link for Linux</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".Runtime.Context"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">struct</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">RuntimeContext</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#.Runtime.Context">index URL</a></div>
+<p class="xdocHdrSummary">dsp runtime context buffer</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">var</span> <i>obj</i> = <span class="xdoc-kw1">new</span> OMAP3530DSP.<span class="xdoc-id">RuntimeContext</span>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">len</span> = <i><span class="xdoc-kw2">UInt32</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;length of context buffer</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">useUserFxns</span> = <i><span class="xdoc-kw2">Bool</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;override save/restore functions</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">saveFxn</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;context save function name</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt><i>obj</i>.<span class="xdoc-id">restoreFxn</span> = <i><span class="xdoc-kw2">String</span></i><b>&nbsp;&nbsp;...</b>
+</div>
+<div class='xdocSynSum'><tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>//&nbsp;context restore function name</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".C.O.N.T.E.X.T_.B.U.F.F.E.R_.M.A.X_.S.I.Z.E"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">CONTEXT_BUFFER_MAX_SIZE</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#.C.O.N.T.E.X.T_.B.U.F.F.E.R_.M.A.X_.S.I.Z.E">index URL</a></div>
+<p class="xdocHdrSummary">maximum allowable size for context buffer</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> OMAP3530DSP.<span class="xdoc-id">CONTEXT_BUFFER_MAX_SIZE</span> = <i><span class="xdoc-kw2">UInt</span></i> 0x40000;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id=".C.P.U_.N.A.M.E"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">CPU_NAME</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#.C.P.U_.N.A.M.E">index URL</a></div>
+<p class="xdocHdrSummary">cpu name, useful for adding validation checks</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt><span class="xdoc-kw1">const</span> OMAP3530DSP.<span class="xdoc-id">CPU_NAME</span> = <i><span class="xdoc-kw2">String</span></i> "DSP";
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="dsp.R.C"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">dspRC</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#dsp.R.C">index URL</a></div>
+<p class="xdocHdrSummary">default value for dsp runtime context buffer</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>OMAP3530DSP.<span class="xdoc-id">dspRC</span> = <i><a class="xdoc-link" href="../../../ti/bios/power/OMAP3530DSP.html#.Runtime.Context" title="ti.bios.power.OMAP3530DSP.RuntimeContext">OMAP3530DSP.RuntimeContext</a></i> {
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>len: 0x40000,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>useUserFxns: <span class="xdoc-kw2">false</span>,
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>saveFxn: "",
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt>restoreFxn: ""
+</div>
+<div class="xdocSynCode">
+<tt></tt><tt></tt>};
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="edma.Channel"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">edmaChannel</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#edma.Channel">index URL</a></div>
+<p class="xdocHdrSummary">default edma channel to use for save/restore transfers</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>OMAP3530DSP.<span class="xdoc-id">edmaChannel</span> = <i><span class="xdoc-kw2">UInt32</span></i> 45;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="opersys"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">opersys</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#opersys">index URL</a></div>
+<p class="xdocHdrSummary">Define which operating system is running on the CPU (required)</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>OMAP3530DSP.<span class="xdoc-id">opersys</span> = <i><a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Opersys.Cfg" title="ti.bios.power.ITMS320CDM644x.OpersysCfg">ITMS320CDM644x.OpersysCfg</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="proxy.For"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">proxyFor</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#proxy.For">index URL</a></div>
+<p class="xdocHdrSummary">Proxy device used for new devices</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>OMAP3530DSP.<span class="xdoc-id">proxyFor</span> = <i><span class="xdoc-kw2">String</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">To support new devices which behave the same as existing devices,
+  set this configuration parameter to a known device which can be
+  used as a proxy for the new device.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="stop.Bios.Clock.On.Hibernate"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">stopBiosClockOnHibernate</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#stop.Bios.Clock.On.Hibernate">index URL</a></div>
+<p class="xdocHdrSummary">stop BIOS clock when hibernating</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>OMAP3530DSP.<span class="xdoc-id">stopBiosClockOnHibernate</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="stop.Cpu.Load.Monitor.On.Hibernate"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">stopCpuLoadMonitorOnHibernate</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#stop.Cpu.Load.Monitor.On.Hibernate">index URL</a></div>
+<p class="xdocHdrSummary">stop CPU load monitoring when hibernating</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>OMAP3530DSP.<span class="xdoc-id">stopCpuLoadMonitorOnHibernate</span> = <i><span class="xdoc-kw2">Bool</span></i> <span class="xdoc-kw2">true</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="target.Memory.Range.Name"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">targetMemoryRangeName</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#target.Memory.Range.Name">index URL</a></div>
+<p class="xdocHdrSummary">name given to target memory range for storing context data</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>OMAP3530DSP.<span class="xdoc-id">targetMemoryRangeName</span> = <i><span class="xdoc-kw2">String</span></i> "";
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">This must be set to a valid target memory range defined in the
+  linker command file's memory section.</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="transport"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">transport</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#transport">index URL</a></div>
+<p class="xdocHdrSummary">Define which transport layer is used (required)</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>OMAP3530DSP.<span class="xdoc-id">transport</span> = <i><a class="xdoc-link" href="../../../ti/bios/power/ITMS320CDM644x.html#.Transport.Cfg" title="ti.bios.power.ITMS320CDM644x.TransportCfg">ITMS320CDM644x.TransportCfg</a></i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<a class="xdocAnchor" id="wugen.Event.Mask"></a>
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">config</span> <span class="xdoc-id">OMAP3530DSP.</span><span class="xdoc-id">wugenEventMask</span>&nbsp;&nbsp;<small><span class="xdocSynSum">//&nbsp;module-wide</span></small></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/power/OMAP3530DSP.html" title="module OMAP3530DSP"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/power/OMAP3530DSP.html#wugen.Event.Mask">index URL</a></div>
+<p class="xdocHdrSummary">WUGEN wake event mask</p>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><tt></tt>OMAP3530DSP.<span class="xdoc-id">wugenEventMask</span> = <i><span class="xdoc-kw2">UInt32</span>[3]</i> <span class="xdoc-kw2">undefined</span>;
+</div>
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:14 GMT</div>
+</div></div></body>
+</html>

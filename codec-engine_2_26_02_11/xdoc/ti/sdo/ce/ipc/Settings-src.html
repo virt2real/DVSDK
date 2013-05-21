@@ -1,0 +1,254 @@
+<html><head><title>module ti.sdo.ce.ipc.Settings</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* 
+</span>     2    <span class="comment"> * Copyright (c) 2010, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> * 
+</span>    32    <span class="comment"> */</span>
+    33    
+    34    <span class="xdoc">/*!
+</span>    35    <span class="xdoc"> *  ======== Settings ========
+</span>    36    <span class="xdoc"> *  Global Inter-Processor Communication Configuration
+</span>    37    <span class="xdoc"> */</span>
+    38    @Template(<span class="string">"./Settings.xdt"</span>)
+    39    
+    40    <span class=key>metaonly</span> <span class=key>module</span> Settings {
+    41    
+    42        <span class="xdoc">/*!
+</span>    43    <span class="xdoc">     *  ======== ipc ========
+</span>    44    <span class="xdoc">     *  Use a specific IIpc implementation.
+</span>    45    <span class="xdoc">     *
+</span>    46    <span class="xdoc">     *  This should only be used to explicitly configure the IPC to
+</span>    47    <span class="xdoc">     *  a package not provided with Codec Engine.  To use an IPC provided
+</span>    48    <span class="xdoc">     *  by Codec Engine, it's recommended to configure the IPC and OSAL
+</span>    49    <span class="xdoc">     *  together using the {<b>@link</b> ti.sdo.ce.osal.Global#runtimeEnv} config
+</span>    50    <span class="xdoc">     *  param instead of this one.
+</span>    51    <span class="xdoc">     *
+</span>    52    <span class="xdoc">     *  See {<b>@link</b> http://wiki.davincidsp.com/index.php?title=CE_Config_Updates
+</span>    53    <span class="xdoc">     *  for more details}
+</span>    54    <span class="xdoc">     */</span>
+    55        <span class=key>config</span> IIpc.Module ipc;
+    56    
+    57        <span class="xdoc">/*!
+</span>    58    <span class="xdoc">     *  ======== CommType ========
+</span>    59    <span class="xdoc">     *  Supported types of communication layers that the IPC can be built on:
+</span>    60    <span class="xdoc">     *
+</span>    61    <span class="xdoc">     *  eg DSPBIOS, DSPLINK, or posix.
+</span>    62    <span class="xdoc">     *
+</span>    63    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>    64    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>    65    <span class="xdoc">     */</span>
+    66        <span class=key>enum</span> CommType {
+    67            COMM_BIOS        = 0,   <span class="xdoc">/*! DSP/BIOS (DSP) */</span>
+    68            COMM_DSPLINKBIOS = 1,   <span class="xdoc">/*! DSPLINK + BIOS (DSP) */</span>
+    69            COMM_DSPLINK     = 2,   <span class="xdoc">/*! DSPLINK (Arm) */</span>
+    70            COMM_POSIX       = 3,   <span class="xdoc">/*! Linux */</span>
+    71            COMM_NONE        = 4    <span class="xdoc">/*! No OS */</span>
+    72        };
+    73    
+    74        <span class="xdoc">/*!
+</span>    75    <span class="xdoc">     *  ======== CommType ========
+</span>    76    <span class="xdoc">     *  The type of communication layer that the IPC is built on.
+</span>    77    <span class="xdoc">     *
+</span>    78    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>    79    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>    80    <span class="xdoc">     */</span>
+    81        <span class=key>config</span> CommType commType;
+    82    
+    83        <span class="xdoc">/*!
+</span>    84    <span class="xdoc">     *  ======== usesServer ========
+</span>    85    <span class="xdoc">     *  True if building a server. This will be used with osal.Global.os, in
+</span>    86    <span class="xdoc">     *  case app did not set commType, to try to figure out what commType
+</span>    87    <span class="xdoc">     *  should be set to.
+</span>    88    <span class="xdoc">     *
+</span>    89    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>    90    <span class="xdoc">     */</span>
+    91        <span class=key>config</span> <span class=key>bool</span> usesServer = <span class=key>false</span>;
+    92    
+    93        <span class="xdoc">/*!
+</span>    94    <span class="xdoc">     *  ======== armCommMsgSize ========
+</span>    95    <span class="xdoc">     *  Default size for the Arm-DSP communication messages (MSGQ messages).
+</span>    96    <span class="xdoc">     *
+</span>    97    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPLINK_LINUX or
+</span>    98    <span class="xdoc">     *  DSPLINK_BIOS.
+</span>    99    <span class="xdoc">     *
+</span>   100    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>   101    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   102    <span class="xdoc">     */</span>
+   103        <span class=key>config</span> UInt32 armCommMsgSize = 4 * 1024;
+   104    
+   105        <span class="xdoc">/*!
+</span>   106    <span class="xdoc">     *  ======== armCommNumMsgs ========
+</span>   107    <span class="xdoc">     *  Number of &lt;commMsgSize&gt;-sized messages used for Arm-DSP communication.
+</span>   108    <span class="xdoc">     *
+</span>   109    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPLINK_LINUX
+</span>   110    <span class="xdoc">     *
+</span>   111    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>   112    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   113    <span class="xdoc">     */</span>
+   114        <span class=key>config</span> UInt32 armCommNumMsgs = 64;
+   115    
+   116        <span class="xdoc">/*!
+</span>   117    <span class="xdoc">     *  ======== commLocateRetries ========
+</span>   118    <span class="xdoc">     *  number of times to retry Comm_locate() -- to find DSP server's MSGQ --
+</span>   119    <span class="xdoc">     *  before giving up.
+</span>   120    <span class="xdoc">     *
+</span>   121    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPLINK_LINUX
+</span>   122    <span class="xdoc">     *
+</span>   123    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>   124    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   125    <span class="xdoc">     */</span>
+   126        <span class=key>config</span> <span class=key>int</span> commLocateRetries = 20;
+   127    
+   128        <span class="xdoc">/*!
+</span>   129    <span class="xdoc">     *  ======== useLinkArbiter ========
+</span>   130    <span class="xdoc">     *  Control flag to indicate if Codec Engine should use the Link Arbiter
+</span>   131    <span class="xdoc">     *  Daemon (LAD) to arbitrate DSPLINK APIs that need arbitration.  Set to
+</span>   132    <span class="xdoc">     *  false means LAD should not be used; set to true means LAD should be
+</span>   133    <span class="xdoc">     *  used.
+</span>   134    <span class="xdoc">     *
+</span>   135    <span class="xdoc">     *  This feature may not be available on all devices.
+</span>   136    <span class="xdoc">     *
+</span>   137    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPLINK_LINUX
+</span>   138    <span class="xdoc">     *
+</span>   139    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>   140    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   141    <span class="xdoc">     */</span>
+   142        <span class=key>config</span> Bool useLinkArbiter = <span class=key>false</span>;
+   143    
+   144        <span class="xdoc">/*!
+</span>   145    <span class="xdoc">     *  ======== dspConfigureMsgqAndPool ========
+</span>   146    <span class="xdoc">     *  Set to true by default, instructs this module to generate code that
+</span>   147    <span class="xdoc">     *  configures BIOS MSGQ and POOL modules: symbols MSGQ_config and
+</span>   148    <span class="xdoc">     *  POOL_config. If set to false, and if BIOS is configured to use MSGQ,
+</span>   149    <span class="xdoc">     *  user application must define these symbols.
+</span>   150    <span class="xdoc">     *
+</span>   151    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS or
+</span>   152    <span class="xdoc">     *  runtimeEnv == DSPLINK_BIOS
+</span>   153    <span class="xdoc">     *
+</span>   154    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>   155    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   156    <span class="xdoc">     */</span>
+   157        <span class=key>config</span> <span class=key>bool</span> dspConfigureMsgqAndPool = <span class=key>true</span>;
+   158    
+   159        <span class="xdoc">/*!
+</span>   160    <span class="xdoc">     *  ======== dspUseMsgqAndPool ========
+</span>   161    <span class="xdoc">     *  If set to false, instructs Codecs Engine to cut out MSGQ and POOL
+</span>   162    <span class="xdoc">     *  references completely from the final image.
+</span>   163    <span class="xdoc">     *
+</span>   164    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS.
+</span>   165    <span class="xdoc">     *
+</span>   166    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>   167    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   168    <span class="xdoc">     */</span>
+   169        <span class=key>config</span> <span class=key>bool</span> dspUseMsgqAndPool = <span class=key>true</span>;
+   170    
+   171        <span class="xdoc">/*!
+</span>   172    <span class="xdoc">     *  ======== dspCommNumMsgQueues ========
+</span>   173    <span class="xdoc">     *  Number of message queues (that can receive and store messages) on the
+</span>   174    <span class="xdoc">     *  DSP side. Each DSP node (task) needs one message queue.
+</span>   175    <span class="xdoc">     *
+</span>   176    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS or
+</span>   177    <span class="xdoc">     *  runtimeEnv == DSPLINK_BIOS
+</span>   178    <span class="xdoc">     *
+</span>   179    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>   180    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   181    <span class="xdoc">     */</span>
+   182        <span class=key>config</span> UInt32 dspCommNumMsgQueues = 64;
+   183    
+   184        <span class="xdoc">/*!
+</span>   185    <span class="xdoc">     *  ======== dspCommUseExactMatch ========
+</span>   186    <span class="xdoc">     *  Indicates that "exact match" must be used for comm messages allocated on
+</span>   187    <span class="xdoc">     *  the DSP side.
+</span>   188    <span class="xdoc">     *
+</span>   189    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPLINK_BIOS
+</span>   190    <span class="xdoc">     *
+</span>   191    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>   192    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   193    <span class="xdoc">     */</span>
+   194        <span class=key>config</span> Bool dspCommUseExactMatch = <span class=key>true</span>;
+   195    
+   196        <span class="xdoc">/*!
+</span>   197    <span class="xdoc">     *  ======== dspCommMsgSize ========
+</span>   198    <span class="xdoc">     *  Default size for the inter-DSP communication messages (MSGQ messages).
+</span>   199    <span class="xdoc">     *
+</span>   200    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS
+</span>   201    <span class="xdoc">     *  in special circumstances.
+</span>   202    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   203    <span class="xdoc">     */</span>
+   204        <span class=key>config</span> UInt32 dspCommMsgSize = 1024;
+   205    
+   206        <span class="xdoc">/*!
+</span>   207    <span class="xdoc">     *  ======== dspCommNumMsgs ========
+</span>   208    <span class="xdoc">     *  Number of &lt;commMsgSize&gt;-sized messages used for Arm-DSP communication.
+</span>   209    <span class="xdoc">     *
+</span>   210    <span class="xdoc">     *  Applies only to configurations where runtimeEnv == DSPBIOS
+</span>   211    <span class="xdoc">     *  in special circumstances.
+</span>   212    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   213    <span class="xdoc">     */</span>
+   214        <span class=key>config</span> UInt32 dspCommNumMsgs = 64;
+   215    
+   216        <span class="xdoc">/*!
+</span>   217    <span class="xdoc">     *  ======== usePowerManagement ========
+</span>   218    <span class="xdoc">     *  If set to true, will attempt to include power-management code
+</span>   219    <span class="xdoc">     *  where applicable.
+</span>   220    <span class="xdoc">     *
+</span>   221    <span class="xdoc">     *  This feature may not be available on all devices.
+</span>   222    <span class="xdoc">     *
+</span>   223    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>   224    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   225    <span class="xdoc">     */</span>
+   226        <span class=key>config</span> <span class=key>bool</span> usePowerManagement;
+   227    
+   228        <span class="xdoc">/*!
+</span>   229    <span class="xdoc">     *  ======== powerSaveMemoryBlockName ========
+</span>   230    <span class="xdoc">     *  The name of the segment to which power should be saved; if left null,
+</span>   231    <span class="xdoc">     *  will default to defaultMemSegId.
+</span>   232    <span class="xdoc">     *
+</span>   233    <span class="xdoc">     *  This feature may not be available on all devices.
+</span>   234    <span class="xdoc">     *
+</span>   235    <span class="xdoc">     *  Now obsolete. Leave here for awhile until examples, tests are updated.
+</span>   236    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   237    <span class="xdoc">     */</span>
+   238        <span class=key>config</span> String powerSaveMemoryBlockName = <span class=key>null</span>;
+   239    
+   240        <span class=key>config</span> Bool debug = <span class=key>false</span>;
+   241    }
+   242    <span class="comment">/*
+</span>   243    <span class="comment"> *  @(#) ti.sdo.ce.ipc; 2, 0, 1,183; 12-2-2010 21:24:06; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+</span>   244    <span class="comment">
+</span>   245    <span class="comment"> */</span>
+   246    
+</pre>
+</body></html>

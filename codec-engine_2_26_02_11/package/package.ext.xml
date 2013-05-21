@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="" label="" date="" buildCount="" producerId="">
+<package name="codec_engine_2_26_02_11"
+    version="1, 0, 0"/>
+<imports>
+    <package name="ti.sdo.ce"
+        version=""/>
+    <package name="ti.sdo.ce.node"
+        version=""/>
+    <package name="ti.sdo.ce.ipc"
+        version=""/>
+    <package name="ti.sdo.ce.ipc.bios"
+        version=""/>
+    <package name="ti.sdo.ce.ipc.dsplink"
+        version=""/>
+    <package name="ti.sdo.ce.ipc.dsplink.dsp"
+        version=""/>
+    <package name="ti.sdo.ce.ipc.linux"
+        version=""/>
+    <package name="ti.sdo.ce.ipc.noOS"
+        version=""/>
+    <package name="ti.sdo.ce.osal"
+        version=""/>
+    <package name="ti.sdo.ce.osal.bios"
+        version=""/>
+    <package name="ti.sdo.ce.osal.linux"
+        version=""/>
+    <package name="ti.sdo.ce.osal.wince"
+        version=""/>
+    <package name="ti.sdo.ce.osal.wince.utils"
+        version=""/>
+    <package name="ti.sdo.ce.osal.noOS"
+        version=""/>
+    <package name="ti.sdo.ce.alg"
+        version=""/>
+    <package name="ti.sdo.ce.trace"
+        version=""/>
+    <package name="ti.sdo.ce.speech"
+        version=""/>
+    <package name="ti.sdo.ce.speech1"
+        version=""/>
+    <package name="ti.sdo.ce.video"
+        version=""/>
+    <package name="ti.sdo.ce.video1"
+        version=""/>
+    <package name="ti.sdo.ce.video2"
+        version=""/>
+    <package name="ti.sdo.ce.audio"
+        version=""/>
+    <package name="ti.sdo.ce.audio1"
+        version=""/>
+    <package name="ti.sdo.ce.global"
+        version=""/>
+    <package name="ti.sdo.ce.image"
+        version=""/>
+    <package name="ti.sdo.ce.image1"
+        version=""/>
+    <package name="ti.sdo.ce.universal"
+        version=""/>
+    <package name="ti.sdo.ce.vidtranscode"
+        version=""/>
+    <package name="ti.sdo.ce.vidanalytics"
+        version=""/>
+    <package name="ti.sdo.ce.video2.split"
+        version=""/>
+    <package name="ti.sdo.ce.bioslog"
+        version=""/>
+    <package name="ti.sdo.ce.utils"
+        version=""/>
+    <package name="ti.sdo.ce.utils.rtcfg"
+        version=""/>
+    <package name="ti.sdo.ce.utils.trace"
+        version=""/>
+    <package name="ti.sdo.ce.utils.xdm"
+        version=""/>
+    <package name="ti.dsplink.utils.lad"
+        version=""/>
+    <package name="ti.dsplink.utils.ladclient"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.viddec1_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.videnc1_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.imgdec1_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.imgenc1_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.sphdec1_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.sphenc1_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.auddec1_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.audenc1_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.auddec1_ires"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.viddec2_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.viddec_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.videnc_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.imgdec_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.imgenc_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.sphdec_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.sphenc_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.auddec_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.audenc_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.g711"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.scale"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.vidtranscode_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.vidanalytics_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.viddec2split_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.codecs.universal_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.extensions"
+        version=""/>
+    <package name="ti.sdo.ce.examples.extensions.scale"
+        version=""/>
+    <package name="ti.sdo.ce.examples.servers"
+        version=""/>
+    <package name="ti.sdo.ce.examples.servers.all_codecs"
+        version=""/>
+    <package name="ti.sdo.ce.examples.servers.all_codecs_new_config"
+        version=""/>
+    <package name="ti.sdo.ce.examples.servers.server_api_example"
+        version=""/>
+    <package name="ti.sdo.ce.examples.servers.audio1_ires"
+        version=""/>
+    <package name="ti.sdo.ce.examples.buildutils"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.video_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.image_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.speech_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.audio_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.server_api_example"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.server_trace"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.video2_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.video1_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.image1_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.speech1_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.audio1_copy.sync"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.audio1_copy.async"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.audio1_ires"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.video2split_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.vidtranscode"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.vidanalytics"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.universal_copy"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.scale"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.speech"
+        version=""/>
+    <package name="ti.sdo.ce.examples.apps.speech_copy_LAD"
+        version=""/>
+    <package name="ti.sdo.ce.wizards.genserver"
+        version=""/>
+    <package name="ti.sdo.ce.wizards.gencodecpkg"
+        version=""/>
+</imports>
+<references>
+    <package name="ti.sdo.ce.examples.codecs.audenc1_copy"
+        version="1, 0, 0, 1291267308000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="AUDENC1_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_audenc1_copy.tar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.audenc1_copy"
+        version="2, 0, 0, 1284846362911"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.wizards.gencodecpkg"
+        version="1, 0, 0, 0, 1291267722000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="Gui.xs"/>
+        <file name="Main.xs"/>
+        <file name="libparser.xs"/>
+        <file name="logic.xs"/>
+        <file name="shared_gui.xs"/>
+        <file name="ti_sdo_ce_wizards_gencodecpkg.tar"/>
+        <file name="wizard_constants.xs"/>
+        <file name="xmlOps.xs"/>
+    </package>
+    <package name="ti.sdo.ce.node"
+        version="1, 0, 0, 1291267470000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_node.tar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.viddec2_copy"
+        version="2, 0, 0, 1284846385343"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.video1_copy"
+        version="1, 0, 0, 1291267258000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_video1_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.video2split_copy"
+        version="1, 0, 0, 1291267271000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_video2split_copy.tar"/>
+    </package>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 1254957708059"
+        providerId="xdccore">
+        <file name="java/antlr.jar"/>
+        <file name="java/ecj.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/jsr173_api.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+    </package>
+    <package name="xdc.tools"
+        version="1, 0, 0, 0, 1254957706242"
+        providerId="xdccore">
+        <file name="Cmdr.xs"/>
+        <file name="ICmd.xs"/>
+        <file name="ResourceBundle.xs"/>
+    </package>
+    <package name="ti.sdo.ce.ipc.dsplink.dsp"
+        version="2, 0, 1, 1291267447000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_ipc_dsplink_dsp.tar"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0, 1254957695155"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.sphdec_copy"
+        version="1, 0, 0, 1291267352000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="SPHDEC_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_sphdec_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.bioslog"
+        version="1, 0, 1, 1291267131000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_bioslog.tar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.imgdec1_copy"
+        version="2, 0, 0, 1284846369424"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.xdais.dm.examples.viddec2split_copy"
+        version="1, 0, 0, 1284846385658"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.xdais.dm.examples.g711"
+        version="1, 0, 0, 1284846363446"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.dsplink.utils.ladclient"
+        version="1, 0, 0, 1291267111000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_dsplink_utils_ladclient.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.servers.all_codecs"
+        version="1, 0, 0, 1291267406000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_servers_all_codecs.tar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.videnc1_copy"
+        version="2, 0, 0, 1284846385989"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.osal"
+        version="2, 0, 2, 1291267470000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="Global.xs"/>
+        <file name="IOsal.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_osal.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.servers"
+        version="1, 0, 0, 1291267402000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_servers.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.audio1_ires"
+        version=""
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_apps_audio1_ires.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.viddec2_copy"
+        version="1, 0, 0, 1291267370000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="VIDDEC2_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_viddec2_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.osal.wince"
+        version="1, 0, 0, 1291267493000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_osal_wince.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.sphenc1_copy"
+        version="1, 0, 0, 1291267355000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="SPHENC1_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_sphenc1_copy.tar"/>
+    </package>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0, 1254957691859"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.sphenc1_copy"
+        version="2, 0, 0, 1284846377459"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.image"
+        version="1, 0, 3, 1291267429000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_image.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.video2_copy"
+        version="1, 0, 0, 1291267278000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_video2_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.vidanalytics_copy"
+        version="1, 0, 0, 1291267363000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="VIDANALYTICS_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_vidanalytics_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.imgdec_copy"
+        version="1, 0, 0, 1291267329000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="IMGDEC_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_imgdec_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.imgdec1_copy"
+        version="1, 0, 0, 1291267324000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="IMGDEC1_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_imgdec1_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.viddec_copy"
+        version="1, 0, 0, 1291267376000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="VIDDEC_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_viddec_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs"
+        version="1, 0, 0, 1291267294000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_codecs.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.videnc1_copy"
+        version="1, 0, 0, 1291267386000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="VIDENC1_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_videnc1_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.audio1_copy.sync"
+        version="1, 0, 0, 1291267155000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_audio1_copy_sync.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.speech_copy_LAD"
+        version="1, 0, 0, 1291267224000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_speech_copy_LAD.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.vidtranscode_copy"
+        version="1, 0, 0, 1291267388000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="VIDTRANSCODE_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_vidtranscode_copy.tar"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 1, 1254957667146"
+        providerId="xdccore">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+        <file name="xmlgen2.xs"/>
+    </package>
+    <package name="ti.xdais.dm.examples.universal_copy"
+        version="1, 0, 0, 1284846377420"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.g711"
+        version="1, 0, 0, 1291267317000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="G711DEC.xs"/>
+        <file name="G711ENC.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_g711.tar"/>
+    </package>
+    <package name="ti.sdo.ce.ipc.linux"
+        version="2, 0, 1, 1291267453000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_ipc_linux.tar"/>
+    </package>
+    <package name="xdc.bld"
+        version="1, 0, 2, 1254957676628"
+        providerId="xdccore">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0, 1254957688697"
+        providerId="xdccore">
+        <file name="Clock.xs"/>
+        <file name="Trace.xs"/>
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.sdo.ce.video1"
+        version="1, 0, 2, 1291267696000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_video1.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.sphenc_copy"
+        version="1, 0, 0, 1291267349000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="SPHENC_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_sphenc_copy.tar"/>
+    </package>
+    <package name="xdc.tools.mkpkg"
+        version="1, 0, 1, 0, 1254935178256"
+        providerId="xdccore">
+        <file name="Gen.xs"/>
+        <file name="ICmd.xs"/>
+        <file name="Main.xs"/>
+        <file name="Template.xs"/>
+    </package>
+    <package name="ti.sdo.ce.trace"
+        version="1, 0, 0, 1291267656000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_trace.tar"/>
+    </package>
+    <package name="xdc.tools.sg.widgets"
+        version=""
+        providerId="xdccore">
+        <file name="Cap.xs"/>
+        <file name="DB.xs"/>
+        <file name="Gui.xs"/>
+        <file name="PathEditor.xs"/>
+        <file name="Tab.xs"/>
+        <file name="Widget.xs"/>
+        <file name="Wizard.xs"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.universal_copy"
+        version="1, 0, 0, 1291267245000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_universal_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.imgenc1_copy"
+        version="1, 0, 0, 1291267333000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="IMGENC1_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_imgenc1_copy.tar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.imgenc1_copy"
+        version="2, 0, 0, 1284846370361"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.osal.wince.utils"
+        version="1, 0, 0, 1291267499000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_osal_wince_utils.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.speech1_copy"
+        version="1, 0, 0, 1291267215000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_speech1_copy.tar"/>
+    </package>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0, 1254957692499"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.servers.server_api_example"
+        version="1, 0, 0, 1291267418000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_servers_server_api_example.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.speech"
+        version="1, 0, 0, 1291267216000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_speech.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.imgenc_copy"
+        version="1, 0, 0, 1291267336000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="IMGENC_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_imgenc_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.speech"
+        version="1, 0, 2, 1291267510000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_speech.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps"
+        version="1, 0, 0, 1291267139000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.auddec1_ires"
+        version="1, 0, 0, 1291267301000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="AUDDEC1_IRES.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_auddec1_ires.tar"/>
+    </package>
+    <package name="ti.sdo.ce.speech1"
+        version="1, 0, 1, 1291267514000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_speech1.tar"/>
+    </package>
+    <package name="ti.sdo.ce.video2"
+        version="1, 0, 2, 1291267697000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_video2.tar"/>
+    </package>
+    <package name="ti.sdo.ce.image1"
+        version="1, 0, 1, 1291267437000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_image1.tar"/>
+    </package>
+    <package name="ti.sdo.ce.global"
+        version="1, 0, 0, 1291267421000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_global.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.auddec_copy"
+        version="1, 0, 0, 1291267311000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="AUDDEC_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_auddec_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.osal.linux"
+        version="2, 0, 1, 1291267481000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="Settings.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_osal_linux.tar"/>
+    </package>
+    <package name="ti.sdo.ce.audio"
+        version="1, 0, 2, 1291267127000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_audio.tar"/>
+    </package>
+    <package name="ti.sdo.ce.audio1"
+        version="1, 0, 1, 1291267128000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_audio1.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.videnc_copy"
+        version="1, 0, 0, 1291267387000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="VIDENC_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_videnc_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.vidtranscode"
+        version="1, 0, 1, 1291267706000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_vidtranscode.tar"/>
+    </package>
+    <package name="ti.sdo.ce.utils.xdm"
+        version="1, 0, 2, 1291267683000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_utils_xdm.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.viddec2split_copy"
+        version="1, 0, 0, 1291267379000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="VIDDEC2BACK_COPY.xs"/>
+        <file name="VIDDEC2FRONT_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_viddec2split_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.image_copy"
+        version="1, 0, 0, 1291267183000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_image_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.alg"
+        version="1, 0, 1, 1291267114000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_alg.tar"/>
+    </package>
+    <package name="ti.sdo.ce"
+        version="1, 0, 6, 1291267113000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="CERuntime.xs"/>
+        <file name="Engine.xs"/>
+        <file name="ICodec.xs"/>
+        <file name="Server.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce.tar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.auddec1_copy"
+        version="2, 0, 0, 1284846354647"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.ipc.dsplink"
+        version="2, 0, 1, 1291267454000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="IDspLinkCfg.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_ipc_dsplink.tar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.vidanalytics_copy"
+        version="2, 0, 0, 1284846378431"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.examples.buildutils"
+        version="1, 0, 0, 1291267284000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_buildutils.tar"/>
+    </package>
+    <package name="ti.sdo.ce.ipc.noOS"
+        version="2, 0, 1, 1291267454000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_ipc_noOS.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.audio1_copy.async"
+        version="1, 0, 0, 1291267147000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_audio1_copy_async.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.vidtranscode"
+        version="1, 0, 0, 1291267301000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_vidtranscode.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.extensions.scale"
+        version="1, 0, 0, 1291267402000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_extensions_scale.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.server_api_example"
+        version=""
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_server_api_example.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.scale"
+        version=""
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_scale.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.auddec1_copy"
+        version="1, 0, 0, 1291267296000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="AUDDEC1_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_auddec1_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.utils.trace"
+        version="1, 0, 1, 1291267673000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_utils_trace.tar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.vidtranscode_copy"
+        version="2, 0, 0, 1284846387148"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.video2.split"
+        version="1, 0, 0, 1291267707000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_video2_split.tar"/>
+    </package>
+    <package name="xdc.tools.sg.swt_linux"
+        version="3, 2, 0, 0, 1254957712156"
+        providerId="xdccore">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.osal.noOS"
+        version="2, 0, 1, 1291267484000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_osal_noOS.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.speech_copy"
+        version=""
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_speech_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.servers.audio1_ires"
+        version="1, 0, 0, 1291267420000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_servers_audio1_ires.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.servers.all_codecs_new_config"
+        version="1, 0, 0, 1291267411000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_servers_all_codecs_new_config.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.universal_copy"
+        version="1, 0, 0, 1291267360000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="UNIVERSAL_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_universal_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.ipc.bios"
+        version="2, 0, 1, 1291267436000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="Ipc.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_ipc_bios.tar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.examples.codecs.auddec1"
+        version="1, 0, 0, 1291166702267"
+        providerId="framework_components_2_26_00_01">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.utils.rtcfg"
+        version="1, 0, 1, 1291267672000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_utils_rtcfg.tar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.sphdec1_copy"
+        version="2, 0, 0, 1284846371554"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.wizards.genserver"
+        version="1, 0, 0, 1291267722000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="Gui.xs"/>
+        <file name="Main.xs"/>
+        <file name="logic.xs"/>
+        <file name="searchPath.xs"/>
+        <file name="shared_gui.xs"/>
+        <file name="ti_sdo_ce_wizards_genserver.tar"/>
+        <file name="wizard_constants.xs"/>
+        <file name="xmlOps.xs"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.image1_copy"
+        version="1, 0, 0, 1291267187000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_image1_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.video_copy"
+        version="1, 0, 0, 1291267279000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_video_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.server_trace"
+        version="1, 0, 0, 1291267203000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_server_trace.tar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.auddec_copy"
+        version="2, 0, 0, 1284846354623"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.osal.bios"
+        version="2, 0, 1, 1291267476000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="Settings.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_osal_bios.tar"/>
+    </package>
+    <package name="ti.sdo.ce.universal"
+        version="1, 0, 0, 1291267668000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_universal.tar"/>
+    </package>
+    <package name="ti.sdo.ce.ipc"
+        version="2, 0, 1, 1291267439000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_ipc.tar"/>
+    </package>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0, 1254957699053"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.dsplink.utils.lad"
+        version="2, 0, 0, 1291267113000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_dsplink_utils_lad.tar"/>
+    </package>
+    <package name="ti.xdais.dm.examples.viddec1_copy"
+        version="2, 0, 0, 1284846379769"
+        providerId="ce-r11x">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.vidanalytics"
+        version="1, 0, 1, 1291267688000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_vidanalytics.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.viddec1_copy"
+        version="1, 0, 0, 1291267371000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="VIDDEC1_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_viddec1_copy.tar"/>
+    </package>
+    <package name="xdc.tools.sg"
+        version="1, 0, 0, 0, 1254957709808"
+        providerId="xdccore">
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.audenc_copy"
+        version="1, 0, 0, 1291267317000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="AUDENC_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_audenc_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.vidanalytics"
+        version="1, 0, 0, 1291267245000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_vidanalytics.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.extensions"
+        version="1, 0, 0, 1291267397000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_extensions.tar"/>
+    </package>
+    <package name="xdc.services.io"
+        version="1, 0, 0, 1254957695072"
+        providerId="xdccore">
+        <file name="File.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.ce.utils"
+        version="1, 0, 0, 1291267671000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_utils.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.sphdec1_copy"
+        version="1, 0, 0, 1291267345000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="SPHDEC1_COPY.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_sphdec1_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.apps.audio_copy"
+        version="1, 0, 0, 1291267175000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="ti_sdo_ce_examples_apps_audio_copy.tar"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.scale"
+        version="1, 0, 0, 1291267335000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="SCALE_TI.xs"/>
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_examples_codecs_scale.tar"/>
+    </package>
+    <package name="ti.sdo.ce.video"
+        version="1, 0, 3, 1291267688000"
+        providerId="/db/atree/library/trees/ce/ce-r11x/src">
+        <file name="package.xs"/>
+        <file name="ti_sdo_ce_video.tar"/>
+    </package>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="etc/config.bld"/>
+        <file name="include/utils.tci"/>
+        <xdcCorePkg version="16, 0, 1, 0, 1254957675604" producerId="ndefined" buildCount="218" releaseName="xdc_corevers" label="default" date="1254957675604"/>
+    </xdcRoot>
+</references>
+<orphans>
+</orphans>
+</release>

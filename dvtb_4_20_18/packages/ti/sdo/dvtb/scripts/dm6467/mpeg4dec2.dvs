@@ -1,0 +1,39 @@
+############################################################
+# MPEG4 Decode: Read encoded file, decode and dump
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp mpeg4dec2 codec mpeg4dec
+
+# Specify the parameters
+setp mpeg4dec2 maxWidth 720
+setp mpeg4dec2 maxHeight 576
+setp mpeg4dec2 maxFrameRate 30000
+setp mpeg4dec2 maxBitRate 10000000
+setp mpeg4dec2 dataEndianness 1
+setp mpeg4dec2 forceChromaFormat 9
+setp mpeg4dec2 display_delay 0
+setp mpeg4dec2 reset_vIMCOP_every_frame 1
+setp mpeg4dec2 decodeHeader 0
+setp mpeg4dec2 displayWidth 0
+setp mpeg4dec2 frameSkipMode 0
+setp mpeg4dec2 frameOrder 0
+setp mpeg4dec2 newFrameFlag 0
+setp mpeg4dec2 mbDataFlag 0
+setp mpeg4dec2 outloopDeblocking 0
+setp mpeg4dec2 outloopDeRinging 0
+setp mpeg4dec2 numFrames 100
+
+getp mpeg4dec2
+
+
+# Trigger the decode+display scenario
+func mpeg4dec2 -s ../../input/mpeg4SP/amelie_4_720x480_420p_732frames_128000bps.mpeg4 -t test_720x480.yuv
+

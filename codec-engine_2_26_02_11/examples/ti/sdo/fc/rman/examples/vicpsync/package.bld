@@ -1,0 +1,194 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ *  ======== package.bld ========
+ *  Build script for RMAN IRES VICP protocol example.
+ */
+
+var Build = xdc.useModule('xdc.bld.BuildEnvironment');
+var Pkg = xdc.useModule('xdc.bld.PackageContents');
+
+/* bin/ is a generated directory that 'xdc clean' should remove */
+Pkg.generatedFiles = [ "bin/" ];
+
+Pkg.attrs.exportAll = true;
+
+var buildPlatforms = {
+    UCArm9:             ["DM355", "DM365"],
+    MVArm9:             ["DM355", "DM365"],
+};
+
+Pkg.otherFiles = [
+    "package.bld"
+];
+
+// list of programs to build
+var progArray = new Array();
+
+progArray.push(
+    {
+        name: "vicpsync",
+        icw: [ "v5T" ],
+        sources: ["ires_algorithm_vicp2", "app"],
+        platforms: [
+            "ti.platforms.evmDM355",
+        ],
+        execAttrs: {
+            cfgScript: "ires_algorithm.cfg",
+        }
+    }
+);
+
+progArray.push(
+    {
+        name: "vicpsync",
+        icw: [ "v5T" ],
+        sources: ["ires_algorithm_vicp2", "app"],
+        platforms: [
+            "ti.platforms.evmDM365"
+        ],
+        execAttrs: {
+            cfgScript: "ires_algorithm.cfg",
+            defs:      " -DDM365 "
+        }
+    }
+);
+
+
+/* Specifies which programs run on which platforms */
+/*
+var realPlatformName = {
+    "2430"      : "ti.platforms.sdp2430",
+    "dm6446"    : "ti.platforms.evmDM6446",
+    "dm648"     : "ti.platforms.evmDM648",
+    "C6455"     : "ti.platforms.dsk6455",
+    "dm6467"    : "ti.platforms.evmDM6467",
+    "3430"      : "ti.platforms.sdp3430",
+    "3530"      : "ti.platforms.evm3530",
+    "DM365"     : "ti.platforms.evmDM365",
+    "DM355"     : "ti.platforms.evmDM355",
+    "PC"        : "host.platforms.PC",
+};
+*/
+
+Pkg.uses = ["ti/bios/include"];
+
+// check if profile specified in XDCARGS.  'arguments' is XDCARGS
+// e.g., XDCARGS="... profile=debug ..."
+var cmdlProf = (" " + arguments.join(" ") + " ").match(/ profile=([^ ]+) /);
+cmdlProf = cmdlProf != null ? cmdlProf[1] : null;
+
+// check if platform specified in XDCARGS.  'arguments' is XDCARGS
+// e.g., XDCARGS="... platform=ti.platforms.evm3530 ..."
+var cmdlPlat = (" " + arguments.join(" ") + " ").match(/ platform=([^ ]+) /);
+cmdlPlat = cmdlPlat != null ? cmdlPlat[1] : null;
+
+
+// ==== loop over array of programs ====
+for (var i = 0; i < progArray.length; i++) {
+    var prog = progArray[i];
+
+    // ==== loop over all targets in build array ====
+    for (var j = 0; j < Build.targets.length; j++) {
+        var targ = Build.targets[j];
+
+        // skip target if not compatible with source code
+        if ("icw" in prog) {
+            var skipTarget = true;
+            var targIsaChain = "/" + targ.getISAChain().join("/") + "/";
+            for (var k = 0; k < prog.icw.length; k++) {
+                if (targIsaChain.match("/" + prog.icw[k] + "/")) {
+                    skipTarget = false;
+                    break;
+                }
+            }
+            if (skipTarget) continue;
+        }
+
+        // skip target if it does not generate code for the given isa
+        if ("isas" in prog) {
+            var skipTarget = true;
+            var list = "/" + prog.isas.join("/") + "/";
+            if (list.match("/" + targ.isa + "/")) {
+                skipTarget = false;
+            }
+            if (skipTarget) continue;
+        }
+
+        // use platforms from the program or the target
+        var platAry = ("platforms" in prog) ? prog.platforms : targ.platforms;
+
+        // ==== loop over all platforms ====
+        for (var k = 0; k < platAry.length; k++) {
+            platName = platAry[k];
+
+            // skip platform if different than specified on command line
+            if ((cmdlPlat != null) && (cmdlPlat != platName)) {
+                continue;
+            }
+
+            // ==== loop over all profiles ====
+            for (var profile in targ.profiles) {
+
+                // skip profile if different than specified on command line
+                if ((cmdlProf != null) && (profile != cmdlProf)) {
+                    continue;
+                }
+
+                // name = bin/platform/extra/profile/name.a+suffix
+                var name = "bin/" +
+                    // replace all ':' and '.' with '_' in platform name
+                    platName.replace(/\:/g, "_").replace(/\./g, "_") + '/'
+                    // insert profile as last directory (just before name)
+                    + prog.name.replace(/([^\/]+)$/, profile + "/" + "$1");
+
+                // pass along executable attributes specified in program array
+                var execAttrs = "execAttrs" in prog ? prog.execAttrs : {};
+
+                // must set profile explicitly
+                execAttrs.profile = profile;
+
+                // build the program
+                var pgm = Pkg.addExecutable(name, targ, platName, execAttrs);
+
+                /* add the source files */
+                pgm.addObjects(prog.sources);
+            }
+        }
+    }
+}
+/*
+ *  @(#) ti.sdo.fc.rman.examples.vicpsync; 1, 0, 0,101; 12-1-2010 17:26:01; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

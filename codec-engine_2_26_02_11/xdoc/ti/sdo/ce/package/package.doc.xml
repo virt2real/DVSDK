@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='ti.sdo.ce' nodoc='0' root='../../../' summary='Codec+Engine+Core+Runtime'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eti.sdo.ce%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+6%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='ICodec' kind='interface' nodoc='0' metaonly='1' summary='Codec+Engine+algorithm+interface'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fpackage.html%22+title%3D%22ti.sdo.ce%22%3Eti.sdo.ce%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EICodec%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Einterface%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EICodec%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <docSect name='details'>
+            <docPara content='All+codecs+supported+by+the+codec+engine+must+implement+this+interface.%0A++This+interface+provides+the+Codec+Engine+runtime+the+following+information%3A'/>
+            <docPara content='%3COL%3E%3CLI%3E+How+much+stack+space+is+required+by+the+algorithm+during+instance%0A++++++++creation+%28so+the+runtime+can+allocate+an+appropriate+stack%29.%0A%3C%2FLI%3E%3CLI%3E+How+much+stack+space+is+required+by+the+algorithm+during+execution%0A++++++++%28so+the+runtime+can+allocate+an+appropriate+stack%29.%0A%3C%2FLI%3E%3CLI%3E+The+algorithm%27s+entry+points+for+the+IALG+interface+%28so+the+runtime%0A++++++++can+lookup+the+algorithm%27s+functions+based+on+a+string+name%29.%0A%3C%2FLI%3E%3CLI%3E+The+algorithm%27s+entry+points+for+the+optional+IDMA3+interface%0A++++++++%28so+the+runtime+can+allocate+DMA+resources+for+the+algorithm+at%0A+++++++++runtime%29.%0A%3C%2FLI%3E%3CLI%3E+The+entry+points+for+%22stubs%22+and+%22skeletons%22+in+the+case+that+the%0A++++++++algorithm+is+to+be+run+on+a+remote+processor.%0A%3C%2FLI%3E%3CLI%3E+The+size+of+scratch+memory+required+by+the+algorithm.%0A%3C%2FLI%3E%3C%2FOL%3E'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='codecClassConfigurable' anchor='codec.Class.Configurable' altext='ti.sdo.ce.ICodec.codecClassConfigurable' nodoc='1' external='1' overrides='0' readonly='1' instance='0' summary='True+if+the+class+to+which+the+codec+belongs+%28VISA%2C+or+custom+if+not%0A++a+VISA%29+has+some+special+run-time+config+params'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcodecClassConfigurable%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+            </decl>
+            <decl kind='config' name='frameRate' anchor='frame.Rate' altext='ti.sdo.ce.ICodec.frameRate' nodoc='1' external='1' overrides='0' readonly='1' instance='0' summary='Smallest+supported+frame+rate+%28frames+%2F+second%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EframeRate%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+is+used+to+compute+a+default+priority+assignment+for+algorithm%0A++threads+in+a+DSP+Server.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='ialgFxns' anchor='ialg.Fxns' altext='ti.sdo.ce.ICodec.ialgFxns' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='Name+of+xDAIS+alg+function+table'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EialgFxns%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='All+xDAIS+algorithms+must+define+an+IALG_Fxns+structure+that%0A++contains+implementations+of+the+IALG+methods.++This+configuration%0A++parameter+is+simply+the+extern+name+of+this+structure.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='idma3Fxns' anchor='idma3.Fxns' altext='ti.sdo.ce.ICodec.idma3Fxns' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='Name+of+xDAIS+alg+IDMA3+Interface+function+table'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eidma3Fxns%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='All+xDAIS+algorithms+that+use+DMA+must+define+an+IDMA3_Fxns+structure%0A++containing+the+pointers+to+functions+implementatng+the+IDMA3+interface.%0A++If+algorithm+does+not+use+DMA+this+structure+does+not+have+to+be%0A++defined.'/>
+                    <docPara content='This+configuration+parameter+is+simply+the+extern+name+of+this%0A++structure+when+defined%2C+null+otherwise.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='iresFxns' anchor='ires.Fxns' altext='ti.sdo.ce.ICodec.iresFxns' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='Name+of+xDAIS+alg+IRES+Interface+function+table'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EiresFxns%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='All+xDAIS+algorithms+that+use+an+IRES+resource+must+define+an%0A++IRES_Fxns+structure+containing+the+pointers+to+functions%0A++implementatng+the+IRES+interface.%0A++If+algorithm+does+not+use+an+IRES+resource+this+structure+does+not%0A++have+to+be+defined.'/>
+                    <docPara content='This+configuration+parameter+is+simply+the+extern+name+of+this%0A++structure+when+defined%2C+null+otherwise.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22ICodec.html%23ialg.Fxns%22+title%3D%22ialgFxns%22%3EialgFxns%3C%2Fa%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22ICodec.html%23idma3.Fxns%22+title%3D%22idma3Fxns%22%3Eidma3Fxns%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='rpcProtocolVersion' anchor='rpc.Protocol.Version' altext='ti.sdo.ce.ICodec.rpcProtocolVersion' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='Version+of+the+Protocol+used+between+the+stubFxns+and+the+serverFxns'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErpcProtocolVersion%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+is+set+by+a+particular+implementation+of+a+stub%2Fskeleton+RPC+pair%2C%0A++and+is+used+at+runtime+to+ensure+the+protocol+matches.++This+is%0A++important%2C+for+example%2C+to+ensure+that+the+protocol+used+by+skeletons%0A++built+into+a+server+matches+that+used+by+the+stubs+built+into+the%0A++application.++Specifically%2C+this+is+typically+changed+when+the%0A++marshalling%2Funmarshalling+message+format+changes.'/>
+                    <docPara content='This+is+generally+not+configured+by+application+or+server+config%0A++scripts%2C+but+rather+by+developers+of+VISA-like+API+class+extensions.'/>
+                    <docPara content='This+rpcProtocolVersion+is+built+into+the+local+application+executable%2C%0A++as+well+as+the+remote+server%27s+executable.'/>
+                    <docPara content='Developers+of+class+extensions+should+ensure+this+config+parameter+is%0A++set+appropriately+by+each+release+of+their+stubs%2Fskeletons.++If+a+new%0A++protocol+is+introduced%2C+implying+that+updating+both+would+result+in%0A++error%2C+the+number+should+be+incremented.'/>
+                    <docPara content='There+is+no+%22backward-compatibility%22+requirement+in+rpcProtocolVersion.%0A++If+the+version+is+different%2C+regardless+of+whether+it%27s+larger+or%0A++smaller%2C+the+creation+of+algorithms+of+this+class+will+fail.'/>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='isLocal' anchor='is.Local' altext='ti.sdo.ce.ICodec.isLocal' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Require+this+codec+to+run+%22locally%22'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EisLocal%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+configuration+parameter+determines+whether+or+not+the%0A++application+requires+the+codec%27s+library+in+order+to+link.%0A++For+example%2C+this+parameter+is+set+to+false+in+the+case+that%0A++the+application+is+running+on+a+different+CPU+than+the+codec.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='serverFxns' anchor='server.Fxns' altext='ti.sdo.ce.ICodec.serverFxns' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Name+of+skeleton+fxn+table'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverFxns%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='All+algorithm%27s+that+can+run+on+a+remote+processor+must+specify+a+set%0A++of+%22stub%22+functions+that+marshall+arguments+to+send+to+the+remote%0A++process+that+runs+corresponding+%22skeletons%22+to+do+the+actual%0A++processing.++This+configuration+parameter+defines+the+entry+point+for%0A++this+algorithm%27s+the+skeletons+%28which+run+on+the+remote+processor%29.'/>
+                    <docPara content='This+is+generally+not+configured+by+application+or+server+config%0A++scripts%2C+but+rather+by+developers+of+VISA-like+API+class+extensions.%0A++However%2C+an+application+or+server+integrator+could+use+this+config%0A++param+to+configure+in+custom+serverFxns.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22ICodec.html%23stub.Fxns%22+title%3D%22stubFxns%22%3EstubFxns%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='stubFxns' anchor='stub.Fxns' altext='ti.sdo.ce.ICodec.stubFxns' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Name+of+stubs+fxn+table'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstubFxns%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='All+algorithm%27s+that+can+run+on+a+remote+processor+must+specify+a+set%0A++of+%22stub%22+functions+that+marshall+arguments+to+send+to+the+remote%0A++process+that+runs+corresponding+%22skeletons%22+to+do+the+actual%0A++processing.++This+configuration+parameter+defines+the+entry+point+for%0A++this+algorithm%27s+the+stubs+%28which+run+on+the+local+processor%29.'/>
+                    <docPara content='This+is+generally+not+configured+by+application+or+server+config%0A++scripts%2C+but+rather+by+developers+of+VISA-like+API+class+extensions.%0A++However%2C+an+application+or+server+integrator+could+use+this+config%0A++param+to+configure+in+custom+stubFxns.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22ICodec.html%23server.Fxns%22+title%3D%22serverFxns%22%3EserverFxns%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='useCache' anchor='use.Cache' altext='ti.sdo.ce.ICodec.useCache' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='If+set+to+true%2C+the+codec%27s+memory+requests+will+be+allocated+from%0A++cacheable+memory.+If+set+to+false%2C+the+memory+will+be+allocated+from%0A++non-cached+memory.+If+this+is+not+set%2C+the%0A++ti.sdo.ce.alg.Settings.useCache+flag+will+determine+whether+the%0A++codec%27s+memory+will+be+allocated+from+cached+or+non-cached+memory'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseCache%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+            </decl>
+            <decl kind='config' name='uuid' anchor='uuid' altext='ti.sdo.ce.ICodec.uuid' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Unique+algorithm+implementation+ID'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Euuid%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+integer+must+be+a+unique+ID+for+every+algorithm+in+a+%22system%22%2C%0A++where+the+%22system%22+includes+all+possible+DSP+Servers.'/>
+                    <docPara content='This+id+is+used+by+the+Codec+Engine+APIs+to+identify+the+algorithm%0A++implementation+that+will+create+an+instance+on+a+DSP+Server.'/>
+                    <docPara content='If+a+codec+doesn%27t+explicitly+configure+this+parameter%2C+a+%22very+likely%0A++unique%22+ID+will+be+generated.++It+is+recommended+that+codecs+not%0A++explicitly+configure+this+parameter%2C+and+leave+it+to+the+system.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='getCreationStackSize' anchor='get.Creation.Stack.Size' altext='ti.sdo.ce.ICodec.getCreationStackSize' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Get+the+maximum+required+stack+size+%28in+octets%29+for+this+algorithm%0A++during+algorithm+instance+creation'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgetCreationStackSize%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%23.Module%22+title%3D%22xdc.cfg.Program.Module%22%3EProgram.Module%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprog%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+method+is+called+during+DSP+Server+configuration+and+is+used+to%0A++ensure+that+the+instance+creation+thread+on+the+server+has+sufficient%0A++stackspace+to+instantiate+the+algorithm.++This+stack+size+is+typically%0A++the+greater+of+the+stack+sizes+required+by+the+algorithm%27s%0A++algNumAlloc%28%29%2C+algAlloc%28%29%2C+or+algInit%28%29+methods.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='getDaramScratchSize' anchor='get.Daram.Scratch.Size' altext='ti.sdo.ce.ICodec.getDaramScratchSize' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Get+the+maximum+scratch+size+%28in+octets%29+required+for+this+algorithm%0A++from+DARAM+space'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgetDaramScratchSize%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%23.Module%22+title%3D%22xdc.cfg.Program.Module%22%3EProgram.Module%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprog%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+method+is+called+during+DSP+Server+configuration+and+is+used+to%0A++ensure+that+sufficient+scratch+space+is+configured+for+the+specified%0A++set+of+algorithms.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='getSaramScratchSize' anchor='get.Saram.Scratch.Size' altext='ti.sdo.ce.ICodec.getSaramScratchSize' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Get+the+maximum+scratch+size+%28in+octets%29+required+for+this+algorithm%0A++from+SARAM+space'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgetSaramScratchSize%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%23.Module%22+title%3D%22xdc.cfg.Program.Module%22%3EProgram.Module%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprog%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+method+is+called+during+DSP+Server+configuration+and+is+used+to%0A++ensure+that+sufficient+scratch+space+is+configured+for+the+specified%0A++set+of+algorithms.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='getStackSize' anchor='get.Stack.Size' altext='ti.sdo.ce.ICodec.getStackSize' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Get+the+maximum+stack+size+%28in+octets%29+required+for+this+algorithm%0A++during+its+execution+phase'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgetStackSize%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%23.Module%22+title%3D%22xdc.cfg.Program.Module%22%3EProgram.Module%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprog%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+method+is+called+during+DSP+Server+configuration+and+is+used+to%0A++ensure+that+threads+on+the+server+have+sufficient+stackspace+to+run%0A++the+algorithm.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='getUUID' anchor='get.U.U.I.D' altext='ti.sdo.ce.ICodec.getUUID' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Get+a+uuid+for+this+codec'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgetUUID%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <docSect name='details'>
+                    <docPara content='This+method+is+used+to+get+the+uuid+rather+than+reading+the+uuid%0A++config+parameter%3B+this+allows+the+algorithm+producer+to+let+the%0A++system+generate+a+uuid+from+the+algorithm%27s+name.'/>
+                    <docPara content='Individual+algorithm%27s+should+not+implement+this+methods%3B+the+default%0A++%28base%29+implementation+provided+in+the+ti.sdo.ce+package+should+be%0A++sufficient.'/>
+                </docSect>
+            </decl>
+        </group>
+    </unit>
+    <unit name='CERuntime' kind='module' nodoc='1' metaonly='1' summary='Global+Codec+Engine+Runtime'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fpackage.html%22+title%3D%22ti.sdo.ce%22%3Eti.sdo.ce%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECERuntime%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECERuntime%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+CERuntime+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.ce.CERuntime%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='addInitCode' anchor='add.Init.Code' altext='ti.sdo.ce.CERuntime.addInitCode' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='adds+code+%28text%29+to+be+called+from+CERuntime%27s+init%28%29+function'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EaddInitCode%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EinitCodeLines%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EaddEarly%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ECERuntime.%3Cspan+class%3D%22xdoc-id%22%3EaddInitCode%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EinitCodeLines%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EaddEarly%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+    </unit>
+    <unit name='Engine' kind='module' nodoc='0' metaonly='1' summary='Engine+Configuration+interface'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fpackage.html%22+title%3D%22ti.sdo.ce%22%3Eti.sdo.ce%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EEngine%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EEngine%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Engine+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.ce.Engine%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl kind='const' name='MAXGROUPID' anchor='.M.A.X.G.R.O.U.P.I.D' altext='ti.sdo.ce.Engine.MAXGROUPID' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Maximum+group+id'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMAXGROUPID%3C%2Fspan%3E%3C%2Fgo%3E+%3D+20%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EEngine.%3Cspan+class%3D%22xdoc-id%22%3EMAXGROUPID%3C%2Fspan%3E%3C%2Fgo%3E+%3D+20%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='AlgDesc' anchor='.Alg.Desc' altext='ti.sdo.ce.Engine.AlgDesc' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Algorithm+descriptor'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EAlgDesc%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='Alg+nick-name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='The+alg+implementation' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FICodec.html%23.Module%22+title%3D%22ti.sdo.ce.ICodec.Module%22%3EICodec.Module%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emod%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Run+algorithm+locally' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elocal%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Alg+group+ID+for+sharing+resources' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgroupId%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EEngine.%3Cspan+class%3D%22xdoc-id%22%3EAlgDesc%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='Alg+nick-name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='The+alg+implementation' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emod%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FICodec.html%23.Module%22+title%3D%22ti.sdo.ce.ICodec.Module%22%3EICodec.Module%3C%2Fa%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='Run+algorithm+locally' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elocal%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='Alg+group+ID+for+sharing+resources' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgroupId%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='FIELDS'>
+                    <docChild name='name' summary='This+string+specifies+the+%22local%22+name+used+by+the%0A++++++++++++++++++application+to+identify+the+algorithm+to+instantiate'>
+                    </docChild>
+                    <docChild name='mod' summary='This+field+is+a+module+reference+that+identifies+the%0A++++++++++++++++++actual+module+implementing+the+algorithm+to+instantiate'>
+                    </docChild>
+                    <docChild name='local' summary='If+true%2C+the+algorithm+should+be+instantiated+on+the%0A++++++++++++++++++%22local%22+CPU%3B+otherwise+the+server+will+create+an%0A++++++++++++++++++instance+of+the+algorithm+identifed+by+%3Ctt%3Emod%3C%2Ftt%3E.'>
+                    </docChild>
+                    <docChild name='groupId' summary='This+id+specifies+which+resource+sharing+group%0A++++++++++++++++++this+codec+will+be+placed+into.++This+%27group%27+concept%0A++++++++++++++++++is+used+by+the+framework+to+ensure+algorithms+in+the%0A++++++++++++++++++same+group+don%27t+pre-empt+each+other+and+corrupt+the%0A++++++++++++++++++shared+resources.'>
+                        <docPara content='Note+that+this+parameter+is+ignored+if+%3Ctt%3Elocal%3C%2Ftt%3E+is+not%0A++++++++++++++++++TRUE.'/>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='Each+engine+%22contains%22+multiple+algorithms+described+by+AlgDesc%0A++structures.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='local' anchor='local' altext='ti.sdo.ce.Engine.local' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Default+engine+used+by+clients+of+the+VISA+API%27s+that+pass+NULL+for%0A++the+engine+handle'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FEngine.html%23.Instance%22+title%3D%22ti.sdo.ce.Engine.Instance%22%3EEngine.Instance%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elocal%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EEngine.%3Cspan+class%3D%22xdoc-id%22%3Elocal%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FEngine.html%23.Instance%22+title%3D%22ti.sdo.ce.Engine.Instance%22%3EEngine.Instance%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='noCommName' anchor='no.Comm.Name' altext='ti.sdo.ce.Engine.noCommName' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Create+a+Comm+which+doesn%27t+pollute+the+Comm+namespace'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EnoCommName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EEngine.%3Cspan+class%3D%22xdoc-id%22%3EnoCommName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Some+ipc+implementations+%28not+all%21%29+support+creating+an+unnamed%0A++Comm.++DSP+Link+is+adding+support+for+this%2C+the+WinCE+port+will+have%0A++support+before+the+Linux+port.++To+help+bridge+the+gap+until+all%0A++Link+ports+have+this+feature%2C+and+so+we+continue+to+work+with+Link%0A++releases+that+don%27t+have+this+feature%2C+CE+is+temporarily+introducing%0A++this+%3Ctt%3EnoCommName%3C%2Ftt%3E+boolean.'/>
+                    <docPara content='The+default+behavior+is+%22as+before%22%2C+but+for+users+that+require%0A++unnamed+Comm+creates+%28e.g.+kernel+mode+WinCE+users%29%2C+they+can+set%0A++this+config+param+to+%3Ctt%3Etrue%3C%2Ftt%3E+-+on+ipc+ports+that+support+it%28%21%29.'/>
+                    <docPara content='The+intent+is+to+remove+this+%60noCommName+config+param+as+soon+as%0A++all+Link+ports+support+it%2C+so+don%27t+get+attached+to+it%21'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='close' anchor='close' altext='ti.sdo.ce.Engine.close' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Internal+close+method+%28see+package.xs%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Eclose%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EEngine.%3Cspan+class%3D%22xdoc-id%22%3Eclose%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='createFromServer' anchor='create.From.Server' altext='ti.sdo.ce.Engine.createFromServer' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Create+an+Engine+from+a+Server+package'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EcreateFromServer%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EengineName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverExecutable%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverPackage%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EEngine.%3Cspan+class%3D%22xdoc-id%22%3EcreateFromServer%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EengineName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverExecutable%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverPackage%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='engineName' summary='Name+to+be+used+for+the+engine+created'>
+                    </docChild>
+                    <docChild name='serverExecutable' summary='Path+to+the+server+executable+%28including+the%0A++++++++++++++++++++++++++++executable%29%2C+relative+from+server+package'>
+                    </docChild>
+                    <docChild name='serverPackage' summary='Name+of+the+server+package'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='Given+a+Server+package+and+an+executable+in+that+package%2C+this+method%0A++creates+an+Engine+instance+and+initializes+it+from+details+in+the%0A++Server+provided.'/>
+                    <docPara content='An+Engine+instance+created+this+way+has+all+the+codecs+that+exist%0A++in+the+Server+executable+-+with+codec+names+matching+the+names%0A++configured+into+the+Server%2C+and+is+configured+to+use+an+appropriate%0A++memory+map+and+other+DSP-specific+info.'/>
+                    <docPara content='Example+usage%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++var+myEngine+%3D+Engine.createFromServer%28%22video_copy%22%2C%0A+++++++++++++++++++++%22.%2Fvideo_copy.x64P%22%2C%0A+++++++++++++++++++++%22ti.sdo.ce.examples.servers.video_copy%22%29%3B%0A%0A%3C%2FPRE%3E'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='An+Engine+instance+of+the+same+type+as%0A++++++++++++++++++++++++++++if+%3Ca+class%3D%22xdoc-link%22+href%3D%22Engine.html%23per-instance_creation%22+title%3D%22create%22%3Ecreate%28%29%3C%2Fa%3E+were+called.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='getDspMemTableFromServer' anchor='get.Dsp.Mem.Table.From.Server' altext='ti.sdo.ce.Engine.getDspMemTableFromServer' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Get+a+remote+processor%27s+memory+table+from+a+Server+package'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EgetDspMemTableFromServer%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverExecutable%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverPackage%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EEngine.%3Cspan+class%3D%22xdoc-id%22%3EgetDspMemTableFromServer%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverExecutable%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EserverPackage%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='serverExecutable' summary='Path+to+the+server+executable+%28including+the%0A++++++++++++++++++++++++++++executable%29%2C+relative+from+server+package'>
+                    </docChild>
+                    <docChild name='serverPackage' summary='Name+of+the+server+package'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='Given+a+Server+package+and+an+executable+in+that+package%2C+this+method%0A++returns+an+object+that+contains+the+Server%27s+memory+map+details.'/>
+                    <docPara content='For+example%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++myEngine.armDspLinkConfig.memTable+%3D%0A++++++Engine.getDspMemTableFromServer%28%0A+++++++++++++++++++++%22.%2Fvideo_copy.x64P%22%2C%0A+++++++++++++++++++++%22ti.sdo.ce.examples.servers.video_copy%22+%29%3B%0A%0A%3C%2FPRE%3E'/>
+                    <docPara content='There+is+no+need+to+use+this+method+when+the+preferred%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22Engine.html%23create.From.Server%22+title%3D%22createFromServer%22%3EcreateFromServer%28%29%3C%2Fa%3E+method+is+used+first.'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='A+DSP+memory+table+%22map%22+object%2C+of+type%0A++++++++++++++++++++++++++++ti.sdo.ce.osal.Global.%0A++++++++++++++++++++++++++++ArmDspLinkConfigMemTableEntry%5Bstring%5D'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2FcreateFromServer%2Fpackage.html%22+title%3D%22createFromServer%22%3EcreateFromServer%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='hasServer' anchor='has.Server' altext='ti.sdo.ce.Engine.hasServer' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Returns+true+if+there+is+an+engine+with+a+remote+alg%2C+or+an+engine%0A++that+uses+a+server'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EhasServer%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EEngine.%3Cspan+class%3D%22xdoc-id%22%3EhasServer%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='usesIDMA3' anchor='uses.I.D.M.A3' altext='ti.sdo.ce.Engine.usesIDMA3' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Returns+true+if+there+is+an+engine+with+a+local+alg+that+implements%0A+idma3Fxns.+This+function+is+used+to+determine+whether+or+not+DMAN3%0A+library+needs+to+be+linked+in'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EusesIDMA3%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EEngine.%3Cspan+class%3D%22xdoc-id%22%3EusesIDMA3%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='usesIRES' anchor='uses.I.R.E.S' altext='ti.sdo.ce.Engine.usesIRES' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Returns+true+if+there+is+an+engine+with+a+local+alg+that+implements%0A+iresFxns.+This+function+is+used+to+determine+whether+or+not+RMAN%0A+library+needs+to+be+linked+in'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EusesIRES%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EEngine.%3Cspan+class%3D%22xdoc-id%22%3EusesIRES%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='validate' anchor='validate' altext='ti.sdo.ce.Engine.validate' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Internal+validate+method+%28see+package.xs%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Evalidate%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EEngine.%3Cspan+class%3D%22xdoc-id%22%3Evalidate%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='$instance'>
+            <synopSpec>
+                <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A'/>
+                <line blank='1' always='0'/>
+            </synopSpec>
+        </group>
+        <group name='per-instance config parameters'>
+            <synopMeta>
+                <line tab='0' comment='Instance+config-params+object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Engine.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                <line tab='1' comment='Array+of+algorithms+available+in+an+Engine' anchor='algs' altext='ti.sdo.ce.Engine.algs' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ealgs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FEngine.html%23.Alg.Desc%22+title%3D%22ti.sdo.ce.Engine.AlgDesc%22%3EEngine.AlgDesc%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                <line tab='1' comment='ARM-side+DSP+Link+configuration' anchor='arm.Dsp.Link.Config' altext='ti.sdo.ce.Engine.armDspLinkConfig' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EarmDspLinkConfig%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc.ArmDspLinkConfig%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                <line tab='1' comment='Optional+name+of+DSP+Link+configuration' anchor='link.Cfg' altext='ti.sdo.ce.Engine.linkCfg' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkCfg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                <line tab='1' comment='Name+of+this+engine' anchor='name' altext='ti.sdo.ce.Engine.name' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                <line tab='1' comment='Optional+name+of+the+remote+server' anchor='server' altext='ti.sdo.ce.Engine.server' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eserver%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+            </synopMeta>
+            <decl spacer='1'/>
+            <decl kind='config' name='algs' anchor='algs' altext='ti.sdo.ce.Engine.algs' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Array+of+algorithms+available+in+an+Engine'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FEngine.html%23.Alg.Desc%22+title%3D%22ti.sdo.ce.Engine.AlgDesc%22%3EEngine.AlgDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ealgs%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Engine.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Ealgs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FEngine.html%23.Alg.Desc%22+title%3D%22ti.sdo.ce.Engine.AlgDesc%22%3EEngine.AlgDesc%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='An+array+of+algorithms+which+this+Engine+instance+provides.++A+mix%0A++of+local+and+remote+algorithms+can+be+specified+in+this+array.'/>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22Engine.html%23create.From.Server%22+title%3D%22createFromServer%22%3EcreateFromServer%28%29%3C%2Fa%3E+can+be+used+to+populate%0A++this+array+with+algorithms+configured+into+a+remote+Server.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2FcreateFromServer%2Fpackage.html%22+title%3D%22createFromServer%22%3EcreateFromServer%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='armDspLinkConfig' anchor='arm.Dsp.Link.Config' altext='ti.sdo.ce.Engine.armDspLinkConfig' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='ARM-side+DSP+Link+configuration'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc.ArmDspLinkConfig%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EarmDspLinkConfig%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Engine.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EarmDspLinkConfig%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fipc%2FIIpc.html%23.Arm.Dsp.Link.Config%22+title%3D%22ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig%22%3EIIpc.ArmDspLinkConfig%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+ARM-side+DSP+Link+configuration.++If+left+undefined+will+revert+to%0A++ti.sdo.ce.ipc.DEFAULT_ARMDSPLINKCONFIG%2C+but+with+a+warning'/>
+                    <docPara content='Applies+only+to+CE+configurations+where%0A++osal.Global.runtimeEnv+%3D%3D+DSPLINK_LINUX'/>
+                    <docPara content='There+is+no+need+to+use+this+method+when+the+preferred%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22Engine.html%23create.From.Server%22+title%3D%22createFromServer%22%3EcreateFromServer%28%29%3C%2Fa%3E+method+is+used+first.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2FcreateFromServer%2Fpackage.html%22+title%3D%22createFromServer%22%3EcreateFromServer%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='linkCfg' anchor='link.Cfg' altext='ti.sdo.ce.Engine.linkCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Optional+name+of+DSP+Link+configuration'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkCfg%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Engine.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3ElinkCfg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+only+needed+when+LAD+is+used+to%0A++arbitrate+control+of+the+DSP+server'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='name' anchor='name' altext='ti.sdo.ce.Engine.name' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Name+of+this+engine'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Engine.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+string+provided+by+the+application+in+the+%3Ctt%3EEngine_open%28%29%3C%2Ftt%3E+call.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='server' anchor='server' altext='ti.sdo.ce.Engine.server' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Optional+name+of+the+remote+server'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eserver%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Engine.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Eserver%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+only+necessary+when+there+are+algorithms+configured%0A++to+run+remotely+-+i.e.%2C+their+%3Ctt%3Elocal%3C%2Ftt%3E+field+is+set+to+false.'/>
+                    <docPara content='Engines+containing+these+remote+algorithms+will+need+to+set%0A++this+%3Ctt%3Eserver%3C%2Ftt%3E+parameter+to+the+name+of+the+binary+which+should%0A++be+loaded+on+the+remote+processor.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='per-instance creation'>
+            <synopSpec>
+                <line tab='0' comment='Create+an+instance-object' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecreate%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FEngine.html%23.Alg.Desc%22+title%3D%22ti.sdo.ce.Engine.AlgDesc%22%3EEngine.AlgDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ealgs%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%29%3B'/>
+            </synopSpec>
+            <synopMeta>
+                <line elem='1'/>
+                <line tab='0' comment='Allocate+instance+config-params' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Engine.%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FEngine.html%23per-instance_config_parameters%22+title%3D%22ti.sdo.ce.Engine.Params%22%3EParams%3C%2Fa%3E%3B'/>
+                <line tab='0' comment='Assign+individual+configs' content='params.%3Ci%3Econfig%3C%2Fi%3E+%3D+%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                <line blank='1' always='0'/>
+                <line elem='0'/>
+                <line tab='0' comment='Create+an+instance-object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+inst+%3D+Engine.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecreate%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FEngine.html%23.Alg.Desc%22+title%3D%22ti.sdo.ce.Engine.AlgDesc%22%3EEngine.AlgDesc%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ealgs%3C%2Fspan%3E%3C%2Fgo%3E%2C+params+%29%3B'/>
+            </synopMeta>
+            <docSect name='details'>
+                <docPara content='Parameters%3A'/>
+                <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Ename%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++Name+of+this+engine%3B+this+name+is+used+by+clients+via+the%0A++++++++++%3Ctt%3EEngine_open%28%29%3C%2Ftt%3E+API+to+identify+the+collection+of+algorithms%0A++++++++++available.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Ealgs%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++Array+of+algorithms+this+engine+supports%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Eserver%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++Optional+name+of+the+DSP+Server%3B+this+name+is+used+%28if%0A++++++++++necessary%29+to+load+and+start+any+associated+DSP+CPUs+required%0A++++++++++to+support+this+Engine+instance%0A+++++%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            </docSect>
+        </group>
+        <group name='per-instance functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='Server' kind='module' nodoc='0' metaonly='1' summary='DSP+Server+Configuration+interface'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fpackage.html%22+title%3D%22ti.sdo.ce%22%3Eti.sdo.ce%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EServer%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EServer%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Server+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.ce.Server%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='enum' name='SkelCachingPolicy' anchor='.Skel.Caching.Policy' altext='ti.sdo.ce.Server.SkelCachingPolicy' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Caching+behavior+that+all+skeletons+will+use'>
+                <decl kind='enumval' name='LOCALBUFFERINVWB' anchor='.L.O.C.A.L.B.U.F.F.E.R.I.N.V.W.B'/>
+                <decl kind='enumval' name='WBINVALL' anchor='.W.B.I.N.V.A.L.L'/>
+                <decl kind='enumval' name='NONE' anchor='.N.O.N.E'/>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eenum%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ESkelCachingPolicy%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='Invalidate+before+process%2C+writeback+after' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ELOCALBUFFERINVWB%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='Writeback+invalidate+all+after+process' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EWBINVALL%3C%2Fspan%3E%3C%2Fgo%3E%2C+'/>
+                    <line tab='1' comment='No+cache+management+of+buffers' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ENONE%3C%2Fspan%3E%3C%2Fgo%3E'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Ci%3Evalues+of+type+%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3ESkelCachingPolicy%3C%2Fspan%3E%3C%2Fgo%3E%3C%2Fi%3E'/>
+                    <line tab='1' comment='Invalidate+before+process%2C+writeback+after' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3ELOCALBUFFERINVWB%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='Writeback+invalidate+all+after+process' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3EWBINVALL%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='No+cache+management+of+buffers' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3ENONE%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='AlgDesc' anchor='.Alg.Desc' altext='ti.sdo.ce.Server.AlgDesc' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Algorithm+descriptor'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EAlgDesc%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='alg+nick-name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='alg+that+implements+skeletons' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FICodec.html%23.Module%22+title%3D%22ti.sdo.ce.ICodec.Module%22%3EICodec.Module%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emod%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='thread+properties+for+each+alg+instance' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FServer.html%23.Thread.Attrs%22+title%3D%22ti.sdo.ce.Server.ThreadAttrs%22%3EServer.ThreadAttrs%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EthreadAttrs%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='group+id+of+the+algorithm' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgroupId%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3EAlgDesc%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='alg+nick-name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='alg+that+implements+skeletons' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emod%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FICodec.html%23.Module%22+title%3D%22ti.sdo.ce.ICodec.Module%22%3EICodec.Module%3C%2Fa%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='thread+properties+for+each+alg+instance' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EthreadAttrs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FServer.html%23.Thread.Attrs%22+title%3D%22ti.sdo.ce.Server.ThreadAttrs%22%3EServer.ThreadAttrs%3C%2Fa%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='group+id+of+the+algorithm' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgroupId%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='FIELDS'>
+                    <docChild name='name' summary='This+string+specifies+the+%22local%22+name+used+by+the%0A++++++++++++++++++server+to+generate+instance+names'>
+                    </docChild>
+                    <docChild name='mod' summary='This+field+is+a+module+reference+that+identifies+the%0A++++++++++++++++++actual+module+implementing+the+algorithm+to+instantiate.%0A++++++++++++++++++This+module+reference+is+often+acquired+by+a+call+to%0A++++++++++++++++++%3Ctt%3Exdc.useModule%28%29%3B%3C%2Ftt%3E+like+this%3A'>
+                        <docPara content='%3CPRE+class%3D%22Example%22%3E++++++++++++++++++++++modReference+%3D+xdc.useModule%28%27package.Module%27%29%3B%0A%3C%2FPRE%3E'/>
+                    </docChild>
+                    <docChild name='threadAttrs' summary='This+structure+defines+attributes+of+the+%22server%22%0A++++++++++++++++++thread+that+will+handle+instance+processing%0A++++++++++++++++++requests%3B+e.g.%2C+stack+size+and+priority.'>
+                        <docPara content='%3CUL%3E%3CLI%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23.Thread.Attrs%22+title%3D%22ThreadAttrs%22%3EthreadAttrs.stackSize%3C%2Fa%3E%3A++This%0A++++++++++++++++++++++field+is+optional+when+configuring%0A++++++++++++++++++++++an+algorithm+in+a+server%2C+though+strongly%0A++++++++++++++++++++++recommended.++Stack+overrun+is+a+very+common%0A++++++++++++++++++++++cause+of+system+instability.++If+it%27s+not+supplied%0A++++++++++++++++++++++by+the+server+integrator%27s+script%2C+the+stack+size%0A++++++++++++++++++++++returned+by+the+codec%27s%0A++++++++++++++++++++++%3Ca+class%3D%22xdoc-link%22+href%3D%22ICodec.html%23get.Stack.Size%22+title%3D%22ICodec.getStackSize%22%3EICodec.getStackSize%28%29%3C%2Fa%3E+method+will+be%0A++++++++++++++++++++++added+to+the+value+of%0A++++++++++++++++++++++%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23stack.Size.Pad%22+title%3D%22stackSizePad%22%3EstackSizePad%3C%2Fa%3E.%0A%3C%2FLI%3E%3CLI%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23.Thread.Attrs%22+title%3D%22ThreadAttrs%22%3EthreadAttrs.stackMemId%3C%2Fa%3E%3A++This%0A++++++++++++++++++++++field+is+required+when+configuring%0A++++++++++++++++++++++an+algorithm+in+a+server.%0A%3C%2FLI%3E%3CLI%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23.Thread.Attrs%22+title%3D%22ThreadAttrs%22%3EthreadAttrs.priority%3C%2Fa%3E%3A++This%0A++++++++++++++++++++++field+is+optional+%28though+strongly+recommended%29%0A+++++++++++++++++++++++when+configuring+an+algorithm+in+a+server.%0A++++++++++++++++++++++If+it%27s+not+supplied+by+the+server+integrator%27s%0A++++++++++++++++++++++script%2C+a+default+priority+will+be+assigned%2C+and+a%0A++++++++++++++++++++++remark+will+be+printed+to+the+console+during+server%0A++++++++++++++++++++++configuration+to+indicate+which+priority+was%0A++++++++++++++++++++++assigned+to+the+algorithm.++Note+that+this+priority%0A++++++++++++++++++++++can+be+overridden+at+runtime+by+the+application%3B%0A++++++++++++++++++++++see+the+various+%3Ctt%3E*_create%28%29%3C%2Ftt%3E+VISA+APIs+for+more%0A++++++++++++++++++++++details.%0A%3C%2FLI%3E%3C%2FUL%3E'/>
+                    </docChild>
+                    <docChild name='groupId' summary='This+id+specifies+which+resource+sharing+group%0A++++++++++++++++++this+codec+will+be+placed+into.++The+system%0A++++++++++++++++++integrator+must+ensure+that+codecs+within+the+same%0A++++++++++++++++++group+can+not+pre-empt+each+other.'>
+                        <docPara content='A+common+technique+for+assigning+groupId%27s+in%0A++++++++++++++++++systems+where+same-priority+tasks+don%27t+pre-empt%0A++++++++++++++++++each+other+%28e.g.+DSP%2FBIOS%29+is+to+use+the+task+priority.%0A++++++++++++++++++Some+systems+do+not+allow+sharing+resources.++In%0A++++++++++++++++++those+systems%2C+this+parameter+is+ignored.'/>
+                        <docPara content='Note+that+this+parameter+is+ignored+if+%22local%22+is+not%0A++++++++++++++++++TRUE.'/>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+structure+describes+the+execution+context+provided+by%0A++the+server+for+an+algorithm+module.'/>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='ThreadAttrs' anchor='.Thread.Attrs' altext='ti.sdo.ce.Server.ThreadAttrs' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Thread+attributes'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EThreadAttrs%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='minimum+stack+size+required+for+this+thread' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstackSize%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='MEM+seg+id+for+the+thread%27s+stack' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstackMemId%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='priority+of+the+thread' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Epriority%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3EThreadAttrs%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='minimum+stack+size+required+for+this+thread' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstackSize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='MEM+seg+id+for+the+thread%27s+stack' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstackMemId%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='priority+of+the+thread' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Epriority%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+structure+defines+the+thread+attrubutes+for+any+threads+created%0A++by+the+RMS+thread%3B+see+Server.threadAttrs.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl kind='config' name='MAXPRI' anchor='.M.A.X.P.R.I' altext='ti.sdo.ce.Server.MAXPRI' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='Maximum+priority+that+a+thread+can+assume'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMAXPRI%3C%2Fspan%3E%3C%2Fgo%3E+%3D+15%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3EMAXPRI%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E+15%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='All+threads+must+have+a+priority+value+greater+than+or+equal+to%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23.M.I.N.P.R.I%22+title%3D%22MINPRI%22%3EServer.MINPRI%3C%2Fa%3E+and+less+than+or+equal+to%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23.M.A.X.P.R.I%22+title%3D%22MAXPRI%22%3EServer.MAXPRI%3C%2Fa%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='MINPRI' anchor='.M.I.N.P.R.I' altext='ti.sdo.ce.Server.MINPRI' nodoc='0' external='1' overrides='0' readonly='1' instance='0' summary='Minimum+priority+that+a+thread+can+assume'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMINPRI%3C%2Fspan%3E%3C%2Fgo%3E+%3D+1%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3EMINPRI%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E+1%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='All+threads+must+have+a+priority+value+greater+than+or+equal+to%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23.M.I.N.P.R.I%22+title%3D%22MINPRI%22%3EServer.MINPRI%3C%2Fa%3E+and+less+than+or+equal+to%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23.M.A.X.P.R.I%22+title%3D%22MAXPRI%22%3EServer.MAXPRI%3C%2Fa%3E.'/>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='algs' anchor='algs' altext='ti.sdo.ce.Server.algs' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Table+of+all+algorithms+supported+by+this+DSP+Server'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FServer.html%23.Alg.Desc%22+title%3D%22ti.sdo.ce.Server.AlgDesc%22%3EServer.AlgDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ealgs%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3Ealgs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FServer.html%23.Alg.Desc%22+title%3D%22ti.sdo.ce.Server.AlgDesc%22%3EServer.AlgDesc%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='See+%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23.Alg.Desc%22+title%3D%22AlgDesc%22%3EAlgDesc%3C%2Fa%3E+documentation+for+more+details.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='autoGenScratchSizeArrays' anchor='auto.Gen.Scratch.Size.Arrays' altext='ti.sdo.ce.Server.autoGenScratchSizeArrays' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+automatic+generation+of+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Ffc%2Fdskt2%2FDSKT2.html%22+title%3D%22ti.sdo.fc.dskt2.DSKT2%22%3EDSKT2%3C%2Fa%3E%0A++scratch+group+size+arrays'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EautoGenScratchSizeArrays%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3EautoGenScratchSizeArrays%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+0%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+configuration+flag+enables%2Fdisables+automatic+generation+of%0A++the+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Ffc%2Fdskt2%2FDSKT2.html%23.D.A.R.A.M_.S.C.R.A.T.C.H_.S.I.Z.E.S%22+title%3D%22ti.sdo.fc.dskt2.DSKT2.DARAM_SCRATCH_SIZES%22%3Eti.sdo.fc.dskt2.DSKT2.DARAM_SCRATCH_SIZES%3C%2Fa%3E+and%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Ffc%2Fdskt2%2FDSKT2.html%23.S.A.R.A.M_.S.C.R.A.T.C.H_.S.I.Z.E.S%22+title%3D%22ti.sdo.fc.dskt2.DSKT2.SARAM_SCRATCH_SIZES%22%3Eti.sdo.fc.dskt2.DSKT2.SARAM_SCRATCH_SIZES%3C%2Fa%3E+scratch+group+sizes%0A++arrays.'/>
+                    <docPara content='When+enabled+%281%29%2C+the+arrays+will+be+automatically+generated+during%0A++Server+configuration%2C+based+upon+the%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22ICodec.html%23get.Daram.Scratch.Size%22+title%3D%22ICodec.getDaramScratchSize%22%3EICodec.getDaramScratchSize%28%29%3C%2Fa%3E+and%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22ICodec.html%23get.Saram.Scratch.Size%22+title%3D%22ICodec.getSaramScratchSize%22%3EICodec.getSaramScratchSize%28%29%3C%2Fa%3E+methods+of+the+configured+set+of%0A++algorithms.'/>
+                    <docPara content='When+disabled+%280%29%2C+the+engine+integrator+needs+to+manually+configure%0A++the+scratch+group+sizes+arrays.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='skelCachingPolicy' anchor='skel.Caching.Policy' altext='ti.sdo.ce.Server.skelCachingPolicy' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Caching+behavior+that+all+skeletons+will+use'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FServer.html%23.Skel.Caching.Policy%22+title%3D%22ti.sdo.ce.Server.SkelCachingPolicy%22%3EServer.SkelCachingPolicy%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EskelCachingPolicy%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3EskelCachingPolicy%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FServer.html%23.Skel.Caching.Policy%22+title%3D%22ti.sdo.ce.Server.SkelCachingPolicy%22%3EServer.SkelCachingPolicy%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='stackSizePad' anchor='stack.Size.Pad' altext='ti.sdo.ce.Server.stackSizePad' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Pad+applied+to+unconfigured%2C+CE-created+threads'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstackSizePad%3C%2Fspan%3E%3C%2Fgo%3E+%3D+8192%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3EstackSizePad%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E+8192%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+pad+is+only+applied+to+algorithm+stacks+that+are+not+configured%2C%0A++as+well+as+the+%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23thread.Attrs%22+title%3D%22threadAttrs%22%3EServer+thread%3C%2Fa%3E+if+it+is+not%0A++configured.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='threadAttrs' anchor='thread.Attrs' altext='ti.sdo.ce.Server.threadAttrs' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Thread+attributes+for+the+Server+daemon+thread'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FServer.html%23.Thread.Attrs%22+title%3D%22ti.sdo.ce.Server.ThreadAttrs%22%3EServer.ThreadAttrs%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EthreadAttrs%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3EthreadAttrs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2FServer.html%23.Thread.Attrs%22+title%3D%22ti.sdo.ce.Server.ThreadAttrs%22%3EServer.ThreadAttrs%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='A+single+Server+thread+is+created+within+each+DSP+Server.++This+thread%0A++accepts+requests+to+create%2Fdestroy+algorithm+instances.'/>
+                    <docPara content='This+thread+is+sometimes+referred+to+as+the+Resource+Manager+Server%0A++%28RMS%29+thread.'/>
+                    <docPara content='The+%3Ctt%3EthreadAttrs.stackSize%3C%2Ftt%3E+field+is+optional+when+configuring+a%0A++server%2C+though+strongly+recommended.++Stack+overrun+is+a+very+common%0A++cause+of+system+instability.++If+the+%3Ctt%3EthreadAttrs.stackSize%3C%2Ftt%3E+field+is%0A++not+assigned+by+the+server+integrator%27s+script%2C+a+default+value+of%0A++1K+%281024+bytes%29+will+be+added+to+the+value+of%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23stack.Size.Pad%22+title%3D%22stackSizePad%22%3EstackSizePad%3C%2Fa%3E+and+used.'/>
+                    <docPara content='The+%3Ctt%3EthreadAttrs.priority%3C%2Ftt%3E+field+is+optional+when+configuring+a%0A++server.++If+it+is+not+assigned%2C+by+the+server+integrator%27s+script%2C+a%0A++default+value+of+%3Ca+class%3D%22xdoc-link%22+href%3D%22Server.html%23.M.I.N.P.R.I%22+title%3D%22MINPRI%22%3EMINPRI%3C%2Fa%3E+will+be+used.'/>
+                    <docPara content='The+%3Ctt%3EthreadAttrs.stackMemId%3C%2Ftt%3E+field+is+optional+when+configuring+a%0A++server.++If+it+is+not+assigned%2C+by+the+server+integrator%27s+script%2C+a%0A++default+value+of+0+will+be+used.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='traceBufferSize' anchor='trace.Buffer.Size' altext='ti.sdo.ce.Server.traceBufferSize' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='%28DEPRECATED%29+Size+of+the+server+trace+buffer%2C+in+MAUs'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EtraceBufferSize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3EtraceBufferSize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E+0%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Trace+buffer+size+should+be+set+via+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fosal%2FGlobal.html%23trace.Buffer.Size%22+title%3D%22ti.sdo.ce.osal.Global.traceBufferSize%22%3Eti.sdo.ce.osal.Global.traceBufferSize%3C%2Fa%3E.++Changing%0A++traceBufferSize+here+is+currently+supported+for+backward%0A++compatibility%2C+but+will+not+be+supported+in+the+future.'/>
+                    <docPara content='The+server+trace+buffer+is+a+circular+buffer+of+characters+written%0A++to+by+clients+of+the+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fosal%2Fpackage.html%22+title%3D%22ti.sdo.ce.osal%22%3Eti.sdo.ce.osal%3C%2Fa%3E+Trace+interface+-%0A++and+read+by+the+Engine_*Trace%28%29+methods.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='close' anchor='close' altext='ti.sdo.ce.Server.close' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='internal+close+method+%28see+package.xs%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Eclose%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3Eclose%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='validate' anchor='validate' altext='ti.sdo.ce.Server.validate' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='internal+validate+method+%28see+package.xs%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Evalidate%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EServer.%3Cspan+class%3D%22xdoc-id%22%3Evalidate%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+    </unit>
+    <unit name='Settings' kind='module' nodoc='0' metaonly='1' summary='Global+configuration+settings+for+all+Codec+Engine+packages'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fpackage.html%22+title%3D%22ti.sdo.ce%22%3Eti.sdo.ce%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ESettings%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ESettings%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Settings+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.ce.Settings%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='This+module+provides+high-level+configuration+settings+for+all%0A++Codec+Engine+packages.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='checked' anchor='checked' altext='ti.sdo.ce.Settings.checked' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+checked+support+for+CE+extensions+which+support+it'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Echecked%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ESettings.%3Cspan+class%3D%22xdoc-id%22%3Echecked%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Enabling+this+will+result+in+slower+library+execution%2C%0A++but+it+will+provide+extra%0A++parameter+validation+and+trace+statements.++It+is+recommended%0A++that+this+be+enabled+during+early+development+%28and+occasionally%0A++thereafter%21%29+to+catch+common+usage+errors.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <unit name='VISA' kind='module' nodoc='1' metaonly='1' summary='VISA+module+configuration+interface'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fpackage.html%22+title%3D%22ti.sdo.ce%22%3Eti.sdo.ce%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EVISA%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EVISA%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+VISA+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.ce.VISA%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='localOnly' anchor='local.Only' altext='ti.sdo.ce.VISA.localOnly' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='if+true%2C+all+VISA+codecs+are+local'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElocalOnly%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EVISA.%3Cspan+class%3D%22xdoc-id%22%3ElocalOnly%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <docSect name='details'>
+        <docPara content='This+package+provides+the+top-level+Engine+APIs%3B+i.e.%2C+the+APIs+that+are%0A++algorithm+independent.++This+package+also+provides+the+SPIs+%28System%0A++Programming+Interfaces%29+used+by+individual+algorithms+runnable%0A++via+the+Codec+Engine.'/>
+        <docPara content='For+information+on+using+debug+libraries+when+linking+your+executable%2C%0A++see+the+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fti%2Fsdo%2Fce%2Fglobal%2FSettings.html%23profile%22+title%3D%22ti.sdo.ce.global.Settings.profile%22%3Eti.sdo.ce.global.Settings.profile%3C%2Fa%3E+config+param.'/>
+    </docSect>
+</package>

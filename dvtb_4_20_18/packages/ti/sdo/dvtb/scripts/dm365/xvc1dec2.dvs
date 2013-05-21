@@ -1,0 +1,53 @@
+############################################################
+# video decode and dump
+#
+# Please ensure that you set the appropriate codec and 
+# change the path of input/output files used here with the 
+# path of input/output files required to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp vc1dec2 codec                      vc1dec2
+
+
+# specify the parameters
+setp vc1dec2 maxHeight             1088      
+setp vc1dec2 maxWidth              1920   
+setp vc1dec2 maxFrameRate          30000
+setp vc1dec2 maxBitRate            10485760 
+setp vc1dec2 dataEndianness        1        
+setp vc1dec2 forceChromaFormat     9 
+setp vc1dec2 decodeHeader          0        
+setp vc1dec2 displayWidth          0        
+setp vc1dec2 frameSkipMode         0        
+setp vc1dec2 frameOrder            0        
+setp vc1dec2 newFrameFlag          0      
+setp vc1dec2 mbDataFlag            0        
+setp vc1dec2 display_delay         1 
+setp vc1dec2 rcvParseInLib         1  
+setp vc1dec2 streamType            0 
+setp vc1dec2 outloopDeblocking     0 
+setp vc1dec2 reset_HDVICP_every_frame 1 
+setp vc1dec2 numFrames             30 
+# Configure VPBE parameters
+#setp vpbe standard 3
+#setp vpbe output 3
+#setp vpbe opMode 1
+
+#setp vpbe cropEnable 0
+#setp vpbe cropCapLeft 0
+#setp vpbe cropCapTop 32
+#setp vpbe cropCapWidth 720
+#setp vpbe cropCapHeight 700
+
+getp h264dec2
+getp vpbe
+
+# Trigger the decode + playback scenario
+#func h264dec2 -s <input stream name>
+
+# Trigger the decode + dump scenario
+func vc1dec2 -s The_Rules_of_Attraction_1080.wmv.rcv -t test.yuv

@@ -1,0 +1,32 @@
+############################################################
+# Read from file and decode using audio decoder
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the audio decoder to be used
+setp aachedec1 codec aachedec
+
+# Specify the speech parameters
+setp aachedec1 outputPCMWidth 16
+setp aachedec1 pcmFormat 1
+setp aachedec1 dataEndianness 1
+setp aachedec1 desiredChannelMode 1
+setp aachedec1 downSampleSbrFlag 0
+setp aachedec1 sixChannelMode 1 
+setp aachedec1 enablePS 0
+setp aachedec1 ulSamplingRateIdx 3
+setp aachedec1 nProfile 0
+setp aachedec1 bRawFormat 0
+setp aachedec1 pseudoSurroundEnableFlag 1
+setp aachedec1 enableARIBDownmix 0
+setp aachedec1 inbufsize 2880
+setp aachedec1 outbufsize 4608
+
+# Trigger the decode+playback scenario
+func aachedec1 -s ./data/sounds/davincieffect_lc.aac

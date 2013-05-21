@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='xdc.tools.closure' nodoc='1' root='../../../' summary='Utility+that+creates+a+closed+bundle'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Erequires%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Fpath%2Fpackage.html%22+title%3D%22xdc.tools.path%22%3Exdc.tools.path%3C%2Fa%3E%3B'/>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Erequires%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Frepoman%2Fpackage.html%22+title%3D%22xdc.tools.repoman%22%3Exdc.tools.repoman%3C%2Fa%3E%3B'/>
+    <line blank='1' always='0'/>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc.tools.closure%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+0%2C+0%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='Main' kind='module' nodoc='0' metaonly='1' summary='Command+implementation' inherits='xdc.tools.ICmd'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Fclosure%2Fpackage.html%22+title%3D%22xdc.tools.closure%22%3Exdc.tools.closure%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMain%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%22+title%3D%22xdc.tools.ICmd%22%3EICmd%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMain%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%22+title%3D%22xdc.tools.ICmd%22%3Exdc.tools.ICmd%3C%2Fa%3E'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Main+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27xdc.tools.closure.Main%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='The+purpose+of+this+tool+is+to+build+a+bundle+containing+all+packages%0A++loaded+in+the+process+of+configuring+an+application.+The+bundle+is+%0A++built+in+a+user-selected+repository%2C+which+can+be+then+relocated+to%0A++a+different+location+or+to+a+different+host%2C+where+the+application%0A++being+configured+can+be+recompiled+and+relinked.'/>
+            <docPara content='The+closure+tool+can+run+only+after+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Fconfiguro%2Fpackage.html%22+title%3D%22xdc.tools.configuro%22%3Exdc.tools.configuro%3C%2Fa%3E+runs%0A++and+finishes+the+configuration+step.+Then%2C+%60xdc.tools.closure%27+detects%0A++all+packages+involved+in+the+configuration+and+copies+them+to+a+new%0A++repository.+All+absolute+paths+in+the+relevant+generated+files+that+%0A++could+be+accessed+by+the+user%27s+makefile%2C+when+the+application+is%0A++rebuilt%2C+are+transformed+into+the+paths+relative+to+the+the+directory%0A++containing+the+closed+bundle.'/>
+            <docPara content='Some+files+in+the+copied+packages+are+deleted+to+keep+the+size+of%0A++the+closed+bundle+manageable.+The+default+settings+delete+only+selected%0A++files%2C+but+a+user+has+an+option+of+requesting+aggressive+filtering+of%0A++files%2C+which+leaves+in+the+closed+bundle+only+header+files+and%0A++libraries+referenced+by+linker+command+files.'/>
+        </docSect>
+        <docSect name='Examples'>
+            <docPara content='xs+xdc.tools.configuro+-t+gnu.targets.arm.GCArmv6+-o+configPkg+--cb%0A+++++++++++++++++++++++++memory.cfg%0A++xs+xdc.tools.closure+-d+D%3A%2Fbundle+C%3A%2Fexamples%2Fmemory%2FconfigPkg'/>
+            <docPara content='%3CDL%3E%3CDD%3E++After+%3Ctt%3Exdc.tools.configuro%3C%2Ftt%3E+creates+a+configuration+in+%3Ctt%3EconfigPkg%3C%2Ftt%3E%2C%0A++%3Ctt%3Exdc.tools.closure%3C%2Ftt%3E+gathers+all+packages+loaded+during+the+%0A++configuration+in+a+repository+located+in+D%3A%2Fbundle%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='usage' anchor='usage' altext='xdc.tools.closure.Main.usage' nodoc='0' external='1' overrides='1' readonly='0' instance='0' summary='Usage+for+this+command' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23usage%22+title%3D%22xdc.tools.ICmd.usage%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eoverride+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eusage%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%3D+%255B'/>
+                    <line tab='1' content='%2527%255B-v%255D%2B%255B-f%255D%2B%255B-i%2Bpkg1%2B%255B-i%2Bpkg2%2B...%255D%255D%2B%255B-d%2Bdst_dir%255D%2Bpackage_base_dir%2527'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Eusage%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B'/>
+                    <line tab='1' content='%2527%255B-v%255D%2B%255B-f%255D%2B%255B-i%2Bpkg1%2B%255B-i%2Bpkg2%2B...%255D%255D%2B%255B-d%2Bdst_dir%255D%2Bpackage_base_dir%2527'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='exec' anchor='exec' altext='xdc.tools.closure.Main.exec' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='%27xs%27+script+entry+point' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23exec%22+title%3D%22xdc.tools.ICmd.exec%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Eexec%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Eexec%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='main' anchor='main' altext='xdc.tools.closure.Main.main' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='%27xs%27+shell+entry+point' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23main%22+title%3D%22xdc.tools.ICmd.main%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Emain%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Emain%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='$instance'>
+            <synopSpec>
+                <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A'/>
+                <line blank='1' always='0'/>
+            </synopSpec>
+        </group>
+        <group name='per-instance config parameters'>
+            <synopMeta>
+                <line tab='0' comment='Instance+config-params+object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                <line tab='1' comment='Perform+aggressive+filtering' anchor='agg.Filter' altext='xdc.tools.closure.Main.aggFilter' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EaggFilter%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Name+of+the+destination+directory' anchor='destination' altext='xdc.tools.closure.Main.destination' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edestination%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522%2522%3B'/>
+                <line tab='1' comment='Additional+packages+to+be+included+in+the+bundle' anchor='includes' altext='xdc.tools.closure.Main.includes' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eincludes%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B%2B%255D%3B'/>
+                <line tab='1' comment='Print+informative+messages+during+execution' anchor='verbose.Flag' altext='xdc.tools.closure.Main.verboseFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EverboseFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+            </synopMeta>
+            <decl spacer='1'/>
+            <decl kind='config' name='aggFilter' anchor='agg.Filter' altext='xdc.tools.closure.Main.aggFilter' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Perform+aggressive+filtering'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EaggFilter%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EaggFilter%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='destination' anchor='destination' altext='xdc.tools.closure.Main.destination' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Name+of+the+destination+directory'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edestination%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Edestination%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522%2522%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='includes' anchor='includes' altext='xdc.tools.closure.Main.includes' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Additional+packages+to+be+included+in+the+bundle'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eincludes%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%3D+%255B%2B%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3Eincludes%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B%2B%255D%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='verboseFlag' anchor='verbose.Flag' altext='xdc.tools.closure.Main.verboseFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Print+informative+messages+during+execution'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EverboseFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EverboseFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='per-instance creation'/>
+        <group name='per-instance functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='run' anchor='run' altext='xdc.tools.closure.Main.run' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Underlying+implementation' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23run%22+title%3D%22xdc.tools.ICmd.run%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erun%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FCmdr.html%23.Instance%22+title%3D%22xdc.tools.Cmdr.Instance%22%3ECmdr.Instance%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecmdr%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Erun%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FCmdr.html%23.Instance%22+title%3D%22xdc.tools.Cmdr.Instance%22%3ECmdr.Instance%3C%2Fa%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecmdr%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+    </unit>
+    <docSect name='usage'>
+        <docPara content='%3Ctt%3Exs+xdc.tools.closure+%5B--help%5D%3Cbr+%2F%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%5B-v%5D+%5B-f%5D+%5B-i+pkg1+%5B-i+pkg2+...%5D%5D+%5B-d+dst_dir%5D+package_base_dir%3C%2Ftt%3E'/>
+    </docSect>
+    <docSect name='options'>
+        <docPara content='%3Cdl%3E%3Cdt%3E%3Ctt%3E-v%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EPrint+informative+messages+during+execution%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-f%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EPerform+aggressive+filtering%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-d%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EName+of+the+destination+directory%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-i%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EAdditional+packages+to+be+included+in+the+bundle%3C%2Fdd%3E'/>
+    </docSect>
+    <docSect name='details'>
+        <docPara content='The+purpose+of+this+tool+is+to+build+a+bundle+containing+all+packages%0A++loaded+in+the+process+of+configuring+an+application.+The+bundle+is+%0A++built+in+a+user-selected+repository%2C+which+can+be+then+relocated+to%0A++a+different+location+or+to+a+different+host%2C+where+the+application%0A++being+configured+can+be+recompiled+and+relinked.'/>
+        <docPara content='The+closure+tool+can+run+only+after+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Fconfiguro%2Fpackage.html%22+title%3D%22xdc.tools.configuro%22%3Exdc.tools.configuro%3C%2Fa%3E+runs%0A++and+finishes+the+configuration+step.+Then%2C+%60xdc.tools.closure%27+detects%0A++all+packages+involved+in+the+configuration+and+copies+them+to+a+new%0A++repository.+All+absolute+paths+in+the+relevant+generated+files+that+%0A++could+be+accessed+by+the+user%27s+makefile%2C+when+the+application+is%0A++rebuilt%2C+are+transformed+into+the+paths+relative+to+the+the+directory%0A++containing+the+closed+bundle.'/>
+        <docPara content='Some+files+in+the+copied+packages+are+deleted+to+keep+the+size+of%0A++the+closed+bundle+manageable.+The+default+settings+delete+only+selected%0A++files%2C+but+a+user+has+an+option+of+requesting+aggressive+filtering+of%0A++files%2C+which+leaves+in+the+closed+bundle+only+header+files+and%0A++libraries+referenced+by+linker+command+files.'/>
+    </docSect>
+    <docSect name='Examples'>
+        <docPara content='xs+xdc.tools.configuro+-t+gnu.targets.arm.GCArmv6+-o+configPkg+--cb%0A+++++++++++++++++++++++++memory.cfg%0A++xs+xdc.tools.closure+-d+D%3A%2Fbundle+C%3A%2Fexamples%2Fmemory%2FconfigPkg'/>
+        <docPara content='%3CDL%3E%3CDD%3E++After+%3Ctt%3Exdc.tools.configuro%3C%2Ftt%3E+creates+a+configuration+in+%3Ctt%3EconfigPkg%3C%2Ftt%3E%2C%0A++%3Ctt%3Exdc.tools.closure%3C%2Ftt%3E+gathers+all+packages+loaded+during+the+%0A++configuration+in+a+repository+located+in+D%3A%2Fbundle%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+    </docSect>
+</package>

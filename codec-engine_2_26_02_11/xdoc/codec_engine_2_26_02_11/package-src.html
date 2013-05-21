@@ -1,0 +1,161 @@
+<html><head><title>package codec_engine_2_26_02_11</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* --COPYRIGHT--,BSD
+</span>     2    <span class="comment"> * Copyright (c) $(CPYYEAR), Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> * --/COPYRIGHT--
+</span>    32    <span class="comment"> */</span>
+    33    <span class="comment">/* This "requires" list describes what packages to import into this bundle */</span>
+    34    <span class=key>requires</span> ti.sdo.ce;
+    35    <span class=key>requires</span> ti.sdo.ce.node;
+    36    <span class=key>requires</span> ti.sdo.ce.ipc;
+    37    <span class=key>requires</span> ti.sdo.ce.ipc.bios;
+    38    <span class=key>requires</span> ti.sdo.ce.ipc.dsplink;
+    39    <span class=key>requires</span> ti.sdo.ce.ipc.dsplink.dsp;
+    40    <span class=key>requires</span> ti.sdo.ce.ipc.linux;
+    41    <span class=key>requires</span> ti.sdo.ce.ipc.noOS;
+    42    <span class=key>requires</span> ti.sdo.ce.osal;
+    43    <span class=key>requires</span> ti.sdo.ce.osal.bios;
+    44    <span class=key>requires</span> ti.sdo.ce.osal.linux;
+    45    <span class=key>requires</span> ti.sdo.ce.osal.wince;
+    46    <span class=key>requires</span> ti.sdo.ce.osal.wince.utils;
+    47    <span class=key>requires</span> ti.sdo.ce.osal.noOS;
+    48    <span class=key>requires</span> ti.sdo.ce.alg;
+    49    <span class=key>requires</span> ti.sdo.ce.trace;
+    50    <span class=key>requires</span> ti.sdo.ce.speech;
+    51    <span class=key>requires</span> ti.sdo.ce.speech1;
+    52    <span class=key>requires</span> ti.sdo.ce.video;
+    53    <span class=key>requires</span> ti.sdo.ce.video1;
+    54    <span class=key>requires</span> ti.sdo.ce.video2;
+    55    <span class=key>requires</span> ti.sdo.ce.audio;
+    56    <span class=key>requires</span> ti.sdo.ce.audio1;
+    57    <span class=key>requires</span> ti.sdo.ce.global;
+    58    <span class=key>requires</span> ti.sdo.ce.image;
+    59    <span class=key>requires</span> ti.sdo.ce.image1;
+    60    <span class=key>requires</span> ti.sdo.ce.universal;
+    61    <span class=key>requires</span> ti.sdo.ce.vidtranscode;
+    62    <span class=key>requires</span> ti.sdo.ce.vidanalytics;
+    63    <span class=key>requires</span> ti.sdo.ce.video2.split;
+    64    
+    65    <span class=key>requires</span> ti.sdo.ce.bioslog;
+    66    
+    67    <span class=key>requires</span> ti.sdo.ce.utils;
+    68    <span class=key>requires</span> ti.sdo.ce.utils.rtcfg;
+    69    <span class=key>requires</span> ti.sdo.ce.utils.trace;
+    70    <span class=key>requires</span> ti.sdo.ce.utils.xdm;
+    71    
+    72    <span class=key>requires</span> ti.dsplink.utils.lad;
+    73    <span class=key>requires</span> ti.dsplink.utils.ladclient;
+    74    
+    75    <span class=key>requires</span> ti.sdo.ce.examples.codecs;
+    76    <span class=key>requires</span> ti.sdo.ce.examples.codecs.viddec1_copy;
+    77    <span class=key>requires</span> ti.sdo.ce.examples.codecs.videnc1_copy;
+    78    <span class=key>requires</span> ti.sdo.ce.examples.codecs.imgdec1_copy;
+    79    <span class=key>requires</span> ti.sdo.ce.examples.codecs.imgenc1_copy;
+    80    <span class=key>requires</span> ti.sdo.ce.examples.codecs.sphdec1_copy;
+    81    <span class=key>requires</span> ti.sdo.ce.examples.codecs.sphenc1_copy;
+    82    <span class=key>requires</span> ti.sdo.ce.examples.codecs.auddec1_copy;
+    83    <span class=key>requires</span> ti.sdo.ce.examples.codecs.audenc1_copy;
+    84    <span class=key>requires</span> ti.sdo.ce.examples.codecs.auddec1_ires;
+    85    <span class=key>requires</span> ti.sdo.ce.examples.codecs.viddec2_copy;
+    86    
+    87    <span class=key>requires</span> ti.sdo.ce.examples.codecs.viddec_copy;
+    88    <span class=key>requires</span> ti.sdo.ce.examples.codecs.videnc_copy;
+    89    <span class=key>requires</span> ti.sdo.ce.examples.codecs.imgdec_copy;
+    90    <span class=key>requires</span> ti.sdo.ce.examples.codecs.imgenc_copy;
+    91    <span class=key>requires</span> ti.sdo.ce.examples.codecs.sphdec_copy;
+    92    <span class=key>requires</span> ti.sdo.ce.examples.codecs.sphenc_copy;
+    93    <span class=key>requires</span> ti.sdo.ce.examples.codecs.auddec_copy;
+    94    <span class=key>requires</span> ti.sdo.ce.examples.codecs.audenc_copy;
+    95    
+    96    <span class=key>requires</span> ti.sdo.ce.examples.codecs.g711;
+    97    <span class=key>requires</span> ti.sdo.ce.examples.codecs.scale;
+    98    <span class=key>requires</span> ti.sdo.ce.examples.codecs.vidtranscode_copy;
+    99    <span class=key>requires</span> ti.sdo.ce.examples.codecs.vidanalytics_copy;
+   100    
+   101    <span class=key>requires</span> ti.sdo.ce.examples.codecs.viddec2split_copy;
+   102    <span class=key>requires</span> ti.sdo.ce.examples.codecs.universal_copy;
+   103    
+   104    <span class=key>requires</span> ti.sdo.ce.examples.extensions;
+   105    <span class=key>requires</span> ti.sdo.ce.examples.extensions.scale;
+   106    
+   107    <span class=key>requires</span> ti.sdo.ce.examples.servers;
+   108    <span class=key>requires</span> ti.sdo.ce.examples.servers.all_codecs;
+   109    <span class=key>requires</span> ti.sdo.ce.examples.servers.all_codecs_new_config;
+   110    <span class=key>requires</span> ti.sdo.ce.examples.servers.server_api_example;
+   111    <span class=key>requires</span> ti.sdo.ce.examples.servers.audio1_ires;
+   112    
+   113    <span class=key>requires</span> ti.sdo.ce.examples.buildutils;
+   114    <span class=key>requires</span> ti.sdo.ce.examples.apps;
+   115    <span class=key>requires</span> ti.sdo.ce.examples.apps.video_copy;
+   116    <span class=key>requires</span> ti.sdo.ce.examples.apps.image_copy;
+   117    <span class=key>requires</span> ti.sdo.ce.examples.apps.speech_copy;
+   118    <span class=key>requires</span> ti.sdo.ce.examples.apps.audio_copy;
+   119    <span class=key>requires</span> ti.sdo.ce.examples.apps.server_api_example;
+   120    <span class=key>requires</span> ti.sdo.ce.examples.apps.server_trace;
+   121    
+   122    <span class=key>requires</span> ti.sdo.ce.examples.apps.video2_copy;
+   123    <span class=key>requires</span> ti.sdo.ce.examples.apps.video1_copy;
+   124    <span class=key>requires</span> ti.sdo.ce.examples.apps.image1_copy;
+   125    <span class=key>requires</span> ti.sdo.ce.examples.apps.speech1_copy;
+   126    <span class=key>requires</span> ti.sdo.ce.examples.apps.audio1_copy.sync;
+   127    <span class=key>requires</span> ti.sdo.ce.examples.apps.audio1_copy.async;
+   128    <span class=key>requires</span> ti.sdo.ce.examples.apps.audio1_ires;
+   129    
+   130    <span class=key>requires</span> ti.sdo.ce.examples.apps.video2split_copy;
+   131    
+   132    <span class=key>requires</span> ti.sdo.ce.examples.apps.vidtranscode;
+   133    <span class=key>requires</span> ti.sdo.ce.examples.apps.vidanalytics;
+   134    
+   135    <span class=key>requires</span> ti.sdo.ce.examples.apps.universal_copy;
+   136    <span class=key>requires</span> ti.sdo.ce.examples.apps.scale;
+   137    <span class=key>requires</span> ti.sdo.ce.examples.apps.speech;
+   138    <span class=key>requires</span> ti.sdo.ce.examples.apps.speech_copy_LAD;
+   139    
+   140    <span class=key>requires</span> ti.sdo.ce.wizards.genserver;
+   141    <span class=key>requires</span> ti.sdo.ce.wizards.gencodecpkg;
+   142    
+   143    <span class="xdoc">/*!
+</span>   144    <span class="xdoc"> *  ======== codec_engine ========
+</span>   145    <span class="xdoc"> *  The Codec Engine product package
+</span>   146    <span class="xdoc"> *
+</span>   147    <span class="xdoc"> *  This package is a "bundle" of packages required to use the Codec Engine
+</span>   148    <span class="xdoc"> *  API's to run algorithms.  It also includes packages required to add new
+</span>   149    <span class="xdoc"> *  algorithms to a system using the Codec Engine.
+</span>   150    <span class="xdoc"> *
+</span>   151    <span class="xdoc"> */</span>
+   152    <span class=key>package</span> codec_engine_2_26_02_11 [1, 0, 0] {
+   153    }
+</pre>
+</body></html>

@@ -1,0 +1,87 @@
+############################################################
+# Capture video for 10 seconds and encode with H264 encoder
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp h264enc1 codec h264enc
+
+# specify the parameters
+setp h264enc1 encodingPreset 0
+setp h264enc1 rateControlPreset 2
+setp h264enc1 maxHeight 576
+setp h264enc1 maxWidth 720
+setp h264enc1 maxFrameRate 30000
+setp h264enc1 maxBitRate 2000000
+setp h264enc1 dataEndianness 1
+setp h264enc1 maxInterFrameInterval 1
+setp h264enc1 inputChromaFormat 4
+setp h264enc1 inputContentType 0
+setp h264enc1 reconChromaFormat -1
+setp h264enc1 inputHeight 480
+setp h264enc1 inputWidth 720
+setp h264enc1 refFrameRate 30000
+setp h264enc1 targetFrameRate 30000
+setp h264enc1 targetBitRate 2000000
+setp h264enc1 intraFrameInterval 30
+setp h264enc1 generateHeader 0
+setp h264enc1 captureWidth 0
+setp h264enc1 forceFrame 0
+setp h264enc1 interFrameInterval 1
+setp h264enc1 mbDataFlag 0
+setp h264enc1 i4_dsp_processing1 0 
+setp h264enc1 i4_dsp_processing2 0
+setp h264enc1 i4_coding_tools1 3
+setp h264enc1 i4_coding_tools2 0
+setp h264enc1 i4_min_tgt_dimensions_xy 0
+setp h264enc1 i4_max_search_range_xy 4194320
+setp h264enc1 rcOpt_i4_init_i_qp 7
+setp h264enc1 rcOpt_i4_init_p_qp 7
+setp h264enc1 rcOpt_i4_init_b_qp 7
+setp h264enc1 rcOpt_i4_stuffing_disabled 0
+setp h264enc1 rcOpt_i4_buffer_delay 500
+setp h264enc1 rcOpt_i4_limit_vbv_to_std_def_buf_size 0
+setp h264enc1 vui_i4_aspect_ratio_x 1
+setp h264enc1 vui_i4_aspect_ratio_y 1
+setp h264enc1 vui_i4_pixel_range 0
+setp h264enc1 cbr_i4_min_I_qp 2
+setp h264enc1 cbr_i4_max_I_qp 31
+setp h264enc1 cbr_i4_min_P_qp 2
+setp h264enc1 cbr_i4_max_P_qp 31
+setp h264enc1 cbr_i4_min_B_qp 2
+setp h264enc1 cbr_i4_max_B_qp 31
+setp h264enc1 vbr_i4_min_I_qp 2
+setp h264enc1 vbr_i4_max_I_qp 31
+setp h264enc1 vbr_i4_min_P_qp 2
+setp h264enc1 vbr_i4_max_P_qp 31 
+setp h264enc1 vbr_i4_min_B_qp 2
+setp h264enc1 vbr_i4_max_B_qp 31
+setp h264enc1 vbr_i4_avg_channel_bandwidth 2000000
+setp h264enc1 vbr_i4_peak_channel_bandwidth 2000000
+setp h264enc1 iir_i4_luma_noise_var 20
+setp h264enc1 iir_i4_chrm_noise_var_cb 6
+setp h264enc1 iir_i4_chrm_noise_var_cr 6 
+setp h264enc1 iir_i4_alpha_0 50
+setp h264enc1 iir_i4_alpha_1 16
+setp h264enc1 iir_i4_alpha_2 8 
+setp h264enc1 i4_delta_time_stamp 1
+setp h264enc1 framePitch 720
+setp h264enc1 numFrames 300
+
+# specify vpfe parameters
+setp vpfe device /dev/video0
+setp vpfe standard 1
+setp vpfe format 1
+setp vpfe input 0
+setp vpfe width 720
+setp vpfe height 480
+
+# Start the capture+encode operation
+func h264enc1 -t h264-encode.264
+

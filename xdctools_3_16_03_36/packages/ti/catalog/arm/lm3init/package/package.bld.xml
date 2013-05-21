@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.catalog.arm.lm3init" version="1, 0, 0" producerId="undefined">
+    <units>
+        <module name="Boot"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.catalog.arm.lm3init.c"/>
+        <srcFile name="Boot.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/Boot.am3e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/Boot/package/package_ti.catalog.arm.lm3init.om3e.dep" src="package/package_ti.catalog.arm.lm3init.c"/>
+        <srcFile name="package/lib/lib/Boot/Boot.om3e.dep" src="Boot.c"/>
+        <srcFile name="lib/Boot.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/Boot/package/package_ti.catalog.arm.lm3init.oem3.dep" src="package/package_ti.catalog.arm.lm3init.c"/>
+        <srcFile name="package/lib/lib/Boot/Boot.oem3.dep" src="Boot.c"/>
+        <srcFile name="lib/Boot.am3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/Boot/package/package_ti.catalog.arm.lm3init.om3.dep" src="package/package_ti.catalog.arm.lm3init.c"/>
+        <srcFile name="package/lib/lib/Boot/Boot.om3.dep" src="Boot.c"/>
+        <srcFile name="lib/Boot.aem3e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/Boot/package/package_ti.catalog.arm.lm3init.oem3e.dep" src="package/package_ti.catalog.arm.lm3init.c"/>
+        <srcFile name="package/lib/lib/Boot/Boot.oem3e.dep" src="Boot.c"/>
+        <srcFile name="package/rel/ti_catalog_arm_lm3init.tar.dep" src="package/rel/ti_catalog_arm_lm3init.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M3_big_endian"
+            version="ti.targets.arm.elf.M3_big_endian{1,0,4.6,0"
+            platform="ti.platforms.simDucati"
+            isa="v7M"
+            suffix="em3e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.M3_big_endian"
+            version="ti.targets.arm.M3_big_endian{1,0,4.5,0"
+            platform="ti.platforms.simDucati"
+            isa="v7M"
+            suffix="m3e"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="big"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,4.6,0"
+            platform="ti.platforms.simDucati"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.6.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.M3"
+            version="ti.targets.arm.M3{1,0,4.5,0"
+            platform="ti.platforms.simDucati"
+            isa="v7M"
+            suffix="m3"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/Boot"
+        pname="lib/Boot.am3e"
+        profile="whole_program_debug"
+        target="ti.targets.arm.M3_big_endian"/>
+    <library name="lib/Boot"
+        pname="lib/Boot.aem3"
+        profile="whole_program_debug"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/Boot"
+        pname="lib/Boot.am3"
+        profile="whole_program_debug"
+        target="ti.targets.arm.M3"/>
+    <library name="lib/Boot"
+        pname="lib/Boot.aem3e"
+        profile="whole_program_debug"
+        target="ti.targets.arm.elf.M3_big_endian"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_catalog_arm_lm3init"
+        pname="../../../../../exports/ti_catalog_arm_lm3init.tar"
+        label="default"
+        relScript="tisb/release/epl/copyright.rel">
+        <file name="lib/Boot.aem3e"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/Boot.aem3"/>
+        <file name="package/package.bld.xml"/>
+        <file name="Boot.c"/>
+        <file name="_sysctl.h"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/Boot.am3e"/>
+        <file name="lib/Boot.am3"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

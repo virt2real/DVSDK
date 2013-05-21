@@ -1,0 +1,77 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="u:\Work\svn\FlashUtils\trunk\DM646x\CCS\UBL\"
+ProjectType=Executable
+CPUFamily=TMS470R2X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="DM6467_594MHz"
+Config="DM6467_675MHz"
+Config="DM6467_729MHz"
+Config="DM6467_900MHz"
+Config="DM6467_1000MHz"
+
+[Source Files]
+Source="..\..\..\Common\drivers\src\nor.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\Common\src\device.c"
+Source="..\..\..\Common\gnu\src\debug.c"
+Source="..\..\..\Common\gnu\src\uart.c"
+Source="..\..\..\Common\ubl\src\norboot.c"
+Source="..\..\..\Common\ubl\src\uartboot.c"
+Source="..\..\..\Common\ubl\src\ubl.c"
+Source="..\..\..\Common\arch\arm926ejs\src\selfcopy.c"
+Source="..\..\..\Common\arch\arm926ejs\src\boot.c"
+Source="UBL.cmd"
+
+["DM6467_594MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NOR_594.bin $(Proj_dir)\NOR\UBL_DM646x_NOR_594.out;Run=Always
+
+["Compiler" Settings: "DM6467_594MHz"]
+Options=-o3 -fr"$(Proj_dir)\NOR" -fs"$(Proj_dir)\NOR" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -d"DM6467_594MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Linker" Settings: "DM6467_594MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR\UBL_DM646x_NOR_594.map" -o"$(Proj_dir)\NOR\UBL_DM646x_NOR_594.out" -x --retain="*(.selfcopy)"
+
+
+["DM6467_675MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NOR_675.bin $(Proj_dir)\NOR\UBL_DM646x_NOR_675.out;Run=Always
+
+["Compiler" Settings: "DM6467_675MHz"]
+Options=-o3 -fr"$(Proj_dir)\NOR" -fs"$(Proj_dir)\NOR" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -d"DM6467_675MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Linker" Settings: "DM6467_675MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR\UBL_DM646x_NOR_675.map" -o"$(Proj_dir)\NOR\UBL_DM646x_NOR_675.out" -x --retain="*(.selfcopy)"
+
+
+["DM6467_729MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NOR_729.bin $(Proj_dir)\NOR\UBL_DM646x_NOR_729.out;Run=Always
+
+["Compiler" Settings: "DM6467_729MHz"]
+Options=-o3 -fr"$(Proj_dir)\NOR" -fs"$(Proj_dir)\NOR" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -d"DM6467_729MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Linker" Settings: "DM6467_729MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR\UBL_DM646x_NOR_729.map" -o"$(Proj_dir)\NOR\UBL_DM646x_NOR_729.out" -x --retain="*(.selfcopy)"
+
+
+["DM6467_900MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NOR_900.bin $(Proj_dir)\NOR\UBL_DM646x_NOR_900.out;Run=Always
+
+["Compiler" Settings: "DM6467_900MHz"]
+Options=-o3 -fr"$(Proj_dir)\NOR" -fs"$(Proj_dir)\NOR" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -d"DM6467_900MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Linker" Settings: "DM6467_900MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR\UBL_DM646x_NOR_900.map" -o"$(Proj_dir)\NOR\UBL_DM646x_NOR_900.out" -x --retain="*(.selfcopy)"
+
+
+["DM6467_1000MHz" Settings]
+FinalBuildCmd=hex470.exe $(Proj_dir)\ubl2bin.cmd -o=$(Proj_dir)\UBL_DM646x_NOR_1000.bin $(Proj_dir)\NOR\UBL_DM646x_NOR_1000.out;Run=Always
+
+["Compiler" Settings: "DM6467_1000MHz"]
+Options=-o3 -fr"$(Proj_dir)\NOR" -fs"$(Proj_dir)\NOR" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\..\Common\arch\arm926ejs\include" -i"$(Proj_dir)\..\..\..\Common\ubl\include" -i"$(Proj_dir)\..\..\..\Common\gnu\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\drivers\include" -d"UBL_NOR" -d"DM6467_1000MHz" -me -mv5e --abi=eabi --symdebug:none
+
+["Linker" Settings: "DM6467_1000MHz"]
+Options=--abi=eabi -q -f0xFF -m"$(Proj_dir)\NOR\UBL_DM646x_NOR_1000.map" -o"$(Proj_dir)\NOR\UBL_DM646x_NOR_1000.out" -x --retain="*(.selfcopy)"

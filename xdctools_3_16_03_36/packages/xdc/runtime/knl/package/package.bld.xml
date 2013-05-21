@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xdc.runtime.knl" version="1, 0, 0" producerId="undefined">
+    <units>
+        <interface name="ISemaphore"/>
+        <interface name="ISync"/>
+        <interface name="IGateThreadSupport"/>
+        <interface name="IGateProcessSupport"/>
+        <interface name="ISemThreadSupport"/>
+        <interface name="ISemProcessSupport"/>
+        <interface name="IThreadSupport"/>
+        <interface name="ICacheSupport"/>
+        <module name="GateH"/>
+        <module name="Semaphore"/>
+        <module name="Thread"/>
+        <module name="Sync"/>
+        <module name="GateThread"/>
+        <module name="GateProcess"/>
+        <module name="SemThread"/>
+        <module name="SemProcess"/>
+        <module name="SyncGeneric"/>
+        <module name="SyncNull"/>
+        <module name="SyncSemThread"/>
+        <module name="Cache"/>
+        <module name="CacheSupportNull"/>
+        <module name="GateThreadSupportNull"/>
+        <module name="GateProcessSupportNull"/>
+    </units>
+    <sources>
+        <srcFile name="build.xs"/>
+        <srcFile name="CacheSupportNull.c"/>
+        <srcFile name="SyncGeneric.c"/>
+        <srcFile name="SyncSemThread.c"/>
+        <srcFile name="SemThread.c"/>
+        <srcFile name="Thread.c"/>
+        <srcFile name="Semaphore.c"/>
+        <srcFile name="GateThread.c"/>
+        <srcFile name="Sync.c"/>
+        <srcFile name="GateProcessSupportNull.c"/>
+        <srcFile name="SemProcess.c"/>
+        <srcFile name="GateThreadSupportNull.c"/>
+        <srcFile name="GateH.c"/>
+        <srcFile name="Cache.c"/>
+        <srcFile name="GateProcess.c"/>
+        <srcFile name="SyncNull.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/xdc_runtime_knl.tar.gz.dep" src="package/rel/xdc_runtime_knl.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xdc_runtime_knl"
+        pname="xdc_runtime_knl.tar.gz"
+        label="default"
+        relScript="tisb/release/what/what.rel">
+        <file name="GateThread.c"/>
+        <file name="SemProcess.c"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="GateThreadSupportNull.c"/>
+        <file name="GateProcessSupportNull.c"/>
+        <file name="GateH.c"/>
+        <file name="GateProcess.c"/>
+        <file name="Semaphore.c"/>
+        <file name="SyncGeneric.c"/>
+        <file name="package/package.rel.dot"/>
+        <file name="build.xs"/>
+        <file name="Cache.c"/>
+        <file name="SyncSemThread.c"/>
+        <file name="CacheSupportNull.c"/>
+        <file name="Sync.c"/>
+        <file name="Thread.c"/>
+        <file name="SemThread.c"/>
+        <file name="SyncNull.c"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

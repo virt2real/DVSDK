@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.targets.arm" version="2, 0, 1, 0" producerId="undefined">
+    <units>
+        <interface name="IArm"/>
+        <interface name="IM3"/>
+        <interface name="IM3_big_endian"/>
+        <interface name="IR4"/>
+        <interface name="IR4_big_endian"/>
+        <module name="Arm7"/>
+        <module name="Arm7_big_endian"/>
+        <module name="Arm9"/>
+        <module name="Arm9t"/>
+        <module name="Arm11"/>
+        <module name="Arm11_big_endian"/>
+        <module name="M3"/>
+        <module name="M3_big_endian"/>
+        <module name="R4"/>
+        <module name="R4_big_endian"/>
+        <module name="R4t"/>
+        <module name="R4t_big_endian"/>
+    </units>
+    <sources>
+        <srcFile name="std.h"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_targets_arm.tar.gz.dep" src="package/rel/ti_targets_arm.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_targets_arm"
+        pname="../../../../exports/ti_targets_arm.tar.gz"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="std.h"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

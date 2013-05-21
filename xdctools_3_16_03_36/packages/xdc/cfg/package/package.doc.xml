@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='xdc.cfg' nodoc='0' root='../../' summary='Configuration+Object+Model+elements'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Erequires%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fservices%2Fglobal%2Fpackage.html%22+title%3D%22xdc.services.global%22%3Exdc.services.global%3C%2Fa%3E%3B'/>
+    <line blank='1' always='0'/>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc.cfg%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+2%2C+0%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='Main' kind='module' nodoc='1' metaonly='1' summary='API+for+the+configuration+model'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fcfg%2Fpackage.html%22+title%3D%22xdc.cfg%22%3Exdc.cfg%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMain%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMain%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Main+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27xdc.cfg.Main%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='This+module+contains+functions+that+allow+a+client+to+run+separate%0A++steps+of+the+configuration+phase.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='genFiles' anchor='gen.Files' altext='xdc.cfg.Main.genFiles' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Generate+the+files+to+be+included+when+building+the+selected+executable'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgenFiles%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eexecutable%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprefix%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3EgenFiles%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eexecutable%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprefix%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='' summary='executable%09string+or+a+java.io.File+object'>
+                        <docPara content='prefix%09%09a+relative+path+in+the+package+base+directory%0A%09%09%09%09where+the+generated+files+are+located%0A%09%09%09%09%28usually+package%2Fcfg%27%29'/>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+function+generates+files+that+are+compiled+and+linked+with%0A++the+application%27s+object+files+to+generate+an+application.%0A++Those+functions+are+not+exposed+for+now%2C+but+can+be+if+needed.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='init' anchor='init' altext='xdc.cfg.Main.init' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Initialize+the+configuration+model'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Einit%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Einit%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+function+adds+references+Program+and+prog+to+the+current+scope.%0A++Both+references+refer+to+xdc.cfg.Program+module.+The+existing%0A++variables+prog+and+Program+initialized+at+Tconf+startup+are+backed+up.%0A++This+function+also+replaces+the+default+implementation+of%0A++xdc.useModule+with+a+config-specific+implementation.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='main' anchor='main' altext='xdc.cfg.Main.main' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Run+the+configuration+model+for+a+given+executable'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Emain%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Emain%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='' summary='args+++++++++++++array+of+arguments'>
+                        <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Eargs%5B0%5D%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++string+or+a+java.io.File+object+identifying+the+executable%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Eargs%5B1%5D%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++name+of+the+executable%27s+configuration+script%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Eargs%5B2%5D%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++a+relative+path+in+the+package+base+directory%0A%09%09where+the+generated+files+are+located%0A%09%09%28usually+package%2Fcfg%27%29%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Eargs%5B3%5D%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++name+of+the+package+where+the+executable+is+located%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+function+is+the+shell+of+the+configuration+model.+A+configuration%0A++for+a+given+executable+gets+created+and+the+files+needed+by+the+%0A++executable+are+generated.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='runCfg' anchor='run.Cfg' altext='xdc.cfg.Main.runCfg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Run+the+configuration+script+for+the+selected+executable+and+configure%0A++all+modules+and+instances'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErunCfg%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3ErunCfg%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+executable+selected+with+setExecutable%28%29+is+configured+by+running%0A++its+user+defined+script.+Then%2C+this+function+closes+all+packages.'/>
+                </docSect>
+                <docSect name='return'>
+                    <docPara content='the+array+of+error+messages+joined+in+a+string+%0A%09%09%09separated+by+%22%40%22'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='runStringCfg' anchor='run.String.Cfg' altext='xdc.cfg.Main.runStringCfg' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErunStringCfg%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuserScript%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3ErunStringCfg%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuserScript%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='setExecutable' anchor='set.Executable' altext='xdc.cfg.Main.setExecutable' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Select+the+executable+to+be+configured'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsetExecutable%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcfgScript%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpkgName%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3EsetExecutable%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcfgScript%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpkgName%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='' summary='cfgScript%09executable+configuration+script'>
+                        <docPara content='pkgName%09%09package+where+cfgScript+is+located'/>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+function+populates+the+Program+object+based+on+the+executable.%0A++The+executable+is+either+a+java.io.File+object+or+a+string+specifying%0A++a+file+name.+If+pkgName+is+supplied%2C+%27executable%27+is+located+in+that%0A++package.+Otherwise%2C+the+executable+is+searched+for+in+the+current%0A++directory+and+if+it+is+not+found+there%2C+an+error+is+reported.%0A++Supplying+pkgName+is+not+necessary+for+standard+build+flow+but+is%0A++required+if+this+module+is+used+directly%2C+e.g.+via+graphical%0A++configuration.'/>
+                </docSect>
+                <docSect name='return'>
+                    <docPara content='the+array+of+error+messages+joined+in+a+string+%0A%09%09%09%09separated+by+%22%40%22'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='validate' anchor='validate' altext='xdc.cfg.Main.validate' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Validates+the+configuration'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Evalidate%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Evalidate%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+function+calls+validate+functions+for+all+modules+and+packages.'/>
+                </docSect>
+                <docSect name='return'>
+                    <docPara content='the+array+of+error+messages+joined+in+a+string+%0A%09%09%09separated+by+%22%40%22'/>
+                </docSect>
+            </decl>
+        </group>
+    </unit>
+    <unit name='Program' kind='module' nodoc='0' metaonly='1' summary='The+Program+object+for+the+configuration+object+model'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fcfg%2Fpackage.html%22+title%3D%22xdc.cfg%22%3Exdc.cfg%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EProgram%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EProgram%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Program+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27xdc.cfg.Program%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='This+module+defines+the+%22root%22+of+the+configuration+object+model%3B+all%0A++configuration+settings+are+for+the+executable+represented+by+this%0A++object.+Program+configuration+scripts+reference+this+module+via+the%0A++global+variable+%3Ctt%3EProgram%3C%2Ftt%3E%3B+i.e.%2C+%3Ctt%3EProgram%3C%2Ftt%3E+implicitly+initialized+as%0A++follows%3A'/>
+            <docPara content='%3CPRE+class%3D%22Example%22%3E++++++var+Program+%3D+xdc.useModule%28%27xdc.cfg.Program%27%29%3B%0A%3C%2FPRE%3E'/>
+            <docPara content='After+a+configuration+script+completes+successfully%2C+the+XDC+runtime%0A++generates+the+following+files%3A'/>
+            <docPara content='%3COL%3E%3CLI%3E+package%2Fcfg%2F%26lt%3Bexe_name%26gt%3B.c%0A%3C%2FLI%3E%3CLI%3E+package%2Fcfg%2F%26lt%3Bexe_name%26gt%3B.xdl%0A%3C%2FLI%3E%3C%2FOL%3E'/>
+            <docPara content='where+%3Ctt%3E%26lt%3Bexe_name%26gt%3B%3C%2Ftt%3E+is+the+name+of+the+executable+with+the+final+%27.%27%0A++character+replaced+with+an+%27_%27.'/>
+            <docPara content='The+generated+C+file+contains+code+and+data+from+each+module+used+by+the%0A++program+and+must+be+compiled+and+linked+with+the+other+sources+to%0A++produce+the+final+executable.'/>
+            <docPara content='The+generated+linker+command+file+must+also+be+used+during+this+final%0A++link+step.++This+linker+command+file+is+produced+by+expanding+a+template%0A++specified+by+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fcfg%2FProgram.html%23link.Template%22+title%3D%22xdc.cfg.Program.linkTemplate%22%3Exdc.cfg.Program.linkTemplate%3C%2Fa%3E%3C%2Ftt%3E.%0A++Each+template+is+responsible+for+expanding+templates+specified+by+each%0A++imported+package%27s+%3Ctt%3EgetSects%3C%2Ftt%3E+method+%28see+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2FIPackage.html%23get.Sects%22+title%3D%22xdc.IPackage.getSects%22%3Exdc.IPackage.getSects%3C%2Fa%3E%3C%2Ftt%3E%29.%0A++This+allows+each+package+participating+in+the+configuration+of+an%0A++executable+to+contribute+a+portion+of+the+executable%27s+linker+command+file.'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='GenerationOptions' anchor='.Generation.Options' altext='xdc.cfg.Program.GenerationOptions' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Options+that+control+the+files+generated+as+part+of+program%0A++configuration'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EGenerationOptions%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='if+%3Ctt%3Etrue%3C%2Ftt%3E%2C+generate+debugger+%22project%22+files' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdebuggerFiles%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EGenerationOptions%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='if+%3Ctt%3Etrue%3C%2Ftt%3E%2C+generate+debugger+%22project%22+files' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdebuggerFiles%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='FIELDS'>
+                    <docChild name='debuggerFiles' summary='If+set+to+%3Ctt%3Etrue%3C%2Ftt%3E+in+a+configuration+script%2C%0A%09%09debugger+project+files+will+be+generated+as+part+of+the%0A%09%09configuration+step.++If+set+to+%3Ctt%3Efalse%3C%2Ftt%3E%2C+these+files+will+not+%0A%09%09be+generated.'>
+                        <docPara content='If+it+is+not+set+%28or+set+to+undefined%29+and+the+environment%0A%09%09variable+%3Ctt%3Eenvironment%5B%22xdc.cfg.gen.debuggerFiles%22%5D%3C%2Ftt%3E+is%0A%09%09non-%3Ctt%3Enull%3C%2Ftt%3E%2C+then+the+default+value+of+this+parameter+is+taken%0A%09%09to+be+the+value%09of+the+following+expression%3A'/>
+                        <docPara content='%3CPRE+class%3D%22Example%22%3E%09%09++++environment%5B%22xdc.cfg.gen.debuggerFiles%22%5D+%3D%3D+%22true%22%0A%3C%2FPRE%3E'/>
+                        <docPara content='This+makes+it+is+possible+to+enable+the+generation+of%0A%09%09debugger+project+files+from+build+scripts+by+passing%0A%09%09the+option+%3Ctt%3E-Dxdc.cfg.gen.debuggerFiles%3Dtrue%3C%2Ftt%3E+to+the%0A%09%09configuration+tool+%28see%0A%09%09%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FExecutable.html%23.Attrs%22+title%3D%22xdc.bld.Executable.Attrs%22%3Exdc.bld.Executable.Attrs.xsopts%3C%2Fa%3E%3C%2Ftt%3E+or%0A++++++++++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FPackageContents.html%23.Attrs%22+title%3D%22xdc.bld.PackageContents.Attrs%22%3Exdc.bld.PackageContents.Attrs.xsopts%3C%2Fa%3E%3C%2Ftt%3E%29.'/>
+                        <docPara content='Finally%2C+if+%3Ctt%3EdebuggerFiles%3C%2Ftt%3E+is+not+set+%28or+set+to+%3Ctt%3Eundefined%3C%2Ftt%3E%29%0A%09%09and+the+environment+variable+above+is+not+defined%2C%0A%09%09the+generation+of+debugger+project+files+occurs+only+if%0A%09%09%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fcfg%2FProgram.html%23build%22+title%3D%22xdc.cfg.Program.build%22%3Exdc.cfg.Program.build.profile%3C%2Fa%3E%3C%2Ftt%3E+contains%0A++++++++++the+string+%3Ctt%3E%22debug%22%3C%2Ftt%3E.++So%2C+unless+otherwise+specified%2C+debug%0A%09%09profiles+result+in+debugger+project+files+being+generated.'/>
+                    </docChild>
+                </docSect>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='SectionSpec' anchor='.Section.Spec' altext='xdc.cfg.Program.SectionSpec' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Map+that+instructs+the+linker+where+to+place+output+sections'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ESectionSpec%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='segment+where+section+contents+are+run' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErunSegment%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='segment+where+section+contents+are+loaded' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EloadSegment%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='start+address+of+section+when+run' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErunAddress%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='start+address+of+section+when+loaded' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EloadAddress%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='alignment+of+section+within+runSegment' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErunAlign%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='alignment+of+section+within+loadSegment' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EloadAlign%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='target-specific+flags' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etype%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='fill+value' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Efill%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3ESectionSpec%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='segment+where+section+contents+are+run' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErunSegment%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='segment+where+section+contents+are+loaded' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EloadSegment%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='start+address+of+section+when+run' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErunAddress%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='start+address+of+section+when+loaded' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EloadAddress%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='alignment+of+section+within+runSegment' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErunAlign%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='alignment+of+section+within+loadSegment' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EloadAlign%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='target-specific+flags' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etype%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='fill+value' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Efill%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='FIELDS'>
+                    <docChild name='runSegment' summary='Defines+the+memory+segment+where+the+section+is%0A%09%09to+be+run.'>
+                    </docChild>
+                    <docChild name='loadSegment' summary='Defines+the+memory+segment+where+the+section+is%0A%09%09to+be+loaded.+If+%27runSegment%27+or+%27loadSegment%27+is+defined%2C%0A++++++++++but+not+both%2C+the+linker+is+instructed+to+use+the+defined%0A++++++++++field+as+the+load+and+run+allocation+for+the+section.'>
+                    </docChild>
+                    <docChild name='runAddress' summary='Defines+the+memory+address+where+the+section+is%0A%09%09to+be+run.+It+is+an+error+if+both+%27runSegment%27+and+%27runAddress%27%0A%09%09are+specified.'>
+                    </docChild>
+                    <docChild name='loadAddress' summary='Defines+the+memory+address+where+the+section+is%0A%09%09to+be+loaded.+It+is+an+error+if+both+%27loadSegment%27+and%0A%09%09%27loadAddress%27+are+specified.+If+%27runAddress%27+or+%27loadAddress%27%0A++++++++++is+defined%2C+but+not+both%2C+the+linker+is+instructed+to+use+the%0A++++++++++defined+field+as+the+load+and+run+address+for+the+section.'>
+                    </docChild>
+                    <docChild name='runAlign' summary='If+runSegment+is+specified%2C+runAlign+determines+the%0A%09%09alignment.+It+is+an+error+if+both+%27runAlign%27+and+%27runAddress%27%0A%09%09are+specified.'>
+                    </docChild>
+                    <docChild name='loadAlign' summary='If+runSegment+is+specified%2C+runAlign+determins+the%0A%09%09alignment.+It+is+an+error+if+both+%27loadAlign%27+and+%27loadAddress%27%0A%09%09are+specified.'>
+                    </docChild>
+                    <docChild name='type' summary='Defines+flags+for+special+section+types+%28COPY%2C+DSECT%2C%0A%09%09NOLOAD%29.'>
+                    </docChild>
+                    <docChild name='fill' summary='Defines+the+value+to+initialize+an+uninitialized%0A++section.'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+structure+contains+some+fields+that+are+specific+to+TI+targets.%0A++On+non-TI+targets%2C+such+fields+are+ignored.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='argSize' anchor='arg.Size' altext='xdc.cfg.Program.argSize' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+size+allocated+for+command+line+args+to+the+executable'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EargSize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x200%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EargSize%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0x200%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='On+platforms+that+require+static+allocation+of+space+to+hold%0A++command+line+arguments%2C+this+parameter+specifies+its+maximum+size%0A++%28in+units+of+chars%29.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='build' anchor='build' altext='xdc.cfg.Program.build' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='This+program%27s+build+attributes'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ebuild%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Ebuild%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+allows+arbitrary+build+attributes+to+be+carried%0A++forward+from+the+Build+Object+Model+%28BOM%29+into+the+configuration%0A++model+for+program+configuration+scripts+to+read.'/>
+                    <docPara content='Conceptually%2C+this+config+parameter+should+be+declared+as+follows%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++struct+BuildAttrs+inherits+xdc.bld.Executable.Attrs+%7B%0A++++++++++config+xdc.bld.ITarget.Module+target%3B%0A++++++%7D%3B%0A%3C%2FPRE%3E'/>
+                    <docPara content='All+parameters+of+the+target+associated+with+the+executable+being%0A++configured+are+available+through+%27%3Ctt%3EProgram.build.target%3C%2Ftt%3E%27.+Any+config%0A++parameter+set+in+the+BOM%27s+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FExecutable.html%23attrs%22+title%3D%22xdc.bld.Executable.attrs%22%3Exdc.bld.Executable.attrs%3C%2Fa%3E%3C%2Ftt%3E+is+also%0A++available+through+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Program.html%23build%22+title%3D%22build%22%3Ebuild%3C%2Fa%3E%3C%2Ftt%3E.++For+example%2C+the+name+of+the%0A++target+is+%3Ctt%3EProgram.build.target.name%3C%2Ftt%3E+and+the+name+of+the%0A++executable%27s+configuration+script+is+%3Ctt%3EProgram.build.cfgScript%3C%2Ftt%3E.'/>
+                </docSect>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+by+the+generated+program+configuration+script%0A++and+must+not+be+modified.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='buildPackage' anchor='build.Package' altext='xdc.cfg.Program.buildPackage' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+name+of+the+executable%27s+package'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EbuildPackage%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EbuildPackage%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+is+the+full+package+name+%28relative+to+the+package%27s+repository%29%0A++of+the+package+that+contains+the+executable+being+configured.'/>
+                </docSect>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+by+the+generated+program+configuration+script%0A++and+must+not+be+modified.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='codeModel' anchor='code.Model' altext='xdc.cfg.Program.codeModel' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+memory+model+for+code'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcodeModel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EcodeModel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+an+alias+for+%3Ctt%3Ebuild.target.model.codeModel%3C%2Ftt%3E+and+is%0A++set+to+one+of+the+following+target-specific+values%3A+%3Ctt%3E%22near%22%3C%2Ftt%3E%2C+%3Ctt%3E%22far%22%3C%2Ftt%3E%2C%0A++%3Ctt%3E%22large%22%3C%2Ftt%3E%2C+or+%3Ctt%3Enull%3C%2Ftt%3E.'/>
+                </docSect>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+by+the+generated+program+configuration+script%0A++and+must+not+be+modified.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='cpu' anchor='cpu' altext='xdc.cfg.Program.cpu' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+execution+context+%22seen%22+by+the+executable'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIExeContext.html%23.Instance%22+title%3D%22xdc.platform.IExeContext.Instance%22%3EIExeContext.Instance%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecpu%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Ecpu%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIExeContext.html%23.Instance%22+title%3D%22xdc.platform.IExeContext.Instance%22%3EIExeContext.Instance%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Since+the+execution+context+is+largely+determined+by+the+CPU+that%0A++runs+the+executable%2C+this+configuration+parameter+allows+scripts+with%0A++access+to+the+program+object+to+conditionally+configure+based+on+CPU%0A++characteristics+%28e.g.%2C+ISA+or+revision+of+a+chip%29.'/>
+                </docSect>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+by+the+platform%27s+implementation+of%0A++%3Ctt%3Exdc.IPackage%3C%2Ftt%3E+%28i.e.%2C+%3Ctt%3Epackage.xs%3C%2Ftt%3E%29.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='dataModel' anchor='data.Model' altext='xdc.cfg.Program.dataModel' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+memory+model+for+data'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdataModel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EdataModel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+an+alias+for+%3Ctt%3Ebuild.target.model.dataModel%3C%2Ftt%3E+and+is%0A++set+to+one+of+the+following+target-specific+values%3A+%3Ctt%3E%22near%22%3C%2Ftt%3E%2C+%3Ctt%3E%22far%22%3C%2Ftt%3E%2C%0A++%3Ctt%3E%22large%22%3C%2Ftt%3E%2C+or+%3Ctt%3Enull%3C%2Ftt%3E.'/>
+                </docSect>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+by+the+generated+program+configuration+script%0A++and+must+not+be+modified.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='endian' anchor='endian' altext='xdc.cfg.Program.endian' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+endianess+of+the+executable'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eendian%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Eendian%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+an+alias+for+%3Ctt%3Ebuild.target.model.dataModel%3C%2Ftt%3E+and+is%0A++set+to+one+of+the+following+values%3A+%3Ctt%3E%22big%22%3C%2Ftt%3E%2C+%3Ctt%3E%22little%22%3C%2Ftt%3E%2C+or+%3Ctt%3Enull%3C%2Ftt%3E.'/>
+                </docSect>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+by+the+generated+program+configuration+script%0A++and+must+not+be+modified.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='execCmd' anchor='exec.Cmd' altext='xdc.cfg.Program.execCmd' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+command+used+to+run+this+executable'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EexecCmd%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EexecCmd%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='If+it+is+not+set+by+the+configuration+script%2C+it+is+set+by+the%0A++program%27s+platform+package+%28during+program+configuration%29.'/>
+                    <docPara content='This+command+is+run+as+follows%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++execCmd+%26lt%3Bprog%26gt%3B+%26lt%3Bargs%26gt%3B%0A%3C%2FPRE%3E'/>
+                    <docPara content='where%2C+%3Ctt%3E%26lt%3Bprog%26gt%3B%3C%2Ftt%3E+is+the+name+of+the+executable'/>
+                </docSect>
+                <docSect name='Note'>
+                    <docPara content='This+parameter+is+ignored+if+the+exec+command+is+specified+as+part%0A++of+the+test%3B+see+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FTest.html%23.Attrs%22+title%3D%22xdc.bld.Test.Attrs%22%3Exdc.bld.Test.Attrs%3C%2Fa%3E%3C%2Ftt%3E.%0A++and+%3Ctt%3E%26lt%3Bargs%26gt%3B%3C%2Ftt%3E+are+the+arguments+specified+in+the+test+%28if+any%29.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='fixedCodeAddr' anchor='fixed.Code.Addr' altext='xdc.cfg.Program.fixedCodeAddr' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EfixedCodeAddr%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EfixedCodeAddr%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='fixedDataAddr' anchor='fixed.Data.Addr' altext='xdc.cfg.Program.fixedDataAddr' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EfixedDataAddr%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EfixedDataAddr%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='gen' anchor='gen' altext='xdc.cfg.Program.gen' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Generation+options+for+this+executable'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fcfg%2FProgram.html%23.Generation.Options%22+title%3D%22xdc.cfg.Program.GenerationOptions%22%3EProgram.GenerationOptions%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Egen%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Egen%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fcfg%2FProgram.html%23.Generation.Options%22+title%3D%22xdc.cfg.Program.GenerationOptions%22%3EProgram.GenerationOptions%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+configuration+parameter+allows+the+program+configuration+script%0A++to+control+%28to+some+extent%29+what+files+are+generated+as+part+of+the%0A++configuration+process.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='global' anchor='global' altext='xdc.cfg.Program.global' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Global+variable+declarations'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eglobal%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Eglobal%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Assignments+to+this+hash+table+become+global+symbols+that+can+be%0A++used+to+directly+reference+objects.++These+objects+are+declared%0A++in+a+generated+header+that+is+indirectly+included+by+the+header%0A++%3Ctt%3Exdc%2Fcfg%2Fglobal.h%3C%2Ftt%3E.'/>
+                    <docPara content='Configuration+scripts+define+symbols+by+adding+new+properties+to%0A++%3Ctt%3Eglobal%3C%2Ftt%3E.'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++Program.global.myInstance+%3D+Mod.create%28%29%3B%0A++++++Program.global.myString+%3D+%22hello+world%22%3B%0A%3C%2FPRE%3E'/>
+                    <docPara content='Programs+can+reference+the+symbols+defined+in+%3Ctt%3Eglobal%3C%2Ftt%3E+by+including%0A++the+C%2FC%2B%2B+header+%3Ctt%3Exdc%2Fcfg%2Fglobal.h%3C%2Ftt%3E+as+follows%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++%23include+%26lt%3Bpkg%2FMod.h%26gt%3B%0A++++++%23include+%26lt%3Bxdc%2Fcfg%2Fglobal.h%26gt%3B%0A+++++++++%3A%0A++++++Mod_fxn%28myInstance%2C+...%29%3B%0A++++++printf%28%22greetings%3A+%25s%5Cn%22%2C+myString%29%3B%0A%3C%2FPRE%3E'/>
+                    <docPara content='To+compile+sources+that+include+%3Ctt%3Exdc%2Fcfg%2Fglobal.h%3C%2Ftt%3E%2C+one+symbol+must+be%0A++defined+before+including+this+header%3A'/>
+                    <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Exdc_cfg__header__%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++++the+package+qualified+name+of+the+executable-specific+C%2FC%2B%2B%0A++++++++++header+generated+by+the+program+configuration+tool%3B+e.g.%2C%0A++++++++++%3Ctt%3Elocal%2Fexamples%2Fpackage%2Fcfg%2Fmycfg_x62.h%3C%2Ftt%3E.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+                    <docPara content='For+example%2C+to+compile+sources+that+reference+the+values+declared+in%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Program.html%23global%22+title%3D%22global%22%3Eglobal%3C%2Fa%3E%3C%2Ftt%3E+for+a+TI+C6x+target+with+a+generated%0A++configuration+header+named+%3Ctt%3Epackage%2Fcfg%2Fmycfg_x62.h%3C%2Ftt%3E+in+a+package%0A++named+%3Ctt%3Elocal.examples%3C%2Ftt%3E+the+following+command+line+is+sufficient%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++cl6x+-Dxdc_cfg__header__%3Dlocal%2Fexamples%2Fpackage%2Fcfg%2Fmycfg_x62.h+...%0A%3C%2FPRE%3E'/>
+                    <docPara content='The+%3Ctt%3Exdc_cfg__header__%3C%2Ftt%3E+symbol+is+automatically+defined+when+you+use%0A++the+the+XDC+Build+Engine+%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2Fpackage.html%22+title%3D%22xdc.bld%22%3Exdc.bld%3C%2Fa%3E%3C%2Ftt%3E%29+to+create+executables%3B+see%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FExecutable.html%23add.Objects%22+title%3D%22xdc.bld.Executable.addObjects%22%3Exdc.bld.Executable.addObjects%3C%2Fa%3E%3C%2Ftt%3E'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FExecutable.html%23add.Objects%22+title%3D%22xdc.bld.Executable.addObjects%22%3Exdc.bld.Executable.addObjects%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='globalSection' anchor='global.Section' altext='xdc.cfg.Program.globalSection' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EglobalSection%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EglobalSection%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='heap' anchor='heap' altext='xdc.cfg.Program.heap' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+size+of+the+executable%27s+initial+heap'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eheap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x1000%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Eheap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0x1000%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='On+platforms+that+enable+control+of+the+size+of+the+heap+managed+by%0A++the+run-time+support+function+malloc%28%29%2C+this+parameter+specifies%0A++its+initial+size+%28in+units+of+chars%29.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='linkTemplate' anchor='link.Template' altext='xdc.cfg.Program.linkTemplate' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+template+for+the+Program%27s+linker+command+file'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ElinkTemplate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3ElinkTemplate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='A+template+is+used+to+create+the+linker+command+file+for+each%0A++program.++It+can+be+optionally+specified+by+setting+this%0A++configuration+parameter+in+the+program%27s+configuration+script.++If%0A++%3Ctt%3ElinkTemplate%3C%2Ftt%3E+it+is+not+set+or+set+to+%3Ctt%3Enull%3C%2Ftt%3E%2C+the+template+is%0A++obtained+from+the+platform+associated+with+this+program+%28i.e.%2C+the%0A++platform+named+by+the+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Program.html%23platform%22+title%3D%22platform%22%3Eplatform%3C%2Fa%3E%3C%2Ftt%3E+config+in+this+module%29.%0A++See+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23get.Link.Template%22+title%3D%22xdc.platform.IPlatform.getLinkTemplate%22%3EIPlatform.getLinkTemplate%3C%2Fa%3E%3C%2Ftt%3E.'/>
+                    <docPara content='The+%3Ctt%3ElinkTemplate%3C%2Ftt%3E+string+names+a+package+path+relative+path%3B+e.g.%2C%0A++if+the+linker+template+you+want+to+specify+is%0A++%3Ctt%3E%22templates%2Fbig_n_hairy.xdt%22%3C%2Ftt%3E+in+the+package+%3Ctt%3EmyCompany.myPackage%3C%2Ftt%3E%2C%0A++%3Ctt%3ElinkTemplate%3C%2Ftt%3E+should+be+set+to%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++%22myCompany%2FmyPackage%2Ftemplates%2Fbig_n_hairy.xdt%22%0A%3C%2FPRE%3E'/>
+                    <docPara content='If+%3Ctt%3ElinkTemplate%3C%2Ftt%3E+begins+with+the+string+%3Ctt%3E%22.%2F%22%3C%2Ftt%3E%2C+the+file+is+NOT%0A++searched+for+along+the+package+path%3B+instead+the+file+name+is+taken%0A++to+specify+a+file+relative+to+the+current+working+directory.'/>
+                    <docPara content='In+any+case%2C+if+%3Ctt%3ElinkTemplate%3C%2Ftt%3E+is+non-%3Ctt%3Enull%3C%2Ftt%3E%2C+the+file+must+exist%3B+%0A++otherwise%2C+the+configuration+step+will+fail.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='loadFixedDataAddr' anchor='load.Fixed.Data.Addr' altext='xdc.cfg.Program.loadFixedDataAddr' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EloadFixedDataAddr%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EloadFixedDataAddr%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='loadRom' anchor='load.Rom' altext='xdc.cfg.Program.loadRom' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EloadRom%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EloadRom%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='main' anchor='main' altext='xdc.cfg.Program.main' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+main+entry+point+for+the+program'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%28*%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emain%3C%2Fspan%3E%3C%2Fgo%3E%29%28%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%2C%3Cspan+class%3D%22xdoc-kw2%22%3EChar%3C%2Fspan%3E*%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Emain%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%28*%29%28%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%2C%3Cspan+class%3D%22xdoc-kw2%22%3EChar%3C%2Fspan%3E*%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%29%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+optionally+set+by+the+user%27s+program%0A++configuration+script.++If+it+is+not+set%2C+then+a+%22legacy%22+%3Ctt%3Emain%28%29%3C%2Ftt%3E%0A++function+is+assumed+to+be+linked+into+the+program%3B+otherwise%2C%0A++the+value+of+%3Ctt%3Emain%3C%2Ftt%3E+is+used+as+the+%22main%22+entry+point+to+the%0A++program.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='name' anchor='name' altext='xdc.cfg.Program.name' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+name+of+the+executable+file'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+is+the+full+file+name+%28relative+to+the+package%27s+base%29+of+the%0A++executable+that+results+from+this+configuration.'/>
+                </docSect>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+by+the+generated+program+configuration+script%0A++and+must+not+be+modified.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='platform' anchor='platform' altext='xdc.cfg.Program.platform' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+executable%27s+platform+instance+object'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Instance%22+title%3D%22xdc.platform.IPlatform.Instance%22%3EIPlatform.Instance%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eplatform%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Eplatform%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Instance%22+title%3D%22xdc.platform.IPlatform.Instance%22%3EIPlatform.Instance%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+platform+instance+that+provided+an+execution+context+for+the%0A++executable+being+configured.'/>
+                </docSect>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+by+the+generated+program+configuration+script%0A++and+must+not+be+modified.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='platformName' anchor='platform.Name' altext='xdc.cfg.Program.platformName' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+name+of+the+executable%27s+platform'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EplatformName%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EplatformName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+field+is+the+name+of+the+platform+instance+used+to+create+the%0A++executable%3B+e.g.%2C+%3Ctt%3E%22ti.platforms.sim55xx%22%3C%2Ftt%3E%2C+or%0A++%3Ctt%3E%22ti.platforms.sim6xxx%3ATMS320C6416%22%3C%2Ftt%3E.'/>
+                    <docPara content='Platform+instance+names+have+the+form%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++%26lt%3Bplatform_pkg%26gt%3B%3A%26lt%3Binstance_id%26gt%3B%0A%3C%2FPRE%3E'/>
+                    <docPara content='where+%3Ctt%3E%26lt%3Bplatform_pkg%26gt%3B%3C%2Ftt%3E+is+the+name+of+the+platform+package+%0A++responsible+for+creating+the+platform+instance+and+the+optional%0A++%22%3Ctt%3E%3A%26lt%3Binstance_id%26gt%3B%3C%2Ftt%3E%22+is+a+suffix+that+uniquely+identifies+the+creation%0A++parameters+for+this+instance.'/>
+                    <docPara content='The+creation+parameters+are+the+values+specified+by+the+map%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FBuildEnvironment.html%23platform.Table%22+title%3D%22xdc.bld.BuildEnvironment.platformTable%22%3Exdc.bld.BuildEnvironment.platformTable%3C%2Fa%3E%3C%2Ftt%3E%3B%0A++if+this+map+does+not+contain+the+platform+instance+name%2C+the%0A++instance+is+created+with+default+values+that+are+specific+to+the%0A++platform.'/>
+                </docSect>
+                <docSect name='readonly'>
+                    <docPara content='This+parameter+is+set+by+the+generated+program+configuration+script%0A++and+must+not+be+modified.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='sectMap' anchor='sect.Map' altext='xdc.cfg.Program.sectMap' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='A+section+name+to+SectionSpec+mapping'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsectMap%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EsectMap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+is+a+program+specific+mapping+of+output+section+names+to%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22Program.html%23.Section.Spec%22+title%3D%22SectionSpec%22%3ESectionSpec%3C%2Fa%3E+objects.+The+map+supports+mapping+of+section%0A++names+to+memory+names%3B+see+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23sect.Map%22+title%3D%22xdc.platform.IPlatform.sectMap%22%3Exdc.platform.IPlatform.sectMap%3C%2Fa%3E.'/>
+                    <docPara content='This+parameter+enables+program+configurations+to+place+named%0A++sections+in+platform+specific+memory+regions.++During+generation+of%0A++the+linker+command+file%2C+sections+are+mapped+to+named+memories+by%0A++first+consulting+this+table%3B+if+the+table+does+not+contain+a+mapping%2C%0A++the+target+classifies+each+section+as+either+%22code%22%2C+%22data%22+or%0A++%22stack%22+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FITarget.html%23sect.Map%22+title%3D%22xdc.bld.ITarget.sectMap%22%3Exdc.bld.ITarget.sectMap%3C%2Fa%3E+and+the+platform+defines+a%0A++memory+region+for+each+of+these+section+types%0A++%28%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23code.Memory%22+title%3D%22xdc.platform.IPlatform.codeMemory%22%3Exdc.platform.IPlatform.codeMemory%3C%2Fa%3E%2F%0A++%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23data.Memory%22+title%3D%22xdc.platform.IPlatform.dataMemory%22%3Exdc.platform.IPlatform.dataMemory%3C%2Fa%3E%29.++If%0A++this+does+not+produce+a+result%2C+an+error+is+generated.%0A++It+is+important+to+note+that+%3Ctt%3EsectMap%3C%2Ftt%3E+does+not+contain+the+complete%0A++section+allocation+for+the+program.+It+only+contains+the+entries%0A++explicitly+added+to+%3Ctt%3EsectMap%3C%2Ftt%3E.+To+get+the+complete+section%0A++allocation%2C+a+user+should+call+%3Ca+class%3D%22xdoc-link%22+href%3D%22Program.html%23get.Sect.Map%22+title%3D%22getSectMap%22%3EgetSectMap%3C%2Fa%3E.'/>
+                    <docPara content='Suppose+for+example+that+the+platform+defines+a+memory+segment%0A++named+%22DDR2%22.++The+following+configuration+statement+places%0A++everything+from+the+%22.text%22+section+into+the+%22DDR2%22+segment.'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++Program.sectMap%5B%22.text%22%5D+%3D+new+prog.SectionSpec%28%29%3B%0A++++++Program.sectMap%5B%22.text%22%5D.runSegment+%3D+%22DDR2%22%3B%0A%3C%2FPRE%3E'/>
+                </docSect>
+                <docSect name='Note'>
+                    <docPara content='If+BIOS+5+configuration+script+%28Tconf+script%29+is+executed%2C+the%0A++section+allocations+configured+in+the+Tconf+script+take+precedence%0A++over+any+settings+for+the+same+sections+in+this+parameter.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22Program.html%23.Section.Spec%22+title%3D%22SectionSpec%22%3ESectionSpec%3C%2Fa%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23sect.Map%22+title%3D%22xdc.platform.IPlatform.sectMap%22%3Exdc.platform.IPlatform.sectMap%3C%2Fa%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FITarget.html%23sect.Map%22+title%3D%22xdc.bld.ITarget.sectMap%22%3Exdc.bld.ITarget.sectMap%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='stack' anchor='stack' altext='xdc.cfg.Program.stack' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+size+of+the+executable%27s+initial+stack'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Estack%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x1000%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Estack%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0x1000%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='On+platforms+that+enable+control+of+the+initial+stack+size+%28the%0A++stack+that+exists+immediately+after+reset%29%2C+this+parameter+specifies%0A++its+initial+size+%28in+units+of+chars%29.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='symbol' anchor='symbol' altext='xdc.cfg.Program.symbol' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esymbol%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Esymbol%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='sysStack' anchor='sys.Stack' altext='xdc.cfg.Program.sysStack' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+size+of+the+executable%27s+initial+system+stack'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsysStack%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x1000%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EsysStack%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0x1000%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='On+platforms+that+support+a+separate+%22system+stack%22%2C+this%0A++parameter+sets+its+initial+size+%28in+units+of+chars%29.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='system' anchor='system' altext='xdc.cfg.Program.system' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esystem%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3Esystem%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='exportModule' anchor='export.Module' altext='xdc.cfg.Program.exportModule' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Force+all+the+symbols+of+a+module+to+be+part+of+a+configuration'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EexportModule%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmodName%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EexportModule%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmodName%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Although+a+call+xdc.useModule%28%29+will+force+some+of+a+module%27s+methods%0A++to+be+part+of+a+configuration%2C+the+linker+is+still+free+to+omit+any%0A++symbols+that+are+not+referenced.++Use+of+exportModule+will+force+all%0A++methods+of+the+specified+module+to+be+available.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='freezeRomConfig' anchor='freeze.Rom.Config' altext='xdc.cfg.Program.freezeRomConfig' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EfreezeRomConfig%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmodName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcfgName%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EfreezeRomConfig%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmodName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcfgName%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='freezeRomParams' anchor='freeze.Rom.Params' altext='xdc.cfg.Program.freezeRomParams' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EfreezeRomParams%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmodName%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EfreezeRomParams%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmodName%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='frozenRomConfig' anchor='frozen.Rom.Config' altext='xdc.cfg.Program.frozenRomConfig' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EfrozenRomConfig%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmodName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcfgName%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EfrozenRomConfig%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmodName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcfgName%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='getSectMap' anchor='get.Sect.Map' altext='xdc.cfg.Program.getSectMap' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Return+the+complete+mapping+of+section+names+to+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Program.html%23.Section.Spec%22+title%3D%22SectionSpec%22%3ESectionSpec%3C%2Fa%3E%3C%2Ftt%3E%0A++entries'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EgetSectMap%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EgetSectMap%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='The+returned+map+is+assembled+from+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FITarget.html%23sect.Map%22+title%3D%22xdc.bld.ITarget.sectMap%22%3Exdc.bld.ITarget.sectMap%3C%2Fa%3E%3C%2Ftt%3E%2C%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23sect.Map%22+title%3D%22xdc.platform.IPlatform.sectMap%22%3Exdc.platform.IPlatform.sectMap%3C%2Fa%3E%3C%2Ftt%3E%2C%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23code.Memory%22+title%3D%22xdc.platform.IPlatform.codeMemory%22%3Exdc.platform.IPlatform.codeMemory%3C%2Fa%3E%3C%2Ftt%3E%2C%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23data.Memory%22+title%3D%22xdc.platform.IPlatform.dataMemory%22%3Exdc.platform.IPlatform.dataMemory%3C%2Fa%3E%3C%2Ftt%3E%2C%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23stack.Memory%22+title%3D%22xdc.platform.IPlatform.stackMemory%22%3Exdc.platform.IPlatform.stackMemory%3C%2Fa%3E%3C%2Ftt%3E+and+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Program.html%23sect.Map%22+title%3D%22sectMap%22%3EsectMap%3C%2Fa%3E%3C%2Ftt%3E.%0A++The+function+can+be+called+at+any+time+during+configuration%2C+but+if%0A++it+is+called+before+all+packages+had+a+chance+to+change+%3Ctt%3EsectMap%3C%2Ftt%3E%2C%0A++the+returned+map+may+not+correspond+to+the+actual+section%0A++allocation+as+configured+in+the+linker+command+file.'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='%3Ctt%3EgetSectMap%3C%2Ftt%3E+returns+a+map+with+section+names+as+keys+and%0A%09%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Program.html%23.Section.Spec%22+title%3D%22SectionSpec%22%3ESectionSpec%3C%2Fa%3E%3C%2Ftt%3E+entries+as+values.'/>
+                </docSect>
+                <docSect name='Note'>
+                    <docPara content='If+BIOS+5+configuration+script+%28Tconf+script%29+is+executed%2C+the%0A++section+allocations+configured+in+the+Tconf+script+are+also+being%0A++returned.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='importAssembly' anchor='import.Assembly' altext='xdc.cfg.Program.importAssembly' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EimportAssembly%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EasmName%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EimportAssembly%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EasmName%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='importRomAssembly' anchor='import.Rom.Assembly' altext='xdc.cfg.Program.importRomAssembly' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EimportRomAssembly%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EromAsmName%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EimportRomAssembly%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EromAsmName%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='patchRomFxn' anchor='patch.Rom.Fxn' altext='xdc.cfg.Program.patchRomFxn' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpatchRomFxn%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmodName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EfxnName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpatchSym%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EpatchRomFxn%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmodName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EfxnName%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpatchSym%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='targetModules' anchor='target.Modules' altext='xdc.cfg.Program.targetModules' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='UNDER+CONSTRUCTION'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EtargetModules%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProgram.%3Cspan+class%3D%22xdoc-id%22%3EtargetModules%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+    </unit>
+    <docSect name='details'>
+        <docPara content='This+package+contains+the+modules+necessary+to+populate+the+XDC%0A++Configuration+Object+Model.++In+addition%2C+this+package+supplies+a%0A++C%2FC%2B%2B+header%2C+%3Ctt%3Eglobal.h%3C%2Ftt%3E%2C+that+facilitates+the+creation+of+portable%0A++sources+that+need+to+reference+global+values+defined+as+part+of%0A++a+configuration+%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fcfg%2FProgram.html%23global%22+title%3D%22xdc.cfg.Program.global%22%3Exdc.cfg.Program.global%3C%2Fa%3E%3C%2Ftt%3E%29.'/>
+    </docSect>
+    <docSect name='Compatibility Checks'>
+        <docPara content='During+configuration+certain+compatibility+checks+are+made.++These+checks%0A++include%3A'/>
+        <docPara content='%3COL%3E%3CLI%3E+++target+compatibility+among+all+packages+that+are+included+in+the%0A++++++++configuration%0A%3C%2FLI%3E%3CLI%3E+++package+compatibility+among+all+packages+included+in+the%0A++++++++configuration%0A%3C%2FLI%3E%3CLI%3E+++package+compatibility+with+respect+to+the+set+of+packages+used+to%0A++++++++build+the+packages+that+are+part+of+the+configuration+set.%0A%3C%2FLI%3E%3C%2FOL%3E'/>
+        <docPara content='By+default%2C+if+any+of+the+checks+above+fail%2C+the+configuration+step+fails.%0A++It+is+possible%2C+however%2C+to+selectively+exclude+particular%0A++packages+from+these+checks+and%2For+treat+check+failures+as+non-fatal%0A++warnings.'/>
+        <docPara content='There+are+two+%22environment%22+variables+that+control+these+checks%3A'/>
+        <docPara content='%3CDL%3E%3CDT%3E+%3Ctt%3Exdc.cfg.check.exclude%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++a+regular+expression+that+is+used+to+select+packages+that+should%0A++++++++be+excluded+from+the+set+of+packages+checked+during+configuration.%0A%3C%2FDD%3E%3CDT%3E+%3Ctt%3Exdc.cfg.check.fatal%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A++++++++if+set+to+%22%3Ctt%3Efalse%3C%2Ftt%3E%22%2C+force+any+incompatibilities+detected+to+be%0A++++++++treated+as+warnings+only%3B+otherwise+incompatibilities+are+fatal%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='Of+course%2C+it+is+also+possible+to+use+both+options+together+to+achieve%0A++a+desired+effect.'/>
+        <docPara content='To+define+these+environment+variables+one+must+pass+the+appropriate+%3Ctt%3E-D%3C%2Ftt%3E%0A++options+to+the+XDCscript+shell+%28%3Ctt%3Exs%3C%2Ftt%3E%29+which+is+used+to+run+the%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2Fconfiguro%2Fpackage.html%22+title%3D%22xdc.tools.configuro%22%3Econfiguro%3C%2Fa%3E%3C%2Ftt%3E+command+line+configuration+tool.%0A++If%2C+on+the+other+hand%2C+you+are+using+%3Ctt%3Exdc%3C%2Ftt%3E+to+run+the+configuration+step%0A++you+can+set+these+variables+by+setting+the%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FExecutable.html%23.Attrs%22+title%3D%22xdc.bld.Executable.Attrs%22%3Exsopts%3C%2Fa%3E%3C%2Ftt%3E+attribute+of+an%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FExecutable.html%22+title%3D%22xdc.bld.Executable%22%3Exdc.bld.Executable%3C%2Fa%3E%3C%2Ftt%3E+within+a+build+script.'/>
+    </docSect>
+    <docSect name='Controlling Compatibility Checks'>
+        <docPara content='To+treat+compatibility+check+failures+as+warnings+for+the+executable%0A++%3Ctt%3Eapp%3C%2Ftt%3E%3A'/>
+        <docPara content='%3CPRE+class%3D%22Example%22%3E++++Pkg.addExecutable%28%22app%22%2C+targ%2C+targ.platform%2C+%7B%0A+++++++++xsopts%3A+%22-Dxdc.cfg.check.fatal%3Dfalse%22%0A++++%7D%29%3B%0A%3C%2FPRE%3E'/>
+        <docPara content='To+ignore+any+incompatibilities+triggered+by+targets+used+by+the%0A++%3Ctt%3Eti.targets.rts*%3C%2Ftt%3E+packages%3A'/>
+        <docPara content='%3CPRE+class%3D%22Example%22%3E++++Pkg.addExecutable%28%22app%22%2C+targ%2C+targ.platform%2C+%7B%0A++++++++xsopts%3A+%22-Dxdc.cfg.check.exclude%3D%27ti.targets.rts.*%27%22%0A++++%7D%29%3B%0A%3C%2FPRE%3E'/>
+        <docPara content='In+this+case%2C+the+%3Ctt%3Exdc.cfg.check.exclude%3C%2Ftt%3E+option+is+regular+expression+used%0A++to+exclude+any+package+whose+names+matches+the+regular+expression+from+the%0A++checks.'/>
+        <docPara content='Finally%2C+if+you+don%27t+want+to+set+%3Ctt%3Exsopts%3C%2Ftt%3E+on+each+executable%2C+it+is%0A++possible+to+set+it+for+all+executables+within+a+package+by+setting+the%0A++%3Ctt%3Exsopts%3C%2Ftt%3E+attribute+of+the+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fbld%2FPackageContents.html%22+title%3D%22xdc.bld.PackageContents%22%3Exdc.bld.PackageContents%3C%2Fa%3E%3C%2Ftt%3E+%28a.k.a.+%3Ctt%3EPkg%3C%2Ftt%3E%29%0A++object.++For+example%2C+to+turn+all+compatibility+checks+into+warnings+for%0A++all+executables+in+a+package%2C+add+the+following+line+to+the+package%27s%0A++build+script%3A'/>
+        <docPara content='%3CPRE+class%3D%22Example%22%3E++++Pkg.attrs.xsopts+%3D+%22-Dxdc.cfg.check.fatal%3Dfalse%22%3B%0A%3C%2FPRE%3E'/>
+    </docSect>
+    <docSect name='Throws'>
+        <docPara content='%3Ctt%3EXDCException%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.+The+following+error%0A++codes+are+reported+in+the+exception+message%3A'/>
+        <docPara content='%3CDL%3E%3CDT%3E++%3Ctt%3Exdc.cfg.CONFIG_ERROR%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A+++++++++++This+is+a+general+error+reported+when+the+program+configuration%0A+++++++++++fails.+This+error+is+caused+by+one+or+more+configuration+errors.%0A+++++++++++The+list+of+those+specific+errors+preceds+this+error.%0A%3C%2FDD%3E%3CDT%3E++%3Ctt%3Exdc.cfg.INCOMPATIBLE_TARGET_VERSION%3C%2Ftt%3E%3C%2FDT%3E%3CDD%3E%0A+++++++++++This+is+an+error+or+a+warning+usually+reported+when+the+version+of+%0A+++++++++++the+compiler+used+in+the+current+build+is+not+compatible+with+the%0A+++++++++++version+of+the+compiler+used+to+build+some+of+the+loaded+packages.%0A+++++++++++The+compiler+version+might+be+encoded+in+the+compatibility+keys%0A+++++++++++displayed+in+the+error+message%2C+but+it+is+not+required.+Please%0A+++++++++++check+the+documentation+of+the+current+target%27s+package+for+the%0A+++++++++++content+of+the+compatibility+keys.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+    </docSect>
+    <docSect name='see'>
+        <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fcfg%2FProgram.html%23global%22+title%3D%22xdc.cfg.Program.global%22%3Exdc.cfg.Program.global%3C%2Fa%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2Fconfiguro%2FMain.html%22+title%3D%22xdc.tools.configuro.Main%22%3Exdc.tools.configuro.Main%3C%2Fa%3E'/>
+    </docSect>
+</package>

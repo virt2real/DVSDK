@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='xdc.services.global' nodoc='0' root='../../../' summary='Common+XDC+utility+classes'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc.services.global%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+0%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='Clock' kind='module' nodoc='0' metaonly='1' summary='Elapsed+time+measurement+functions'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2Fpackage.html%22+title%3D%22xdc.services.global%22%3Exdc.services.global%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EClock%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EClock%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Clock+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27xdc.services.global.Clock%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='enable' anchor='enable' altext='xdc.services.global.Clock.enable' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+output+from+this+module'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eenable%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EClock.%3Cspan+class%3D%22xdoc-id%22%3Eenable%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='If+false%2C+all+output+is+suppressed'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='showMemory' anchor='show.Memory' altext='xdc.services.global.Clock.showMemory' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+memory+usage+output'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EshowMemory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EClock.%3Cspan+class%3D%22xdoc-id%22%3EshowMemory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='If+false%2C+memory+usage+output+is+suppressed'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='getElapsedTime' anchor='get.Elapsed.Time' altext='xdc.services.global.Clock.getElapsedTime' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Get+elapsed+time+from+last+reset'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EgetElapsedTime%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EClock.%3Cspan+class%3D%22xdoc-id%22%3EgetElapsedTime%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='print' anchor='print' altext='xdc.services.global.Clock.print' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Report+elapsed+time+from+last+reset'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprint%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emsg%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EClock.%3Cspan+class%3D%22xdoc-id%22%3Eprint%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Emsg%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='reset' anchor='reset' altext='xdc.services.global.Clock.reset' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Set+elapsed+time+to+0'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ereset%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EClock.%3Cspan+class%3D%22xdoc-id%22%3Ereset%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+    </unit>
+    <unit name='Trace' kind='module' nodoc='0' metaonly='1' summary='Trace+support'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2Fpackage.html%22+title%3D%22xdc.services.global%22%3Exdc.services.global%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETrace%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETrace%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Trace+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27xdc.services.global.Trace%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='This+module+allows+system+integrators+to+selectively+enable+trace%0A++statements%2C+from+within+XDCscripts.+Trace+statements+can+be+selected%0A++based+on+the+file+%28capsule%29+and+the+package+in+which+they+are+located.%0A++For+example%2C+trace+statements+from+file+%3Ctt%3EMod.xs%3C%2Ftt%3E+in+package+%3Ctt%3EmyPkgs.pkgA%27%0A++can+be+enabled+either+with+%3C%2Ftt%3ETrace.capsuleEnable%28%5B%22myPkgs%2FpkgA%2FMod%22%5D%29%3Ctt%3E+or%0A++with+%3C%2Ftt%3ETrace.packageEnable%28%5B%22myPkgs.pkgA%22%5D%29%60.'/>
+            <docPara content='Trace+statements+can+also+belong+to+groups%2C+strings+defined+by+package%0A++producers+when+they+need+to+group+related+trace+statements%2C+distributed%0A++across+different+modules+and+packages%2C+into+trace+units+that+can+be%0A++disabled+or+enabled+as+a+whole.+If+some+of+the+trace+statements+from+file%0A++%3Ctt%3EMod.xs%3C%2Ftt%3E+are+tagged+to+belong+to+a+group+%22init%22%2C+the+following+will%0A++activate+them%3A'/>
+            <docPara content='%3CPRE+class%3D%22Example%22%3E++Trace.groupEnable%28%5B%22init%22%5D%29%3B%0A%3C%2FPRE%3E'/>
+            <docPara content='Each+trace+statement+by+default+belongs+to+the+group+%22all%22.+To+activate%0A++all+trace+statements%3A'/>
+            <docPara content='%3CPRE+class%3D%22Example%22%3E++Trace.setLevel%282%29%3B%0A++Trace.groupEnable%28%5B%22all%22%5D%29%3B%0A%3C%2FPRE%3E'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='typedef' name='StringArray' anchor='.String.Array' altext='xdc.services.global.Trace.StringArray' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Etypedef%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EStringArray%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopTarg>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Etypedef%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ETrace_StringArray%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                </synopTarg>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='capsules' anchor='capsules' altext='xdc.services.global.Trace.capsules' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2FTrace.html%23.String.Array%22+title%3D%22xdc.services.global.Trace.StringArray%22%3ETrace.StringArray%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecapsules%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%255B%2B%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3Ecapsules%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B%2B%255D%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='groups' anchor='groups' altext='xdc.services.global.Trace.groups' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2FTrace.html%23.String.Array%22+title%3D%22xdc.services.global.Trace.StringArray%22%3ETrace.StringArray%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Egroups%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%255B%2B%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3Egroups%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B%2B%255D%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='level' anchor='level' altext='xdc.services.global.Trace.level' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elevel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3Elevel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E+0%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='moduleUse' anchor='module.Use' altext='xdc.services.global.Trace.moduleUse' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+trace+of+used+modules'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmoduleUse%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3EmoduleUse%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+setting+enables+the+messages+that+inform+when+the+function%0A++%3Ctt%3Exdc.useModule%28%29%3C%2Ftt%3E+is+invoked+on+a+module%2C+and+when+a+module%27s%0A++%3Ctt%3Emodule%24use%3C%2Ftt%3E+function+is+invoked.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='packageLoad' anchor='package.Load' altext='xdc.services.global.Trace.packageLoad' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+trace+of+loaded+packages'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpackageLoad%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3EpackageLoad%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+setting+enables+the+messages+related+to+loading+packages.%0A++If+%3Ctt%3Etrue%3C%2Ftt%3E%2C+whenever+a+package+is+loaded%2C+the+following+info+is%0A++displayed%3A'/>
+                    <docPara content='%3CUL%3E%3CLI%3E+name+of+a+package+loading+another+package%0A%3C%2FLI%3E%3CLI%3E+name+of+the+loaded+package%0A%3C%2FLI%3E%3CLI%3E+repository+from+which+the+package+is+being+loaded+%0A%3C%2FLI%3E%3C%2FUL%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='packages' anchor='packages' altext='xdc.services.global.Trace.packages' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2FTrace.html%23.String.Array%22+title%3D%22xdc.services.global.Trace.StringArray%22%3ETrace.StringArray%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Epackages%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%255B%2B%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3Epackages%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B%2B%255D%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='addSupergroup' anchor='add.Supergroup' altext='xdc.services.global.Trace.addSupergroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Add+a+group+that+contains+other+groups'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EaddSupergroup%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esupergroup%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2FTrace.html%23.String.Array%22+title%3D%22xdc.services.global.Trace.StringArray%22%3ETrace.StringArray%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esubgroups%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3EaddSupergroup%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esupergroup%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Esubgroups%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='' summary='supergroup%09name+of+the+new+group'>
+                        <docPara content='subgroups%09array+of+the+existing+trace+groups'/>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+function+allows+giving+a+name+to+an+array+of+existing+%0A++trace+groups.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='capsuleEnable' anchor='capsule.Enable' altext='xdc.services.global.Trace.capsuleEnable' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+trace+output+from+selected+capsules'>
+                <synopSpec>
+                    <line tab='0' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2FTrace.html%23.String.Array%22+title%3D%22xdc.services.global.Trace.StringArray%22%3ETrace.StringArray%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcapsuleEnable%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2FTrace.html%23.String.Array%22+title%3D%22xdc.services.global.Trace.StringArray%22%3ETrace.StringArray%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecapsules%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3EcapsuleEnable%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecapsules%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Capsules+are+either+XDCscript+files+or+Java+source+files.+The%0A++function+parameter+is+treated+as+an+array+of+JavaScript%0A++regular+expressions%2C+therefore+it+can+contain+partial+capsule%0A++names.'/>
+                    <docPara content='If+this+function+is+invoked+repeatedly%2C+each+new+call+replaces%0A++the+array+of+currently+enabled+capsules+with+the+array+supplied%0A++as+the+parameter.+The+array+of+the+currently+enabled+capsules+is%0A++returned.+If+the+function+is+invoked+with+a+zero-length+array%2C+it%0A++returns+the+currently+enabled+capsules%2C+but+it+also+leaves+them%0A++active.+Therefore%2C+the+sequence+of+calls+that+would+add+new+%0A++capsules+instead+of+replacing+the+current+ones+is%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++var+current+%3D+Trace.capsuleEnable%28%5B%5D%29%3B%0A++current%5Bcurrent.length%2B%2B%5D+%3D+%22pkg%2FModA.xs%22%3B%0A++current%5Bcurrent.length%2B%2B%5D+%3D+%22pkg%2FModB.xs%22%3B%0A++Trace.capsuleEnable%28current%29%3B%0A%3C%2FPRE%3E'/>
+                    <docPara content='To+disable+trace+for+all+capsules%2C+the+function+must+be+invoked%0A++with+an+empty+string+as+the+only+element+of+the+array.'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++Trace.capsuleEnable%28%5B%22%22%5D%29%3B%0A%3C%2FPRE%3E'/>
+                </docSect>
+                <docSect name='params'>
+                    <docPara content='capsules%09array+of+capsule+names'/>
+                </docSect>
+                <docSect name='return'>
+                    <docPara content='array+of+currently+enabled+capsule+names'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='groupEnable' anchor='group.Enable' altext='xdc.services.global.Trace.groupEnable' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+trace+output+from+selected+groups'>
+                <synopSpec>
+                    <line tab='0' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2FTrace.html%23.String.Array%22+title%3D%22xdc.services.global.Trace.StringArray%22%3ETrace.StringArray%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgroupEnable%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2FTrace.html%23.String.Array%22+title%3D%22xdc.services.global.Trace.StringArray%22%3ETrace.StringArray%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Egroups%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3EgroupEnable%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Egroups%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='A+group+is+a+string+defined+by+package+producers+when+they+need+to%0A++group+related+trace+statements%2C+distributed+across+different%0A++modules+and+packages%2C+into+trace+units+that+can+be+disabled+or%0A++enabled+as+a+whole.+The+function+parameter+is+treated+as+an+array%0A++of+JavaScript+regular+expressions%2C+therefore+it+can+contain+partial%0A++group+names.'/>
+                    <docPara content='If+this+function+is+invoked+repeatedly%2C+each+new+call+replaces%0A++the+array+of+currently+enabled+groups+with+the+array+supplied%0A++as+the+parameter.+The+array+of+the+currently+enabled+groups+is%0A++returned.+If+the+function+is+invoked+with+a+zero-length+array%2C+it%0A++returns+the+currently+enabled+groups%2C+but+it+also+leaves+them%0A++active.+Therefore%2C+the+sequence+of+calls+that+would+add+new+groups+%0A++instead+of+replacing+the+current+ones+is%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++var+current+%3D+Trace.groupEnable%28%5B%5D%29%3B%0A++current%5Bcurrent.length%2B%2B%5D+%3D+%22libPkgs%22%3B%0A++Trace.groupEnable%28current%29%3B%0A%3C%2FPRE%3E'/>
+                    <docPara content='To+disable+trace+for+all+groups%2C+the+function+must+be+invoked%0A++with+an+empty+string+as+the+only+element+of+the+array.'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++Trace.groupEnable%28%5B%22%22%5D%29%3B%0A%3C%2FPRE%3E'/>
+                </docSect>
+                <docSect name='params'>
+                    <docPara content='groups%09array+of+groups'/>
+                </docSect>
+                <docSect name='return'>
+                    <docPara content='array+of+currently+enabled+groups'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='packageEnable' anchor='package.Enable' altext='xdc.services.global.Trace.packageEnable' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+trace+output+from+selected+packages'>
+                <synopSpec>
+                    <line tab='0' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2FTrace.html%23.String.Array%22+title%3D%22xdc.services.global.Trace.StringArray%22%3ETrace.StringArray%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpackageEnable%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2FTrace.html%23.String.Array%22+title%3D%22xdc.services.global.Trace.StringArray%22%3ETrace.StringArray%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Epackages%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3EpackageEnable%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Epackages%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Packages+that+can+be+enabled+through+this+function+are+RTSC%0A++packages+and+Java+packages.+The+function+parameter+is+treated+as%0A++an+array+of+JavaScript+regular+expressions%2C+therefore+it+can%0A++contain+partial+package+names.'/>
+                    <docPara content='If+this+function+is+invoked+repeatedly%2C+each+new+call+replaces%0A++the+array+of+currently+enabled+packages+with+the+array+supplied%0A++as+the+parameter.+The+array+of+the+currently+enabled+packages+is%0A++returned.+If+the+function+is+invoked+with+a+zero-length+array%2C+it%0A++returns+the+currently+enabled+packages%2C+but+it+also+leaves+them%0A++active.+Therefore%2C+the+sequence+of+calls+that+would+add+new+%0A++packages+instead+of+replacing+the+current+ones+is%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++var+current+%3D+Trace.packageEnable%28%5B%5D%29%3B%0A++current%5Bcurrent.length%2B%2B%5D+%3D+%22ti.targets%22%3B%0A++Trace.packageEnable%28current%29%3B%0A%3C%2FPRE%3E'/>
+                    <docPara content='To+disable+trace+for+all+packages%2C+the+function+must+be+invoked%0A++with+an+empty+string+as+the+only+element+of+the+array.'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++Trace.packageEnable%28%5B%22%22%5D%29%3B%0A%3C%2FPRE%3E'/>
+                </docSect>
+                <docSect name='params'>
+                    <docPara content='capsules%09array+of+package+names'/>
+                </docSect>
+                <docSect name='return'>
+                    <docPara content='array+of+currently+enabled+package+names'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='setLevel' anchor='set.Level' altext='xdc.services.global.Trace.setLevel' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Set+the+verbosity+level'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsetLevel%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elevel%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3EsetLevel%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elevel%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+function+limits+trace+output+to+trace+statement+tagged+with%0A++level+equal+or+lower+than+this+function%27s+parameter.+By+default%2C%0A++the+verbosity+level+is+set+to+0%2C+which+is+the+least+verbose+level.%0A++The+most+verbose+level+is+2.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='start' anchor='start' altext='xdc.services.global.Trace.start' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Estart%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3ETrace.%3Cspan+class%3D%22xdoc-id%22%3Estart%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EVoid%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+    </unit>
+</package>

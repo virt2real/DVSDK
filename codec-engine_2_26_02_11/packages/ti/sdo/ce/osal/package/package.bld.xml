@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.osal" version="2, 0, 2" producerId="codec_engine_2_26_02_11">
+    <units>
+        <interface name="IOsal"/>
+        <module name="Global"/>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_sdo_ce_osal.tar.dep" src="package/rel/ti_sdo_ce_osal.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_osal"
+        pname="ti_sdo_ce_osal.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="Sem.h"/>
+        <file name="Trace.h"/>
+        <file name="package/package.ext.xml"/>
+        <file name="Log.h"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="Global.h"/>
+        <file name="Memory.h"/>
+        <file name="./bios.tci"/>
+        <file name="package/package.rel.dot"/>
+        <file name="LockMP.h"/>
+        <file name="SemMP.h"/>
+        <file name="Thread.h"/>
+        <file name="package/build.cfg"/>
+        <file name="Queue.h"/>
+        <file name="package/package.bld.xml"/>
+        <file name="File.h"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="Lock.h"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,87 @@
+/*
+ *  ======== C32.xdm ========
+ *  This module defines the C32 "target" for the Build Object Model (BOM).
+ */
+package microsoft.targets
+
+hostonly module C32 extends microsoft.targets.ITarget {
+
+    readonly override param string name			= "C32";	
+    readonly override param string os			= "Windows";	
+    readonly override param string suffix		= "86";
+    readonly override param string isa			= "x86";	
+    readonly override param bld.ITarget.Model model	= {
+	endian: "little"
+    };
+
+    readonly override param string platform = "host.platforms.PC";
+    
+    /*
+     *  ======== ar ========
+     *  The archiver command and all required options
+     *	    -nologo don't display archiver copyright
+     */
+    readonly override param ITarget.Command ar = {
+	cmd: "$(PKGBASE)/run.sh $(ROOTDIR)/vc98/bin/lib -nologo",
+	opts: ""
+    };
+
+    /*
+     *  ======== cc ========
+     *  The compile command and all required options
+     *	    -W3	    enable all warnings recommended for production purposes.
+     *	    -c	    don't link
+     *	    -nologo don't display compiler copyright
+     *	    -Za	    disable microsoft C/C++ extensions
+     *
+     */
+    readonly override param ITarget.Command cc = {
+	cmd: "$(PKGBASE)/run.sh $(ROOTDIR)/vc98/bin/cl -nologo -c -W3 -Za",
+	opts: '-DWIN32 -D_DLL -D_AFXDLL -DEXPORT=""'
+    };
+
+    /*
+     *  ======== asm ========
+     */
+    readonly override param ITarget.Command asm = {
+	cmd: "$(PKGBASE)/run.sh $(ROOTDIR)/vc98/bin/cl -c",
+	opts: ""
+    };
+
+    /*
+     *  ======== lnk ========
+     *  The linker command and all required options
+     *	    -nologo don't display linker copyright
+     */
+    readonly override param ITarget.Command lnk = {
+	cmd: "$(PKGBASE)/link.sh $(ROOTDIR)/vc98/bin/link -nologo",
+	opts: ""
+    };
+    
+    /*
+     *  ======== ccOpts ========
+     *  User modifiable default options.
+     *	    -G5	    Optimizes code to favor the Pentium processor
+     *	    -Zp1    Packs structure members on 1-byte boundry
+     *	    -Ob1    Expand only functions marked as inline or, in a C++
+     *		    member function, defined within a class declaration
+     *	    -Gs	    Probe stack to automatically grow stack as necessary
+     *	    -GX	    Enables synchronous exception handling
+     *	    -WL	    write errors/warnings on a single output line
+     */
+    override param ITarget.Options ccOpts = {
+	prefix: "-G5 -Zp1 -Ob1 -Gs -GX",
+	suffix: "-Dfar= "
+    };
+
+    override param ITarget.Options lnkOpts = {
+	prefix: "",
+	suffix: "-machine:ix86 -nodefaultlib -incremental:no $(ROOTDIR)/vc98/mfc/lib/mfc42.lib $(ROOTDIR)/vc98/mfc/lib/mfcs42.lib $(ROOTDIR)/vc98/lib/msvcrt.lib $(ROOTDIR)/vc98/lib/msvcirt.lib"
+    };
+	
+    /*
+     *  ======== includeOpts ========
+     *  $(ROOTDIR)/vc98/include		  - contains compiler specific headers
+     */
+    override param string includeOpts = "-I$(ROOTDIR)/vc98/include -I$(ROOTDIR)/vc98/mfc/include -I$(ROOTDIR)/vc98/atl/include";
+};

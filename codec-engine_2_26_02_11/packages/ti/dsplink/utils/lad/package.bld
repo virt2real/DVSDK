@@ -1,0 +1,295 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+
+/*
+ *  ======== package.bld ========
+ */
+
+var Build = xdc.useModule('xdc.bld.BuildEnvironment');
+var Pkg = xdc.useModule('xdc.bld.PackageContents');
+
+Pkg.attrs.exportExe = true;
+Pkg.attrs.exportSrc = true;
+
+Pkg.otherFiles = [
+    "_lad.h",
+    "package.bld",
+    "lad.cfg"
+];
+
+Pkg.attrs.exportAll = true;
+
+/* Uncomment this to build the app with debug support */
+//Pkg.attrs.profile = "debug";
+
+/* bin/ is a generated directory that 'xdc clean' should remove */
+Pkg.generatedFiles.$add("bin/");
+
+/* lib/ is a generated directory that 'xdc clean' should remove */
+Pkg.generatedFiles.$add("lib/");
+
+try {
+    var linkGppGlobal = xdc.useModule("dsplink.gpp.Global");
+}
+catch (e) {
+    print("Remark: Module \'dsplink.gpp.Global\' not found, not building " +
+          "this package.");
+}
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+
+    if (!linkGppGlobal) {
+        continue;
+    }
+
+    /* build only for ARM targets */
+    if ((":" + targ.getISAChain().join(":")+":").match(/:v5T:|:v6:/i)) {
+        print("building for target " + targ.name + " ...");
+
+        linkGppGlobal.runtimeOS = linkGppGlobal.LINUX;
+
+        /* Platforms were added to targ.platforms[] in config.bld */
+        for (var j = 0; j < targ.platforms.length; j++) {
+            var platform = targ.platforms[j];
+
+            print("  platform:  " + platform);
+
+            /*
+             * Only build for platforms with both GPP and DSP, and this is the
+             * GPP.
+             *
+             * Note, currently we just check whether the target we're building
+             * for has its targ.os set (which Linux and WinCE do, but BIOS does
+             * not.  This tells us whether we're on the GPP side.  It's not
+             * foolproof, and there should be a better way to determine this.
+             */
+            var platMod = xdc.useModule(platform + '.Platform');
+            if (("DSP" in platMod) && ("GPP" in platMod) &&
+                    targ.os != undefined) {
+                print("    LAD supported");
+                addExe(targ, platform);
+            }
+        }
+    }
+
+    /* For WINCE, build library that will be linked in by ladclient */
+    if ((":" + targ.getISAChain().join(":")+":").match(/:v4T:/i)) {
+        print("building for target " + targ.name + " ...");
+
+        linkGppGlobal.runtimeOS = linkGppGlobal.WINCE;
+
+        /* Platforms were added to targ.platforms[] in config.bld */
+        for (var j = 0; j < targ.platforms.length; j++) {
+            var platform = targ.platforms[j];
+
+            print("  platform:  " + platform);
+
+            /*
+             * Only build for platforms with both GPP and DSP, and this is the
+             * GPP.
+             *
+             * Note, currently we just check whether the target we're building
+             * for has its targ.os set (which Linux and WinCE do, but BIOS does
+             * not.  This tells us whether we're on the GPP side.  It's not
+             * foolproof, and there should be a better way to determine this.
+             */
+            var platMod = xdc.useModule(platform + '.Platform');
+            if (("DSP" in platMod) && ("GPP" in platMod)) {
+                print("    LAD supported");
+                addLib(targ, platform);
+            }
+        }
+    }
+}
+
+/*
+ *  ======== addExe ========
+ */
+function addExe(targ, platform)
+{
+    var src = ["lad.c"];
+    src.push("ladconfig.c");
+    src.push("user0_pool_mqt_cfg.c");
+    src.push("user1_pool_mqt_cfg.c");
+    src.push("user2_pool_mqt_cfg.c");
+    src.push("message_pool_mqt_cfg.c");
+
+    var cfgScript = "";
+
+    if (targ.os == "Linux") {
+        cfgScript = "lad.cfg";
+    }
+
+    /* temporary hack to get dsplink defines and includes */
+    /* these device-specific includes/defines really should be removed from
+     * Link.  But as they're necessary, we should switch on some device id
+     * within the platform, not the name.
+     */
+    if (platform.match(/evm2530/)) {
+        linkGppGlobal.deviceName = linkGppGlobal.OMAP2530;
+        var LLINC = linkGppGlobal.getIncludes();
+        var LLDEF = linkGppGlobal.getDefines();
+        src.push("user0_linkcfg_evm2530.c");
+        src.push("user1_linkcfg_evm2530.c");
+        src.push("user2_linkcfg_evm2530.c");
+        src.push("message_linkcfg_omap2530_shmem.c");
+    }
+    else if (platform.match(/evm3530/)) {
+        linkGppGlobal.deviceName = linkGppGlobal.OMAP3530;
+        var LLINC = linkGppGlobal.getIncludes();
+        var LLDEF = linkGppGlobal.getDefines();
+        src.push("user0_linkcfg_evm3530.c");
+        src.push("user1_linkcfg_evm3530.c");
+        src.push("user2_linkcfg_evm3530.c");
+        src.push("message_linkcfg_omap3530_shmem.c");
+    }
+    else if (platform.match(/evmDM6446/)) {
+        linkGppGlobal.deviceName = linkGppGlobal.DAVINCI;
+        var LLINC = linkGppGlobal.getIncludes();
+        var LLDEF = linkGppGlobal.getDefines();
+        src.push("user0_linkcfg_dm6446.c");
+        src.push("user1_linkcfg_dm6446.c");
+        src.push("user2_linkcfg_dm6446.c");
+        src.push("message_linkcfg_dm6446gem_shmem.c");
+    }
+    else if (platform.match(/evmDM6467/)) {
+        linkGppGlobal.deviceName = linkGppGlobal.DAVINCIHD;
+        var LLINC = linkGppGlobal.getIncludes();
+        var LLDEF = linkGppGlobal.getDefines();
+        src.push("user0_linkcfg_dm6467.c");
+        src.push("user1_linkcfg_dm6467.c");
+        src.push("user2_linkcfg_dm6467.c");
+        src.push("message_linkcfg_dm6467gem_shmem.c");
+    }
+    else if (platform.match(/evmDM357/)) {
+        linkGppGlobal.deviceName = linkGppGlobal.DM357;
+        var LLINC = linkGppGlobal.getIncludes();
+        var LLDEF = linkGppGlobal.getDefines();
+        src.push("user0_linkcfg_dm357.c");
+        src.push("user1_linkcfg_dm357.c");
+        src.push("user2_linkcfg_dm357.c");
+        src.push("message_linkcfg_dm357gem_shmem.c");
+    }
+    else if (platform.match(/evmOMAPL137/)) {
+        linkGppGlobal.deviceName = linkGppGlobal.OMAPL1XX;
+        var LLINC = linkGppGlobal.getIncludes();
+        var LLDEF = linkGppGlobal.getDefines();
+        src.push("user0_linkcfg_omapl137.c");
+        src.push("user1_linkcfg_omapl137.c");
+        src.push("user2_linkcfg_omapl137.c");
+        src.push("message_linkcfg_omapl137_shmem.c");
+    }
+    else if (platform.match(/evmOMAPL138/)) {
+        linkGppGlobal.deviceName = linkGppGlobal.OMAPL138;
+        var LLINC = linkGppGlobal.getIncludes();
+        var LLDEF = linkGppGlobal.getDefines();
+        src.push("user0_linkcfg_omapl138.c");
+        src.push("user1_linkcfg_omapl138.c");
+        src.push("user2_linkcfg_omapl138.c");
+        src.push("message_linkcfg_omapl138_shmem.c");
+    }
+    else {
+        throw("Error, unsupported platform");
+    }
+
+    // name = bin/platform/name.x+suffix
+    var name = "bin/" +
+            // replace all ':' and '.' with '_' in platform name
+            platform.replace(/\:/g, "_").replace(/\./g, "_") + '/lad';
+
+    Pkg.addExecutable(name, targ, platform, {
+        defs: LLDEF,
+        incs: LLINC,
+        cfgScript: cfgScript
+    }).addObjects(src);
+}
+
+/*
+ *  ======== addLib ========
+ */
+function addLib(targ, platform)
+{
+    var src = ["ladconfig.c"];
+    src.push("user0_pool_mqt_cfg.c");
+    src.push("user1_pool_mqt_cfg.c");
+    src.push("user2_pool_mqt_cfg.c");
+    src.push("message_pool_mqt_cfg.c");
+
+    /* temporary hack to get dsplink defines and includes */
+    /* these device-specific includes/defines really should be removed from
+     * Link.  But as they're necessary, we should switch on some device id
+     * within the platform, not the name.
+     */
+    var platname = "";
+    if (platform.match(/evm3530/)) {
+        platname = "3530";
+        linkGppGlobal.deviceName = linkGppGlobal.OMAP3530;
+        var LLINC = linkGppGlobal.getIncludes();
+        var LLDEF = linkGppGlobal.getDefines();
+        src.push("user0_linkcfg_evm3530.c");
+        src.push("user1_linkcfg_evm3530.c");
+        src.push("user2_linkcfg_evm3530.c");
+        src.push("message_linkcfg_omap3530_shmem.c");
+    }
+    else if (platform.match(/evmDM6446/)) {
+        platname = "6446";
+        linkGppGlobal.deviceName = linkGppGlobal.DAVINCI;
+        var LLINC = linkGppGlobal.getIncludes();
+        var LLDEF = linkGppGlobal.getDefines();
+        src.push("user0_linkcfg_dm6446.c");
+        src.push("user1_linkcfg_dm6446.c");
+        src.push("user2_linkcfg_dm6446.c");
+        src.push("message_linkcfg_dm6446gem_shmem.c");
+    }
+    else {
+        throw("Error, unsupported platform");
+    }
+
+    Pkg.addLibrary("lib/debug/lad_" + platname, targ, {
+        profile:"debug",
+        defs: LLDEF,
+        incs: LLINC
+    }).addObjects(src);
+
+    Pkg.addLibrary("lib/release/lad_" + platname, targ, {
+        profile:"release",
+        defs: LLDEF,
+        incs: LLINC
+    }).addObjects(src);
+}
+/*
+ *  @(#) ti.dsplink.utils.lad; 2, 0, 0,228; 12-2-2010 21:18:40; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+

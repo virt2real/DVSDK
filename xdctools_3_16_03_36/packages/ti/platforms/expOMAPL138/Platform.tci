@@ -1,0 +1,70 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * The following comment is used by the Graphical Config Tool:
+ * !DESCRIPTION 6XXX!  expOMAPL138 (300 MHz) with 16 MBytes DSP-private DDR (board also has 32MBytes for Arm, and 16MBytes shared with Arm).
+ * !NAME! ti.platforms.expOMAPL138
+ */
+
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+var mem_ext = [];
+
+mem_ext[0] = {
+    comment: "16Mbytes of the DSP's off-chip memory",
+    name: "DDR",
+    base: 0xC3000000,
+    len:  0x01000000,
+    space: "code/data"
+};
+
+/* Specify the L1 and L2 memory settings */
+var device_regs = {
+    l1PMode: "32k",
+    l1DMode: "32k",
+    l2Mode: "0k"
+};
+
+var params = {
+    clockRate: 300,
+    catalogName: "ti.catalog.c6000",
+    deviceName: "OMAPL138",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/* override the defaults with anything specified by client */
+if (utils.loadPlatform.params != null) {
+    var overrides = utils.loadPlatform.params;
+    for (var i in params) {
+        if (i in overrides) {
+            params[i] = overrides[i];
+        }
+    }
+}
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+/*
+ *  @(#) ti.platforms.expOMAPL138; 1, 0, 0,36; 2-23-2010 17:00:53; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.rman.examples.sdma" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470uC.c"/>
+        <srcFile name="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470MV.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="ires_algorithm.cfg"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma/ires_algorithm_scpy.o470MV.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma/app.o470MV.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470MV.dep" src="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma/ires_algorithm_scpy.o470MV.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma/app.o470MV.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470MV.dep" src="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma/ires_algorithm_scpy.o470MV.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma/app.o470MV.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470MV.dep" src="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma/ires_algorithm_scpy.o470MV.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470MV.o470MV.dep" src="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470MV.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma/app.o470MV.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470MV.dep" src="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470MV.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma/ires_algorithm_scpy.ov5T.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma/app.ov5T.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evm3530/debug/sdma_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_xv5T.dep" src="package/cfg/bin/ti_platforms_evm3530/debug/sdma_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma/ires_algorithm_scpy.ov5T.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma/app.ov5T.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evm3530/release/sdma_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_xv5T.dep" src="package/cfg/bin/ti_platforms_evm3530/release/sdma_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma/ires_algorithm_scpy.ov5T.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma/app.ov5T.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_xv5T.dep" src="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma/ires_algorithm_scpy.ov5T.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma/app.ov5T.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evm3530/trace/sdma_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_xv5T.dep" src="package/cfg/bin/ti_platforms_evm3530/trace/sdma_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma/ires_algorithm_scpy.o470uC.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma/app.o470uC.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma/ires_algorithm_scpy.o470uC.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma/app.o470uC.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma/ires_algorithm_scpy.o470uC.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma/app.o470uC.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma/ires_algorithm_scpy.o470uC.dep" src="ires_algorithm_scpy.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma/app.o470uC.dep" src="app.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470uC.cfg"/>
+        <srcFile name="package/rel/ti_sdo_fc_rman_examples_sdma.tar.dep" src="package/rel/ti_sdo_fc_rman_examples_sdma.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,0"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="bin/ti_platforms_evm3530/debug/sdma"
+        pname="bin/ti_platforms_evm3530/debug/sdma.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evm3530"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/release/sdma"
+        pname="bin/ti_platforms_evm3530/release/sdma.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evm3530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/debug_trace/sdma"
+        pname="bin/ti_platforms_evm3530/debug_trace/sdma.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evm3530"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/trace/sdma"
+        pname="bin/ti_platforms_evm3530/trace/sdma.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evm3530"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470MV.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470MV"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/debug/sdma"
+        pname="bin/ti_platforms_evm3530/debug/sdma.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evm3530"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/debug/sdma_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/debug/sdma_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/release/sdma"
+        pname="bin/ti_platforms_evm3530/release/sdma.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evm3530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/release/sdma_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/release/sdma_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/debug_trace/sdma"
+        pname="bin/ti_platforms_evm3530/debug_trace/sdma.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evm3530"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/trace/sdma"
+        pname="bin/ti_platforms_evm3530/trace/sdma.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evm3530"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/trace/sdma_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/trace/sdma_xv5T"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/debug/sdma"
+        pname="bin/ti_platforms_evm3530/debug/sdma.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evm3530"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/debug/sdma_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/release/sdma"
+        pname="bin/ti_platforms_evm3530/release/sdma.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evm3530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/release/sdma_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/debug_trace/sdma"
+        pname="bin/ti_platforms_evm3530/debug_trace/sdma.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evm3530"
+        profile="debug_trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/debug_trace/sdma_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/trace/sdma"
+        pname="bin/ti_platforms_evm3530/trace/sdma.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evm3530"
+        profile="trace"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/trace/sdma_x470uC"
+        cfgScript="ires_algorithm.cfg"
+        />
+    </executables>
+    <tests>
+    <test exeName="bin/ti_platforms_evm3530/debug/sdma.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evm3530/debug/sdma.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/release/sdma.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evm3530/release/sdma.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/debug_trace/sdma.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evm3530/debug_trace/sdma.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/trace/sdma.x470MV"
+        args=""
+        groupName="bin/ti_platforms_evm3530/trace/sdma.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/debug/sdma.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evm3530/debug/sdma.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/release/sdma.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evm3530/release/sdma.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/debug_trace/sdma.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evm3530/debug_trace/sdma.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/trace/sdma.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evm3530/trace/sdma.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/debug/sdma.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evm3530/debug/sdma.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/release/sdma.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evm3530/release/sdma.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/debug_trace/sdma.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evm3530/debug_trace/sdma.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/trace/sdma.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evm3530/trace/sdma.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_rman_examples_sdma"
+        pname="ti_sdo_fc_rman_examples_sdma.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="bin/ti_platforms_evm3530/debug_trace/sdma.xv5T"/>
+        <file name="bin/ti_platforms_evm3530/release/sdma.x470uC"/>
+        <file name="bin/ti_platforms_evm3530/release/sdma.x470MV"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="bin/ti_platforms_evm3530/trace/sdma.xv5T"/>
+        <file name="package/package.rel.dot"/>
+        <file name="ires_algorithm.h"/>
+        <file name="bin/ti_platforms_evm3530/trace/sdma.x470uC"/>
+        <file name="bin/ti_platforms_evm3530/trace/sdma.x470MV"/>
+        <file name="bin/ti_platforms_evm3530/debug/sdma.xv5T"/>
+        <file name="bin/ti_platforms_evm3530/debug/sdma.x470uC"/>
+        <file name="bin/ti_platforms_evm3530/debug/sdma.x470MV"/>
+        <file name="package/build.cfg"/>
+        <file name="bin/ti_platforms_evm3530/debug_trace/sdma.x470uC"/>
+        <file name="bin/ti_platforms_evm3530/debug_trace/sdma.x470MV"/>
+        <file name="package/package.bld.xml"/>
+        <file name="bin/ti_platforms_evm3530/release/sdma.xv5T"/>
+        <file name="package.bld"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

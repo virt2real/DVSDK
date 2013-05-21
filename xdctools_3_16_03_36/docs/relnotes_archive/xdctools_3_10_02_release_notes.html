@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><!-- /* * Copyright 2007 by Texas Instruments Incorporated . * * All rights reserved. Property of Texas Instruments Incorporated. * Restricted rights to use, duplicate or disclose this code are * granted through contract. * */ -->
+
+
+  
+
+
+  <title>XDCtools 3.10.02 Release Notes</title><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><!-- For now, we use the doxygen style sheet -->
+
+
+  <link href="doxygen.css" type="text/css" rel="stylesheet"></head>
+<body>
+
+<table width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td bgcolor="black" width="1"><a href="http://www.ti.com/"><img style="border: 0px solid ; width: 222px; height: 54px;" alt="Texas Instruments" src="docs/tilogo.gif"> </a></td>
+
+      <td bgcolor="red"><img style="width: 314px; height: 26px;" alt="Technology for Innovators(tm)" src="docs/titagline.gif">
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h1 align="center"><a name="XDC_TOP"></a>XDCtools 3.10.02 Release Notes</h1>
+
+<h2 align="center">September 08, 2008</h2>
+
+<p align="center"> <a href="#General_Info">Introduction</a>, <a href="#Documentation">Documentation</a>, <a href="#Whats_New">What's New</a>, <a href="#Compatibility">Upgrade &amp; Compatibility
+Information</a>, <a href="#Host_Support">Host
+Support</a>, <a href="#Dependencies">Dependencies</a>,
+<a href="#Device_Support">Device Support</a>, <a href="#Validation">Validation Info</a>,&nbsp;<a href="#Known_Issues">Known Issues</a>, <a href="#Version">Version Information</a>, <a href="#Support">Technical Support</a>.
+</p>
+
+<hr>
+<h2><a name="General_Info">Introduction</a></h2>
+
+<p>RTSC / XDC (eXpanDed C) is a standard for reusable software
+components, optimized for real-time embedded systems. RTSC components
+have hardware-neutral formal interfaces, are configurable offline to
+optimize memory and performance, and support custom automation in the
+development environment via a scripting language.</p>
+
+<p>XDCtools 3.10.02 is a Patch Release. It includes the
+following sets of packages: </p>
+
+<ul>
+
+  <li><b>Core (<tt>xdc.*</tt>)</b> -
+the <tt><b>xdc</b></tt> and <tt><b>xs</b></tt>
+command line utilities for building packages and execting scripts,
+together with the packages that implement the XDC standard;</li>
+
+  <li><b>User tools (<tt>xdc.tools.*</tt>)</b>
+- command-line and graphical utilities for working with packages and
+repositories;</li>
+
+  <li><b>Targets (<tt>*.targets.*</tt>)</b>
+- definitions for using various TI and third-party compiler tool
+chains;</li>
+
+  <li><b>Platforms (<tt>*.platforms.*</tt>)</b>
+- definitions for linking and running code on various TI and third-party
+board-level hardware and simulator products.</li>
+
+</ul>
+
+<a href="#XDC_TOP">back to top</a>
+
+<hr><h2><a name="Documentation">Documentation</a></h2>
+
+<p>The product documentation for this release is available in two
+formats:</p>
+<ul>
+  <li><a href="docs/docs.zip">Compressed .zip file archive</a></li>
+  <li><a href="docs/xdctools.chm">Microsoft HTML Help .chm file</a></li>
+</ul>
+
+<p>Both formats are delivered with the product in the 
+<a href="docs">docs</a> subdirectory.
+The most up-to-date docs can also be viewed on-line at:</p> 
+<ul>
+  <li><a href="http://rtsc.eclipse.org/docs-tip">http://rtsc.eclipse.org/docs-tip</a></li>
+</ul>
+
+<p>Release notes from previous product releases are available in the
+<a href="docs/relnotes_archive">relnotes_archive</a>
+directory.</p><p><a href="#XDC_TOP">back to top</a> </p>
+
+<hr>
+<h2><a name="Whats_New">What's New</a></h2>
+
+<p>The following significant changes have been made in the 3.10.02 release:</p>
+<ul>
+  <li><a href="#Whats_New_name_change">Product name change</a></li>
+  <li><a href="#Whats_New_install_location">Default product install location</a></li>
+  <li><a href="#Whats_New_IDE_integration">Integration with Code Composer Studio v4</a></li>
+  <li><a href="#Whats_New_rtscpedia">RTSC-pedia documentation</a></li>
+  <li><a href="#Whats_New_arm_gcc_linux">Easy-to-use targets and platforms for Arm GCC/Linux</a></li>
+  <li><a href="#Whats_New_cdoc">Updated CDOC documentation tool</a></li>
+  <li><a href="#Whats_New_findSuffix">Targets can declare binary compatibility</a></li>
+  <li><a href="#Whats_New_bug_fixes">Defect history</a></li>
+</ul>
+
+<h3><a name="Whats_New_name_change">Product name change</a></h3>
+<p>Starting with release 3.10 this product is known as "XDCtools",
+replacing its previous name "XDC". For now we'll continue to refer to
+pre-3.10 product releases as "XDC" but will use "XDCtools" for new releases.</p>
+
+<p>The name of the default product install location has also changed from
+"xdc_<i>version</i>" to to "xdctools_<i>version</i>".</p>
+
+<p><b>Note:</b> The change in the name of the default installation directory
+may require customers to change makefiles or other build artifacts when
+migrating to this release.</p>
+
+
+<h3><a name="Whats_New_install_location">Default product install location</a></h3>
+
+<p>By default, XDCtools will now install under "C:\Program Files\Texas
+Instruments" on Windows, instead of its previous "C:\". Note that on
+Windows XDCtools now supports space characters in the install location
+and in repository names.</p>
+
+<p><b>Note:</b> If you are using XDCtools from Makefiles or other build
+systems, the space character in the path to XDCtools may impact your own
+build files. Workarounds are to quote the path to XDCtools in your makefiles,
+or to install XDCtools in a non-default location.</p>
+
+<h3><a name="Whats_New_IDE_integration">Integration with Code Composer Studio v4</a></h3>
+<p>XDCtools now integrates with Code Composer Studio v4 (CCSv4) IDE and
+is bundled with the CCSv4 Early Adopter product. Users can build and
+run applications that use RTSC content in an integrated graphical
+environment.</p>
+
+<p>The integration features include:</p>
+<ul>
+  <li>Building C/C++ projects that take advantage of RTSC target content</li>
+  <li>Source-level debug of RTSC-enabled C/C++ projects</li>
+  <li>RTSC Object Viewer (ROV) for inspecting RTSC module and instance run-time state</li>
+  <li>Graphical configuration utility (Early Adopter release)</li>
+  <li>Searchable on-line help</li>
+</ul>
+
+
+
+<h3><a name="Whats_New_rtscpedia">RTSC-pedia documentation</a></h3>
+<p>The product documentation has been rewritten to make it easier to find
+what you need, more accurate, more complete, and more up to date.</p>
+
+<p>In addition to the documents delivered in the product, we'll update
+and add to the documents on a public web site, so you can always access
+the most useful information available. Check for announcements at
+<a href="http://rtsc.eclipse.org">http://rtsc.eclipse.org</a>.</p>
+
+<h3><a name="Whats_New_arm_gcc_linux">Easy-to-use targets and platforms for Arm GCC/Linux</a></h3>
+<p>The new <b><code>gnu.targets.arm.*</code></b> RTSC target modules
+can be used with any GCC-based compiler for Arm.
+Three such targets are available: <b><code>gnu.targets.arm.GCArmv5T</code></b>,
+<b><code>GCArmv6</code></b> and <b><code>GCArmv7A</code></b>. These
+targets
+support Arm instruction set devices, using little-endian byte ordering,
+and using GLIBC. The targets are binary compatible with the <code>gnu.targets.MVArm9</code> and <code>gnu.targets.codesourcery.GCArmv5T</code> targets. The new targets are configured by setting the name of the gcc executable in
+their <code>LONGNAME</code> config parameter, typically in <code>config.bld</code>.</p>
+
+<p>The new <b><code>host.platforms.arm</code></b> platform package supports any
+Arm-based board that does not need a platform memory map. Many Linux-based
+applications don't care about memory map, since Linux takes care of that for
+user space. This RTSC platform package supports most such applications, even
+on custom hardware, without the need for a custom RTSC platform package.</p>
+
+<p>The <code>host.platforms.arm</code> platform need only be configured to
+name the (Arm-based) device present on the board, which can then supply the
+device's on-chip memory map and other similar information. The device is
+named using the platform's config params <b><code>deviceName</code></b> and
+<b><code>catalogName</code></b>, typically in the user's
+<code>config.bld</code> file.</p>
+
+<h3><a name="Whats_New_cdoc">Updated CDOC documentation tool</a></h3>
+<p>The <b><code>xdc.tools.cdoc</code></b> and <b><code>xdc.tools.cdoc.sg</code></b>
+documentation tools feature a new presentation format along with
+complete and accurate API information for all spec'd RTSC objects. The
+tools remain command-line compatible with previous releases.</p>
+
+<h3><a name="Whats_New_findSuffix">Targets can declare binary compatibility</a></h3>
+<p>The <code>xdc.bld.ITarget</code> interface now supports features for
+declaring and testing binary compatibility between different targets.
+This allows the
+targets for device families with compatible instruction sets, such as
+Arm and TI C6000 devices, to mix target content built for different
+instruction sets. The new features are the <code><b>findSuffix()</b></code> method and the <code><b>compatibleSuffixes</b></code> config param, and are of interest to anyone who writes a target or a getLibs() function.
+
+<!-- *************************************************************** -->
+</p><div class="memitem">
+
+<h3><a name="Whats_New_bug_fixes">3.10.02 (This Release)</a></h3>
+
+<!-- *************************************************************** -->
+<h4><a name="Whats_New_bug_fixes">Defects</a></h4>
+<p>The following defects were resolved in this release:</p><p>SDSCM00027729&nbsp;&nbsp;&nbsp; Need RTSC platform for DM360 / DM365 / DM36x&nbsp;<br>SDSCM00027851&nbsp;&nbsp;&nbsp; xdc.tools.path.sg aborts<br>SDSCM00027678&nbsp;&nbsp;&nbsp; Occasionally, unable to create a module instance in XGCONF GUI&nbsp;<br>SDSCM00027646&nbsp;&nbsp;&nbsp; duplicate code in xdc.tools.path and xdc.tools.repoman<br>SDSCM00027521&nbsp;&nbsp;&nbsp; On Windows ,In CDOC E_assertFailed link does not open in xdc.runtime.assert<br>SDSCM00027502&nbsp;&nbsp;&nbsp;
+On LINUX OS, EULA is not getting displayed while installing XDC
+3.10.01.45&nbsp; in standard mode<br>SDSCM00027484&nbsp;&nbsp;&nbsp;
+xgconf Input tab doesn't display user created module instances when
+placed in the Program.global namespace<br>SDSCM00027434&nbsp;&nbsp;&nbsp; Incorrect memory map when using ti.platforms.evmDRA416<br>SDSCM00027395&nbsp;&nbsp;&nbsp; configuro doesn't issue error on frozen DA830 ROM parameters<br>SDSCM00027394&nbsp;&nbsp;&nbsp; package releases using zip may miss some files<br>SDSCM00027152&nbsp;&nbsp;&nbsp; XGCONF generates incorrect configuration script<br>SDSCM00026998&nbsp;&nbsp;&nbsp; XGCONF: Need a way to make instance handle as global one<br>SDSCM00026961&nbsp;&nbsp;&nbsp; CCS 3.3 Component Manager will not select XDCtools<br>SDSCM00026930&nbsp;&nbsp;&nbsp; Error Module CDOC has broken link<br>SDSCM00026703&nbsp;&nbsp;&nbsp; ROV - Crashes when opened while target is running<br>SDSCM00026702&nbsp;&nbsp;&nbsp;
+ROV - "No program loaded" and missing progress
+barSDSCM00025788&nbsp;&nbsp;&nbsp; cdoc for ICmd tools should provide
+"man page" view<br>SDSCM00025571&nbsp;&nbsp;&nbsp; command line tools are inconsistently/incoherently documented<br>SDSCM00024872&nbsp;&nbsp;&nbsp; Documentation of array turns into pointer<br>SDSCM00024653&nbsp;&nbsp;&nbsp; import statement in one unit doesn't allow importing another unit from the same package<br>SDSCM00024228&nbsp;&nbsp;&nbsp; CDOC for module-wide functions declared in interfaces has an extra parameter<br>SDSCM00023252&nbsp;&nbsp;&nbsp; cdoc: links don't work in summaries<br>SDSCM00022789&nbsp;&nbsp;&nbsp; cdoc sometimes eats spaces between words<br>SDSCM00021758&nbsp;&nbsp;&nbsp; cdoc structure field format look terrible<br>SDSCM00021755&nbsp;&nbsp;&nbsp; links can't be copied from cdoc pages into emails<br>SDSCM00018481&nbsp;&nbsp;&nbsp; cdoc fails on interfaces with toString methods<br>SDSCM00015400&nbsp;&nbsp;&nbsp; TI targets should have '-mo' (or equivalent), xdc.runtime should build with -mo<br><br><br></p>
+
+
+<a href="#XDC_TOP">back to top</a>
+
+<hr><h2><a name="Compatibility">Upgrade and
+Compatibility Information</a></h2>
+
+<p><b>Warning:</b>Starting with XDC 2.95, XDC packages with target
+content are incompatible with target content from previous releases.
+Compatibility of meta only content is not affected. Packages with
+target content would require a recompile. Starting with XDC 3.00
+release both backward and forward compatibility is maintained for all
+content.
+</p>
+
+
+
+<h3>Package Compatibility Keys</h3>
+
+<p>The packages comprising the XDC release are uniquely identified by a compatibility
+key defined in the <span class="SpellE"><span style="font-family: &quot;Courier New&quot;;">package.xdc</span></span>
+file of a package. Please note that the package compatibility keys are independent
+of XDC <a href="#Version">product release numbers</a>.
+</p>
+<p>Package compatibility keys are intended to: </p>
+
+<ol>
+  <li>Enable tooling to identify incompatibilities between
+components, and </li>
+  <li>Convey a level of compatibility between different releases
+to set end user expectations. </li>
+</ol>
+
+<p>Package compatibility keys are composed of 4 comma-delimited numbers - M, S,
+R, <span class="GramE">P</span> - where:  </p>
+
+<ul><li class="MsoNormal" style=""><b>M = Major -</b> A
+     difference in M indicates a break in compatibility. The package consumer is
+     required to re-write its source code in order to use the package.<o:p></o:p></li><li class="MsoNormal" style=""><b>S = Source </b>- A
+     difference in S indicates source compatibility. The package consumer’s source
+     code doesn't require change, but <i>does</i> require a recompile. <o:p></o:p></li><li class="MsoNormal" style=""><b>R = Radix -</b> A
+     difference in R indicates an introduction of new features, but
+     compatibility with previous interfaces is not broken. If libraries are
+     provided by the package, an application must re-link with the new
+     libraries, but is not required to recompile its source.</li><li class="MsoNormal" style=""><b>P = Patch - </b><span style="">A difference in P indicates that only
+     bugs have been fixed in the latest package and no new features have been
+     introduced. </span>If libraries are provided by the package, an
+     application must re-link with the new libraries, but is not required to recompile
+     its source.</li>
+</ul><br><br><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Host_Support">Host Support</a></h2>
+
+<p>This release supports the following hosts:</p>
+<ul>
+  <li>Windows XP</li>
+  <li>RedHat Enterprise Linux 3</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Dependencies">Dependencies</a></h2>
+
+<p>This release requires the following other software components
+and tools versions to successfully function: </p>
+
+<ul>
+  <li>C6x Code Generation Tools version 5.3.0 or later. Version
+6.0.13 or later is required in order to use whole_program build profile.</li>
+  <li>C55 Code Generation Tools version 3.2.0. or later</li>
+  <li>TMS470 (Arm) Code Generation Tools version 4.5</li>
+  <li>GCC for x86 version 3.2.3 or later</li>
+  <li>GCC for ARM version 3.2.3 or later</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Device_Support">Device Support</a></h2>
+
+<p>This release supports the following device families: </p>
+<ul>
+  <li>C67P, C67, C64P, C64, C62 </li>
+  <li>C55P, C55, C54</li>
+  <li>C28</li>
+  <li>TMS470</li>
+  <li>Native development host (Windows, Linux)</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Validation">Validation Information</a></h2>
+
+<p>This release was built and validated against using the
+following components: </p>
+<ul>
+  <li>Code Composer Studio version 4.0.0.5.37 (M3 build)</li>
+  <li>Code Composer Studio version 3.3</li>
+  <li>C6x Code Generation Tools version 6.0.7 and 6.0.13</li>
+  <li>C55 Code Generation Tools version 3.2.2</li>
+  <li>GCC for x86 version 3.2.3</li>
+  <li>GCC for ARM version 3.2.3</li>
+</ul><a href="#XDC_TOP">back to top</a><br><br><hr style="width: 100%; height: 2px;"><h2><a name="Known_Issues">Known Issues</a></h2>SDSCM00027823&nbsp;&nbsp;&nbsp; LoggerBuf numEntries has no power of 2 restriction<br>SDSCM00027445&nbsp;&nbsp;&nbsp; Escaped characters in config string are not put in generated C-file.<br>SDSCM00027439&nbsp;&nbsp;&nbsp; Need to revisit Error, Assert and Log Ids when we can break compatibility with primus ROM<br>SDSCM00027405&nbsp;&nbsp;&nbsp; cdocWindow_size issue<br>SDSCM00027197&nbsp;&nbsp;&nbsp; Some common$ fields should be sealed for the ROM assembly flow (currently none are sealed)<br>SDSCM00027163&nbsp;&nbsp;&nbsp; XGCONF shows invalid user options<br>SDSCM00027155&nbsp;&nbsp;&nbsp; XGCONF generates script statements in incorrect order<br>SDSCM00027001&nbsp;&nbsp;&nbsp; cdoc index.html first frame is not loaded correctly on Linus OS<br>SDSCM00026563&nbsp;&nbsp;&nbsp; Assert: if Test_isLoaded is false, get incorrect string instead of ""<br>SDSCM00026409&nbsp;&nbsp;&nbsp; XDC builds on Windows hang after sometime and need carriage return to continue<br>SDSCM00026224&nbsp;&nbsp;&nbsp; XDC remarks when using -pdr<br>SDSCM00025416&nbsp;&nbsp;&nbsp;&nbsp;ROV - decoder problem with signed values.<br>SDSCM00024907&nbsp;&nbsp;&nbsp; ROM - Setting Memory.defaultHeapInstance does not update common$.instanceHeap<br>SDSCM00024799&nbsp;&nbsp;&nbsp; Assert_raise__I may not work with ROM<br>SDSCM00024640&nbsp;&nbsp;&nbsp; Exception information in configuration step is not preserved<br><p><a href="#XDC_TOP">back to top</a></p>
+
+<hr>
+<h2><a name="Version">Version Information</a></h2>
+
+<p>This product's version follows a version format, <b>M.mm.pp.bb</b>,
+where <b>M</b> is a single digit Major number, <b>mm</b>
+is 2 digit minor number, <b>pp</b> is a 2 digit patch
+number, and <b>b</b> is an unrestricted set of digits used
+as an incrementing build counter. </p>
+
+<p>To support multiple side-by-side installations of the product,
+the product version is encoded in the top level directory, e.g. <b>xdctools_3_00</b>.
+</p>
+
+<p>Subsequent releases of patch upgrades will be identified by
+the patch number, ex. XDCtools 3.00.03 with directory <b>xdctools_3_00_03</b>.
+Typically, these patches only include critical bug fixes. </p>
+
+<p>Please note that version numbers and compatibility keys are
+NOT the same. For an explanation of compatibility keys, please refer to
+the '<a href="#Compatibility">Upgrade and Compatibility Information</a>' section.</p><p><a href="#XDC_TOP">back to top</a> </p>
+
+<hr>
+<h2><a name="Support">Technical Support</a></h2>
+
+<p>For technical support, contact <a href="mailto:rtsc_champs@list.ti.com">rtsc_champs@list.ti.com</a></p><p><a href="#XDC_TOP">back to top</a></p>
+
+<hr>
+<p>Last updated: September 08, 2008 Build Ver: 3.10.02.49 Rev: j49</p>
+
+</div>
+
+</body></html>
+</body>
+</html>

@@ -1,0 +1,36 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="U:\GForge\cat_flashutils\trunk\DM647_8\CCS\DM648_AISUtil\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\Common\src\i2c.c"
+Source="..\..\..\Common\src\spi.c"
+Source="..\..\..\Common\src\util.c"
+Source="..\..\Common\src\device.c"
+Source="..\Common\src\debug.c"
+Source="src\ais_util.c"
+Source="src\aistest.c"
+Source="DM648_AISUtil.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\Common\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -d"_DEBUG" -ms1 -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"$(Proj_dir)\include" -i"$(Proj_dir)\..\..\Common\include" -i"$(Proj_dir)\..\..\..\Common\include" -mv6400+
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\DM648_AISUtil.map" -o".\Debug\DM648_AISUtil.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\DM648_AISUtil.map" -o".\Release\DM648_AISUtil.out" -w -x
+

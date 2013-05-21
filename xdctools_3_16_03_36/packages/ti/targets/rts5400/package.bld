@@ -1,0 +1,26 @@
+/*
+ *  Copyright 2010 by Texas Instruments Incorporated.
+ *
+ */
+
+var RtsBuild = xdc.loadCapsule('xdc/runtime/build.xs');
+var KnlBuild = xdc.loadCapsule('xdc/runtime/knl/build.xs');
+
+Pkg.makePrologue = RtsBuild.makePrologue;
+Pkg.otherSrcs = ['boot.asm'];
+Pkg.otherFiles = Pkg.otherSrcs;
+
+var cobjs = RtsBuild.c_objs.concat(KnlBuild.c_objs);
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+    if (targ.isa == '54') {
+        Pkg.addLibrary("lib/" + Pkg.name, targ, {profile: "whole_program"})
+            .addObjects(cobjs);
+        Pkg.addLibrary("lib/boot", targ).addObjects(["boot"]);
+    }
+}
+
+/*
+ *  @(#) ti.targets.rts5400; 1, 0, 0, 0,305; 2-24-2010 16:41:47; /db/ztree/library/trees/xdctargets/xdctargets-b36x/src/
+ */
+

@@ -1,0 +1,727 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Codec Engine 1.20 Release Notes</title>
+    <!-- For now, we use the doxygen style sheet -->
+    <link type="text/css" rel="stylesheet" href="../docs/html/doxygen.css">
+</head>
+<body>
+<table width="100%">
+  <tbody>
+    <tr>
+      <td bgcolor="black" width="1">
+        <a href="http://www.ti.com">
+          <img border=0 src="../docs/html/tilogo.gif" alt="Texas Instruments">
+        </a>
+      </td>
+      <td bgcolor="red">
+        <img src="../docs/html/titagline.gif" alt="Technology for Innovators(tm)">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 align="center">Codec Engine 1.20 Release Notes</h1>
+<h2 align="center">April 5, 2007</h2>
+
+<p>
+This Codec Engine Release is targetted to the DaVinci platforms,
+enabling users to instantiate and utilize both local and remote codecs.
+In addition to the heterogenous DM644x devices, it supports single
+processor environments as well; specifically C64+ devices (e.g. DM643x,
+and DM648), ARM9 devices running Linux and x86 devices running Linux.
+</p>
+<p align="center">
+<a href="#Introduction">Introduction</a>,
+<a href="#Documentation">Documentation</a>,
+<a href="#Whats_New">What's New</a>,
+<a href="#Upgrade_Info">Upgrade Info</a>,
+<a href="#Compatibility">Compatibility Information</a>,
+<a href="#Validation">Validation Info</a>,
+<a href="#Known_Issues">Known Issues</a>,
+<a href="#Device_Support">Device Support</a>,
+<a href="#Examples">Examples</a>,
+<a href="#Version">Version Information</a>,
+<a href="#Support">Technical Support</a>.
+</p>
+
+<hr>
+
+<h2><a name="Introduction">Introduction</a></h2>
+
+<p>
+The Codec Engine is a software platform for algorithm execution that
+satisfies the following, high-level goals:
+</p>
+<ul>
+  <li><b>Robust</b> - drives pre-integrated components with fully
+characterized performance.</li>
+  <li><b>Easy to use</b> - app developers specify <i>what</i> needs to
+be run, but not <i>how</i> or <i>where</i>.</li>
+  <li><b>Extensible and Configurable</b> - new algorithms can be added
+by anyone, using standard tools and techniques.</li>
+  <li><b>Portable</b> - API's are target, platform, and in many cases
+  even codec independant.</li>
+</ul>
+
+<p>
+The Codec Engine consists of the following packages:
+</p>
+
+<ul>
+  <li><b><tt>ti.sdo.ce</tt></b> - The Codec Engine runtime.</li>
+  <li><b><tt>ti.sdo.ce.video</tt></b> - The Codec Engine video component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.image</tt></b> - The Codec Engine image component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.speech</tt></b> - The Codec Engine speech/voice component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.audio</tt></b> - The Codec Engine audio component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.osal</tt></b> - The Codec Engine OS Abstraction
+  Layer.  This package insulates CE from the OS it's running on, and
+  provides a few Modules for customers to use (e.g. Memory).</li>
+  <li><b><tt>ti.sdo.ce.utils.trace</tt></b> - The Codec Engine utility
+  package for trace.  This includes the TraceUtils module.  This makes
+  tracing features easier to use by an application.  It will be
+  supported in this release, but may be replaced in a future release
+  with an incompatible implementation.</li>
+</ul>
+
+<p>
+Additionally, this release of the Codec Engine supports the xDM 1.00
+interfaces included in xDAIS 5.21.  This support is provided in
+the following packages:
+</p>
+<ul>
+  <li><b><tt>ti.sdo.ce.video1</tt></b> - The Codec Engine video 1.00 component
+  (supporting the xDM 1.00 interfaces).  Both encode and decode
+  are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.image1</tt></b> - The Codec Engine image 1.00 component
+  (supporting the xDM 1.00 interfaces).  Both encode and decode
+  are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.speech1</tt></b> - The Codec Engine speech 1.00 component
+  (supporting the xDM 1.00 interfaces).  Both encode and decode
+  are supported, and an example is provided.</li>
+  <li><b><tt>ti.sdo.ce.audio1</tt></b> - The Codec Engine audio 1.00 component
+  (supporting the xDM 1.00 interfaces).  Both encode and decode
+  are supported, and an example is provided.</li>
+</ul>
+
+<hr>
+<h2><a name="Documentation">Documentation</a></h2>
+<p>
+The following documentation is available:
+</p>
+<ul>
+  <li>Codec Engine Application Developer's Guide</li>
+  <li>Codec Engine Server Integrator's Guide</li>
+  <li>Codec Engine Algorithm Creator User's Guide</li>
+  <li>Codec Engine Application Programming Interface (API) Reference
+  Guide (HTML | CHM)</li>
+  <li>Codec Engine System Programming Interface (SPI) Reference
+  Guide (HTML | CHM)</li>
+  <li>Configuration Reference Guide.</li>
+  <li><a href="http://www-s.ti.com/sc/techlit/spraae7">Using Adapters
+  to Run Existing xDAIS Algorithms with Codec Engine</a> App Note</li>
+</ul>
+
+<p>
+Release notes from previous releases are also available in the 
+relnotes_archive directory.
+</p>
+
+<hr>
+<h2><a name="Whats_New">What's New</a></h2>
+<p>The following significant changes have been made since 1.00</p>
+
+<div class="memitem">
+<h3>1.20 (This Release)</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Updated to xDAIS 5.21, which includes xDM 1.00 interfaces</li>
+      <li>Updated to DSP/BIOS Link 1.40.05 - this resulted in some
+      necessary configuration-related changes</li>
+      <li>Updated to Framework Components 1.20.02</li>
+      <li>Updated to new XDC Tools 2.93.01</li>
+      <li>Updated to CMEM 1.04</li>
+      <li>Added examples for single-processor, environments (e.g. DM643x) -
+      this includes placing executables into platform-specific directories,
+      as well as demonstrating necessary caching techniques for cache-enabled
+      environments.</li>
+      <li>Added Link Arbiter Daemon (LAD)</li>
+      <li>Added CERuntime_exit() for applications which want to erase any
+      CE Runtime from their environment without exiting their application.
+      This is useful if, for example, an application wants to switch between
+      a Codec Engine based environment, and a custom DSP Link-based framework.
+      </li>
+      <li>Moved examples into "Codec Engine-specific" namespaces (e.g., the
+      previous <b>codecs.viddec1_copy</b> codec package is now the
+      <b>ti.sdo.ce.examples.codecs.viddec1_copy</b> package.
+      </li>
+      <li>Added configuration option to xDM 0.9-based video encoders
+      to <i>not</i> manage the cache for the reconstruction buffers.
+      </li>
+      <li>Added 'checked' builds to the distribution.  This enables
+      some parameter and usage validation to occur within the CE
+      framework, helping to identify common coding errors in both
+      applications and algorithms.  Enabling this optional feature
+      introduces some performance overhead, but is encouraged for
+      those early in development.  This can be enabled in the
+      application configuration, as well as the Server (for systems
+      with remote algorithms).  See the documentation on the
+      <tt>ti.sdo.ce.Settings</tt> Module's "checked" parameter in the
+      Configuration Reference Guide.
+      </li>
+    </ul>
+  </li>
+  <li>BIOS-based environments
+    <ul>
+      <li>Added LOG_events for profiling performance</li>
+    </ul>
+  </li>
+
+  <li>The following defects were resolved:
+<table width="100%">
+  <colgroup width="15%">
+  <tbody>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+    <tr>
+      <td>SDSCM00014413</td>
+      <td>xdcpaths.mak requires FC installation in ".lite" release</td>
+    </tr>
+    <tr>
+      <td>SDSCM00014540</td>
+      <td>CE OSAL requires presence of dsplink.dsp package even if it's used
+      in a DSP/BIOS-only setting</td>
+    </tr>
+    <tr>
+      <td>SDSCM00015336</td>
+      <td>Scale example's SCALE_Params struct does not have the required
+      IALG_Params struct as its first element</td>
+    </tr>
+  </tbody>
+</table>
+</li>
+  
+  <li>The following enhancements were resolved:
+<table width="100%">
+  <colgroup width="15%">
+  <tbody>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+    <tr>
+      <td>SDSCM00013759</td>
+      <td>CMEM should support multiple processes</td>
+    </tr>
+    <tr>
+      <td>SDSCM00014703</td>
+      <td>Add Memory_cacheWb() to OSAL</td>
+    </tr>
+  </tbody>
+</table>
+</li>
+  
+</ul>
+</div>
+
+<br />
+
+<div class="memitem">
+<h3>1.10</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Updated to C6x Codegen 6.0.7</li>
+      <li>Updated to DSP/BIOS 5.31.01</li>
+      <li>Updated to Framework Components 1.10.01</li>
+      <li>Updated to xDAIS 5.10, which includes xDM 1.00 beta
+      interfaces</li>
+    </ul>
+  </li>
+  <li>CE Runtime
+    <ul>
+      <li>Added new methods to <tt>ti.sdo.ce.ICodec</tt> interface
+      (<tt>getCreationStackSize()</tt>,
+      <tt>getDaramScratchSize()</tt>, and
+      <tt>getSaramScratchSize()</tt>) to make Server configuration
+      easier.  When codecs implement these methods, the XDC Config Kit
+      is able to either:
+        <ol>
+          <li>Auto-generate the DSKT2 scratch configuration, or</li>
+          <li>Validate the scratch config (if the server integrator
+      wants to continue explicitly configuring those values).</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>VISA
+    <ul>
+      <li>Added support for xDM 1.00 Beta interfaces.  (Previous xDM
+      0.9 interfaces continue to be supported)
+    </ul>
+  </li>
+  <li>SPI (System Programming Interfaces)
+    <ul>
+      <li>Added <tt>VISA_setContext()</tt> and
+      <tt>VISA_getContext()</tt> services for stub/skeleton/API authors.
+    </ul>
+  </li>
+  <li>Documentation
+    <ul>
+      <li>Added "Adapter" application note describing how to integrate
+      non-xDM codecs, as well as a technique for adding pre- and post-
+      processing steps to existing codecs without modifying them.</li>
+    </ul>
+  </li>
+  <li>Examples
+    <ul>
+      <li>
+        Added new, Linux-only example demonstrating how users can
+        create a shared library from a single configuration, which can
+        then be used by multiple applications.
+      </li>
+      <li>
+        Added a new example, explicitly describing the steps taking
+        during configuration to better demonstrate the necessary
+        configuration steps for users who want to integrate this into
+        their own, custom build flows.
+      </li>
+      <li>
+        Modified example codecs, when possible, to utilize copy
+        codecs now distributed in xDAIS 5.10.  In this way, it's more
+        clearly described what little XDC packaging is required to
+        integrate an already XDC packaged Codec (independant of CE) into
+        the CE framework.
+      </li>
+    </ul>
+  </li>
+  <li>Defects
+    <ul>
+      <li>SDSCM00010422 - CE and CMEM should set the close-on-exec
+      flag on any open file handles</li>
+      <li>SDSCM00005810 - Additional C++ testing required</li>
+      <li>SDSCM00004993 - GT no longer supports wildcards as second
+      character</li>
+      <li>SDSCM00004805 - GT computes (a lot) during GT_?trace()</li>
+    </ul>
+  </li>
+  <li>Enhancements
+    <ul>
+      <li>SDSCM00010364 - GT needs productized</li>
+      <li>SDSCM00008121 - not possible to properly size RMS thread's
+      stack</li>
+      <li>SDSCM00007887 - Support VISA_getContext/setContext SPIs</li>
+      <li>SDSCM00006616 - CE should ensure unique UUIDs</li>
+      <li>SDSCM00003992 - Add pre- and/or post- process example to
+      codecs</li>
+      <li>SDSCM00002920 - ICodec should have a getScratchSize method</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<br />
+
+<div class="memitem">
+<h3>1.02</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Introduced <tt>ti.sdo.ce.utils.trace.TraceUtils</tt>
+      module.</li>
+      <li>Libraries are now provided in release builds.  Previously,
+      they were debug-only.</li>
+      <li>Introduced <tt>Engine_setTrace()</tt> API.</li>
+      <li>Added support for C++</li>
+    </ul>
+  </li>
+  <li>VISA Classes
+    <ul>
+      <li>Added extended xDM support to the remaining 3 classes
+      (AUDENC, VIDENC, and SPHENC).</li>
+    </ul>
+  </li>
+  <li>Documentation
+    <ul>
+      <li>Addition of System Programming Interface (SPI) Reference
+      Guide.</li>
+      <li>Codec Engine Server Integrator's Guide (SPRUED5)</li>
+      <li>Codec Engine Algorithm Creator User's Guide (SPRUED6)</li>
+      <li>Minor updates to the Codec Engine Application Developer's
+      Guide (SPRUE67A)</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<br />
+
+<div class="memitem">
+<h3>1.01</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Many trace strings were modified/added.</li>
+      <li>C64P libraries built with 6.0.3 compiler.</li>
+    </ul>
+  </li>
+  <li>VISA Classes
+    <ul>
+      <li>Audio Encoding support has been added</li>
+      <li>Better compliance checking of "size" field.  This field
+      <i>must</i> be set correctly in the various VISA APIs, as it is
+      now used to determine how much data to provide to the
+      codecs.</li>
+      <li>Related to previous bullet, added extended xDM support to
+      VIDDEC, VIDENC, AUDDEC, IMGDEC, and SPHDEC classes.  There are
+      limits to the size of the extended structures, and they must not
+      contain pointers in the extended structures.</li>
+      <li>outArgs fixed to be provided in the case of a failed
+      process() call (enabling inspection of extendedError).</li>
+      <li>Removed cache alignment validation of input buffers.  When the
+      application can ensure cache coherence, these buffers need not be
+      aligned.</li>
+    </ul>
+  </li>
+  <li>Documentation
+    <ul>
+      <li>Minor updates to the Codec Engine Application Developer's
+      Guide (SPRUE67A)</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<hr>
+<h2><a name="Upgrade_Info">Upgrade Information</a></h2>
+<p>
+The Codec Engine packages are available in the "packages/"
+subdirectory of the product.  If you have a previous release of the
+Codec Engine product, you can install this release next to it, and
+modify your application and/or server builds to use this newer release.</p>
+<p>
+If you're using the DVEVM, this can be done by setting the
+<b>CE_INSTALL_DIR</b> variable in the <tt>Rules.make</tt> file at the
+top of the DVEVM distribution directory.</p>
+
+<h2><font color="red">Compatibility Breaks!</font></h2>
+<ul>
+  <li>CE 1.20 requires system integrators to update to DSP Link 1.40.05 and
+  XDC Tools 2.93.01 releases.
+  </li>
+  <li><b><tt>ti.bios.utils</tt></b> usage has changed.  This was only
+  supported/necessary in DSP/BIOS-based content (DSP-side), but server
+  integraters previously had to configure the "LOAD_idlefxn" function
+  into their idle loop.  This "LOAD_idlefxn" has been renamed
+  "Load_idlefxn".<br>The good news for Codec Engine users is that now
+  the idle loop will be correctly configured automatically, so it's
+  safe (and necessary!) to simply remove the idle loop configuration
+  from your .tcf script.
+  </li>
+</ul>
+
+<hr>
+<h2><a name="Device_Support">Device Support</a></h2>
+
+<p>
+This release supports and has been tested on the following devices:
+<ul>
+  <li>DM6446 EVM, dual-processor configuration:
+    <ul>
+      <li>dual-processor configuration, running ARM9 MV Linux (gcclib) and
+      C64+ DSP/BIOS</li>
+      <li>dual-processor configuration, running ARM9 MV Linux (uClibc) and
+      C64+ DSP/BIOS</li>
+      <li>single-processor configuration, running ARM9 MV Linux (gcclib)</li>
+      <li>single-processor configuration, running ARM9 MV Linux (uClibc)</li>
+    </ul>
+  </li>
+  <li>DM6437 EVM, single processor configuration:
+    <ul>
+      <li>C64+ DSP/BIOS</li>
+    </ul>
+  </li>
+  <li>C64+ simulators, single processor configuration:
+    <ul>
+      <li>C64+ DSP/BIOS</li>
+    </ul>
+  </li>
+  <li>x86 Linux, single processor configuration, running Red Hat Enterprise
+  Linux 3</li>
+</ul>
+
+</p>
+
+
+
+<hr>
+<h2><a name="Compatibility">Compatibility Information</a></h2>
+<p>
+Some packages have broken compatibility with previous releases.  The details
+provided below describe each package's compatibility with the previous release
+(1.10).
+</p>
+<p>
+Note, the Configuration Reference Guide contains
+further details about each package.
+</p>
+<ul>
+    <li>
+        <b><tt>ti.sdo.ce</tt></b> - This package is compatible with the
+        previous release.  (Compatibility key: <i>1,0,3,0</i> -> 1,0,
+        <font color='red'><b>4</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.audio</tt></b> - This package is compatible with the
+        previous release.  (Compatibility key: <i>1,0,0,0</i> -> 1,0,
+        <font color='red'><b>1</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.bioslog</tt></b> - This package is compatible with the
+        previous release.  (Compatibility key: <i>1,0,0,0</i> -> 1,0,
+        <font color='red'><b>1</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.image</tt></b> - This package is compatible with the
+        previous release.  (Compatibility key: <i>1,0,0,0</i> -> 1,0,
+        <font color='red'><b>1</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.node</tt></b> - This package is compatible with the
+        previous release.  (Compatibility key: <i>1,0,0,0</i> -> 1,0,0)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.osal</tt></b> - This package is <b>incompatible</b>
+        with the previous release.  (Compatibility key: <i>1,0,0,0</i> ->
+        <font color='red'><b>2,0,0</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.osal.alg</tt></b> - This package is compatible with the
+        previous release.  (Compatibility key: <i>1,0,0,0</i> -> 1,0,0)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.speech</tt></b> - This package is compatible with the
+        previous release.  (Compatibility key: <i>1,0,0,0</i> -> 1,0,
+        <font color='red'><b>1</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.trace</tt></b> - This package is compatible with the
+        previous release.  (Compatibility key: <i>1,0,0,0</i> -> 1,0,0)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.utils</tt></b> - This package is compatible with the
+        previous release.  (Compatibility key: <i>1,0,0</i> -> 1,0,0)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.utils.trace</tt></b> - This package is compatible with
+        the previous release.  (Compatibility key: <i>1,0,0,0</i> -> 1,0,
+        <font color='red'><b>1</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.video</tt></b> - This package is compatible with the
+        previous release.  (Compatibility key: <i>1,0,0,0</i> -> 1,0,
+        <font color='red'><b>1</b></font>)
+    </li>
+</ul>
+
+<p>The following packages are being introduced in this release, and therefore
+have no compatibility with previous releases.
+<ul>
+    <li>
+        <b><tt>ti.dsplink.utils.lad</tt></b> (Compatibility key: 
+        <font color='red'><b>1,0,0</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.dsplink.utils.ladclient</tt></b> (Compatibility key: 
+        <font color='red'><b>1,0,0</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.utils.xdm</tt></b> (Compatibility key: 
+        <font color='red'><b>1,0,0</b></font>)
+    </li>
+</ul>
+
+<p>The following packages were provided but unsupported in previous releases.
+The are now officially supported, and therefore have no compatibility with
+previous releases.
+<ul>
+    <li>
+        <b><tt>ti.sdo.ce.audio1</tt></b> (Compatibility key: 
+        <font color='red'><b>1,0,0</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.image1</tt></b> (Compatibility key: 
+        <font color='red'><b>1,0,0</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.speech1</tt></b> (Compatibility key: 
+        <font color='red'><b>1,0,0</b></font>)
+    </li>
+    <li>
+        <b><tt>ti.sdo.ce.video1</tt></b> (Compatibility key: 
+        <font color='red'><b>1,0,0</b></font>)
+    </li>
+</ul>
+
+
+<p>
+If migrating from a release prior to CE 1.10, consult previous
+releases available in the relnotes_archive directory.
+</p>
+
+<h3>Compatibility Key Definitions</h3>
+<p>
+Compatibility keys are intentionally independent of Marketing product
+numbers and are intended to:
+<ol>
+  <li>Enable tooling to identify incompatibilities between components,
+  and</li>
+  <li>Convey a level of compatibility between different releases to
+  set end user expectations.</li>
+</ol>
+</p>
+
+<p>
+Compatibility keys are composed of 4 comma-delimited numbers - M,S,R
+- where:
+<ul>
+  <li><b>M = Major</b>.  A difference in M indicates a break in
+  compatibility.</li>
+  <li><b>S = Source</b>.  A difference in S indicates source
+  compability.  That is, the user's source doesn't require change, but
+  <i>does</i> require rebuilding.</li>
+  <li><b>R = Radix</b>.  A difference in R indicates an introduction
+  of new features, but compatibility with previous interfaces has not
+  broken.  If libraries are provided by the package, an application
+  must re-link with the new libraries, but not rebuild from source.</li>
+</ul>
+</p>
+
+
+<hr>
+<h2><a name="Validation">Validation</a></h2>
+<p>
+This release was built and validated against using the following
+components:
+</p>
+
+  <ul>
+    <li>Framework Components 1.20.02</li>
+    <li>xDAIS 5.21</li>
+    <li>XDC Tools 2.93.01</li>
+    <li>DSP/BIOS Link 1.40.05, configured for the DM6446 EVM</li>
+    <li>C6x Code Generation Tools version 6.0.8</li>
+    <li>DSP/BIOS 5.31.05</li>
+    <li>MontaVista Linux v4.0</li>
+    <li>Red Hat Enterprise Linux 3 (SMP)</li>
+  </ul>
+
+<p>
+This release was validated in the following configurations:
+<ul>
+  <li>DM6446 EVM, dual-processor configuration:
+    <ul>
+      <li>dual-processor configuration, running ARM9 MV Linux (gcclib) and
+      C64+ DSP/BIOS</li>
+      <li>dual-processor configuration, running ARM9 MV Linux (uClibc) and
+      C64+ DSP/BIOS</li>
+      <li>single-processor configuration, running ARM9 MV Linux (gcclib)</li>
+      <li>single-processor configuration, running ARM9 MV Linux (uClibc)</li>
+    </ul>
+  </li>
+  <li>DM6437 EVM, single processor configuration:
+    <ul>
+      <li>C64+ DSP/BIOS</li>
+    </ul>
+  </li>
+  <li>C64+ simulators, single processor configuration:
+    <ul>
+      <li>C64+ DSP/BIOS</li>
+    </ul>
+  </li>
+  <li>x86 Linux, single processor configuration, running Red Hat Enterprise
+  Linux 3</li>
+</ul>
+
+<hr>
+<h2><a name="Known_Issues">Known Issues</a></h2>
+<p>The following are known issues with the CE 1.20 release:</p>
+
+<h3>Examples</h3>
+<ul>
+  <li><p>Previous CE releases included the video_copy/dualcpu_explicitconfig and
+  dualcpu_seperateconfig examples.  These were removed as the transition of
+  these examples to the new Configuro build model was not yet complete at the
+  time of release.</p>
+  <p>The build_instructions.html page also incorrectly lists
+  these examples as being present in this release.</p>
+  <p>They are being updated and will be included in a future release.</p>
+  </li>
+</ul>
+
+<h3>LAD</h3>
+<ul>
+  <li>
+    The Link Arbiter Daemon (LAD) does not detect when a client process
+    terminates abnormally, for example, via a CTRL-C.  The consequence is that
+    the reference counts maintained within LAD will remain artificially high,
+    which will: a) reduce by one the maximum number of simultaneous client
+    connections to LAD that are allowed; b) prevent LAD from stopping the
+    DSP when the last remaining client disconnects from LAD; and c) prohibit
+    startup of a different DSP executable, without restart of LAD, or a reboot
+    of Linux.  Also, in some situations future attempts by other processes to
+    use the DSP may fail due to assertions from DSP Link.
+  </li>
+</ul>
+
+<hr>
+<h2><a name="Examples">Examples</a></h2>
+<p>Codec Engine examples and instructions are located in the
+"examples" directory.
+</p>
+<ul>
+  <li>Example Build Instructions</li>
+</ul>
+
+<hr>
+<h2><a name="Version">Version Information</a></h2>
+<p>
+This product's version follows a version format, <b>M.mm.pp.bb</b>,
+where <b>M</b> is a single digit Major number, <b>mm</b> is 2 digit
+minor number, <b>pp</b> is a 2 digit patch number, and <b>b</b> is an
+unrestricted set of digits used as an incrementing build counter.
+</p>
+
+<p>
+To support multiple side-by-side installations of the product, the
+product version is encoded in the top level directory,
+ex. <b>codec_engine_1_20</b>.
+</p>
+
+<p>
+Subsequent releases of patch upgrades will be identified by the patch
+number, ex. CE 1.20.01 with directory <b>codec_engine_1_20_01</b>.
+Typically, these patches only include critical bug fixes.
+</p>
+
+<hr>
+<h2><a name="Support">Technical Support</a></h2>
+<p>For technical support, contact <a href="mailto:softwaresupport@ti.com">softwaresupport@ti.com</a></p>
+
+<p>
+Check the following web site for updates: <a href="https://www-a.ti.com/downloads/sds_support/targetcontent/CE/index.html">https://www-a.ti.com/downloads/sds_support/targetcontent/CE/index.html</a>
+</p>
+
+<hr>
+<p>
+Last updated: April 5, 2007
+</p>
+</body>
+</html>

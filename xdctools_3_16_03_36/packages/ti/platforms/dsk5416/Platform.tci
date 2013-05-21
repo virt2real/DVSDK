@@ -1,0 +1,111 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+
+/*
+ *  The following comment is used by the Graphical Config Tool:
+ *  !DESCRIPTION 54XX!  Dsk5416 (160Mhz) with external program and data memory
+ *  !NAME! ti.platforms.dsk5416
+ */
+
+
+
+var device_regs = {
+    /*
+     * Specify the default pmst value which does have an effect on
+     * the memory map.  MP/MC = 0, OVLY = 1, DROM = 0.
+     * There are several pmst values that were used for various
+     * reincarnations of this file. These are 0xffa0, 0ff4c, and 0x7fac.
+     */
+    pmst:  0x7fac,
+    /*
+     * The board has a 16 Mhz oscillator and runs at 160 Mhz.
+     * This value makes clkmd a multiplier of 10.
+     */
+    clkmd: 0x9007,
+    /*
+     * These registers deals with memory wait states
+     * See SPRS095l 3.6.1, 3.6.2 for details
+     */
+    swwsr: 0x4492,
+    swcr:  0x0,
+    bscr:  0xa002
+};
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+var mem_ext = [];
+var MPMCBITMASK = 0x40;
+
+if ((environment["ti.bios.oldMemoryNames"] == undefined ||
+    environment["ti.bios.oldMemoryNames"] == 'false' ||
+    environment["ti.bios.oldMemoryNames"] == '0') &&
+    device_regs.pmst & MPMCBITMASK) {
+    /* off-chip memory blocks are part of the memory map only if MP/MC = 1.
+     * So, if the value of pmst changes, the mem_ext must change too.
+     */
+    mem_ext[0] = {
+        comment: "External program memory 0",
+        name: "EPROG0",
+        base: 0x18000,
+        len:  0x08000,
+        space: "code"
+    };
+
+    mem_ext[1] = {
+        comment: "External program memory 1",
+        name: "EPROG1",
+        base: 0x28000,
+        len:  0x08000,
+        space: "code"
+    };
+
+    mem_ext[2] = {
+        comment: "External program memory 2",
+        name: "EPROG2",
+        base: 0x38000,
+        len:  0x08000,
+        space: "code"
+    };
+
+    mem_ext[3] = {
+        comment: "Interrupt Vectors",
+        name: "VECT",
+        base: 0xff80,
+        len:  0x0080,
+        space: "code"
+    };
+
+}
+
+var params = {
+    clockRate: 160,
+    catalogName: "ti.catalog.c5400",
+    deviceName: "5416",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+/*
+ *  @(#) ti.platforms.dsk5416; 1, 0, 0,277; 2-23-2010 16:53:13; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

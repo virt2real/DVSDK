@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+# clean up shared memory
+for c in `ipcs -m | tail +4 | awk '{print $2}' `; do
+    ipcrm -m $c
+done
+
+# clean up semaphores
+for c in `ipcs -s  | tail +4 | awk '{print $2}' `; do
+    ipcrm -s $c
+done
+

@@ -1,0 +1,150 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+
+/* release everything for now */
+//Pkg.attrs.exportAll = true;
+Pkg.attrs.exportSrc = true;
+
+
+var libraries = [
+    {
+        name:    "rmm",
+        sources: [ "rmm"],
+        defs   : "",
+    },
+   {
+        name:    "smgr",
+        sources: [ "smgr"],
+        defs   : "",
+    },
+    {
+        name:    "rmmp",
+        sources: [ "rmmp", "rmm"],
+        defs   : "",
+    },
+ ];
+
+var librariesMP = [
+    {
+        name:    "shm",
+        sources: [ "sharedMem"],
+        defs   : " ",
+    },
+]
+
+var librariesArm = [
+    {
+        name:    "rmm",
+        sources: [ "rmm", "bios_rts"],
+        defs   : "",
+    },
+    {
+        name:    "rmmp",
+        sources: [ "rmmp", "rmm", "bios_rts"],
+        defs   : "",
+    },
+     {
+        name:    "smgrmp",
+        sources: [ "smgrmp", "smgr", "bios_rts"],
+        defs   : "",
+    },
+    {
+        name:    "smgr",
+        sources: [ "smgr", "bios_rts"],
+        defs   : "",
+    },
+];
+
+var liblist = {
+    "C64P"      : libraries,
+    "C674"      : libraries,
+    "UCArm9"    : librariesMP.concat(librariesArm),
+    "MVArm9"    : librariesMP.concat(librariesArm),
+    "GCArmv5T"  : librariesMP.concat(librariesArm),
+    "GCArmv7A"  : librariesMP.concat(librariesArm),
+    "Linux86"   : librariesMP.concat(librariesArm),
+    "Arm9t"     : librariesArm,
+};
+
+Pkg.uses = ["ti/bios/include"];
+
+Pkg.otherFiles = [ "sharedMem.h" ,"_rmm.h", "_smgr.h", "bios_rts.h", "dbc.h",
+"dbg.h"  ,"rmm.h"  ,"sharedMem.h"  ,"smgr.h", "lock.h", "utils.xs", "rmmp.h",
+"smgrmp.h", "package.bld", "gt_dais.h", "memleakcheck.h", "_rmmScratch.h",  
+"_rmmp.h", "_smgrmp.h" ]; 
+
+for (var i = 0; i < Build.targets.length; i++) {
+
+   var targ = Build.targets[i];
+
+    if (liblist[targ.name] == null) {
+        print("Don't know how to build for target " + targ.name + " ...");
+        continue;
+    }
+
+    print("building for target " + targ.name + " ...");
+
+    var libs = liblist[targ.name];
+
+    for (var j = 0; j < libs.length; j++) {
+
+        print("Library " + libs[j].name + " ...");
+
+        print("Source List " + libs[j].sources + " ...");
+
+         Pkg.addLibrary("lib/release/" + libs[j].name, targ, {
+             profile: "release",
+             defs    : libs[j].defs ,
+         }).addObjects(libs[j].sources);
+
+         Pkg.addLibrary("lib/trace/" + libs[j].name , targ, {
+             profile: "trace",
+             defs    : libs[j].defs ,
+         }).addObjects(libs[j].sources);
+
+         Pkg.addLibrary("lib/debug/" + libs[j].name , targ, {
+             profile: "debug",
+             defs    : libs[j].defs ,
+         }).addObjects(libs[j].sources);
+
+         Pkg.addLibrary("lib/debug_trace/" + libs[j].name , targ, {
+             profile: "debug_trace",
+             defs    : libs[j].defs ,
+         }).addObjects(libs[j].sources);
+    }
+}
+/*
+ *  @(#) ti.sdo.fc.utils; 1, 0, 2,286; 12-1-2010 17:26:08; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

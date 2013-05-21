@@ -1,0 +1,234 @@
+/* --COPYRIGHT--,BSD
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * --/COPYRIGHT--*/
+/*
+ *  ======== app_common.tci ========
+ *
+ *  This script, common for all DSP application examples, configures DSP
+ *  application's BIOS based on the application platform. The platform
+ *  is determined by environment["config.platform"] variable which is set
+ *  by the application's build script, to one of the following:
+ *
+ *  "ti.platforms.evmDM6446",
+ *  "ti.platforms.evmDM6437", 
+ *  "ti.platforms.evmDM648", or
+ *  "ti.platforms.evmDM6467" 
+ */
+
+var platform = environment["config.platform"];
+print("app_common.tci: platform = " + platform);
+
+
+if (platform.lastIndexOf(':') > 0) 
+{
+    platform = platform.substr(0, platform.lastIndexOf(':'));
+}
+//
+// Specify platform specific memory segment addresses and sizes, and other
+// fields that need to be passed as params when loading the generic
+// platform. Specifically, we need to set the following values:
+//     ddrBase     - Base address of memory segment "DDR2"
+//     ddrLen      - Length of "DDR2"
+//     clockRate   - clock rate for the device
+//     deviceName  - name of the device
+//
+// Values for clockRate and deviceName can be found Platform.tci file for
+// the device (eg, in ti/platforms/evmDM6446/Platform.tci)
+//
+var platformParams = {
+    "ti.platforms.evmDM6446" : {
+        l1DMode : null,
+        ddrBase : 0x80000000, //0x8FA00000,
+        ddrLen  : 0x10000000, //0x400000,
+        clockRate : 594,
+        deviceName : "DM6446",
+        l1dHeapSize: 0x10000,  // 64k: size to use for L1DHEAP in L1DSRAM
+    },
+    "ti.platforms.evmDM6437" : {
+        l1DMode : "16k",
+        ddrBase : 0x80000000,
+        ddrLen  : 0x08000000, 
+        clockRate : 594,
+        deviceName : "DM6437",
+        l1dHeapSize: 0x10000, // 64k: size to use for L1DHEAP in L1DSRAM
+    },
+    "ti.platforms.evmDM648" : {
+        //
+        //  DM648 has 32KB of L1D SRAM/Cache. Set L1DMode to value that
+        //  won't cause L1DSRAM segment to be destroyed upon platform
+        //  initialization. Values of "0k", "4k", "8k", and "16k" for
+        //  L1DMode will prevent L1DSRAM from being destroyed, while
+        //  leaving it undefined or setting it to null or "32k", will
+        //  cause it to be destroyed (see function setupCache6452()
+        //  in bios_6452.tci)
+        //
+        l1DMode : "8k",
+        ddrBase : 0xE7A00000,
+        ddrLen  : 0x00400000,
+        clockRate : 700,
+        deviceName : "DM648",
+        l1dHeapSize: 0x6000,  // 24k: size to use for L1DHEAP in L1DSRAM
+    },
+    "ti.platforms.evmDM6467" : {
+        l1Mode : "32k",
+        ddrBase : 0x80000000,
+        ddrLen  : 0x10000000,
+        clockRate : 594,
+        deviceName : "DM6467",
+        l1dHeapSize: 0x6000,  // 24k: size to use for L1DHEAP in L1DSRAM
+    },
+};
+
+if (platformParams[platform] == null) {
+    throw("Unsupported platform: " + platform);
+}
+
+var params = platformParams[platform];
+
+//print("app_common.tci: params.ddrBase = " + utils.toHex(params.ddrBase));
+
+var mem_ext = [
+{
+    comment:    "DDR2: off-chip memory for code and data",
+    name:       "DDR2",
+    base:       platformParams[platform].ddrBase,
+    len:        platformParams[platform].ddrLen,
+    space:      "code/data"
+},
+];
+
+
+/*
+ *  Specify the L2 CACHE memory setting. 
+ */
+if (platform == "ti.platforms.evmDM6467") {
+	var device_regs = {
+	    l1Mode: platformParams[platform].l1Mode,
+	    l2Mode: "0k" 
+	};
+}
+else {
+	var device_regs = {
+	    l1DMode: platformParams[platform].l1DMode,
+	    l2Mode: "64k" 
+	};
+}
+
+var params = {
+    clockRate: platformParams[platform].clockRate,
+    catalogName: "ti.catalog.c6000",
+    deviceName: platformParams[platform].deviceName,
+    regs: device_regs,
+    mem: mem_ext
+};
+
+
+utils.loadPlatform("ti.platforms.generic", params);
+
+utils.getProgObjs(prog, bios);
+
+/*
+ * Enable common BIOS features used by all examples
+ */
+bios.enableMemoryHeaps(prog);
+bios.enableTskManager(prog);
+
+prog.module("GBL").C64PLUSCONFIGURE   = true;
+
+if (platform == "ti.platforms.evmDM6446") {
+    prog.module("GBL").C64PLUSL1DCFG = "16k";  // changed from default of 32k
+
+    /*  
+	 *  increase the size of the L1DSRAM by 16K because L1 Cache size has been
+     *  reduced by 16K
+     */
+    bios.L1DSRAM.len  += 0x4000;
+}
+
+if  (platform == "ti.platforms.evmDM6467") {
+    //Fix for clock
+    prog.module("CLK").SPECIFYRATE = true;
+    prog.module("CLK").INPUTCLK = 148.5;
+
+    bios.HWI_INT4.interruptSelectNumber = 16;
+    bios.HWI_INT5.interruptSelectNumber = 17;
+	
+    bios.MEM.instance("IRAM").base = 0x11818000;
+    bios.MEM.instance("IRAM").len = 0x20000;
+
+    bios.MEM.instance("IRAM").createHeap = 1;
+    bios.MEM.instance("IRAM").heapSize = 0x00018000;
+    bios.MEM.instance("IRAM").enableHeapLabel = 1;
+    bios.MEM.instance("IRAM").heapLabel = prog.extern("IRAM_HEAP", "asm");
+
+    prog.module("GBL").C64PLUSL2CFG       = "0k" ;
+    
+    bios.TSK.instance("TSK_idle").stackSize = 0x1000;
+}
+else {
+	/*
+	 *  Enable heaps in the L1DSRAM (internal L1 cache ram, fixed size)
+	 *  and define the label for heap usage (usually for DMAN3); make
+	 *  the heap as big as the entire segment
+	 */
+	bios.L1DSRAM.createHeap       = true;
+	bios.L1DSRAM.enableHeapLabel  = true;
+	bios.L1DSRAM["heapLabel"]     = prog.extern("L1DHEAP");
+	bios.L1DSRAM.heapSize         = platformParams[platform].l1dHeapSize;
+}
+
+/*  ===========================================================================
+ *  Create heaps in memory segments that are to have heap
+ *  ===========================================================================
+ */
+/* 'DDR2' name is from the platform instance params */
+bios.DDR2.createHeap = true;
+bios.DDR2.heapSize   = 0x4000000;  // 64M
+
+/* set all BIOS data and code sections to be in DDR2 */
+bios.setMemDataHeapSections(prog, bios.DDR2);
+bios.setMemDataNoHeapSections(prog, bios.DDR2);
+bios.setMemCodeSections(prog, bios.DDR2);
+
+/*  you can selectively override DDR2 default set above, e.g.
+ *  bios.MEM.MALLOCSEG = bios.<some segment name>;
+ *  bios.MEM.BIOSOBJSEG = bios.<some segment name>;
+ *  bios.TSK.STACKSEG = bios.<some segment name>;
+ */
+
+/* Enable BIOS Instrumentation and RTA. */
+bios.enableRealTimeAnalysis(prog);
+bios.enableRtdx(prog);	
+
+bios.MEM.STACKSIZE			= 0x8000;
+ 
+/* reset timer at startup */
+bios.CLK.RESETTIMER = true;

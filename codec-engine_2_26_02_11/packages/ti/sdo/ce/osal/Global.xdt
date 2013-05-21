@@ -1,0 +1,84 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    /*
+     *  ======== Global.xdt ========
+     *  Generate the config structure for Global module
+     */
+    var Global = this;
+
+    // TODO: Can we determine if more than one module inheriting IOsal has
+    // been loaded, and if so, throw an error?
+%%}
+
+
+/*
+ *  ======== Global Configuration ========
+ *  Do not modify the following; it is automatically generated from the template
+ *  Server.xdt in the ti.sdo.ce package and will be overwritten next time the
+ *  executable is configured
+ */
+% /* Set the DVT log to NULL if the OS does not support Socrates logging */
+% if (Global.os.supportsLogging() == false) {
+#include <ti/sdo/ce/osal/Log.h>
+
+Log_Handle ti_sdo_ce_dvtLog = NULL; 
+% }
+
+% // hack to allow multi-process-via-kernel-driver support: if field below
+% // is set to true, do not translate
+% // virtual to physical addresses when VISA stubs call 
+% // Memory_getBufferPhysicalAddress() -- return the virtual as physical, if
+% // the virtual address is in the range of possible physical addresses;
+Bool Memory_skipVirtualAddressTranslation = `Global.skipVirtualAddressTranslation ? "TRUE" : "FALSE"`;
+
+
+/* List of all packages and their versions and paths, for diagnostics */
+String Global_buildInfo[] = {
+% var pa = xdc.om.$packages;
+% for (var j = 0; j < pa.length && Global.embedBuildInfo; j++) {
+%     if (pa[j].$name.match( /^xdc/ ) == null) {
+    "    package `pa[j].$name` (`pa[j].packageBase`) [`pa[j].$vers`]",
+%     }
+% }
+    NULL
+};
+%%{
+/*
+ * @(#) ti.sdo.ce.osal; 2, 0, 2,427; 12-2-2010 21:24:38; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

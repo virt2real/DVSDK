@@ -1,0 +1,137 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== CDM420.tci ========
+ *  The chip configuration settings are based on document SPRS281
+ *
+ */
+
+/*
+ *  Load C64P.tci arch file
+ */
+utils.loadArch("64P", "ti.catalog.c6000");
+
+/*
+ *  ======== CDM420 ========
+ */
+function CDM420(name, parent)
+{
+    /*
+     * The 'this' refers to the cpu object created in the platform file.
+     * The apply function is a way to execute a function with a specific
+     * 'this' pointer. Its used to initialize CDM420 base on a C64P.
+     */
+    C64P.apply(this, [name, parent]);
+
+    /*
+     * This field is used to include bios settings for this device.
+     */
+    this.deviceName = "DM420";
+
+    /* cpu registers */
+    this.registers = [];
+
+    /*
+     * This associative array defines the on-chip physical memory segments
+     * indexed by the segment name.  
+     */
+    this.memBlock = [];
+    
+    this.memBlock["IRAM"] = {
+        comment: "Internal 64K L2 RAM/CACHE in UMAP0",
+        name: "IRAM",
+        base: 0x11800000,
+        len:  0x00010000,
+        space: "code/data"
+    };
+    
+    this.memBlock["L1PROM"] = {
+        comment: "Internal 32K L1 Secure ROM Program Memory in Region 0",
+        name: "L1PROM",
+        base: 0x11E00000,
+        len:  0x00008000,
+        space: "code"
+    };
+
+    this.memBlock["L1PSRAM"] = {
+        comment: "Internal 32K RAM/CACHE L1 Program Memory in Region 1",
+        name: "L1PSRAM",
+        base: 0x11E08000,
+        len:  0x00008000,
+        space: "code"
+    };
+
+    this.memBlock["L1DSRAM"] = {
+        comment: "Internal 80K RAM/CACHE L1 Data Memory in Region 0",
+        name: "L1DSRAM",
+        base: 0x11F04000,
+        len:  0x0000C000,
+        space: "data"
+    };
+    
+    this.memBlock["L1DCACHE"] = {
+        comment: "Internal 32K RAM/CACHE L1 Data Memory in Region 1",
+        name: "L1DCACHE",
+        base: 0x11F10000,
+        len:  0x00008000,
+        space: "data"
+    };
+    
+    this.memBlock["ARM_RAM"] = {
+        comment: "Internal ARM RAM Memory",
+        name: "ARM_RAM",
+        base: 0x10008000,
+        len:  0x00004000,
+        space: "data"
+    };
+    
+    /* Define On-chip Memory Map */
+    this.mem = [];
+
+    this.mem[0] = [
+        this.memBlock["L1PSRAM"],
+        this.memBlock["L1DSRAM"],
+        this.memBlock["IRAM"],
+        this.memBlock["ARM_RAM"]
+    ];
+
+    /* This is the memory to be used for BIOS versions older than 5.30.00.06,
+     * which did not use the parameters l1PMode and l1DMode.
+     */
+    this.mem[1] = [
+        this.memBlock["L1DSRAM"],
+        this.memBlock["IRAM"],
+        this.memBlock["ARM_RAM"]
+    ];
+
+    /*
+     * ======== getMemoryMap ========
+     * This method returns the on-chip memory map.
+     */
+    this.getMemoryMap = function ()
+    {
+        if (this.registers.l1PMode == undefined &&
+            this.registers.l1DMode == undefined) {
+            return (this.mem[1]);    
+        }
+        else {
+            this.memBlock["L1DSRAM"].len = 0x14000;
+            return(this.mem[0]);
+        }
+    };
+
+}
+/*
+ *  @(#) ti.catalog.c6000; 1, 0, 0, 0,226; 2-23-2010 16:50:36; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

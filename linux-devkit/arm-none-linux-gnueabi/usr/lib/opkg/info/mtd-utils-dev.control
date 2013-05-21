@@ -1,0 +1,14 @@
+Package: mtd-utils-dev
+Version: 1.4.1-r0.6
+Description: Tools for managing memory technology devices.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: mtd-utils
+Homepage: http://www.linux-mtd.infradead.org/
+Build: install/afa4844
+Depends: mtd-utils
+Recommends: libz-dev, util-linux-ng-dev, liblzo2-dev, libgcc1-dev, libc6-dev, libuuid-dev, mtd-utils-dev
+Source: git://git.infradead.org/mtd-utils.git;protocol=git;tag=v1.4.1 file://add-exclusion-to-mkfs-jffs2-git-2.patch file://fix_heap_corruption.patch

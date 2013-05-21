@@ -1,0 +1,35 @@
+############################################################
+# Speech capture,encode and dump in a file
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the speech encoder to be used
+setp sphenc1 codec g711enc
+
+# Specify the speech parameters
+setp sphenc1 seconds 10
+setp sphenc1 frameSize 80
+setp sphenc1 compandingLaw 1
+setp sphenc1 packingType 0
+setp sphenc1 vadSelection 0
+setp sphenc1 codecSelection 0
+setp sphenc1 bitRate 12000
+setp sphenc1 inbufsize 160
+setp sphenc1 outbufsize 80
+
+# Specify the driver parameters
+setp audio device plughw:0,0
+setp audio format 2
+setp audio samplerate 8000
+setp audio channels 2
+setp audio type 0
+
+
+# Trigger the capture+dump scenario
+func sphenc1 -t sph-enc.g711

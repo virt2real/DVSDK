@@ -1,0 +1,57 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== C5510.tci ========
+ *  The chip configuration settings are based on document SPRS076E.
+ *
+ */
+
+/*
+ *  Load C55.tci arch file
+ */
+utils.loadArch("55", "ti.catalog.c5500");
+
+/*
+ *  ======== C5510 ========
+ */
+function C5510(name, parent)
+{
+    /*
+     * The 'this' refers to the cpu object created in the platform file.
+     * The apply function is a way to execute a function with a specific
+     * 'this' pointer. Its used to initialize C5510 base on a C55.
+     */
+    C55.apply(this, [name, parent]);
+
+    /*
+     * This field is used to include bios settings for this device.
+     * If csl is available for this device, it will also be used to specify
+     * the csl name in the bios config file (*.cdb).
+     * The csl name will be "csl" + this.deviceName + ".lib"
+     */
+    this.deviceName = "5510PG2_2";
+
+    /* The revision of the cpu core */
+    this.attrs.cpuCoreRevision = 2.2;
+
+    this.registers = [];
+
+    /* import the C5510 memory definitions */
+    utils.importFile("ti/catalog/c5500/C5510_memory.tci");
+
+    C5510_memory.apply(this);
+}
+/*
+ *  @(#) ti.catalog.c5500; 1, 0, 0, 0,226; 2-23-2010 16:53:04; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

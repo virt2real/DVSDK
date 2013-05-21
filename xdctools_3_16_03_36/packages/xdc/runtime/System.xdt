@@ -1,0 +1,143 @@
+%%{
+/* --COPYRIGHT--,ESD
+ *  Copyright (c) 2008 Texas Instruments. All rights reserved. 
+ *  This program and the accompanying materials are made available under the 
+ *  terms of the Eclipse Public License v1.0 and Eclipse Distribution License
+ *  v. 1.0 which accompanies this distribution. The Eclipse Public License is
+ *  available at http://www.eclipse.org/legal/epl-v10.html and the Eclipse
+ *  Distribution License is available at 
+ *  http://www.eclipse.org/org/documents/edl-v10.php.
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ * --/COPYRIGHT--*/
+%%}
+%var System = xdc.module("xdc.runtime.System");
+%if (!Program.$$isrom) {
+
+#include <xdc/std.h>
+#include <limits.h>
+#include <xdc/runtime/Types.h>
+#include <xdc/runtime/Text.h>
+#include <xdc/runtime/Assert.h>
+
+/*
+ *  ======== System_printfExtend__I ========
+ *  This function processes optional extended formats of printf.
+ */
+Int xdc_runtime_System_printfExtend__I(Char **pbuf, Char **pfmt, 
+    VaList *pva, xdc_runtime_System_ParseData *parse)
+{
+    Char    *fmt = *pfmt;
+    Int     res;
+    Char    c;
+    Bool    found = FALSE;
+    va_list va = *pva;
+    
+    res = 0;
+
+    c = *fmt++;
+    *pfmt = *pfmt + 1;
+
+	%var regexp = /%\$L/;
+    	%if (System.extendedFormats && 
+	%    (System.extendedFormats.search(regexp) != -1)) {
+    
+    if (c == '$') {
+        c = *fmt++;
+        *pfmt = *pfmt + 1;
+        if (c == 'L') {
+            xdc_runtime_Types_Label *lab = parse->aFlag ? 
+	    	(xdc_runtime_Types_Label *)iargToPtr(va_arg(va, IArg)) :
+                (xdc_runtime_Types_Label *)va_arg(va, void *);
+            res += xdc_runtime_Text_putLab(lab, pbuf, parse->precis);
+	    parse->len = 0;
+	    found = TRUE;
+        }
+    }
+
+    	%} /* %$L */
+	%var regexp = /%f/;
+    	%if (System.extendedFormats &&
+	%    (System.extendedFormats.search(regexp) != -1)) {
+
+    if (c == 'f') {
+        Double d;
+	ULong	fract;
+	Int	negative;
+
+
+        if (parse->aFlag) {
+	    xdc_runtime_Assert_isTrue((sizeof(Float) <= sizeof(IArg)), 
+	    	xdc_runtime_System_A_cannotFitIntoArg);
+
+	    d = argToFloat(va_arg(va, IArg));
+	}
+	else {
+	    d = va_arg(va, double);
+	}
+
+	if (d < 0.0) {
+	    d = -d;
+	    negative = TRUE;
+	    parse->zpad--;
+	}
+	else {
+	    negative = FALSE;
+	}
+
+	/*
+	 * output (error) if we can't print correct value
+	 */
+	if (d > (double)LONG_MAX) {
+	    parse->ptr = "(error)";
+	    parse->len = 7;		/* strlen("(error)"); */
+            goto end;
+	}
+
+	/* Assumes four digits after decimal point. */
+	fract = (ULong)((d - (Long)d) * 1e4);
+
+	parse->ptr = xdc_runtime_System_formatNum(parse->end, fract, 4, 10);
+	*(--parse->ptr) = '.';
+
+#if 0
+	/* eliminate trailing zeros */
+	do {
+	} while (*(--parse->end) == '0');
+	++parse->end;
+	parse->len = parse->end - parse->ptr;
+#endif
+
+	/* format integer part (right to left!) */
+	parse->ptr = xdc_runtime_System_formatNum(parse->ptr,
+            (Long)d, parse->zpad - parse->len, 10);
+	if (negative) {
+	    *(--parse->ptr) = '-';
+	}
+
+	parse->len = parse->end - parse->ptr;
+	found = TRUE;
+    }
+    	%} /* %f */
+
+    if (found == FALSE) {
+         /* other character (like %) copy to output */
+         *(parse->ptr) = c;
+         parse->len = 1;
+    }
+
+    goto end; /* keep compiler quiet about unreferenced label */
+end:
+    *pva = va;  /* update va list of the caller */
+    return (res);
+}
+
+%} /* !ROM */
+
+%%{
+/*
+ * @(#) xdc.runtime; 2, 0, 0, 0,237; 2-22-2010 10:33:58; /db/ztree/library/trees/xdc/xdc-u17x/src/packages/
+ */
+
+%%}

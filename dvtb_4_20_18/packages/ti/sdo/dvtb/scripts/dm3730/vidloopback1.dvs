@@ -1,0 +1,75 @@
+############################################################
+# video loopback
+#
+# Please ensure that you set the appropriate codec and
+# change the path of input/output files used here with the
+# path of input/output files required to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp videnc1 codec h264enc
+setp viddec2 codec h264dec
+
+# specify the parameters
+setp videnc1 encodingPreset 0
+setp videnc1 rateControlPreset 2
+setp videnc1 maxHeight 576
+setp videnc1 maxWidth 720
+setp videnc1 maxFrameRate 30000
+setp videnc1 maxBitRate 2000000
+setp videnc1 dataEndianness 1
+setp videnc1 maxInterFrameInterval 1
+setp videnc1 inputChromaFormat 4
+setp videnc1 inputContentType 0
+setp videnc1 reconChromaFormat -1
+setp videnc1 inputHeight 480
+setp videnc1 inputWidth 720
+setp videnc1 refFrameRate 30000
+setp videnc1 targetFrameRate 30000
+setp videnc1 targetBitRate 2000000
+setp videnc1 intraFrameInterval 30
+setp videnc1 generateHeader 0
+setp videnc1 captureWidth 0
+setp videnc1 forceFrame 0
+setp videnc1 interFrameInterval 1
+setp videnc1 mbDataFlag 0
+setp videnc1 framePitch 720
+setp videnc1 numFrames 300
+
+setp viddec2 maxHeight 480
+setp viddec2 maxWidth 720
+setp viddec2 maxFrameRate 30000
+setp viddec2 maxBitRate 6000000
+setp viddec2 dataEndianness 1
+setp viddec2 forceChromaFormat 4
+setp viddec2 decodeHeader 0
+setp viddec2 displayWidth 0
+setp viddec2 frameSkipMode 0
+setp viddec2 frameOrder 0
+setp viddec2 newFrameFlag 0
+setp viddec2 mbDataFlag 0
+setp viddec2 numFrames 300
+
+# specify vpfe parameters
+setp vpfe device /dev/video0
+setp vpfe standard 1
+setp vpfe format 1
+setp vpfe input 0
+setp vpfe width 720
+setp vpfe height 480
+
+#specify vpbe parameters
+setp vpbe device /dev/video1
+setp vpbe width 720
+setp vpbe height 480
+setp vpbe scaling 1
+setp vpbe ch_mode VGA
+setp vpbe output 2
+setp vpbe rotate 90
+
+
+func vidloopback1
+

@@ -1,0 +1,49 @@
+############################################################
+# Read and encode Image in jpeg
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp imgenc1 codec jpegenc1
+
+#specify image decoder parameters
+setp imgenc1 maxHeight                        720
+setp imgenc1 maxWidth                         1280
+setp imgenc1 maxScans                         0
+setp imgenc1 dataEndianness                   1
+setp imgenc1 forceChromaFormat                2
+setp imgenc1 numAU                            0
+setp imgenc1 inputChromaFormat                4
+setp imgenc1 inputHeight                      720
+setp imgenc1 inputWidth                       1280
+setp imgenc1 captureWidth                     1280
+setp imgenc1 generateHeader                   0
+setp imgenc1 qValue                           73
+
+
+# Configure VPFE parameters
+#setp vpfe width        1280
+#setp vpfe height       720
+
+#setp vpfe input        2
+#setp vpfe standard     1
+#setp vpfe format       8
+
+#setp vpfe cropEnable 0
+#setp vpfe cropCapLeft 0
+#setp vpfe cropCapTop 32
+#setp vpfe cropCapWidth 160
+#setp vpfe cropCapHeight 320
+
+
+# Trigger the capture+encode operation
+#func imgenc1 -t <output file name>
+
+# Trigger the file-read+encode operation
+func imgenc1 -s input-720p_422i.yuv -t out.jpg

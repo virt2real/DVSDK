@@ -1,0 +1,14 @@
+#!/bin/sh
+cd /usr/share/ti/dvsdk-demos/
+killall matrix_guiE
+cat /dev/zero > /dev/fb0
+/etc/init.d/loadmodule-rc restart
+default_display="`cat /sys/devices/platform/omapdss/manager0/display`"
+if [ "$default_display" = "dvi" ]; then
+	./encode -o -O system
+else
+	./encode -o
+	fbset -depth 16
+fi
+
+/etc/init.d/matrix-gui-e start

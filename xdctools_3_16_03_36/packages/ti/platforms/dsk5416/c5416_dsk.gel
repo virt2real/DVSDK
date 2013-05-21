@@ -1,0 +1,217 @@
+/*
+ *  ======== boot.c ========
+ */
+#include <xdc/std.h>
+
+/* set PMST to: OVLY on; DROM on, CLKOUT off */
+#define PMST_VAL        0x7fACu
+
+/* set wait-state control reg for: 2 wait states, 4 for I/O */
+#define SWWSR_VAL       0x4492u
+
+/* set external-banks switch control for: set CONSEC and BH, CLKOUT/=2 */
+#define BSCR_VAL        0xA002u
+
+/* Set Default Reset Initialization Value */
+#define ZEROS           0x0000u
+
+/* Set CLKMD register to PLL multiplier of 10 */
+#define CLKMD_VAL       0x9107u
+
+/* Set Peripheral Control Register Addresses for DEV_RESET */
+#define DMPREC          0x0054u
+#define DMSA            0x0055u
+#define DMSDI           0x0056u
+
+#define DMA_CH0_DMFSC_SUB_ADDR  0x0003u
+#define DMA_CH1_DMFSC_SUB_ADDR  0x0008u
+#define DMA_CH2_DMFSC_SUB_ADDR  0x000Du
+#define DMA_CH3_DMFSC_SUB_ADDR  0x0012u
+#define DMA_CH4_DMFSC_SUB_ADDR  0x0017u
+#define DMA_CH5_DMFSC_SUB_ADDR  0x001Cu
+
+#define MCBSP0_SPSA     0x0038u
+#define MCBSP0_SPSD     0x0039u
+#define MCBSP1_SPSA     0x0048u
+#define MCBSP1_SPSD     0x0049u
+
+#define MCBSP2_SPSA     0x0034u
+#define MCBSP2_SPSD     0x0035u
+
+#define MCBSP_SPCR1_SUB_ADDR   0x0000u
+#define MCBSP_SPCR2_SUB_ADDR   0x0001u
+#define MCBSP_SRGR1_SUB_ADDR   0x0006u
+#define MCBSP_SRGR2_SUB_ADDR   0x0007u
+#define MCBSP_MCR1_SUB_ADDR    0x0008u
+#define MCBSP_MCR2_SUB_ADDR    0x0009u
+#define SRGR1_INIT             0x0001u
+
+#define PRD0            0x0025u
+#define TCR0            0x0026u
+
+#define PRD1            0x0031u
+#define TCR1            0x0032u
+
+#define TIMER_STOP             0x0010u
+#define TIMER_RESET            0x0020u
+#define PRD_DEFAULT            0xFFFFu   
+
+#define GPIOCR                 0x0010u
+ 
+/*
+ *  ======== DSK5416_disableFlash ========
+ */
+Void DSK5416_disableFlash(Void)
+{
+    /* Disable Flash so SRAM is visible */
+    GEL_MemoryFill(0x0005, 2, 1, 0x40);
+}
+
+/*
+ *  ======== DSK5416_init ========
+ *  All memory maps are based on the PMST value of 0xFFE0
+ */
+Void DSK5416_init(Void)
+{
+    PMST = PMST_VAL;
+
+/* don't change the wait states, let the application code handle it */
+/* note: at power up all wait states will be the maximum (7)        */
+/*	SWWSR = SWWSR_VAL;                                          */
+
+    BSCR = BSCR_VAL;
+
+    DSK5416_disableFlash();
+
+    C5416_periphReset();
+}
+
+
+/*
+ *  ======== C5416_periphReset ========
+ */
+Void C5416_periphReset(Void)
+{
+    IFR = 0xFFFFu;  
+    IFR = 0x0000u;  
+
+    DMA_reset();
+    MCBSP0_reset();
+    MCBSP1_reset();
+    MCBSP2_reset();
+    TIMER0_reset();
+    GPIO_reset();
+}
+
+/*
+ *  ======== DMA_reset ========
+ */
+Void DMA_reset(Void)
+{
+    *(int *)DMPREC = ZEROS;  
+
+    *(int *)DMSA = DMA_CH0_DMFSC_SUB_ADDR;
+    *(int *)DMSDI = ZEROS;     
+    *(int *)DMSDI = ZEROS;     
+    *(int *)DMSA  = DMA_CH1_DMFSC_SUB_ADDR;
+    *(int *)DMSDI = ZEROS;     
+    *(int *)DMSDI = ZEROS;    
+
+    *(int *)DMSA  = DMA_CH2_DMFSC_SUB_ADDR;
+    *(int *)DMSDI = ZEROS;     
+    *(int *)DMSDI = ZEROS;     
+
+    *(int *)DMSA  = DMA_CH3_DMFSC_SUB_ADDR;
+    *(int *)DMSDI = ZEROS;     
+    *(int *)DMSDI = ZEROS;     
+
+    *(int *)DMSA  = DMA_CH4_DMFSC_SUB_ADDR;
+    *(int *)DMSDI = ZEROS;     
+    *(int *)DMSDI = ZEROS;    
+
+    *(int *)DMSA  = DMA_CH2_DMFSC_SUB_ADDR;
+    *(int *)DMSDI = ZEROS;     
+    *(int *)DMSDI = ZEROS;     
+}
+
+/*
+ *  ======== MCBSP0_reset ========
+ */
+Void MCBSP0_reset(Void)
+{
+    *(int *)MCBSP0_SPSA = MCBSP_SPCR1_SUB_ADDR;    
+    *(int *)MCBSP0_SPSD = ZEROS;                   
+    *(int *)MCBSP0_SPSA = MCBSP_SPCR2_SUB_ADDR;    
+    *(int *)MCBSP0_SPSD = ZEROS; 
+	     
+    *(int *)MCBSP0_SPSA = MCBSP_SRGR1_SUB_ADDR;    
+    *(int *)MCBSP0_SPSD = SRGR1_INIT;              
+    *(int *)MCBSP0_SPSA = MCBSP_SRGR2_SUB_ADDR;    
+    *(int *)MCBSP0_SPSD = ZEROS;                   
+
+    *(int *)MCBSP0_SPSA = MCBSP_MCR1_SUB_ADDR;     
+    *(int *)MCBSP0_SPSD = ZEROS;                   
+    *(int *)MCBSP0_SPSA = MCBSP_MCR2_SUB_ADDR;     
+    *(int *)MCBSP0_SPSD = ZEROS;                   
+}
+
+/*
+ *  ======== MCBSP1_reset ========
+ */
+Void MCBSP1_reset(Void)
+{
+    *(int *)MCBSP1_SPSA = MCBSP_SPCR1_SUB_ADDR;   
+    *(int *)MCBSP1_SPSD = ZEROS;                   
+    *(int *)MCBSP1_SPSA = MCBSP_SPCR2_SUB_ADDR;    
+    *(int *)MCBSP1_SPSD = ZEROS;                   
+
+    *(int *)MCBSP1_SPSA = MCBSP_SRGR1_SUB_ADDR;    
+    *(int *)MCBSP1_SPSD = SRGR1_INIT;              
+    *(int *)MCBSP1_SPSA = MCBSP_SRGR2_SUB_ADDR;    
+    *(int *)MCBSP1_SPSD = ZEROS;   
+	    
+    *(int *)MCBSP1_SPSA = MCBSP_MCR1_SUB_ADDR;     
+    *(int *)MCBSP1_SPSD = ZEROS;                   
+    *(int *)MCBSP1_SPSA = MCBSP_MCR2_SUB_ADDR;     
+    *(int *)MCBSP1_SPSD = ZEROS;
+}   
+
+/*
+ *  ======== MCBSP2_reset ========
+ */
+Void MCBSP2_reset(Void)
+{
+    *(int *)MCBSP2_SPSA = MCBSP_SPCR1_SUB_ADDR;   
+    *(int *)MCBSP2_SPSD = ZEROS;                   
+    *(int *)MCBSP2_SPSA = MCBSP_SPCR2_SUB_ADDR;    
+    *(int *)MCBSP2_SPSD = ZEROS;
+	       
+    *(int *)MCBSP2_SPSA = MCBSP_SRGR1_SUB_ADDR;    
+    *(int *)MCBSP2_SPSD = SRGR1_INIT;              
+    *(int *)MCBSP2_SPSA = MCBSP_SRGR2_SUB_ADDR;    
+    *(int *)MCBSP2_SPSD = ZEROS;   
+	    
+    *(int *)MCBSP2_SPSA = MCBSP_MCR1_SUB_ADDR;     
+    *(int *)MCBSP2_SPSD = ZEROS;                   
+    *(int *)MCBSP2_SPSA = MCBSP_MCR2_SUB_ADDR;     
+    *(int *)MCBSP2_SPSD = ZEROS;
+}   
+
+/*
+ *  ======== TIMER0_reset ========
+ */
+Void TIMER0_reset(Void)
+{
+    *(int *)TCR0 = TIMER_STOP;              
+    *(int *)PRD0 = PRD_DEFAULT;              
+    *(int *)TCR0 = TIMER_RESET;
+}
+
+/*
+ *  ======== GPIO_reset ========
+ */
+Void GPIO_reset(Void)
+{
+    *(int *)GPIOCR = ZEROS;
+}        
+

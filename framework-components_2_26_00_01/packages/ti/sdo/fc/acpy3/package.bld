@@ -1,0 +1,289 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ *  ======== package.bld ========
+ *    Build script for acpy package.
+ *
+ */
+var Pkg = xdc.useModule('xdc.bld.PackageContents');
+
+Pkg.attrs.exportSrc = true;
+
+var LIBBASE = "acpy3";
+
+var COPTS = "";
+/*
+var COPTS = "-mv6400+";
+COPTS += " -o";      // added so that debug build has symbols - GD
+COPTS += " -mw ";    // added per EG: informational only
+COPTS += " --perf_info ";    // added per EG: temporary
+*/
+
+var c64Files = [
+                "acpy3_config",
+                "acpy3_start",
+                "acpy3_configure",
+                "acpy3_complete",
+                "acpy3_completelinked",
+                "acpy3_fastconfigure16b",
+                "acpy3_fastconfigure32b",
+                "acpy3_fastsetfinal",
+                "acpy3_init",
+                "acpy3_qdma",
+                "acpy3",
+                "acpy3_start_cpucopy",
+                "acpy3_wait",
+                "acpy3_waitlinked",
+                "acpy3_wait_cpucopy",
+                "acpy3_setfinal",
+                "gt_dais",
+];
+
+var u86Files = [
+                "acpy3_config",
+                "acpy3_start_arm",
+                "acpy3_configure",
+                "acpy3_complete",
+                "acpy3_completelinked",
+                "acpy3_fastconfigure16b",
+                "acpy3_fastconfigure32b",
+                "acpy3_fastsetfinal",
+                "acpy3_init",
+                "acpy3_qdma_arm",
+                "acpy3_arm",
+                "acpy3_start_cpucopy",
+                "acpy3_wait_arm",
+                "acpy3_waitlinked_arm",
+                "acpy3_wait_cpucopy",
+                "acpy3_setfinal",
+                "gt_dais",
+];
+
+var c64FilesInstrument = [
+                "acpy3_instr"
+];
+
+// Need to build two different acpy libraries for each Bridge profile,
+// one that uses CPU to copy, and one that uses DMA to copy.
+var acpy3Profiles = {
+    "dma" : {
+        compileOpts : {
+            copts: COPTS,
+            defs: " ",              // nothing yet
+            aopts: " ",             // nothing yet
+        },
+        libBase : LIBBASE,
+        objFiles : c64Files,
+    },
+    "cpu" : {
+        compileOpts : {
+            copts: COPTS,
+            defs: " -D_ACPY3_CPUCOPY_ ",
+            aopts: " ",             // nothing yet
+        },
+        libBase : LIBBASE + "cpu",
+        objFiles : c64Files,
+    },
+    "dmaInstrument" : {
+        compileOpts : {
+            copts: COPTS,
+            defs: "-D_ACPY3_INSTR_ ",
+            aopts: " ",             // nothing yet
+        },
+        libBase : LIBBASE + "instrumented",
+        objFiles : c64Files.concat(c64FilesInstrument),
+    }
+};
+
+var armProfiles = {
+    "dma" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " ",              // nothing yet
+            aopts: " ",             // nothing yet
+        },
+        libBase : LIBBASE,
+        objFiles : u86Files,
+    },
+    "cpu" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " -D_ACPY3_CPUCOPY_ ",
+            aopts: " ",             // nothing yet
+        },
+        libBase : LIBBASE + "cpu",
+        objFiles : u86Files,
+    },
+};
+
+var u86Profiles = {
+    "cpu" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " -D_ACPY3_CPUCOPY_ ",
+            aopts: " ",             // nothing yet
+        },
+        libBase : LIBBASE + "cpu",
+        objFiles : u86Files,
+    },
+};
+
+var _yourProfiles_ = {
+    // This profile is for building the DMA versions of the ACPY3 library.
+    "dma" : {
+        compileOpts : {
+            copts: " ",
+            // Uncomment the following line if your target doesn't support DMA
+            //defs: " -D_ACPY3_CPUCOPY_ ",
+            defs: " ", // Remove this line if your target doesn't support DMA
+            aopts: " ",
+        },
+        libBase : LIBBASE,
+        objFiles : u86Files,
+    },
+    // This profile is for building the CPU copy versions of the ACPY3 library.
+    "cpu" : {
+        compileOpts : {
+            copts: " ",
+            defs: " -D_ACPY3_CPUCOPY_ ",
+            aopts: " ",
+        },
+        libBase : LIBBASE + "cpu",
+        objFiles : u86Files,
+    }
+};
+
+targProfiles = {
+    "C64P"         : acpy3Profiles,
+    "C674"         : acpy3Profiles,
+    "Linux86"      : u86Profiles,
+    "UCArm9"       : armProfiles,
+    "MVArm9"       : armProfiles,
+    "WinCE"        : armProfiles,
+    "_yourTarget_" : _yourProfiles_
+};
+
+
+Pkg.uses = ["ti/bios/include"];
+
+/* Default package release */
+Pkg.otherFiles = [
+    "acpy3.h",
+    "acpy3_fastconfigure16b.h",
+    "acpy3_fastconfigure32b.h",
+    "acpy3_fastsetfinal.h",
+    "acpy3_setfinal.h",
+    "acpy3_start.h",
+    "acpy3_wait.h",
+    "acpy3_complete.h",
+    "acpy3_qdma.h",
+    "acpy3_qdma_arm.h",
+    "acpy3_util.h",
+    "acpy3_instr.h",
+    "acpy3_lock.h",
+    "package.bld"
+];
+
+/* loop over all targets */
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+    var plat = targ.platform;   /* use the target's default platform */
+
+    if (targProfiles[targ.name] != null) {
+        print("building for target " + targ.name + " ...");
+
+        // loop over all acpy3 library profiles
+        var targProfs = targProfiles[targ.name];
+        for (var prof in targProfs) {
+            var libBase = targProfs[prof].libBase;
+            var compileOpts = targProfs[prof].compileOpts;
+            var objFilesInLib = targProfs[prof].objFiles;
+
+            var rlsCopts = compileOpts.copts;
+
+            // Optimization for C64P
+            if (targ.name == "C64P") {
+                 rlsCopts += " -o3 -os ";
+                dbgOpts = " -o ";
+            }
+            else {
+                dbgOpts = "";
+            }
+
+            // Release library, no GT trace
+            var lib = Pkg.addLibrary("lib/release/" + libBase ,
+                    targ, {
+                        copts: rlsCopts,
+                        aopts: compileOpts.aopts,
+                        defs: compileOpts.defs,
+                        profile: "release",
+                    });
+            lib.addObjects(objFilesInLib);
+
+            // Release library, with GT trace
+            var lib = Pkg.addLibrary("lib/trace/" + libBase ,
+                    targ, {
+                        copts: rlsCopts,
+                        aopts: compileOpts.aopts,
+                        defs: compileOpts.defs,
+                        profile: "trace",
+                    });
+            lib.addObjects(objFilesInLib);
+
+            // Debug library, no GT trace
+            var lib = Pkg.addLibrary("lib/debug/" + libBase,
+                    targ, {
+                        copts: compileOpts.copts + dbgOpts,
+                        aopts: compileOpts.aopts,
+                        defs: compileOpts.defs,
+                        profile: "debug",
+                    });
+            lib.addObjects(objFilesInLib);
+
+            // Debug library, with GT trace
+            var lib = Pkg.addLibrary("lib/debug_trace/" + libBase,
+                    targ, {
+                        copts: compileOpts.copts + dbgOpts,
+                        aopts: compileOpts.aopts,
+                        defs: compileOpts.defs,
+                        profile: "debug_trace",
+                    });
+            lib.addObjects(objFilesInLib);
+        }
+    }
+}
+/*
+ *  @(#) ti.sdo.fc.acpy3; 1, 0, 4,301; 12-1-2010 17:24:25; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

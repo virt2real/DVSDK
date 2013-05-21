@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.ipc.bios" version="2, 0, 1" producerId="codec_engine_2_26_02_11">
+    <units>
+        <module name="Ipc"/>
+    </units>
+    <sources>
+        <srcFile name="Comm_BIOS.c"/>
+        <srcFile name="package/package_ti.sdo.ce.ipc.bios.c"/>
+        <srcFile name="Processor_noOS.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/ipc_bios.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_bios/Comm_BIOS.o674.dep" src="Comm_BIOS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_bios/package/package_ti.sdo.ce.ipc.bios.o674.dep" src="package/package_ti.sdo.ce.ipc.bios.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_bios/Processor_noOS.o674.dep" src="Processor_noOS.c"/>
+        <srcFile name="lib/debug/ipc_bios.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_bios/Comm_BIOS.o64P.dep" src="Comm_BIOS.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_bios/package/package_ti.sdo.ce.ipc.bios.o64P.dep" src="package/package_ti.sdo.ce.ipc.bios.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_bios/Processor_noOS.o64P.dep" src="Processor_noOS.c"/>
+        <srcFile name="lib/release/ipc_bios.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_bios/Comm_BIOS.o674.dep" src="Comm_BIOS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_bios/package/package_ti.sdo.ce.ipc.bios.o674.dep" src="package/package_ti.sdo.ce.ipc.bios.c"/>
+        <srcFile name="package/lib/lib/release/ipc_bios/Processor_noOS.o674.dep" src="Processor_noOS.c"/>
+        <srcFile name="lib/release/ipc_bios.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_bios/Comm_BIOS.o64P.dep" src="Comm_BIOS.c"/>
+        <srcFile name="package/lib/lib/release/ipc_bios/package/package_ti.sdo.ce.ipc.bios.o64P.dep" src="package/package_ti.sdo.ce.ipc.bios.c"/>
+        <srcFile name="package/lib/lib/release/ipc_bios/Processor_noOS.o64P.dep" src="Processor_noOS.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_ipc_bios.tar.dep" src="package/rel/ti_sdo_ce_ipc_bios.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/ipc_bios"
+        pname="lib/debug/ipc_bios.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/ipc_bios"
+        pname="lib/debug/ipc_bios.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/ipc_bios"
+        pname="lib/release/ipc_bios.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/release/ipc_bios"
+        pname="lib/release/ipc_bios.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_ipc_bios"
+        pname="ti_sdo_ce_ipc_bios.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package.bld"/>
+        <file name="lib/debug/ipc_bios.a674"/>
+        <file name="Processor_noOS.c"/>
+        <file name="lib/release/ipc_bios.a674"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/debug/ipc_bios.a64P"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/release/ipc_bios.a64P"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package_ti.sdo.ce.ipc.bios.c"/>
+        <file name="link.xdt"/>
+        <file name="package/package.ext.xml"/>
+        <file name="Comm_BIOS.c"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

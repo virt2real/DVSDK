@@ -1,0 +1,930 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD><TITLE>Compliance and Performance Test Report</TITLE></HEAD>
+<BODY>
+
+<STYLE TYPE="text/css">
+<!--
+.indented
+   {
+   padding-left: 25pt;
+   padding-right: 25pt;
+   }
+-->
+</STYLE>
+
+<a name="Top of Page"></a>
+
+<TABLE BORDER="1" WIDTH="100%">
+  <TR>
+    <TD COLSPAN="2">
+      <CENTER><FONT SIZE="+2"><B>TMS320 DSP Algorithm Interoperability Standard</B></FONT></CENTER><BR>
+      <CENTER><FONT SIZE="+1"><B>QualiTI <a href="#compliance">Compliance</a> and <a href="#performance">Performance</a> Testing</B></font></CENTER><BR>
+    </TD>
+  </TR>
+  <TR>
+    <TD><B>Date</B></TD><TD>Tue Aug 31 2010 16:51:11 GMT+0530 (IST)</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Vendor</B></TD><TD>TI</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Algorithm</B></TD><TD>VC1VDEC</TD>
+  </TR>
+
+  <TR>
+    <TD><B>Architecture</B></TD><TD>ARM</TD>
+  </TR>
+
+  <TR>
+    <TD><B>TI Compiler</B></TD><TD>false</TD>
+  </TR>
+  
+  <TR>
+    <TD><B>Library Format</B></TD><TD>ELF</TD>
+  </TR>
+  
+  <TR>
+    <TD><B>Compiler Version</B></TD><TD>UNKNOWN</TD>
+  </TR>
+  <TR>
+    <TD><B>Test Execution Log</B></TD><TD><a href="#Compiler Info">Test execution log for compiler info</a></TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="2">
+
+      <B>Algorithm Base Directory:</B><BR>
+
+      &nbsp;&nbsp;&nbsp;E:\work\DM365\vc1_decoder<BR>
+
+<BR>
+      <B>Algorithm Archive(s):</B><BR>
+
+      &nbsp;&nbsp;&nbsp;vc1_decoder\lib\vc1vdec_ti_arm926.a<BR>
+<BR>
+      <B>Header File(s):</B><BR>
+      &nbsp;&nbsp;&nbsp;.\vc1_decoder\inc\ivc1vdec.h<BR>
+<BR>
+    </TD>
+
+  </TR>
+
+
+      <TR>
+        <TD COLSPAN="2">
+        <a name=compliance>
+          <FONT SIZE="+1"><BR><br><CENTER><B>Compliance Test Report</B></CENTER><BR><br></font>
+        </a>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD><B>Test Results</B></TD>
+        <td>
+        <font color="#00A000">PASS: 2</font><br>
+        <font color="#FF0000"><B>FAIL: 0</b></font>
+        &nbsp;&nbsp;&nbsp; 
+        
+        <br>
+        Skipped: 0<br>
+        Not apply: 3<br>
+        <b>Total: 5</b><br>
+        </td>
+      </TR>
+      <TR>
+
+        <TD COLSPAN="2">
+            <B>Test Notes</B><BR>
+            &nbsp;&nbsp;&nbsp;This report has been generated with QualiTI Version 6.24 - the XDAIS compliance and performance test suite. <BR><BR>
+
+
+        </TD>
+      </TR>
+
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rules 8, 9 and 10">XDAIS Rules 8, 9, 10: Namespace compliance</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">(Rule 8) All external definitions must be either API identifiers or API and vendor prefixed.<br><br>(Rule 9) All undefined references must refer either to the operations specified in Appendix B (a subset of C runtime support library functions and a subset of the DSP/BIOS HWI API functions), or TI's DSPLIB or IMGLIB functions or other XDAIS-compliant modules.<br><br>(Rule 10) All modules must follow the eXpressDSP naming conventions for those external declarations disclosed to the client.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test passed.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rules 8, 9 and 10">XDAIS Rules 8, 9 and 10 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 12">XDAIS Rule 12: IALG interface implementation</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must implement the IALG interface.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Test passed.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 12">XDAIS Rule 12 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 13+">XDAIS Rule 13+: correct linker section names</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">Each of the IALG methods implemented by an algorithm must be independently relocatable.<br><br>Additional rule: there should be no non-standard linker sections. (Standard linker sections are: ".cinit", ".switch", ".far", ".text", ".const", ".bss", ".pinit".)</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Currently, this test cannot be run on non-TI compiled libraries.  This rule is not relevant for ARM libraries since sections should be placed properly.<br><BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 13+">XDAIS Rule 13+ execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 25">XDAIS Rule 25: All C6x algorithms must be supplied in little-endian format</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All C6x algorithms must be supplied in little-endian format.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">This test does not apply since this is not a C6x architecture.<br><BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 25">XDAIS Rule 25 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 26">XDAIS Rule 26: All static/global data must be far on c6x</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All C6x algorithms must access all static and global data as far data.</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">This test does not apply since this is not a C6x architecture.<br><BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 26">XDAIS Rule 26 execution log</a><br>
+        </TD>
+      </TR>
+      <TR>
+        <TD COLSPAN="2">
+        <a name=performance>
+          <FONT SIZE="+1"><BR><br><CENTER><B>Performance Test Report</B></CENTER><BR><br></font>
+        </a>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD><B>Test Results</B></TD>
+        <td>
+        <font color="#00A000">PASS: 1</font><br>
+        <font color="#FF0000"><B>FAIL: 0</b></font>
+        &nbsp;&nbsp;&nbsp; 
+        
+        <br>
+        Skipped: 0<br>
+        Not apply: 1<br>
+        <b>Total: 2</b><br>
+        </td>
+      </TR>
+      <TR>
+
+        <TD COLSPAN="2">
+            <B>Test Notes</B><BR>
+            &nbsp;&nbsp;&nbsp;This report has been generated with QualiTI Version 6.24 - the XDAIS compliance and performance test suite. <BR><BR>
+
+
+        </TD>
+      </TR>
+
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rule 20">XDAIS Rule 20: must declare worst-case stack requirements</a></b><br><br>
+
+          <B>Report: </B>Test does not apply</font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must characterize their worst-case stack space memory requirements (including alignment).</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Currently, this test cannot be run on non-TI compiled libraries.  The test requires DWARF information that was not detected in this library.  You will need to calculate the worst case stack size using other means and report this in the data sheet.<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rule 20">XDAIS Rule 20 execution log</a><br>
+        </TD>
+      <TR>
+        <TD COLSPAN="2">
+          <b><a name="XDAIS Rules 21, 22">XDAIS Rules 21, 22: must characterize static data & program memory requirements</a></b><br><br>
+
+          <B>Report: </B> <font color="#008080"><B>Passed</B></font><BR><BR>
+
+          <B>Test Description: </B><P CLASS="indented">All algorithms must characterize their static data & program memory requirements</p>
+          <B>Test Status Details: </B>
+          <P CLASS="indented">Performance test completed. CODE, DATA & UDATA sections characterized<BR></p>
+          <B>Test Execution Log: </b><a href="#log XDAIS Rules 21, 22">XDAIS Rules 21, 22 execution log</a><br>
+        </TD>
+      </TR>
+</TABLE>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<a name="Compiler Info">Test execution log for <b>Compiler Info:</b></a><br>
+<PRE>
+Determining compiler info.
+
+Chcking if this library was created with a TI compiler...
+Attempting to determine library format...
+ Running command:&gt; "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none "E:\work\DM365\vc1_decoder\vc1_decoder\lib\vc1vdec_ti_arm926.a" | "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\bin\grep\grep.exe" -E "&lt;.*coff&gt;|&lt;.*elf&gt;"
+                   (from "C:\Documents and Settings\100325\Local Settings\Temp\qualiti_runcmd_43295.sh"
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+  &lt;elf&gt;
+  &lt;/elf&gt;
+The library is in ELF format.
+
+ Running command:&gt; "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -g "E:\work\DM365\vc1_decoder\vc1_decoder\lib\vc1vdec_ti_arm926.a" | "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\bin\grep\grep.exe" -A 3 "DW_AT_producer"
+                   (from "C:\Documents and Settings\100325\Local Settings\Temp\qualiti_runcmd_43296.sh"
+This library was not  created with a TI compiler.
+
+Attempting to determine the compiler version...
+ Running command:&gt; "find.exe" "GCC:" "E:\work\DM365\vc1_decoder\vc1_decoder\lib\vc1vdec_ti_arm926.a"|"\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\bin\grep\grep.exe" "GCC:"
+                   (from "C:\Documents and Settings\100325\Local Settings\Temp\qualiti_runcmd_43297.sh"
+  FIND: Parameter format not correct
+The compiler is UNKNOWN.
+
+</PRE>
+<a href="#Top of Page">back</a><br>
+<hr>
+<a name="log XDAIS Rules 8, 9 and 10">Test execution log for <b>XDAIS Rules 8, 9 and 10:</b></a><br>
+<PRE>
+Running test 'XDAIS Rules 8, 9 and 10'
+Extracting names of global symbols defined by the algorithm...
+ Running command:&gt; "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\cgtools\bin\nm6x.exe" -g "E:\work\DM365\vc1_decoder\vc1_decoder\lib\vc1vdec_ti_arm926.a" | "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\bin\grep\grep.exe" " [TBCUD] "
+                   (from "C:\Documents and Settings\100325\Local Settings\Temp\qualiti_runcmd_43298.sh"
+  00000000 U DMA_TI_ECopy_1D1D
+  00000000 U DMA_TI_Wait
+  000003f0 T VC1VDEC_TI_Copy_codearm968
+  00000000 T VC1VDEC_TI_Get968codeSize
+  00000138 T VC1VDEC_TI_KALEIDO_PSC_Enable
+  000001f4 T VC1VDEC_TI_KALEIDO_PSC_Enable_InitRam_Low
+  0000002c T VC1VDEC_TI_KALEIDO_PSC_Reset
+  000000b0 T VC1VDEC_TI_KALEIDO_PSC_SyncReset
+  00000468 T VC1VDEC_TI_KaleidoPsc_Disable
+  000002b0 T VC1VDEC_TI_Loader_arm968
+  00000000 D VC1VDEC_TI_SECTION0
+  00000020 D VC1VDEC_TI_SECTION1
+  0000be5c D VC1VDEC_TI_SECTION2
+  00000000 U memcpy
+  00001a44 T VC1VDEC_TI_collectErrIno
+  00001800 T VC1VDEC_TI_computSpatialNghbr
+  00000c54 T VC1VDEC_TI_computeGlobalMv
+  00000000 U VC1VDEC_TI_computeMedianOf4
+  00000430 T VC1VDEC_TI_conceal
+  00000000 U VC1VDEC_TI_concealSidePadding
+  00000000 U VC1VDEC_TI_detectSceneChange
+  00000000 U VC1VDEC_TI_dmaXfrInSpatial
+  00000000 U VC1VDEC_TI_dmaXfrInTemporal
+  00000000 U VC1VDEC_TI_dmaXfrOutSpatial
+  00000000 U VC1VDEC_TI_dmaXfrOutTemporal
+  0000273c T VC1VDEC_TI_errConclAlloc
+  00002aec T VC1VDEC_TI_errConclnumAlloc
+  00000000 T VC1VDEC_TI_errorConceal
+  00000898 T VC1VDEC_TI_estimateMv
+  000017d8 T VC1VDEC_TI_estimateMvDP
+  00000000 U VC1VDEC_TI_getMbMv
+  00000000 U VC1VDEC_TI_getMbStatus
+  00000000 U VC1VDEC_TI_getMbTopMv
+  00001c9c T VC1VDEC_TI_initConclArgs
+  00000000 U VC1VDEC_TI_initConclInfoBufs
+  00000000 U VC1VDEC_TI_initDmaConfig
+  00001e78 T VC1VDEC_TI_initErrConcealObj
+  000017b4 T VC1VDEC_TI_intraConclAlg
+  00000000 U VC1VDEC_TI_pixelCorrection
+  00000c7c T VC1VDEC_TI_setComputedGMv
+  00000000 U VC1VDEC_TI_setMbMv
+  00000d70 T VC1VDEC_TI_smoothHSpatialInterpolateV
+  00000710 T VC1VDEC_TI_spatialConclAlg
+  000013c4 T VC1VDEC_TI_spatialInterpolateV
+  00001790 T VC1VDEC_TI_temporalConclAlg
+  00000000 U __aeabi_uidiv
+  00000000 U __aeabi_uidivmod
+  00000000 U memset
+  00000000 U MEMUTILS_cacheWbInv
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U VC1VDEC_TI_1D1D_Wait
+  00000000 U VC1VDEC_TI_1D2D_Wait
+  00000000 U VC1VDEC_TI_2D1D_Wait
+  00000000 U VC1VDEC_TI_2D2D_Wait
+  00000000 U VC1VDEC_TI_colorConversion
+  0000038c T VC1VDEC_TI_dmaXfrInSpatial
+  00001064 T VC1VDEC_TI_dmaXfrInTemporal
+  00000000 T VC1VDEC_TI_dmaXfrOutSpatial
+  00000ab8 T VC1VDEC_TI_dmaXfrOutTemporal
+  00000000 U VC1VDEC_TI_getMbMv
+  00001580 T VC1VDEC_TI_initDmaConfig
+  00001be8 T VC1VDEC_TI_pixelCorrection
+  00000000 U __aeabi_uidiv
+  00000000 U __aeabi_uidivmod
+  00000000 U memset
+  00000000 T VC1VDEC_TI_computeMedianOf3
+  000000a4 T VC1VDEC_TI_computeMedianOf4
+  00000000 T VC1VDEC_TI_DEBUG_Fatal
+  0000001c T VC1VDEC_TI_DEBUG_Warn
+  00000000 U VC1VDEC_TI_BIT_GetVLC
+  00000000 U VC1VDEC_TI_BIT_GetVLC_Multi_8bit
+  00000000 D VC1VDEC_TI_Code_3x2_2x3_tiles
+  00000104 D VC1VDEC_TI_Code_3x2_2x3_tiles_multicodes_8bit
+  00000000 U VC1VDEC_TI_DECBIT_GetBits
+  00002210 T VC1VDEC_TI_Read_BitPlane
+  00002438 T VC1VDEC_TI_Read_BitPlane_Bit
+  000024b4 T VC1VDEC_TI_Skip_BitPlane_Bit
+  00000000 U VC1VDEC_TI_DEBUG_Fatal
+  00000000 U VC1VDEC_TI_DECBIT_GetBits
+  00000000 T VC1VDEC_TI_UnpackEntryPointLayer
+  00000000 U VC1VDEC_TI_BIT_BitCountGet
+  00000000 U VC1VDEC_TI_BIT_InitialiseBitstream
+  00000000 U VC1VDEC_TI_BIT_TrimBuffer
+  00000000 U VC1VDEC_TI_DEBUG_Fatal
+  00000000 U VC1VDEC_TI_DEBUG_Warn
+  00000000 U VC1VDEC_TI_DECBIT_GetBits
+  00000004 C VC1VDEC_TI_DECOPTS_InputType
+  00000004 C VC1VDEC_TI_DECOPTS_sDecoderSetup
+  00001710 T VC1VDEC_TI_Decode_EntryPoint_Layer
+  00001654 T VC1VDEC_TI_Decode_Field_Layer
+  000015fc T VC1VDEC_TI_Decode_Frame_Layer
+  000015b0 T VC1VDEC_TI_Decode_Sequence_Layer
+  000016b8 T VC1VDEC_TI_Decode_Slice_Layer
+  00000000 T VC1VDEC_TI_Init_Bitstream_FileReader
+  00000108 T VC1VDEC_TI_Init_Read_STRUCT_A
+  00001758 T VC1VDEC_TI_ReadElementaryChunk
+  0000025c T VC1VDEC_TI_Read_Bitstream_File
+  000014b8 T VC1VDEC_TI_SetMaxSize
+  00000001 C VC1VDEC_TI_TempMemory
+  00000000 U VC1VDEC_TI_UnpackEntryPointLayer
+  00000000 U VC1VDEC_TI_UnpackFieldPictureLayer
+  00000000 U VC1VDEC_TI_UnpackPictureLayer
+  00000000 U VC1VDEC_TI_UnpackSequenceLayer
+  00000000 U VC1VDEC_TI_UnpackSliceLayer
+  00000398 T VC1VDEC_TI_Unpack_Bitstream
+  00001e84 T VC1VDEC_TI_outargs_fill
+  00000004 C VC1VDEC_TI_sTempBitstream
+  00002088 T VC1VDEC_TI_search_next_start_code
+  00001b3c T VC1VDEC_TI_seq_hdr_search
+  00000000 U memcpy
+  00000000 U memset
+  00000000 U VC1VDEC_TI_BIT_BitCountGet
+  00000000 U VC1VDEC_TI_BIT_GetVLC
+  00000000 U VC1VDEC_TI_DEBUG_Fatal
+  00000000 U VC1VDEC_TI_DEBUG_Warn
+  00000000 U VC1VDEC_TI_DECBIT_GetBits
+  00000000 U VC1VDEC_TI_GENTAB_ChooseZigZagTableSet
+  00000000 T VC1VDEC_TI_IQUANT_GetQuantizer
+  0000011c D VC1VDEC_TI_Mot_Vector_Diff_VLC_0
+  00000244 D VC1VDEC_TI_Mot_Vector_Diff_VLC_1
+  0000036c D VC1VDEC_TI_Mot_Vector_Diff_VLC_2
+  00000494 D VC1VDEC_TI_Mot_Vector_Diff_VLC_3
+  000005bc D VC1VDEC_TI_P_Picture_CBPCY_VLC_0
+  000006c0 D VC1VDEC_TI_P_Picture_CBPCY_VLC_1
+  000007c4 D VC1VDEC_TI_P_Picture_CBPCY_VLC_2
+  000008c8 D VC1VDEC_TI_P_Picture_CBPCY_VLC_3
+  00000000 U VC1VDEC_TI_Read_BitPlane
+  00000000 U VC1VDEC_TI_TAB_pBFraction
+  00002824 T VC1VDEC_TI_UnpackFieldPictureLayer
+  000027ac T VC1VDEC_TI_UnpackInSlicePictureLayer
+  000029f4 T VC1VDEC_TI_UnpackPictureLayer
+  00000000 U VC1VDEC_TI_DEBUG_Warn
+  00000000 U VC1VDEC_TI_DECBIT_GetBits
+  00000000 U VC1VDEC_TI_TAB_AspectRatios
+  00000000 U VC1VDEC_TI_TAB_FrameRateNumerators
+  00000000 T VC1VDEC_TI_UnpackSequenceLayer
+  00000000 U VC1VDEC_TI_DEBUG_Warn
+  00000000 U VC1VDEC_TI_DECBIT_GetBits
+  00000000 U VC1VDEC_TI_UnpackInSlicePictureLayer
+  00000000 T VC1VDEC_TI_UnpackSliceLayer
+  00000000 T VC1VDEC_TI_GENTAB_ChooseZigZagTableSet
+  00000018 D VC1VDEC_TI_TAB_AspectRatios
+  00000038 D VC1VDEC_TI_TAB_FrameRateNumerators
+  00000058 D VC1VDEC_TI_TAB_LevelLimits
+  00000000 D VC1VDEC_TI_TAB_Motion_Vector_Range_Params_Table
+  000002d8 D VC1VDEC_TI_TAB_pBFraction
+  00000098 T VC1VDEC_TI_HRD_AddBits
+  00000000 T VC1VDEC_TI_HRD_Init
+  00000260 T VC1VDEC_TI_HRD_MinFullness
+  00000000 U __aeabi_uldivmod
+  00000000 U memcpy
+  00000000 U DMA_TI_ECopy_1D2D
+  00000000 U DMA_TI_ECopy_2D1D
+  00000000 U DMA_TI_ECopy_2D2D
+  00000000 U DMA_TI_Wait
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 T VC1VDEC_TI_ChbaseDma
+  000001c8 T VC1VDEC_TI_DMA_TI_ECopy_1D2D_Linked_Wait
+  000002d0 T VC1VDEC_TI_DMA_TI_ECopy_2D1D_Linked_Wait
+  000003d8 T VC1VDEC_TI_DMA_TI_ECopy_2D2D_Linked_Wait
+  00000000 U DMA_TI_Close
+  00000000 U DMA_TI_ECopy_1D1D
+  00000000 U DMA_TI_ECopy_1D1D_Autoincr
+  00000000 U DMA_TI_ECopy_1D2D
+  00000000 U DMA_TI_ECopy_2D1D
+  00000000 U DMA_TI_ETrigger
+  00000000 U DMA_TI_Lgl_Multi_Wait
+  00000000 U DMA_TI_Wait
+  00000000 U HDVICPSYNC_start
+  00000000 U HDVICPSYNC_wait
+  00000000 U MEMUTILS_cacheInv
+  00000000 U MEMUTILS_cacheWb
+  00000000 U MEMUTILS_cacheWbInv
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U VC1VDEC_TI_ARM_FramePad
+  00000000 U VC1VDEC_TI_CalcCmdSet
+  00000000 U VC1VDEC_TI_Copy_codearm968
+  00000000 U VC1VDEC_TI_Copy_codearm968_advanced
+  00000000 U VC1VDEC_TI_DEBUG_Fatal
+  00006d3c T VC1VDEC_TI_Decode_Buf_Manage
+  00000000 U VC1VDEC_TI_Get968codeSize
+  00000000 U VC1VDEC_TI_Get968codeSize_advanced
+  00000000 U VC1VDEC_TI_IALG
+  00000000 U VC1VDEC_TI_Init_Conclstruct
+  00000000 U VC1VDEC_TI_Init_arm926
+  00000000 U VC1VDEC_TI_KALEIDO_PSC_Enable
+  00000000 U VC1VDEC_TI_KALEIDO_PSC_Enable_InitRam_Low
+  00000000 U VC1VDEC_TI_KALEIDO_PSC_Reset
+  00000000 U VC1VDEC_TI_KALEIDO_PSC_SyncReset
+  00000000 U VC1VDEC_TI_KaleidoPsc_Disable
+  00000000 U VC1VDEC_TI_Loader_arm968
+  00000000 U VC1VDEC_TI_Loader_arm968_advanced
+  00000070 D VC1VDEC_TI_PARAMS
+  00001f00 T VC1VDEC_TI_Reset_Decode
+  00000000 U VC1VDEC_TI_Unpack_Bitstream
+  00004688 T VC1VDEC_TI_activate
+  00000000 T VC1VDEC_TI_alloc
+  0000398c T VC1VDEC_TI_control
+  000045c4 T VC1VDEC_TI_deactivate
+  00004760 T VC1VDEC_TI_decode
+  000086d8 T VC1VDEC_TI_decode_end
+  00005348 T VC1VDEC_TI_decode_start
+  00000000 U VC1VDEC_TI_errConclAlloc
+  00000000 U VC1VDEC_TI_errConclnumAlloc
+  00000000 U VC1VDEC_TI_errorConceal
+  0000474c T VC1VDEC_TI_exit
+  00001c7c T VC1VDEC_TI_free
+  00000000 U VC1VDEC_TI_getFrmEnergy
+  0000becc T VC1VDEC_TI_get_version
+  0000235c T VC1VDEC_TI_init
+  00000000 U VC1VDEC_TI_initErrConcealObj
+  00009734 T VC1VDEC_TI_metaprocess
+  00001c60 T VC1VDEC_TI_numAlloc
+  00000000 U VC1VDEC_TI_outargs_fill
+  00000000 U VC1VDEC_TI_static_CALC_cmdset_NUQ
+  00000000 U VC1VDEC_TI_static_CALC_cmdset_UQ
+  00000000 U VC1VDEC_TI_static_ECD_cmdset_1mb
+  00000000 U VC1VDEC_TI_static_ECD_cmdset_2mb
+  00000000 U VC1VDEC_TI_static_LPF_cmdset_2mb
+  0000975c T VC1VDEC_TI_testIalgInit
+  00000000 D VC1VDEC_TI_version
+  00000000 U __aeabi_idiv
+  00000000 U __aeabi_idivmod
+  00000000 U fflush
+  00000000 U memcpy
+  00000000 U memset
+  00000000 U stdout
+  0000005c D VC1VDEC_TI_IALG
+  00000030 D VC1VDEC_TI_IVC1VDEC
+  00000080 D VC1VDEC_TI_IVIDDECFUNCTIONS
+  00000000 U VC1VDEC_TI_activate
+  00000000 U VC1VDEC_TI_alloc
+  00000000 U VC1VDEC_TI_control
+  00000000 U VC1VDEC_TI_deactivate
+  00000000 U VC1VDEC_TI_decode
+  00000000 U VC1VDEC_TI_free
+  00000000 U VC1VDEC_TI_init
+  00000000 U VC1VDEC_TI_numAlloc
+  00000000 U DMA_TI_ECopy_2D2D
+  00000598 T VC1VDEC_TI_ARM_FramePad
+  00000000 D VC1VDEC_TI_CalcCmdSet
+  00000070 T VC1VDEC_TI_Init_arm926
+  00000000 T VC1VDEC_TI_SetBits
+  0000087c T VC1VDEC_TI_SetImcop_Addr
+  00000b10 D VC1VDEC_TI_setFunctionParam_field
+  00000b28 D VC1VDEC_TI_setFunctionParam_frame
+  00000728 D VC1VDEC_TI_static_CALC_cmdset_NUQ
+  00000340 D VC1VDEC_TI_static_CALC_cmdset_UQ
+  00000cd8 D VC1VDEC_TI_static_ECD_cmdset_1mb
+  00000b40 D VC1VDEC_TI_static_ECD_cmdset_2mb
+  00000010 D VC1VDEC_TI_static_LPF_cmdset_2mb
+  00000000 U __aeabi_uidiv
+  00000000 U DMA_TI_IRES_EDMA_Open
+  00000000 U DMA_TI_Map_TC
+  00000000 U IRES_EDMA3CHAN_getStaticProperties
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000000 U VC1VDEC_TI_ChbaseDma
+  00000000 U VC1VDEC_TI_IALG
+  00000330 D VC1VDEC_TI_IRES
+  000003ec T VC1VDEC_TI_activateAllResources
+  000000c4 T VC1VDEC_TI_activateResource
+  000008d0 T VC1VDEC_TI_deactivateAllResources
+  000005a8 T VC1VDEC_TI_deactivateResource
+  000011a4 T VC1VDEC_TI_deinitResources
+  00001654 T VC1VDEC_TI_getResourceDescriptors
+  00000a8c T VC1VDEC_TI_initResources
+  00000000 T VC1VDEC_TI_numResourceDescriptors
+  000014e4 T VC1VDEC_TI_reinitResources
+  00000002 C gPatternMaskingIMGBUFs
+  00000002 C gPatternMaskingOthers
+  00000002 C gPatternMaskingSEQBUFs
+  00000000 U DMA_TI_ECopy_1D1D
+  00000000 U DMA_TI_Wait
+  00000000 U MEMUTILS_getPhysicalAddr
+  00000784 T VC1VDEC_TI_1D1D_Wait
+  00000888 T VC1VDEC_TI_1D2D_Wait
+  00000900 T VC1VDEC_TI_2D1D_Wait
+  00000978 T VC1VDEC_TI_2D2D_Wait
+  00000000 U VC1VDEC_TI_DMA_TI_ECopy_1D2D_Linked_Wait
+  00000000 U VC1VDEC_TI_DMA_TI_ECopy_2D1D_Linked_Wait
+  00000000 U VC1VDEC_TI_DMA_TI_ECopy_2D2D_Linked_Wait
+  00000a6c T VC1VDEC_TI_Init_Conclstruct
+  00000a44 T VC1VDEC_TI_colorConversion
+  000012a8 T VC1VDEC_TI_concealSidePadding
+  000009f8 T VC1VDEC_TI_datCopyWait
+  00001238 T VC1VDEC_TI_detectSceneChange
+  00001140 T VC1VDEC_TI_getFrmEnergy
+  000000a0 T VC1VDEC_TI_getMbMv
+  00000610 T VC1VDEC_TI_getMbRefMv
+  00000000 T VC1VDEC_TI_getMbStatus
+  00000208 T VC1VDEC_TI_getMbTopMv
+  00000638 T VC1VDEC_TI_initConclInfoBufs
+  00000370 T VC1VDEC_TI_setMbMv
+  00000000 U __aeabi_uidiv
+  000004bc T VC1VDEC_TI_BIT_AlignBit
+  00000978 T VC1VDEC_TI_BIT_BitCountGet
+  000008b8 T VC1VDEC_TI_BIT_BufferGet
+  000008e0 T VC1VDEC_TI_BIT_BufferSet
+  00000940 T VC1VDEC_TI_BIT_ByteCountGet
+  00000554 T VC1VDEC_TI_BIT_GetVLC
+  000006c8 T VC1VDEC_TI_BIT_GetVLC_Multi_8bit
+  000007dc T VC1VDEC_TI_BIT_InitialiseBitstream
+  00000488 T VC1VDEC_TI_BIT_LookBits
+  00000a18 T VC1VDEC_TI_BIT_TrimBuffer
+  00000000 U VC1VDEC_TI_DEBUG_Fatal
+  00000000 U VC1VDEC_TI_DEBUG_Warn
+  00000454 T VC1VDEC_TI_DECBIT_GetBits
+  00000208 T VC1VDEC_TI_TOOLS_InitReferencePicture
+  00000000 U DMA_TI_ECopy_1D1D
+  00000000 U DMA_TI_Wait
+  0000016c T VC1VDEC_TI_Copy_codearm968_advanced
+  00000000 T VC1VDEC_TI_Get968codeSize_advanced
+  0000002c T VC1VDEC_TI_Loader_arm968_advanced
+  00000000 D VC1VDEC_TI_MULTI_SECTION0
+  00000020 D VC1VDEC_TI_MULTI_SECTION1
+  0000bdbc D VC1VDEC_TI_MULTI_SECTION2
+  00000000 U memcpy
+Verifying that all global symbols are named XXX_TI_xxx ...
+and that no blacklisted external references are made
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+Found bad symbol '...__dummy__' but pretending to have not because the algorithm is in an XDC package.
+
+</PRE>
+<a href="#XDAIS Rules 8, 9 and 10">back</a>
+<hr>
+<a name="log XDAIS Rule 12">Test execution log for <b>XDAIS Rule 12:</b></a><br>
+<PRE>
+Running test 'XDAIS Rule 12'
+Extracting names of global BSS data symbols...
+ Running command:&gt; "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\cgtools\bin\nm6x.exe" -g "E:\work\DM365\vc1_decoder\vc1_decoder\lib\vc1vdec_ti_arm926.a" | "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\bin\grep\grep.exe" " [BD] "
+                   (from "C:\Documents and Settings\100325\Local Settings\Temp\qualiti_runcmd_43299.sh"
+  00000000 D VC1VDEC_TI_SECTION0
+  00000020 D VC1VDEC_TI_SECTION1
+  0000be5c D VC1VDEC_TI_SECTION2
+  00000000 D VC1VDEC_TI_Code_3x2_2x3_tiles
+  00000104 D VC1VDEC_TI_Code_3x2_2x3_tiles_multicodes_8bit
+  0000011c D VC1VDEC_TI_Mot_Vector_Diff_VLC_0
+  00000244 D VC1VDEC_TI_Mot_Vector_Diff_VLC_1
+  0000036c D VC1VDEC_TI_Mot_Vector_Diff_VLC_2
+  00000494 D VC1VDEC_TI_Mot_Vector_Diff_VLC_3
+  000005bc D VC1VDEC_TI_P_Picture_CBPCY_VLC_0
+  000006c0 D VC1VDEC_TI_P_Picture_CBPCY_VLC_1
+  000007c4 D VC1VDEC_TI_P_Picture_CBPCY_VLC_2
+  000008c8 D VC1VDEC_TI_P_Picture_CBPCY_VLC_3
+  00000018 D VC1VDEC_TI_TAB_AspectRatios
+  00000038 D VC1VDEC_TI_TAB_FrameRateNumerators
+  00000058 D VC1VDEC_TI_TAB_LevelLimits
+  00000000 D VC1VDEC_TI_TAB_Motion_Vector_Range_Params_Table
+  000002d8 D VC1VDEC_TI_TAB_pBFraction
+  00000070 D VC1VDEC_TI_PARAMS
+  00000000 D VC1VDEC_TI_version
+  0000005c D VC1VDEC_TI_IALG
+  00000030 D VC1VDEC_TI_IVC1VDEC
+  00000080 D VC1VDEC_TI_IVIDDECFUNCTIONS
+  00000000 D VC1VDEC_TI_CalcCmdSet
+  00000b10 D VC1VDEC_TI_setFunctionParam_field
+  00000b28 D VC1VDEC_TI_setFunctionParam_frame
+  00000728 D VC1VDEC_TI_static_CALC_cmdset_NUQ
+  00000340 D VC1VDEC_TI_static_CALC_cmdset_UQ
+  00000cd8 D VC1VDEC_TI_static_ECD_cmdset_1mb
+  00000b40 D VC1VDEC_TI_static_ECD_cmdset_2mb
+  00000010 D VC1VDEC_TI_static_LPF_cmdset_2mb
+  00000330 D VC1VDEC_TI_IRES
+  00000000 D VC1VDEC_TI_MULTI_SECTION0
+  00000020 D VC1VDEC_TI_MULTI_SECTION1
+  0000bdbc D VC1VDEC_TI_MULTI_SECTION2
+Verifying that objects 'VC1VDEC_TI_IALG' and 'VC1VDEC_TI_IVC1VDEC' are defined...
+Data object 'VC1VDEC_TI_IALG' found.
+Data object 'VC1VDEC_TI_IVC1VDEC' found.
+
+</PRE>
+<a href="#XDAIS Rule 12">back</a>
+<hr>
+<a name="log XDAIS Rule 13+">Test execution log for <b>XDAIS Rule 13+:</b></a><br>
+<PRE>
+Currently, this test cannot be run on non-TI compiled libraries.
+
+</PRE>
+<a href="#XDAIS Rule 13+">back</a>
+<hr>
+<a name="log XDAIS Rule 20">Test execution log for <b>XDAIS Rule 20:</b></a><br>
+<PRE>
+Currently, this test cannot be run on non-TI compiled libraries.
+</PRE>
+<a href="#XDAIS Rule 20">back</a>
+<hr>
+<a name="log XDAIS Rules 21, 22">Test execution log for <b>XDAIS Rules 21, 22:</b></a><br>
+<PRE>
+Running test 'XDAIS Rules 21, 22'
+Using sectti on ofd output to find static data & program memory requirements...
+ Running command:&gt; "\\172.20.32.202\dm365\toolchain_jun09\xdais_6_24\packages\ti\xdais\qualiti\cgtools\bin\ofd6x.exe" -x --xml_indent=0 --obj_display=none,sections,header "E:\work\DM365\vc1_decoder\vc1_decoder\lib\vc1vdec_ti_arm926.a" | "C:\Program Files\Texas Instruments\cg_xml\bin\sectti.exe"
+                   (from "C:\Documents and Settings\100325\Local Settings\Temp\qualiti_runcmd_43300.sh"
+  Reading from stdin ...
+  ====================================================================
+  REPORT FOR LIBRARY: E:/work/DM365/vc1_decoder/vc1_decoder/lib/vc1vdec_ti_arm926.a
+  ====================================================================
+  
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_arm968bootloader.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       1264  0x000004f0  CODE 
+                           .data :         12  0x0000000c  DATA 
+                         .rodata :      50341  0x0000c4a5  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_conceal.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :      11016  0x00002b08  CODE 
+                           .data :         12  0x0000000c  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_concealDma.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       9580  0x0000256c  CODE 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_concealUtils.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :        364  0x0000016c  CODE 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_debug.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :         56  0x00000038  CODE 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_decbitplane.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       9460  0x000024f4  CODE 
+                         .rodata :       2368  0x00000940  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_decent.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       1788  0x000006fc  CODE 
+                           .data :         12  0x0000000c  DATA 
+                         .rodata :         84  0x00000054  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_decoder.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       8600  0x00002198  CODE 
+                           .data :         12  0x0000000c  DATA 
+                            .bss :        264  0x00000108  UDATA
+                         .rodata :        156  0x0000009c  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_decpic.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :      11116  0x00002b6c  CODE 
+                           .data :         20  0x00000014  DATA 
+                         .rodata :       3196  0x00000c7c  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_decseq.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       5096  0x000013e8  CODE 
+                           .data :         12  0x0000000c  DATA 
+                         .rodata :        976  0x000003d0  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_decslice.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :        296  0x00000128  CODE 
+                           .data :         12  0x0000000c  DATA 
+                         .rodata :         52  0x00000034  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_gentab.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :        232  0x000000e8  CODE 
+                         .rodata :        800  0x00000320  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_hrd.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :        768  0x00000300  CODE 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_memutils.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       1276  0x000004fc  CODE 
+                           .data :         12  0x0000000c  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_ialg.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :      48944  0x0000bf30  CODE 
+                           .data :         48  0x00000030  DATA 
+                         .rodata :        440  0x000001b8  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_ialgvt.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .data :        172  0x000000ac  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_init.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       2684  0x00000a7c  CODE 
+                           .data :       1632  0x00000660  DATA 
+                         .rodata :       3408  0x00000d50  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_ires.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       7084  0x00001bac  CODE 
+                           .data :        856  0x00000358  DATA 
+                         .rodata :         80  0x00000050  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_initconceal.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       5704  0x00001648  CODE 
+                           .data :         12  0x0000000c  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_readbits.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       2896  0x00000b50  CODE 
+                           .data :         12  0x0000000c  DATA 
+                         .rodata :        628  0x00000274  DATA 
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_tools.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :       1276  0x000004fc  CODE 
+  
+  ************************************************************
+  REPORT FOR FILE: version.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+  
+  ************************************************************
+  REPORT FOR FILE: vc1vdec_ti_arm968bootloader_advanced.o
+  ************************************************************
+                            Name : Size (dec)  Size (hex)  Type
+  ------------------------------ : ----------  ----------  ----
+                           .text :        484  0x000001e4  CODE 
+                           .data :         12  0x0000000c  DATA 
+                         .rodata :      50585  0x0000c599  DATA 
+  
+  ------------------------------------------------------------
+  Totals by section type
+  ------------------------------------------------------------
+    Uninitialized Data :        264  0x00000108
+      Initialized Data :     115962  0x0001c4fa
+                  Code :     129984  0x0001fbc0
+
+</PRE>
+<a href="#XDAIS Rules 21, 22">back</a>
+<hr>
+<a name="log XDAIS Rule 25">Test execution log for <b>XDAIS Rule 25:</b></a><br>
+<PRE>
+This test does not apply since this is not a C6x architecture.
+
+</PRE>
+<a href="#XDAIS Rule 25">back</a>
+<hr>
+<a name="log XDAIS Rule 26">Test execution log for <b>XDAIS Rule 26:</b></a><br>
+<PRE>
+This test does not apply since this is not a C6x architecture.
+
+</PRE>
+<a href="#XDAIS Rule 26">back</a>
+<hr>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</BODY>
+</HTML>
+
+
+
+

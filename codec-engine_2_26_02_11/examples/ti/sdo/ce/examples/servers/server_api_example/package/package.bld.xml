@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.examples.servers.server_api_example" version="1, 0, 0" producerId="codec_engine_2_26_02_11">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674cfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674cfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674cfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64P.c"/>
+        <srcFile name="main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674cfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="audio_copy.tcf"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64Pcfg_c.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/audio_copy/main.o64P.dep" src="main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64P.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64Pcfg.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64P.dep" src="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64P.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64Pcfg.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/audio_copy/main.o64P.dep" src="main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64Pcfg_c.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64P.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64P.dep" src="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64P.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64Pcfg.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/audio_copy/main.o64P.dep" src="main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64Pcfg_c.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64P.o64P.dep" src="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64P.dep" src="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64P.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64Pcfg_c.o64P.dep" src="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64P.o64P.dep" src="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/audio_copy/main.o64P.dep" src="main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64Pcfg.o64P.dep" src="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64P.dep" src="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64P.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/audio_copy/main.o64P.dep" src="main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64Pcfg_c.o64P.dep" src="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64P.o64P.dep" src="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64P.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64Pcfg.o64P.dep" src="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64P.dep" src="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64P.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy/main.o674.dep" src="main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674.o674.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674cfg.o674.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674cfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674cfg_c.o674.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674cfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy/main.o674.dep" src="main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674.o674.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674cfg_c.o674.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674cfg_c.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674cfg.o674.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674cfg.s62"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674.cfg"/>
+        <srcFile name="package/rel/ti_sdo_ce_examples_servers_server_api_example.tar.dep" src="package/rel/ti_sdo_ce_examples_servers_server_api_example.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="bin/ti_platforms_evmDM6446/audio_copy"
+        pname="bin/ti_platforms_evmDM6446/audio_copy.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6446"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6446/audio_copy_x64P"
+        cfgScript="audio_copy.tcf"
+        cfgArgs="%7B%20platform%3A%20%22ti.platforms.evmDM6446%22%20%7D"
+        />
+    <executable name="bin/ti_platforms_evmDM6467/audio_copy"
+        pname="bin/ti_platforms_evmDM6467/audio_copy.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6467/audio_copy_x64P"
+        cfgScript="audio_copy.tcf"
+        cfgArgs="%7B%20platform%3A%20%22ti.platforms.evmDM6467%22%20%7D"
+        />
+    <executable name="bin/ti_platforms_evmDM357/audio_copy"
+        pname="bin/ti_platforms_evmDM357/audio_copy.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM357"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM357/audio_copy_x64P"
+        cfgScript="audio_copy.tcf"
+        cfgArgs="%7B%20platform%3A%20%22ti.platforms.evmDM357%22%20%7D"
+        />
+    <executable name="bin/ti_platforms_evm2530/audio_copy"
+        pname="bin/ti_platforms_evm2530/audio_copy.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evm2530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm2530/audio_copy_x64P"
+        cfgScript="audio_copy.tcf"
+        cfgArgs="%7B%20platform%3A%20%22ti.platforms.evm2530%22%20%7D"
+        />
+    <executable name="bin/ti_platforms_evm3530/audio_copy"
+        pname="bin/ti_platforms_evm3530/audio_copy.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evm3530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64P.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/audio_copy_x64P"
+        cfgScript="audio_copy.tcf"
+        cfgArgs="%7B%20platform%3A%20%22ti.platforms.evm3530%22%20%7D"
+        />
+    <executable name="bin/ti_platforms_evmOMAPL137/audio_copy"
+        pname="bin/ti_platforms_evmOMAPL137/audio_copy.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evmOMAPL137"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmOMAPL137/audio_copy_x674"
+        cfgScript="audio_copy.tcf"
+        cfgArgs="%7B%20platform%3A%20%22ti.platforms.evmOMAPL137%22%20%7D"
+        />
+    <executable name="bin/ti_platforms_evmOMAPL138/audio_copy"
+        pname="bin/ti_platforms_evmOMAPL138/audio_copy.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evmOMAPL138"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmOMAPL138/audio_copy_x674"
+        cfgScript="audio_copy.tcf"
+        cfgArgs="%7B%20platform%3A%20%22ti.platforms.evmOMAPL138%22%20%7D"
+        />
+    </executables>
+    <tests>
+    <test exeName="bin/ti_platforms_evmDM6446/audio_copy.x64P"
+        args=""
+        groupName="bin/ti_platforms_evmDM6446/audio_copy.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM6467/audio_copy.x64P"
+        args=""
+        groupName="bin/ti_platforms_evmDM6467/audio_copy.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM357/audio_copy.x64P"
+        args=""
+        groupName="bin/ti_platforms_evmDM357/audio_copy.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm2530/audio_copy.x64P"
+        args=""
+        groupName="bin/ti_platforms_evm2530/audio_copy.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/audio_copy.x64P"
+        args=""
+        groupName="bin/ti_platforms_evm3530/audio_copy.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmOMAPL137/audio_copy.x674"
+        args=""
+        groupName="bin/ti_platforms_evmOMAPL137/audio_copy.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmOMAPL138/audio_copy.x674"
+        args=""
+        groupName="bin/ti_platforms_evmOMAPL138/audio_copy.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_examples_servers_server_api_example"
+        pname="ti_sdo_ce_examples_servers_server_api_example.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/info"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

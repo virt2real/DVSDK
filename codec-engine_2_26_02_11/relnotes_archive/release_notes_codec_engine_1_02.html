@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Codec Engine 1.02 Release Notes</title>
+<!-- For now, we use the doxygen style sheet -->
+  <link type="text/css" rel="stylesheet" href="../docs/html/doxygen.css">
+</head>
+<body>
+<table width="100%">
+  <tbody>
+    <tr>
+      <td bgcolor="black" width="1"> <a href="http://www.ti.com"> <img
+ src="../docs/html/tilogo.gif" border="0"> </a> </td>
+      <td bgcolor="red"><img src="../docs/html/titagline.gif"></td>
+    </tr>
+  </tbody>
+</table>
+<h1>Codec Engine 1.02<br>
+</h1>
+<p>
+This Codec Engine Release is targetted to the DaVinci platform,
+enabling users to instantiate and utilize both local and remote codecs.
+In addition to the heterogenous DM644x devices, it supports single
+processor environments as well; specifically Joule
+devices, ARM9 devices running Linux and x86 devices running Linux.
+</p>
+<p>
+This release note is divided into the following sections:
+<a href="#General_Info">General Info</a>,
+<a href="#Whats_New">Whats_New</a>,
+<a href="#Device_Support">Device Support</a>,
+<a href="#Known_Issues">Known Issues</a>,
+<a href="#Validation">Validation Info</a>,
+<a href="#Documentation">Documentation</a>.
+</p>
+<hr>
+<h2><a name="General_Info">General Information</a></h2>
+<p>
+The Codec Engine is a software platform for algorithm execution that
+satisfies the following, high-level goals:
+</p>
+<ul>
+  <li><b>Robust</b> - drives pre-integrated components with fully
+characterized performance.</li>
+  <li><b>Easy to use</b> - app developers specify <i>what</i> needs to
+be run, but not <i>how</i> or <i>where</i>.</li>
+  <li><b>Extensible and Configurable</b> - new algorithms can be added
+by anyone, using standard tools and techniques.</li>
+  <li><b>Portable</b> - API's are target, platform, and in many cases
+  even codec independant.</li>
+</ul>
+
+<p>
+The Codec Engine consists of the following packages:
+</p>
+<ul>
+  <li><tt>ti.sdo.ce</tt> - The Codec Engine runtime.</li>
+  <li><tt>ti.sdo.ce.video</tt> - The Codec Engine video component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><tt>ti.sdo.ce.image</tt> - The Codec Engine image component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><tt>ti.sdo.ce.speech</tt> - The Codec Engine speech/voice component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><tt>ti.sdo.ce.audio</tt> - The Codec Engine audio component.
+  Both encode and decode are supported, and an example is provided.</li>
+  <li><tt>ti.sdo.ce.osal</tt> - The Codec Engine OS Abstraction
+  Layer.  This package insulates CE from the OS it's running on, and
+  provides a few Modules for customers to use (e.g. Memory).</li>
+  <li><tt>ti.sdo.ce.utils.trace</tt> - The Codec Engine utility
+  package for trace.  This includes the TraceUtils module.  This makes
+  tracing features easier to use by an application.  It will be
+  supported in this release, but may be replaced in a future release
+  with an incompatible implementation.</li>
+</ul>
+
+<hr>
+<h2><a name="Whats_New">What's New</a></h2>
+<p>
+The following significant changes have been made since 1.00.</p>
+
+<h3>1.02</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Introduced <tt>ti.sdo.ce.utils.trace.TraceUtils</tt>
+      module.</li>
+      <li>Libraries are now provided in release builds.  Previously,
+      they were debug-only.</li>
+      <li>Introduced <tt>Engine_setTrace()</tt> API.</li>
+      <li>Added support for C++</li>
+    </ul>
+  </li>
+  <li>VISA Classes
+    <ul>
+      <li>Added extended xDM support to the remaining 3 classes
+      (AUDENC, VIDENC, and SPHENC).</li>
+    </ul>
+  </li>
+  <li>Documentation
+    <ul>
+      <li>Addition of System Programming Interface (SPI) Reference
+      Guide.</li>
+      <li>Codec Engine Server Integrator's Guide (SPRUED5)</li>
+      <li>Codec Engine Algorithm Creator User's Guide (SPRUED6)</li>
+      <li>Minor updates to the Codec Engine Application Developer's
+      Guide (SPRUE67A)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>1.01</h3>
+<ul>
+  <li>General
+    <ul>
+      <li>Many trace strings were modified/added.</li>
+      <li>C64P libraries built with 6.0.3 compiler.</li>
+    </ul>
+  </li>
+  <li>VISA Classes
+    <ul>
+      <li>Audio Encoding support has been added</li>
+      <li>Better compliance checking of "size" field.  This field
+      <i>must</i> be set correctly in the various VISA APIs, as it is
+      now used to determine how much data to provide to the
+      codecs.</li>
+      <li>Related to previous bullet, added extended xDM support to
+      VIDDEC, VIDENC, AUDDEC, IMGDEC, and SPHDEC classes.  There are
+      limits to the size of the extended structures, and they must not
+      contain pointers in the extended structures.</li>
+      <li>outArgs fixed to be provided in the case of a failed
+      process() call (enabling inspection of extendedError).</li>
+      <li>Removed cache alignment validation of input buffers.  When the
+      application can ensure cache coherence, these buffers need not be
+      aligned.</li>
+    </ul>
+  </li>
+  <li>Documentation
+    <ul>
+      <li>Minor updates to the Codec Engine Application Developer's
+      Guide (SPRUE67A)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h2><a name="Device_Support">Device Support</a></h2>
+<p>
+The following configurations are supported:
+</p>
+<ul>
+  <li>DaVinci hardware EVM, dual-processor configuration, running
+    <ul>
+      <li>ARM9 Linux, gcclib</li>
+      <li>C64+ DSP/BIOS</li>
+    </ul>
+  </li>
+  <li>Single processor configuration, specifically:
+    <ul>
+      <li>C64+ DSP/BIOS</li>
+      <li>ARM9 Linux, gcclib</li>
+      <li>ARM9 Linux, uclibc</li>
+      <li>x86 Linux, gcclib</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+<h2><a name="Known_Issues">Known Issues</a></h2>
+<h3>Documentation</h3>
+<ul>
+  <li>Details about CE's requirements on DSP Link are not yet provided.
+  These will be provided, to enable end users to reconfigure DSP Link to
+  meet their needs, yet still enable them to use CE.</li>
+</ul>
+<hr>
+<h2><a name="Validation">Validation</a></h2>
+<p>
+This release was built and validated against using the following
+components:
+</p>
+<ul>
+  <li>Dual-processor configuration validated on the DaVinci EVM
+  <ul>
+    <li>DSP/BIOS Link 1.30.08.02, configured for the
+    DaVinci EVM</li>
+    <li>DSP/BIOS 5.30</li>
+    <li>C6x Code Generation Tools version 6.0.3</li>
+    <li>The "Demonstration Version of MontaVista Linux v4.0" (Baseline
+  2)</li>
+  </ul>
+  <li>Single-processor configuration validated on:
+    <ul>
+      <li>x86 Linux, gcclib:
+        <ul>
+          <li>Red Hat Enterprise Linux 3 (SMP)</li>
+        </ul>
+      </li>
+      <li>C64+ DSP/BIOS
+        <ul>
+          <li>DSP/BIOS 5.30</li>
+          <li>C6x Code Generation Tools version 6.0.3</li>
+        </ul>
+      </li>
+      <li>ARM9 Linux, gcclib
+        <ul>
+          <li>The "Demonstration Version of MontaVista Linux v4.0"
+          (Baseline 2)</li>
+        </ul>
+      </li>
+      <li>ARM9 Linux, uclibc
+        <ul>
+          <li>The "Demonstration Version of MontaVista Linux v4.0"
+          (Baseline 2)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<hr>
+<h2><a name="Documentation">Documentation</a></h2>
+<p>
+The following documentation is available in this release:
+</p>
+<ul>
+  <li>Codec Engine Application Developer's Guide</li>
+  <li>Codec Engine Server Integrator's Guide</a></li>
+  <li>Codec Engine Algorithm Creator User's Guide</a></li>
+  <li>Codec Engine Application Programming Interface (API) Reference
+  Guide (HTML | CHM)</li>
+  <li>Codec Engine System Programming Interface (SPI) Reference
+  Guide (HTML | CHM)</li>
+  <li>Configuration Reference Guide.</li>
+</ul>
+<hr>
+<p></p>
+<h2><a name="Examples">Examples</a></h2>
+<p>Codec Engine examples and instructions are located in the
+"examples" subdirectory.
+</p>
+<ul>
+  <li>Example Build Instructions</li>
+</ul>
+<hr>
+<p>Last updated: July 11, 2006
+</p>
+</body>
+</html>

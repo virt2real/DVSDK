@@ -1,0 +1,77 @@
+############################################################
+# Capture video for 10 seconds and encode with Mpeg4 encoder
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp mpeg4spenc1 codec mpeg4enc
+
+# specify the parameters
+setp mpeg4spenc1 encodingPreset 0
+setp mpeg4spenc1 rateControlPreset 1
+setp mpeg4spenc1 maxHeight 576
+setp mpeg4spenc1 maxWidth 720
+setp mpeg4spenc1 maxFrameRate 30000
+setp mpeg4spenc1 maxBitRate 2000000
+setp mpeg4spenc1 dataEndianness 1
+setp mpeg4spenc1 maxInterFrameInterval 1
+setp mpeg4spenc1 inputChromaFormat 4
+setp mpeg4spenc1 inputContentType 0
+setp mpeg4spenc1 reconChromaFormat -1
+setp mpeg4spenc1 inputHeight 480
+setp mpeg4spenc1 inputWidth 720
+setp mpeg4spenc1 refFrameRate 30000
+setp mpeg4spenc1 targetFrameRate 30000
+setp mpeg4spenc1 targetBitRate 2000000
+setp mpeg4spenc1 intraFrameInterval 30
+setp mpeg4spenc1 generateHeader 0
+setp mpeg4spenc1 captureWidth 0
+setp mpeg4spenc1 forceFrame 0
+setp mpeg4spenc1 interFrameInterval 1
+setp mpeg4spenc1 mbDataFlag 0
+setp mpeg4spenc1 encodeMode 1 
+setp mpeg4spenc1 levelIdc 5
+setp mpeg4spenc1 VM4RCnumFrames 2147483647
+setp mpeg4spenc1 rcAlgo 8
+setp mpeg4spenc1 vbvBufferSize 112
+setp mpeg4spenc1 vbvParamEnable 0
+setp mpeg4spenc1 useVOS 1
+setp mpeg4spenc1 useGOV 0
+setp mpeg4spenc1 useDataPartition 0
+setp mpeg4spenc1 useRVLC 0
+setp mpeg4spenc1 maxDelay 100
+setp mpeg4spenc1 h263SliceMode 0
+setp mpeg4spenc1 resyncInterval 0
+setp mpeg4spenc1 hecInterval 0
+setp mpeg4spenc1 airRate 0
+setp mpeg4spenc1 mirRate 0
+setp mpeg4spenc1 qpIntra 8
+setp mpeg4spenc1 qpInter 3
+setp mpeg4spenc1 fCode 3
+setp mpeg4spenc1 useHpi 1
+setp mpeg4spenc1 useAcPred 0
+setp mpeg4spenc1 lastFrame 0
+setp mpeg4spenc1 MVDataEnable 0
+setp mpeg4spenc1 useUMV 1
+setp mpeg4spenc1 use4MV 0
+setp mpeg4spenc1 ResyncDataEnable 0
+setp mpeg4spenc1 framePitch 720
+setp mpeg4spenc1 numFrames 300
+
+# specify vpfe parameters
+setp vpfe device /dev/video0
+setp vpfe standard 1
+setp vpfe format 1
+setp vpfe input 0
+setp vpfe width 720
+setp vpfe height 480
+
+# Start the capture+encode operation
+func mpeg4spenc1 -t mp4-encode.mpeg4
+

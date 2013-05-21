@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.ires.edma3chan" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="EDMA3CHAN"/>
+    </units>
+    <sources>
+        <srcFile name="iresman_edma3ChanArm.c"/>
+        <srcFile name="ires_edma3Chan.c"/>
+        <srcFile name="iresman_edma3Chan.c"/>
+        <srcFile name="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/trace/edma3Chan.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o64P.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/iresman_edma3Chan.o64P.dep" src="iresman_edma3Chan.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/ires_edma3Chan.o64P.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/release/edma3Chan.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o86U.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/iresman_edma3ChanArm.o86U.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/ires_edma3Chan.o86U.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/trace/edma3Chan.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o9t.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/iresman_edma3ChanArm.o9t.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/ires_edma3Chan.o9t.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/release/edma3Chan.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.ov5T.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/iresman_edma3ChanArm.ov5T.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/ires_edma3Chan.ov5T.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug/edma3Chan.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.ov4TCE.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/iresman_edma3ChanArm.ov4TCE.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/ires_edma3Chan.ov4TCE.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/release/edma3Chan.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o674.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/iresman_edma3ChanArm.o674.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/ires_edma3Chan.o674.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug/edma3Chan.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o470uC.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/iresman_edma3ChanArm.o470uC.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/ires_edma3Chan.o470uC.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug/edma3Chan.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o470MV.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/iresman_edma3ChanArm.o470MV.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/ires_edma3Chan.o470MV.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug/edma3Chan.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o9t.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/iresman_edma3ChanArm.o9t.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/ires_edma3Chan.o9t.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/release/edma3Chan.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o9t.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/iresman_edma3ChanArm.o9t.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/ires_edma3Chan.o9t.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug_trace/edma3Chan.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o64P.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/iresman_edma3Chan.o64P.dep" src="iresman_edma3Chan.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/ires_edma3Chan.o64P.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/trace/edma3Chan.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.ov4TCE.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/iresman_edma3ChanArm.ov4TCE.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/ires_edma3Chan.ov4TCE.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/trace/edma3Chan.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o86U.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/iresman_edma3ChanArm.o86U.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/ires_edma3Chan.o86U.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/trace/edma3Chan.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.ov5T.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/iresman_edma3ChanArm.ov5T.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/ires_edma3Chan.ov5T.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/trace/edma3Chan.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o674.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/iresman_edma3ChanArm.o674.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/ires_edma3Chan.o674.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug/edma3Chan.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o64P.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/iresman_edma3Chan.o64P.dep" src="iresman_edma3Chan.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/ires_edma3Chan.o64P.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/trace/edma3Chan.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o470uC.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/iresman_edma3ChanArm.o470uC.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/ires_edma3Chan.o470uC.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/trace/edma3Chan.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o470MV.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/iresman_edma3ChanArm.o470MV.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/trace/edma3Chan/ires_edma3Chan.o470MV.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/release/edma3Chan.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.ov4TCE.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/iresman_edma3ChanArm.ov4TCE.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/ires_edma3Chan.ov4TCE.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug_trace/edma3Chan.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o86U.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/iresman_edma3ChanArm.o86U.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/ires_edma3Chan.o86U.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug_trace/edma3Chan.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.ov5T.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/iresman_edma3ChanArm.ov5T.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/ires_edma3Chan.ov5T.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/release/edma3Chan.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o470uC.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/iresman_edma3ChanArm.o470uC.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/ires_edma3Chan.o470uC.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug_trace/edma3Chan.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o9t.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/iresman_edma3ChanArm.o9t.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/ires_edma3Chan.o9t.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug_trace/edma3Chan.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o674.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/iresman_edma3ChanArm.o674.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/ires_edma3Chan.o674.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/release/edma3Chan.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o470MV.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/iresman_edma3ChanArm.o470MV.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/ires_edma3Chan.o470MV.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/release/edma3Chan.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o64P.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/iresman_edma3Chan.o64P.dep" src="iresman_edma3Chan.c"/>
+        <srcFile name="package/lib/lib/release/edma3Chan/ires_edma3Chan.o64P.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug/edma3Chan.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o86U.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/iresman_edma3ChanArm.o86U.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/ires_edma3Chan.o86U.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug/edma3Chan.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.ov5T.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/iresman_edma3ChanArm.ov5T.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/ires_edma3Chan.ov5T.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug/edma3Chan.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o674.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/iresman_edma3ChanArm.o674.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug/edma3Chan/ires_edma3Chan.o674.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug_trace/edma3Chan.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.ov4TCE.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/iresman_edma3ChanArm.ov4TCE.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/ires_edma3Chan.ov4TCE.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug_trace/edma3Chan.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o470uC.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/iresman_edma3ChanArm.o470uC.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/ires_edma3Chan.o470uC.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="lib/debug_trace/edma3Chan.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/package/package_ti.sdo.fc.ires.edma3chan.o470MV.dep" src="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/iresman_edma3ChanArm.o470MV.dep" src="iresman_edma3ChanArm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/edma3Chan/ires_edma3Chan.o470MV.dep" src="ires_edma3Chan.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_ires_edma3chan.tar.dep" src="package/rel/ti_sdo_fc_ires_edma3chan.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.Arm9t"
+            version="ti.targets.arm.Arm9t{1,0,4.5,0"
+            platform="ti.platforms.evmDM355"
+            isa="v5T"
+            suffix="9t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,0"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/trace/edma3Chan"
+        pname="lib/trace/edma3Chan.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/edma3Chan"
+        pname="lib/release/edma3Chan.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/edma3Chan"
+        pname="lib/trace/edma3Chan.a9t"
+        profile="trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/edma3Chan"
+        pname="lib/release/edma3Chan.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/edma3Chan"
+        pname="lib/debug/edma3Chan.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/edma3Chan"
+        pname="lib/release/edma3Chan.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/edma3Chan"
+        pname="lib/debug/edma3Chan.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/edma3Chan"
+        pname="lib/debug/edma3Chan.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/edma3Chan"
+        pname="lib/debug/edma3Chan.a9t"
+        profile="debug"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/edma3Chan"
+        pname="lib/release/edma3Chan.a9t"
+        profile="release"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug_trace/edma3Chan"
+        pname="lib/debug_trace/edma3Chan.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/edma3Chan"
+        pname="lib/trace/edma3Chan.av4TCE"
+        profile="trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/trace/edma3Chan"
+        pname="lib/trace/edma3Chan.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/edma3Chan"
+        pname="lib/trace/edma3Chan.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/edma3Chan"
+        pname="lib/trace/edma3Chan.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/edma3Chan"
+        pname="lib/debug/edma3Chan.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/edma3Chan"
+        pname="lib/trace/edma3Chan.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/edma3Chan"
+        pname="lib/trace/edma3Chan.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/edma3Chan"
+        pname="lib/release/edma3Chan.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug_trace/edma3Chan"
+        pname="lib/debug_trace/edma3Chan.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug_trace/edma3Chan"
+        pname="lib/debug_trace/edma3Chan.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/edma3Chan"
+        pname="lib/release/edma3Chan.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/edma3Chan"
+        pname="lib/debug_trace/edma3Chan.a9t"
+        profile="debug_trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug_trace/edma3Chan"
+        pname="lib/debug_trace/edma3Chan.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/release/edma3Chan"
+        pname="lib/release/edma3Chan.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/edma3Chan"
+        pname="lib/release/edma3Chan.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/edma3Chan"
+        pname="lib/debug/edma3Chan.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/edma3Chan"
+        pname="lib/debug/edma3Chan.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/edma3Chan"
+        pname="lib/debug/edma3Chan.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/edma3Chan"
+        pname="lib/debug_trace/edma3Chan.av4TCE"
+        profile="debug_trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug_trace/edma3Chan"
+        pname="lib/debug_trace/edma3Chan.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/edma3Chan"
+        pname="lib/debug_trace/edma3Chan.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_ires_edma3chan"
+        pname="ti_sdo_fc_ires_edma3chan.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/trace/edma3Chan.a470MV"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/release/edma3Chan.a674"/>
+        <file name="lib/trace/edma3Chan.av4TCE"/>
+        <file name="lib/debug/edma3Chan.a470MV"/>
+        <file name="lib/debug/edma3Chan.av4TCE"/>
+        <file name="iresman_protocol_edma3Chan.h"/>
+        <file name="lib/release/edma3Chan.a9t"/>
+        <file name="lib/trace/edma3Chan.a674"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/debug_trace/edma3Chan.a470uC"/>
+        <file name="package/package_ti.sdo.fc.ires.edma3chan.c"/>
+        <file name="lib/release/edma3Chan.av5T"/>
+        <file name="lib/debug_trace/edma3Chan.a86U"/>
+        <file name="lib/debug_trace/edma3Chan.a64P"/>
+        <file name="lib/trace/edma3Chan.av5T"/>
+        <file name="lib/debug_trace/edma3Chan.a470MV"/>
+        <file name="lib/release/edma3Chan.a86U"/>
+        <file name="lib/debug_trace/edma3Chan.av4TCE"/>
+        <file name="lib/debug/edma3Chan.a674"/>
+        <file name="lib/debug/edma3Chan.a9t"/>
+        <file name="lib/release/edma3Chan.a64P"/>
+        <file name="lib/trace/edma3Chan.a86U"/>
+        <file name="lib/debug/edma3Chan.av5T"/>
+        <file name="package.bld"/>
+        <file name="lib/trace/edma3Chan.a64P"/>
+        <file name="iresman_edma3Chan.c"/>
+        <file name="iresman_edma3Chan.h"/>
+        <file name="lib/debug/edma3Chan.a86U"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/edma3Chan.a64P"/>
+        <file name="lib/release/edma3Chan.a470uC"/>
+        <file name="lib/debug_trace/edma3Chan.a9t"/>
+        <file name="_edma3Chan.h"/>
+        <file name="lib/trace/edma3Chan.a9t"/>
+        <file name="ires_edma3Chan.c"/>
+        <file name="lib/release/edma3Chan.a470MV"/>
+        <file name="ires_edma3Chan.h"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/release/edma3Chan.av4TCE"/>
+        <file name="iresman_edma3ChanArm.c"/>
+        <file name="lib/trace/edma3Chan.a470uC"/>
+        <file name="lib/debug_trace/edma3Chan.a674"/>
+        <file name="lib/debug/edma3Chan.a470uC"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/debug_trace/edma3Chan.av5T"/>
+        <file name="package/package.ext.xml"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.rman.examples" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="EXAMPLE"/>
+    </units>
+    <sources>
+        <srcFile name="SemMP.c"/>
+        <srcFile name="LockMP.c"/>
+        <srcFile name="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="myLinuxutils.c"/>
+        <srcFile name="Sem.c"/>
+        <srcFile name="sys_abort.c"/>
+        <srcFile name="myAlloc.c"/>
+        <srcFile name="myAlgorithm.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/rmanExample.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmanExample/package/package_ti.sdo.fc.rman.examples.o86U.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/LockMP.o86U.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myLinuxutils.o86U.dep" src="myLinuxutils.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/Sem.o86U.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/sys_abort.o86U.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlloc.o86U.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlgorithm.o86U.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug_trace/rmanExample.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlgorithm.o64P.dep" src="myAlgorithm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/Sem.o64P.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o64P.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="lib/release/rmanExample.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmanExample/SemMP.ov5T.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/package/package_ti.sdo.fc.rman.examples.ov5T.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/LockMP.ov5T.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/Sem.ov5T.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/sys_abort.ov5T.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlloc.ov5T.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlgorithm.ov5T.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug/rmanExample.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/package/package_ti.sdo.fc.rman.examples.o86U.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/LockMP.o86U.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myLinuxutils.o86U.dep" src="myLinuxutils.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/Sem.o86U.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/sys_abort.o86U.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlloc.o86U.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlgorithm.o86U.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug/rmanExample.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/SemMP.ov5T.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/package/package_ti.sdo.fc.rman.examples.ov5T.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/LockMP.ov5T.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/Sem.ov5T.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/sys_abort.ov5T.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlloc.ov5T.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlgorithm.ov5T.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/release/rmanExample.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmanExample/SemMP.ov4TCE.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/package/package_ti.sdo.fc.rman.examples.ov4TCE.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/LockMP.ov4TCE.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/Sem.ov4TCE.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/sys_abort.ov4TCE.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlloc.ov4TCE.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlgorithm.ov4TCE.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/release/rmanExample.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmanExample/SemMP.o674.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/package/package_ti.sdo.fc.rman.examples.o674.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/LockMP.o674.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/Sem.o674.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/sys_abort.o674.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlloc.o674.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlgorithm.o674.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug/rmanExample.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/SemMP.o674.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/package/package_ti.sdo.fc.rman.examples.o674.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/LockMP.o674.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/Sem.o674.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/sys_abort.o674.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlloc.o674.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlgorithm.o674.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/release/rmanExample.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmanExample/SemMP.o470uC.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/package/package_ti.sdo.fc.rman.examples.o470uC.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/LockMP.o470uC.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/Sem.o470uC.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/sys_abort.o470uC.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlloc.o470uC.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlgorithm.o470uC.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/release/rmanExample.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmanExample/SemMP.o470MV.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/package/package_ti.sdo.fc.rman.examples.o470MV.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/LockMP.o470MV.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/Sem.o470MV.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/sys_abort.o470MV.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlloc.o470MV.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlgorithm.o470MV.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/trace/rmanExample.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/SemMP.ov4TCE.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/package/package_ti.sdo.fc.rman.examples.ov4TCE.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/LockMP.ov4TCE.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/Sem.ov4TCE.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/sys_abort.ov4TCE.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlloc.ov4TCE.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlgorithm.ov4TCE.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug_trace/rmanExample.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/SemMP.ov4TCE.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/package/package_ti.sdo.fc.rman.examples.ov4TCE.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/LockMP.ov4TCE.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/Sem.ov4TCE.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/sys_abort.ov4TCE.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlloc.ov4TCE.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlgorithm.ov4TCE.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/release/rmanExample.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmanExample/SemMP.o9t.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/package/package_ti.sdo.fc.rman.examples.o9t.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/LockMP.o9t.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/Sem.o9t.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myLinuxutils.o9t.dep" src="myLinuxutils.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/sys_abort.o9t.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlloc.o9t.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlgorithm.o9t.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug_trace/rmanExample.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o86U.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/LockMP.o86U.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myLinuxutils.o86U.dep" src="myLinuxutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/Sem.o86U.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/sys_abort.o86U.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlloc.o86U.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlgorithm.o86U.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/trace/rmanExample.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/SemMP.o470uC.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o470uC.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/LockMP.o470uC.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/Sem.o470uC.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/sys_abort.o470uC.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlloc.o470uC.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlgorithm.o470uC.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug_trace/rmanExample.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/SemMP.o470uC.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o470uC.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/LockMP.o470uC.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/Sem.o470uC.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/sys_abort.o470uC.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlloc.o470uC.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlgorithm.o470uC.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/trace/rmanExample.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/SemMP.o470MV.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o470MV.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/LockMP.o470MV.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/Sem.o470MV.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/sys_abort.o470MV.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlloc.o470MV.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlgorithm.o470MV.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug_trace/rmanExample.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/SemMP.o470MV.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o470MV.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/LockMP.o470MV.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/Sem.o470MV.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/sys_abort.o470MV.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlloc.o470MV.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlgorithm.o470MV.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug_trace/rmanExample.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/SemMP.ov5T.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/package/package_ti.sdo.fc.rman.examples.ov5T.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/LockMP.ov5T.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/Sem.ov5T.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/sys_abort.ov5T.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlloc.ov5T.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlgorithm.ov5T.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug_trace/rmanExample.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/SemMP.o674.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o674.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/LockMP.o674.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/Sem.o674.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/sys_abort.o674.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlloc.o674.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlgorithm.o674.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug/rmanExample.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/SemMP.ov4TCE.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/package/package_ti.sdo.fc.rman.examples.ov4TCE.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/LockMP.ov4TCE.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/Sem.ov4TCE.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/sys_abort.ov4TCE.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlloc.ov4TCE.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlgorithm.ov4TCE.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/trace/rmanExample.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlgorithm.o64P.dep" src="myAlgorithm.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/Sem.o64P.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o64P.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="lib/debug/rmanExample.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/SemMP.o470uC.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/package/package_ti.sdo.fc.rman.examples.o470uC.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/LockMP.o470uC.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/Sem.o470uC.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/sys_abort.o470uC.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlloc.o470uC.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlgorithm.o470uC.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug/rmanExample.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/SemMP.o470MV.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/package/package_ti.sdo.fc.rman.examples.o470MV.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/LockMP.o470MV.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/Sem.o470MV.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/sys_abort.o470MV.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlloc.o470MV.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlgorithm.o470MV.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/trace/rmanExample.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/SemMP.o9t.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o9t.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/LockMP.o9t.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/Sem.o9t.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myLinuxutils.o9t.dep" src="myLinuxutils.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/sys_abort.o9t.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlloc.o9t.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlgorithm.o9t.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug_trace/rmanExample.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/SemMP.o9t.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o9t.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/LockMP.o9t.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/Sem.o9t.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myLinuxutils.o9t.dep" src="myLinuxutils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/sys_abort.o9t.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlloc.o9t.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmanExample/myAlgorithm.o9t.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/release/rmanExample.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmanExample/myAlgorithm.o64P.dep" src="myAlgorithm.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/Sem.o64P.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/release/rmanExample/package/package_ti.sdo.fc.rman.examples.o64P.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="lib/debug/rmanExample.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlgorithm.o64P.dep" src="myAlgorithm.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/Sem.o64P.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/package/package_ti.sdo.fc.rman.examples.o64P.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="lib/trace/rmanExample.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o86U.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/LockMP.o86U.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myLinuxutils.o86U.dep" src="myLinuxutils.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/Sem.o86U.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/sys_abort.o86U.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlloc.o86U.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlgorithm.o86U.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/trace/rmanExample.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/SemMP.ov5T.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/package/package_ti.sdo.fc.rman.examples.ov5T.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/LockMP.ov5T.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/Sem.ov5T.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/sys_abort.ov5T.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlloc.ov5T.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlgorithm.ov5T.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/trace/rmanExample.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/SemMP.o674.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/package/package_ti.sdo.fc.rman.examples.o674.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/LockMP.o674.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/Sem.o674.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/sys_abort.o674.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlloc.o674.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/trace/rmanExample/myAlgorithm.o674.dep" src="myAlgorithm.c"/>
+        <srcFile name="lib/debug/rmanExample.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/SemMP.o9t.dep" src="SemMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/package/package_ti.sdo.fc.rman.examples.o9t.dep" src="package/package_ti.sdo.fc.rman.examples.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/LockMP.o9t.dep" src="LockMP.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/Sem.o9t.dep" src="Sem.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myLinuxutils.o9t.dep" src="myLinuxutils.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/sys_abort.o9t.dep" src="sys_abort.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlloc.o9t.dep" src="myAlloc.c"/>
+        <srcFile name="package/lib/lib/debug/rmanExample/myAlgorithm.o9t.dep" src="myAlgorithm.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_rman_examples.tar.dep" src="package/rel/ti_sdo_fc_rman_examples.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.Arm9t"
+            version="ti.targets.arm.Arm9t{1,0,4.5,0"
+            platform="ti.platforms.evmDM355"
+            isa="v5T"
+            suffix="9t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,0"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/rmanExample"
+        pname="lib/release/rmanExample.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug_trace/rmanExample"
+        pname="lib/debug_trace/rmanExample.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/rmanExample"
+        pname="lib/release/rmanExample.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/rmanExample"
+        pname="lib/debug/rmanExample.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/rmanExample"
+        pname="lib/debug/rmanExample.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/rmanExample"
+        pname="lib/release/rmanExample.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/rmanExample"
+        pname="lib/release/rmanExample.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/rmanExample"
+        pname="lib/debug/rmanExample.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/release/rmanExample"
+        pname="lib/release/rmanExample.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/rmanExample"
+        pname="lib/release/rmanExample.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/rmanExample"
+        pname="lib/trace/rmanExample.av4TCE"
+        profile="trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug_trace/rmanExample"
+        pname="lib/debug_trace/rmanExample.av4TCE"
+        profile="debug_trace"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/rmanExample"
+        pname="lib/release/rmanExample.a9t"
+        profile="release"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug_trace/rmanExample"
+        pname="lib/debug_trace/rmanExample.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/rmanExample"
+        pname="lib/trace/rmanExample.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/rmanExample"
+        pname="lib/debug_trace/rmanExample.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/rmanExample"
+        pname="lib/trace/rmanExample.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/rmanExample"
+        pname="lib/debug_trace/rmanExample.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/rmanExample"
+        pname="lib/debug_trace/rmanExample.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/rmanExample"
+        pname="lib/debug_trace/rmanExample.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/rmanExample"
+        pname="lib/debug/rmanExample.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/trace/rmanExample"
+        pname="lib/trace/rmanExample.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/rmanExample"
+        pname="lib/debug/rmanExample.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/rmanExample"
+        pname="lib/debug/rmanExample.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/rmanExample"
+        pname="lib/trace/rmanExample.a9t"
+        profile="trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug_trace/rmanExample"
+        pname="lib/debug_trace/rmanExample.a9t"
+        profile="debug_trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/rmanExample"
+        pname="lib/release/rmanExample.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/rmanExample"
+        pname="lib/debug/rmanExample.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/rmanExample"
+        pname="lib/trace/rmanExample.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/rmanExample"
+        pname="lib/trace/rmanExample.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/rmanExample"
+        pname="lib/trace/rmanExample.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/rmanExample"
+        pname="lib/debug/rmanExample.a9t"
+        profile="debug"
+        target="ti.targets.arm.Arm9t"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_rman_examples"
+        pname="ti_sdo_fc_rman_examples.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.rel.dot"/>
+        <file name="lib/trace/rmanExample.a470uC"/>
+        <file name="lib/debug_trace/rmanExample.a470MV"/>
+        <file name="lib/trace/rmanExample.a674"/>
+        <file name="lib/debug_trace/rmanExample.av4TCE"/>
+        <file name="lib/debug/rmanExample.a9t"/>
+        <file name="lib/release/rmanExample.a86U"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/debug/rmanExample.a674"/>
+        <file name="common.cfg"/>
+        <file name="common.tci"/>
+        <file name="lib/release/rmanExample.a470MV"/>
+        <file name="lib/release/rmanExample.a64P"/>
+        <file name="lib/trace/rmanExample.av5T"/>
+        <file name="lib/trace/rmanExample.a470MV"/>
+        <file name="lib/release/rmanExample.av4TCE"/>
+        <file name="lib/trace/rmanExample.av4TCE"/>
+        <file name="lib/debug/rmanExample.a470uC"/>
+        <file name="lib/debug/rmanExample.av5T"/>
+        <file name="lib/debug_trace/rmanExample.a674"/>
+        <file name="lib/trace/rmanExample.a86U"/>
+        <file name="lib/debug/rmanExample.a470MV"/>
+        <file name="lib/trace/rmanExample.a64P"/>
+        <file name="lib/debug/rmanExample.a86U"/>
+        <file name="lib/debug/rmanExample.av4TCE"/>
+        <file name="lib/debug_trace/rmanExample.av5T"/>
+        <file name="package.bld"/>
+        <file name="lib/debug/rmanExample.a64P"/>
+        <file name="lib/debug_trace/rmanExample.a86U"/>
+        <file name="lib/release/rmanExample.a9t"/>
+        <file name="lib/debug_trace/rmanExample.a64P"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug_trace/rmanExample.a9t"/>
+        <file name="lib/trace/rmanExample.a9t"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/release/rmanExample.a674"/>
+        <file name="lib/debug_trace/rmanExample.a470uC"/>
+        <file name="lib/release/rmanExample.av5T"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/release/rmanExample.a470uC"/>
+        <file name="package/package.ext.xml"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

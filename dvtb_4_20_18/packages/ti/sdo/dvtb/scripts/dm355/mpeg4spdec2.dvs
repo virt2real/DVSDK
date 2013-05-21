@@ -1,0 +1,35 @@
+############################################################
+# Mpeg4  decode and dump
+#
+# Please ensure that you set the appropriate codec and 
+# change the path of input/output files used here with the 
+# path of input/output files required to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp mpeg4spdec2 codec mpeg4dec
+
+# Specify the parameters
+setp mpeg4spdec2 maxHeight 480
+setp mpeg4spdec2 maxWidth 720
+setp mpeg4spdec2 maxFrameRate 30000
+setp mpeg4spdec2 maxBitRate 6000000
+setp mpeg4spdec2 dataEndianness 1
+setp mpeg4spdec2 forceChromaFormat 4
+setp mpeg4spdec2 decodeHeader 0
+setp mpeg4spdec2 displayWidth 0
+setp mpeg4spdec2 frameSkipMode 0
+setp mpeg4spdec2 frameOrder 0
+setp mpeg4spdec2 newFrameFlag 0
+setp mpeg4spdec2 mbDataFlag 0
+setp mpeg4spdec2 extParamsMeRange 31
+setp mpeg4spdec2 extParamsDisplayWidth 0
+setp mpeg4spdec2 extParamsRotation 0
+setp mpeg4spdec2 extParamsUnrestrictedMV 0
+setp mpeg4spdec2 numFrames 100
+
+# Trigger the decode + playback scenario
+func mpeg4spdec2 -s ./data/videos/davincieffect_ntsc.mpeg4 -t out_720x480_422i.yuv

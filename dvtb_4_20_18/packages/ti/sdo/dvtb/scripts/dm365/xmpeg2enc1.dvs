@@ -1,0 +1,75 @@
+############################################################
+# Video read and encode 
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp mpeg2enc1 codec mpeg2enc1
+
+# specify the parameters
+setp mpeg2enc1 encodingPreset          0
+setp mpeg2enc1 rateControlPreset       1
+setp mpeg2enc1 maxHeight               1088
+setp mpeg2enc1 maxWidth                1920
+setp mpeg2enc1 maxFrameRate            30000
+setp mpeg2enc1 maxBitRate              4000000
+setp mpeg2enc1 dataEndianness          1
+setp mpeg2enc1 maxInterFrameInterval   0
+setp mpeg2enc1 inputChromaFormat       9
+setp mpeg2enc1 inputContentType        0
+setp mpeg2enc1 reconChromaFormat       9
+setp mpeg2enc1 topFieldFirstFlag       0
+setp mpeg2enc1 inputHeight             1088
+setp mpeg2enc1 inputWidth              1920
+setp mpeg2enc1 refFrameRate            30000
+setp mpeg2enc1 targetFrameRate         30000
+setp mpeg2enc1 targetBitRate           4000000
+setp mpeg2enc1 intraFrameInterval      30
+setp mpeg2enc1 generateHeader          0
+setp mpeg2enc1 captureWidth            0
+setp mpeg2enc1 forceFrame              0
+setp mpeg2enc1 interFrameInterval      0
+setp mpeg2enc1 mbDataFlag              0
+setp mpeg2enc1 aspectRatio             1 
+setp mpeg2enc1 pixelRange              1
+setp mpeg2enc1 timerResolution         60
+setp mpeg2enc1 ME_Type                 1 
+setp mpeg2enc1 QscaleType              0
+setp mpeg2enc1 IntraDCPrec             0
+setp mpeg2enc1 qpIntra                 8
+setp mpeg2enc1 qpInter                 8
+setp mpeg2enc1 RcAlgo                  8
+setp mpeg2enc1 QPMax                   31
+setp mpeg2enc1 QPMin                   1
+setp mpeg2enc1 maxDelay                1000
+setp mpeg2enc1 qpInit                  8
+setp mpeg2enc1 PerceptualRC            0
+setp mpeg2enc1 reset_vIMCOP_every_frame 1
+setp mpeg2enc1 mvSADoutFlag            0
+setp mpeg2enc1 numFrames               30
+# Configure VPFE parameters
+#setp vpfe width        1280
+#setp vpfe height       720
+
+#setp vpfe input        2
+#setp vpfe standard     1
+#setp vpfe format       8
+
+#setp vpfe cropEnable 0
+#setp vpfe cropCapLeft 0
+#setp vpfe cropCapTop 32
+#setp vpfe cropCapWidth 160
+#setp vpfe cropCapHeight 320
+
+# Trigger the capture+encode operation
+#func h264enc1 -t <output file name>
+
+# Trigger the file-read+encode operation
+func mpeg2enc1 -s input_1920x1088_420SP.yuv  -t test.m2v
+

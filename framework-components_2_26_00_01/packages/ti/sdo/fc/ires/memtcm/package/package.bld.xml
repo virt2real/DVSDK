@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.ires.memtcm" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="MEMTCM"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="iresman_memtcm.c"/>
+        <srcFile name="ires_memtcm.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/memtcm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memtcm/ires_memtcm.ov5T.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/release/memtcm/iresman_memtcm.ov5T.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/release/memtcm/package/package_ti.sdo.fc.ires.memtcm.ov5T.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="lib/debug/memtcm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memtcm/ires_memtcm.o470MV.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug/memtcm/iresman_memtcm.o470MV.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug/memtcm/package/package_ti.sdo.fc.ires.memtcm.o470MV.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="lib/release/memtcm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memtcm/ires_memtcm.o470MV.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/release/memtcm/iresman_memtcm.o470MV.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/release/memtcm/package/package_ti.sdo.fc.ires.memtcm.o470MV.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="lib/trace/memtcm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memtcm/ires_memtcm.o470MV.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/trace/memtcm/iresman_memtcm.o470MV.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/trace/memtcm/package/package_ti.sdo.fc.ires.memtcm.o470MV.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="lib/debug/memtcm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memtcm/ires_memtcm.o470uC.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug/memtcm/iresman_memtcm.o470uC.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug/memtcm/package/package_ti.sdo.fc.ires.memtcm.o470uC.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="lib/release/memtcm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/memtcm/ires_memtcm.o470uC.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/release/memtcm/iresman_memtcm.o470uC.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/release/memtcm/package/package_ti.sdo.fc.ires.memtcm.o470uC.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="lib/trace/memtcm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memtcm/ires_memtcm.o470uC.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/trace/memtcm/iresman_memtcm.o470uC.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/trace/memtcm/package/package_ti.sdo.fc.ires.memtcm.o470uC.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="lib/debug/memtcm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/memtcm/ires_memtcm.ov5T.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug/memtcm/iresman_memtcm.ov5T.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug/memtcm/package/package_ti.sdo.fc.ires.memtcm.ov5T.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="lib/debug_trace/memtcm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memtcm/ires_memtcm.o470MV.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memtcm/iresman_memtcm.o470MV.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memtcm/package/package_ti.sdo.fc.ires.memtcm.o470MV.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="lib/debug_trace/memtcm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memtcm/ires_memtcm.o470uC.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memtcm/iresman_memtcm.o470uC.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memtcm/package/package_ti.sdo.fc.ires.memtcm.o470uC.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="lib/trace/memtcm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/memtcm/ires_memtcm.ov5T.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/trace/memtcm/iresman_memtcm.ov5T.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/trace/memtcm/package/package_ti.sdo.fc.ires.memtcm.ov5T.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="lib/debug_trace/memtcm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/memtcm/ires_memtcm.ov5T.dep" src="ires_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memtcm/iresman_memtcm.ov5T.dep" src="iresman_memtcm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/memtcm/package/package_ti.sdo.fc.ires.memtcm.ov5T.dep" src="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_ires_memtcm.tar.dep" src="package/rel/ti_sdo_fc_ires_memtcm.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,0"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/memtcm"
+        pname="lib/release/memtcm.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/memtcm"
+        pname="lib/debug/memtcm.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/memtcm"
+        pname="lib/release/memtcm.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/memtcm"
+        pname="lib/trace/memtcm.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/memtcm"
+        pname="lib/debug/memtcm.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/memtcm"
+        pname="lib/release/memtcm.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/memtcm"
+        pname="lib/trace/memtcm.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/memtcm"
+        pname="lib/debug/memtcm.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/memtcm"
+        pname="lib/debug_trace/memtcm.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/memtcm"
+        pname="lib/debug_trace/memtcm.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/memtcm"
+        pname="lib/trace/memtcm.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/memtcm"
+        pname="lib/debug_trace/memtcm.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_ires_memtcm"
+        pname="ti_sdo_fc_ires_memtcm.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/debug/memtcm.av5T"/>
+        <file name="lib/debug_trace/memtcm.a470uC"/>
+        <file name="lib/debug_trace/memtcm.a470MV"/>
+        <file name="package/package.ext.xml"/>
+        <file name="ires_memtcm.c"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="ires_memtcm.h"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/trace/memtcm.av5T"/>
+        <file name="lib/trace/memtcm.a470uC"/>
+        <file name="lib/trace/memtcm.a470MV"/>
+        <file name="iresman_memtcm.c"/>
+        <file name="lib/debug/memtcm.a470uC"/>
+        <file name="lib/debug/memtcm.a470MV"/>
+        <file name="lib/release/memtcm.a470uC"/>
+        <file name="lib/release/memtcm.a470MV"/>
+        <file name="iresman_memtcm.h"/>
+        <file name="lib/release/memtcm.av5T"/>
+        <file name="iresman_protocol_memtcm.h"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/debug_trace/memtcm.av5T"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package_ti.sdo.fc.ires.memtcm.c"/>
+        <file name="package.bld"/>
+        <file name="_memtcm.h"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

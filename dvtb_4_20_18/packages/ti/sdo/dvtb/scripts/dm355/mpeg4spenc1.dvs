@@ -1,0 +1,66 @@
+############################################################
+# Read YUV and encode with MPEG4 encoder
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp mpeg4spenc1 codec mpeg4enc
+
+# specify the parameters
+setp mpeg4spenc1 encodingPreset 3
+setp mpeg4spenc1 rateControlPreset 1
+setp mpeg4spenc1 maxHeight 240
+setp mpeg4spenc1 maxWidth 320
+setp mpeg4spenc1 maxFrameRate 30000
+setp mpeg4spenc1 maxBitRate 2000000
+setp mpeg4spenc1 dataEndianness 1
+setp mpeg4spenc1 maxInterFrameInterval 1
+setp mpeg4spenc1 inputChromaFormat 4
+setp mpeg4spenc1 inputContentType 0
+setp mpeg4spenc1 reconChromaFormat 1
+setp mpeg4spenc1 inputHeight 240
+setp mpeg4spenc1 inputWidth 320
+setp mpeg4spenc1 refFrameRate 30000
+setp mpeg4spenc1 targetFrameRate 30000
+setp mpeg4spenc1 targetBitRate 2000000
+setp mpeg4spenc1 intraFrameInterval 30
+setp mpeg4spenc1 generateHeader 0
+setp mpeg4spenc1 captureWidth 320
+setp mpeg4spenc1 forceFrame 0
+setp mpeg4spenc1 interFrameInterval 1
+setp mpeg4spenc1 mbDataFlag 0
+setp mpeg4spenc1 framePitch 720
+setp mpeg4spenc1 extParamsSubWindowHeight 240 
+setp mpeg4spenc1 extParamsSubWindowWidth 320
+setp mpeg4spenc1 extParamsRotation 0
+setp mpeg4spenc1 extParamsVBVsize 0
+setp mpeg4spenc1 extParamsIFrameBitRateBiasFactor 256
+setp mpeg4spenc1 extParamsPFrameBitRateBiasFactor 256
+setp mpeg4spenc1 extParamsPeakBufWindow 2
+setp mpeg4spenc1 extParamsMinBitRate 258
+setp mpeg4spenc1 extParamsSVHMode 0
+setp mpeg4spenc1 extDynParamsIntraAlgo 1
+setp mpeg4spenc1 extDynParamsNumMBRows 1
+setp mpeg4spenc1 extDynParamsIntraFrameQP 0
+setp mpeg4spenc1 extDynParamsInterFrameQP 0
+setp mpeg4spenc1 extDynParamsInitQ 3
+setp mpeg4spenc1 extDynParamsRcQMAX 31
+setp mpeg4spenc1 extDynParamsRcQMIN 2
+setp mpeg4spenc1 extDynParamsRateFix 0
+setp mpeg4spenc1 extDynParamsRateFixRange 2
+setp mpeg4spenc1 extDynParamsMeAlgo 1
+setp mpeg4spenc1 extDynParamsSkipMBAlgo 0
+setp mpeg4spenc1 extDynParamsUnrestrictedMV 0
+setp mpeg4spenc1 extDynParamsMVDataEnable 0
+setp mpeg4spenc1 numFrames 300
+
+
+# Start the capture+encode operation
+func mpeg4spenc1 -s test_320x240_422i.yuv -t mp4-encode.mpeg4
+

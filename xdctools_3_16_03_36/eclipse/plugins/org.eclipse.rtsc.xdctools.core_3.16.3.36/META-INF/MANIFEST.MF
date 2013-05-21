@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: XDCtools core
+Bundle-SymbolicName: org.eclipse.rtsc.xdctools.core;singleton:=true
+Bundle-Version: 3.16.3.36
+Bundle-ClassPath: packages/xdc/services/spec/java/package.jar,
+ packages/xdc/shelf/java/antlr.jar,
+ packages/xdc/services/global/java/package.jar,
+ config.jar,
+ packages/xdc/shelf/java/js.jar,
+ packages/xdc/services/spec/views/java/package.jar,
+ bin
+Export-Package: xdc.services.global,
+ xdc.services.spec,
+ xdc.services.spec.views,
+ config,
+ org.mozilla.javascript,
+ org.mozilla.javascript.tools
+Eclipse-LazyStart: true
+Bundle-Vendor: Texas Instruments
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.rtsc.xdctools.server;visibility:=reexport,
+ org.eclipse.rtsc.xdctools.rta;visibility:=reexport,
+ com.ti.targets.omf;visibility:=reexport;resolution:=optional
+Bundle-Activator: org.eclipse.rtsc.xdctools.core.CorePlugin

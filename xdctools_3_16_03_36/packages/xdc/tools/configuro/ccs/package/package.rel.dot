@@ -1,0 +1,251 @@
+digraph dependencies {
+    label="\nPackage xdc.tools.configuro.ccs Dependency Graph";
+    size="7.5,10";
+    rankdir=LR;
+    ranksep=".75";
+    concentrate="true";
+    node [fixedsize=true, width=1.5, style=filled, color=black];
+    node [font=Helvetica, fontsize=12, fillcolor=lightgrey];
+    xdc_tools_configuro_ccs [shape=record,label="xdc.tools.configuro.ccs|1, 0, 0, 0", URL="package.rel.xml"];
+    node [fontsize=10, fillcolor=white];
+
+    edge [style=solid, color=blue]
+    xdc_tools_configuro [shape=record,label="xdc.tools.configuro|1, 0, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/tools/configuro/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc_tools_configuro;
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_intern_gen [shape=record,label="xdc.services.intern.gen|1, 0, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/services/intern/gen/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc_services_intern_gen;
+    xdc_tools [shape=record,label="xdc.tools|1, 0, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/tools/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc_tools;
+    xdc_services_global [shape=record,label="xdc.services.global|1, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/services/global/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc_services_global;
+    xdc_services_spec [shape=record,label="xdc.services.spec|1, 0, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/services/spec/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc_services_spec;
+    xdc_bld [shape=record,label="xdc.bld|1, 0, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/bld/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc_bld;
+    xdc_tools_mkpkg [shape=record,label="xdc.tools.mkpkg|1, 0, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/tools/mkpkg/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc_tools_mkpkg;
+    xdc_shelf [shape=record,label="xdc.shelf|1, 0, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/shelf/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc_shelf;
+    xdc [shape=record,label="xdc|1, 1, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc;
+    xdc_tools_configuro_ccs -> xdc_tools_configuro;
+    xdc_services_io [shape=record,label="xdc.services.io|1, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/services/io/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc_services_io;
+    xdc_services_intern_xsr [shape=record,label="xdc.services.intern.xsr|1, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/services/intern/xsr/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc_services_intern_xsr;
+    xdc_services_intern_cmd [shape=record,label="xdc.services.intern.cmd|1, 0, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/xdc/services/intern/cmd/package/package.rel.svg"];
+    xdc_tools_configuro_ccs -> xdc_services_intern_cmd;
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_cmd -> xdc_shelf;
+    xdc_services_intern_cmd -> xdc_services_spec;
+    xdc_services_intern_cmd -> xdc_services_global;
+    xdc_services_intern_cmd -> xdc_services_intern_gen;
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_intern_cmd -> xdc_services_intern_xsr;
+    xdc_services_intern_cmd -> xdc_services_global;
+    xdc_services_intern_cmd -> xdc_shelf;
+    xdc_services_intern_cmd -> xdc_services_intern_gen;
+    xdc_services_intern_cmd -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_xsr -> xdc_services_global;
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_intern_xsr -> xdc_services_intern_cmd;
+    xdc_services_intern_xsr -> xdc_services_global;
+    xdc_services_intern_xsr -> xdc_shelf;
+    xdc_services_intern_xsr -> xdc_services_intern_gen;
+    xdc_services_intern_xsr -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_io -> xdc_services_intern_cmd;
+    xdc_services_io -> xdc_services_intern_xsr;
+    xdc_services_io -> xdc_services_global;
+    xdc_services_io -> xdc_shelf;
+    xdc_services_io -> xdc_services_intern_gen;
+    ti_targets_arm [shape=record,label="ti.targets.arm|1, 0, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/ti/targets/arm/package/package.rel.svg"];
+    xdc_services_io -> ti_targets_arm;
+    ti_targets [shape=record,label="ti.targets|1, 0, 0, 1", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/ti/targets/package/package.rel.svg"];
+    xdc_services_io -> ti_targets;
+    ti_targets_nda [shape=record,label="ti.targets.nda|1, 0, 0, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/ti/targets/nda/package/package.rel.svg"];
+    xdc_services_io -> ti_targets_nda;
+    gnu_targets [shape=record,label="gnu.targets|1, 0, 0, 1", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/gnu/targets/package/package.rel.svg"];
+    xdc_services_io -> gnu_targets;
+    xdc_services_io -> xdc_services_spec;
+    microsoft_targets [shape=record,label="microsoft.targets|1, 0, 1, 0", URL="../../../../../../../../../../toolsrc/library/vendors2005/xdc/xdc-o25/Solaris/packages/microsoft/targets/package/package.rel.svg"];
+    xdc_services_io -> microsoft_targets;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    microsoft_targets -> xdc_services_intern_cmd;
+    microsoft_targets -> xdc_services_intern_xsr;
+    microsoft_targets -> xdc_services_global;
+    microsoft_targets -> xdc_shelf;
+    microsoft_targets -> xdc_services_intern_gen;
+    microsoft_targets -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    gnu_targets -> xdc_services_intern_cmd;
+    gnu_targets -> xdc_services_intern_xsr;
+    gnu_targets -> xdc_services_global;
+    gnu_targets -> xdc_shelf;
+    gnu_targets -> xdc_services_intern_gen;
+    gnu_targets -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+    ti_targets_nda -> ti_targets;
+
+    edge [style=solid, color=lightgrey]
+    ti_targets_nda -> xdc_services_intern_cmd;
+    ti_targets_nda -> xdc_services_intern_xsr;
+    ti_targets_nda -> xdc_services_global;
+    ti_targets_nda -> xdc_shelf;
+    ti_targets_nda -> xdc_services_intern_gen;
+    ti_targets_nda -> ti_targets;
+    ti_targets_nda -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_targets -> xdc_services_intern_cmd;
+    ti_targets -> xdc_services_intern_xsr;
+    ti_targets -> xdc_services_global;
+    ti_targets -> xdc_shelf;
+    ti_targets -> xdc_services_intern_gen;
+    ti_targets -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+    ti_targets_arm -> ti_targets;
+
+    edge [style=solid, color=lightgrey]
+    ti_targets_arm -> xdc_services_intern_cmd;
+    ti_targets_arm -> xdc_services_intern_xsr;
+    ti_targets_arm -> xdc_services_global;
+    ti_targets_arm -> xdc_shelf;
+    ti_targets_arm -> xdc_services_intern_gen;
+    ti_targets_arm -> ti_targets;
+    ti_targets_arm -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc -> xdc_services_intern_cmd;
+    xdc -> xdc_services_spec;
+    xdc -> xdc_services_intern_gen;
+    xdc -> xdc_services_intern_xsr;
+    xdc -> xdc_shelf;
+    xdc -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_shelf -> xdc_services_intern_cmd;
+    xdc_shelf -> xdc_services_intern_xsr;
+    xdc_shelf -> xdc_services_global;
+    xdc_shelf -> xdc_services_intern_gen;
+    xdc_shelf -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_tools_mkpkg -> microsoft_targets;
+    xdc_tools_mkpkg -> xdc_services_intern_cmd;
+    xdc_tools_mkpkg -> xdc_services_intern_xsr;
+    xdc_tools_mkpkg -> xdc_services_global;
+    xdc_tools_mkpkg -> xdc_shelf;
+    xdc_tools_mkpkg -> xdc_services_intern_gen;
+    xdc_tools_mkpkg -> ti_targets_arm;
+    xdc_tools_mkpkg -> ti_targets;
+    xdc_tools_mkpkg -> ti_targets_nda;
+    xdc_tools_mkpkg -> gnu_targets;
+    xdc_tools_mkpkg -> xdc_services_spec;
+    xdc_tools_mkpkg -> xdc_services_io;
+
+    edge [style=solid, color=blue]
+    xdc_bld -> xdc_services_global;
+    xdc_bld -> xdc_services_intern_cmd;
+
+    edge [style=solid, color=lightgrey]
+    xdc_bld -> xdc_services_intern_cmd;
+    xdc_bld -> xdc_services_spec;
+    xdc_bld -> xdc_services_intern_gen;
+    xdc_bld -> xdc;
+    xdc_bld -> xdc_services_intern_xsr;
+    xdc_bld -> xdc_shelf;
+    xdc_bld -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+    xdc_services_spec -> xdc_shelf;
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_spec -> xdc_services_intern_cmd;
+    xdc_services_spec -> xdc_services_intern_xsr;
+    xdc_services_spec -> xdc_services_global;
+    xdc_services_spec -> xdc_shelf;
+    xdc_services_spec -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_global -> xdc_services_intern_cmd;
+    xdc_services_global -> xdc_services_intern_xsr;
+    xdc_services_global -> xdc_shelf;
+    xdc_services_global -> xdc_services_intern_gen;
+    xdc_services_global -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_tools -> xdc_services_intern_cmd;
+    xdc_tools -> xdc_services_intern_xsr;
+    xdc_tools -> xdc_services_global;
+    xdc_tools -> xdc_shelf;
+    xdc_tools -> xdc_services_intern_gen;
+    xdc_tools -> ti_targets_arm;
+    xdc_tools -> ti_targets;
+    xdc_tools -> ti_targets_nda;
+    xdc_tools -> gnu_targets;
+    xdc_tools -> xdc_services_spec;
+    xdc_tools -> microsoft_targets;
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_gen -> xdc_shelf;
+    xdc_services_intern_gen -> xdc_services_spec;
+    xdc_services_intern_gen -> xdc_services_global;
+    xdc_services_intern_gen -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_intern_gen -> xdc_services_intern_cmd;
+    xdc_services_intern_gen -> xdc_services_intern_xsr;
+    xdc_services_intern_gen -> xdc_services_global;
+    xdc_services_intern_gen -> xdc_shelf;
+    xdc_services_intern_gen -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+    xdc_tools_configuro -> xdc_tools_mkpkg;
+
+    edge [style=solid, color=lightgrey]
+    xdc_tools_configuro -> microsoft_targets;
+    xdc_tools_configuro -> xdc_services_spec;
+    xdc_tools_configuro -> xdc_services_intern_cmd;
+    xdc_tools_configuro -> xdc_services_intern_xsr;
+    xdc_tools_configuro -> xdc_services_global;
+    xdc_tools_configuro -> xdc_shelf;
+    xdc_tools_configuro -> xdc_services_intern_gen;
+    xdc_tools_configuro -> xdc_tools_mkpkg;
+    xdc_tools_configuro -> ti_targets_arm;
+    xdc_tools_configuro -> ti_targets_nda;
+    xdc_tools_configuro -> ti_targets;
+    xdc_tools_configuro -> gnu_targets;
+    xdc_tools_configuro -> xdc_tools;
+    xdc_tools_configuro -> xdc_services_io;
+}

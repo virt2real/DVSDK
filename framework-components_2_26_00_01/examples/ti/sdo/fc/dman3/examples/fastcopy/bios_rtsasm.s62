@@ -1,0 +1,40 @@
+;
+;# ======== bios_rts.s62 ========
+;  HWI functions used by DMAN3/ACPY3 libraries.
+
+HWI_CSR	.equ	TSR		; define symbol to have generic code
+HWI_GIE .set 0x0001
+
+        .def _HWI_disable
+        .def _HWI_restore
+;
+;# ======== _HWI_disable ========
+;  Disable interrupts
+;    Uns HWI_disable(Void);
+;
+_HWI_disable:
+	.asmfunc
+        b b3 
+        mvc csr,b0
+        mv b0,a4
+        and ~HWI_GIE,b0,b0
+        mvc b0,csr
+        nop
+	.endasmfunc
+
+;# ======== _HWI_restore ========
+;  Conditionally enable global interrupts
+;    Void HWI_restore(Uns mask);
+;
+_HWI_restore:
+	.asmfunc
+        b b3 
+	;HWI_restore		; 4-cycle macro, assumes mask is in a4
+  	and a4,HWI_GIE,a1
+ [a1] 	mvc HWI_CSR,b0
+ [a1] 	or HWI_GIE,b0,b0
+ [a1] 	mvc b0,HWI_CSR	
+	nop
+	.endasmfunc
+
+	.end

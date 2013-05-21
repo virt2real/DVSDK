@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!--
+/*
+ *  Copyright 2007 by Texas Instruments Incorporated .
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ */
+-->
+  
+  
+  <title>XDC 2.92 Release Notes</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<!-- For now, we use the doxygen style sheet -->
+  
+  
+  <link href="doxygen.css" type="text/css" rel="stylesheet">
+
+  
+  <meta content="MSHTML 6.00.2900.2802" name="GENERATOR">
+</head>
+
+
+
+<body>
+
+<table width="100%">
+
+  <tbody>
+
+  <tr>
+
+    <td bgcolor="black" width="1"><a href="http://www.ti.com/"><img style="border: 0px solid ; width: 222px; height: 54px;" alt="Texas Instruments" src="tilogo.gif"> </a></td>
+
+    <td bgcolor="red"><img style="width: 314px; height: 26px;" alt="Technology for Innovators(tm)" src="titagline.gif"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 align="center">XDC 2.92 Release Notes</h1>
+
+<h2 align="center">March 12, 2007</h2>
+
+<p align="center">
+  <a href="#General_Info">Introduction</a>, 
+  <a href="#Documentation">Documentation</a>, 
+  <a href="#Whats_New">What's New</a>,
+  <a href="#Compatibility">Upgrade &amp; Compatibility Information</a>,
+  <a href="#Host_Support">Host Support</a>,
+  <a href="#Dependencies">Dependencies</a>, 
+  <a href="#Device_Support">Device Support</a>,
+  <a href="#Validation">Validation Info</a>,
+  <a href="#Known_Issues">Known Issues</a>,
+  <a href="#Version">Version Information</a>,
+  <a href="#Support">Technical Support</a>.
+</p>
+
+<hr>
+
+<h2><a name="General_Info">Introduction</a></h2>
+
+<p>eXpress DSP Components (XDC) is a standard for reusable software
+components, optimized for real-time embedded systems. XDC components
+have hardware-neutral formal interfaces, are configurable offline to
+optimize memory and performance, and support custom automation in the
+development environment via a scripting language.</p>
+
+
+<p>XDC 2.92 is a minor product release for general availability.
+It includes the following sets of packages: </p>
+
+<ul>
+
+  <li><b>XDC core (<tt>xdc.*</tt>)</b> - the <tt><b>xdc</b></tt> and
+      <tt><b>xs</b></tt> command line utilities for building packages
+	  and execting scripts, together with the packages that implement
+	  XDC itself;</li>
+
+  <li><b>User tools (<tt>xdc.tools.*</tt>)</b> - command-line
+      and graphical utilities for working with packages and repositories;</li>
+
+  <li><b>Targets (<tt>*.targets.*</tt>)</b> - definitions for using
+      various TI and third-party compiler tool chains with XDC;</li>
+
+  <li><b>Platforms (<tt>ti.platforms.*</tt>)</b> - definitions for
+      linking and running code on various TI board-level hardware and
+	  simulator products using XDC.</li>
+
+</ul>
+
+<hr>
+
+<h2><a name="Documentation">Documentation</a></h2>
+
+<p>The following documentation is available: </p>
+
+<ul>
+
+	<li><a href="doc/index.html">XDC documents</a></li>
+
+</ul>
+
+<p>Release notes from previous releases are also available in the <a href="doc/relnotes_archive">relnotes_archive</a> 
+directory. </p>
+
+<hr>
+
+<h2><a name="Whats_New">What's New</a></h2>
+
+<p>The following significant changes have been made since 2.91</p>
+
+<div class="memitem">
+<h3>2.92 (This Release)</h3>
+
+<ul>
+
+  <li>Added ti.platform.* platform packages</li>
+
+  <li>Added xdc.tools.repoman repository management tool</li>
+
+  <li>Collapsed xdc.runtime.Error_clear() functionality into
+      Error_init()</li>
+
+  <li>Added two configs to xdc.runtime.Startup which are arrays of
+      no-arg, void functions that are called before and after any
+	  Module_startup()</li>
+
+  <li>Added '-mo' to options in config.bld so the rts libraries are
+      built with each function in a separate section</li>
+
+  <li>Documented XDC Module Binary Contract</li>
+
+  <li>Support for gnu.* and microsoft.* targets in configuro</li>
+
+  <li>Usability enhancements to XGCONF</li>
+
+  <li>The following minor enhancements were resolved: 
+  
+    <table width="100%">
+
+    <colgroup width="15%"></colgroup><tbody>
+
+    <tr>
+
+      <td><b>ID</b></td>
+
+      <td><b>Headline</b></td>
+        </tr>
+
+    <tr>
+
+      <td>SDSCM00006945</td>
+
+      <td>microsoft.targets does not support VC7 2003</td>
+        </tr>
+
+    <tr>
+
+      <td>SDSCM00014435</td>
+
+      <td>The Win32 target is not compatible with VC 8.0</td>
+        </tr>
+
+    
+      </tbody>
+    </table>
+  </li>
+
+  <li>And the following defects were resolved: 
+  
+    <table width="100%">
+
+    <colgroup width="15%"></colgroup><tbody>
+
+    <tr>
+
+      <td><b>ID</b></td>
+
+      <td><b>Headline</b></td>
+        </tr>
+
+    <tr>
+
+      <td>SDSCM00014437</td>
+
+      <td>The Win32 target is missing rts library</td>
+        </tr>
+
+    <tr>
+
+      <td>SDSCM00014572</td>
+
+      <td>gnu.targets.Linux86 target fails to build on some distros</td>
+        </tr>
+
+    <tr>
+
+      <td>SDSCM00015515</td>
+
+      <td>Generated package.bld.xml file places wrong platform name for 67P</td>
+        </tr>
+
+    <tr>
+
+      <td></td>
+
+      <td></td>
+        </tr>
+
+    
+      </tbody>
+    </table>
+  </li>
+
+</ul>
+
+</div>
+<br>
+
+<hr>
+
+<h2><a name="Compatibility">Upgrade and Compatibility Information</a></h2>
+
+<ul>
+
+  <li><b><tt>ti.targets</tt></b> - This package is compatible with the 
+  previous release. (Compatibility key: 1,0,0,0 -&gt; 1,0,0,<font color="red"><b>1</b></font>) 
+  </li>
+  <li><b><tt>gnu.targets</tt></b> - This package is compatible with the 
+  previous release. (Compatibility key: 1,0,0,0 -&gt; 1,0,0,<font color="red"><b>1</b></font>) 
+  </li>
+</ul>
+
+
+<p><b>Warning:</b> Beginning with xdc-o02, internal C files generated when
+    building package schemas are
+    named package_&lt;package name&gt;.c instead of &lt;package_name&gt;.c.
+    This may introduce incompatibilities with older xdc-n and xdc-o trees
+	(XDC 2.X products).
+    The compatibility with metaonly xdc-m packages (XDC 1.X products) is still maintained.
+
+</p>
+<h3>Compatibility Key Definitions</h3>
+
+<p>Compatibility keys are intentionally independent of Marketing product numbers 
+and are intended to: 
+</p>
+<ol>
+
+  <li>Enable tooling to identify incompatibilities between components, and 
+  </li>
+  <li>Convey a level of compatibility between different releases to set end user 
+  expectations. </li>
+</ol>
+
+<p>Compatibility keys are composed of 3 comma-delimited numbers - M,S,R - where: 
+
+</p>
+<ul>
+
+  <li><b>M = Major</b>. A difference in M indicates a break in compatibility. 
+  </li>
+  <li><b>S = Source</b>. A difference in S indicates source compability. That 
+  is, the user's source doesn't require change, but <i>does</i> require 
+  rebuilding. 
+  </li>
+  <li><b>R = Radix</b>. A difference in R indicates an introduction of new 
+  features, but compatibility with previous interfaces has not broken. If 
+  libraries are provided by the package, an application must re-link with the 
+  new libraries, but not rebuild from source. </li>
+</ul>
+
+<hr>
+
+<h2><a name="Host_Support">Host Support</a></h2>
+
+<p>This release supports the following hosts:</p>
+
+<ul>
+
+  <li>Windows XP</li>
+
+  <li>RedHat Enterprise Linux 3</li>
+</ul>
+
+<hr>
+
+<h2><a name="Dependencies">Dependencies</a></h2>
+
+<p>This release requires the following other software components and tools 
+versions to successfully function: </p>
+
+<ul>
+
+  <li>C6x Code Generation Tools version 5.3.0. or later</li>
+
+  <li>C55 Code Generation Tools version 3.2.0. or later</li>
+
+  <li>GCC for x86 version 3.2.3 or later</li>
+
+  <li>GCC for ARM version 3.2.3 or later</li>
+
+</ul>
+
+<hr>
+
+<h2><a name="Device_Support">Device Support</a></h2>
+
+<p>This release supports the following device families: </p>
+
+<ul>
+
+  <li>C67P, C67, C64P, C64, C62 </li>
+
+  <li>C55P, C55, C54</li>
+
+  <li>C28</li>
+
+  <li>TMS470</li>
+
+  <li>Native development host</li>
+
+</ul>
+
+<hr>
+
+<h2><a name="Validation">Validation Information</a></h2>
+
+<p>This release was built and validated against using the following components: 
+</p>
+
+<ul>
+
+  <li>C6x Code Generation Tools version 6.0.7</li>
+ 
+  <li>C55 Code Generation Tools version 3.2.2</li>
+
+  <li>GCC for x86 version 3.2.3</li>
+
+  <li>GCC for ARM version 3.2.3</li>
+
+</ul>
+
+<hr>
+
+<h2><a name="Known_Issues">Known Issues</a></h2>
+
+There are no known issues in this release.
+<hr>
+
+<h2><a name="Version">Version Information</a></h2>
+
+<p>This product's version follows a version format, <b>M.mm.pp.bb</b>, where 
+<b>M</b> is a single digit Major number, <b>mm</b> is 2 digit minor number, 
+<b>pp</b> is a 2 digit patch number, and <b>b</b> is an unrestricted set of 
+digits used as an incrementing build counter. </p>
+
+<p>To support multiple side-by-side installations of the product, the product 
+version is encoded in the top level directory, ex. 
+<b>xdc_2_92</b>. </p>
+
+<p>Subsequent releases of patch upgrades will be identified by the patch number, 
+ex. XDC 2.92.01 with directory <b>xdc_2_92_01</b>. Typically, 
+these patches only include critical bug fixes. </p>
+
+<p>Please note that version numbers and compatibility keys are NOT the same. For 
+an explanation of compatibility keys, please refer to the 'Upgrade and 
+Compatibility Information' section. </p>
+
+<hr>
+
+<h2><a name="Support">Technical Support</a></h2>
+
+<p>For technical support, contact <a href="mailto:rtsc_champs@list.ti.com">rtsc_champs@list.ti.com</a></p>
+
+<hr>
+
+<p>Last updated: March 12, 2007 </p>
+</body>
+</html>

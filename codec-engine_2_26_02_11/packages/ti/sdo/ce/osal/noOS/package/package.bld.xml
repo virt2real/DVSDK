@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.osal.noOS" version="2, 0, 1" producerId="codec_engine_2_26_02_11">
+    <units>
+        <module name="Settings"/>
+    </units>
+    <sources>
+        <srcFile name="Memory_noOS.c"/>
+        <srcFile name="Trace.c"/>
+        <srcFile name="Sem_noOS.c"/>
+        <srcFile name="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="GT_config_libC.c"/>
+        <srcFile name="Queue_noOS.c"/>
+        <srcFile name="Thread_noOS.c"/>
+        <srcFile name="LockMP_noOS.c"/>
+        <srcFile name="SemMP_noOS.c"/>
+        <srcFile name="Global_noOS.c"/>
+        <srcFile name="Log_noOS.c"/>
+        <srcFile name="File_noOS.c"/>
+        <srcFile name="Lock_noOS.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/osal_none.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/osal_none/Memory_noOS.ov4TCE.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Trace.ov4TCE.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Sem_noOS.ov4TCE.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/GT_config_libC.ov4TCE.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Queue_noOS.ov4TCE.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Thread_noOS.ov4TCE.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/LockMP_noOS.ov4TCE.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/SemMP_noOS.ov4TCE.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Global_noOS.ov4TCE.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/package/package_ti.sdo.ce.osal.noOS.ov4TCE.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Log_noOS.ov4TCE.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/File_noOS.ov4TCE.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Lock_noOS.ov4TCE.dep" src="Lock_noOS.c"/>
+        <srcFile name="lib/debug/osal_none.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Memory_noOS.o86U.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Trace.o86U.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Sem_noOS.o86U.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/GT_config_libC.o86U.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Queue_noOS.o86U.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Thread_noOS.o86U.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/LockMP_noOS.o86U.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/SemMP_noOS.o86U.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Global_noOS.o86U.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/package/package_ti.sdo.ce.osal.noOS.o86U.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Log_noOS.o86U.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/File_noOS.o86U.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Lock_noOS.o86U.dep" src="Lock_noOS.c"/>
+        <srcFile name="lib/release/osal_none.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/osal_none/Memory_noOS.o64P.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Trace.o64P.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Sem_noOS.o64P.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/GT_config_libC.o64P.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Queue_noOS.o64P.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Thread_noOS.o64P.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/LockMP_noOS.o64P.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/SemMP_noOS.o64P.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Global_noOS.o64P.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/package/package_ti.sdo.ce.osal.noOS.o64P.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Log_noOS.o64P.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/File_noOS.o64P.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Lock_noOS.o64P.dep" src="Lock_noOS.c"/>
+        <srcFile name="lib/release/osal_none.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/osal_none/Memory_noOS.o470uC.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Trace.o470uC.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Sem_noOS.o470uC.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/GT_config_libC.o470uC.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Queue_noOS.o470uC.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Thread_noOS.o470uC.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/LockMP_noOS.o470uC.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/SemMP_noOS.o470uC.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Global_noOS.o470uC.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/package/package_ti.sdo.ce.osal.noOS.o470uC.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Log_noOS.o470uC.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/File_noOS.o470uC.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Lock_noOS.o470uC.dep" src="Lock_noOS.c"/>
+        <srcFile name="lib/debug/osal_none.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Memory_noOS.ov5T.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Trace.ov5T.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Sem_noOS.ov5T.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/GT_config_libC.ov5T.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Queue_noOS.ov5T.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Thread_noOS.ov5T.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/LockMP_noOS.ov5T.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/SemMP_noOS.ov5T.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Global_noOS.ov5T.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/package/package_ti.sdo.ce.osal.noOS.ov5T.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Log_noOS.ov5T.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/File_noOS.ov5T.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Lock_noOS.ov5T.dep" src="Lock_noOS.c"/>
+        <srcFile name="lib/debug/osal_none.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Memory_noOS.o674.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Trace.o674.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Sem_noOS.o674.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/GT_config_libC.o674.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Queue_noOS.o674.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Thread_noOS.o674.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/LockMP_noOS.o674.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/SemMP_noOS.o674.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Global_noOS.o674.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/package/package_ti.sdo.ce.osal.noOS.o674.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Log_noOS.o674.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/File_noOS.o674.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Lock_noOS.o674.dep" src="Lock_noOS.c"/>
+        <srcFile name="lib/debug/osal_none.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Memory_noOS.o64P.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Trace.o64P.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Sem_noOS.o64P.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/GT_config_libC.o64P.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Queue_noOS.o64P.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Thread_noOS.o64P.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/LockMP_noOS.o64P.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/SemMP_noOS.o64P.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Global_noOS.o64P.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/package/package_ti.sdo.ce.osal.noOS.o64P.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Log_noOS.o64P.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/File_noOS.o64P.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Lock_noOS.o64P.dep" src="Lock_noOS.c"/>
+        <srcFile name="lib/debug/osal_none.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Memory_noOS.ov4TCE.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Trace.ov4TCE.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Sem_noOS.ov4TCE.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/GT_config_libC.ov4TCE.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Queue_noOS.ov4TCE.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Thread_noOS.ov4TCE.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/LockMP_noOS.ov4TCE.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/SemMP_noOS.ov4TCE.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Global_noOS.ov4TCE.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/package/package_ti.sdo.ce.osal.noOS.ov4TCE.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Log_noOS.ov4TCE.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/File_noOS.ov4TCE.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Lock_noOS.ov4TCE.dep" src="Lock_noOS.c"/>
+        <srcFile name="lib/release/osal_none.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/osal_none/Memory_noOS.o86U.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Trace.o86U.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Sem_noOS.o86U.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/GT_config_libC.o86U.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Queue_noOS.o86U.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Thread_noOS.o86U.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/LockMP_noOS.o86U.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/SemMP_noOS.o86U.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Global_noOS.o86U.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/package/package_ti.sdo.ce.osal.noOS.o86U.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Log_noOS.o86U.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/File_noOS.o86U.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Lock_noOS.o86U.dep" src="Lock_noOS.c"/>
+        <srcFile name="lib/debug/osal_none.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Memory_noOS.o470uC.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Trace.o470uC.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Sem_noOS.o470uC.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/GT_config_libC.o470uC.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Queue_noOS.o470uC.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Thread_noOS.o470uC.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/LockMP_noOS.o470uC.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/SemMP_noOS.o470uC.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Global_noOS.o470uC.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/package/package_ti.sdo.ce.osal.noOS.o470uC.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Log_noOS.o470uC.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/File_noOS.o470uC.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/debug/osal_none/Lock_noOS.o470uC.dep" src="Lock_noOS.c"/>
+        <srcFile name="lib/release/osal_none.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/osal_none/Memory_noOS.ov5T.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Trace.ov5T.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Sem_noOS.ov5T.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/GT_config_libC.ov5T.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Queue_noOS.ov5T.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Thread_noOS.ov5T.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/LockMP_noOS.ov5T.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/SemMP_noOS.ov5T.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Global_noOS.ov5T.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/package/package_ti.sdo.ce.osal.noOS.ov5T.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Log_noOS.ov5T.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/File_noOS.ov5T.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Lock_noOS.ov5T.dep" src="Lock_noOS.c"/>
+        <srcFile name="lib/release/osal_none.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/osal_none/Memory_noOS.o674.dep" src="Memory_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Trace.o674.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Sem_noOS.o674.dep" src="Sem_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/GT_config_libC.o674.dep" src="GT_config_libC.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Queue_noOS.o674.dep" src="Queue_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Thread_noOS.o674.dep" src="Thread_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/LockMP_noOS.o674.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/SemMP_noOS.o674.dep" src="SemMP_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Global_noOS.o674.dep" src="Global_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/package/package_ti.sdo.ce.osal.noOS.o674.dep" src="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Log_noOS.o674.dep" src="Log_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/File_noOS.o674.dep" src="File_noOS.c"/>
+        <srcFile name="package/lib/lib/release/osal_none/Lock_noOS.o674.dep" src="Lock_noOS.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_osal_noOS.tar.dep" src="package/rel/ti_sdo_ce_osal_noOS.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/osal_none"
+        pname="lib/release/osal_none.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/osal_none"
+        pname="lib/debug/osal_none.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/osal_none"
+        pname="lib/release/osal_none.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/osal_none"
+        pname="lib/release/osal_none.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/osal_none"
+        pname="lib/debug/osal_none.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/osal_none"
+        pname="lib/debug/osal_none.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/osal_none"
+        pname="lib/debug/osal_none.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/osal_none"
+        pname="lib/debug/osal_none.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/osal_none"
+        pname="lib/release/osal_none.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/osal_none"
+        pname="lib/debug/osal_none.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/osal_none"
+        pname="lib/release/osal_none.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/osal_none"
+        pname="lib/release/osal_none.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_osal_noOS"
+        pname="ti_sdo_ce_osal_noOS.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="SemMP_noOS.c"/>
+        <file name="Lock_noOS.c"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/release/osal_none.a86U"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/release/osal_none.av5T"/>
+        <file name="lib/release/osal_none.av4TCE"/>
+        <file name="lib/release/osal_none.a674"/>
+        <file name="File_noOS.c"/>
+        <file name="Global_noOS.c"/>
+        <file name="package/package_ti.sdo.ce.osal.noOS.c"/>
+        <file name="lib/release/osal_none.a470uC"/>
+        <file name="package/package.rel.dot"/>
+        <file name="GT_config_libC.c"/>
+        <file name="Queue_noOS.c"/>
+        <file name="Sem_noOS.c"/>
+        <file name="GT_config_libC.h"/>
+        <file name="LockMP_noOS.c"/>
+        <file name="lib/debug/osal_none.a64P"/>
+        <file name="lib/debug/osal_none.av4TCE"/>
+        <file name="package/build.cfg"/>
+        <file name="Memory_noOS.c"/>
+        <file name="lib/debug/osal_none.a86U"/>
+        <file name="lib/release/osal_none.a64P"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/osal_none.av5T"/>
+        <file name="Thread_noOS.c"/>
+        <file name="Trace.c"/>
+        <file name="lib/debug/osal_none.a674"/>
+        <file name="lib/debug/osal_none.a470uC"/>
+        <file name="package.bld"/>
+        <file name="Log_noOS.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

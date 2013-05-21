@@ -1,0 +1,53 @@
+############################################################
+# video decode and dump
+#
+# Please ensure that you set the appropriate codec and 
+# change the path of input/output files used here with the 
+# path of input/output files required to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp mpeg4dec2 codec                 mpeg4dec2
+
+# specify the parameters
+setp mpeg4dec2 maxHeight             720
+setp mpeg4dec2 maxWidth              1280
+setp mpeg4dec2 maxFrameRate          30000
+setp mpeg4dec2 maxBitRate            10485760
+setp mpeg4dec2 dataEndianness        1
+setp mpeg4dec2 forceChromaFormat     9
+setp mpeg4dec2 decodeHeader          0
+setp mpeg4dec2 displayWidth          0
+setp mpeg4dec2 frameSkipMode         0
+setp mpeg4dec2 frameOrder            0
+setp mpeg4dec2 newFrameFlag          0
+setp mpeg4dec2 mbDataFlag            80
+setp mpeg4dec2 numFrames             30
+setp mpeg4dec2 extrotation           0
+setp mpeg4dec2 extdisplayWidth       1280
+setp mpeg4dec2 extmeRange            31
+setp mpeg4dec2 extunrestrictedMV     1
+
+# Configure VPBE parameters
+#setp vpbe standard 3
+#setp vpbe output 3
+#setp vpbe opMode 1
+
+#setp vpbe cropEnable 0
+#setp vpbe cropCapLeft 0
+#setp vpbe cropCapTop 32
+#setp vpbe cropCapWidth 720
+#setp vpbe cropCapHeight 700
+
+getp mpeg4dec2
+getp vpbe
+
+# Trigger the decode + playback scenario
+#func mpeg4dec2 -s <input stream name>
+
+# Trigger the decode + dump scenario
+func mpeg4dec2 -s data/videos/davincieffect.mpeg4 -t out.yuv
+

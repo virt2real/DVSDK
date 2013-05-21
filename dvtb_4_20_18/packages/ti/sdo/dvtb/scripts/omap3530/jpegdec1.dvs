@@ -1,0 +1,48 @@
+############################################################
+# Display JPEG Image from a file
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp jpegdec1 codec jpegdec
+
+#specify image decoder parameters
+setp jpegdec1 maxHeight 576
+setp jpegdec1 maxWidth 720
+setp jpegdec1 maxScans 15
+setp jpegdec1 dataEndianness 1
+setp jpegdec1 forceChromaFormat 4
+setp jpegdec1 progressiveDecFlag 1
+setp jpegdec1 outImgRes 0
+setp jpegdec1 numAU 0
+setp jpegdec1 decodeHeader 0
+setp jpegdec1 displayWidth 0
+setp jpegdec1 progDisplay 0
+setp jpegdec1 resizeOption 0
+setp jpegdec1 RGB_Format 0
+setp jpegdec1 numMCU_row 0
+setp jpegdec1 x_org 0
+setp jpegdec1 y_org 0
+setp jpegdec1 x_length 0
+setp jpegdec1 y_length 0
+setp jpegdec1 alpha_rgb 0
+
+#specify vpbe parameters
+setp vpbe device /dev/video2
+setp vpbe width 720
+setp vpbe height 480
+setp vpbe scaling 1
+setp vpbe ch_mode VGA
+setp vpbe output 2
+setp vpbe rotate 90
+
+# Trigger the decode+display scenario
+func jpegdec1 -s ./shrek_720x480.jpg
+
+

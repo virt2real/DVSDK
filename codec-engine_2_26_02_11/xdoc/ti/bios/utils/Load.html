@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>module ti.bios.utils.Load</title>
+<meta name="description" content="Load module">
+<link rel="stylesheet" type="text/css" href="../../../xdoc.css" />
+</head>
+<body><div id="xdocWrapper"><div id="xdocContent">
+<table class="xdocHdr"><tr>
+<td class="xdocHdrTitle"><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <span class="xdoc-id">ti.bios.utils.</span><span class="xdoc-id">Load</span></td>
+<td class="xdocHdrArrow">
+<a class="xdocHdrLink" href="../../../ti/bios/utils/package.html" title="package ti.bios.utils"><img class="xdocHdrArrow" src="../../../Arrow_up.png"/></a></td>
+</table>
+<div class=xdocHdrIndex><a class=xdocHdrIndex title="right-click to capture" href="../../../index.html#ti/bios/utils/Load.html">index URL</a></div>
+<p class="xdocHdrSummary">Load module</p>
+<ul class="xdocToc">
+<li class="xdocToc"><a class="xdocToc" href="#meta-synop">XDCscript usage</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#spec-synop">XDCspec declarations</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdocElems">Individual elements</a></li>
+<li class="xdocToc"><a class="xdocToc" href="#xdoc-desc">Additional documentation</a></li>
+</ul>
+<div class="xdocBrief">
+The Load module is used for calculating the CPU load of the DSP.
+[&nbsp;<a class="xdocBrief" href="#xdoc-desc">more</a>&nbsp;...&nbsp;]
+</div>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> summary</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../ti/bios/utils/Load-src.html"><span class="xdocLabelFile">ti/bios/utils/Load.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Load</span></go> {<b>&nbsp;&nbsp;...</b>
+</div>
+</div>
+<span id='meta-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id-meta2">XDCscript</span></tt> usage</td>
+<td class="xdocLabelRight">meta-domain</td>
+</tr></table>
+<div class="xdocSynM">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">var</span> Load = <span class="xdoc-kw3">xdc.useModule</span>(<span class="xdoc-id">'ti.bios.utils.Load'</span>);
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+</div>
+<span id='spec-synop'></span>
+<table class="xdocLabel"><tr>
+<td class="xdocLabelLeft"><tt><span class="xdoc-id">XDCspec</span></tt> declarations</td>
+<td class="xdocLabelRight">sourced in <a class="xdocLink" href="../../../ti/bios/utils/Load-src.html"><span class="xdocLabelFile">ti/bios/utils/Load.xdc</span></a></td>
+</tr></table>
+<div class="xdocSynX">
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">package</span> <a class="xdoc-link" href="../../../ti/bios/utils/package.html" title="ti.bios.utils">ti.bios.utils</a>;
+</div>
+<div class="xdocSynSpacer">&nbsp;</div>
+<div class="xdocSynCode">
+<tt></tt><span class="xdoc-kw1">metaonly </span><span class="xdoc-kw1">module</span> <go><span class="xdoc-id">Load</span></go> {
+</div>
+<div class="xdocSynCode">
+<tt></tt>}
+</div>
+</div>
+<span id="xdoc-desc"></span>
+<span id="xdoc-sect-1"></span>
+<div class="xdocSect">DETAILS</div>
+<div class="xdocText">The Load module is used for calculating the CPU load of the DSP.</div>
+<div class="xdocText">The Load module provides an API (Load_getcpuload()) that returns the
+  current CPU load.  The CPU load is averaged over a period of time as
+  specified by the 'window' variable within Load.c.</div>
+<div class="xdocText">It is necessary to do the following in order to use Load_getcpuload()</div>
+<div class="xdocText">(1) A BIOS IDL object which has its function set to '_Load_idlefxn' must
+     exist.  The code to do this has already been written for the user, and
+     exists in 2 different files:</div>
+<div class="xdocText">a. ti/bios/utils/Load.tci</div>
+<div class="xdocText">If the user's app is built using Tconf, then this file must be
+         included into the build by adding the following statement into the
+         *.tcf file:</div>
+<div class="xdocText"><PRE class="Example">         utils.importFile('Load.tci');
+</PRE></div>
+<div class="xdocText">b. ti/bios/utils/package.xs</div>
+<div class="xdocText">If the user's app is built using RTSC, then one must use the Load
+         module. This is done by adding the following line to the *.cfg file:</div>
+<div class="xdocText"><PRE class="Example">         var Load = xdc.useModule('ti.bios.utils.Load');
+</PRE></div>
+<div class="xdocText">NOTE: The two above mentioned methods are mutually exclusive.  One can't
+           use both method 'a' and method 'b' in the same program build, the
+           user must choose the appropriate one for their build.</div>
+<div class="xdocText">(2) call 'Load_init()' from your application's main() program</div>
+<div class="xdocText">(3) call 'Load_getcpuload()' to return the CPU load as averaged over
+      the pre-compiled window.  This window can be changed by modifying
+      the Load_WINDOW value in this file and recompiling load.c.</div>
+<div class="xdocText">(4) compile Load.c and link it with your application.</div>
+<div class="xdocText">CAVEATS:</div>
+<div class="xdocText">(1) This implementation self-calibrates the shortest path through the
+      IDL loop.  It does this by keeping track of the shortest time between 
+      invocations of 'Load_idlefxn'.  This relies on the fact that the
+      IDL loop will execute at least 2 times in a row w/o being interrupted!
+      In the unlikely event that is a problem for your application, you can
+      measure the shortest path through the IDL loop using the profiler and
+      set 'minloop' to this time.  Note that the units of minloop are
+      CLK_gethtime() units which are processor dependent; e.g., CPU/4 for
+      'C6211, CPU/(TDDR+1) for 'C54xx, CPU for C64P, etc..</div>
+<div id="xdocElems">
+</div>
+<div id="xdocDate">generated on Thu, 02 Dec 2010 05:35:15 GMT</div>
+</div></div></body>
+</html>

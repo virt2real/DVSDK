@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='ti.sdo.fc.dman3' nodoc='0' root='../../../../' summary='Framework+Components%27+DMA+Manager+for+EDMA3+devices'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eti.sdo.fc.dman3%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+4%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='DMAN3' kind='module' nodoc='0' metaonly='1' summary='EDMA3+QDMA+resource+manager'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fti%2Fsdo%2Ffc%2Fdman3%2Fpackage.html%22+title%3D%22ti.sdo.fc.dman3%22%3Eti.sdo.fc.dman3%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EDMAN3%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EDMAN3%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+DMAN3+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27ti.sdo.fc.dman3.DMAN3%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl kind='const' name='MAXGROUPS' anchor='.M.A.X.G.R.O.U.P.S' altext='ti.sdo.fc.dman3.DMAN3.MAXGROUPS' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Maximum+number+of+groups+for+sharing%0A+++++++++++++++++++++++++++++++++TCCs+and+parameter+RAM'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMAXGROUPS%3C%2Fspan%3E%3C%2Fgo%3E+%3D+20%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EMAXGROUPS%3C%2Fspan%3E%3C%2Fgo%3E+%3D+20%3B'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='allowUnshared' anchor='allow.Unshared' altext='ti.sdo.fc.dman3.DMAN3.allowUnshared' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Allow+DMAN3-related+resources+to+be+granted+to+an+algorithm%2C+even%0A++if+there+are+not+enough+resources+configured+into+the+shared%0A++groupId+which+the+algorithm+is+a+member+of'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EallowUnshared%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EallowUnshared%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='If+this+property+is+set+to+%3Ctt%3Efalse%3C%2Ftt%3E%2C+the+DMAN3+library+will+fail%0A++to+grant+DMA+channels+to+an+algorithm+requesting+more+TCCs+or%0A++PaRams+then+the+number+configured+for+its+scratch+group.'/>
+                    <docPara content='If+this+property+is+%3Ctt%3Etrue%3C%2Ftt%3E%2C+and+an+algorithm+requests+more+TCCs+or%0A++PaRams+than+the+number+configured+for+its+scratch+group%2C+DMAN3+will%0A++do+either+of+the+following%3A'/>
+                    <docPara content='%3COL%3E%3CLI%3E+If+no+algorithm+is+currently+instantiated+for+the+given+scratch%0A+++++++group%2C+DMAN3+will+bump+up+the+number+of+TCCs+and+PaRams+to+the%0A+++++++maximum+of+the+number+configured+and+that+requested+by+the%0A+++++++algorithm%2C+for+the+scratch+group.+This+will+remain+in+effect%0A+++++++until+all+algorithms+for+that+scratch+group+are+deleted.%0A%3C%2FLI%3E%3CLI%3E+If+an+algorithm+has+already+been+granted+DMA+channels+for+the%0A+++++++given+scratch+group+%28so+the+number+of+TCCs+and+PaRams+for+that%0A+++++++scratch+group+has+already+been+determined+by+%281%29+above%29%2C+and+the%0A+++++++number+of+TCCs+or+PaRams+for+the+scratch+group+is+insufficient+for%0A+++++++the+algorithm+currently+requesting+DMA+channels%2C+DMAN3+will%0A+++++++allocate+new+TCCs+and+PaRams+if+available.+These+new+TCCs+and%0A+++++++PaRams+will+not+be+shared+by+any+other+algorithm.%0A+++++%0A%3C%2FLI%3E%3C%2FOL%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='cpu' anchor='cpu' altext='ti.sdo.fc.dman3.DMAN3.cpu' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Use+the+non-EDMA3%2C+CPU+version+of+DMAN3'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecpu%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3Ecpu%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='customDmaLib' anchor='custom.Dma.Lib' altext='ti.sdo.fc.dman3.DMAN3.customDmaLib' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Set+this+to+TRUE+if+a+custom+library+is+being+used+to+perform+DMA++%0A++transfers.+In+this+case%2C+qdma+channels+will+have+to+be+partitioned+%0A++into+scratch+groups+using+the+numQdmaGroup+configuration'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcustomDmaLib%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EcustomDmaLib%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='debug' anchor='debug' altext='ti.sdo.fc.dman3.DMAN3.debug' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+the+debug+profile+of+the+DMAN3+library'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edebug%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3Edebug%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+will+likely+result+in+a+larger+and+slower+library+being+linked+in.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='heapExternal' anchor='heap.External' altext='ti.sdo.fc.dman3.DMAN3.heapExternal' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Heap+ID+for+dyn+allocation+of+private+DMAN3+data+structures'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EheapExternal%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522DMAN3_heapExternal_undefined%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EheapExternal%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522DMAN3_heapExternal_undefined%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+unused+when+DMAN3+is+used+in+a+Linux+environment.'/>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_HEAP_EXTERNAL%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='heapInternal' anchor='heap.Internal' altext='ti.sdo.fc.dman3.DMAN3.heapInternal' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Heap+ID+for+dynamic+allocation+of+DMAN3+objects'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EheapInternal%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522DMAN3_heapInternal_undefined%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EheapInternal%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522DMAN3_heapInternal_undefined%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+must+be+allocated+in+L1D+Internal+RAM.'/>
+                    <docPara content='This+parameter+is+unused+when+DMAN3+is+used+in+a+Linux+environment.'/>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_HEAP_INTERNAL%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='idma3Internal' anchor='idma3.Internal' altext='ti.sdo.fc.dman3.DMAN3.idma3Internal' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Use+the+internal+memory+heap+for+dynamic+allocation+of+IDMA3+objects'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eidma3Internal%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3Eidma3Internal%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Etrue%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='A+value+of+%3Ctt%3Efalse%3C%2Ftt%3E+means+that+IDMA3+objects+will+be+allocated%0A++in+the+heap+specified+by+%3Ca+class%3D%22xdoc-link%22+href%3D%22DMAN3.html%23heap.External%22+title%3D%22heapExternal%22%3EheapExternal%3C%2Fa%3E.+If+the%0A++value+is+%3Ctt%3Etrue%3C%2Ftt%3E%2C+IDMA3+objects+will+be%0A++allocated+in+the+heap+specified+by+%3Ca+class%3D%22xdoc-link%22+href%3D%22DMAN3.html%23heap.Internal%22+title%3D%22heapInternal%22%3EheapInternal%3C%2Fa%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='ipcKeyBase' anchor='ipc.Key.Base' altext='ti.sdo.fc.dman3.DMAN3.ipcKeyBase' nodoc='1' external='1' overrides='0' readonly='0' instance='0' summary='Linux+only.+Base+value+of+keys+of+Linux+IPC+objects+used+by%0A++DMAN3.+The+IPC+objects+created+by+DMAN3+will+use+keys+starting+at+this%0A++value%2C+and+incrementing+with+each+new+object.+There+are+currently%0A++three+IPC+objects%2C+so+keys+in+the+range+of+ipcKeyBase+to+ipcKeyBase+%2B+2%0A++will+be+reserved+for+DMAN3.+The+default+value+of+ipcKeyBase+is%0A++ascii+code+for+%22NAMD%22'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EipcKeyBase%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x4e414d44%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EipcKeyBase%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0x4e414d44%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='WARNING%3A+This+value+should+only+be+changed+if+it+conflicts+with%0A++another+IPC+key+in+the+system+that+cannot+be+changed.+If+this+value%0A++is+changed%2C+all+programs+using+DMAN3+that+will+be+run+simultaneously%0A++must+have+the+ipcKeyBase+configured+to+the+new+value.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='maxPaRamEntries' anchor='max.Pa.Ram.Entries' altext='ti.sdo.fc.dman3.DMAN3.maxPaRamEntries' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Total+number+of+PARAM+Table+entries+on+the+target+hardware.%0A++%28eg%2C+for+IVA2%2C+Davinci+this+is+128%2C+for+Himalaya%2C+this+is+256%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmaxPaRamEntries%3C%2Fspan%3E%3C%2Fgo%3E+%3D+128%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EmaxPaRamEntries%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+128%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_MAX_PARAM_ENTRIES%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='maxQdmaChannels' anchor='max.Qdma.Channels' altext='ti.sdo.fc.dman3.DMAN3.maxQdmaChannels' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+total+number+of+Physical+QDMA+channels+available+on+the%0A++target+hardware+%28eg%2C+8+for+DaVinci%2C+4+for+IVA2%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmaxQdmaChannels%3C%2Fspan%3E%3C%2Fgo%3E+%3D+8%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EmaxQdmaChannels%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+8%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_MAX_QDMA_CHANNELS%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='maxTCs' anchor='max.T.Cs' altext='ti.sdo.fc.dman3.DMAN3.maxTCs' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Maximum+number+of+transfer+controllers+on+this+SOC'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmaxTCs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+8%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EmaxTCs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+8%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='nullPaRamIndex' anchor='null.Pa.Ram.Index' altext='ti.sdo.fc.dman3.DMAN3.nullPaRamIndex' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Index+of+PARAM+to+be+reserved+as+a+%22null%22+PaRam.+This+index+will+be%0A++used+to+set+QCHMAP+when+the+corresponding+QDMA+channel+is+not+active.%0A++The+value+of+nullPaRamIndex+should+be+outside+of+the+range+of%0A++PaRam+indices+alloted+to+DMAN3%2C+i.e.%2C+nullPaRamIndex+should+be+less%0A++than+paRamBaseIndex%2C+or+greater+than+paRamBaseIndex+%2B+numPaRamEntries.%0A++If+PaRam+registers+are+shared+between+two+processors+%28eg%2C+an+Arm%0A++and+a+DSP%29%2C+make+sure+the+nullPaRamIndex+is+not+used+by+the+other%0A++processor'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EnullPaRamIndex%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EnullPaRamIndex%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_NULLPARAMINDEX%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='numPaRamEntries' anchor='num.Pa.Ram.Entries' altext='ti.sdo.fc.dman3.DMAN3.numPaRamEntries' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Number+of+PARAM+Table+entries+starting+at+DMAN3_PARAM_BASE_INDEX%0A++assigned+by+configuration+for+exclusive+DMAN3+allocation'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EnumPaRamEntries%3C%2Fspan%3E%3C%2Fgo%3E+%3D+32%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EnumPaRamEntries%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+32%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_NUM_CONTIGUOUS_PARAM_ENTRIES%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='numPaRamGroup' anchor='num.Pa.Ram.Group' altext='ti.sdo.fc.dman3.DMAN3.numPaRamGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Arrays+containing+the+number+of+PaRam+entries+that+will+be+assigned+to%0A+groups+for+sharing'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EnumPaRamGroup%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fti%2Fsdo%2Ffc%2Fdman3%2FDMAN3.html%23.M.A.X.G.R.O.U.P.S%22+title%3D%22ti.sdo.fc.dman3.DMAN3.MAXGROUPS%22%3EDMAN3.MAXGROUPS%3C%2Fa%3E%5D+%3D+%255B'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EnumPaRamGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%5B%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fti%2Fsdo%2Ffc%2Fdman3%2FDMAN3.html%23.M.A.X.G.R.O.U.P.S%22+title%3D%22ti.sdo.fc.dman3.DMAN3.MAXGROUPS%22%3EDMAN3.MAXGROUPS%3C%2Fa%3E%5D%3C%2Fi%3E+%255B'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Channels+created+with+a+given+group+ID+will+use+TCCs+and+PaRams%0A++allocated+for+that+group+ID%2C+and+may+share+them+with+other+channels%0A++created+with+the+same+group+ID.'/>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_NUMPARAM_GROUP%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='numQdmaChannels' anchor='num.Qdma.Channels' altext='ti.sdo.fc.dman3.DMAN3.numQdmaChannels' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='The+number+of+Physical+QDMA+channels+that+are+assigned+to%0A++DMAN3+via+configuration.+These+channels+will+be+granted+either+%0A++as+scratch+or+persistently+as+part+of+IDMA3+handles'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EnumQdmaChannels%3C%2Fspan%3E%3C%2Fgo%3E+%3D+4%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EnumQdmaChannels%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+4%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_NUM_QDMA_CHANNELS%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='numQdmaGroup' anchor='num.Qdma.Group' altext='ti.sdo.fc.dman3.DMAN3.numQdmaGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Arrays+containing+the+number+of+Qdma+channels+that+will+be+assigned+to+%0A++groups+for+sharing'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EnumQdmaGroup%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fti%2Fsdo%2Ffc%2Fdman3%2FDMAN3.html%23.M.A.X.G.R.O.U.P.S%22+title%3D%22ti.sdo.fc.dman3.DMAN3.MAXGROUPS%22%3EDMAN3.MAXGROUPS%3C%2Fa%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EnumQdmaGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%5B%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fti%2Fsdo%2Ffc%2Fdman3%2FDMAN3.html%23.M.A.X.G.R.O.U.P.S%22+title%3D%22ti.sdo.fc.dman3.DMAN3.MAXGROUPS%22%3EDMAN3.MAXGROUPS%3C%2Fa%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+configuration+is+required+ONLY+if+the+application+uses+atleast+one+%0A++custom+%28non-ACPY3%29+DMA+library+that+will+request+QDMA+channels+from%0A++DMAN3.++In+this+case%2C+the+configuration+param+%22customDmaLib%22+should+be+%0A++set+to+true.'/>
+                    <docPara content='Channels+created+with+a+given+group+ID+will+use+TCCs+and+PaRams+%0A++allocated+for+that+grup+ID%2C+and+may+share+them+with+other+channels++%0A++created+with+the+same+group+ID.+Qdma+channels+may+be+shared+across%0A++algorithms+and+scratch+groups+if+all+algorithms+use+the+same+ACPY3%0A++library.+But+if+even+one+algorithm+uses+a+custom+DMA+library%2C+Qdma%0A++channels+should+be+distribued+among+scratch+groups+like+other+EDMA3%0A++resources.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='numTccGroup' anchor='num.Tcc.Group' altext='ti.sdo.fc.dman3.DMAN3.numTccGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Arrays+containing+the+number+of+TCC+that+will+be+assigned+to+groups+for%0A++sharing'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EnumTccGroup%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fti%2Fsdo%2Ffc%2Fdman3%2FDMAN3.html%23.M.A.X.G.R.O.U.P.S%22+title%3D%22ti.sdo.fc.dman3.DMAN3.MAXGROUPS%22%3EDMAN3.MAXGROUPS%3C%2Fa%3E%5D+%3D+%255B'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EnumTccGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EInt%3C%2Fspan%3E%5B%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fti%2Fsdo%2Ffc%2Fdman3%2FDMAN3.html%23.M.A.X.G.R.O.U.P.S%22+title%3D%22ti.sdo.fc.dman3.DMAN3.MAXGROUPS%22%3EDMAN3.MAXGROUPS%3C%2Fa%3E%5D%3C%2Fi%3E+%255B'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Channels+created+with+a+given+group+ID+will+use+TCCs+and+PaRams%0A++allocated+for+that+group+ID%2C+and+may+share+them+with+other+channels%0A++created+with+the+same+group+ID.'/>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_NUMTCC_GROUP%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='paRamBaseIndex' anchor='pa.Ram.Base.Index' altext='ti.sdo.fc.dman3.DMAN3.paRamBaseIndex' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='%280+%26gt%3B+value+%26gt%3B+255%29+represents+the+first+PARAM+TABLE+ENTRY%0A++NUMBER+that+is+assigned+by+configuration+for+exclusive+DMAN3+allocation'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpaRamBaseIndex%3C%2Fspan%3E%3C%2Fgo%3E+%3D+96%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EpaRamBaseIndex%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+96%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Typically%2C+addresses+%28PaRam+sets%29+between+0+and+63+are+reserved+for+use%0A++by+drivers+that+need+EDMA%2Fchaining+capabilities.'/>
+                    <docPara content='Additionally%2C+on+some+multi-core+devices+%28e.g.+DM644x%29%2C+PaRams+are%0A++shared+between+the+different+cores+%28e.g.+ARM+and+C64%2B%29.++In+these%0A++cases%2C+an+executable+will+be+configured+for+each+core%2C+and+each%0A++executable+should+configure+only+the+DMAN3+resources+which+will+be+used%0A++on+that+core.++E.g.%2C+on+DM644x%2C+the+C64%2B+executable+should%0A++be+configured+to+avoid+using+what+the+ARM+uses.++Note+that+on%0A++OMAP2430%2C+the+ARM+doesn%27t+have+access+to+EDMA+so+all+PaRam+sets%0A++are+available+for+the+C64%2B+device.'/>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_PARAM_BASE_INDEX%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='qdmaChannels' anchor='qdma.Channels' altext='ti.sdo.fc.dman3.DMAN3.qdmaChannels' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Array+containing+list+of+physical+QDMA+channels+assigned+to+DMAN3'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EqdmaChannels%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%3D+%255B'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='2%252C'/>
+                    <line tab='1' content='3'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EqdmaChannels%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='2%252C'/>
+                    <line tab='1' content='3'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+array+is+of+size+%3Ctt%3EDMAN3_NUM_QDMA_CHANNELS%3C%2Ftt%3E%0A++%28configured+by+%3Ca+class%3D%22xdoc-link%22+href%3D%22DMAN3.html%23num.Qdma.Channels%22+title%3D%22numQdmaChannels%22%3EnumQdmaChannels%3C%2Fa%3E%29.'/>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_QDMA_CHANNELS%5B%5D%3C%2Ftt%3E.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2FnumQdmaChannels%2Fpackage.html%22+title%3D%22numQdmaChannels%22%3EnumQdmaChannels%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='qdmaPaRamBase' anchor='qdma.Pa.Ram.Base' altext='ti.sdo.fc.dman3.DMAN3.qdmaPaRamBase' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Physical+base+address+of+the+PARAM0+in+the+EDMA3%2FQDMA%0A++hardware+whose+resources+are+being+managed+by+DMAN3'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EPtr%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EqdmaPaRamBase%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x01C04000%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EqdmaPaRamBase%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EPtr%3C%2Fspan%3E%3C%2Fi%3E+0x01C04000%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_QDMA_PARAM_BASE%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='qdmaQueueMap' anchor='qdma.Queue.Map' altext='ti.sdo.fc.dman3.DMAN3.qdmaQueueMap' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Array+contaning+the+mapping+from+QDMA+Channels+to+Event+Queues'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EqdmaQueueMap%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%3D+%255B'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EqdmaQueueMap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='1'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Indicates+mapping+of+all+%22qdmaChannels%22+defined+above+to%0A++particular+Event+Queue.++For+example%2C+%3Ctt%3EchannelQueueMap%5B0%5D%3C%2Ftt%3E%0A++specifies+queue+number+for+%3Ctt%3EqdmaChannel%5B0%5D%3C%2Ftt%3E%2C+etc.'/>
+                    <docPara content='Defaults+map+all+qdmaChannels+to+Queue%23+1'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='queuePri' anchor='queue.Pri' altext='ti.sdo.fc.dman3.DMAN3.queuePri' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Array+contaning+priorities+of+the+event+queues'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EqueuePri%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%3D+%255B'/>
+                    <line tab='1' content='3%252C'/>
+                    <line tab='1' content='7%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EqueuePri%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B'/>
+                    <line tab='1' content='3%252C'/>
+                    <line tab='1' content='7%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='0'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Indicates+the+priority+accorded+to+each+physical+event+queue.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='queueTCMap' anchor='queue.T.C.Map' altext='ti.sdo.fc.dman3.DMAN3.queueTCMap' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Array+contaning+the+mapping+from+Event+Queues+to+Transfer+Controllers'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EqueueTCMap%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%3D+%255B'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='2%252C'/>
+                    <line tab='1' content='3%252C'/>
+                    <line tab='1' content='4%252C'/>
+                    <line tab='1' content='5%252C'/>
+                    <line tab='1' content='6%252C'/>
+                    <line tab='1' content='7'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EqueueTCMap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B'/>
+                    <line tab='1' content='0%252C'/>
+                    <line tab='1' content='1%252C'/>
+                    <line tab='1' content='2%252C'/>
+                    <line tab='1' content='3%252C'/>
+                    <line tab='1' content='4%252C'/>
+                    <line tab='1' content='5%252C'/>
+                    <line tab='1' content='6%252C'/>
+                    <line tab='1' content='7'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Indicates+mapping+of+individual+hardware+Event+Queues+to+the+Transfer%0A+Controllers.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='scratchAllocFxn' anchor='scratch.Alloc.Fxn' altext='ti.sdo.fc.dman3.DMAN3.scratchAllocFxn' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Function+for+allocating+IDMA3+channel+object%27s+%22env%22+in+scratch%0A++memory'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EscratchAllocFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EscratchAllocFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='scratchFreeFxn' anchor='scratch.Free.Fxn' altext='ti.sdo.fc.dman3.DMAN3.scratchFreeFxn' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Function+for+freeing+IDMA3+channel+object%27s+%22env%22+that+was+allocated%0A++in+scratch+memory'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EscratchFreeFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EscratchFreeFxn%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='tccAllocationMaskH' anchor='tcc.Allocation.Mask.H' altext='ti.sdo.fc.dman3.DMAN3.tccAllocationMaskH' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='32-bit+bitmask+representing+configuration+provided+list+of+TCCs%0A++for+exclusive+DMAN3+allocation'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EtccAllocationMaskH%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0xffffffff%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EtccAllocationMaskH%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0xffffffff%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='For+example%2C+for+TCC%27s+in+the+range+0-31+the+Low+Mask%0A++%28tccAllocationMaskL%29+is+configured+so+that+a+%271%27+in+bit+position+%27i%27%0A++indicates+the+TCC+%27i%27+is+assigned+to+DMAN3.'/>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_TCC_FREEMASK_H%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='tccAllocationMaskL' anchor='tcc.Allocation.Mask.L' altext='ti.sdo.fc.dman3.DMAN3.tccAllocationMaskL' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='32-bit+bitmask+representing+configuration+provided+list+of+TCCs%0A++for+exclusive+DMAN3+allocation'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EtccAllocationMaskL%3C%2Fspan%3E%3C%2Fgo%3E+%3D+0x00000000%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EtccAllocationMaskL%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E+0x00000000%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='For+example%2C+for+TCC%27s+in+the+range+0-31+the+Low+Mask%0A++%28tccAllocationMaskL%29+is+configured+so+that+a+%271%27+in+bit+position+%27i%27%0A++indicates+the+TCC+%27i%27+is+assigned+to+DMAN3.'/>
+                    <docPara content='This+parameter+is+set+to+%3Ctt%3EDMAN3_TCC_FREEMASK_L%3C%2Ftt%3E.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='trace' anchor='trace' altext='ti.sdo.fc.dman3.DMAN3.trace' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Enable+trace+support'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Etrace%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3Etrace%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='useExternalRM' anchor='use.External.R.M' altext='ti.sdo.fc.dman3.DMAN3.useExternalRM' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Boolean+flag+indicating+if+the+EDMA3+Low+Level+%0A++Resource+Manager+should+be+used+to+manage+EDMA3%0A++resources.+If+this+flag+is+set+to+true%2C+the+SOC+%0A++specific+settings+are+not+required+to+be+set+in+%0A++this+module.+The+ti.sdo.fc.edma3.Settings+module%0A++should+be+set+up+correctly'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EuseExternalRM%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EDMAN3.%3Cspan+class%3D%22xdoc-id%22%3EuseExternalRM%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+    </unit>
+    <docSect name='details'>
+        <docPara content='This+package+provides+a+DMA+Manager+for+EDMA3-based+devices.'/>
+    </docSect>
+</package>

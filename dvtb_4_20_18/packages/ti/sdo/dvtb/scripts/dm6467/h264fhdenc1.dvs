@@ -1,0 +1,90 @@
+############################################################
+# Read YUV and encode with H264fhd encoder
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the encoder to be used
+setp h264fhdenc1 codec h264fhdvenc
+
+# specify the parameters
+setp h264fhdenc1 encodingPreset 0
+setp h264fhdenc1 rateControlPreset 2
+setp h264fhdenc1 maxHeight 1088
+setp h264fhdenc1 maxWidth 1920
+setp h264fhdenc1 maxFrameRate 30000
+setp h264fhdenc1 maxBitRate 10000000
+setp h264fhdenc1 dataEndianness 3
+setp h264fhdenc1 maxInterFrameInterval 0
+setp h264fhdenc1 inputChromaFormat 9
+setp h264fhdenc1 inputContentType 0
+setp h264fhdenc1 reconChromaFormat -1
+setp h264fhdenc1 profileIdc 66 
+setp h264fhdenc1 levelIdc 40
+setp h264fhdenc1 EntropyCodingMode 0
+setp h264fhdenc1 inputHeight 1088
+setp h264fhdenc1 inputWidth 1920
+setp h264fhdenc1 refFrameRate 30000
+setp h264fhdenc1 targetFrameRate 30000
+setp h264fhdenc1 targetBitRate 10000000
+setp h264fhdenc1 intraFrameInterval 30
+setp h264fhdenc1 generateHeader 0
+setp h264fhdenc1 captureWidth 0
+setp h264fhdenc1 forceFrame -1
+setp h264fhdenc1 interFrameInterval 0
+setp h264fhdenc1 mbDataFlag 0
+setp h264fhdenc1 sliceCodingPreset 0  
+setp h264fhdenc1 sliceMode  0
+setp h264fhdenc1 sliceUnitSize  0
+setp h264fhdenc1 sliceStartOffset[0]  0
+setp h264fhdenc1 sliceStartOffset[1]  0
+setp h264fhdenc1 sliceStartOffset[2]  0
+setp h264fhdenc1 sliceStartOffset[3]  0
+setp h264fhdenc1 streamFormat  0
+setp h264fhdenc1 OutBufSize -1 
+setp h264fhdenc1 QPISlice 28
+setp h264fhdenc1 QPSlice 28
+setp h264fhdenc1 RateCtrlQpMax 51
+setp h264fhdenc1 RateCtrlQpMin 0
+setp h264fhdenc1 NumRowsInSlice 0
+setp h264fhdenc1 LfDisableIdc 0 
+setp h264fhdenc1 LFAlphaC0Offset 0
+setp h264fhdenc1 LFBetaOffset 0
+setp h264fhdenc1 ChromaQPOffset 0
+setp h264fhdenc1 SecChromaQPOffset 0
+setp h264fhdenc1 PicAFFFlag 0
+setp h264fhdenc1 PicOrderCountType 0
+setp h264fhdenc1 AdaptiveMBs 0
+setp h264fhdenc1 SEIParametersFlag 0
+setp h264fhdenc1 VUIParametersFlag 0
+setp h264fhdenc1 SkipStartCodesInCallback 1
+setp h264fhdenc1 Intra4x4EnableFlag 0
+setp h264fhdenc1 BlockingCallFlag 0
+setp h264fhdenc1 MESelect 1
+setp h264fhdenc1 ME1080iMode 0
+setp h264fhdenc1 MVDataFlag 0
+setp h264fhdenc1 Transform8x8DisableFlag 1
+setp h264fhdenc1 Intra8x8EnableFlag 0
+setp h264fhdenc1 InterlaceReferenceMode 0
+setp h264fhdenc1 ChromaConversionMode 0
+setp h264fhdenc1 maxDelay 1000
+setp h264fhdenc1 MaxSlicesSupported 90
+setp h264fhdenc1 framePitch 1920
+setp h264fhdenc1 numFrames 30
+
+
+#specify vpfe parameters
+#setp vpfe device /dev/video0
+#setp vpfe standard 4
+#setp vpfe format 7 
+#setp vpfe width 1280
+#setp vpfe height 720
+
+# Start the capture+encode operation
+func h264fhdenc1 -s input_1920x1088_yuv420.yuv -t h264fhdext-encode.264
+

@@ -1,0 +1,13 @@
+Package: libform5
+Version: 5.7+20110115-r16.6
+Description: ncurses form library
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: armv5te
+OE: ncurses
+Homepage: http://www.gnu.org/software/ncurses/ncurses.html
+Build: install/afa4844
+Depends: libc6, libncurses5, libtinfo5, libgcc1
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.7.tar.gz;name=tarball ftp://invisible-island.net/ncurses/5.7/ncurses-5.7-20110108-patch.sh.bz2;apply=yes;name=p20110108sh ftp://invisible-island.net/ncurses/5.7/ncurses-5.7-20110115.patch.gz;name=p20110115 file://tic-hang.patch file://config.cache

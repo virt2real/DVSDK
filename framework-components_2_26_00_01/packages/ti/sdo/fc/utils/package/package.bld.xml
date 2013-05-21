@@ -1,0 +1,1248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.utils" version="1, 0, 2" producerId="framework_components_2_26_00_01">
+    <units>
+        <module name="SHM"/>
+        <module name="RMM"/>
+        <module name="SMGR"/>
+        <module name="RMMP"/>
+        <module name="SMGRMP"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="smgr.c"/>
+        <srcFile name="smgrmp.c"/>
+        <srcFile name="sharedMem.c"/>
+        <srcFile name="rmmp.c"/>
+        <srcFile name="rmm.c"/>
+        <srcFile name="bios_rts.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/shm.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/shm/sharedMem.o86U.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/debug/shm/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/rmmp.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmmp.o470MV.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/smgrmp.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/smgr.o470MV.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/smgrmp.o470MV.dep" src="smgrmp.c"/>
+        <srcFile name="lib/debug_trace/smgr.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/smgr.o64P.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/rmm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmm/rmm.ov5T.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/smgr.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/smgr.o9t.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="lib/release/smgrmp.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgrmp/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/smgr.ov5T.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/smgrmp.ov5T.dep" src="smgrmp.c"/>
+        <srcFile name="lib/debug_trace/rmmp.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmmp.o470uC.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/smgrmp.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/smgr.o470MV.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/smgrmp.o470MV.dep" src="smgrmp.c"/>
+        <srcFile name="lib/trace/rmmp.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmmp.o674.dep" src="rmmp.c"/>
+        <srcFile name="lib/trace/rmm.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmm/rmm.o9t.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/rmmp.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmmp.o9t.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmm.o9t.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/smgr.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgr/smgr.ov5T.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="lib/release/rmm.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmm/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmm/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/smgr.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgr/smgr.o9t.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgr/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/smgr/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/smgrmp.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/smgr.ov5T.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/smgrmp.ov5T.dep" src="smgrmp.c"/>
+        <srcFile name="lib/trace/rmm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmm/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/smgrmp.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/smgr.o470uC.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/smgrmp.o470uC.dep" src="smgrmp.c"/>
+        <srcFile name="lib/debug_trace/shm.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/shm/sharedMem.o86U.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/shm/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/rmmp.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmmp.o86U.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/rmm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmm/rmm.ov5T.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/shm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/shm/sharedMem.o470uC.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/debug/shm/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/rmm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmm/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmm/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/rmm/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/rmm.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug_trace/rmmp.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmmp.ov5T.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmm.ov5T.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug_trace/smgr.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/smgr.o470MV.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="lib/trace/rmm.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmm/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/rmmp.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmmp.o64P.dep" src="rmmp.c"/>
+        <srcFile name="lib/release/shm.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/shm/sharedMem.o86U.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/release/shm/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug_trace/smgr.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/smgr.ov5T.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="lib/release/rmmp.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmmp.o9t.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmm.o9t.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/smgr.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgr/smgr.o674.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/smgrmp.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgrmp/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/smgr.o9t.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/smgrmp.o9t.dep" src="smgrmp.c"/>
+        <srcFile name="lib/trace/rmm.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmm/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/smgr.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgr/smgr.o64P.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/rmmp.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmmp.o470uC.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug_trace/shm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/shm/sharedMem.o470MV.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/shm/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/smgrmp.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgrmp/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/smgr.o86U.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/smgrmp.o86U.dep" src="smgrmp.c"/>
+        <srcFile name="lib/debug/rmm.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmm/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug_trace/rmmp.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmmp.o9t.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmm.o9t.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/rmmp.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmmp.o64P.dep" src="rmmp.c"/>
+        <srcFile name="lib/release/rmm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmm/rmm.ov5T.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmm/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/rmm/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/rmmp.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmmp.o674.dep" src="rmmp.c"/>
+        <srcFile name="lib/trace/smgr.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgr/smgr.o86U.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="lib/trace/smgrmp.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/smgr.ov5T.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/smgrmp.ov5T.dep" src="smgrmp.c"/>
+        <srcFile name="lib/debug_trace/smgrmp.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/smgr.o86U.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/smgrmp.o86U.dep" src="smgrmp.c"/>
+        <srcFile name="lib/debug/rmm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmm/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="lib/trace/smgrmp.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/smgr.o9t.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/smgrmp.o9t.dep" src="smgrmp.c"/>
+        <srcFile name="lib/debug/rmm.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmm/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/rmm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/rmm.ov5T.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="lib/release/smgrmp.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgrmp/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/smgr.o470MV.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/smgrmp.o470MV.dep" src="smgrmp.c"/>
+        <srcFile name="lib/release/smgr.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgr/smgr.o64P.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgr/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/smgr.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgr/smgr.o470MV.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/smgr.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/smgr.o674.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug_trace/rmmp.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmmp.o86U.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/rmmp.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmmp.ov5T.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmm.ov5T.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/smgr.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgr/smgr.o470uC.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgr/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/smgr/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/rmmp.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmmp.o470uC.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/smgrmp.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/smgr.o470uC.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/smgrmp.o470uC.dep" src="smgrmp.c"/>
+        <srcFile name="lib/debug_trace/smgr.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/smgr.o86U.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="lib/release/rmm.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmm/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmm/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/smgr.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgr/smgr.ov5T.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="lib/trace/smgrmp.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/smgr.o470uC.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/smgrmp.o470uC.dep" src="smgrmp.c"/>
+        <srcFile name="lib/debug_trace/rmm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/smgrmp.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/smgr.ov5T.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/smgrmp.ov5T.dep" src="smgrmp.c"/>
+        <srcFile name="lib/release/rmmp.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmmp.ov5T.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmm.ov5T.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug_trace/rmm.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/shm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/shm/sharedMem.o470MV.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/trace/shm/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/rmm.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmm/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmm/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/rmm/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/rmmp.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmmp.o674.dep" src="rmmp.c"/>
+        <srcFile name="lib/debug/smgr.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgr/smgr.o470MV.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="lib/release/shm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/shm/sharedMem.o470MV.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/release/shm/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/smgrmp.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/smgr.o86U.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgrmp/smgrmp.o86U.dep" src="smgrmp.c"/>
+        <srcFile name="lib/debug_trace/smgr.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/smgr.o470uC.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgr/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/smgrmp.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/smgr.o9t.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/smgrmp.o9t.dep" src="smgrmp.c"/>
+        <srcFile name="lib/release/smgr.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgr/smgr.ov5T.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgr/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/smgr/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/rmm.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="lib/trace/shm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/shm/sharedMem.ov5T.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/trace/shm/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/smgr.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgr/smgr.o674.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/rmmp.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmmp.o86U.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmmp/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/rmmp.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmmp.o470MV.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/rmmp.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmm.o674.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmmp.o674.dep" src="rmmp.c"/>
+        <srcFile name="lib/debug_trace/rmmp.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmmp.o470MV.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug_trace/shm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/shm/sharedMem.o470uC.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/shm/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/smgr.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgr/smgr.o86U.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/smgrmp.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/smgr.o86U.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgrmp/smgrmp.o86U.dep" src="smgrmp.c"/>
+        <srcFile name="lib/release/smgr.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgr/smgr.o674.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgr/package/package_ti.sdo.fc.utils.o674.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/rmmp.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmmp.o86U.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmm.o86U.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/rmmp.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmmp.o64P.dep" src="rmmp.c"/>
+        <srcFile name="lib/trace/rmm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmm/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/smgrmp.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/smgr.o470MV.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/smgrmp.o470MV.dep" src="smgrmp.c"/>
+        <srcFile name="lib/trace/smgr.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgr/smgr.o9t.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/shm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/shm/sharedMem.o470MV.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/debug/shm/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/rmm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmm/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmm/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/rmm/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="lib/release/smgrmp.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgrmp/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/smgr.o470uC.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgrmp/smgrmp.o470uC.dep" src="smgrmp.c"/>
+        <srcFile name="lib/trace/smgr.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgr/smgr.o470uC.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="lib/release/smgr.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgr/smgr.o86U.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgr/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/smgr/bios_rts.o86U.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/shm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/shm/sharedMem.ov5T.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/debug/shm/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/shm.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/shm/sharedMem.o86U.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/trace/shm/package/package_ti.sdo.fc.utils.o86U.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/rmm.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmm/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmm/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug_trace/rmm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="lib/trace/rmmp.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmmp.o470MV.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/smgr.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/smgr/smgr.o64P.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/trace/smgr/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug_trace/shm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/shm/sharedMem.ov5T.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/debug_trace/shm/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/rmmp.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmmp.ov5T.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/bios_rts.ov5T.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmm.ov5T.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/trace/shm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/shm/sharedMem.o470uC.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/trace/shm/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/rmm.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmm/rmm.o9t.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/smgr.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgr/smgr.o470uC.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="lib/release/shm.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/shm/sharedMem.o470uC.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/release/shm/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/rmm.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmm/rmm.o470MV.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug/rmm.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/rmm/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug/rmm/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/debug/smgr.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/smgr/smgr.o9t.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug/smgr/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/rmm.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/rmm.o9t.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmm/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/rmmp.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmm.o64P.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/package/package_ti.sdo.fc.utils.o64P.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/rmmp/rmmp.o64P.dep" src="rmmp.c"/>
+        <srcFile name="lib/trace/rmmp.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmmp.o9t.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/rmm.o9t.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/trace/rmmp/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/shm.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/shm/sharedMem.ov5T.dep" src="sharedMem.c"/>
+        <srcFile name="package/lib/lib/release/shm/package/package_ti.sdo.fc.utils.ov5T.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="lib/release/rmm.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmm/rmm.o9t.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmm/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/rmm/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="lib/debug_trace/smgrmp.a9t.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/bios_rts.o9t.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/package/package_ti.sdo.fc.utils.o9t.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/smgr.o9t.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/debug_trace/smgrmp/smgrmp.o9t.dep" src="smgrmp.c"/>
+        <srcFile name="lib/release/smgr.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/smgr/smgr.o470MV.dep" src="smgr.c"/>
+        <srcFile name="package/lib/lib/release/smgr/package/package_ti.sdo.fc.utils.o470MV.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/lib/lib/release/smgr/bios_rts.o470MV.dep" src="bios_rts.c"/>
+        <srcFile name="lib/release/rmmp.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmmp.o470uC.dep" src="rmmp.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/bios_rts.o470uC.dep" src="bios_rts.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/rmm.o470uC.dep" src="rmm.c"/>
+        <srcFile name="package/lib/lib/release/rmmp/package/package_ti.sdo.fc.utils.o470uC.dep" src="package/package_ti.sdo.fc.utils.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_utils.tar.dep" src="package/rel/ti_sdo_fc_utils.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.Arm9t"
+            version="ti.targets.arm.Arm9t{1,0,4.5,0"
+            platform="ti.platforms.evmDM355"
+            isa="v5T"
+            suffix="9t"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/arm/4.5.0/Linux/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,4.2,0"
+            platform="ti.platforms.evm3530"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,0"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/shm"
+        pname="lib/debug/shm.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/rmmp"
+        pname="lib/debug/rmmp.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/smgrmp"
+        pname="lib/debug/smgrmp.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/smgr"
+        pname="lib/debug_trace/smgr.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/rmm"
+        pname="lib/trace/rmm.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/smgr"
+        pname="lib/debug_trace/smgr.a9t"
+        profile="debug_trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/smgrmp"
+        pname="lib/release/smgrmp.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/rmmp"
+        pname="lib/debug_trace/rmmp.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/smgrmp"
+        pname="lib/trace/smgrmp.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/rmmp"
+        pname="lib/trace/rmmp.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/rmm"
+        pname="lib/trace/rmm.a9t"
+        profile="trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug/rmmp"
+        pname="lib/debug/rmmp.a9t"
+        profile="debug"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/trace/smgr"
+        pname="lib/trace/smgr.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/rmm"
+        pname="lib/release/rmm.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/smgr"
+        pname="lib/release/smgr.a9t"
+        profile="release"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug_trace/smgrmp"
+        pname="lib/debug_trace/smgrmp.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/rmm"
+        pname="lib/trace/rmm.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/smgrmp"
+        pname="lib/debug_trace/smgrmp.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/shm"
+        pname="lib/debug_trace/shm.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/rmmp"
+        pname="lib/trace/rmmp.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/rmm"
+        pname="lib/debug/rmm.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/shm"
+        pname="lib/debug/shm.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/rmm"
+        pname="lib/release/rmm.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/rmm"
+        pname="lib/debug_trace/rmm.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/rmmp"
+        pname="lib/debug_trace/rmmp.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/smgr"
+        pname="lib/debug_trace/smgr.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/rmm"
+        pname="lib/trace/rmm.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/rmmp"
+        pname="lib/debug/rmmp.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/shm"
+        pname="lib/release/shm.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug_trace/smgr"
+        pname="lib/debug_trace/smgr.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/rmmp"
+        pname="lib/release/rmmp.a9t"
+        profile="release"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/trace/smgr"
+        pname="lib/trace/smgr.a674"
+        profile="trace"
+        target="ti.targets.C674"/>
+    <library name="lib/release/smgrmp"
+        pname="lib/release/smgrmp.a9t"
+        profile="release"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/trace/rmm"
+        pname="lib/trace/rmm.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/smgr"
+        pname="lib/debug/smgr.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/rmmp"
+        pname="lib/trace/rmmp.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/shm"
+        pname="lib/debug_trace/shm.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/smgrmp"
+        pname="lib/release/smgrmp.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/rmm"
+        pname="lib/debug/rmm.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/rmmp"
+        pname="lib/debug_trace/rmmp.a9t"
+        profile="debug_trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/rmmp"
+        pname="lib/release/rmmp.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/rmm"
+        pname="lib/release/rmm.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/rmmp"
+        pname="lib/debug_trace/rmmp.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/smgr"
+        pname="lib/trace/smgr.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/smgrmp"
+        pname="lib/trace/smgrmp.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/smgrmp"
+        pname="lib/debug_trace/smgrmp.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/rmm"
+        pname="lib/debug/rmm.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/smgrmp"
+        pname="lib/trace/smgrmp.a9t"
+        profile="trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug/rmm"
+        pname="lib/debug/rmm.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug_trace/rmm"
+        pname="lib/debug_trace/rmm.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/smgrmp"
+        pname="lib/release/smgrmp.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/smgr"
+        pname="lib/release/smgr.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/smgr"
+        pname="lib/trace/smgr.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/smgr"
+        pname="lib/debug_trace/smgr.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/rmmp"
+        pname="lib/debug_trace/rmmp.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/rmmp"
+        pname="lib/debug/rmmp.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/smgr"
+        pname="lib/release/smgr.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/rmmp"
+        pname="lib/debug/rmmp.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/smgrmp"
+        pname="lib/debug/smgrmp.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/smgr"
+        pname="lib/debug_trace/smgr.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/rmm"
+        pname="lib/release/rmm.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/smgr"
+        pname="lib/debug/smgr.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/smgrmp"
+        pname="lib/trace/smgrmp.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug_trace/rmm"
+        pname="lib/debug_trace/rmm.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/smgrmp"
+        pname="lib/debug/smgrmp.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/rmmp"
+        pname="lib/release/rmmp.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/rmm"
+        pname="lib/debug_trace/rmm.a674"
+        profile="debug_trace"
+        target="ti.targets.C674"/>
+    <library name="lib/trace/shm"
+        pname="lib/trace/shm.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/rmm"
+        pname="lib/release/rmm.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/rmmp"
+        pname="lib/debug/rmmp.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/smgr"
+        pname="lib/debug/smgr.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/shm"
+        pname="lib/release/shm.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/smgrmp"
+        pname="lib/trace/smgrmp.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug_trace/smgr"
+        pname="lib/debug_trace/smgr.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/smgrmp"
+        pname="lib/debug/smgrmp.a9t"
+        profile="debug"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/smgr"
+        pname="lib/release/smgr.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug_trace/rmm"
+        pname="lib/debug_trace/rmm.a86U"
+        profile="debug_trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/shm"
+        pname="lib/trace/shm.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/smgr"
+        pname="lib/debug/smgr.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/rmmp"
+        pname="lib/debug/rmmp.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/rmmp"
+        pname="lib/release/rmmp.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/rmmp"
+        pname="lib/release/rmmp.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug_trace/rmmp"
+        pname="lib/debug_trace/rmmp.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/shm"
+        pname="lib/debug_trace/shm.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/smgr"
+        pname="lib/debug/smgr.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/smgrmp"
+        pname="lib/debug/smgrmp.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/smgr"
+        pname="lib/release/smgr.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/release/rmmp"
+        pname="lib/release/rmmp.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/rmmp"
+        pname="lib/trace/rmmp.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/rmm"
+        pname="lib/trace/rmm.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug_trace/smgrmp"
+        pname="lib/debug_trace/smgrmp.a470MV"
+        profile="debug_trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/smgr"
+        pname="lib/trace/smgr.a9t"
+        profile="trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug/shm"
+        pname="lib/debug/shm.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/rmm"
+        pname="lib/release/rmm.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/smgrmp"
+        pname="lib/release/smgrmp.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/smgr"
+        pname="lib/trace/smgr.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/smgr"
+        pname="lib/release/smgr.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/shm"
+        pname="lib/debug/shm.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/shm"
+        pname="lib/trace/shm.a86U"
+        profile="trace"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/trace/rmm"
+        pname="lib/trace/rmm.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/rmm"
+        pname="lib/debug_trace/rmm.a470uC"
+        profile="debug_trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/trace/rmmp"
+        pname="lib/trace/rmmp.a470MV"
+        profile="trace"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/trace/smgr"
+        pname="lib/trace/smgr.a64P"
+        profile="trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug_trace/shm"
+        pname="lib/debug_trace/shm.av5T"
+        profile="debug_trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/rmmp"
+        pname="lib/trace/rmmp.av5T"
+        profile="trace"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/trace/shm"
+        pname="lib/trace/shm.a470uC"
+        profile="trace"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/rmm"
+        pname="lib/debug/rmm.a9t"
+        profile="debug"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug/smgr"
+        pname="lib/debug/smgr.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/shm"
+        pname="lib/release/shm.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/rmm"
+        pname="lib/debug/rmm.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/rmm"
+        pname="lib/debug/rmm.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/smgr"
+        pname="lib/debug/smgr.a9t"
+        profile="debug"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug_trace/rmm"
+        pname="lib/debug_trace/rmm.a9t"
+        profile="debug_trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug_trace/rmmp"
+        pname="lib/debug_trace/rmmp.a64P"
+        profile="debug_trace"
+        target="ti.targets.C64P"/>
+    <library name="lib/trace/rmmp"
+        pname="lib/trace/rmmp.a9t"
+        profile="trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/shm"
+        pname="lib/release/shm.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/rmm"
+        pname="lib/release/rmm.a9t"
+        profile="release"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/debug_trace/smgrmp"
+        pname="lib/debug_trace/smgrmp.a9t"
+        profile="debug_trace"
+        target="ti.targets.arm.Arm9t"/>
+    <library name="lib/release/smgr"
+        pname="lib/release/smgr.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/release/rmmp"
+        pname="lib/release/rmmp.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_utils"
+        pname="ti_sdo_fc_utils.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="rmm.c"/>
+        <file name="rmm.h"/>
+        <file name="lib/trace/rmmp.a674"/>
+        <file name="lib/release/shm.a470uC"/>
+        <file name="lib/debug/smgrmp.a9t"/>
+        <file name="lib/trace/rmm.a470MV"/>
+        <file name="lib/trace/smgr.a470uC"/>
+        <file name="lib/trace/rmmp.a86U"/>
+        <file name="lib/release/rmmp.a470uC"/>
+        <file name="package/package_ti.sdo.fc.utils.c"/>
+        <file name="lib/debug_trace/rmm.a64P"/>
+        <file name="lib/debug/shm.a470MV"/>
+        <file name="lib/release/smgr.a470MV"/>
+        <file name="lib/trace/smgr.a674"/>
+        <file name="lib/release/shm.av5T"/>
+        <file name="lib/debug/smgr.a470uC"/>
+        <file name="lib/trace/smgr.a86U"/>
+        <file name="gt_dais.h"/>
+        <file name="lib/debug_trace/rmm.a470uC"/>
+        <file name="lib/release/smgrmp.a86U"/>
+        <file name="lib/debug_trace/rmmp.a9t"/>
+        <file name="lib/debug_trace/rmmp.a470MV"/>
+        <file name="lib/debug_trace/smgr.a64P"/>
+        <file name="lib/debug_trace/rmmp.a64P"/>
+        <file name="lib/release/smgr.av5T"/>
+        <file name="lib/release/smgrmp.a470MV"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/release/rmmp.av5T"/>
+        <file name="lib/trace/rmm.a470uC"/>
+        <file name="lib/debug_trace/rmm.a674"/>
+        <file name="lib/debug_trace/rmm.a86U"/>
+        <file name="lib/debug/shm.a470uC"/>
+        <file name="lib/debug_trace/shm.av5T"/>
+        <file name="lib/release/smgr.a470uC"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/rmm.av5T"/>
+        <file name="lib/debug/smgr.a64P"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/trace/smgrmp.av5T"/>
+        <file name="lib/debug/smgrmp.a470MV"/>
+        <file name="lib/debug/rmmp.a64P"/>
+        <file name="lib/debug_trace/rmmp.a470uC"/>
+        <file name="lib/trace/rmm.a9t"/>
+        <file name="lib/debug_trace/rmm.a9t"/>
+        <file name="lib/debug_trace/smgr.a674"/>
+        <file name="bios_rts.c"/>
+        <file name="lib/debug_trace/smgrmp.a9t"/>
+        <file name="lib/release/rmm.a470MV"/>
+        <file name="bios_rts.h"/>
+        <file name="lib/debug_trace/smgr.a86U"/>
+        <file name="package.bld"/>
+        <file name="lib/debug/smgrmp.av5T"/>
+        <file name="utils.xs"/>
+        <file name="lib/debug_trace/rmmp.a674"/>
+        <file name="lib/debug_trace/smgrmp.a86U"/>
+        <file name="dbc.h"/>
+        <file name="lib/debug_trace/rmmp.a86U"/>
+        <file name="lib/release/smgrmp.a470uC"/>
+        <file name="lib/debug/shm.a86U"/>
+        <file name="dbg.h"/>
+        <file name="lib/debug_trace/smgr.a470MV"/>
+        <file name="lib/debug/smgr.a674"/>
+        <file name="lib/debug_trace/shm.a470MV"/>
+        <file name="lib/trace/rmm.av5T"/>
+        <file name="lib/debug/smgr.a86U"/>
+        <file name="lib/debug/smgr.a9t"/>
+        <file name="lib/debug/rmmp.a674"/>
+        <file name="lib/release/rmm.av5T"/>
+        <file name="lib/trace/shm.a86U"/>
+        <file name="lib/debug/smgrmp.a470uC"/>
+        <file name="lock.h"/>
+        <file name="lib/debug/rmmp.a86U"/>
+        <file name="lib/release/smgr.a64P"/>
+        <file name="lib/release/rmm.a470uC"/>
+        <file name="lib/release/rmm.a9t"/>
+        <file name="lib/trace/smgrmp.a9t"/>
+        <file name="lib/trace/rmmp.av5T"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/debug/rmm.a470MV"/>
+        <file name="lib/release/rmmp.a64P"/>
+        <file name="_rmmScratch.h"/>
+        <file name="_rmm.h"/>
+        <file name="lib/trace/shm.a470MV"/>
+        <file name="lib/trace/smgr.a9t"/>
+        <file name="lib/trace/rmmp.a470MV"/>
+        <file name="lib/trace/smgr.av5T"/>
+        <file name="lib/debug/rmm.a64P"/>
+        <file name="lib/release/smgrmp.av5T"/>
+        <file name="lib/debug_trace/smgr.a470uC"/>
+        <file name="lib/release/shm.a86U"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/debug/rmmp.a470MV"/>
+        <file name="lib/debug_trace/shm.a470uC"/>
+        <file name="lib/debug/rmmp.a9t"/>
+        <file name="lib/release/smgr.a674"/>
+        <file name="lib/release/smgr.a9t"/>
+        <file name="lib/trace/smgrmp.a470MV"/>
+        <file name="lib/release/smgr.a86U"/>
+        <file name="lib/release/rmmp.a674"/>
+        <file name="sharedMem.c"/>
+        <file name="lib/release/smgrmp.a9t"/>
+        <file name="lib/debug_trace/rmm.av5T"/>
+        <file name="lib/debug/rmm.a470uC"/>
+        <file name="sharedMem.h"/>
+        <file name="lib/release/rmmp.a86U"/>
+        <file name="lib/trace/shm.a470uC"/>
+        <file name="rmmp.c"/>
+        <file name="lib/debug/rmm.a674"/>
+        <file name="lib/trace/rmmp.a470uC"/>
+        <file name="rmmp.h"/>
+        <file name="lib/debug_trace/smgrmp.a470MV"/>
+        <file name="lib/trace/rmm.a64P"/>
+        <file name="lib/debug_trace/shm.a86U"/>
+        <file name="lib/debug/rmm.a86U"/>
+        <file name="lib/release/rmm.a64P"/>
+        <file name="lib/debug/rmm.a9t"/>
+        <file name="lib/debug/rmmp.a470uC"/>
+        <file name="smgr.c"/>
+        <file name="lib/trace/smgrmp.a86U"/>
+        <file name="lib/debug_trace/smgr.av5T"/>
+        <file name="smgr.h"/>
+        <file name="lib/trace/rmmp.a9t"/>
+        <file name="smgrmp.c"/>
+        <file name="package/package.bld.xml"/>
+        <file name="smgrmp.h"/>
+        <file name="lib/release/shm.a470MV"/>
+        <file name="lib/debug_trace/smgrmp.av5T"/>
+        <file name="lib/release/rmmp.a9t"/>
+        <file name="lib/trace/rmmp.a64P"/>
+        <file name="lib/debug_trace/rmmp.av5T"/>
+        <file name="lib/debug/smgrmp.a86U"/>
+        <file name="lib/debug_trace/smgr.a9t"/>
+        <file name="lib/trace/smgr.a470MV"/>
+        <file name="lib/release/rmmp.a470MV"/>
+        <file name="lib/debug/shm.av5T"/>
+        <file name="_rmmp.h"/>
+        <file name="lib/trace/smgrmp.a470uC"/>
+        <file name="_smgrmp.h"/>
+        <file name="lib/debug/smgr.a470MV"/>
+        <file name="lib/trace/smgr.a64P"/>
+        <file name="lib/debug_trace/rmm.a470MV"/>
+        <file name="memleakcheck.h"/>
+        <file name="lib/trace/rmm.a674"/>
+        <file name="_smgr.h"/>
+        <file name="lib/debug/smgr.av5T"/>
+        <file name="lib/debug_trace/smgrmp.a470uC"/>
+        <file name="lib/trace/rmm.a86U"/>
+        <file name="lib/trace/shm.av5T"/>
+        <file name="lib/release/rmm.a674"/>
+        <file name="lib/debug/rmmp.av5T"/>
+        <file name="lib/release/rmm.a86U"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

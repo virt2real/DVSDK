@@ -1,0 +1,48 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * The following comment is used by the Graphical Config Tool:
+ * !DESCRIPTION 55XX!  evm5505 with no external RAM/ROM defined.
+ * !NAME! ti.platforms.evm5505
+ */
+
+
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+
+var device_regs = {
+    st3_55: null
+}
+
+var params = {
+    clockRate: 100,
+    catalogName: "ti.catalog.c5500",
+    deviceName: "5505",
+    regs: device_regs
+};
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+/*
+ *  @(#) ti.platforms.evm5505; 1, 0, 0,27; 2-23-2010 16:59:27; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

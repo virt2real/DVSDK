@@ -1,0 +1,235 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ *  ======== package.bld ========
+ *  Build script for RMAN IRES ADDRSPACE protocol example.
+ */
+
+var Build = xdc.useModule('xdc.bld.BuildEnvironment');
+var Pkg = xdc.useModule('xdc.bld.PackageContents');
+
+/* remove this output directory during a clean */
+Pkg.generatedFiles.$add("bin/");
+
+Pkg.attrs.exportAll = true;
+
+Pkg.otherFiles = [
+    "package.bld"
+];
+
+
+// check if platform specified in XDCARGS, 'arguments' is XDCARGS
+// XDCARGS="... platform=ti.platforms.evm3530 ..."
+var cmdPlat = (" " + arguments.join(" ") + " ").match(/ platform=([^ ]+) /);
+cmdPlat = cmdPlat != null ? cmdPlat[1] : null;
+
+// check if profile specified in XDCARGS, 'arguments' is XDCARGS
+// XDCARGS="... profile=debug ..."
+var cmdProf = (" " + arguments.join(" ") + " ").match(/ profile=([^ ]+) /);
+cmdProf = cmdProf != null ? cmdProf[1] : null;
+
+var buildPlatforms = {
+    Linux86: {
+        suffix : "86U",
+        platforms: [
+            "host.platforms.PC",
+            ]
+    },
+
+    GCArmv5T: {
+        suffix : "v5T",
+        platforms: [
+            "ti.platforms.evmDM365",
+            ]
+    },
+
+    WinCE: {
+        suffix : "v4TCE",
+        platforms: [
+            "ti.platforms.evm3530",
+            ]
+    },
+};
+
+
+// list of preferred profiles to build for
+var profileAry = [ "debug_trace", /* "release" */];
+
+// list of programs to build
+var progArray = new Array();
+
+// Build programs common to all targets
+for (var t in buildPlatforms) {
+    print("Adding programs for target " + t);
+
+    progArray.push( {
+        name: "addrspace",
+        suffix: buildPlatforms[t].suffix,
+        platforms: buildPlatforms[t].platforms,
+        sources: ["ires_algorithm", "app"],
+        execAttrs: {
+            cfgScript: "ires_algorithm.cfg",
+        }
+    });
+}
+
+
+
+// ==== loop over array of programs ====
+for (var i = 0; i < progArray.length; i++) {
+    var prog = progArray[i];
+
+    print("prog: " + prog.name + " [" + prog.suffix + "]");
+
+    // ==== loop over all targets in build array ====
+    for (var j = 0; j < Build.targets.length; j++) {
+        var targ = Build.targets[j];
+
+        print("Target: " + targ.name + "...");
+        var targIsaChain = ":" + targ.getISAChain().join(":") + ":";
+        //print(targ.name + " ISA chain = " + targIsaChain);
+
+        // skip target if not supported by current program
+        if ("suffix" in prog) {
+            if (!(prog.suffix == targ.suffix)) {
+                print("Skipping target " + targ.name + " because its suffix, "
+                        + targ.suffix + ", " +
+                        "does not match prog.suffix = " + prog.suffix);
+                continue;
+            }
+        }
+
+        if ("isas" in prog) {
+            var skipTarget = true;
+            var targIsaChain = ":" + targ.getISAChain().join(":") + ":";
+            for (var k = 0; k < prog.isas.length; k++) {
+                if (targIsaChain.match(":" + prog.isas[k] + ":")) {
+                    skipTarget = false;
+                    break;
+                }
+            }
+            if (skipTarget) {
+                continue;
+            }
+        }
+
+        // ==== loop over all platforms of current target ====
+        if (buildPlatforms[targ.name] == undefined) {
+            print("Skipping target " + targ.name + " because it's not " +
+                  "in buildPlatforms[]");
+            continue;
+        }
+
+        for (var k = 0; k < buildPlatforms[targ.name].platforms.length; k++) {
+            platName = buildPlatforms[targ.name].platforms[k];
+
+            //print("***platName = " + platName);
+
+            // skip platform if different from specified on command line
+            if ((cmdPlat != null) && (cmdPlat != platName)) {
+                continue;
+            }
+
+            // skip platform if not supported by current program
+            if ("platforms" in prog) {
+                var platformList = ":" + prog.platforms.join(":") + ":";
+                if (!platformList.match(":" + platName + ":")) {
+                    continue;
+                }
+            }
+
+            // Extract the chip type from the platform name, eg
+            // ti.platforms.generic:2430 -> 2430, host.platforms.PC -> PC
+            // The chipType needs to be passed as a config arg.
+            var chipType;
+            print("platName = " + platName);
+            if (false && (platName.lastIndexOf(":") != -1)) {
+                chipType = platName.substring(platName.lastIndexOf(":") + 1);
+            }
+            else {
+                chipType = platName.substring(platName.lastIndexOf(".") + 1);
+            }
+            print("chipType = " + chipType);
+
+            // ==== loop over all profiles ====
+            for (var profile in targ.profiles) {
+                if (cmdProf != null) {
+                    // skip profile if different than specified on command line
+                    if (!profile.match(cmdProf)) {
+                        continue;
+                    }
+                }
+                else {
+                    // skip profile if different from package preference
+                    if (!(":"+profileAry.join(":")+":").match(":"+profile+":")){
+                        continue;
+                    }
+                }
+
+                // name = bin/platform/extra/profile/name.a+suffix
+                var name = "bin/" +
+                    // replace all ':' and '.' with '_' in platform name
+                    platName.replace(/\:/g, "_").replace(/\./g, "_") + '/'
+                    // insert profile as last directory (just before name)
+                    + prog.name.replace(/([^\/]+)$/, profile + "/" + "$1");
+
+                // pass along executable attributes specified in program array
+                var execAttrs = "execAttrs" in prog ? prog.execAttrs : {};
+
+                // must set profile explicitly
+                execAttrs.profile = profile;
+
+                // Add the cfgArgs to execAttrs
+                execAttrs.cfgArgs = "{chipType: \"" + chipType + "\"}"
+
+
+                // build the program
+                var pgm = Pkg.addExecutable(name, targ, platName, execAttrs);
+
+                /* add the source files */
+                if (targ.os == undefined) {
+                    //pgm.addObjects(["main_BIOS.c"]);
+                }
+                else {
+                    //pgm.addObjects(["main_native.c"]);
+                }
+                pgm.addObjects(prog.sources);
+            }
+        }
+    }
+}
+/*
+ *  @(#) ti.sdo.fc.rman.examples.addrspace; 1, 0, 0,22; 12-1-2010 17:25:34; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

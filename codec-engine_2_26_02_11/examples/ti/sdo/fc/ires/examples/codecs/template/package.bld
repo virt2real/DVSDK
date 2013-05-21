@@ -1,0 +1,93 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * */
+/*
+ *  ======== package.bld ========
+ *  Build script for this package.
+ */
+
+/* If you don't want to redistribute your sources, set this to false. */
+Pkg.attrs.exportSrc = true;
+Pkg.attrs.profile = "debug";
+
+/*
+ * Array of files to include in the release.  Libraries must be explicitly
+ * listed when you don't use the XDC Build.  This list is likely files to be
+ * included in all releases.
+ */
+Pkg.otherFiles = [
+    "template_ti.h",  /* public header. */
+    "itemplate.h",    /* public header of the algorithm type i.e., like 
+                       * iauddec1.h */ 
+    "lib"            /* release the contents of all the "lib" directory. */
+    /* any release notes or docs can be added here. */
+];
+
+/*
+ *  Optionally, you may also want to redistribute these source files,
+ *  depending on your customer and delivery scenarios.
+ */
+//Pkg.otherFiles.$add("pjt/template_ti.pjt");    /* CCS project file */
+Pkg.otherFiles.$add("package.bld");             /* XDC build script */
+Pkg.otherFiles.$add("template_ti_priv.h");  /* Internal interface header */
+
+/* Set this to false if you build with .pjts or other build tooling */
+xdcBuild = true;
+
+if (xdcBuild) {
+    /*
+     * Create an array containing the files to include in this
+     * package.  Note that the extension is added by XDC, so it need
+     * not be explicitly specified.
+     */
+    var SRCS = ["template_ti", "template_ti_ires"];
+
+    for (var i = 0; i < Build.targets.length; i++) {
+        var targ = Build.targets[i];
+
+        print("building for target " + targ.name + " ...");
+
+        /*
+         * Add a debug and release library to this package, built from the
+         * files described in SRCS[].
+         */
+        Pkg.addLibrary("lib/template_ti", targ).addObjects(SRCS);
+
+        Pkg.addLibrary("lib/debug/template_ti", targ, {
+            profile: "debug"
+        }).addObjects(SRCS);
+    }
+}
+/*
+ *  @(#) ti.sdo.fc.ires.examples.codecs.template; 1, 0, 0,170; 12-1-2010 17:25:09; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

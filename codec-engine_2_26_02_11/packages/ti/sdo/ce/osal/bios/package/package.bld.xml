@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.osal.bios" version="2, 0, 1" producerId="codec_engine_2_26_02_11">
+    <units>
+        <module name="Settings"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="Trace.c"/>
+        <srcFile name="GT_config_BIOS.c"/>
+        <srcFile name="Global_BIOS_load_PWRM.c"/>
+        <srcFile name="Sem_BIOS.c"/>
+        <srcFile name="Lock_BIOS.c"/>
+        <srcFile name="Global_BIOS_load_Load.c"/>
+        <srcFile name="LockMP_noOS.c"/>
+        <srcFile name="MSGQ_config_BIOS.c"/>
+        <srcFile name="Memory_BIOS.c"/>
+        <srcFile name="Queue_BIOS.c"/>
+        <srcFile name="Global_BIOS.c"/>
+        <srcFile name="Thread_BIOS.c"/>
+        <srcFile name="Log_BIOS.c"/>
+        <srcFile name="SemMP_BIOS.c"/>
+        <srcFile name="File_BIOS.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/osal_bios_debug.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Trace.o64P.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/GT_config_BIOS.o64P.dep" src="GT_config_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Sem_BIOS.o64P.dep" src="Sem_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/package/package_ti.sdo.ce.osal.bios.o64P.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Lock_BIOS.o64P.dep" src="Lock_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/LockMP_noOS.o64P.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/MSGQ_config_BIOS.o64P.dep" src="MSGQ_config_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Memory_BIOS.o64P.dep" src="Memory_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Queue_BIOS.o64P.dep" src="Queue_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Global_BIOS.o64P.dep" src="Global_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Thread_BIOS.o64P.dep" src="Thread_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Log_BIOS.o64P.dep" src="Log_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/SemMP_BIOS.o64P.dep" src="SemMP_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/File_BIOS.o64P.dep" src="File_BIOS.c"/>
+        <srcFile name="lib/osal_bios_pwrm.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios_pwrm/package/package_ti.sdo.ce.osal.bios.o674.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios_pwrm/Global_BIOS_load_PWRM.o674.dep" src="Global_BIOS_load_PWRM.c"/>
+        <srcFile name="lib/osal_bios_load_debug.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios_load_debug/package/package_ti.sdo.ce.osal.bios.o64P.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios_load_debug/Global_BIOS_load_Load.o64P.dep" src="Global_BIOS_load_Load.c"/>
+        <srcFile name="lib/osal_bios_pwrm.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios_pwrm/package/package_ti.sdo.ce.osal.bios.o64P.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios_pwrm/Global_BIOS_load_PWRM.o64P.dep" src="Global_BIOS_load_PWRM.c"/>
+        <srcFile name="lib/osal_bios_load.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios_load/package/package_ti.sdo.ce.osal.bios.o674.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios_load/Global_BIOS_load_Load.o674.dep" src="Global_BIOS_load_Load.c"/>
+        <srcFile name="lib/osal_bios_pwrm_debug.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios_pwrm_debug/package/package_ti.sdo.ce.osal.bios.o674.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios_pwrm_debug/Global_BIOS_load_PWRM.o674.dep" src="Global_BIOS_load_PWRM.c"/>
+        <srcFile name="lib/osal_bios.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios/Trace.o674.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/osal_bios/GT_config_BIOS.o674.dep" src="GT_config_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Sem_BIOS.o674.dep" src="Sem_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/package/package_ti.sdo.ce.osal.bios.o674.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Lock_BIOS.o674.dep" src="Lock_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/LockMP_noOS.o674.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/MSGQ_config_BIOS.o674.dep" src="MSGQ_config_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Memory_BIOS.o674.dep" src="Memory_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Queue_BIOS.o674.dep" src="Queue_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Global_BIOS.o674.dep" src="Global_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Thread_BIOS.o674.dep" src="Thread_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Log_BIOS.o674.dep" src="Log_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/SemMP_BIOS.o674.dep" src="SemMP_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/File_BIOS.o674.dep" src="File_BIOS.c"/>
+        <srcFile name="lib/osal_bios_pwrm_debug.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios_pwrm_debug/package/package_ti.sdo.ce.osal.bios.o64P.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios_pwrm_debug/Global_BIOS_load_PWRM.o64P.dep" src="Global_BIOS_load_PWRM.c"/>
+        <srcFile name="lib/osal_bios_load.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios_load/package/package_ti.sdo.ce.osal.bios.o64P.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios_load/Global_BIOS_load_Load.o64P.dep" src="Global_BIOS_load_Load.c"/>
+        <srcFile name="lib/osal_bios.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios/Trace.o64P.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/osal_bios/GT_config_BIOS.o64P.dep" src="GT_config_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Sem_BIOS.o64P.dep" src="Sem_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/package/package_ti.sdo.ce.osal.bios.o64P.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Lock_BIOS.o64P.dep" src="Lock_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/LockMP_noOS.o64P.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/MSGQ_config_BIOS.o64P.dep" src="MSGQ_config_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Memory_BIOS.o64P.dep" src="Memory_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Queue_BIOS.o64P.dep" src="Queue_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Global_BIOS.o64P.dep" src="Global_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Thread_BIOS.o64P.dep" src="Thread_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/Log_BIOS.o64P.dep" src="Log_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/SemMP_BIOS.o64P.dep" src="SemMP_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios/File_BIOS.o64P.dep" src="File_BIOS.c"/>
+        <srcFile name="lib/osal_bios_debug.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Trace.o674.dep" src="Trace.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/GT_config_BIOS.o674.dep" src="GT_config_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Sem_BIOS.o674.dep" src="Sem_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/package/package_ti.sdo.ce.osal.bios.o674.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Lock_BIOS.o674.dep" src="Lock_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/LockMP_noOS.o674.dep" src="LockMP_noOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/MSGQ_config_BIOS.o674.dep" src="MSGQ_config_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Memory_BIOS.o674.dep" src="Memory_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Queue_BIOS.o674.dep" src="Queue_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Global_BIOS.o674.dep" src="Global_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Thread_BIOS.o674.dep" src="Thread_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/Log_BIOS.o674.dep" src="Log_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/SemMP_BIOS.o674.dep" src="SemMP_BIOS.c"/>
+        <srcFile name="package/lib/lib/osal_bios_debug/File_BIOS.o674.dep" src="File_BIOS.c"/>
+        <srcFile name="lib/osal_bios_load_debug.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/osal_bios_load_debug/package/package_ti.sdo.ce.osal.bios.o674.dep" src="package/package_ti.sdo.ce.osal.bios.c"/>
+        <srcFile name="package/lib/lib/osal_bios_load_debug/Global_BIOS_load_Load.o674.dep" src="Global_BIOS_load_Load.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_osal_bios.tar.dep" src="package/rel/ti_sdo_ce_osal_bios.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/osal_bios_debug"
+        pname="lib/osal_bios_debug.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/osal_bios_pwrm"
+        pname="lib/osal_bios_pwrm.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/osal_bios_load_debug"
+        pname="lib/osal_bios_load_debug.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/osal_bios_pwrm"
+        pname="lib/osal_bios_pwrm.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/osal_bios_load"
+        pname="lib/osal_bios_load.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/osal_bios_pwrm_debug"
+        pname="lib/osal_bios_pwrm_debug.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/osal_bios"
+        pname="lib/osal_bios.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/osal_bios_pwrm_debug"
+        pname="lib/osal_bios_pwrm_debug.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/osal_bios_load"
+        pname="lib/osal_bios_load.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/osal_bios"
+        pname="lib/osal_bios.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/osal_bios_debug"
+        pname="lib/osal_bios_debug.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/osal_bios_load_debug"
+        pname="lib/osal_bios_load_debug.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_osal_bios"
+        pname="ti_sdo_ce_osal_bios.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/osal_bios_pwrm.a674"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/osal_bios_load.a674"/>
+        <file name="LockMP_noOS.c"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="Sem_BIOS.c"/>
+        <file name="Thread_BIOS.c"/>
+        <file name="Lock_BIOS.c"/>
+        <file name="lib/osal_bios_debug.a64P"/>
+        <file name="lib/osal_bios.a674"/>
+        <file name="bios.tci"/>
+        <file name="Global_BIOS_load_PWRM.c"/>
+        <file name="lib/osal_bios_pwrm.a64P"/>
+        <file name="lib/osal_bios_load.a64P"/>
+        <file name="Global_BIOS.c"/>
+        <file name="lib/osal_bios_pwrm_debug.a674"/>
+        <file name="package.bld"/>
+        <file name="Global_BIOS_load_Load.c"/>
+        <file name="SemMP_BIOS.c"/>
+        <file name="lib/osal_bios_load_debug.a674"/>
+        <file name="Queue_BIOS.c"/>
+        <file name="MSGQ_config_BIOS.c"/>
+        <file name="lib/osal_bios.a64P"/>
+        <file name="Trace.c"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="File_BIOS.c"/>
+        <file name="link.xdt"/>
+        <file name="lib/osal_bios_pwrm_debug.a64P"/>
+        <file name="lib/osal_bios_load_debug.a64P"/>
+        <file name="Log_BIOS.c"/>
+        <file name="package/package.bld.xml"/>
+        <file name="GT_config_BIOS.c"/>
+        <file name="lib/osal_bios_debug.a674"/>
+        <file name="Memory_BIOS.c"/>
+        <file name="package/package_ti.sdo.ce.osal.bios.c"/>
+        <file name="GT_config_BIOS.h"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

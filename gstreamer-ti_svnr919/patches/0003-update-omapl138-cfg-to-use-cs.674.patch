@@ -1,0 +1,34 @@
+From 15a675a165e97979a77290ea2d768daa491e4e23 Mon Sep 17 00:00:00 2001
+From: Brijesh Singh <bksingh@ti.com>
+Date: Thu, 10 Mar 2011 11:31:06 -0600
+Subject: [PATCH 3/3] update omapl138 cfg to use cs.674
+
+---
+ .../src/gstticodecplugin_omapl138.cfg              |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/gstreamer_ti/ti_build/ticodecplugin/src/gstticodecplugin_omapl138.cfg b/gstreamer_ti/ti_build/ticodecplugin/src/gstticodecplugin_omapl138.cfg
+index 1330121..c0d3550 100644
+--- a/gstreamer_ti/ti_build/ticodecplugin/src/gstticodecplugin_omapl138.cfg
++++ b/gstreamer_ti/ti_build/ticodecplugin/src/gstticodecplugin_omapl138.cfg
+@@ -30,7 +30,7 @@ osalGlobal.runtimeEnv = osalGlobal.DSPLINK_LINUX;
+ var Engine = xdc.useModule('ti.sdo.ce.Engine');
+ var demoEngine = Engine.createFromServer(
+     "codecServer",
+-    "./bin/cs.x64P",
++    "./bin/cs.x674",
+     "ti.sdo.server.cs"
+     );
+ 
+@@ -40,7 +40,7 @@ if (combopath != "" && combopath != "null") {
+ 	demoEngine.server = java.lang.System.getenv("CODEC_SERVER");
+ }
+ else {
+-	demoEngine.server = "./cs.x64P";
++	demoEngine.server = "./cs.x674";
+ }
+ 
+ /* Load support for the 'Davinci Multimedia Application Interface' modules */
+-- 
+1.7.0.4
+

@@ -1,0 +1,339 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+
+/*
+ *  ======== package.bld ========
+ *    Build script for dman3 package.
+ *
+ */
+
+var Pkg = xdc.useModule('xdc.bld.PackageContents');
+
+Pkg.attrs.exportSrc = true;
+
+/* if true send DBG_printf to SYS_printf (default is to LOG) */
+var fSendDBGtoSYS = true;
+var COPTS = "" ;
+if (fSendDBGtoSYS) {
+    COPTS += " -D_DBG_WITH_SYS_";
+}
+
+var LIBBASE = "dman3";
+
+var srcFiles =      ["dman3", "dman3_initImpl", "dman3_init", "dman3_api",
+        "rmm", "gt_dais"];
+var srcFilesNoBios = ["dman3", "dman3_initImpl", "dman3_init", "dman3_api",
+        "rmm", "gt_dais", "bios_rts"];
+var srcFilesExternalRM = ["dman3", "dman3_externalRM_initImpl", "dman3_init",
+        "dman3_externalRM_api", "rmm", "gt_dais"];
+
+/*
+ * List of objects to be included for RTSC based consumers of FC/DMAN3.
+ * This is the same list as above, except for the exclusion of dman3_init.
+ * DMAN3 module supplies the DMAN3_init by synthesizing the function based on
+ * module configuration using a template.
+ */
+var srcFilesCfg = ["dman3", "dman3_initImpl", "dman3_api", "rmm", "gt_dais" ];
+var srcFilesNoBiosCfg = ["dman3", "dman3_initImpl", "dman3_api", "rmm",
+        "bios_rts", "gt_dais" ];
+var srcFilesExternalRMCfg = ["dman3", "dman3_externalRM_initImpl",
+        "dman3_externalRM_api", "rmm", "gt_dais"];
+
+
+// Profiles for C64P
+// Need to build three different dman3 libraries for each debug/release
+// profile, one that uses CPU to copy, and one that uses DMA to copy.
+// The third one, "xdcConfigurable", is supplied to applications consuming and
+// configuring DMAN3 as a RTSC package. Two additional profiles have been added
+// for dman3 using resource manager.
+var dman3Profiles = {
+    "cpu" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " -D_DMAN3_CPUCOPY_ ",
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFiles,
+        libBase : LIBBASE + "cpu",
+    },
+    "dma" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " ",              // nothing yet
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFiles,
+        libBase : LIBBASE,
+    },
+    "xdcConfigurable" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " -D_DMAN3_CPUCOPY_ ",
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesCfg,
+        libBase : LIBBASE + "Cfg" + "cpu",
+    },
+    "xdcConfigurableCpu" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " ",              // nothing yet
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesCfg,
+        libBase : LIBBASE + "Cfg",
+    },
+
+    "dmaExternalRM" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " ",              // nothing yet
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesExternalRM,
+        libBase : LIBBASE + "RM",
+    },
+    "xdcConfigurableRM" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " ",              // nothing yet
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesExternalRMCfg,
+        libBase : LIBBASE + "RMCfg",
+    }
+};
+
+// Linux86 (PC) profiles. Use CPU copy, support multiple processes using DMAN3
+// simultaneously.
+var u86Profiles = {
+    "cpu" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " -D_DMAN3_CPUCOPY_ -D_MULTI_PROCESS_ ",
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesNoBios,
+        libBase : LIBBASE + "cpu",
+    },
+    "xdcConfigurable" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: "  -D_DMAN3_CPUCOPY_ -D_MULTI_PROCESS_ ",
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesNoBiosCfg,
+        libBase : LIBBASE + "Cfgcpu",
+    }
+};
+
+// WinCE profiles. Use CPU copy.
+var winceProfiles = {
+    "cpu" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " -D_DMAN3_CPUCOPY_ ",
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesNoBios,
+        libBase : LIBBASE,
+    },
+    "xdcConfigurable" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: "  -D_DMAN3_CPUCOPY_ ", 
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesNoBiosCfg,
+        libBase : LIBBASE + "Cfg",
+    }
+};
+
+// Arm profiles. Support both DMA and CPU copy, support multiple processes
+// using DMAN3 simultaneously.
+var armProfiles = {
+    "dma" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " -D_MULTI_PROCESS_ ",
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFiles,
+        libBase : LIBBASE,
+    },
+    "xdcConfigurable" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " -D_MULTI_PROCESS_ ",
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesNoBiosCfg,
+        libBase : LIBBASE + "Cfg",
+    },
+    "cpu" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            defs: " -D_DMAN3_CPUCOPY_ -D_MULTI_PROCESS_ ",
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesNoBios,
+        libBase : LIBBASE + "cpu",
+    }
+};
+
+var _yourProfiles_ = {
+    "dma" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            // Use the defs appropriate for your target:
+
+            // Support multiple processes accessing global DMAN3 data
+            // simultaneously.
+            // Compiling with the _MULTI_PROCESS_ flag adds code to use a lock
+            // lock for accessing DMAN3 shared data.
+            // defs: " -D_MULTI_PROCESS_ ",
+
+            // Build DMAN3 libraries using CPU copy only. This is used if the
+            // target device does not support DMA, or for initial coding when
+            // to prevent access to hardware registers.
+            // defs: " -D_DMAN3_CPUCOPY_ ", //
+
+            defs: " -D_DMAN3_CPUCOPY_ ",
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesNoBios,
+        libBase : LIBBASE,
+    },
+    "xdcConfigurable" : {
+        compileOpts : {
+            copts: " ",             // nothing yet
+            // Use the defs appropriate for your target:
+            // defs: " -D_MULTI_PROCESS_ ",
+            // defs: " -D_DMAN3_CPUCOPY_ ", //
+            defs: " -D_DMAN3_CPUCOPY_ ",
+            aopts: " ",             // nothing yet
+        },
+        objFiles : srcFilesNoBiosCfg,
+        libBase : LIBBASE + "Cfg",
+    },
+};
+
+targProfiles = {
+    "C64P"         : dman3Profiles,
+    "C674"         : dman3Profiles,
+    "Linux86"      : u86Profiles,
+    "WinCE"        : winceProfiles,
+    "UCArm9"       : armProfiles,
+    "MVArm9"       : armProfiles,
+    "_yourTarget_" : _yourProfiles_,
+};
+
+Pkg.uses = ["ti/bios/include"];
+
+Pkg.otherFiles = [
+    "dman3.h",
+    "dman3.tci",
+    "dman3_c.tpl",
+    "dman3_cmd.tpl",
+    "dman3_impl.h",
+    "rmm.h",
+    "_rmm.h",
+    "bios_rts.h",
+    "dman3_externalRM_impl.h",
+    "package.bld"
+];
+
+/* loop over all targets */
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+    var plat = targ.platform;   /* use the target's default platform */
+
+    if (targProfiles[targ.name] != null) {
+        print("building for target " + targ.name + " ...");
+
+        var targProfs = targProfiles[targ.name];
+
+        // loop over all dman3 library profiles
+        for (var prof in targProfs) {
+            var libBase = targProfs[prof].libBase;
+            var compileOpts = targProfs[prof].compileOpts;
+            var objFilesInLib = targProfs[prof].objFiles;
+
+            // Release library, no GT trace
+            var lib = Pkg.addLibrary("lib/release/" + libBase,
+                    targ, {
+                        copts: COPTS + compileOpts.copts,
+                        aopts: compileOpts.aopts,
+                        defs: compileOpts.defs,
+                        profile: "release",
+                    });
+            lib.addObjects(objFilesInLib);
+
+            // Release library, with GT trace
+            var lib = Pkg.addLibrary("lib/trace/" + libBase ,
+                    targ, {
+                        copts: COPTS + compileOpts.copts,
+                        aopts: compileOpts.aopts,
+                        defs: compileOpts.defs,
+                        profile: "trace",
+                    });
+            lib.addObjects(objFilesInLib);
+
+            // Debug library, no GT trace
+            var lib = Pkg.addLibrary("lib/debug/" + libBase ,
+                    targ, {
+                        copts: COPTS + compileOpts.copts,
+                        aopts: compileOpts.aopts,
+                        defs: compileOpts.defs,
+                        profile: "debug",
+                    });
+            lib.addObjects(objFilesInLib);
+
+            // Debug library, with GT trace
+            var lib = Pkg.addLibrary("lib/debug_trace/" + libBase,
+                    targ, {
+                        copts: COPTS + compileOpts.copts,
+                        aopts: compileOpts.aopts,
+                        defs: compileOpts.defs,
+                        profile: "debug_trace",
+                    });
+            lib.addObjects(objFilesInLib);
+        }
+    }
+}
+
+/*
+ *  @(#) ti.sdo.fc.dman3; 1, 0, 4,300; 12-1-2010 17:24:25; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

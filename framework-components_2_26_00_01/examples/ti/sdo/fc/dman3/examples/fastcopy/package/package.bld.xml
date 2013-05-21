@@ -1,0 +1,1710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.dman3.examples.fastcopy" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648_x64P.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430_x64P.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_2430_x64P.c"/>
+        <srcFile name="fcpy_ti_ifcpy.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674.c"/>
+        <srcFile name="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530_x64P.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138_x674.c"/>
+        <srcFile name="fcpy_ti_ialg.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674cfg.s62"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430_x64P.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_3530_x64P.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64P.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137_x674.c"/>
+        <srcFile name="fcpy_ti.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674cfg.s62"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455_x64P.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530_x64Pcfg.s62"/>
+        <srcFile name="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138_x674.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137_x674.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674cfg_c.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430_x64P.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64P.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674cfg.s62"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674cfg.s62"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674cfg_c.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530_x64Pcfg_c.c"/>
+        <srcFile name="fcpy_ti_idma3.c"/>
+        <srcFile name="fcpy_ti_idma3vt.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748_x674.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674cfg.s62"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64P.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_3430_x64P.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674cfg_c.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446_x64P.c"/>
+        <srcFile name="fcpy.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64P.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455_x64P.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674cfg_c.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437_x64P.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674cfg.s62"/>
+        <srcFile name="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64Pcfg_c.c"/>
+        <srcFile name="fcpy_ti_ifcpyvt.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648_x64P.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674cfg_c.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648_x64P.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748_x674.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530_x64P.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437_x64P.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530_x64P.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674cfg_c.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430_x64P.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648_x64Pcfg_c.c"/>
+        <srcFile name="bios_rts.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455_x64P.c"/>
+        <srcFile name="package/package_ti.sdo.fc.dman3.examples.fastcopy.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430_x64P.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430_x64P.c"/>
+        <srcFile name="mySem.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="dm6446_bios/fastcopytest.tcf"/>
+        <srcFile name="dm648_nobios/fastcopytest.cfg"/>
+        <srcFile name="dm6467_bios/fastcopytest.tcf"/>
+        <srcFile name="dm6446_nobios/fastcopytest.cfg"/>
+        <srcFile name="omapL137_bios/fastcopytest.tcf"/>
+        <srcFile name="evm6748_nobios/fastcopytest.cfg"/>
+        <srcFile name="2430_nobios/fastcopytest.cfg"/>
+        <srcFile name="dm6437_nobios/fastcopytest.cfg"/>
+        <srcFile name="3530_bios/fastcopytest.tcf"/>
+        <srcFile name="3430_bios/fastcopytest.tcf"/>
+        <srcFile name="omapL138_bios/fastcopytest.tcf"/>
+        <srcFile name="2430_bios/fastcopytest.tcf"/>
+        <srcFile name="C6455_nobios/fastcopytest.cfg"/>
+        <srcFile name="omapL138_nobios/fastcopytest.cfg"/>
+        <srcFile name="evm6748_bios/fastcopytest.tcf"/>
+        <srcFile name="omapL137_nobios/fastcopytest.cfg"/>
+        <srcFile name="dm648_bios/fastcopytest.tcf"/>
+        <srcFile name="3430_nobios/fastcopytest.cfg"/>
+        <srcFile name="C6455_bios/fastcopytest.tcf"/>
+        <srcFile name="dm6437_bios/fastcopytest.tcf"/>
+        <srcFile name="dm6467_nobios/fastcopytest.cfg"/>
+        <srcFile name="3530_nobios/fastcopytest.cfg"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/fcpy_ti.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti.o64P.dep" src="fcpy_ti.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti_idma3.o64P.dep" src="fcpy_ti_idma3.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti_ifcpyvt.o64P.dep" src="fcpy_ti_ifcpyvt.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti_ifcpy.o64P.dep" src="fcpy_ti_ifcpy.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/package/package_ti.sdo.fc.dman3.examples.fastcopy.o64P.dep" src="package/package_ti.sdo.fc.dman3.examples.fastcopy.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti_ialg.o64P.dep" src="fcpy_ti_ialg.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti_idma3vt.o64P.dep" src="fcpy_ti_idma3vt.c"/>
+        <srcFile name="lib/release/fcpy_ti.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti.o674.dep" src="fcpy_ti.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti_idma3.o674.dep" src="fcpy_ti_idma3.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti_ifcpyvt.o674.dep" src="fcpy_ti_ifcpyvt.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti_ifcpy.o674.dep" src="fcpy_ti_ifcpy.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/package/package_ti.sdo.fc.dman3.examples.fastcopy.o674.dep" src="package/package_ti.sdo.fc.dman3.examples.fastcopy.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti_ialg.o674.dep" src="fcpy_ti_ialg.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti_idma3vt.o674.dep" src="fcpy_ti_idma3vt.c"/>
+        <srcFile name="lib/release/fcpy_ti.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti.o64P.dep" src="fcpy_ti.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti_idma3.o64P.dep" src="fcpy_ti_idma3.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti_ifcpyvt.o64P.dep" src="fcpy_ti_ifcpyvt.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti_ifcpy.o64P.dep" src="fcpy_ti_ifcpy.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/package/package_ti.sdo.fc.dman3.examples.fastcopy.o64P.dep" src="package/package_ti.sdo.fc.dman3.examples.fastcopy.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti_ialg.o64P.dep" src="fcpy_ti_ialg.c"/>
+        <srcFile name="package/lib/lib/release/fcpy_ti/fcpy_ti_idma3vt.o64P.dep" src="fcpy_ti_idma3vt.c"/>
+        <srcFile name="lib/debug/fcpy_ti.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti.o674.dep" src="fcpy_ti.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti_idma3.o674.dep" src="fcpy_ti_idma3.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti_ifcpyvt.o674.dep" src="fcpy_ti_ifcpyvt.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti_ifcpy.o674.dep" src="fcpy_ti_ifcpy.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/package/package_ti.sdo.fc.dman3.examples.fastcopy.o674.dep" src="package/package_ti.sdo.fc.dman3.examples.fastcopy.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti_ialg.o674.dep" src="fcpy_ti_ialg.c"/>
+        <srcFile name="package/lib/lib/debug/fcpy_ti/fcpy_ti_idma3vt.o674.dep" src="fcpy_ti_idma3vt.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430_x64Pcfg_c.o64P.dep" src="package/cfg/2430_bios/fastcopytest_lld_2430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430_x64P.o64P.dep" src="package/cfg/2430_bios/fastcopytest_lld_2430_x64P.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430_x64Pcfg.o64P.dep" src="package/cfg/2430_bios/fastcopytest_lld_2430_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_lld_2430_x64P.dep" src="package/cfg/2430_bios/fastcopytest_lld_2430_x64P.cfg"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430_x64Pcfg_c.o64P.dep" src="package/cfg/2430_bios/fastcopytest_2430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430_x64Pcfg.o64P.dep" src="package/cfg/2430_bios/fastcopytest_2430_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430_x64P.o64P.dep" src="package/cfg/2430_bios/fastcopytest_2430_x64P.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/2430_bios/fastcopytest_2430_x64P.dep" src="package/cfg/2430_bios/fastcopytest_2430_x64P.cfg"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430_x64P.o64P.dep" src="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430_x64P.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430_x64P.dep" src="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430_x64P.cfg"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_2430_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_2430/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_2430/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_2430_x64P.o64P.dep" src="package/cfg/2430_nobios/fastcopytest_nobios_2430_x64P.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_2430/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_2430/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_2430/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_2430/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/2430_nobios/fastcopytest_nobios_2430_x64P.dep" src="package/cfg/2430_nobios/fastcopytest_nobios_2430_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64Pcfg.o64P.dep" src="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64P.o64P.dep" src="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64Pcfg_c.o64P.dep" src="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64P.dep" src="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64Pcfg.o64P.dep" src="package/cfg/dm6446_bios/fastcopytest_dm6446_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64P.o64P.dep" src="package/cfg/dm6446_bios/fastcopytest_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64Pcfg_c.o64P.dep" src="package/cfg/dm6446_bios/fastcopytest_dm6446_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64P.dep" src="package/cfg/dm6446_bios/fastcopytest_dm6446_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446_x64P.o64P.dep" src="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446_x64P.dep" src="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446_x64P.o64P.dep" src="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446_x64P.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446_x64P.dep" src="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64Pcfg.o64P.dep" src="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64P.o64P.dep" src="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64P.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64Pcfg_c.o64P.dep" src="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64P.dep" src="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64P.o64P.dep" src="package/cfg/dm6437_bios/fastcopytest_dm6437_x64P.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64Pcfg_c.o64P.dep" src="package/cfg/dm6437_bios/fastcopytest_dm6437_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64Pcfg.o64P.dep" src="package/cfg/dm6437_bios/fastcopytest_dm6437_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64P.dep" src="package/cfg/dm6437_bios/fastcopytest_dm6437_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437_x64P.o64P.dep" src="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437_x64P.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437_x64P.dep" src="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437_x64P.o64P.dep" src="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437_x64P.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437_x64P.dep" src="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437_x64P.cfg"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64Pcfg_c.o64P.dep" src="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64Pcfg.o64P.dep" src="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64P.o64P.dep" src="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64P.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64P.dep" src="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64P.cfg"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455_x64Pcfg_c.o64P.dep" src="package/cfg/C6455_bios/fastcopytest_C6455_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455_x64Pcfg.o64P.dep" src="package/cfg/C6455_bios/fastcopytest_C6455_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455_x64P.o64P.dep" src="package/cfg/C6455_bios/fastcopytest_C6455_x64P.c"/>
+        <srcFile name="package/cfg/C6455_bios/fastcopytest_C6455_x64P.dep" src="package/cfg/C6455_bios/fastcopytest_C6455_x64P.cfg"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455_x64P.o64P.dep" src="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455_x64P.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455_x64P.dep" src="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455_x64P.cfg"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455_x64P.o64P.dep" src="package/cfg/C6455_nobios/fastcopytest_nobios_C6455_x64P.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455_x64P.dep" src="package/cfg/C6455_nobios/fastcopytest_nobios_C6455_x64P.cfg"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430_x64P.o64P.dep" src="package/cfg/3430_bios/fastcopytest_lld_3430_x64P.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430_x64Pcfg_c.o64P.dep" src="package/cfg/3430_bios/fastcopytest_lld_3430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430_x64Pcfg.o64P.dep" src="package/cfg/3430_bios/fastcopytest_lld_3430_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_lld_3430_x64P.dep" src="package/cfg/3430_bios/fastcopytest_lld_3430_x64P.cfg"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430_x64Pcfg.o64P.dep" src="package/cfg/3430_bios/fastcopytest_3430_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430_x64Pcfg_c.o64P.dep" src="package/cfg/3430_bios/fastcopytest_3430_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430_x64P.o64P.dep" src="package/cfg/3430_bios/fastcopytest_3430_x64P.c"/>
+        <srcFile name="package/cfg/3430_bios/fastcopytest_3430_x64P.dep" src="package/cfg/3430_bios/fastcopytest_3430_x64P.cfg"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430_x64P.o64P.dep" src="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430_x64P.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430_x64P.dep" src="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430_x64P.cfg"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_3430_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_3430/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_3430/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_3430/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_3430/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_3430_x64P.o64P.dep" src="package/cfg/3430_nobios/fastcopytest_nobios_3430_x64P.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_3430/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_3430/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/3430_nobios/fastcopytest_nobios_3430_x64P.dep" src="package/cfg/3430_nobios/fastcopytest_nobios_3430_x64P.cfg"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530_x64Pcfg.o64P.dep" src="package/cfg/3530_bios/fastcopytest_lld_3530_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530_x64Pcfg_c.o64P.dep" src="package/cfg/3530_bios/fastcopytest_lld_3530_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530_x64P.o64P.dep" src="package/cfg/3530_bios/fastcopytest_lld_3530_x64P.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_lld_3530_x64P.dep" src="package/cfg/3530_bios/fastcopytest_lld_3530_x64P.cfg"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530_x64P.o64P.dep" src="package/cfg/3530_bios/fastcopytest_3530_x64P.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530_x64Pcfg.o64P.dep" src="package/cfg/3530_bios/fastcopytest_3530_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530_x64Pcfg_c.o64P.dep" src="package/cfg/3530_bios/fastcopytest_3530_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/3530_bios/fastcopytest_3530_x64P.dep" src="package/cfg/3530_bios/fastcopytest_3530_x64P.cfg"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530_x64P.o64P.dep" src="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530_x64P.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530_x64P.dep" src="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530_x64P.cfg"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_3530_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_3530/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_3530/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_3530/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_3530/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_3530_x64P.o64P.dep" src="package/cfg/3530_nobios/fastcopytest_nobios_3530_x64P.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_3530/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_3530/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/3530_nobios/fastcopytest_nobios_3530_x64P.dep" src="package/cfg/3530_nobios/fastcopytest_nobios_3530_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64Pcfg_c.o64P.dep" src="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64Pcfg.o64P.dep" src="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64P.o64P.dep" src="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64P.dep" src="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64Pcfg_c.o64P.dep" src="package/cfg/dm6467_bios/fastcopytest_dm6467_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64Pcfg.o64P.dep" src="package/cfg/dm6467_bios/fastcopytest_dm6467_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64P.o64P.dep" src="package/cfg/dm6467_bios/fastcopytest_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64P.dep" src="package/cfg/dm6467_bios/fastcopytest_dm6467_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467_x64P.o64P.dep" src="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467_x64P.dep" src="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467_x64P.cfg"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467_x64P.o64P.dep" src="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467_x64P.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467_x64P.dep" src="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467_x64P.cfg"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64Pcfg.o64P.dep" src="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64P.o64P.dep" src="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64P.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64Pcfg_c.o64P.dep" src="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64P.dep" src="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64P.cfg"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648_x64P.o64P.dep" src="package/cfg/dm648_bios/fastcopytest_dm648_x64P.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648_x64Pcfg_c.o64P.dep" src="package/cfg/dm648_bios/fastcopytest_dm648_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648_x64Pcfg.o64P.dep" src="package/cfg/dm648_bios/fastcopytest_dm648_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/dm648_bios/fastcopytest_dm648_x64P.dep" src="package/cfg/dm648_bios/fastcopytest_dm648_x64P.cfg"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648_x64P.o64P.dep" src="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648_x64P.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648_x64P.dep" src="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648_x64P.cfg"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648/mySem.o64P.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648/fcpy.o64P.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648/ifcpy.o64P.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648/bios_rtsasm.o64P.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648/fastcopytest.o64P.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648_x64P.o64P.dep" src="package/cfg/dm648_nobios/fastcopytest_nobios_dm648_x64P.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648/bios_rts.o64P.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648_x64P.dep" src="package/cfg/dm648_nobios/fastcopytest_nobios_dm648_x64P.cfg"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674.o674.dep" src="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674cfg_c.o674.dep" src="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674cfg_c.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674cfg.o674.dep" src="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674cfg.s62"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674.dep" src="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674.cfg"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674.o674.dep" src="package/cfg/omapL138_bios/fastcopytest_omapL138_x674.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674cfg_c.o674.dep" src="package/cfg/omapL138_bios/fastcopytest_omapL138_x674cfg_c.c"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674cfg.o674.dep" src="package/cfg/omapL138_bios/fastcopytest_omapL138_x674cfg.s62"/>
+        <srcFile name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674.dep" src="package/cfg/omapL138_bios/fastcopytest_omapL138_x674.cfg"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138/bios_rtsasm.o674.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138_x674.o674.dep" src="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138_x674.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138/bios_rts.o674.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138_x674.dep" src="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138_x674.cfg"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138_x674.o674.dep" src="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138_x674.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138/bios_rtsasm.o674.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138/bios_rts.o674.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138_x674.dep" src="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138_x674.cfg"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674cfg.o674.dep" src="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674cfg.s62"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674.o674.dep" src="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674cfg_c.o674.dep" src="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674cfg_c.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674.dep" src="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674.cfg"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674cfg.o674.dep" src="package/cfg/evm6748_bios/fastcopytest_evm6748_x674cfg.s62"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674cfg_c.o674.dep" src="package/cfg/evm6748_bios/fastcopytest_evm6748_x674cfg_c.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674.o674.dep" src="package/cfg/evm6748_bios/fastcopytest_evm6748_x674.c"/>
+        <srcFile name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674.dep" src="package/cfg/evm6748_bios/fastcopytest_evm6748_x674.cfg"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748_x674.o674.dep" src="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748_x674.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748/bios_rtsasm.o674.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748/bios_rts.o674.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748_x674.dep" src="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748_x674.cfg"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748/bios_rtsasm.o674.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748_x674.o674.dep" src="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748_x674.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748/bios_rts.o674.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748_x674.dep" src="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748_x674.cfg"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674cfg_c.o674.dep" src="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674cfg_c.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674.o674.dep" src="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674cfg.o674.dep" src="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674cfg.s62"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674.dep" src="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674.cfg"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674cfg_c.o674.dep" src="package/cfg/omapL137_bios/fastcopytest_omapL137_x674cfg_c.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674.o674.dep" src="package/cfg/omapL137_bios/fastcopytest_omapL137_x674.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674cfg.o674.dep" src="package/cfg/omapL137_bios/fastcopytest_omapL137_x674cfg.s62"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674.dep" src="package/cfg/omapL137_bios/fastcopytest_omapL137_x674.cfg"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137/bios_rtsasm.o674.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137_x674.o674.dep" src="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137_x674.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137/bios_rts.o674.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137_x674.dep" src="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137_x674.cfg"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137_x674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137/mySem.o674.dep" src="mySem.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137/fcpy.o674.dep" src="fcpy.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137/ifcpy.o674.dep" src="ifcpy.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137/bios_rtsasm.o674.dep" src="bios_rtsasm.s62"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137/fastcopytest.o674.dep" src="fastcopytest.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137_x674.o674.dep" src="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137_x674.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137/bios_rts.o674.dep" src="bios_rts.c"/>
+        <srcFile name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137_x674.dep" src="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137_x674.cfg"/>
+        <srcFile name="package/rel/ti_sdo_fc_dman3_examples_fastcopy.tar.dep" src="package/rel/ti_sdo_fc_dman3_examples_fastcopy.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evm3530"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/fcpy_ti"
+        pname="lib/debug/fcpy_ti.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/fcpy_ti"
+        pname="lib/release/fcpy_ti.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/release/fcpy_ti"
+        pname="lib/release/fcpy_ti.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/fcpy_ti"
+        pname="lib/debug/fcpy_ti.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    </libraries>
+    <executables>
+    <executable name="2430_bios/fastcopytest_lld_2430"
+        pname="2430_bios/fastcopytest_lld_2430.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.sdp2430"
+        profile="debug"
+        xCfgScript="package/cfg/2430_bios/fastcopytest_lld_2430_x64P.cfg"
+        xCfgPrefix="package/cfg/2430_bios/fastcopytest_lld_2430_x64P"
+        cfgScript="2430_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%222430%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="2430_bios/fastcopytest_2430"
+        pname="2430_bios/fastcopytest_2430.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.sdp2430"
+        profile="debug"
+        xCfgScript="package/cfg/2430_bios/fastcopytest_2430_x64P.cfg"
+        xCfgPrefix="package/cfg/2430_bios/fastcopytest_2430_x64P"
+        cfgScript="2430_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%222430%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="2430_nobios/fastcopytest_nobios_lld_2430"
+        pname="2430_nobios/fastcopytest_nobios_lld_2430.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.sdp2430"
+        profile="debug"
+        xCfgScript="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430_x64P.cfg"
+        xCfgPrefix="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430_x64P"
+        cfgScript="2430_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%222430%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="2430_nobios/fastcopytest_nobios_2430"
+        pname="2430_nobios/fastcopytest_nobios_2430.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.sdp2430"
+        profile="debug"
+        xCfgScript="package/cfg/2430_nobios/fastcopytest_nobios_2430_x64P.cfg"
+        xCfgPrefix="package/cfg/2430_nobios/fastcopytest_nobios_2430_x64P"
+        cfgScript="2430_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%222430%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="dm6446_bios/fastcopytest_lld_dm6446"
+        pname="dm6446_bios/fastcopytest_lld_dm6446.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6446"
+        profile="debug"
+        xCfgScript="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64P"
+        cfgScript="dm6446_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6446%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="dm6446_bios/fastcopytest_dm6446"
+        pname="dm6446_bios/fastcopytest_dm6446.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6446"
+        profile="debug"
+        xCfgScript="package/cfg/dm6446_bios/fastcopytest_dm6446_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6446_bios/fastcopytest_dm6446_x64P"
+        cfgScript="dm6446_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6446%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="dm6446_nobios/fastcopytest_nobios_lld_dm6446"
+        pname="dm6446_nobios/fastcopytest_nobios_lld_dm6446.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6446"
+        profile="debug"
+        xCfgScript="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446_x64P"
+        cfgScript="dm6446_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22dm6446%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="dm6446_nobios/fastcopytest_nobios_dm6446"
+        pname="dm6446_nobios/fastcopytest_nobios_dm6446.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6446"
+        profile="debug"
+        xCfgScript="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446_x64P"
+        cfgScript="dm6446_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22dm6446%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="dm6437_bios/fastcopytest_lld_dm6437"
+        pname="dm6437_bios/fastcopytest_lld_dm6437.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6437"
+        profile="debug"
+        xCfgScript="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64P"
+        cfgScript="dm6437_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6437%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="dm6437_bios/fastcopytest_dm6437"
+        pname="dm6437_bios/fastcopytest_dm6437.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6437"
+        profile="debug"
+        xCfgScript="package/cfg/dm6437_bios/fastcopytest_dm6437_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6437_bios/fastcopytest_dm6437_x64P"
+        cfgScript="dm6437_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6437%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="dm6437_nobios/fastcopytest_nobios_lld_dm6437"
+        pname="dm6437_nobios/fastcopytest_nobios_lld_dm6437.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6437"
+        profile="debug"
+        xCfgScript="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437_x64P"
+        cfgScript="dm6437_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22dm6437%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="dm6437_nobios/fastcopytest_nobios_dm6437"
+        pname="dm6437_nobios/fastcopytest_nobios_dm6437.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6437"
+        profile="debug"
+        xCfgScript="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437_x64P"
+        cfgScript="dm6437_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22dm6437%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="C6455_bios/fastcopytest_lld_C6455"
+        pname="C6455_bios/fastcopytest_lld_C6455.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.dsk6455"
+        profile="debug"
+        xCfgScript="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64P.cfg"
+        xCfgPrefix="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64P"
+        cfgScript="C6455_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22C6455%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="C6455_bios/fastcopytest_C6455"
+        pname="C6455_bios/fastcopytest_C6455.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.dsk6455"
+        profile="debug"
+        xCfgScript="package/cfg/C6455_bios/fastcopytest_C6455_x64P.cfg"
+        xCfgPrefix="package/cfg/C6455_bios/fastcopytest_C6455_x64P"
+        cfgScript="C6455_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22C6455%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="C6455_nobios/fastcopytest_nobios_lld_C6455"
+        pname="C6455_nobios/fastcopytest_nobios_lld_C6455.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.dsk6455"
+        profile="debug"
+        xCfgScript="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455_x64P.cfg"
+        xCfgPrefix="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455_x64P"
+        cfgScript="C6455_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22C6455%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="C6455_nobios/fastcopytest_nobios_C6455"
+        pname="C6455_nobios/fastcopytest_nobios_C6455.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.dsk6455"
+        profile="debug"
+        xCfgScript="package/cfg/C6455_nobios/fastcopytest_nobios_C6455_x64P.cfg"
+        xCfgPrefix="package/cfg/C6455_nobios/fastcopytest_nobios_C6455_x64P"
+        cfgScript="C6455_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22C6455%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="3430_bios/fastcopytest_lld_3430"
+        pname="3430_bios/fastcopytest_lld_3430.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.sdp3430"
+        profile="debug"
+        xCfgScript="package/cfg/3430_bios/fastcopytest_lld_3430_x64P.cfg"
+        xCfgPrefix="package/cfg/3430_bios/fastcopytest_lld_3430_x64P"
+        cfgScript="3430_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%223430%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="3430_bios/fastcopytest_3430"
+        pname="3430_bios/fastcopytest_3430.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.sdp3430"
+        profile="debug"
+        xCfgScript="package/cfg/3430_bios/fastcopytest_3430_x64P.cfg"
+        xCfgPrefix="package/cfg/3430_bios/fastcopytest_3430_x64P"
+        cfgScript="3430_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%223430%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="3430_nobios/fastcopytest_nobios_lld_3430"
+        pname="3430_nobios/fastcopytest_nobios_lld_3430.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.sdp3430"
+        profile="debug"
+        xCfgScript="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430_x64P.cfg"
+        xCfgPrefix="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430_x64P"
+        cfgScript="3430_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%223430%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="3430_nobios/fastcopytest_nobios_3430"
+        pname="3430_nobios/fastcopytest_nobios_3430.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.sdp3430"
+        profile="debug"
+        xCfgScript="package/cfg/3430_nobios/fastcopytest_nobios_3430_x64P.cfg"
+        xCfgPrefix="package/cfg/3430_nobios/fastcopytest_nobios_3430_x64P"
+        cfgScript="3430_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%223430%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="3530_bios/fastcopytest_lld_3530"
+        pname="3530_bios/fastcopytest_lld_3530.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evm3530"
+        profile="debug"
+        xCfgScript="package/cfg/3530_bios/fastcopytest_lld_3530_x64P.cfg"
+        xCfgPrefix="package/cfg/3530_bios/fastcopytest_lld_3530_x64P"
+        cfgScript="3530_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%223530%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="3530_bios/fastcopytest_3530"
+        pname="3530_bios/fastcopytest_3530.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evm3530"
+        profile="debug"
+        xCfgScript="package/cfg/3530_bios/fastcopytest_3530_x64P.cfg"
+        xCfgPrefix="package/cfg/3530_bios/fastcopytest_3530_x64P"
+        cfgScript="3530_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%223530%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="3530_nobios/fastcopytest_nobios_lld_3530"
+        pname="3530_nobios/fastcopytest_nobios_lld_3530.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evm3530"
+        profile="debug"
+        xCfgScript="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530_x64P.cfg"
+        xCfgPrefix="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530_x64P"
+        cfgScript="3530_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%223530%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="3530_nobios/fastcopytest_nobios_3530"
+        pname="3530_nobios/fastcopytest_nobios_3530.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evm3530"
+        profile="debug"
+        xCfgScript="package/cfg/3530_nobios/fastcopytest_nobios_3530_x64P.cfg"
+        xCfgPrefix="package/cfg/3530_nobios/fastcopytest_nobios_3530_x64P"
+        cfgScript="3530_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%223530%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="dm6467_bios/fastcopytest_lld_dm6467"
+        pname="dm6467_bios/fastcopytest_lld_dm6467.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="debug"
+        xCfgScript="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64P"
+        cfgScript="dm6467_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6467%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="dm6467_bios/fastcopytest_dm6467"
+        pname="dm6467_bios/fastcopytest_dm6467.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="debug"
+        xCfgScript="package/cfg/dm6467_bios/fastcopytest_dm6467_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6467_bios/fastcopytest_dm6467_x64P"
+        cfgScript="dm6467_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm6467%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="dm6467_nobios/fastcopytest_nobios_lld_dm6467"
+        pname="dm6467_nobios/fastcopytest_nobios_lld_dm6467.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="debug"
+        xCfgScript="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467_x64P"
+        cfgScript="dm6467_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22dm6467%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="dm6467_nobios/fastcopytest_nobios_dm6467"
+        pname="dm6467_nobios/fastcopytest_nobios_dm6467.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="debug"
+        xCfgScript="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467_x64P.cfg"
+        xCfgPrefix="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467_x64P"
+        cfgScript="dm6467_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22dm6467%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="dm648_bios/fastcopytest_lld_dm648"
+        pname="dm648_bios/fastcopytest_lld_dm648.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM648"
+        profile="debug"
+        xCfgScript="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64P.cfg"
+        xCfgPrefix="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64P"
+        cfgScript="dm648_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm648%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="dm648_bios/fastcopytest_dm648"
+        pname="dm648_bios/fastcopytest_dm648.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM648"
+        profile="debug"
+        xCfgScript="package/cfg/dm648_bios/fastcopytest_dm648_x64P.cfg"
+        xCfgPrefix="package/cfg/dm648_bios/fastcopytest_dm648_x64P"
+        cfgScript="dm648_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22dm648%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="dm648_nobios/fastcopytest_nobios_lld_dm648"
+        pname="dm648_nobios/fastcopytest_nobios_lld_dm648.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM648"
+        profile="debug"
+        xCfgScript="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648_x64P.cfg"
+        xCfgPrefix="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648_x64P"
+        cfgScript="dm648_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22dm648%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="dm648_nobios/fastcopytest_nobios_dm648"
+        pname="dm648_nobios/fastcopytest_nobios_dm648.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM648"
+        profile="debug"
+        xCfgScript="package/cfg/dm648_nobios/fastcopytest_nobios_dm648_x64P.cfg"
+        xCfgPrefix="package/cfg/dm648_nobios/fastcopytest_nobios_dm648_x64P"
+        cfgScript="dm648_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22dm648%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="omapL138_bios/fastcopytest_lld_omapL138"
+        pname="omapL138_bios/fastcopytest_lld_omapL138.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evmOMAPL138"
+        profile="debug"
+        xCfgScript="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674.cfg"
+        xCfgPrefix="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674"
+        cfgScript="omapL138_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22omapL138%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="omapL138_bios/fastcopytest_omapL138"
+        pname="omapL138_bios/fastcopytest_omapL138.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evmOMAPL138"
+        profile="debug"
+        xCfgScript="package/cfg/omapL138_bios/fastcopytest_omapL138_x674.cfg"
+        xCfgPrefix="package/cfg/omapL138_bios/fastcopytest_omapL138_x674"
+        cfgScript="omapL138_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22omapL138%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="omapL138_nobios/fastcopytest_nobios_lld_omapL138"
+        pname="omapL138_nobios/fastcopytest_nobios_lld_omapL138.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evmOMAPL138"
+        profile="debug"
+        xCfgScript="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138_x674.cfg"
+        xCfgPrefix="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138_x674"
+        cfgScript="omapL138_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22omapL138%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="omapL138_nobios/fastcopytest_nobios_omapL138"
+        pname="omapL138_nobios/fastcopytest_nobios_omapL138.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evmOMAPL138"
+        profile="debug"
+        xCfgScript="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138_x674.cfg"
+        xCfgPrefix="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138_x674"
+        cfgScript="omapL138_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22omapL138%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="evm6748_bios/fastcopytest_lld_evm6748"
+        pname="evm6748_bios/fastcopytest_lld_evm6748.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evm6748"
+        profile="debug"
+        xCfgScript="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674.cfg"
+        xCfgPrefix="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674"
+        cfgScript="evm6748_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22evm6748%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="evm6748_bios/fastcopytest_evm6748"
+        pname="evm6748_bios/fastcopytest_evm6748.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evm6748"
+        profile="debug"
+        xCfgScript="package/cfg/evm6748_bios/fastcopytest_evm6748_x674.cfg"
+        xCfgPrefix="package/cfg/evm6748_bios/fastcopytest_evm6748_x674"
+        cfgScript="evm6748_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22evm6748%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="evm6748_nobios/fastcopytest_nobios_lld_evm6748"
+        pname="evm6748_nobios/fastcopytest_nobios_lld_evm6748.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evm6748"
+        profile="debug"
+        xCfgScript="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748_x674.cfg"
+        xCfgPrefix="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748_x674"
+        cfgScript="evm6748_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22evm6748%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="evm6748_nobios/fastcopytest_nobios_evm6748"
+        pname="evm6748_nobios/fastcopytest_nobios_evm6748.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evm6748"
+        profile="debug"
+        xCfgScript="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748_x674.cfg"
+        xCfgPrefix="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748_x674"
+        cfgScript="evm6748_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22evm6748%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="omapL137_bios/fastcopytest_lld_omapL137"
+        pname="omapL137_bios/fastcopytest_lld_omapL137.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evmOMAPL137"
+        profile="debug"
+        xCfgScript="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674.cfg"
+        xCfgPrefix="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674"
+        cfgScript="omapL137_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22omapL137%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="omapL137_bios/fastcopytest_omapL137"
+        pname="omapL137_bios/fastcopytest_omapL137.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evmOMAPL137"
+        profile="debug"
+        xCfgScript="package/cfg/omapL137_bios/fastcopytest_omapL137_x674.cfg"
+        xCfgPrefix="package/cfg/omapL137_bios/fastcopytest_omapL137_x674"
+        cfgScript="omapL137_bios/fastcopytest.tcf"
+        cfgArgs="%7BchipType%3A%20%22omapL137%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    <executable name="omapL137_nobios/fastcopytest_nobios_lld_omapL137"
+        pname="omapL137_nobios/fastcopytest_nobios_lld_omapL137.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evmOMAPL137"
+        profile="debug"
+        xCfgScript="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137_x674.cfg"
+        xCfgPrefix="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137_x674"
+        cfgScript="omapL137_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22omapL137%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20true%7D"
+        />
+    <executable name="omapL137_nobios/fastcopytest_nobios_omapL137"
+        pname="omapL137_nobios/fastcopytest_nobios_omapL137.x674"
+        target="ti.targets.C674"
+        platform="ti.platforms.evmOMAPL137"
+        profile="debug"
+        xCfgScript="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137_x674.cfg"
+        xCfgPrefix="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137_x674"
+        cfgScript="omapL137_nobios/fastcopytest.cfg"
+        cfgArgs="%7BchipType%3A%20%22omapL137%22%2CdebugFlag%3A%20true%2Clldsetting%3A%20false%7D"
+        />
+    </executables>
+    <tests>
+    <test exeName="2430_bios/fastcopytest_lld_2430.x64P"
+        args=""
+        groupName="2430_bios/fastcopytest_lld_2430.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="2430_bios/fastcopytest_2430.x64P"
+        args=""
+        groupName="2430_bios/fastcopytest_2430.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="2430_nobios/fastcopytest_nobios_lld_2430.x64P"
+        args=""
+        groupName="2430_nobios/fastcopytest_nobios_lld_2430.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="2430_nobios/fastcopytest_nobios_2430.x64P"
+        args=""
+        groupName="2430_nobios/fastcopytest_nobios_2430.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6446_bios/fastcopytest_lld_dm6446.x64P"
+        args=""
+        groupName="dm6446_bios/fastcopytest_lld_dm6446.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6446_bios/fastcopytest_dm6446.x64P"
+        args=""
+        groupName="dm6446_bios/fastcopytest_dm6446.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6446_nobios/fastcopytest_nobios_lld_dm6446.x64P"
+        args=""
+        groupName="dm6446_nobios/fastcopytest_nobios_lld_dm6446.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6446_nobios/fastcopytest_nobios_dm6446.x64P"
+        args=""
+        groupName="dm6446_nobios/fastcopytest_nobios_dm6446.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6437_bios/fastcopytest_lld_dm6437.x64P"
+        args=""
+        groupName="dm6437_bios/fastcopytest_lld_dm6437.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6437_bios/fastcopytest_dm6437.x64P"
+        args=""
+        groupName="dm6437_bios/fastcopytest_dm6437.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6437_nobios/fastcopytest_nobios_lld_dm6437.x64P"
+        args=""
+        groupName="dm6437_nobios/fastcopytest_nobios_lld_dm6437.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6437_nobios/fastcopytest_nobios_dm6437.x64P"
+        args=""
+        groupName="dm6437_nobios/fastcopytest_nobios_dm6437.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="C6455_bios/fastcopytest_lld_C6455.x64P"
+        args=""
+        groupName="C6455_bios/fastcopytest_lld_C6455.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="C6455_bios/fastcopytest_C6455.x64P"
+        args=""
+        groupName="C6455_bios/fastcopytest_C6455.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="C6455_nobios/fastcopytest_nobios_lld_C6455.x64P"
+        args=""
+        groupName="C6455_nobios/fastcopytest_nobios_lld_C6455.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="C6455_nobios/fastcopytest_nobios_C6455.x64P"
+        args=""
+        groupName="C6455_nobios/fastcopytest_nobios_C6455.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="3430_bios/fastcopytest_lld_3430.x64P"
+        args=""
+        groupName="3430_bios/fastcopytest_lld_3430.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="3430_bios/fastcopytest_3430.x64P"
+        args=""
+        groupName="3430_bios/fastcopytest_3430.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="3430_nobios/fastcopytest_nobios_lld_3430.x64P"
+        args=""
+        groupName="3430_nobios/fastcopytest_nobios_lld_3430.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="3430_nobios/fastcopytest_nobios_3430.x64P"
+        args=""
+        groupName="3430_nobios/fastcopytest_nobios_3430.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="3530_bios/fastcopytest_lld_3530.x64P"
+        args=""
+        groupName="3530_bios/fastcopytest_lld_3530.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="3530_bios/fastcopytest_3530.x64P"
+        args=""
+        groupName="3530_bios/fastcopytest_3530.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="3530_nobios/fastcopytest_nobios_lld_3530.x64P"
+        args=""
+        groupName="3530_nobios/fastcopytest_nobios_lld_3530.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="3530_nobios/fastcopytest_nobios_3530.x64P"
+        args=""
+        groupName="3530_nobios/fastcopytest_nobios_3530.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6467_bios/fastcopytest_lld_dm6467.x64P"
+        args=""
+        groupName="dm6467_bios/fastcopytest_lld_dm6467.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6467_bios/fastcopytest_dm6467.x64P"
+        args=""
+        groupName="dm6467_bios/fastcopytest_dm6467.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6467_nobios/fastcopytest_nobios_lld_dm6467.x64P"
+        args=""
+        groupName="dm6467_nobios/fastcopytest_nobios_lld_dm6467.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm6467_nobios/fastcopytest_nobios_dm6467.x64P"
+        args=""
+        groupName="dm6467_nobios/fastcopytest_nobios_dm6467.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm648_bios/fastcopytest_lld_dm648.x64P"
+        args=""
+        groupName="dm648_bios/fastcopytest_lld_dm648.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm648_bios/fastcopytest_dm648.x64P"
+        args=""
+        groupName="dm648_bios/fastcopytest_dm648.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm648_nobios/fastcopytest_nobios_lld_dm648.x64P"
+        args=""
+        groupName="dm648_nobios/fastcopytest_nobios_lld_dm648.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="dm648_nobios/fastcopytest_nobios_dm648.x64P"
+        args=""
+        groupName="dm648_nobios/fastcopytest_nobios_dm648.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="omapL138_bios/fastcopytest_lld_omapL138.x674"
+        args=""
+        groupName="omapL138_bios/fastcopytest_lld_omapL138.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="omapL138_bios/fastcopytest_omapL138.x674"
+        args=""
+        groupName="omapL138_bios/fastcopytest_omapL138.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="omapL138_nobios/fastcopytest_nobios_lld_omapL138.x674"
+        args=""
+        groupName="omapL138_nobios/fastcopytest_nobios_lld_omapL138.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="omapL138_nobios/fastcopytest_nobios_omapL138.x674"
+        args=""
+        groupName="omapL138_nobios/fastcopytest_nobios_omapL138.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="evm6748_bios/fastcopytest_lld_evm6748.x674"
+        args=""
+        groupName="evm6748_bios/fastcopytest_lld_evm6748.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="evm6748_bios/fastcopytest_evm6748.x674"
+        args=""
+        groupName="evm6748_bios/fastcopytest_evm6748.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="evm6748_nobios/fastcopytest_nobios_lld_evm6748.x674"
+        args=""
+        groupName="evm6748_nobios/fastcopytest_nobios_lld_evm6748.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="evm6748_nobios/fastcopytest_nobios_evm6748.x674"
+        args=""
+        groupName="evm6748_nobios/fastcopytest_nobios_evm6748.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="omapL137_bios/fastcopytest_lld_omapL137.x674"
+        args=""
+        groupName="omapL137_bios/fastcopytest_lld_omapL137.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="omapL137_bios/fastcopytest_omapL137.x674"
+        args=""
+        groupName="omapL137_bios/fastcopytest_omapL137.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="omapL137_nobios/fastcopytest_nobios_lld_omapL137.x674"
+        args=""
+        groupName="omapL137_nobios/fastcopytest_nobios_lld_omapL137.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="omapL137_nobios/fastcopytest_nobios_omapL137.x674"
+        args=""
+        groupName="omapL137_nobios/fastcopytest_nobios_omapL137.x674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_dman3_examples_fastcopy"
+        pname="ti_sdo_fc_dman3_examples_fastcopy.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64Pcfg.s62"/>
+        <file name="dm6446_bios/fastcopytest_lld_dm6446.x64P"/>
+        <file name="dm648_bios/fastcopytest_lld_dm648.x64P"/>
+        <file name="evm6748_nobios/fastcopytest.cmd"/>
+        <file name="bios_rts.c"/>
+        <file name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674.cfg"/>
+        <file name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430_x64P.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64Pcfg.s62"/>
+        <file name="bios_rts.h"/>
+        <file name="package/cfg/3430_nobios/fastcopytest_nobios_3430_x64P.c"/>
+        <file name="2430_bios/fastcopytest_2430.x64P"/>
+        <file name="package/cfg/3530_bios/fastcopytest_lld_3530_x64P.c"/>
+        <file name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674.xdc.inc"/>
+        <file name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137_x674.xdc.inc"/>
+        <file name="fcpy_ti_ifcpy.c"/>
+        <file name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674cfg.s62"/>
+        <file name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674cfg_c.c"/>
+        <file name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64P.cfg"/>
+        <file name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64P.xdc.inc"/>
+        <file name="C6455_nobios/fastcopytest_nobios_C6455.x64P"/>
+        <file name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64P.c"/>
+        <file name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648_x64P.xdc.inc"/>
+        <file name="omapL138_bios/fastcopytest_lld_omapL138.x674"/>
+        <file name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674.xdc.inc"/>
+        <file name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674.cfg"/>
+        <file name="package/cfg/2430_bios/fastcopytest_lld_2430_x64Pcfg.s62"/>
+        <file name="dm6446_nobios/fastcopytest.pjt"/>
+        <file name="package/cfg/3530_bios/fastcopytest_3530_x64P.xdc.inc"/>
+        <file name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674cfg.s62"/>
+        <file name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674cfg.s62"/>
+        <file name="package/cfg/C6455_bios/fastcopytest_C6455_x64P.cfg"/>
+        <file name="package/cfg/3530_nobios/fastcopytest_nobios_3530_x64P.cfg"/>
+        <file name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138_x674.c"/>
+        <file name="package/cfg/3430_bios/fastcopytest_lld_3430_x64Pcfg_c.c"/>
+        <file name="dm6446_nobios/fastcopytest_nobios_lld_dm6446.x64P"/>
+        <file name="dm6467_nobios/fastcopytest_nobios_lld_dm6467.x64P"/>
+        <file name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437_x64P.cfg"/>
+        <file name="package/cfg/3430_bios/fastcopytest_3430_x64P.xdc.inc"/>
+        <file name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64Pcfg.s62"/>
+        <file name="dm6467_nobios/fastcopytest_instr.cmd"/>
+        <file name="dm648_bios/dman3_config.c"/>
+        <file name="omapL138_bios/fastcopytest.pjt"/>
+        <file name="package/package_ti.sdo.fc.dman3.examples.fastcopy.c"/>
+        <file name="package/cfg/3430_bios/fastcopytest_lld_3430_x64P.cfg"/>
+        <file name="fcpy_ti_idma3.c"/>
+        <file name="package/cfg/3430_bios/fastcopytest_3430_x64P.cfg"/>
+        <file name="C6455_nobios/fastcopytest_instr.cmd"/>
+        <file name="2430_bios/fastcopytest_lld_2430.x64P"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="fastcopytest_nobios.cmd.xdt"/>
+        <file name="omapL138_bios/fastcopytest-llrm.pjt"/>
+        <file name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64P.cfg"/>
+        <file name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64P.cfg"/>
+        <file name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446_x64P.xdc.inc"/>
+        <file name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455_x64P.cfg"/>
+        <file name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455_x64P.c"/>
+        <file name="dm6437_nobios/fastcopytest.cmd"/>
+        <file name="omapL137_bios/dman3_lld_config.c"/>
+        <file name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674cfg.s62"/>
+        <file name="dm648_bios/fastcopytest.pjt"/>
+        <file name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137_x674.c"/>
+        <file name="package/package.rel.dot"/>
+        <file name="omapL137_nobios/fastcopytest_nobios_omapL137.x674"/>
+        <file name="3530_bios/fastcopytest.pjt"/>
+        <file name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64P.c"/>
+        <file name="package/cfg/3530_bios/fastcopytest_3530_x64P.c"/>
+        <file name="omapL137_bios/fastcopytest.pjt"/>
+        <file name="C6455_nobios/fastcopytest.cmd"/>
+        <file name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748_x674.c"/>
+        <file name="package/cfg/3430_bios/fastcopytest_lld_3430_x64Pcfg.s62"/>
+        <file name="omapL137_nobios/fastcopytest_instr.cmd"/>
+        <file name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64P.cfg"/>
+        <file name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64P.c"/>
+        <file name="evm6748_nobios/fastcopytest_nobios_evm6748.x674"/>
+        <file name="evm6748_nobios/fastcopytest.pjt"/>
+        <file name="dm6467_nobios/dman3_config.c"/>
+        <file name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64Pcfg_c.c"/>
+        <file name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64P.xdc.inc"/>
+        <file name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674.cfg"/>
+        <file name="package/cfg/dm648_bios/fastcopytest_dm648_x64P.xdc.inc"/>
+        <file name="dm6437_bios/fastcopytest_dm6437.x64P"/>
+        <file name="fcpy_ti_ifcpyvt.c"/>
+        <file name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137_x674.c"/>
+        <file name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437_x64P.c"/>
+        <file name="3530_bios/fastcopytest_lld_3530.x64P"/>
+        <file name="omapL137_nobios/fastcopytest.cmd"/>
+        <file name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648_x64P.cfg"/>
+        <file name="dm6446_nobios/dman3_config.c"/>
+        <file name="evm6748_bios/fastcopytest.cmd"/>
+        <file name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64P.c"/>
+        <file name="3530_nobios/fastcopytest_nobios_3530.x64P"/>
+        <file name="dm6467_nobios/fastcopytest.cmd"/>
+        <file name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64Pcfg_c.c"/>
+        <file name="package/cfg/dm648_bios/fastcopytest_dm648_x64P.cfg"/>
+        <file name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674.c"/>
+        <file name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674cfg_c.c"/>
+        <file name="omapL138_nobios/fastcopytest_nobios_lld_omapL138.x674"/>
+        <file name="package/cfg/3430_bios/fastcopytest_lld_3430_x64P.c"/>
+        <file name="dm648_nobios/fastcopytest_instr.cmd"/>
+        <file name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430_x64P.xdc.inc"/>
+        <file name="3430_nobios/fastcopytest_nobios_lld_3430.x64P"/>
+        <file name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530_x64P.cfg"/>
+        <file name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467_x64P.c"/>
+        <file name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467_x64P.xdc.inc"/>
+        <file name="dm6437_nobios/dman3_config.c"/>
+        <file name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748_x674.xdc.inc"/>
+        <file name="fcpy_ti_ialg.c"/>
+        <file name="C6455_nobios/fastcopytest_nobios_lld_C6455.x64P"/>
+        <file name="dm648_nobios/fastcopytest_nobios_dm648.x64P"/>
+        <file name="package/cfg/3530_bios/fastcopytest_3530_x64Pcfg_c.c"/>
+        <file name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64Pcfg.s62"/>
+        <file name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64P.c"/>
+        <file name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648_x64P.c"/>
+        <file name="package/cfg/2430_bios/fastcopytest_2430_x64P.cfg"/>
+        <file name="dm6437_nobios/fastcopytest.pjt"/>
+        <file name="evm6748_nobios/fastcopytest_nobios_lld_evm6748.x674"/>
+        <file name="2430_nobios/fastcopytest.cmd"/>
+        <file name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64Pcfg.s62"/>
+        <file name="dm6467_bios/fastcopytest.cmd"/>
+        <file name="package/cfg/omapL137_bios/fastcopytest_omapL137_x674.c"/>
+        <file name="omapL137_bios/dman3_config.c"/>
+        <file name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446_x64P.cfg"/>
+        <file name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674cfg.s62"/>
+        <file name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455_x64P.xdc.inc"/>
+        <file name="package/cfg/3430_bios/fastcopytest_lld_3430_x64P.xdc.inc"/>
+        <file name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674.cfg"/>
+        <file name="C6455_nobios/fastcopytest.pjt"/>
+        <file name="dm6437_nobios/fastcopytest_nobios_dm6437.x64P"/>
+        <file name="package/cfg/2430_bios/fastcopytest_lld_2430_x64P.xdc.inc"/>
+        <file name="C6455_bios/fastcopytest_lld_C6455.x64P"/>
+        <file name="ifcpy.c"/>
+        <file name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64P.c"/>
+        <file name="dm6446_bios/fastcopytest_dm6446.x64P"/>
+        <file name="ifcpy.h"/>
+        <file name="fcpy_ti_674.qti"/>
+        <file name="fastcopytest.c"/>
+        <file name="3530_nobios/fastcopytest_instr.cmd"/>
+        <file name="package/cfg/3430_nobios/fastcopytest_nobios_3430_x64P.xdc.inc"/>
+        <file name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446_x64P.c"/>
+        <file name="package/cfg/3530_bios/fastcopytest_3530_x64Pcfg.s62"/>
+        <file name="omapL137_nobios/fastcopytest.pjt"/>
+        <file name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437_x64P.c"/>
+        <file name="3430_nobios/fastcopytest_nobios_3430.x64P"/>
+        <file name="evm6748_bios/fastcopytest.pjt"/>
+        <file name="C6455_bios/fastcopytest.cmd"/>
+        <file name="dm6467_nobios/fastcopytest.pjt"/>
+        <file name="3530_nobios/fastcopytest.cmd"/>
+        <file name="package/cfg/dm648_bios/fastcopytest_dm648_x64Pcfg_c.c"/>
+        <file name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138_x674.c"/>
+        <file name="lib/release/fcpy_ti.a64P"/>
+        <file name="omapL138_bios/dman3_lld_config.c"/>
+        <file name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437_x64P.cfg"/>
+        <file name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674.xdc.inc"/>
+        <file name="dm6437_nobios/fastcopytest_nobios_lld_dm6437.x64P"/>
+        <file name="C6455_bios/fastcopytest_C6455.x64P"/>
+        <file name="3530_bios/dman3_config.c"/>
+        <file name="evm6748_bios/dman3_config.c"/>
+        <file name="dm6446_nobios/fastcopytest_instr.cmd"/>
+        <file name="package/cfg/3530_bios/fastcopytest_lld_3530_x64Pcfg_c.c"/>
+        <file name="omapL138_nobios/fastcopytest_instr.cmd"/>
+        <file name="package/cfg/2430_bios/fastcopytest_lld_2430_x64P.c"/>
+        <file name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430_x64P.cfg"/>
+        <file name="dm648_bios/fastcopytest_dm648.x64P"/>
+        <file name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64P.cfg"/>
+        <file name="omapL138_nobios/dman3_config.c"/>
+        <file name="package/cfg/3430_bios/fastcopytest_3430_x64Pcfg_c.c"/>
+        <file name="dm6446_bios/dman3_lld_config.c"/>
+        <file name="package/cfg/C6455_bios/fastcopytest_C6455_x64P.xdc.inc"/>
+        <file name="package/cfg/3530_bios/fastcopytest_lld_3530_x64P.xdc.inc"/>
+        <file name="omapL137_bios/fastcopytest_omapL137.x674"/>
+        <file name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467_x64P.cfg"/>
+        <file name="fcpy_ti674.pjt"/>
+        <file name="package/cfg/2430_bios/fastcopytest_lld_2430_x64P.cfg"/>
+        <file name="3430_nobios/fastcopytest_instr.cmd"/>
+        <file name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530_x64P.xdc.inc"/>
+        <file name="package/cfg/2430_nobios/fastcopytest_nobios_lld_2430_x64P.c"/>
+        <file name="C6455_bios/dman3_config.c"/>
+        <file name="2430_nobios/dman3_config.c"/>
+        <file name="package/cfg/2430_bios/fastcopytest_2430_x64Pcfg_c.c"/>
+        <file name="omapL138_bios/fastcopytest_omapL138.x674"/>
+        <file name="dm6446_bios/fastcopytest-llrm.pjt"/>
+        <file name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138_x674.xdc.inc"/>
+        <file name="3430_bios/dman3_config.c"/>
+        <file name="lib/release/fcpy_ti.a674"/>
+        <file name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648_x64P.cfg"/>
+        <file name="dm648_nobios/dman3_config.c"/>
+        <file name="2430_nobios/fastcopytest.pjt"/>
+        <file name="omapL138_nobios/fastcopytest.cmd"/>
+        <file name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748_x674.xdc.inc"/>
+        <file name="dm6467_bios/fastcopytest.pjt"/>
+        <file name="package/cfg/dm648_bios/fastcopytest_dm648_x64Pcfg.s62"/>
+        <file name="dm6437_bios/fastcopytest_lld_dm6437.x64P"/>
+        <file name="dm6467_bios/dman3_config.c"/>
+        <file name="3530_nobios/dman3_config.c"/>
+        <file name="3430_nobios/dman3_config.c"/>
+        <file name="omapL137_nobios/dman3_config.c"/>
+        <file name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446_x64P.cfg"/>
+        <file name="2430_nobios/fastcopytest_instr.cmd"/>
+        <file name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467_x64P.c"/>
+        <file name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64P.cfg"/>
+        <file name="bios_rtsasm.s62"/>
+        <file name="dm6437_nobios/fastcopytest_instr.cmd"/>
+        <file name="package/cfg/3530_bios/fastcopytest_lld_3530_x64Pcfg.s62"/>
+        <file name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64P.cfg"/>
+        <file name="package/cfg/C6455_nobios/fastcopytest_nobios_C6455_x64P.cfg"/>
+        <file name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748_x674.c"/>
+        <file name="2430_nobios/fastcopytest_nobios_2430.x64P"/>
+        <file name="package/cfg/3430_bios/fastcopytest_3430_x64Pcfg.s62"/>
+        <file name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64P.xdc.inc"/>
+        <file name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674cfg_c.c"/>
+        <file name="dm6467_bios/fastcopytest_lld_dm6467.x64P"/>
+        <file name="fastcopytest.cmd.xdt"/>
+        <file name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64P.xdc.inc"/>
+        <file name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64Pcfg_c.c"/>
+        <file name="omapL137_bios/fastcopytest_lld_omapL137.x674"/>
+        <file name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64P.cfg"/>
+        <file name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137_x674.cfg"/>
+        <file name="package/cfg/dm6467_nobios/fastcopytest_nobios_lld_dm6467_x64P.cfg"/>
+        <file name="package/cfg/dm6467_nobios/fastcopytest_nobios_dm6467_x64P.xdc.inc"/>
+        <file name="package/cfg/3430_nobios/fastcopytest_nobios_3430_x64P.cfg"/>
+        <file name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674.xdc.inc"/>
+        <file name="package/cfg/2430_bios/fastcopytest_2430_x64Pcfg.s62"/>
+        <file name="C6455_bios/fastcopytest.pjt"/>
+        <file name="dm6437_bios/dman3_config.c"/>
+        <file name="package/package.ext.xml"/>
+        <file name="3530_nobios/fastcopytest.pjt"/>
+        <file name="evm6748_bios/dman3_lld_config.c"/>
+        <file name="package/cfg/2430_nobios/fastcopytest_nobios_2430_x64P.cfg"/>
+        <file name="dm6446_bios/dman3_config.c"/>
+        <file name="package/cfg/dm648_bios/fastcopytest_dm648_x64P.c"/>
+        <file name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674.c"/>
+        <file name="2430_bios/fastcopytest.cmd"/>
+        <file name="omapL138_nobios/fastcopytest_nobios_omapL138.x674"/>
+        <file name="omapL138_bios/dman3_config.c"/>
+        <file name="2430_bios/dman3_config.c"/>
+        <file name="package/cfg/omapL138_nobios/fastcopytest_nobios_omapL138_x674.cfg"/>
+        <file name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674.xdc.inc"/>
+        <file name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64P.xdc.inc"/>
+        <file name="dm6446_bios/fastcopytest.cmd"/>
+        <file name="dm6467_bios/fastcopytest_dm6467.x64P"/>
+        <file name="3430_bios/fastcopytest.cmd"/>
+        <file name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64P.xdc.inc"/>
+        <file name="package/cfg/dm6446_bios/fastcopytest_lld_dm6446_x64P.xdc.inc"/>
+        <file name="evm6748_bios/fastcopytest_lld_evm6748.x674"/>
+        <file name="3430_nobios/fastcopytest.cmd"/>
+        <file name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674cfg.s62"/>
+        <file name="package/cfg/dm6467_bios/fastcopytest_dm6467_x64Pcfg.s62"/>
+        <file name="3530_bios/fastcopytest_3530.x64P"/>
+        <file name="mySem.c"/>
+        <file name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674.cfg"/>
+        <file name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430_x64P.cfg"/>
+        <file name="dm6446_nobios/fastcopytest_nobios_dm6446.x64P"/>
+        <file name="package/cfg/3530_bios/fastcopytest_lld_3530_x64P.cfg"/>
+        <file name="dm648_nobios/fastcopytest_nobios_lld_dm648.x64P"/>
+        <file name="omapL138_nobios/fastcopytest.pjt"/>
+        <file name="evm6748_bios/fastcopytest-llrm.pjt"/>
+        <file name="dm6437_bios/fastcopytest.cmd"/>
+        <file name="fcpy_ti_priv.h"/>
+        <file name="3430_bios/fastcopytest_lld_3430.x64P"/>
+        <file name="2430_nobios/fastcopytest_nobios_lld_2430.x64P"/>
+        <file name="fcpy_ti64.pjt"/>
+        <file name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138_x674.xdc.inc"/>
+        <file name="package/cfg/evm6748_nobios/fastcopytest_nobios_evm6748_x674.cfg"/>
+        <file name="dm6467_nobios/fastcopytest_nobios_dm6467.x64P"/>
+        <file name="package/cfg/2430_nobios/fastcopytest_nobios_2430_x64P.xdc.inc"/>
+        <file name="3430_bios/fastcopytest_3430.x64P"/>
+        <file name="package/build.cfg"/>
+        <file name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64Pcfg_c.c"/>
+        <file name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455_x64P.c"/>
+        <file name="package/cfg/dm6446_nobios/fastcopytest_nobios_lld_dm6446_x64P.c"/>
+        <file name="omapL137_bios/fastcopytest-llrm.pjt"/>
+        <file name="3530_nobios/fastcopytest_nobios_lld_3530.x64P"/>
+        <file name="package/cfg/3530_nobios/fastcopytest_nobios_3530_x64P.c"/>
+        <file name="package/cfg/C6455_bios/fastcopytest_C6455_x64P.c"/>
+        <file name="package/cfg/2430_bios/fastcopytest_2430_x64P.xdc.inc"/>
+        <file name="dm648_nobios/fastcopytest.cmd"/>
+        <file name="evm6748_nobios/dman3_config.c"/>
+        <file name="omapL137_nobios/fastcopytest_nobios_lld_omapL137.x674"/>
+        <file name="fcpy.c"/>
+        <file name="package/cfg/C6455_bios/fastcopytest_C6455_x64Pcfg_c.c"/>
+        <file name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64P.xdc.inc"/>
+        <file name="evm6748_nobios/fastcopytest_instr.cmd"/>
+        <file name="fcpy.h"/>
+        <file name="fcpy_ti.c"/>
+        <file name="fcpy_ti.h"/>
+        <file name="fcpy_ti_idma3vt.c"/>
+        <file name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674.c"/>
+        <file name="package/cfg/evm6748_bios/fastcopytest_evm6748_x674.c"/>
+        <file name="2430_bios/fastcopytest.pjt"/>
+        <file name="package/cfg/2430_nobios/fastcopytest_nobios_2430_x64P.c"/>
+        <file name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64Pcfg_c.c"/>
+        <file name="package/cfg/3430_bios/fastcopytest_3430_x64P.c"/>
+        <file name="dm6446_bios/fastcopytest.pjt"/>
+        <file name="package/cfg/3530_bios/fastcopytest_3530_x64P.cfg"/>
+        <file name="3430_bios/fastcopytest.pjt"/>
+        <file name="lib/debug/fcpy_ti.a64P"/>
+        <file name="3430_nobios/fastcopytest.pjt"/>
+        <file name="package/cfg/omapL137_nobios/fastcopytest_nobios_omapL137_x674.xdc.inc"/>
+        <file name="dm6446_nobios/fastcopytest.cmd"/>
+        <file name="package/cfg/2430_bios/fastcopytest_2430_x64P.c"/>
+        <file name="package/cfg/3430_nobios/fastcopytest_nobios_lld_3430_x64P.c"/>
+        <file name="package/cfg/omapL137_nobios/fastcopytest_nobios_lld_omapL137_x674.cfg"/>
+        <file name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64Pcfg.s62"/>
+        <file name="package/cfg/dm648_nobios/fastcopytest_nobios_lld_dm648_x64P.c"/>
+        <file name="package/cfg/C6455_nobios/fastcopytest_nobios_lld_C6455_x64P.xdc.inc"/>
+        <file name="package/cfg/dm6446_bios/fastcopytest_dm6446_x64P.c"/>
+        <file name="package/cfg/evm6748_nobios/fastcopytest_nobios_lld_evm6748_x674.cfg"/>
+        <file name="package/package.bld.xml"/>
+        <file name="fcpy_ti_64P.qti"/>
+        <file name="package/cfg/omapL138_bios/fastcopytest_lld_omapL138_x674.c"/>
+        <file name="package/cfg/dm6467_bios/fastcopytest_lld_dm6467_x64Pcfg_c.c"/>
+        <file name="package/cfg/C6455_bios/fastcopytest_C6455_x64Pcfg.s62"/>
+        <file name="omapL138_bios/fastcopytest.cmd"/>
+        <file name="dm6437_bios/fastcopytest.pjt"/>
+        <file name="package/cfg/C6455_bios/fastcopytest_lld_C6455_x64Pcfg_c.c"/>
+        <file name="evm6748_bios/fastcopytest_evm6748.x674"/>
+        <file name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674.xdc.inc"/>
+        <file name="package/cfg/dm648_nobios/fastcopytest_nobios_dm648_x64P.xdc.inc"/>
+        <file name="package/cfg/3530_nobios/fastcopytest_nobios_lld_3530_x64P.c"/>
+        <file name="package/cfg/3530_nobios/fastcopytest_nobios_3530_x64P.xdc.inc"/>
+        <file name="package/cfg/evm6748_bios/fastcopytest_lld_evm6748_x674cfg_c.c"/>
+        <file name="package/cfg/dm6437_bios/fastcopytest_lld_dm6437_x64Pcfg.s62"/>
+        <file name="package/cfg/dm6446_nobios/fastcopytest_nobios_dm6446_x64P.xdc.inc"/>
+        <file name="lib/debug/fcpy_ti.a674"/>
+        <file name="package/cfg/2430_bios/fastcopytest_lld_2430_x64Pcfg_c.c"/>
+        <file name="dm648_bios/fastcopytest.cmd"/>
+        <file name="package/cfg/omapL137_bios/fastcopytest_lld_omapL137_x674cfg_c.c"/>
+        <file name="package/cfg/dm648_bios/fastcopytest_lld_dm648_x64P.c"/>
+        <file name="package/cfg/dm6437_nobios/fastcopytest_nobios_lld_dm6437_x64P.xdc.inc"/>
+        <file name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674cfg_c.c"/>
+        <file name="package/cfg/omapL138_nobios/fastcopytest_nobios_lld_omapL138_x674.cfg"/>
+        <file name="package/cfg/dm6437_nobios/fastcopytest_nobios_dm6437_x64P.xdc.inc"/>
+        <file name="package/cfg/omapL138_bios/fastcopytest_omapL138_x674.cfg"/>
+        <file name="3530_bios/fastcopytest.cmd"/>
+        <file name="omapL137_bios/fastcopytest.cmd"/>
+        <file name="dm648_nobios/fastcopytest.pjt"/>
+        <file name="C6455_nobios/dman3_config.c"/>
+        <file name="package/cfg/dm6437_bios/fastcopytest_dm6437_x64Pcfg_c.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,33 @@
+%%{
+/*
+ *  Copyright 2010 by Texas Instruments Incorporated.
+ *
+ */
+
+%%}
+/*
+ *  Linker-command file for the fastcopytest application
+ */
+
+%%{
+var chipType = prog.build.cfgArgs.chipType;
+// Change DDR to DDR2 if loading Davinci platform
+var DDR = ((chipType == "2430") || (chipType == "evm6748") || (chipType == "omapL138")) ? "DDR" : (chipType == "omapL137" ? "SDRAM" : "DDR2"); 
+%%}
+
+_FCPY_IFCPY = _FCPY_TI_IFCPY;
+_FCPY_IDMA3 = _FCPY_TI_IDMA3;
+
+SECTIONS
+{    
+
+    .image       >      `DDR`
+    .internal    >      L1DSRAM   
+}
+%%{
+/*
+ * @(#) ti.sdo.fc.dman3.examples.fastcopy; 1, 0, 0,235; 12-1-2010 17:24:30; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+
+%%}

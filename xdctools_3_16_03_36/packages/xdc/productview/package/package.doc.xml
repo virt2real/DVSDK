@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='xdc.productview' nodoc='1' root='../../' summary='GUI+presentation+of+configurable+modules'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc.productview%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='ProductView' kind='module' nodoc='1' metaonly='1' summary='' inherits='xdc.tools.IProductView'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2Fpackage.html%22+title%3D%22xdc.productview%22%3Exdc.productview%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EProductView%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIProductView.html%22+title%3D%22xdc.tools.IProductView%22%3EIProductView%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EProductView%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIProductView.html%22+title%3D%22xdc.tools.IProductView%22%3Exdc.tools.IProductView%3C%2Fa%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+ProductView+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27xdc.productview.ProductView%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='ProductElemDesc' anchor='.Product.Elem.Desc' altext='xdc.productview.ProductView.ProductElemDesc' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Structure+that+should+be+filled+up+recursively+by+the+implementor+to%0A++define+the+logical+tree+view+of+the+product.+The+product+view+is+%0A++essentially+composed+of+elements+that+are+either+modules+or+groups.%0A++Groups+can+contain+other+groups+or+modules.+The+implementor+will+%0A++typically+start+with+a+root+node+and+then+logically+build+a+tree%0A++comprising+of+groups+and+modules' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.tools.IProductView.ProductElemDesc%22%3EIProductView%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EProductElemDesc%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EelemName%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmoduleName%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EiconFileName%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.tools.IProductView.ProductElemDesc%22%3EIProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EelemArray%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EProductElemDesc%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EelemName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmoduleName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EiconFileName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EelemArray%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.tools.IProductView.ProductElemDesc%22%3EIProductView.ProductElemDesc%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='FIELDS'>
+                    <docChild name='elemName' summary='Name+of+element.+Elements+can+be+groups+or%0A++++++++++++++++++++++++++modules'>
+                    </docChild>
+                    <docChild name='moduleName' summary='In+case+of+a+leaf+node+this+field+will%0A++++++++++++++++++++++++++contain+the+module+name.+For+intermediate%0A++++++++++++++++++++++++++tree+nodes+the+module+name+will+be+set+to+null'>
+                    </docChild>
+                    <docChild name='iconFileName' summary='The+name+of+the+icon+file+that+is+associated%0A++++++++++++++++++++++++++with+this+element'>
+                    </docChild>
+                    <docChild name='elemArray' summary='Array+of+%27ProductElemDesc%27+that+allows+to%0A++++++++++++++++++++++++++recursively+build+up+a+tree+of+ProductElemDesc'>
+                    </docChild>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='diagnosticsGroup' anchor='diagnostics.Group' altext='xdc.productview.ProductView.diagnosticsGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdiagnosticsGroup%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EdiagnosticsGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='gatesGroup' anchor='gates.Group' altext='xdc.productview.ProductView.gatesGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgatesGroup%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EgatesGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='heapsGroup' anchor='heaps.Group' altext='xdc.productview.ProductView.heapsGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EheapsGroup%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EheapsGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='loggersGroup' anchor='loggers.Group' altext='xdc.productview.ProductView.loggersGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EloggersGroup%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EloggersGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='memoryGroup' anchor='memory.Group' altext='xdc.productview.ProductView.memoryGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EmemoryGroup%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EmemoryGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='synchronizationGroup' anchor='synchronization.Group' altext='xdc.productview.ProductView.synchronizationGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsynchronizationGroup%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EsynchronizationGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='syncsGroup' anchor='syncs.Group' altext='xdc.productview.ProductView.syncsGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsyncsGroup%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EsyncsGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='systemGroup' anchor='system.Group' altext='xdc.productview.ProductView.systemGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsystemGroup%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EsystemGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='systemProvidersGroup' anchor='system.Providers.Group' altext='xdc.productview.ProductView.systemProvidersGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsystemProvidersGroup%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EsystemProvidersGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='timestampProvidersGroup' anchor='timestamp.Providers.Group' altext='xdc.productview.ProductView.timestampProvidersGroup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EtimestampProvidersGroup%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EtimestampProvidersGroup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_cfg_Program' anchor='xdc_cfg_.Program' altext='xdc.productview.ProductView.xdc_cfg_Program' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_cfg_Program%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_cfg_Program%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_Assert' anchor='xdc_runtime_.Assert' altext='xdc.productview.ProductView.xdc_runtime_Assert' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Assert%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Assert%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_Defaults' anchor='xdc_runtime_.Defaults' altext='xdc.productview.ProductView.xdc_runtime_Defaults' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Defaults%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Defaults%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_Diags' anchor='xdc_runtime_.Diags' altext='xdc.productview.ProductView.xdc_runtime_Diags' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Diags%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Diags%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_Error' anchor='xdc_runtime_.Error' altext='xdc.productview.ProductView.xdc_runtime_Error' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Error%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Error%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_GateNull' anchor='xdc_runtime_.Gate.Null' altext='xdc.productview.ProductView.xdc_runtime_GateNull' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_GateNull%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_GateNull%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_HeapMin' anchor='xdc_runtime_.Heap.Min' altext='xdc.productview.ProductView.xdc_runtime_HeapMin' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_HeapMin%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_HeapMin%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_HeapStd' anchor='xdc_runtime_.Heap.Std' altext='xdc.productview.ProductView.xdc_runtime_HeapStd' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_HeapStd%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_HeapStd%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_Log' anchor='xdc_runtime_.Log' altext='xdc.productview.ProductView.xdc_runtime_Log' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Log%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Log%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_LoggerBuf' anchor='xdc_runtime_.Logger.Buf' altext='xdc.productview.ProductView.xdc_runtime_LoggerBuf' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_LoggerBuf%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_LoggerBuf%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_LoggerSys' anchor='xdc_runtime_.Logger.Sys' altext='xdc.productview.ProductView.xdc_runtime_LoggerSys' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_LoggerSys%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_LoggerSys%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_Main' anchor='xdc_runtime_.Main' altext='xdc.productview.ProductView.xdc_runtime_Main' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Main%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Main%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_Memory' anchor='xdc_runtime_.Memory' altext='xdc.productview.ProductView.xdc_runtime_Memory' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Memory%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Memory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_Startup' anchor='xdc_runtime_.Startup' altext='xdc.productview.ProductView.xdc_runtime_Startup' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Startup%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Startup%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_SysMin' anchor='xdc_runtime_.Sys.Min' altext='xdc.productview.ProductView.xdc_runtime_SysMin' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_SysMin%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_SysMin%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_SysStd' anchor='xdc_runtime_.Sys.Std' altext='xdc.productview.ProductView.xdc_runtime_SysStd' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_SysStd%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_SysStd%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_System' anchor='xdc_runtime_.System' altext='xdc.productview.ProductView.xdc_runtime_System' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_System%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_System%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_Text' anchor='xdc_runtime_.Text' altext='xdc.productview.ProductView.xdc_runtime_Text' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Text%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Text%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_Timestamp' anchor='xdc_runtime_.Timestamp' altext='xdc.productview.ProductView.xdc_runtime_Timestamp' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Timestamp%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_Timestamp%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_TimestampNull' anchor='xdc_runtime_.Timestamp.Null' altext='xdc.productview.ProductView.xdc_runtime_TimestampNull' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_TimestampNull%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_TimestampNull%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_TimestampStd' anchor='xdc_runtime_.Timestamp.Std' altext='xdc.productview.ProductView.xdc_runtime_TimestampStd' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_TimestampStd%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_TimestampStd%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdc_runtime_knl_SyncGeneric' anchor='xdc_runtime_knl_.Sync.Generic' altext='xdc.productview.ProductView.xdc_runtime_knl_SyncGeneric' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_knl_SyncGeneric%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3Exdc_runtime_knl_SyncGeneric%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xdctoolsProduct' anchor='xdctools.Product' altext='xdc.productview.ProductView.xdctoolsProduct' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ExdctoolsProduct%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3ExdctoolsProduct%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Fproductview%2FProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.productview.ProductView.ProductElemDesc%22%3EProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='getProductDescriptor' anchor='get.Product.Descriptor' altext='xdc.productview.ProductView.getProductDescriptor' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Return+product+descriptor' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIProductView.html%23get.Product.Descriptor%22+title%3D%22xdc.tools.IProductView.getProductDescriptor%22%3EIProductView%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.tools.IProductView.ProductElemDesc%22%3EIProductView.ProductElemDesc%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EgetProductDescriptor%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EProductView.%3Cspan+class%3D%22xdoc-id%22%3EgetProductDescriptor%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2Fxdc%2Ftools%2FIProductView.html%23.Product.Elem.Desc%22+title%3D%22xdc.tools.IProductView.ProductElemDesc%22%3EIProductView.ProductElemDesc%3C%2Fa%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+function+returns+the+root+node+of+the+tree+of+%27ProductElemDesc%27%0A++structures+built+by+the+implementation.'/>
+                </docSect>
+            </decl>
+        </group>
+    </unit>
+</package>

@@ -1,0 +1,8 @@
+#!/bin/sh
+cd /usr/share/ti/dvsdk-demos/
+killall matrix_guiE
+cat /dev/zero > /dev/fb0
+/etc/init.d/loadmodule-rc restart
+./encode -o
+fbset -depth 16
+/etc/init.d/matrix-gui-e start

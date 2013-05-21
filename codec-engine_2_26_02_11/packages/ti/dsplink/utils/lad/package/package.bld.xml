@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.dsplink.utils.lad" version="2, 0, 0" producerId="codec_engine_2_26_02_11">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="user0_linkcfg_omapl137.c"/>
+        <srcFile name="user2_linkcfg_dm6446.c"/>
+        <srcFile name="user0_linkcfg_dm357.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad_xv5T.c"/>
+        <srcFile name="message_linkcfg_omap3530_shmem.c"/>
+        <srcFile name="ladconfig.c"/>
+        <srcFile name="message_linkcfg_omapl137_shmem.c"/>
+        <srcFile name="user1_linkcfg_omapl137.c"/>
+        <srcFile name="user0_linkcfg_omapl138.c"/>
+        <srcFile name="package/package_ti.dsplink.utils.lad.c"/>
+        <srcFile name="user2_linkcfg_evm3530.c"/>
+        <srcFile name="message_linkcfg_dm357gem_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad_x470uC.c"/>
+        <srcFile name="user0_linkcfg_dm6467.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad_x470uC.c"/>
+        <srcFile name="user2_linkcfg_omapl137.c"/>
+        <srcFile name="user1_linkcfg_omapl138.c"/>
+        <srcFile name="user1_linkcfg_dm357.c"/>
+        <srcFile name="user1_linkcfg_evm2530.c"/>
+        <srcFile name="user0_linkcfg_evm3530.c"/>
+        <srcFile name="user2_linkcfg_dm6467.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad_xv5T.c"/>
+        <srcFile name="message_pool_mqt_cfg.c"/>
+        <srcFile name="user2_linkcfg_omapl138.c"/>
+        <srcFile name="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad_xv5T.c"/>
+        <srcFile name="user1_linkcfg_dm6446.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad_xv5T.c"/>
+        <srcFile name="user2_linkcfg_dm357.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad_x470uC.c"/>
+        <srcFile name="message_linkcfg_omap2530_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad_x470uC.c"/>
+        <srcFile name="message_linkcfg_dm6446gem_shmem.c"/>
+        <srcFile name="user2_linkcfg_evm2530.c"/>
+        <srcFile name="message_linkcfg_omapl138_shmem.c"/>
+        <srcFile name="message_linkcfg_dm6467gem_shmem.c"/>
+        <srcFile name="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad_xv5T.c"/>
+        <srcFile name="user1_linkcfg_dm6467.c"/>
+        <srcFile name="user1_linkcfg_evm3530.c"/>
+        <srcFile name="user1_pool_mqt_cfg.c"/>
+        <srcFile name="user2_pool_mqt_cfg.c"/>
+        <srcFile name="user0_linkcfg_evm2530.c"/>
+        <srcFile name="user0_linkcfg_dm6446.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad_xv5T.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="lad.cfg"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="lib/release/lad_3530.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/lad_3530/package/package_ti.dsplink.utils.lad.ov4TCE.dep" src="package/package_ti.dsplink.utils.lad.c"/>
+        <srcFile name="package/lib/lib/release/lad_3530/ladconfig.ov4TCE.dep" src="ladconfig.c"/>
+        <srcFile name="package/lib/lib/release/lad_3530/message_pool_mqt_cfg.ov4TCE.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/release/lad_3530/user2_linkcfg_evm3530.ov4TCE.dep" src="user2_linkcfg_evm3530.c"/>
+        <srcFile name="package/lib/lib/release/lad_3530/user0_pool_mqt_cfg.ov4TCE.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/release/lad_3530/user2_pool_mqt_cfg.ov4TCE.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/release/lad_3530/user1_pool_mqt_cfg.ov4TCE.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/release/lad_3530/message_linkcfg_omap3530_shmem.ov4TCE.dep" src="message_linkcfg_omap3530_shmem.c"/>
+        <srcFile name="package/lib/lib/release/lad_3530/user1_linkcfg_evm3530.ov4TCE.dep" src="user1_linkcfg_evm3530.c"/>
+        <srcFile name="package/lib/lib/release/lad_3530/user0_linkcfg_evm3530.ov4TCE.dep" src="user0_linkcfg_evm3530.c"/>
+        <srcFile name="lib/debug/lad_3530.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/lad_3530/package/package_ti.dsplink.utils.lad.ov4TCE.dep" src="package/package_ti.dsplink.utils.lad.c"/>
+        <srcFile name="package/lib/lib/debug/lad_3530/ladconfig.ov4TCE.dep" src="ladconfig.c"/>
+        <srcFile name="package/lib/lib/debug/lad_3530/message_pool_mqt_cfg.ov4TCE.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/debug/lad_3530/user2_linkcfg_evm3530.ov4TCE.dep" src="user2_linkcfg_evm3530.c"/>
+        <srcFile name="package/lib/lib/debug/lad_3530/user0_pool_mqt_cfg.ov4TCE.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/debug/lad_3530/user2_pool_mqt_cfg.ov4TCE.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/debug/lad_3530/user1_pool_mqt_cfg.ov4TCE.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/debug/lad_3530/message_linkcfg_omap3530_shmem.ov4TCE.dep" src="message_linkcfg_omap3530_shmem.c"/>
+        <srcFile name="package/lib/lib/debug/lad_3530/user1_linkcfg_evm3530.ov4TCE.dep" src="user1_linkcfg_evm3530.c"/>
+        <srcFile name="package/lib/lib/debug/lad_3530/user0_linkcfg_evm3530.ov4TCE.dep" src="user0_linkcfg_evm3530.c"/>
+        <srcFile name="lib/debug/lad_6446.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/lad_6446/user1_linkcfg_dm6446.ov4TCE.dep" src="user1_linkcfg_dm6446.c"/>
+        <srcFile name="package/lib/lib/debug/lad_6446/package/package_ti.dsplink.utils.lad.ov4TCE.dep" src="package/package_ti.dsplink.utils.lad.c"/>
+        <srcFile name="package/lib/lib/debug/lad_6446/ladconfig.ov4TCE.dep" src="ladconfig.c"/>
+        <srcFile name="package/lib/lib/debug/lad_6446/message_pool_mqt_cfg.ov4TCE.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/debug/lad_6446/user2_linkcfg_dm6446.ov4TCE.dep" src="user2_linkcfg_dm6446.c"/>
+        <srcFile name="package/lib/lib/debug/lad_6446/user0_pool_mqt_cfg.ov4TCE.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/debug/lad_6446/user2_pool_mqt_cfg.ov4TCE.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/debug/lad_6446/user1_pool_mqt_cfg.ov4TCE.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/debug/lad_6446/message_linkcfg_dm6446gem_shmem.ov4TCE.dep" src="message_linkcfg_dm6446gem_shmem.c"/>
+        <srcFile name="package/lib/lib/debug/lad_6446/user0_linkcfg_dm6446.ov4TCE.dep" src="user0_linkcfg_dm6446.c"/>
+        <srcFile name="lib/release/lad_6446.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/lad_6446/user1_linkcfg_dm6446.ov4TCE.dep" src="user1_linkcfg_dm6446.c"/>
+        <srcFile name="package/lib/lib/release/lad_6446/package/package_ti.dsplink.utils.lad.ov4TCE.dep" src="package/package_ti.dsplink.utils.lad.c"/>
+        <srcFile name="package/lib/lib/release/lad_6446/ladconfig.ov4TCE.dep" src="ladconfig.c"/>
+        <srcFile name="package/lib/lib/release/lad_6446/message_pool_mqt_cfg.ov4TCE.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/release/lad_6446/user2_linkcfg_dm6446.ov4TCE.dep" src="user2_linkcfg_dm6446.c"/>
+        <srcFile name="package/lib/lib/release/lad_6446/user0_pool_mqt_cfg.ov4TCE.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/release/lad_6446/user2_pool_mqt_cfg.ov4TCE.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/release/lad_6446/user1_pool_mqt_cfg.ov4TCE.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/lib/lib/release/lad_6446/message_linkcfg_dm6446gem_shmem.ov4TCE.dep" src="message_linkcfg_dm6446gem_shmem.c"/>
+        <srcFile name="package/lib/lib/release/lad_6446/user0_linkcfg_dm6446.ov4TCE.dep" src="user0_linkcfg_dm6446.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user1_linkcfg_dm6446.o470uC.dep" src="user1_linkcfg_dm6446.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/ladconfig.o470uC.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/lad.o470uC.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM6446/lad_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/message_pool_mqt_cfg.o470uC.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user2_linkcfg_dm6446.o470uC.dep" src="user2_linkcfg_dm6446.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user0_pool_mqt_cfg.o470uC.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user2_pool_mqt_cfg.o470uC.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user1_pool_mqt_cfg.o470uC.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/message_linkcfg_dm6446gem_shmem.o470uC.dep" src="message_linkcfg_dm6446gem_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user0_linkcfg_dm6446.o470uC.dep" src="user0_linkcfg_dm6446.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM6446/lad_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/message_linkcfg_dm6467gem_shmem.o470uC.dep" src="message_linkcfg_dm6467gem_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/ladconfig.o470uC.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user0_linkcfg_dm6467.o470uC.dep" src="user0_linkcfg_dm6467.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/lad.o470uC.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user1_linkcfg_dm6467.o470uC.dep" src="user1_linkcfg_dm6467.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/message_pool_mqt_cfg.o470uC.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user0_pool_mqt_cfg.o470uC.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM6467/lad_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user2_pool_mqt_cfg.o470uC.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user1_pool_mqt_cfg.o470uC.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user2_linkcfg_dm6467.o470uC.dep" src="user2_linkcfg_dm6467.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM6467/lad_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/ladconfig.o470uC.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/lad.o470uC.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmDM357/lad_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/message_pool_mqt_cfg.o470uC.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/message_linkcfg_dm357gem_shmem.o470uC.dep" src="message_linkcfg_dm357gem_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user2_linkcfg_dm357.o470uC.dep" src="user2_linkcfg_dm357.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user0_pool_mqt_cfg.o470uC.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user2_pool_mqt_cfg.o470uC.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user0_linkcfg_dm357.o470uC.dep" src="user0_linkcfg_dm357.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user1_linkcfg_dm357.o470uC.dep" src="user1_linkcfg_dm357.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user1_pool_mqt_cfg.o470uC.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad_x470uC.dep" src="package/cfg/bin/ti_platforms_evmDM357/lad_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user1_linkcfg_evm2530.o470uC.dep" src="user1_linkcfg_evm2530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/ladconfig.o470uC.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user0_linkcfg_evm2530.o470uC.dep" src="user0_linkcfg_evm2530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/lad.o470uC.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/message_pool_mqt_cfg.o470uC.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user0_pool_mqt_cfg.o470uC.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user2_pool_mqt_cfg.o470uC.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/message_linkcfg_omap2530_shmem.o470uC.dep" src="message_linkcfg_omap2530_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user1_pool_mqt_cfg.o470uC.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user2_linkcfg_evm2530.o470uC.dep" src="user2_linkcfg_evm2530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evm2530/lad_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad_x470uC.dep" src="package/cfg/bin/ti_platforms_evm2530/lad_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/ladconfig.o470uC.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/lad.o470uC.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/message_pool_mqt_cfg.o470uC.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user2_linkcfg_evm3530.o470uC.dep" src="user2_linkcfg_evm3530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user0_pool_mqt_cfg.o470uC.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user2_pool_mqt_cfg.o470uC.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user1_pool_mqt_cfg.o470uC.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/message_linkcfg_omap3530_shmem.o470uC.dep" src="message_linkcfg_omap3530_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/lad_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user1_linkcfg_evm3530.o470uC.dep" src="user1_linkcfg_evm3530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user0_linkcfg_evm3530.o470uC.dep" src="user0_linkcfg_evm3530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad_x470uC.dep" src="package/cfg/bin/ti_platforms_evm3530/lad_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user2_linkcfg_omapl137.o470uC.dep" src="user2_linkcfg_omapl137.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/ladconfig.o470uC.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/message_linkcfg_omapl137_shmem.o470uC.dep" src="message_linkcfg_omapl137_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/lad.o470uC.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user1_linkcfg_omapl137.o470uC.dep" src="user1_linkcfg_omapl137.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/lad_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/message_pool_mqt_cfg.o470uC.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user0_pool_mqt_cfg.o470uC.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user2_pool_mqt_cfg.o470uC.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user0_linkcfg_omapl137.o470uC.dep" src="user0_linkcfg_omapl137.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user1_pool_mqt_cfg.o470uC.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad_x470uC.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/lad_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad_x470uC.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user1_linkcfg_omapl138.o470uC.dep" src="user1_linkcfg_omapl138.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/ladconfig.o470uC.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/lad.o470uC.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user0_linkcfg_omapl138.o470uC.dep" src="user0_linkcfg_omapl138.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/message_pool_mqt_cfg.o470uC.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad_x470uC.o470uC.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/lad_x470uC.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user0_pool_mqt_cfg.o470uC.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user2_pool_mqt_cfg.o470uC.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user1_pool_mqt_cfg.o470uC.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user2_linkcfg_omapl138.o470uC.dep" src="user2_linkcfg_omapl138.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/message_linkcfg_omapl138_shmem.o470uC.dep" src="message_linkcfg_omapl138_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad_x470uC.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/lad_x470uC.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user1_linkcfg_dm6446.ov5T.dep" src="user1_linkcfg_dm6446.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/ladconfig.ov5T.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM6446/lad_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/lad.ov5T.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/message_pool_mqt_cfg.ov5T.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user2_linkcfg_dm6446.ov5T.dep" src="user2_linkcfg_dm6446.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user0_pool_mqt_cfg.ov5T.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user2_pool_mqt_cfg.ov5T.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user1_pool_mqt_cfg.ov5T.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/message_linkcfg_dm6446gem_shmem.ov5T.dep" src="message_linkcfg_dm6446gem_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad/user0_linkcfg_dm6446.ov5T.dep" src="user0_linkcfg_dm6446.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6446/lad_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM6446/lad_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/message_linkcfg_dm6467gem_shmem.ov5T.dep" src="message_linkcfg_dm6467gem_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM6467/lad_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/ladconfig.ov5T.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user0_linkcfg_dm6467.ov5T.dep" src="user0_linkcfg_dm6467.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/lad.ov5T.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user1_linkcfg_dm6467.ov5T.dep" src="user1_linkcfg_dm6467.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/message_pool_mqt_cfg.ov5T.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user0_pool_mqt_cfg.ov5T.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user2_pool_mqt_cfg.ov5T.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user1_pool_mqt_cfg.ov5T.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad/user2_linkcfg_dm6467.ov5T.dep" src="user2_linkcfg_dm6467.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM6467/lad_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM6467/lad_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/ladconfig.ov5T.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmDM357/lad_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/lad.ov5T.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/message_pool_mqt_cfg.ov5T.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/message_linkcfg_dm357gem_shmem.ov5T.dep" src="message_linkcfg_dm357gem_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user2_linkcfg_dm357.ov5T.dep" src="user2_linkcfg_dm357.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user0_pool_mqt_cfg.ov5T.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user2_pool_mqt_cfg.ov5T.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user0_linkcfg_dm357.ov5T.dep" src="user0_linkcfg_dm357.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user1_linkcfg_dm357.ov5T.dep" src="user1_linkcfg_dm357.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad/user1_pool_mqt_cfg.ov5T.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDM357/lad_xv5T.dep" src="package/cfg/bin/ti_platforms_evmDM357/lad_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user1_linkcfg_evm2530.ov5T.dep" src="user1_linkcfg_evm2530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/ladconfig.ov5T.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user0_linkcfg_evm2530.ov5T.dep" src="user0_linkcfg_evm2530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/lad.ov5T.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/message_pool_mqt_cfg.ov5T.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user0_pool_mqt_cfg.ov5T.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user2_pool_mqt_cfg.ov5T.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/message_linkcfg_omap2530_shmem.ov5T.dep" src="message_linkcfg_omap2530_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user1_pool_mqt_cfg.ov5T.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad/user2_linkcfg_evm2530.ov5T.dep" src="user2_linkcfg_evm2530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evm2530/lad_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm2530/lad_xv5T.dep" src="package/cfg/bin/ti_platforms_evm2530/lad_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/ladconfig.ov5T.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/lad.ov5T.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evm3530/lad_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/message_pool_mqt_cfg.ov5T.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user2_linkcfg_evm3530.ov5T.dep" src="user2_linkcfg_evm3530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user0_pool_mqt_cfg.ov5T.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user2_pool_mqt_cfg.ov5T.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user1_pool_mqt_cfg.ov5T.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/message_linkcfg_omap3530_shmem.ov5T.dep" src="message_linkcfg_omap3530_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user1_linkcfg_evm3530.ov5T.dep" src="user1_linkcfg_evm3530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad/user0_linkcfg_evm3530.ov5T.dep" src="user0_linkcfg_evm3530.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evm3530/lad_xv5T.dep" src="package/cfg/bin/ti_platforms_evm3530/lad_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user2_linkcfg_omapl137.ov5T.dep" src="user2_linkcfg_omapl137.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/ladconfig.ov5T.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/message_linkcfg_omapl137_shmem.ov5T.dep" src="message_linkcfg_omapl137_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/lad.ov5T.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user1_linkcfg_omapl137.ov5T.dep" src="user1_linkcfg_omapl137.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/message_pool_mqt_cfg.ov5T.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user0_pool_mqt_cfg.ov5T.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user2_pool_mqt_cfg.ov5T.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user0_linkcfg_omapl137.ov5T.dep" src="user0_linkcfg_omapl137.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/lad_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad/user1_pool_mqt_cfg.ov5T.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL137/lad_xv5T.dep" src="package/cfg/bin/ti_platforms_evmOMAPL137/lad_xv5T.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad_xv5T.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user1_linkcfg_omapl138.ov5T.dep" src="user1_linkcfg_omapl138.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/ladconfig.ov5T.dep" src="ladconfig.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/lad.ov5T.dep" src="lad.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad_xv5T.ov5T.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/lad_xv5T.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user0_linkcfg_omapl138.ov5T.dep" src="user0_linkcfg_omapl138.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/message_pool_mqt_cfg.ov5T.dep" src="message_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user0_pool_mqt_cfg.ov5T.dep" src="user0_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user2_pool_mqt_cfg.ov5T.dep" src="user2_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user1_pool_mqt_cfg.ov5T.dep" src="user1_pool_mqt_cfg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/user2_linkcfg_omapl138.ov5T.dep" src="user2_linkcfg_omapl138.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad/message_linkcfg_omapl138_shmem.ov5T.dep" src="message_linkcfg_omapl138_shmem.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmOMAPL138/lad_xv5T.dep" src="package/cfg/bin/ti_platforms_evmOMAPL138/lad_xv5T.cfg"/>
+        <srcFile name="package/rel/ti_dsplink_utils_lad.tar.dep" src="package/rel/ti_dsplink_utils_lad.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/lad_3530"
+        pname="lib/release/lad_3530.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/lad_3530"
+        pname="lib/debug/lad_3530.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/lad_6446"
+        pname="lib/debug/lad_6446.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/release/lad_6446"
+        pname="lib/release/lad_6446.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    </libraries>
+    <executables>
+    <executable name="bin/ti_platforms_evmDM6446/lad"
+        pname="bin/ti_platforms_evmDM6446/lad.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM6446"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6446/lad_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6446/lad_x470uC"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM6467/lad"
+        pname="bin/ti_platforms_evmDM6467/lad.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM6467"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6467/lad_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6467/lad_x470uC"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM357/lad"
+        pname="bin/ti_platforms_evmDM357/lad.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmDM357"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM357/lad_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM357/lad_x470uC"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evm2530/lad"
+        pname="bin/ti_platforms_evm2530/lad.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evm2530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm2530/lad_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm2530/lad_x470uC"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/lad"
+        pname="bin/ti_platforms_evm3530/lad.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evm3530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/lad_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/lad_x470uC"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evmOMAPL137/lad"
+        pname="bin/ti_platforms_evmOMAPL137/lad.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmOMAPL137"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmOMAPL137/lad_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmOMAPL137/lad_x470uC"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evmOMAPL138/lad"
+        pname="bin/ti_platforms_evmOMAPL138/lad.x470uC"
+        target="gnu.targets.UCArm9"
+        platform="ti.platforms.evmOMAPL138"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmOMAPL138/lad_x470uC.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmOMAPL138/lad_x470uC"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM6446/lad"
+        pname="bin/ti_platforms_evmDM6446/lad.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM6446"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6446/lad_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6446/lad_xv5T"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM6467/lad"
+        pname="bin/ti_platforms_evmDM6467/lad.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM6467"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM6467/lad_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM6467/lad_xv5T"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDM357/lad"
+        pname="bin/ti_platforms_evmDM357/lad.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmDM357"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDM357/lad_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDM357/lad_xv5T"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evm2530/lad"
+        pname="bin/ti_platforms_evm2530/lad.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evm2530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm2530/lad_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm2530/lad_xv5T"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evm3530/lad"
+        pname="bin/ti_platforms_evm3530/lad.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evm3530"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evm3530/lad_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evm3530/lad_xv5T"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evmOMAPL137/lad"
+        pname="bin/ti_platforms_evmOMAPL137/lad.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmOMAPL137"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmOMAPL137/lad_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmOMAPL137/lad_xv5T"
+        cfgScript="lad.cfg"
+        />
+    <executable name="bin/ti_platforms_evmOMAPL138/lad"
+        pname="bin/ti_platforms_evmOMAPL138/lad.xv5T"
+        target="gnu.targets.arm.GCArmv5T"
+        platform="ti.platforms.evmOMAPL138"
+        profile="release"
+        xCfgScript="package/cfg/bin/ti_platforms_evmOMAPL138/lad_xv5T.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmOMAPL138/lad_xv5T"
+        cfgScript="lad.cfg"
+        />
+    </executables>
+    <tests>
+    <test exeName="bin/ti_platforms_evmDM6446/lad.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM6446/lad.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM6467/lad.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM6467/lad.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM357/lad.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmDM357/lad.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm2530/lad.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evm2530/lad.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/lad.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evm3530/lad.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmOMAPL137/lad.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmOMAPL137/lad.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmOMAPL138/lad.x470uC"
+        args=""
+        groupName="bin/ti_platforms_evmOMAPL138/lad.x470uC"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM6446/lad.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM6446/lad.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM6467/lad.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM6467/lad.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDM357/lad.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmDM357/lad.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm2530/lad.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evm2530/lad.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evm3530/lad.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evm3530/lad.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmOMAPL137/lad.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmOMAPL137/lad.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmOMAPL138/lad.xv5T"
+        args=""
+        groupName="bin/ti_platforms_evmOMAPL138/lad.xv5T"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_dsplink_utils_lad"
+        pname="ti_dsplink_utils_lad.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="user2_linkcfg_dm6467.c"/>
+        <file name="message_linkcfg_omap3530_shmem.c"/>
+        <file name="user2_linkcfg_dm6446.c"/>
+        <file name="bin/ti_platforms_evm3530/lad.x470uC"/>
+        <file name="user1_linkcfg_dm357.c"/>
+        <file name="bin/ti_platforms_evmOMAPL138/lad.x470uC"/>
+        <file name="lib/release/lad_3530.av4TCE"/>
+        <file name="lib/release/lad_6446.av4TCE"/>
+        <file name="user0_linkcfg_evm3530.c"/>
+        <file name="_lad.h"/>
+        <file name="user1_linkcfg_dm6467.c"/>
+        <file name="message_linkcfg_omapl138_shmem.c"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.ext.xml"/>
+        <file name="user1_linkcfg_dm6446.c"/>
+        <file name="user2_linkcfg_dm357.c"/>
+        <file name="message_linkcfg_omap2530_shmem.c"/>
+        <file name="user0_linkcfg_evm2530.c"/>
+        <file name="package/cfg/bin/ti_platforms_evm2530/lad_xv5T.c"/>
+        <file name="bin/ti_platforms_evmOMAPL137/lad.x470uC"/>
+        <file name="user1_linkcfg_evm3530.c"/>
+        <file name="user0_linkcfg_dm6467.c"/>
+        <file name="user0_linkcfg_dm6446.c"/>
+        <file name="package.bld"/>
+        <file name="ladconfig.c"/>
+        <file name="bin/ti_platforms_evmOMAPL137/lad.xv5T"/>
+        <file name="package/cfg/bin/ti_platforms_evmOMAPL138/lad_xv5T.c"/>
+        <file name="bin/ti_platforms_evm3530/lad.xv5T"/>
+        <file name="message_linkcfg_dm6467gem_shmem.c"/>
+        <file name="lib/debug/lad_3530.av4TCE"/>
+        <file name="message_linkcfg_dm6446gem_shmem.c"/>
+        <file name="message_pool_mqt_cfg.c"/>
+        <file name="user0_pool_mqt_cfg.c"/>
+        <file name="package/cfg/bin/ti_platforms_evmDM6467/lad_xv5T.c"/>
+        <file name="user1_linkcfg_evm2530.c"/>
+        <file name="package/cfg/bin/ti_platforms_evmOMAPL137/lad_x470uC.c"/>
+        <file name="package/cfg/bin/ti_platforms_evmDM6446/lad_xv5T.c"/>
+        <file name="lib/debug/lad_6446.av4TCE"/>
+        <file name="bin/ti_platforms_evm2530/lad.x470uC"/>
+        <file name="package/cfg/bin/ti_platforms_evmDM6446/lad_x470uC.c"/>
+        <file name="package/cfg/bin/ti_platforms_evmDM357/lad_x470uC.c"/>
+        <file name="user1_pool_mqt_cfg.c"/>
+        <file name="bin/ti_platforms_evmDM357/lad.x470uC"/>
+        <file name="package/package_ti.dsplink.utils.lad.c"/>
+        <file name="bin/ti_platforms_evmDM357/lad.xv5T"/>
+        <file name="package/package.bld.xml"/>
+        <file name="bin/ti_platforms_evmDM6467/lad.x470uC"/>
+        <file name="user0_linkcfg_omapl137.c"/>
+        <file name="package/cfg/bin/ti_platforms_evmOMAPL137/lad_xv5T.c"/>
+        <file name="user2_linkcfg_evm3530.c"/>
+        <file name="user0_linkcfg_omapl138.c"/>
+        <file name="user1_linkcfg_omapl137.c"/>
+        <file name="bin/ti_platforms_evmDM6446/lad.x470uC"/>
+        <file name="user1_linkcfg_omapl138.c"/>
+        <file name="user2_linkcfg_omapl137.c"/>
+        <file name="package/cfg/bin/ti_platforms_evmOMAPL138/lad_x470uC.c"/>
+        <file name="user2_linkcfg_omapl138.c"/>
+        <file name="package/cfg/bin/ti_platforms_evm3530/lad_xv5T.c"/>
+        <file name="message_linkcfg_omapl137_shmem.c"/>
+        <file name="bin/ti_platforms_evmDM6467/lad.xv5T"/>
+        <file name="package/package.rel.dot"/>
+        <file name="user2_pool_mqt_cfg.c"/>
+        <file name="message_linkcfg_dm357gem_shmem.c"/>
+        <file name="package/cfg/bin/ti_platforms_evmDM357/lad_xv5T.c"/>
+        <file name="package/build.cfg"/>
+        <file name="bin/ti_platforms_evm2530/lad.xv5T"/>
+        <file name="package/cfg/bin/ti_platforms_evm2530/lad_x470uC.c"/>
+        <file name="user2_linkcfg_evm2530.c"/>
+        <file name="package/cfg/bin/ti_platforms_evmDM6467/lad_x470uC.c"/>
+        <file name="bin/ti_platforms_evmOMAPL138/lad.xv5T"/>
+        <file name="lad.cfg"/>
+        <file name="lad.c"/>
+        <file name="bin/ti_platforms_evmDM6446/lad.xv5T"/>
+        <file name="package/cfg/bin/ti_platforms_evm3530/lad_x470uC.c"/>
+        <file name="user0_linkcfg_dm357.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

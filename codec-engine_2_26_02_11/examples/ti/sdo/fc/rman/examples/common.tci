@@ -1,0 +1,376 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ *  configure memory segments
+ */
+
+var chipType = prog.build.cfgArgs.chipType;
+
+var platform;
+var params = null;
+var DDR;
+
+switch (chipType) {
+    case "3430":
+        var mem_ext = [];
+
+        mem_ext[0] = {
+            comment: "256Mbytes of the DSP's DDR2 off-chip memory",
+            name: "DDR2",
+            base: 0x80000000,
+            len:  0x08000000,
+            space: "code/data"
+        };
+
+        /* Specify the L1 and L2 memory settings */
+        var device_regs = {
+            l1PMode: "32k",
+            l1DMode: "8k",
+            l2Mode: "64k",
+            l1dHeapSize: 0xC000 //48 KB: size to use for L1DHEAP in L1DSRAM
+        };
+
+        params = {
+            clockRate: 312.4,
+            catalogName: "ti.catalog.c6000",
+            deviceName: "3430",
+            regs: device_regs,
+            mem: mem_ext
+        };
+
+        platform = "ti.platforms.generic";
+        break;
+
+    case "3530":
+        var mem_ext = [];
+
+        mem_ext[0] = {
+            comment: "256Mbytes of the DSP's DDR2 off-chip memory",
+            name: "DDR2",
+            base: 0x80000000,
+            len:  0x08000000,
+            space: "code/data"
+        };
+
+        /* Specify the L1 and L2 memory settings */
+        var device_regs = {
+            l1PMode: "32k",
+            l1DMode: "8k",
+            l2Mode: "0k",
+            l1dHeapSize: 0xC000 //48 KB: size to use for L1DHEAP in L1DSRAM
+        };
+
+        params = {
+            clockRate: 330,
+            catalogName: "ti.catalog.c6000",
+            deviceName: "3530",
+            regs: device_regs,
+            mem: mem_ext
+        };
+
+        platform = "ti.platforms.generic";
+        break;
+
+    case "2430":
+        platform = "ti.platforms.sdp2430";
+        break;
+
+    case "dm6446":
+        platform = "ti.platforms.evmDM6446";
+        break;
+
+    case "dm648":
+        var mem_ext = [];
+
+        mem_ext[0] = {
+            comment: "256Mbytes of the DSP's DDR2 off-chip memory",
+            name: "DDR2",
+            base: 0xE0000000,
+            len:  0x10000000,
+            space: "code/data"
+        };
+
+        /* Specify the L1 and L2 memory settings */
+        var device_regs = {
+            l1PMode: "32k",
+            l1DMode: "8k",
+            l2Mode: "0k"
+        };
+
+        params = {
+            clockRate: 700,
+            catalogName: "ti.catalog.c6000",
+            deviceName: "DM648",
+            regs: device_regs,
+            mem: mem_ext
+        };
+
+        platform = "ti.platforms.generic";
+        break;
+
+    case "dm6437":
+        platform = "ti.platforms.evmDM6437";
+        break;
+
+    case "dm6467":
+        platform = "ti.platforms.evmDM6467";
+        var mem_ext = [];
+
+        mem_ext[0] = {
+            comment: "256Mbytes of the DSP's off-chip memory",
+            name: "DDR2",
+            base: 0x80000000,
+            len:  0x10000000,
+            space: "code/data"
+        };
+
+        /* Specify the L1 and L2 memory settings */
+        var device_regs = {
+            l1PMode: "32k",
+            l1DMode: "8k",
+            l2Mode: "0k"
+        };
+
+        var params = {
+            clockRate: 594,
+            catalogName: "ti.catalog.c6000",
+            deviceName: "DM6467",
+            regs: device_regs,
+            mem: mem_ext
+        };
+        break;
+
+    case "C6455":
+
+        var mem_ext = [];
+        mem_ext[0] = {
+            comment: "256Mbytes of the DSP's off-chip memory",
+            name: "DDR2",
+            base: 0xE0000000,
+            len:  0x10000000,
+            space: "code/data"
+        };
+
+        /* Specify the L1 and L2 memory settings */
+        var device_regs = {
+            l1PMode: "32k",
+            l1DMode: "8k",
+            l2Mode: "0k"
+        };
+
+        var params = {
+            clockRate: 1000,
+            catalogName: "ti.catalog.c6000",
+            deviceName: "6455",
+            regs: device_regs,
+            mem: mem_ext
+        };
+
+        platform = "ti.platforms.generic";
+        break;
+
+    default:
+        throw ("Unsupported platform... " + chipType);
+}
+
+/* load the platform */
+utils.loadPlatform(platform, params);
+
+/*
+ *  Enable BIOS features needed for the test
+ *  Note: we do not do
+ *      bios.enableRtdx(prog)
+ *  here since we run the test on the simulator.
+ */
+bios.enableRealTimeAnalysis(prog);
+bios.enableMemoryHeaps(prog);
+bios.enableTskManager(prog);
+
+if ((chipType == "2430") || (chipType == "dm6446") || (chipType == "dm6437") ||
+(chipType == "dm6467") || (chipType == "dm648") || (chipType == "C6455") || (chipType == "3430") || (chipType == "3530")) {
+
+    bios.CLK.RESETTIMER = 1;
+
+    if (chipType == "2430") {
+        // Following code taken from dman3/test/common.tci
+        // -----------------------------------------------
+        // Get IRAM out of the way so we can have L2 cache instead
+        bios.IRAM.base = 0x50000000;
+        bios.IRAM.createHeap      = false;
+
+        bios.L1DSRAM.base             = 0x10f04000;
+        DDR = prog.module("MEM").instance("DDR");
+        DDR.base             = 0x83F00000;
+    }
+    else if (chipType == "3430") {
+        bios.L1DSRAM.createHeap       = true;
+        bios.L1DSRAM.enableHeapLabel  = true;
+        bios.L1DSRAM["heapLabel"]     = prog.extern("L1DHEAP");
+        bios.L1DSRAM.heapSize         = 0xC000;
+        DDR = prog.module("MEM").instance("DDR2");
+    }
+    else if (chipType == "dm6446") {
+        // Following code taken from dman3/test/common.tci
+        // -----------------------------------------------
+        // Get IRAM out of the way so we can have L2 cache instead
+        bios.IRAM.base = 0x50000000;
+        bios.IRAM.createHeap      = false;
+
+        bios.L1DSRAM.base             = 0x11f04000;
+        DDR = prog.module("MEM").instance("DDR2");
+        DDR.base             = 0x83F00000;
+    }
+    else if (chipType == "dm6437") {
+        bios.IRAM.createHeap      = false;
+        bios.L1DSRAM.base             = 0x10f04000;
+        DDR = prog.module("MEM").instance("DDR2");
+        DDR.base             = 0x83F00000;
+    }
+    else if (chipType == "dm648") {
+        bios.IRAM.createHeap      = false;
+        bios.L1DSRAM.base             = 0xf00000;
+        DDR = prog.module("MEM").instance("DDR2");
+        DDR.base             = 0xE7A00000;
+    }
+    else if (chipType == "dm6467") {
+        DDR = prog.module("MEM").instance("DDR2");
+        DDR.base             = 0x83F00000;
+
+    }
+    else if (chipType == "C6455") {
+        DDR = prog.module("MEM").instance("DDR2");
+        DDR.base             = 0xE3F00000;
+    }
+    else {
+         print ("Using default memory setting for DDR2 in " + chipType);
+         DDR = prog.module("MEM").instance("DDR2");
+    }
+
+    /*
+     *  Create external memory segment for this (simulated) board
+     *  Enable heaps in it and define the label for heap usage.
+     */
+    DDR.space            = "code/data"; // code/data so we can place code in it
+    DDR.createHeap       = true;
+    DDR.enableHeapLabel  = true;
+    DDR["heapLabel"]     = prog.extern("EXTMEM_HEAP");
+    DDR.heapSize         = 0xc0000;
+    DDR.comment          = "DDR";
+
+    /*
+     *  Enable heaps in the L1DSRAM (internal L1 cache ram, fixed size)
+     *  and define the label for heap usage.
+     *  Use global addressing for L1DSRAM
+     */
+    bios.L1DSRAM.createHeap       = true;
+    bios.L1DSRAM.enableHeapLabel  = true;
+    bios.L1DSRAM["heapLabel"]     = prog.extern("L1D_HEAP");
+    bios.L1DSRAM.heapSize         = 0x4000;
+
+    // Split up L1P into cache and program memory
+    bios.GBL.C64PLUSCONFIGURE = true;
+    // Set size of L1P cache to 32k (possible values: "0k", "4k", "16k", "32k"
+    bios.GBL.C64PLUSL1PCFG = "32k";
+
+    /*
+     *  Specify that code and data go to DDR (external RAM) since internal RAM
+     *  (IRAM) has only 64K
+     */
+    bios.setMemCodeSections (prog, DDR) ;
+    bios.setMemDataNoHeapSections (prog, DDR) ;
+    bios.setMemDataHeapSections (prog, DDR) ;
+    // -----------------------------------------------
+}
+
+
+//var mem = new Array();
+
+// Calculate base, length and heap sizes of mem segments for different
+// platforms
+var base;
+var heapSize;
+var len;
+
+// Set base and length of a chunk of memory that will be divided up
+// into MEM sections that will be used to map IALG memory to.
+switch (chipType) {
+    case "2430":
+    case "dm6437":
+    case "dm6446":  // Haven't tried this yet
+        base = 0x80200000;
+        len = heapSize = 0x40000;
+        break;
+    case "3430":
+    case "3530":
+        base = 0x88000000;
+        break;
+    case "dm6467": //Haven't tried this yet, giving it any external memory
+                   //address
+        base = 0x81000000;
+        len = heapSize = 0x40000;
+        break;
+    case "dm648":  // Haven't tried this yet
+        base = 0xE7B00000;
+        len = heapSize = 0x40000;
+        break;
+    case "C6455":  // Haven't tried this yet
+        base = 0xE0000000;
+        len = heapSize = 0x40000;
+        break;
+
+    default:
+        // Unsupported platform
+}
+
+// Create new memory segment to be used for resource buffers
+// To reduce the size of the buffer resource, change len here !!
+var mem = prog.module("MEM").create("BUFMEM");
+mem.base = base;
+/* mem.len = len;*/
+mem.len = 0x1000;
+mem.createHeap = false;
+
+prog.module("GBL").ENABLEINST = 0;
+
+// Add instance TSK.TSK_smain
+TSK_smain = prog.module("TSK").create("TSK_smain");
+TSK_smain.stackSize = 0x2000;
+TSK_smain.fxn = prog.extern("smain");
+TSK_smain.priority = 15;                   // Must run at max priority
+TSK_smain.stackSize = 0x2000;               //Note:- Larger stack required
+                                            //       when using GT trace
+/*
+ *  @(#) ti.sdo.fc.rman.examples; 1, 0, 0,123; 12-1-2010 17:25:37; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

@@ -1,0 +1,114 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== C6701.tci ========
+ *  The chip configuration settings are based on document SPRS067E.
+ *
+ */
+
+/*
+ *  Load C67.tci arch file
+ */
+utils.loadArch("67", "ti.catalog.c6000");
+
+/*
+ *  ======== C6701 ========
+ */
+function C6701(name, parent)
+{
+    /*
+     * The 'this' refers to the cpu object created in the platform file.
+     * The apply function is a way to execute a function with a specific
+     * 'this' pointer. Its used to initialize C6701 base on a C67.
+     */
+    C67.apply(this, [name, parent]);
+
+    /*
+     * This field is used to include bios settings for this device.
+     * If csl is available for this device, it will also be used to specify
+     * the csl name in the bios config file (*.cdb).
+     * The csl name will be "csl" + this.deviceName + ".lib"
+     */
+    this.deviceName = "6701";
+
+    /* cpu registers */
+    this.registers = [];
+
+    /*
+     * This associative array defines the on-chip physical memory segments
+     */
+    this.memBlock = [];
+
+    this.memBlock["IPRAM0"] = {
+        comment: "Internal Program memory map 0",
+        name: "IPRAM",
+        base: 0x01400000,
+        len:  0x00010000,
+        space: "code"
+    };
+
+    this.memBlock["IPRAM1"] = {
+        comment: "Internal Program memory map 1",
+        name: "IPRAM",
+        base: 0x0,
+        len:  0x10000,
+        space: "code"
+    };
+
+    this.memBlock["IDRAM"] = {
+        comment: "Internal Data memory",
+        name: "IDRAM",
+        base: 0x80000000,
+        len:  0x00010000,
+        space: "data",
+    };
+
+    /* Specify the on-chip memory maps available indexed by map value */
+    this.mem = [];
+
+    /* Memory Map 0 */
+    this.mem[0] = [
+        this.memBlock["IPRAM0"],
+        this.memBlock["IDRAM"]
+    ];
+
+    /* Memory Map 1 */
+    this.mem[1] = [
+        this.memBlock["IPRAM1"],
+        this.memBlock["IDRAM"]
+    ];
+
+/*
+ * ======== getMemoryMap ========
+ * This method returns the on-chip memory map
+ */
+this.getMemoryMap = function ()
+{
+    if (this.registers.mapMode == null) {
+        return (this.mem[1]);
+    }
+
+    if (this.mem[this.registers.mapMode] != null) {
+        return (this.mem[this.registers.mapMode]);
+    }
+    
+    throw new Error("Invalid Map Mode value: " + this.registers.mapMode);
+
+    return (null);
+};
+
+}
+/*
+ *  @(#) ti.catalog.c6000; 1, 0, 0, 0,226; 2-23-2010 16:50:35; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce" version="1, 0, 6" producerId="codec_engine_2_26_02_11">
+    <units>
+        <interface name="ICodec"/>
+        <module name="Engine"/>
+        <module name="Server"/>
+        <module name="VISA"/>
+        <module name="CERuntime"/>
+        <module name="Settings"/>
+    </units>
+    <sources>
+        <srcFile name="rms.c"/>
+        <srcFile name="package/package_ti.sdo.ce.c"/>
+        <srcFile name="Server.c"/>
+        <srcFile name="Engine.c"/>
+        <srcFile name="visa.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/release/ce.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ce/rms.o674.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/release/ce/Server.o674.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/release/ce/Engine.o674.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/release/ce/visa.o674.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/release/ce/package/package_ti.sdo.ce.o674.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="lib/debug/ce.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ce/rms.o64P.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Server.o64P.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Engine.o64P.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/debug/ce/visa.o64P.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/debug/ce/package/package_ti.sdo.ce.o64P.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="lib/release/ce.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ce/rms.o64P.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/release/ce/Server.o64P.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/release/ce/Engine.o64P.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/release/ce/visa.o64P.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/release/ce/package/package_ti.sdo.ce.o64P.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="lib/debug/ce.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ce/rms.ov4TCE.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Server.ov4TCE.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Engine.ov4TCE.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/debug/ce/visa.ov4TCE.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/debug/ce/package/package_ti.sdo.ce.ov4TCE.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="lib/debug/ce.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ce/rms.o470uC.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Server.o470uC.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Engine.o470uC.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/debug/ce/visa.o470uC.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/debug/ce/package/package_ti.sdo.ce.o470uC.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="lib/release/ce.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ce/rms.ov4TCE.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/release/ce/Server.ov4TCE.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/release/ce/Engine.ov4TCE.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/release/ce/visa.ov4TCE.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/release/ce/package/package_ti.sdo.ce.ov4TCE.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="lib/debug/ce.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ce/rms.o86U.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Server.o86U.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Engine.o86U.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/debug/ce/visa.o86U.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/debug/ce/package/package_ti.sdo.ce.o86U.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="lib/release/ce.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ce/rms.o86U.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/release/ce/Server.o86U.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/release/ce/Engine.o86U.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/release/ce/visa.o86U.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/release/ce/package/package_ti.sdo.ce.o86U.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="lib/debug/ce.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ce/rms.ov5T.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Server.ov5T.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Engine.ov5T.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/debug/ce/visa.ov5T.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/debug/ce/package/package_ti.sdo.ce.ov5T.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="lib/release/ce.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ce/rms.o470uC.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/release/ce/Server.o470uC.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/release/ce/Engine.o470uC.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/release/ce/visa.o470uC.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/release/ce/package/package_ti.sdo.ce.o470uC.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="lib/release/ce.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ce/rms.ov5T.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/release/ce/Server.ov5T.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/release/ce/Engine.ov5T.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/release/ce/visa.ov5T.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/release/ce/package/package_ti.sdo.ce.ov5T.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="lib/debug/ce.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ce/rms.o674.dep" src="rms.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Server.o674.dep" src="Server.c"/>
+        <srcFile name="package/lib/lib/debug/ce/Engine.o674.dep" src="Engine.c"/>
+        <srcFile name="package/lib/lib/debug/ce/visa.o674.dep" src="visa.c"/>
+        <srcFile name="package/lib/lib/debug/ce/package/package_ti.sdo.ce.o674.dep" src="package/package_ti.sdo.ce.c"/>
+        <srcFile name="package/rel/ti_sdo_ce.tar.dep" src="package/rel/ti_sdo_ce.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/release/ce"
+        pname="lib/release/ce.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/ce"
+        pname="lib/debug/ce.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/ce"
+        pname="lib/release/ce.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/ce"
+        pname="lib/debug/ce.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/ce"
+        pname="lib/debug/ce.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ce"
+        pname="lib/release/ce.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/ce"
+        pname="lib/debug/ce.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/ce"
+        pname="lib/release/ce.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/ce"
+        pname="lib/debug/ce.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/ce"
+        pname="lib/release/ce.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ce"
+        pname="lib/release/ce.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/ce"
+        pname="lib/debug/ce.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce"
+        pname="ti_sdo_ce.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/debug/ce.av4TCE"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/debug/ce.a470uC"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/debug/ce.a86U"/>
+        <file name="rms.c"/>
+        <file name="lib/debug/ce.av5T"/>
+        <file name="lib/debug/ce.a674"/>
+        <file name="rms.h"/>
+        <file name="visa.c"/>
+        <file name="package/package.rel.dot"/>
+        <file name="Engine.c"/>
+        <file name="visa.h"/>
+        <file name="lib/release/ce.a64P"/>
+        <file name="async-extensions.txt"/>
+        <file name="Engine.h"/>
+        <file name="Server.c"/>
+        <file name="skel.h"/>
+        <file name="ServerDataSheet.html.xdt"/>
+        <file name="CERuntime.h"/>
+        <file name="Server.h"/>
+        <file name="lib/release/ce.a86U"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/release/ce.av5T"/>
+        <file name="lib/release/ce.a674"/>
+        <file name="lib/release/ce.av4TCE"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package_ti.sdo.ce.c"/>
+        <file name="lib/debug/ce.a64P"/>
+        <file name="package.bld"/>
+        <file name="lib/release/ce.a470uC"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

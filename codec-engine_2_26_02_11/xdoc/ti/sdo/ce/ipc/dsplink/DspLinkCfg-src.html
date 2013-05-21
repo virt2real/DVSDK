@@ -1,0 +1,196 @@
+<html><head><title>module ti.sdo.ce.ipc.dsplink.DspLinkCfg</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* 
+</span>     2    <span class="comment"> * Copyright (c) 2010, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> * 
+</span>    32    <span class="comment"> */</span>
+    33    
+    34    <span class="xdoc">/*!
+</span>    35    <span class="xdoc"> *  ======== DspLinkCfg ========
+</span>    36    <span class="xdoc"> *  Dsplink ipc Settings.
+</span>    37    <span class="xdoc"> */</span>
+    38    
+    39    <span class=key>metaonly</span> <span class=key>module</span> DspLinkCfg <span class=key>inherits</span> ti.sdo.ce.ipc.dsplink.IDspLinkCfg {
+    40    
+    41      <span class="comment">/*
+</span>    42    <span class="comment">   * The DEFAULT_ARMDSPLINKCONFIG[] table is here mostly for backward
+</span>    43    <span class="comment">   * compatibility purposes.  The current recommended approach for creating
+</span>    44    <span class="comment">   * an 'ArmDspLinkConfig' is to simply use Engine.createFromServer(), which
+</span>    45    <span class="comment">   * creates and populates an 'ArmDspLinkConfig' object based on the server's
+</span>    46    <span class="comment">   * memory map for 'memTable' and default values for other fields.
+</span>    47    <span class="comment">   *
+</span>    48    <span class="comment">   * When Engine.createFromServer() is used, this table becomes unused.
+</span>    49    <span class="comment">   */</span>
+    50      <span class=key>override</span> <span class=key>readonly</span> <span class=key>config</span> ti.sdo.ce.ipc.IIpc.ArmDspLinkConfig
+    51            DEFAULT_ARMDSPLINKCONFIG[string] = [
+    52    
+    53        <span class="comment">/* DM6446, 256 MB of external memory */</span>
+    54        [<span class="string">"TMS320CDM6446"</span>,
+    55        {
+    56            memTable: [
+    57               [<span class="string">"DDRALGHEAP"</span>, {addr: 0x88000000, size: 0x07A00000, type: <span class="string">"other"</span>}],
+    58               [<span class="string">"DDR2"</span>,       {addr: 0x8FA00000, size: 0x00400000, type: <span class="string">"main"</span> }],
+    59               [<span class="string">"DSPLINKMEM"</span>, {addr: 0x8FE00000, size: 0x00100000, type: <span class="string">"link"</span> }],
+    60               [<span class="string">"RESETCTRL"</span>,  {addr: 0x8FF00000, size: 0x00000080, type: <span class="string">"reset"</span>}],
+    61            ],
+    62            doPowerControl : <span class=key>false</span>,
+    63            dspManagement : ti.sdo.ce.ipc.IIpc.BootAndLoadDsp
+    64        }],
+    65    
+    66        <span class="comment">/* DM357, 256 MB of external memory */</span>
+    67        [<span class="string">"TMS320DM357"</span>,
+    68        {
+    69            memTable: [
+    70               [<span class="string">"DDRALGHEAP"</span>, {addr: 0x88000000, size: 0x07A00000, type: <span class="string">"other"</span>}],
+    71               [<span class="string">"DDR2"</span>,       {addr: 0x8FA00000, size: 0x00400000, type: <span class="string">"main"</span> }],
+    72               [<span class="string">"DSPLINKMEM"</span>, {addr: 0x8FE00000, size: 0x00100000, type: <span class="string">"link"</span> }],
+    73               [<span class="string">"RESETCTRL"</span>,  {addr: 0x8FF00000, size: 0x00000080, type: <span class="string">"reset"</span>}],
+    74            ],
+    75            doPowerControl : <span class=key>false</span>,
+    76            dspManagement : ti.sdo.ce.ipc.IIpc.BootAndLoadDsp
+    77        }],
+    78    
+    79        <span class="comment">/* DM6467, 256 MB of external memory */</span>
+    80        [<span class="string">"TMS320CDM6467"</span>,
+    81        {
+    82            memTable: [
+    83               [<span class="string">"DDRALGHEAP"</span>, {addr: 0x88000000, size: 0x07A00000, type: <span class="string">"other"</span>}],
+    84               [<span class="string">"DDR2"</span>,       {addr: 0x8FA00000, size: 0x00400000, type: <span class="string">"main"</span> }],
+    85               [<span class="string">"DSPLINKMEM"</span>, {addr: 0x8FE00000, size: 0x00100000, type: <span class="string">"link"</span> }],
+    86               [<span class="string">"RESETCTRL"</span>,  {addr: 0x8FF00000, size: 0x00000080, type: <span class="string">"reset"</span>}],
+    87            ],
+    88            doPowerControl : <span class=key>false</span>,
+    89            dspManagement : ti.sdo.ce.ipc.IIpc.BootAndLoadDsp
+    90        }],
+    91    
+    92        <span class="comment">/* OMAP3430, 128 MB of external memory */</span>
+    93        [<span class="string">"TMS320C3430"</span>,
+    94        {
+    95            memTable: [
+    96                [<span class="string">"L4CORE"</span>,     {addr: 0x48000000, size: 0x01000000, type: <span class="string">"other"</span>}],
+    97                [<span class="string">"L4PER"</span>,      {addr: 0x49000000, size: 0x00100000, type: <span class="string">"other"</span>}],
+    98                [<span class="string">"CMEM"</span>,       {addr: 0x85000000, size: 0x01000000, type: <span class="string">"other"</span>}],
+    99                [<span class="string">"DDRALGHEAP"</span>, {addr: 0x86000000, size: 0x01800000, type: <span class="string">"other"</span>}],
+   100                [<span class="string">"DDR2"</span>,       {addr: 0x87800000, size: 0x00600000, type: <span class="string">"main"</span> }],
+   101                [<span class="string">"DSPLINKMEM"</span>, {addr: 0x87E00000, size: 0x00100000, type: <span class="string">"link"</span> }],
+   102                [<span class="string">"RESETCTRL"</span>,  {addr: 0x87F00000, size: 0x00001000, type: <span class="string">"reset"</span>}],
+   103            ],
+   104            doPowerControl : <span class=key>false</span>,
+   105            dspManagement : ti.sdo.ce.ipc.IIpc.BootAndLoadDsp
+   106        }],
+   107    
+   108        <span class="comment">/* OMAP3530, 128 MB of external memory */</span>
+   109        [<span class="string">"OMAP3530"</span>,
+   110        {
+   111            memTable: [
+   112                [<span class="string">"L4CORE"</span>,     {addr: 0x48000000, size: 0x01000000, type: <span class="string">"other"</span>}],
+   113                [<span class="string">"L4PER"</span>,      {addr: 0x49000000, size: 0x00100000, type: <span class="string">"other"</span>}],
+   114                [<span class="string">"CMEM"</span>,       {addr: 0x85000000, size: 0x01000000, type: <span class="string">"other"</span>}],
+   115                [<span class="string">"DDRALGHEAP"</span>, {addr: 0x86000000, size: 0x01800000, type: <span class="string">"other"</span>}],
+   116                [<span class="string">"DDR2"</span>,       {addr: 0x87800000, size: 0x00600000, type: <span class="string">"main"</span> }],
+   117                [<span class="string">"DSPLINKMEM"</span>, {addr: 0x87E00000, size: 0x00100000, type: <span class="string">"link"</span> }],
+   118                [<span class="string">"RESETCTRL"</span>,  {addr: 0x87F00000, size: 0x00001000, type: <span class="string">"reset"</span>}],
+   119            ],
+   120            doPowerControl : <span class=key>false</span>,
+   121            dspManagement : ti.sdo.ce.ipc.IIpc.BootAndLoadDsp
+   122        }],
+   123    
+   124        <span class="comment">/* OMAP2530, 64 MB of external memory */</span>
+   125        [<span class="string">"OMAP2530"</span>,
+   126        {
+   127            memTable: [
+   128                [<span class="string">"L4CORE"</span>,     {addr: 0x48000000, size: 0x01000000, type: <span class="string">"other"</span>}],
+   129                [<span class="string">"L4WAKEUP"</span>,   {addr: 0x49000000, size: 0x00800000, type: <span class="string">"other"</span>}],
+   130                [<span class="string">"CMEM"</span>,       {addr: 0x82400000, size: 0x00800000, type: <span class="string">"other"</span>}],
+   131                [<span class="string">"DDR2"</span>,       {addr: 0x82C00000, size: 0x00300000, type: <span class="string">"main"</span> }],
+   132                [<span class="string">"DSPLINKMEM"</span>, {addr: 0x82F00000, size: 0x000FF000, type: <span class="string">"link"</span> }],
+   133                [<span class="string">"RESETCTRL"</span>,  {addr: 0x82FFF000, size: 0x00001000, type: <span class="string">"reset"</span>}],
+   134                [<span class="string">"DDRALGHEAP"</span>, {addr: 0x83000000, size: 0x01000000, type: <span class="string">"other"</span>}],
+   135            ],
+   136            doPowerControl : <span class=key>false</span>,
+   137            dspManagement : ti.sdo.ce.ipc.IIpc.BootAndLoadDsp
+   138        }],
+   139    
+   140        <span class="comment">/* TMS320C2430, 128 MB of external memory */</span>
+   141        [<span class="string">"TMS320C2430"</span>,
+   142        {
+   143            memTable: [
+   144                [<span class="string">"L4CORE"</span>,     {addr: 0x48000000, size: 0x01000000, type: <span class="string">"other"</span>}],
+   145                [<span class="string">"L4WAKEUP"</span>,   {addr: 0x49000000, size: 0x00800000, type: <span class="string">"other"</span>}],
+   146                [<span class="string">"CMEM"</span>,       {addr: 0x85800000, size: 0x00800000, type: <span class="string">"other"</span>}],
+   147                [<span class="string">"DDRALGHEAP"</span>, {addr: 0x86000000, size: 0x01800000, type: <span class="string">"other"</span>}],
+   148                [<span class="string">"DDR2"</span>,       {addr: 0x87800000, size: 0x00600000, type: <span class="string">"main"</span> }],
+   149                [<span class="string">"DSPLINKMEM"</span>, {addr: 0x87E00000, size: 0x00100000, type: <span class="string">"link"</span> }],
+   150                [<span class="string">"RESETCTRL"</span>,  {addr: 0x87F00000, size: 0x00001000, type: <span class="string">"reset"</span>}],
+   151            ],
+   152            doPowerControl : <span class=key>false</span>,
+   153            dspManagement : ti.sdo.ce.ipc.IIpc.BootAndLoadDsp
+   154        }],
+   155    
+   156        <span class="comment">/* OMAPL137, 64 MB of external memory */</span>
+   157        [<span class="string">"OMAPL137"</span>,
+   158        {
+   159            memTable: [
+   160               [<span class="string">"DDRALGHEAP"</span>, {addr: 0xC3000000, size: 0x01000000, type: <span class="string">"other"</span>}],
+   161               [<span class="string">"DDR2"</span>,       {addr: 0xC2C00000, size: 0x00300000, type: <span class="string">"main"</span> }],
+   162               [<span class="string">"DSPLINKMEM"</span>, {addr: 0xC2F01000, size: 0x00100000, type: <span class="string">"link"</span> }],
+   163               [<span class="string">"RESETCTRL"</span>,  {addr: 0xC2F00000, size: 0x00001000, type: <span class="string">"reset"</span>}],
+   164            ],
+   165            doPowerControl : <span class=key>true</span>,
+   166            dspManagement : ti.sdo.ce.ipc.IIpc.BootAndLoadDsp
+   167        }],
+   168    
+   169        <span class="comment">/* OMAPL138, 64 MB of external memory */</span>
+   170        [<span class="string">"OMAPL138"</span>,
+   171        {
+   172            memTable: [
+   173               [<span class="string">"DDRALGHEAP"</span>, {addr: 0xC3000000, size: 0x01000000, type: <span class="string">"other"</span>}],
+   174               [<span class="string">"DDR2"</span>,       {addr: 0xC2C00000, size: 0x00300000, type: <span class="string">"main"</span> }],
+   175               [<span class="string">"DSPLINKMEM"</span>, {addr: 0xC2F01000, size: 0x00100000, type: <span class="string">"link"</span> }],
+   176               [<span class="string">"RESETCTRL"</span>,  {addr: 0xC2F00000, size: 0x00001000, type: <span class="string">"reset"</span>}],
+   177            ],
+   178            doPowerControl : <span class=key>true</span>,
+   179            dspManagement : ti.sdo.ce.ipc.IIpc.BootAndLoadDsp
+   180        }],
+   181    
+   182        ];
+   183    }
+   184    <span class="comment">/*
+</span>   185    <span class="comment"> *  @(#) ti.sdo.ce.ipc.dsplink; 2, 0, 1,182; 12-2-2010 21:24:20; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+</span>   186    <span class="comment">
+</span>   187    <span class="comment"> */</span>
+   188    
+</pre>
+</body></html>

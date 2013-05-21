@@ -1,0 +1,265 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    /*
+     *  ======== Ipc.xdt ========
+     *  Generate the config structure for ce.ipc module
+     */
+    var settings = this;
+    var ipc = this;
+
+    var linkUsed = false;
+    var linkFound = false;
+
+    //  Determine whether or not the module, ti.sdo.ce.dsplink.dsp.Ipc
+    //  has been used. This means that the app is to be built with DSP Link.
+    //  (This should be a utility function at some point).
+    var pkgList = $om.$packages;
+    for (var i = 0; i < pkgList.length; i++) {
+        //print("package[" + i + "] = " + pkgList[i]);
+        if (pkgList[i] == "ti.sdo.ce.ipc.dsplink.dsp") {
+            linkFound = true;
+            //print("Found dsplink, modules: " + pkgList[i].$modules.length);
+            for (var j = 0; j < pkgList[i].$modules.length; j++) {
+                if (pkgList[i].$modules[j].$used) {
+                    linkUsed = true;
+                    break;
+                }
+            }
+            break;
+        }
+    }
+    //print("ipc Ipc.xdt: dspLinkUsed = " + linkUsed);
+%%}
+
+%///////////////////////////////////////////////////////////////
+/* IPC_generatedInit() function, called by CERuntime_init() */
+% if (ipc.dspLinkUsed()) {
+
+Void IPC_generatedInit()
+{
+    extern Void DSPLINK_init();
+
+    /* call Link's init function */
+    DSPLINK_init();
+}
+%} else {
+Void IPC_generatedInit()
+{
+}
+% } // end if (ipc.dspLinkUsed())
+%///////////////////////////////////////////////////////////////
+
+% /* configuration for interprocessor communication */
+% if (ipc.dspLinkUsed()) {
+/* configuration for interprocessor communication */
+
+/* size of the communication message */
+UInt32 Comm_MSGSIZE = `settings.armCommMsgSize`;
+% }
+
+% /*
+%  * ======== MSGQ and POOL configuration ========
+%  * (for DSPLINK or without it)
+%  */
+% if (settings.dspConfigureMsgqAndPool == true) {
+
+%     if (ipc.dspLinkUsed()) {
+/* MSGQ and POOL configuration on the DSP when DSPLINK is used */
+
+#include <ti/bios/include/std.h>
+#include <ti/bios/include/msgq.h>
+#include <ti/bios/include/pool.h>
+
+/*
+ * MSGQ configuration
+ * ==================
+ */
+/* number of message queues and storage for them */
+#define Global_NUMMSGQUEUES `settings.dspCommNumMsgQueues`
+
+static MSGQ_Obj Global_msgQueues[Global_NUMMSGQUEUES];
+
+/* transport params */
+typedef struct Global_ZCPYMQT_Params_tag {
+    UInt32 poolId;
+} Global_ZCPYMQT_Params;
+
+static Global_ZCPYMQT_Params Global_mqtParams = {
+    0   /* pool id; index into POOL_config.allocators[] */
+};
+
+/* processor IDs defined by DSPLINK */
+#define Global_MAX_PROCESSORS 2
+#define Global_ID_GPP         1
+
+/* MSGQ transport functions defined by DSPLINK */
+extern Void               ZCPYMQT_init();
+extern MSGQ_TransportFxns ZCPYMQT_FXNS;
+
+/* MSGQ transport objects */
+static MSGQ_TransportObj Global_transports[Global_MAX_PROCESSORS] =
+{
+     MSGQ_NOTRANSPORT,     /* Represents the local processor */
+     {
+        ZCPYMQT_init,      /* Init Function                 */
+        &ZCPYMQT_FXNS,     /* Transport interface functions */
+        &Global_mqtParams, /* Transport params              */
+        NULL,              /* Filled in by transport        */
+        Global_ID_GPP      /* remote processor Id           */
+     }
+};
+
+/* MSGQ object configuration */
+MSGQ_Config MSGQ_config = {
+    Global_msgQueues,      /* storage for message queue handles */
+    Global_transports,     /* indexed array of transports */
+    Global_NUMMSGQUEUES,   /* number of message queue handles (above) */
+    Global_MAX_PROCESSORS, /* number of processors */
+    0,                     /* startUnitialized ??? */
+    MSGQ_INVALIDMSGQ,      /* errorQueue to recieve async transport errors */
+    POOL_INVALIDID         /* errorPoolId to alloc error messges from */
+};
+
+ /*
+ * POOL configuration
+ * ==================
+ */
+
+/* number of pools */
+#define Global_NUMALLOCATORS 1
+
+/* SMAPOOL params */
+typedef struct Global_SMAPOOL_Params_tag {
+    Uint16     poolId ;
+    Bool       exactMatchReq ;
+} Global_SMAPOOL_Params ;
+
+static Global_SMAPOOL_Params Global_smaPoolParams =
+{
+    0, /* Pool ID */
+    `settings.dspCommUseExactMatch == true ? "TRUE" : "FALSE"`
+} ;
+
+/* DSPLINK's SMAPOOL declarations */
+extern Void SMAPOOL_init();
+extern POOL_Fxns SMAPOOL_FXNS;
+
+/* pools themselves */
+static POOL_Obj Global_pools[Global_NUMALLOCATORS] =
+{
+    {
+        &SMAPOOL_init,              /* Init Function                      */
+        &SMAPOOL_FXNS,              /* Pool interface functions           */
+        &Global_smaPoolParams,      /* Pool params                        */
+        NULL                        /* Pool object: Set within pool impl. */
+    }
+};
+
+/* POOL object configuration */
+POOL_Config POOL_config = {
+    Global_pools,
+    Global_NUMALLOCATORS
+};
+
+%     } // end if (ipc.dspLinkUsed())
+
+
+%     if (!ipc.dspLinkUsed()) {
+/* MSGQ and POOL configuration on the DSP when DSPLINK is NOT used */
+
+#include <ti/bios/include/std.h>
+#include <ti/bios/include/msgq.h>
+#include <ti/bios/include/pool.h>
+#include <ti/bios/include/staticpool.h>
+
+#define Global_NUMPROC         1
+#define Global_NUMALLOCATORS   1
+#define Global_NUMMSGQUEUES    `settings.dspCommNumMsgQueues`
+#define Global_NUMMSGPOOLS     1
+
+#define Global_MSGSIZE         `settings.dspCommMsgSize`
+#define Global_POOLBUFSIZE     (`settings.dspCommNumMsgs` * Global_MSGSIZE)
+
+static MSGQ_TransportObj Global_transports[Global_NUMPROC] =
+{
+     MSGQ_NOTRANSPORT,    /* Represents the local processor */
+};
+
+static MSGQ_Obj Global_msgQueues[Global_NUMMSGQUEUES] ;
+
+MSGQ_Config MSGQ_config = {
+    Global_msgQueues,
+    Global_transports,
+    Global_NUMMSGQUEUES,
+    Global_NUMPROC,
+    0,
+    MSGQ_INVALIDMSGQ,
+    POOL_INVALIDID
+};
+
+static Char Global_poolBuf[Global_POOLBUFSIZE];
+
+static STATICPOOL_Params Global_poolParams = {
+    Global_poolBuf,
+    sizeof (Global_poolBuf),
+    Global_MSGSIZE,
+};
+static STATICPOOL_Obj Global_poolObj;
+
+static POOL_Obj Global_pools[Global_NUMALLOCATORS] =
+{
+    {
+        STATICPOOL_init,                /* Init Function */
+        (POOL_Fxns *)&STATICPOOL_FXNS,  /* Pool interface functions */
+        &Global_poolParams,             /* Pool params */
+        &Global_poolObj                 /* Pool object: init'd in pool impl. */
+    }
+};
+
+POOL_Config POOL_config = {
+    Global_pools,
+    Global_NUMALLOCATORS
+};
+
+%     } // end if (ipc.dspLinkUsed()) {} else {}
+% } // end if (settings.dspConfigureMsgqAndPool == true)
+%%{
+/*
+ * @(#) ti.sdo.ce.ipc.bios; 2, 0, 1,179; 12-2-2010 21:24:02; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

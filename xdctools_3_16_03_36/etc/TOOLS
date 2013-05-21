@@ -1,0 +1,21 @@
+#
+#  Copyright 2010 by Texas Instruments Incorporated.
+#  @(#) XDC u17 02-22-2010 (xdc-u17)
+#
+#
+# ======== TOOLS ========
+#
+#  This file defines macros that are used to locate the various 
+#  tools used for XDC builds.  The following macros may be defined:
+#
+#    JRE        - location of the Java runtime directory.  The default 
+#                 value is $(XDCROOT)/jre.
+#
+#    CLASSPATH  - the classpath used when running the XDC tools.  The 
+#                 default is "<dir>/iliad.jar;<dir>/antlr.jar;<dir>/js.jar",
+#                 where <dir> is the directory containing iliad.jar.
+#
+#    JDK        - location of a Java Developer's Kit.  There is no default.
+#                 This value is only used when building packages that 
+#                 contain Java code.
+#

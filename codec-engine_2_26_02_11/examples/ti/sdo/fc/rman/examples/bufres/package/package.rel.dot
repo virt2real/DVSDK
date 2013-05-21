@@ -1,0 +1,745 @@
+digraph dependencies {
+    label="\nPackage ti.sdo.fc.rman.examples.bufres Dependency Graph";
+    size="7.5,10";
+    rankdir=LR;
+    ranksep=".75";
+    concentrate="true";
+    node [fixedsize=true, width=1.5, style=filled, color=black];
+    node [font=Helvetica, fontsize=12, fillcolor=lightgrey];
+    ti_sdo_fc_rman_examples_bufres [shape=record,label="ti.sdo.fc.rman.examples.bufres|1, 0, 0", URL="package.rel.xml"];
+    node [fontsize=10, fillcolor=white];
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_sdo_fc_ires_bufres [shape=record,label="ti.sdo.fc.ires.bufres|1, 0, 0", URL="../../../../ires/bufres/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_sdo_fc_ires_bufres;
+    ti_psl [shape=record,label="ti.psl|5, 0, 0, 0", URL="../../../../../../../../../../../../../vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages/ti/psl/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_psl;
+    gnu_targets [shape=record,label="gnu.targets|1, 0, 1", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/gnu/targets/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> gnu_targets;
+    ti_bios [shape=record,label="ti.bios|5, 2, 5, 19", URL="../../../../../../../../../../../../../vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages/ti/bios/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_bios;
+    xdc_services_intern_xsr [shape=record,label="xdc.services.intern.xsr|1, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/services/intern/xsr/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc_services_intern_xsr;
+    ti_sdo_fc_ires_nullresource [shape=record,label="ti.sdo.fc.ires.nullresource|1, 0, 0", URL="../../../../ires/nullresource/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_sdo_fc_ires_nullresource;
+    xdc_services_intern_gen [shape=record,label="xdc.services.intern.gen|1, 0, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/services/intern/gen/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc_services_intern_gen;
+    ti_pscl [shape=record,label="ti.pscl|1, 0, 0, 0", URL="../../../../../../../../../../../../../vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages/ti/pscl/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_pscl;
+    ti_sdo_fc_utils_api [shape=record,label="ti.sdo.fc.utils.api|1, 0, 0", URL="../../../../utils/api/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_sdo_fc_utils_api;
+    ti_xdais [shape=record,label="ti.xdais|not found"style=rounded, ];
+    ti_sdo_fc_rman_examples_bufres -> ti_xdais;
+    xdc_rov [shape=record,label="xdc.rov|1, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/rov/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc_rov;
+    xdc [shape=record,label="xdc|1, 1, 1", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc;
+    ti_sdo_fc_rman_examples [shape=record,label="ti.sdo.fc.rman.examples|1, 0, 0", URL="../../package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_sdo_fc_rman_examples;
+    gnu_targets_arm [shape=record,label="gnu.targets.arm|1, 0, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/gnu/targets/arm/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> gnu_targets_arm;
+    ti_rtdx [shape=record,label="ti.rtdx|2, 0, 0, 5", URL="../../../../../../../../../../../../../vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages/ti/rtdx/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_rtdx;
+    ti_sdo_utils_trace [shape=record,label="ti.sdo.utils.trace|1, 0, 0", URL="../../../../../utils/trace/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_sdo_utils_trace;
+    xdc_services_global [shape=record,label="xdc.services.global|1, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/services/global/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc_services_global;
+    ti_platforms_dsk6455 [shape=record,label="ti.platforms.dsk6455|1, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/ti/platforms/dsk6455/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_platforms_dsk6455;
+    ti_pmi [shape=record,label="ti.pmi|1, 0, 0, 0", URL="../../../../../../../../../../../../../vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages/ti/pmi/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_pmi;
+    xdc_cfg [shape=record,label="xdc.cfg|1, 0, 2, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/cfg/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc_cfg;
+    xdc_services_intern_cmd [shape=record,label="xdc.services.intern.cmd|1, 0, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/services/intern/cmd/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc_services_intern_cmd;
+    ti_sdo_fc_utils_gtinfra [shape=record,label="ti.sdo.fc.utils.gtinfra|1, 0, 0", URL="../../../../utils/gtinfra/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_sdo_fc_utils_gtinfra;
+    ti_catalog_c6000 [shape=record,label="ti.catalog.c6000|1, 0, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/ti/catalog/c6000/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_catalog_c6000;
+    ti_targets_arm [shape=record,label="ti.targets.arm|2, 0, 1, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/ti/targets/arm/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_targets_arm;
+    ti_sdo_fc_ires [shape=record,label="ti.sdo.fc.ires|1, 0, 0", URL="../../../../ires/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_sdo_fc_ires;
+    xdc_bld [shape=record,label="xdc.bld|1, 0, 2", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/bld/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc_bld;
+    ti_sdo_fc_utils [shape=record,label="ti.sdo.fc.utils|1, 0, 2", URL="../../../../utils/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_sdo_fc_utils;
+    ti_platforms_evmDM6446 [shape=record,label="ti.platforms.evmDM6446|1, 0, 0, 1", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/ti/platforms/evmDM6446/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_platforms_evmDM6446;
+    xdc_runtime [shape=record,label="xdc.runtime|2, 0, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/runtime/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc_runtime;
+    microsoft_targets_arm [shape=record,label="microsoft.targets.arm|1, 0, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/microsoft/targets/arm/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> microsoft_targets_arm;
+    ti_targets_rts6000 [shape=record,label="ti.targets.rts6000|1, 0, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/ti/targets/rts6000/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_targets_rts6000;
+    ti_sdo_fc_global [shape=record,label="ti.sdo.fc.global|1, 0, 0", URL="../../../../global/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_sdo_fc_global;
+    xdc_platform [shape=record,label="xdc.platform|1, 0, 1, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/platform/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc_platform;
+    microsoft_targets [shape=record,label="microsoft.targets|1, 0, 2, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/microsoft/targets/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> microsoft_targets;
+    ti_sdo_fc_rman [shape=record,label="ti.sdo.fc.rman|2, 0, 0", URL="../../../package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_sdo_fc_rman;
+    xdc_shelf [shape=record,label="xdc.shelf|1, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/shelf/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc_shelf;
+    xdc_services_spec [shape=record,label="xdc.services.spec|1, 0, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/services/spec/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> xdc_services_spec;
+    ti_targets [shape=record,label="ti.targets|1, 0, 3", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/ti/targets/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_targets;
+    ti_sdo_fc_dskt2 [shape=record,label="ti.sdo.fc.dskt2|1, 0, 4", URL="../../../../dskt2/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_sdo_fc_dskt2;
+    ti_platforms_generic [shape=record,label="ti.platforms.generic|1, 0, 0, 1", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/ti/platforms/generic/package/package.rel.svg"];
+    ti_sdo_fc_rman_examples_bufres -> ti_platforms_generic;
+
+    edge [style=solid, color=blue]
+    ti_platforms_generic -> xdc_platform;
+
+    edge [style=solid, color=lightgrey]
+    ti_platforms_generic -> xdc_platform;
+    ti_platforms_generic -> xdc_services_intern_cmd;
+    ti_targets_nda [shape=record,label="ti.targets.nda|not found"style=rounded, ];
+    ti_platforms_generic -> ti_targets_nda;
+    ti_platforms_generic -> ti_targets_arm;
+    ti_platforms_generic -> xdc_shelf;
+    ti_targets_elf [shape=record,label="ti.targets.elf|1, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/ti/targets/elf/package/package.rel.svg"];
+    ti_platforms_generic -> ti_targets_elf;
+    ti_platforms_generic -> xdc_services_spec;
+    ti_platforms_generic -> microsoft_targets;
+    ti_platforms_generic -> xdc_services_intern_gen;
+    ti_platforms_generic -> gnu_targets_arm;
+    ti_targets_arm_elf [shape=record,label="ti.targets.arm.elf|1, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/ti/targets/arm/elf/package/package.rel.svg"];
+    ti_platforms_generic -> ti_targets_arm_elf;
+    ti_platforms_generic -> gnu_targets;
+    ti_platforms_generic -> xdc_services_global;
+    ti_platforms_generic -> ti_targets;
+    ti_platforms_generic -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_targets_arm_elf -> xdc_services_spec;
+    ti_targets_arm_elf -> xdc_services_global;
+    ti_targets_arm_elf -> ti_targets_arm;
+    ti_targets_arm_elf -> xdc_services_intern_cmd;
+    ti_targets_arm_elf -> xdc_services_intern_xsr;
+    ti_targets_arm_elf -> ti_targets;
+    ti_targets_arm_elf -> xdc_shelf;
+    ti_targets_arm_elf -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_targets_elf -> xdc_services_spec;
+    ti_targets_elf -> xdc_services_global;
+    ti_targets_elf -> xdc_services_intern_cmd;
+    ti_targets_elf -> xdc_services_intern_xsr;
+    ti_targets_elf -> ti_targets;
+    ti_targets_elf -> xdc_shelf;
+    ti_targets_elf -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_sdo_fc_dskt2 -> gnu_targets;
+    ti_sdo_fc_dskt2 -> xdc_services_intern_cmd;
+    ti_sdo_fc_dskt2 -> ti_targets;
+    ti_sdo_fc_dskt2 -> xdc_shelf;
+    ti_sdo_fc_dskt2 -> xdc_services_global;
+    ti_sdo_fc_dskt2 -> ti_targets_arm;
+    ti_sdo_fc_dskt2 -> gnu_targets_arm;
+    ti_sdo_fc_dskt2 -> ti_sdo_fc_utils;
+    ti_sdo_fc_dskt2 -> ti_bios;
+    ti_sdo_fc_dskt2 -> xdc_services_intern_gen;
+    ti_sdo_fc_dskt2 -> ti_sdo_utils_trace;
+    ti_sdo_fc_dskt2 -> xdc_services_spec;
+    ti_sdo_fc_dskt2 -> ti_xdais;
+    ti_sdo_fc_dskt2 -> microsoft_targets;
+    ti_sdo_fc_dskt2 -> ti_sdo_fc_utils_gtinfra;
+    ti_sdo_fc_dskt2 -> xdc_services_intern_xsr;
+    ti_sdo_fc_dskt2 -> microsoft_targets_arm;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_targets -> xdc_services_spec;
+    ti_targets -> xdc_services_global;
+    ti_targets -> xdc_services_intern_cmd;
+    ti_targets -> xdc_services_intern_xsr;
+    ti_targets -> xdc_shelf;
+    ti_targets -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+    xdc_services_spec -> xdc_shelf;
+
+    edge [style=solid, color=lightgrey]
+    xdc_utils_tconf [shape=record,label="xdc.utils.tconf|not found"style=rounded, ];
+    xdc_services_spec -> xdc_utils_tconf;
+    xdc_services_spec -> xdc_services_intern_cmd;
+    xdc_services_spec -> xdc_services_intern_xsr;
+    xdc_services_spec -> xdc_services_global;
+    xdc_services_spec -> xdc_services_intern_gen;
+    xdc_services_spec -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_shelf -> xdc_utils_tconf;
+    xdc_shelf -> xdc_services_intern_cmd;
+    xdc_shelf -> xdc_services_intern_xsr;
+    xdc_shelf -> xdc_services_spec;
+    xdc_shelf -> xdc_services_global;
+    xdc_shelf -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_sdo_fc_rman -> gnu_targets;
+    ti_sdo_fc_rman -> ti_sdo_fc_ires;
+    ti_sdo_fc_rman -> ti_sdo_fc_ires_nullresource;
+    ti_sdo_fc_rman -> ti_sdo_fc_dskt2;
+    ti_sdo_fc_rman -> xdc_services_intern_cmd;
+    ti_sdo_fc_rman -> ti_targets;
+    ti_sdo_fc_rman -> xdc_shelf;
+    ti_sdo_fc_rman -> xdc_services_global;
+    ti_sdo_fc_rman -> ti_targets_arm;
+    ti_sdo_fc_rman -> gnu_targets_arm;
+    ti_sdo_fc_rman -> ti_sdo_fc_utils;
+    ti_sdo_fc_rman -> ti_bios;
+    ti_sdo_fc_rman -> xdc_services_intern_gen;
+    ti_sdo_fc_rman -> ti_sdo_utils_trace;
+    ti_sdo_fc_rman -> xdc_services_spec;
+    ti_sdo_fc_rman -> ti_xdais;
+    ti_sdo_fc_rman -> microsoft_targets;
+    ti_sdo_fc_rman -> xdc_services_intern_xsr;
+    ti_sdo_fc_rman -> microsoft_targets_arm;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    microsoft_targets -> xdc_services_spec;
+    microsoft_targets -> xdc_services_global;
+    microsoft_targets -> xdc_services_intern_cmd;
+    microsoft_targets -> xdc_services_intern_xsr;
+    microsoft_targets -> xdc_shelf;
+    microsoft_targets -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_platform -> xdc_utils_tconf;
+    xdc_platform -> xdc_services_intern_cmd;
+    xdc_platform -> xdc_services_intern_xsr;
+    xdc_platform -> xdc_services_spec;
+    xdc_platform -> xdc_services_global;
+    xdc_platform -> xdc_services_intern_gen;
+    xdc_platform -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_sdo_fc_global -> ti_targets_arm;
+    ti_sdo_fc_global -> xdc_services_spec;
+    ti_sdo_fc_global -> microsoft_targets;
+    ti_sdo_fc_global -> microsoft_targets_arm;
+    ti_sdo_fc_global -> gnu_targets;
+    ti_sdo_fc_global -> xdc_services_global;
+    ti_sdo_fc_global -> gnu_targets_arm;
+    ti_sdo_fc_global -> xdc_shelf;
+    ti_sdo_fc_global -> ti_targets;
+    ti_sdo_fc_global -> xdc_services_intern_cmd;
+    ti_sdo_fc_global -> xdc_services_intern_xsr;
+    ti_sdo_fc_global -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+    ti_targets_rts6000 -> xdc_runtime;
+
+    edge [style=solid, color=lightgrey]
+    ti_targets_rts6000 -> xdc_services_global;
+    ti_targets_rts6000 -> gnu_targets_arm;
+    ti_targets_rts6000 -> xdc_services_intern_cmd;
+    ti_targets_rts6000 -> microsoft_targets_arm;
+    ti_targets_rts6000 -> xdc_rov;
+    ti_targets_rts6000 -> xdc_services_spec;
+    ti_targets_rts6000 -> gnu_targets;
+    ti_targets_rts6000 -> xdc_runtime;
+    ti_targets_rts6000 -> microsoft_targets;
+    ti_targets_rts6000 -> ti_targets_arm;
+    ti_targets_rts6000 -> xdc_services_intern_gen;
+    ti_targets_rts6000 -> ti_targets;
+    ti_targets_rts6000 -> ti_targets_elf;
+    xdc_runtime_knl [shape=record,label="xdc.runtime.knl|1, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/runtime/knl/package/package.rel.svg"];
+    ti_targets_rts6000 -> xdc_runtime_knl;
+    ti_targets_rts6000 -> xdc_shelf;
+    ti_targets_rts6000 -> ti_targets_arm_elf;
+    ti_targets_rts6000 -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_runtime_knl -> xdc_utils_tconf;
+    xdc_runtime_knl -> xdc_runtime;
+    xdc_runtime_knl -> xdc_services_intern_cmd;
+    xdc_runtime_knl -> xdc_services_intern_xsr;
+    xdc_runtime_knl -> xdc_services_spec;
+    xdc_runtime_knl -> xdc_services_global;
+    xdc_runtime_knl -> xdc_services_intern_gen;
+    xdc_runtime_knl -> xdc_rov;
+    xdc_runtime_knl -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+    microsoft_targets_arm -> microsoft_targets;
+
+    edge [style=solid, color=lightgrey]
+    microsoft_targets_arm -> xdc_services_spec;
+    microsoft_targets_arm -> xdc_services_global;
+    microsoft_targets_arm -> microsoft_targets;
+    microsoft_targets_arm -> xdc_services_intern_cmd;
+    microsoft_targets_arm -> xdc_services_intern_xsr;
+    microsoft_targets_arm -> xdc_shelf;
+    microsoft_targets_arm -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_runtime -> xdc_utils_tconf;
+    xdc_runtime -> xdc_services_intern_cmd;
+    xdc_runtime -> xdc_services_intern_xsr;
+    xdc_runtime -> xdc_services_spec;
+    xdc_runtime -> xdc_services_global;
+    xdc_runtime -> xdc_services_intern_gen;
+    xdc_runtime -> xdc_rov;
+    xdc_runtime -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+    ti_platforms_evmDM6446 -> xdc_platform;
+
+    edge [style=solid, color=lightgrey]
+    ti_platforms_evmDM6446 -> xdc_platform;
+    ti_platforms_evmDM6446 -> xdc_services_intern_cmd;
+    ti_platforms_evmDM6446 -> ti_targets_nda;
+    ti_platforms_evmDM6446 -> ti_targets_arm;
+    ti_platforms_evmDM6446 -> xdc_shelf;
+    ti_platforms_evmDM6446 -> ti_targets_elf;
+    ti_platforms_evmDM6446 -> xdc_services_spec;
+    ti_platforms_evmDM6446 -> microsoft_targets;
+    ti_platforms_evmDM6446 -> xdc_services_intern_gen;
+    ti_platforms_evmDM6446 -> gnu_targets_arm;
+    ti_platforms_evmDM6446 -> ti_targets_arm_elf;
+    ti_platforms_evmDM6446 -> gnu_targets;
+    ti_platforms_evmDM6446 -> xdc_services_global;
+    ti_platforms_evmDM6446 -> ti_targets;
+    ti_platforms_evmDM6446 -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+    xdc_bld -> xdc_services_global;
+    xdc_bld -> xdc_services_intern_cmd;
+
+    edge [style=solid, color=lightgrey]
+    xdc_bld -> xdc_utils_tconf;
+    xdc_bld -> xdc_services_intern_cmd;
+    xdc_bld -> xdc_services_intern_xsr;
+    xdc_bld -> xdc_services_spec;
+    xdc_bld -> xdc_services_global;
+    xdc_bld -> xdc_services_intern_gen;
+    xdc_bld -> xdc;
+    xdc_bld -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_sdo_fc_ires -> ti_targets_arm;
+    ti_sdo_fc_ires -> xdc_services_spec;
+    ti_sdo_fc_ires -> microsoft_targets;
+    ti_sdo_fc_ires -> microsoft_targets_arm;
+    ti_sdo_fc_ires -> gnu_targets;
+    ti_sdo_fc_ires -> xdc_services_global;
+    ti_sdo_fc_ires -> gnu_targets_arm;
+    ti_sdo_fc_ires -> xdc_shelf;
+    ti_sdo_fc_ires -> ti_targets;
+    ti_sdo_fc_ires -> xdc_services_intern_cmd;
+    ti_sdo_fc_ires -> xdc_services_intern_xsr;
+    ti_sdo_fc_ires -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+    ti_targets_arm -> ti_targets;
+
+    edge [style=solid, color=lightgrey]
+    ti_targets_arm -> xdc_services_spec;
+    ti_targets_arm -> xdc_services_global;
+    ti_targets_arm -> xdc_services_intern_cmd;
+    ti_targets_arm -> xdc_services_intern_xsr;
+    ti_targets_arm -> ti_targets;
+    ti_targets_arm -> xdc_shelf;
+    ti_targets_arm -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+    ti_catalog_c6000 -> xdc_platform;
+
+    edge [style=solid, color=lightgrey]
+    ti_catalog [shape=record,label="ti.catalog|1, 0, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/ti/catalog/package/package.rel.svg"];
+    ti_catalog_c6000 -> ti_catalog;
+    ti_catalog_c6000 -> xdc_platform;
+    ti_catalog_c6000 -> xdc_services_intern_cmd;
+    ti_catalog_c6000 -> ti_targets_nda;
+    ti_catalog_c6000 -> ti_targets_arm;
+    ti_catalog_c6000 -> xdc_shelf;
+    ti_catalog_c6000 -> ti_targets_elf;
+    ti_catalog_c6000 -> xdc_services_spec;
+    ti_catalog_c6000 -> microsoft_targets;
+    ti_catalog_c6000 -> xdc_services_intern_gen;
+    ti_catalog_c6000 -> gnu_targets_arm;
+    ti_catalog_c6000 -> ti_targets_arm_elf;
+    ti_catalog_c6000 -> gnu_targets;
+    ti_catalog_c6000 -> xdc_services_global;
+    ti_catalog_c6000 -> ti_targets;
+    ti_catalog_c6000 -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_catalog -> xdc_platform;
+    ti_catalog -> xdc_services_intern_cmd;
+    ti_catalog -> ti_targets_nda;
+    ti_catalog -> ti_targets_arm;
+    ti_catalog -> xdc_shelf;
+    ti_catalog -> ti_targets_elf;
+    ti_catalog -> xdc_services_spec;
+    ti_catalog -> microsoft_targets;
+    ti_catalog -> xdc_services_intern_gen;
+    ti_catalog -> gnu_targets_arm;
+    ti_catalog -> ti_targets_arm_elf;
+    ti_catalog -> gnu_targets;
+    ti_catalog -> xdc_services_global;
+    ti_catalog -> ti_targets;
+    ti_catalog -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_cmd -> xdc_shelf;
+    xdc_services_intern_cmd -> xdc_services_spec;
+    xdc_services_intern_cmd -> xdc_services_global;
+    xdc_services_intern_cmd -> xdc_services_intern_gen;
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_intern_cmd -> xdc_utils_tconf;
+    xdc_services_intern_cmd -> xdc_services_intern_xsr;
+    xdc_services_intern_cmd -> xdc_services_spec;
+    xdc_services_intern_cmd -> xdc_services_global;
+    xdc_services_intern_cmd -> xdc_services_intern_gen;
+    xdc_services_intern_cmd -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+    xdc_cfg -> xdc_services_global;
+
+    edge [style=solid, color=lightgrey]
+    xdc_cfg -> xdc_utils_tconf;
+    xdc_cfg -> xdc_platform;
+    xdc_cfg -> xdc_services_intern_cmd;
+    xdc_cfg -> xdc_services_intern_xsr;
+    xdc_cfg -> xdc_services_spec;
+    xdc_cfg -> xdc_services_global;
+    xdc_cfg -> xdc_services_intern_gen;
+    xdc_cfg -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_corevers [shape=record,label="xdc.corevers|16, 0, 1, 0", URL="../../../../../../../../../../../../../rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/packages/xdc/corevers/package/package.rel.svg"];
+    ti_pmi -> xdc_corevers;
+    ti_pmi -> ti_targets;
+    ti_pmi -> xdc_services_spec;
+    ti_pmi -> xdc_services_intern_cmd;
+    ti_pmi -> xdc_services_intern_xsr;
+    ti_pmi -> xdc_services_intern_gen;
+    ti_pmi -> xdc_shelf;
+    ti_pmi -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_corevers -> xdc_utils_tconf;
+    xdc_corevers -> xdc_services_intern_cmd;
+    xdc_corevers -> xdc_services_intern_xsr;
+    xdc_corevers -> xdc_services_spec;
+    xdc_corevers -> xdc_services_global;
+    xdc_corevers -> xdc_services_intern_gen;
+    xdc_corevers -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+    ti_platforms_dsk6455 -> ti_catalog_c6000;
+    ti_platforms_dsk6455 -> xdc_platform;
+
+    edge [style=solid, color=lightgrey]
+    ti_platforms_dsk6455 -> xdc_platform;
+    ti_platforms_dsk6455 -> ti_catalog_c6000;
+    ti_platforms_dsk6455 -> xdc_services_intern_cmd;
+    ti_platforms_dsk6455 -> ti_targets_nda;
+    ti_platforms_dsk6455 -> ti_targets_arm;
+    ti_platforms_dsk6455 -> xdc_shelf;
+    ti_platforms_dsk6455 -> ti_targets_elf;
+    ti_platforms_dsk6455 -> xdc_services_spec;
+    ti_platforms_dsk6455 -> microsoft_targets;
+    ti_platforms_dsk6455 -> xdc_services_intern_gen;
+    ti_platforms_dsk6455 -> gnu_targets_arm;
+    ti_platforms_dsk6455 -> ti_targets_arm_elf;
+    ti_platforms_dsk6455 -> gnu_targets;
+    ti_platforms_dsk6455 -> xdc_services_global;
+    ti_platforms_dsk6455 -> ti_targets;
+    ti_platforms_dsk6455 -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_global -> xdc_utils_tconf;
+    xdc_services_global -> xdc_services_intern_cmd;
+    xdc_services_global -> xdc_services_intern_xsr;
+    xdc_services_global -> xdc_services_spec;
+    xdc_services_global -> xdc_services_intern_gen;
+    xdc_services_global -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_rtdx -> xdc_services_intern_xsr;
+    ti_rtdx -> ti_targets_nda;
+    ti_rtdx -> xdc_services_intern_cmd;
+    ti_rtdx -> xdc_services_spec;
+    ti_rtdx -> xdc_shelf;
+    ti_rtdx -> xdc_services_global;
+    tisb_release_filters [shape=record,label="tisb.release.filters|1, 0, 0, 0", URL="../../../../../../../../../../../../../toolsrc/library/toolsD16/packages/tisb/release/filters/package/package.rel.svg"];
+    ti_rtdx -> tisb_release_filters;
+    ti_rtdx -> xdc_corevers;
+    ti_rtdx -> xdc_services_intern_gen;
+    ti_rtdx -> ti_targets_arm;
+    ti_rtdx -> ti_targets;
+    ti_rtdx_build [shape=record,label="ti.rtdx.build|not found"style=rounded, ];
+    ti_rtdx -> ti_rtdx_build;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    tisb_release_filters -> xdc_services_intern_gen;
+    tisb_release_filters -> xdc_shelf;
+    tisb_release_filters -> xdc_services_global;
+    tisb_release_filters -> xdc_services_spec;
+    tisb_release_filters -> xdc_services_intern_cmd;
+    tisb_release_filters -> xdc_corevers;
+    tisb_release_filters -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    gnu_targets_arm -> xdc_services_spec;
+    gnu_targets_arm -> xdc_services_global;
+    gnu_targets_arm -> xdc_services_intern_cmd;
+    gnu_targets_arm -> xdc_services_intern_xsr;
+    gnu_targets_arm -> xdc_shelf;
+    gnu_targets_arm -> xdc_services_intern_gen;
+    gnu_targets_arm -> gnu_targets;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_sdo_fc_rman_examples -> gnu_targets;
+    ti_sdo_fc_rman_examples -> xdc_services_intern_cmd;
+    ti_sdo_fc_rman_examples -> ti_targets;
+    ti_sdo_fc_rman_examples -> xdc_shelf;
+    ti_sdo_fc_rman_examples -> xdc_services_global;
+    ti_sdo_fc_rman_examples -> ti_targets_arm;
+    ti_sdo_fc_rman_examples -> gnu_targets_arm;
+    ti_sdo_fc_rman_examples -> ti_sdo_fc_utils;
+    ti_sdo_fc_rman_examples -> xdc_services_intern_gen;
+    ti_sdo_linuxutils_edma [shape=record,label="ti.sdo.linuxutils.edma|not found"style=rounded, ];
+    ti_sdo_fc_rman_examples -> ti_sdo_linuxutils_edma;
+    ti_sdo_fc_rman_examples -> xdc_services_spec;
+    ti_sdo_fc_rman_examples -> ti_xdais;
+    ti_sdo_fc_rman_examples -> microsoft_targets;
+    ti_sdo_linuxutils_vicp [shape=record,label="ti.sdo.linuxutils.vicp|not found"style=rounded, ];
+    ti_sdo_fc_rman_examples -> ti_sdo_linuxutils_vicp;
+    ti_sdo_linuxutils_cmem [shape=record,label="ti.sdo.linuxutils.cmem|not found"style=rounded, ];
+    ti_sdo_fc_rman_examples -> ti_sdo_linuxutils_cmem;
+    ti_sdo_fc_rman_examples -> xdc_services_intern_xsr;
+    ti_sdo_fc_rman_examples -> microsoft_targets_arm;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc -> xdc_utils_tconf;
+    xdc -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_rov -> xdc_utils_tconf;
+    xdc_rov -> gnu_targets;
+    xdc_rov -> xdc_services_intern_cmd;
+    xdc_rov -> xdc_services_intern_xsr;
+    xdc_rov -> xdc_services_spec;
+    xdc_rov -> xdc_services_global;
+    xdc_rov -> xdc_services_intern_gen;
+    xdc_rov -> xdc_shelf;
+    xdc_rov -> microsoft_targets;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_pscl -> xdc_corevers;
+    ti_pscl -> ti_targets;
+    ti_pscl -> xdc_services_spec;
+    ti_pscl -> xdc_services_intern_cmd;
+    ti_pscl -> xdc_services_intern_xsr;
+    ti_pscl -> xdc_services_intern_gen;
+    ti_pscl -> xdc_shelf;
+    ti_pscl -> ti_pmi;
+    ti_pscl -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_gen -> xdc_shelf;
+    xdc_services_intern_gen -> xdc_services_spec;
+    xdc_services_intern_gen -> xdc_services_global;
+    xdc_services_intern_gen -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_intern_gen -> xdc_utils_tconf;
+    xdc_services_intern_gen -> xdc_services_intern_cmd;
+    xdc_services_intern_gen -> xdc_services_intern_xsr;
+    xdc_services_intern_gen -> xdc_services_spec;
+    xdc_services_intern_gen -> xdc_services_global;
+    xdc_services_intern_gen -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_sdo_fc_ires_nullresource -> gnu_targets;
+    ti_sdo_fc_ires_nullresource -> ti_sdo_fc_ires;
+    ti_sdo_fc_ires_nullresource -> xdc_services_intern_cmd;
+    ti_sdo_fc_ires_nullresource -> ti_targets;
+    ti_sdo_fc_ires_nullresource -> xdc_shelf;
+    ti_sdo_fc_ires_nullresource -> xdc_services_global;
+    ti_sdo_fc_ires_nullresource -> ti_targets_arm;
+    ti_sdo_fc_ires_nullresource -> gnu_targets_arm;
+    ti_sdo_fc_ires_nullresource -> xdc_services_intern_gen;
+    ti_sdo_fc_ires_nullresource -> ti_sdo_utils_trace;
+    ti_sdo_fc_ires_nullresource -> xdc_services_spec;
+    ti_sdo_fc_ires_nullresource -> ti_xdais;
+    ti_sdo_fc_ires_nullresource -> microsoft_targets;
+    ti_sdo_fc_ires_nullresource -> xdc_services_intern_xsr;
+    ti_sdo_fc_ires_nullresource -> microsoft_targets_arm;
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_xsr -> xdc_services_global;
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_intern_xsr -> xdc_utils_tconf;
+    xdc_services_intern_xsr -> xdc_services_intern_cmd;
+    xdc_services_intern_xsr -> xdc_services_spec;
+    xdc_services_intern_xsr -> xdc_services_global;
+    xdc_services_intern_xsr -> xdc_services_intern_gen;
+    xdc_services_intern_xsr -> xdc_shelf;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_bios -> xdc_services_intern_gen;
+    ti_bios -> ti_pscl;
+    ti_bios -> ti_pmi;
+    ti_bios -> xdc_shelf;
+    ti_bios -> xdc_services_intern_xsr;
+    ti_bios -> xdc_services_spec;
+    ti_bios -> ti_targets;
+    ti_bios -> xdc_services_intern_cmd;
+    ti_bios -> xdc_services_global;
+    ti_csl [shape=record,label="ti.csl|not found"style=rounded, ];
+    ti_bios -> ti_csl;
+    ti_bios -> xdc_corevers;
+    ti_bios -> ti_psl;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    gnu_targets -> xdc_services_spec;
+    gnu_targets -> xdc_services_global;
+    gnu_targets -> xdc_services_intern_cmd;
+    gnu_targets -> xdc_services_intern_xsr;
+    gnu_targets -> xdc_shelf;
+    gnu_targets -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_psl -> ti_targets;
+    xdc_rts [shape=record,label="xdc.rts|not found"style=rounded, ];
+    ti_psl -> xdc_rts;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_sdo_fc_ires_bufres -> gnu_targets;
+    ti_sdo_fc_ires_bufres -> ti_sdo_fc_ires;
+    ti_sdo_fc_ires_bufres -> xdc_services_intern_cmd;
+    ti_sdo_fc_ires_bufres -> ti_targets;
+    ti_sdo_fc_ires_bufres -> xdc_shelf;
+    ti_sdo_fc_ires_bufres -> xdc_services_global;
+    ti_sdo_fc_ires_bufres -> ti_targets_arm;
+    ti_sdo_fc_ires_bufres -> gnu_targets_arm;
+    ti_sdo_fc_ires_bufres -> xdc_services_intern_gen;
+    ti_sdo_fc_ires_bufres -> ti_sdo_utils_trace;
+    ti_sdo_fc_ires_bufres -> xdc_services_spec;
+    ti_sdo_fc_ires_bufres -> ti_xdais;
+    ti_sdo_fc_ires_bufres -> microsoft_targets;
+    ti_sdo_fc_ires_bufres -> xdc_services_intern_xsr;
+    ti_sdo_fc_ires_bufres -> microsoft_targets_arm;
+}

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="framework_components_2_26_00_01" version="1, 0, 0" producerId="framework_components_2_26_00_01">
+    <units>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/framework_components_2_26_00_01.tar.dep" src="package/rel/framework_components_2_26_00_01.xdc.inc"/>
+        <srcFile name="package/rel/../../exports/framework_components_2_26_00_01,lite.tar.dep" src="package/rel/../../exports/framework_components_2_26_00_01,lite.xdc.inc"/>
+        <srcFile name="package/rel/../../exports/framework_components_2_26_00_01.tar.dep" src="package/rel/../../exports/framework_components_2_26_00_01.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="framework_components_2_26_00_01"
+        pname="framework_components_2_26_00_01.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="packages"/>
+        <file name="package/package.bld.xml"/>
+        <file name="examples"/>
+        <file name="fctools/packages"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    <release name="../../exports/framework_components_2_26_00_01,lite"
+        pname="../../exports/framework_components_2_26_00_01,lite.tar"
+        label="undefined"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="relnotes_archive"/>
+        <file name="framework_components_2_26_00_01_manifest.html"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="docs"/>
+        <file name="packages"/>
+        <file name="xdoc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="examples"/>
+        <file name="framework_components_2_26_00_01_ReleaseNotes.html"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    <release name="../../exports/framework_components_2_26_00_01"
+        pname="../../exports/framework_components_2_26_00_01.tar"
+        label="undefined"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="relnotes_archive"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="docs"/>
+        <file name="packages"/>
+        <file name="xdoc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="examples"/>
+        <file name="fctools/packages"/>
+        <file name="framework_components_2_26_00_01_ReleaseNotes.html"/>
+        <file name="framework_components_2_26_00_01_fctools_manifest.html"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    <repository name="examples"
+        pname="examples">
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.bufres_yield"
+            pname="ti_sdo_fc_rman_examples_bufres_yield.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.staticreg"
+            pname="ti_sdo_fc_rman_examples_staticreg.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.nonrtscexample"
+            pname="ti_sdo_fc_rman_examples_nonrtscexample.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.addrspace"
+            pname="ti_sdo_fc_rman_examples_addrspace.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.examples.dma"
+            pname="ti_sdo_fc_examples_dma.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.examples.codecs.template"
+            pname="ti_sdo_fc_ires_examples_codecs_template.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.vicp"
+            pname="ti_sdo_fc_rman_examples_vicp.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.examples.codecs.edmacodec1"
+            pname="ti_sdo_fc_ires_examples_codecs_edmacodec1.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.vicpsync"
+            pname="ti_sdo_fc_rman_examples_vicpsync.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.examples.dmaxfer"
+            pname="ti_sdo_fc_examples_dmaxfer.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples"
+            pname="ti_sdo_fc_rman_examples.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.memtcm"
+            pname="ti_sdo_fc_rman_examples_memtcm.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.examples.codecs.idma3codec1"
+            pname="ti_sdo_fc_ires_examples_codecs_idma3codec1.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.hdvicp"
+            pname="ti_sdo_fc_rman_examples_hdvicp.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.shmbuf"
+            pname="ti_sdo_fc_rman_examples_shmbuf.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.bufres"
+            pname="ti_sdo_fc_rman_examples_bufres.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.lateacquire"
+            pname="ti_sdo_fc_rman_examples_lateacquire.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.dummyedma3"
+            pname="ti_sdo_fc_rman_examples_dummyedma3.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.examples.codecs.auddec1"
+            pname="ti_sdo_fc_ires_examples_codecs_auddec1.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.dmaxferscratch"
+            pname="ti_sdo_fc_rman_examples_dmaxferscratch.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.nullresource"
+            pname="ti_sdo_fc_rman_examples_nullresource.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.dman3.examples.fastcopy"
+            pname="ti_sdo_fc_dman3_examples_fastcopy.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.sdma"
+            pname="ti_sdo_fc_rman_examples_sdma.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman.examples.scratchedma3"
+            pname="ti_sdo_fc_rman_examples_scratchedma3.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.examples.codecs.vicp2codec1"
+            pname="ti_sdo_fc_ires_examples_codecs_vicp2codec1.tar"
+            label="default">
+        </importedRelease>
+    </repository>
+    <repository name="fctools/packages"
+        pname="fctools/packages">
+    </repository>
+    <repository name="packages"
+        pname="packages">
+        <importedRelease
+            package="ti.sdo.fc.dskt2"
+            pname="ti_sdo_fc_dskt2.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.hdvicp"
+            pname="ti_sdo_fc_ires_hdvicp.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.shmbuf"
+            pname="ti_sdo_fc_ires_shmbuf.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.edma3"
+            pname="ti_sdo_fc_edma3.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.edma3chan"
+            pname="ti_sdo_fc_ires_edma3chan.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.bufres"
+            pname="ti_sdo_fc_ires_bufres.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.sdma"
+            pname="ti_sdo_fc_ires_sdma.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.hdintc"
+            pname="ti_sdo_fc_hdintc.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.utils.gtinfra"
+            pname="ti_sdo_fc_utils_gtinfra.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.nullresource"
+            pname="ti_sdo_fc_ires_nullresource.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.rman"
+            pname="ti_sdo_fc_rman.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.memutils"
+            pname="ti_sdo_fc_memutils.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.dman3"
+            pname="ti_sdo_fc_dman3.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.utils.api"
+            pname="ti_sdo_fc_utils_api.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.utils"
+            pname="ti_sdo_fc_utils.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.vicp"
+            pname="ti_sdo_fc_ires_vicp.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires"
+            pname="ti_sdo_fc_ires.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.hdvicpsync"
+            pname="ti_sdo_fc_hdvicpsync.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.acpy3"
+            pname="ti_sdo_fc_acpy3.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.grouputils"
+            pname="ti_sdo_fc_ires_grouputils.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.global"
+            pname="ti_sdo_fc_global.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.addrspace"
+            pname="ti_sdo_fc_ires_addrspace.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.scpy"
+            pname="ti_sdo_fc_scpy.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.vicpsync"
+            pname="ti_sdo_fc_vicpsync.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.fc.ires.memtcm"
+            pname="ti_sdo_fc_ires_memtcm.tar"
+            label="default">
+        </importedRelease>
+        <importedRelease
+            package="ti.sdo.utils.trace"
+            pname="ti_sdo_utils_trace.tar"
+            label="default">
+        </importedRelease>
+    </repository>
+    </repositories>
+</package>

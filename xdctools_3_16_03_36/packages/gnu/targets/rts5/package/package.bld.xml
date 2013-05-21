@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="gnu.targets.rts5" version="1, 0, 0, 0" producerId="/db/ztree/library/trees/xdctargets/xdctargets-b36x/src/">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="xdc/runtime/SysMin.c"/>
+        <srcFile name="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="xdc/runtime/Assert.c"/>
+        <srcFile name="xdc/runtime/HeapStd.c"/>
+        <srcFile name="xdc/runtime/HeapMin.c"/>
+        <srcFile name="xdc/runtime/Timestamp.c"/>
+        <srcFile name="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="xdc/runtime/Diags.c"/>
+        <srcFile name="xdc/runtime/Startup.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="xdc/runtime/System.c"/>
+        <srcFile name="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="xdc/runtime/Core_label.c"/>
+        <srcFile name="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="xdc/runtime/xdc_init.cpp"/>
+        <srcFile name="package.bld"/>
+        <srcFile name="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="xdc/runtime/Gate.c"/>
+        <srcFile name="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="xdc/runtime/Memory.c"/>
+        <srcFile name="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/package_gnu.targets.rts5.c"/>
+        <srcFile name="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="xdc/runtime/Rta.c"/>
+        <srcFile name="xdc/runtime/Error.c"/>
+        <srcFile name="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="xdc/runtime/Log.c"/>
+        <srcFile name="xdc/runtime/Core_params.c"/>
+        <srcFile name="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="xdc/runtime/Text.c"/>
+        <srcFile name="xdc/runtime/GateNull.c"/>
+        <srcFile name="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="xdc/runtime/SysStd.c"/>
+        <srcFile name="xdc/runtime/Core_mem.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/gnu.targets.rts5.a5.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/SysMin.o5.dep" src="xdc/runtime/SysMin.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/Thread.o5.dep" src="xdc/runtime/knl/Thread.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/GateThreadSupportNull.o5.dep" src="xdc/runtime/knl/GateThreadSupportNull.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Assert.o5.dep" src="xdc/runtime/Assert.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/HeapStd.o5.dep" src="xdc/runtime/HeapStd.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/HeapMin.o5.dep" src="xdc/runtime/HeapMin.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Timestamp.o5.dep" src="xdc/runtime/Timestamp.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/TimestampNull.o5.dep" src="xdc/runtime/TimestampNull.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/CacheSupportNull.o5.dep" src="xdc/runtime/knl/CacheSupportNull.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Diags.o5.dep" src="xdc/runtime/Diags.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Startup.o5.dep" src="xdc/runtime/Startup.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/GateProcessSupportNull.o5.dep" src="xdc/runtime/knl/GateProcessSupportNull.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/TimestampStd.o5.dep" src="xdc/runtime/TimestampStd.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/System.o5.dep" src="xdc/runtime/System.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/SemProcess.o5.dep" src="xdc/runtime/knl/SemProcess.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Core_label.o5.dep" src="xdc/runtime/Core_label.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/package/package_gnu.targets.rts5.o5.dep" src="package/package_gnu.targets.rts5.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/GateProcess.o5.dep" src="xdc/runtime/knl/GateProcess.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/Sync.o5.dep" src="xdc/runtime/knl/Sync.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/GateThread.o5.dep" src="xdc/runtime/knl/GateThread.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/xdc_init.o5.dep" src="xdc/runtime/xdc_init.cpp"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/LoggerSys.o5.dep" src="xdc/runtime/LoggerSys.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Gate.o5.dep" src="xdc/runtime/Gate.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/GateH.o5.dep" src="xdc/runtime/knl/GateH.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Memory.o5.dep" src="xdc/runtime/Memory.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/SyncSemThread.o5.dep" src="xdc/runtime/knl/SyncSemThread.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/SyncNull.o5.dep" src="xdc/runtime/knl/SyncNull.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/SyncGeneric.o5.dep" src="xdc/runtime/knl/SyncGeneric.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Rta.o5.dep" src="xdc/runtime/Rta.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Error.o5.dep" src="xdc/runtime/Error.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/Semaphore.o5.dep" src="xdc/runtime/knl/Semaphore.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/SemThread.o5.dep" src="xdc/runtime/knl/SemThread.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Log.o5.dep" src="xdc/runtime/Log.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Core_params.o5.dep" src="xdc/runtime/Core_params.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/LoggerBuf.o5.dep" src="xdc/runtime/LoggerBuf.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Text.o5.dep" src="xdc/runtime/Text.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/GateNull.o5.dep" src="xdc/runtime/GateNull.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/knl/Cache.o5.dep" src="xdc/runtime/knl/Cache.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/SysStd.o5.dep" src="xdc/runtime/SysStd.c"/>
+        <srcFile name="package/lib/lib/gnu.targets.rts5/xdc/runtime/Core_mem.o5.dep" src="xdc/runtime/Core_mem.c"/>
+        <srcFile name="package/rel/gnu_targets_rts5.tar.gz.dep" src="package/rel/gnu_targets_rts5.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Sparc"
+            version="gnu.targets.Sparc{1,0,4.1,0"
+            platform="host.platforms.SUN"
+            isa="sparc"
+            suffix="5"
+            rootDir="/db/toolsrc/library/tools/default/gcc5"
+            os="Solaris"
+            rts="gnu.targets.rts5">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/gnu.targets.rts5"
+        pname="lib/gnu.targets.rts5.a5"
+        profile="release"
+        target="gnu.targets.Sparc"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="gnu_targets_rts5"
+        pname="../../../../exports/gnu_targets_rts5.tar.gz"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/gnu.targets.rts5.a5"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

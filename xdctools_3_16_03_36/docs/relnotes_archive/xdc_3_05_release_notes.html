@@ -1,0 +1,354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><!-- /* * Copyright 2007 by Texas Instruments Incorporated . * * All rights reserved. Property of Texas Instruments Incorporated. * Restricted rights to use, duplicate or disclose this code are * granted through contract. * */ -->
+
+
+  
+
+
+  <title>XDC 3.05 Release Notes</title><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><!-- For now, we use the doxygen style sheet -->
+
+
+  <link href="doxygen.css" type="text/css" rel="stylesheet"></head>
+<body>
+
+<table width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td bgcolor="black" width="1"><a href="http://www.ti.com/"><img style="border: 0px solid ; width: 222px; height: 54px;" alt="Texas Instruments" src="docs/tilogo.gif"> </a></td>
+
+      <td bgcolor="red"><img style="width: 314px; height: 26px;" alt="Technology for Innovators(tm)" src="docs/titagline.gif">
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h1 align="center"><a name="XDC_TOP"></a>XDC 3.05 Release Notes</h1>
+
+<h2 align="center">Mar 28, 2008</h2>
+
+<p align="center"> <a href="#General_Info">Introduction</a>,
+<a href="#Known_Issues">Known Issues</a>, <a href="#Documentation">Documentation</a>, <a href="#Whats_New">What's New</a>, <a href="#Compatibility">Upgrade &amp; Compatibility
+Information</a>, <a href="#Host_Support">Host
+Support</a>, <a href="#Dependencies">Dependencies</a>,
+<a href="#Device_Support">Device Support</a>, <a href="#Validation">Validation Info</a>, <a href="#Version">Version Information</a>, <a href="#Support">Technical Support</a>.
+</p>
+
+<hr>
+<h2><a name="General_Info">Introduction</a></h2>
+
+<p>eXpress DSP Components (XDC) is a standard for reusable
+software
+components, optimized for real-time embedded systems. XDC components
+have hardware-neutral formal interfaces, are configurable offline to
+optimize memory and performance, and support custom automation in the
+development environment via a scripting language.</p>
+
+<p>This XDC release includes the following sets of packages: </p>
+
+<ul>
+
+  <li><b>XDC core (<tt>xdc.*</tt>)</b> -
+the <tt><b>xdc</b></tt> and <tt><b>xs</b></tt>
+command line utilities for building packages and execting scripts,
+together with the packages that implement XDC itself;</li>
+
+  <li><b>User tools (<tt>xdc.tools.*</tt>)</b>
+- command-line and graphical utilities for working with packages and
+repositories;</li>
+
+  <li><b>Targets (<tt>*.targets.*</tt>)</b>
+- definitions for using various TI and third-party compiler tool chains
+with XDC;</li>
+
+  <li><b>Platforms (<tt>ti.platforms.*</tt>)</b>
+- definitions for linking and running code on various TI board-level
+hardware and simulator products using XDC.</li>
+
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Known_Issues">Known Issues</a></h2>
+
+<table width="100%"><tbody><tr><td><span style=""></span>SDSCM00023774</td><td>Partial stack traces are emitted if an
+  exception is thrown in the 'close' method in <span class="SpellE">package.xs</span></td></tr><tr><td>SDSCM00023772</td><td>gnu.targets.Linux86
+  target no longer supports GCC 3.X</td></tr><tr><td>SDSCM00021754</td><td>links into <span class="SpellE">cdoc</span> don't work with IE</td></tr><tr><td>SDSCM00021126</td><td>name resolution fails on Windows</td></tr><tr><td>SDSCM00021087</td><td><span style=""></span>ti.targets.c6x
+  targets need to flag incompatible libraries when using <span class="SpellE">whole_program</span>
+  and 6.1/6.0 tool mix</td></tr><tr><td>SDSCM00023928</td><td>The -P option to <span class="SpellE">cdoc</span> is broken</td></tr></tbody></table><p></p><p><a href="#XDC_TOP">back to top</a></p>
+
+<hr>
+<h2><a name="Documentation">Documentation</a></h2>
+
+<p>The following documentation is available: </p>
+
+<ul>
+
+  <li><a href="docs/XDC_Getting_Started_Guide.pdf">XDC
+Getting Started Guide</a></li>
+
+  <li><a href="docs/userguide/XDC_User_Guide.pdf">XDC
+Consumer User's Guide</a></li>
+
+  <li><a href="docs/index.html">XDC Documents Index</a></li><li><a href="docs/XDC_Error_Codes.pdf">XDC Error Codes</a></li>
+
+</ul>
+
+<p>Release notes from previous releases are also available in the
+<a href="docs/relnotes_archive">relnotes_archive</a>
+directory.</p><p><a href="#XDC_TOP">back to top</a> </p>
+
+<hr>
+<h2><a name="Whats_New">What's New</a></h2>
+
+<p>The following significant changes have been made in the 3.05 release:</p>
+
+<ul>
+  <li>Improved error messages in XDC core</li>
+  <li>Documentation of error codes reported by XDC core</li>
+  <li>Added gnu.targets.codesourcery.GCArm5T and GCArm6 targets</li>
+  <li>Prebuilt runtime for gnu.targets.Mingw target</li>
+  <li>New device support for C2823X, C5505, TCI6484</li>
+  <li>Improved CDOC content and browser</li>
+  <li>Bug fixes detailed below</li>
+</ul>
+
+<!-- *************************************************************** -->&nbsp;
+<div class="memitem">
+<h3>3.05 (This Release)</h3>
+
+<!-- *************************************************************** -->
+<h4>Enhancements</h4>
+None.<br>
+<table width="100%">
+  <colgroup width="15%"></colgroup><tbody>
+
+
+  </tbody>
+</table>
+
+<!-- *************************************************************** -->
+<h4>Defects</h4>
+<p>The following defects were resolved in this release:</p>
+<table width="100%">
+  <colgroup width="15%"></colgroup><tbody>
+
+  <tr><td>SDSCM00024530</td><td>Unable to create static instance of GateNull</td></tr>
+  <tr><td>SDSCM00024226</td><td>xs xdc.tools.cdoc.sg --help dumps stack</td></tr>
+  <tr><td>SDSCM00024033</td><td>if not set, LoggerBuf's default TimestampProxy should be assigned to Timestamp's proxy (not TimestampNull)</td></tr>
+  <tr><td>SDSCM00023991</td><td>Main and Memory modules "namedModule" value being set true, internally though default is false</td></tr>
+  <tr><td>SDSCM00023979</td><td>RuntimeExecptions should display stack traceback</td></tr>
+  <tr><td>SDSCM00023873</td><td>CDOC does not escape some illegal XML characters</td></tr>
+  <tr><td>SDSCM00023813</td><td>Core_createObject() should use 'malloc' not 'calloc' for consistent create/construct precondition</td></tr>
+  <tr><td>SDSCM00023810</td><td>SysStd_ready CDOC issue</td></tr>
+  <tr><td>SDSCM00023793</td><td>xs -m option is broken</td></tr>
+  <tr><td>SDSCM00023686</td><td>cdoc does not allow @nodoc of fields</td></tr>
+  <tr><td>SDSCM00023578</td><td>Error in lexical analysis phase does not return information about location</td></tr>
+  <tr><td>SDSCM00023530</td><td>GNU targets should use lazy version check on codegen tools</td></tr>
+  <tr><td>SDSCM00023249</td><td>paths ending with '/' are not treated as identical to those without the '/' on Windows</td></tr>
+  <tr><td>SDSCM00023225</td><td>Gate_enterSystem() does not always enter the System gate</td></tr>
+  <tr><td>SDSCM00023044</td><td>SysMin needs user supplied flush function</td></tr>
+  <tr><td>SDSCM00022985</td><td>can't create genx examples</td></tr>
+  <tr><td>SDSCM00022982</td><td>Can't open online documention for XDC package - xs xdc.tools.cdoc.sg</td></tr>
+  <tr><td>SDSCM00022905</td><td>CDOC @see must be allowed anywhere in a comment</td></tr>
+  <tr><td>SDSCM00022794</td><td>XDC tool does not report location of type error in specification file</td></tr>
+  <tr><td>SDSCM00022597</td><td>"cdoc -l C" fails on meta-only units</td></tr>
+  <tr><td>SDSCM00022492</td><td>xdc.runtome.LoggerBuf may corrupt memory</td></tr>
+  <tr><td>SDSCM00022491</td><td>xdc.runtime.Memory may leak memory</td></tr>
+  <tr><td>SDSCM00022475</td><td>GetStats for Heapmin allocs returns invalid free size on PADK</td></tr>
+  <tr><td>SDSCM00022464</td><td>HeapMin CDOC issues</td></tr>
+  <tr><td>SDSCM00022284</td><td>Error_raise may spontaneously abort</td></tr>
+  <tr><td>SDSCM00021931</td><td>Configuro BTI uses config.importPath incorrectly</td></tr>
+  <tr><td>SDSCM00021901</td><td>Error_getMsg returns extra char along with message</td></tr>
+  <tr><td>SDSCM00021757</td><td>cdoc struct field summaries are not output</td></tr>
+  <tr><td>SDSCM00021756</td><td>cdoc shows bogus internal data structures not in any spec file</td></tr>
+  <tr><td>SDSCM00021754</td><td>links into cdoc don't work with IE</td></tr>
+  <tr><td>SDSCM00021676</td><td>instanceof fails on structs</td></tr>
+  <tr><td>SDSCM00021675</td><td>xdc.runtime.Error.getCode() always returns 0</td></tr>
+  <tr><td>SDSCM00021632</td><td>System_atexit() always returns FALSE (new bug in 3.00.03)</td></tr>
+  <tr><td>SDSCM00021045</td><td>System_printf() should support %f for floating point parts</td></tr>
+  <tr><td>SDSCM00021044</td><td>Add format description to System_printf() cdoc (similar to SYS_printf())</td></tr>
+  <tr><td>SDSCM00021033</td><td>Error_getSite returns null for file name field</td></tr>
+  <tr><td>SDSCM00021010</td><td>'Ptr' type for ti.targets.C28_float should be 2 words (not 1)</td></tr>
+  <tr><td>SDSCM00020839</td><td>In XDC Diags module: setMask API is not working</td></tr>
+  <tr><td>SDSCM00020828</td><td>assorted configuration parameters for binding system gate are confusing</td></tr>
+  <tr><td>SDSCM00020777</td><td>In XDC Diags module: setMaskEnabled API is not working correctly</td></tr>
+  <tr><td>SDSCM00020682</td><td>LoggerBuf_flushAll ( ) does not flush log to stdout</td></tr>
+  <tr><td>SDSCM00020681</td><td>In XDC Memory module: The Memory Free API wrongly updates the Total Free Size</td></tr>
+  <tr><td>SDSCM00020676</td><td>Log and System need to support 32-bit floats</td></tr>
+  <tr><td>SDSCM00020605</td><td>troubleshooting doc indexed by error codes</td></tr>
+  <tr><td>SDSCM00020604</td><td>XDC error messages should be short and helpful</td></tr>
+  <tr><td>SDSCM00020582</td><td>platform ti.platforms.sdp3430 must support TI and GCC targets</td></tr>
+  <tr><td>SDSCM00020449</td><td>xdc.useModule() fails on interfaces</td></tr>
+  <tr><td>SDSCM00020425</td><td>ROM - No default heap inst in romimage</td></tr>
+  <tr><td>SDSCM00020418</td><td>Poor error message for misplaced package requires statement</td></tr>
+  <tr><td>SDSCM00020380</td><td>rtsarm9/boot.asm in ti.targets.arm9 contains 16-bit code in 32-bit section</td></tr>
+  <tr><td>SDSCM00020305</td><td>LoggerBuf_Params needs more description in CDOC</td></tr>
+  <tr><td>SDSCM00020304</td><td>LoggerBuf_flush() description needs modification in CDOC</td></tr>
+  <tr><td>SDSCM00020303</td><td>LoggerBuf_getNextEntry() needs more description in CDOC</td></tr>
+  <tr><td>SDSCM00020302</td><td>Conversion functions from LoggerBuf_Struct * to LoggerBuf_Handle missing in CDOC</td></tr>
+  <tr><td>SDSCM00020276</td><td>Issue with errorID.code parameters</td></tr>
+  <tr><td>SDSCM00020271</td><td>Errors in XDC Getting Started Guide</td></tr>
+  <tr><td>SDSCM00019876</td><td>CDOC for Memory_getMaxDefaultTypeAlign needs modification</td></tr>
+  <tr><td>SDSCM00019875</td><td>We need to have Memory_isBlocking API</td></tr>
+  <tr><td>SDSCM00019775</td><td>Configuro Fails in CreateProcess() call in WindowsXP if XDCPATH too long</td></tr>
+  <tr><td>SDSCM00019319</td><td>HeapStd documentation should discuss heap locking</td></tr>
+  <tr><td>SDSCM00019240</td><td>HeapStd needs to check Program.heap before creating instance</td></tr>
+  <tr><td>SDSCM00019143</td><td>Diags: ENTRY and EXIT masks have issues with SysStd</td></tr>
+  <tr><td>SDSCM00019114</td><td>Diags: setMaskMeta() is not recognised</td></tr>
+  <tr><td>SDSCM00019111</td><td>Diags: Config Parameter "setMaskEnabled" has issues</td></tr>
+  <tr><td>SDSCM00018941</td><td>cdoc static generation should allow generation of both C and XS</td></tr>
+  <tr><td>SDSCM00018922</td><td>xdc.runtime.Text.isLoaded = false does not work</td></tr>
+  <tr><td>SDSCM00018901</td><td>System should validate that System gate is non-blocking and not preemptive</td></tr>
+  <tr><td>SDSCM00018900</td><td>Need to handle STATIC_POLICY in System.xs</td></tr>
+  <tr><td>SDSCM00018899</td><td>Need more comments in System module</td></tr>
+  <tr><td>SDSCM00018190</td><td>xdc.runtime.Defaults needs proper xdoc</td></tr>
+  <tr><td>SDSCM00017878</td><td>random characters in the XDCPATH environment variable cause problems, error message is vague</td></tr>
+  <tr><td>SDSCM00017876</td><td>Module inheritance not shown in cdoc</td></tr>
+  <tr><td>SDSCM00017816</td><td>xdoc parser fails on doc tag before module</td></tr>
+  <tr><td>SDSCM00016712</td><td>LoggerBuf.enableFlush = true does not work as expected when using SysMIn.</td></tr>
+  <tr><td>SDSCM00016323</td><td>Error_raise requires too much stack</td></tr>
+  <tr><td>SDSCM00015332</td><td>XDC Verbose option should print the full path to each package it loads</td></tr>
+  <tr><td>SDSCM00015096</td><td>cdoc should include all the good stuff from xdoc (except back bug) and replace xdoc</td></tr>
+  <tr><td>SDSCM00012331</td><td>xdoc does not show override docs</td></tr>
+  <tr><td>SDSCM00012325</td><td>xdoc @a and @b headings should support multiple white space separated words</td></tr>
+  <tr><td>SDSCM00010402</td><td>Object deletion must be carefully orchestrated so ROV doesn't get confused</td></tr>
+  <tr><td>SDSCM00007080</td><td>XDC command help message is hard to find</td></tr>
+  <tr><td>SDSCM00007060</td><td>'can't find package' error could be clearer</td></tr>
+
+  </tbody>
+</table>
+
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<!-- *************************************************************** -->
+<br><br><a href="#XDC_TOP">back to top</a>
+
+<hr><h2><a name="Compatibility">Upgrade and
+Compatibility Information</a></h2>
+
+<p><b>Warning:</b>Starting with XDC 2.95, XDC packages with target content are incompatible with target content from previous releases. Compatibility of meta only content is not affected. Packages with target content would require a recompile. Starting with XDC 3.00 release both backward and forward compatibility is maintained for all content.
+</p>
+
+
+
+<h3>Package Compatibility Keys</h3>
+
+<p>The packages comprising the XDC release are uniquely identified by a compatibility
+key defined in the <span class="SpellE"><span style="font-family: &quot;Courier New&quot;;">package.xdc</span></span>
+file of a package. Please note that the package compatibility keys are independent
+of XDC <a href="#Version">product release numbers</a>.
+</p>
+<p>Package compatibility keys are intended to: </p>
+
+<ol>
+  <li>Enable tooling to identify incompatibilities between
+components, and </li>
+  <li>Convey a level of compatibility between different releases
+to set end user expectations. </li>
+</ol>
+
+<p>Package compatibility keys are composed of 4 comma-delimited numbers - M, S,
+R, <span class="GramE">P</span> - where:  </p>
+
+<ul><li class="MsoNormal" style=""><b>M = Major -</b> A
+     difference in M indicates a break in compatibility. The package consumer is
+     required to re-write its source code in order to use the package.<o:p></o:p></li><li class="MsoNormal" style=""><b>S = Source </b>- A
+     difference in S indicates source compatibility. The package consumer’s source
+     code doesn't require change, but <i>does</i> require a recompile. <o:p></o:p></li><li class="MsoNormal" style=""><b>R = Radix -</b> A
+     difference in R indicates an introduction of new features, but
+     compatibility with previous interfaces is not broken. If libraries are
+     provided by the package, an application must re-link with the new
+     libraries, but is not required to recompile its source.</li><li class="MsoNormal" style=""><b>P = Patch - </b><span style="">A difference in P indicates that only
+     bugs have been fixed in the latest package and no new features have been
+     introduced. </span>If libraries are provided by the package, an
+     application must re-link with the new libraries, but is not required to recompile
+     its source.</li>
+</ul><br><br><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Host_Support">Host Support</a></h2>
+
+<p>This release supports the following hosts:</p>
+<ul>
+  <li>Windows XP</li>
+  <li>RedHat Enterprise Linux 3</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Dependencies">Dependencies</a></h2>
+
+<p>This release requires the following other software components
+and tools versions to successfully function: </p>
+
+<ul>
+  <li>C6x Code Generation Tools version 5.3.0 or later. Version
+6.0.13 or later is required in order to use whole_program build profile.</li>
+  <li>C55 Code Generation Tools version 3.2.0. or later</li>
+  <li>TMS470 (Arm) Code Generation Tools version 4.5</li>
+  <li>GCC for x86 version 3.2.3 or later</li>
+  <li>GCC for ARM version 3.2.3 or later</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Device_Support">Device Support</a></h2>
+
+<p>This release supports the following device families: </p>
+<ul>
+  <li>C67P, C67, C64P, C64, C62 </li>
+  <li>C55P, C55, C54</li>
+  <li>C28</li>
+  <li>TMS470</li>
+  <li>Native development host (Windows, Linux)</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Validation">Validation Information</a></h2>
+
+<p>This release was built and validated against using the
+following components: </p>
+<ul>
+  <li>Code Composer Studio version 3.3</li>
+  <li>C6x Code Generation Tools version 6.0.7 and 6.0.13</li>
+  <li>C55 Code Generation Tools version 3.2.2</li>
+  <li>GCC for x86 version 3.2.3</li>
+  <li>GCC for ARM version 3.2.3</li>
+</ul><a href="#XDC_TOP">back to top</a>
+
+<hr>
+<h2><a name="Version">Version Information</a></h2>
+
+<p>This product's version follows a version format, <b>M.mm.pp.bb</b>,
+where <b>M</b> is a single digit Major number, <b>mm</b>
+is 2 digit minor number, <b>pp</b> is a 2 digit patch
+number, and <b>b</b> is an unrestricted set of digits used
+as an incrementing build counter. </p>
+
+<p>To support multiple side-by-side installations of the product,
+the product version is encoded in the top level directory, e.g. <b>xdc_3_00</b>.
+</p>
+
+<p>Subsequent releases of patch upgrades will be identified by
+the patch number, ex. XDC 3.00.03 with directory <b>xdc_3_00_03</b>.
+Typically, these patches only include critical bug fixes. </p>
+
+<p>Please note that version numbers and compatibility keys are
+NOT the same. For an explanation of compatibility keys, please refer to
+the '<a href="#Compatibility">Upgrade and Compatibility Information</a>' section.</p><p><a href="#XDC_TOP">back to top</a> </p>
+
+<hr>
+<h2><a name="Support">Technical Support</a></h2>
+
+<p>For technical support, contact <a href="mailto:rtsc_champs@list.ti.com">rtsc_champs@list.ti.com</a></p><p><a href="#XDC_TOP">back to top</a></p>
+
+<hr>
+<p>Last updated: Mar 28, 2008 Build Ver: 3.05.00.05 Rev: i05</p>
+
+</div>
+
+</body></html>
+</body>
+</html>

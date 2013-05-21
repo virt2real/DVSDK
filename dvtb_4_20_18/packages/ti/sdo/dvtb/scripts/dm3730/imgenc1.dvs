@@ -1,0 +1,39 @@
+############################################################
+# Capture and encode Image in jpeg
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp imgenc1 codec jpegenc
+
+#specify image decoder parameters
+setp imgenc1 maxHeight 480
+setp imgenc1 maxWidth 720
+setp imgenc1 maxScans 0
+setp imgenc1 dataEndianness 1
+setp imgenc1 forceChromaFormat 2
+setp imgenc1 numAU 0
+setp imgenc1 inputChromaFormat 4
+setp imgenc1 inputHeight 480
+setp imgenc1 inputWidth 720
+setp imgenc1 captureWidth 720
+setp imgenc1 generateHeader 0
+setp imgenc1 qValue 73
+
+# specify vpfe parameters
+setp vpfe device /dev/video0
+setp vpfe standard 1
+setp vpfe format 1
+setp vpfe input 0
+setp vpfe width 720
+setp vpfe height 480
+
+# Trigger the capture+dump scenario
+func imgenc1 -t test.jpg
+

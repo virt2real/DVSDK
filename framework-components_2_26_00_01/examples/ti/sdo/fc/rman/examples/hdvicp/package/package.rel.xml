@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="ti_sdo_fc_rman_examples_hdvicp" label="default" date="1291166742628" buildCount="133" producerId="framework_components_2_26_00_01">
+<package name="ti.sdo.fc.rman.examples.hdvicp"
+    version="1, 0, 0"/>
+<imports>
+</imports>
+<references>
+    <package name="ti.psl"
+        version="5, 0, 0, 0, 1190669467089"
+        providerId="/db/vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages">
+        <file name="package.xs"/>
+        <file name="psl.xdt"/>
+    </package>
+    <package name="gnu.targets"
+        version="1, 0, 1, 1254761371234"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Linux86.xs"/>
+        <file name="MVArm9.h"/>
+        <file name="MVArm9.xs"/>
+        <file name="Mingw.xs"/>
+        <file name="UCArm9.h"/>
+        <file name="UCArm9.xs"/>
+        <file name="linkUtils.xs"/>
+        <file name="linkcmd.xdt"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="ti.bios"
+        version="5, 2, 5, 19, 1251816047962"
+        providerId="/db/vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages">
+        <file name="Build.xs"/>
+        <file name="bios.tci"/>
+        <file name="bios.xdt"/>
+        <file name="config/bios_DM6467.tci"/>
+        <file name="include/_hook.h"/>
+        <file name="include/_log.h"/>
+        <file name="include/atm.h"/>
+        <file name="include/buf.h62"/>
+        <file name="include/c62.h62"/>
+        <file name="include/c64.h64"/>
+        <file name="include/c6x.h62"/>
+        <file name="include/chk.h62"/>
+        <file name="include/clk.h62"/>
+        <file name="include/clk2430.h64P"/>
+        <file name="include/clkC6000.h62"/>
+        <file name="include/clkDA700.h62"/>
+        <file name="include/clkDM420.h62"/>
+        <file name="include/confbeg.s62"/>
+        <file name="include/confend.s62"/>
+        <file name="include/dev.h62"/>
+        <file name="include/dgn.h62"/>
+        <file name="include/dhl.h62"/>
+        <file name="include/dio.h62"/>
+        <file name="include/dpi.h62"/>
+        <file name="include/ecm.h62"/>
+        <file name="include/fxn.h"/>
+        <file name="include/fxn.h62"/>
+        <file name="include/gbl.h62"/>
+        <file name="include/gio.h62"/>
+        <file name="include/hook.h62"/>
+        <file name="include/hst.h62"/>
+        <file name="include/hwi.h"/>
+        <file name="include/hwi.h62"/>
+        <file name="include/idl.h62"/>
+        <file name="include/isrc.h62"/>
+        <file name="include/knl.h"/>
+        <file name="include/knl.h62"/>
+        <file name="include/lck.h62"/>
+        <file name="include/lnk.h62"/>
+        <file name="include/log.h"/>
+        <file name="include/log.h62"/>
+        <file name="include/mbx.h62"/>
+        <file name="include/mem.h"/>
+        <file name="include/mem.h62"/>
+        <file name="include/msgq.h62"/>
+        <file name="include/obj.h"/>
+        <file name="include/obj.h62"/>
+        <file name="include/pip.h62"/>
+        <file name="include/pool.h62"/>
+        <file name="include/prd.h"/>
+        <file name="include/prd.h62"/>
+        <file name="include/que.h"/>
+        <file name="include/que.h62"/>
+        <file name="include/rta.h62"/>
+        <file name="include/rtdx.h62"/>
+        <file name="include/sem.h"/>
+        <file name="include/sem.h62"/>
+        <file name="include/sio.h62"/>
+        <file name="include/std.h"/>
+        <file name="include/std.h62"/>
+        <file name="include/sts.h"/>
+        <file name="include/sts.h62"/>
+        <file name="include/swi.h"/>
+        <file name="include/swi.h62"/>
+        <file name="include/sys.h"/>
+        <file name="include/sys.h62"/>
+        <file name="include/tistdtypes.h"/>
+        <file name="include/trc.h"/>
+        <file name="include/trc.h62"/>
+        <file name="include/trg.h"/>
+        <file name="include/tsk.h"/>
+        <file name="include/tsk.h62"/>
+        <file name="include/udev.h62"/>
+        <file name="include/vers.h62"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0, 1254957695155"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.sdo.fc.ires.nullresource"
+        version="1, 0, 0, 1291166719000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="lib/debug/nullres.a470MV"/>
+        <file name="lib/debug/nullres.a470uC"/>
+        <file name="lib/debug/nullres.a64P"/>
+        <file name="lib/debug/nullres.a9t"/>
+        <file name="lib/debug/nullres.av5T"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0, 1254957692499"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.pscl"
+        version="1, 0, 0, 0, 1251816060802"
+        providerId="/db/vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages">
+        <file name="package.xs"/>
+        <file name="pscl.xdt"/>
+    </package>
+    <package name="gnu.targets.arm.rtsv5T"
+        version="1, 0, 0, 0, 1254762024999"
+        providerId="xdccore">
+        <file name="lib/gnu.targets.arm.rtsv5T.av5T"/>
+    </package>
+    <package name="ti.sdo.fc.utils.api"
+        version="1, 0, 0, 1291083314000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="alg.h"/>
+        <file name="lib/debug/api.a470MV"/>
+        <file name="lib/debug/api.a470uC"/>
+        <file name="lib/debug/api.a64P"/>
+        <file name="lib/debug/api.a9t"/>
+        <file name="lib/debug/api.av5T"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.xdais"
+        version="1, 2.0, 1, 1272987831928"
+        providerId="/db/atree/library/trees/fc/fc-p01x/imports">
+        <file name="ialg.h"/>
+        <file name="ires.h"/>
+        <file name="ires_common.h"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.rov"
+        version="1, 0, 0, 1254957684155"
+        providerId="xdccore">
+        <file name="Model.xs"/>
+        <file name="Program.xs"/>
+        <file name="StateReader.xs"/>
+        <file name="StructureDecoder.xs"/>
+        <file name="ViewXml.xs"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 1, 1254957667146"
+        providerId="xdccore">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+        <file name="xmlgen2.xs"/>
+    </package>
+    <package name="gnu.targets.rts470uC"
+        version="1, 0, 0, 0, 1254762033269"
+        providerId="xdccore">
+        <file name="lib/gnu.targets.rts470uC.a470uC"/>
+    </package>
+    <package name="ti.platforms.evmDM6467"
+        version="1, 0, 0, 0, 1254955138639"
+        providerId="xdccore">
+        <file name="Platform.tci"/>
+        <file name="Platform.xs"/>
+    </package>
+    <package name="ti.sdo.fc.rman.examples"
+        version="1, 0, 0, 1291166733000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="common.cfg"/>
+        <file name="common.tci"/>
+        <file name="lib/debug/rmanExample.a470MV"/>
+        <file name="lib/debug/rmanExample.a470uC"/>
+        <file name="lib/debug/rmanExample.a64P"/>
+        <file name="lib/debug/rmanExample.a9t"/>
+        <file name="lib/debug/rmanExample.av5T"/>
+        <file name="package.xs"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/6.0.16/Linux/"
+        trgs="ti.targets.C64P">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="gnu.targets.arm"
+        version="1, 0, 0, 0, 1254762022855"
+        providerId="xdccore">
+        <file name="GCArmv5T.h"/>
+        <file name="GCArmv6.xs"/>
+        <file name="GCArmv7A.xs"/>
+        <file name="linkcmd.xdt"/>
+        <file name="std.h"/>
+    </package>
+    <package name="ti.rtdx"
+        version="2, 0, 0, 5, 1229454511824"
+        providerId="/db/vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages">
+        <file name="Settings.xs"/>
+        <file name="package.xs"/>
+        <file name="rtdx.xdt"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le/"
+        trgs="gnu.targets.MVArm9,gnu.targets.arm.GCArmv5T">
+        <file name="lib/gcc/armv5tl-montavista-linux-gnueabi/4.2.0/include/stdarg.h"/>
+        <file name="lib/gcc/armv5tl-montavista-linux-gnueabi/4.2.0/include/stddef.h"/>
+        <file name="target/usr/include/_G_config.h"/>
+        <file name="target/usr/include/alloca.h"/>
+        <file name="target/usr/include/bits/endian.h"/>
+        <file name="target/usr/include/bits/pthreadtypes.h"/>
+        <file name="target/usr/include/bits/select.h"/>
+        <file name="target/usr/include/bits/sigset.h"/>
+        <file name="target/usr/include/bits/stdio.h"/>
+        <file name="target/usr/include/bits/stdio_lim.h"/>
+        <file name="target/usr/include/bits/string.h"/>
+        <file name="target/usr/include/bits/string2.h"/>
+        <file name="target/usr/include/bits/sys_errlist.h"/>
+        <file name="target/usr/include/bits/time.h"/>
+        <file name="target/usr/include/bits/types.h"/>
+        <file name="target/usr/include/bits/typesizes.h"/>
+        <file name="target/usr/include/bits/wchar.h"/>
+        <file name="target/usr/include/bits/wordsize.h"/>
+        <file name="target/usr/include/endian.h"/>
+        <file name="target/usr/include/features.h"/>
+        <file name="target/usr/include/gconv.h"/>
+        <file name="target/usr/include/gnu/stubs.h"/>
+        <file name="target/usr/include/libio.h"/>
+        <file name="target/usr/include/stdio.h"/>
+        <file name="target/usr/include/stdlib.h"/>
+        <file name="target/usr/include/string.h"/>
+        <file name="target/usr/include/sys/cdefs.h"/>
+        <file name="target/usr/include/sys/select.h"/>
+        <file name="target/usr/include/sys/sysmacros.h"/>
+        <file name="target/usr/include/sys/types.h"/>
+        <file name="target/usr/include/time.h"/>
+        <file name="target/usr/include/wchar.h"/>
+    </targetRoot>
+    <package name="ti.sdo.utils.trace"
+        version="1, 0, 0, 1291083321000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="GT.xdt"/>
+        <file name="gt.h"/>
+        <file name="lib/release/gt.a470MV"/>
+        <file name="lib/release/gt.a470uC"/>
+        <file name="lib/release/gt.a64P"/>
+        <file name="lib/release/gt.a9t"/>
+        <file name="lib/release/gt.av5T"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0, 1254957688697"
+        providerId="xdccore">
+        <file name="Clock.xs"/>
+        <file name="Trace.xs"/>
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.pmi"
+        version="1, 0, 0, 0, 1251816055410"
+        providerId="/db/vtree/library/trees/sabios/sabios-m06/product/ccsv4/Linux/bios_5_41_00_06/packages">
+        <file name="package.xs"/>
+        <file name="pmi.xdt"/>
+    </package>
+    <package name="ti.platforms.evmDM355"
+        version="1, 0, 0, 1254955776418"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+    </package>
+    <package name="xdc.cfg"
+        version="1, 0, 2, 0, 1254957673849"
+        providerId="xdccore">
+        <file name="Main.xs"/>
+        <file name="Program.xdt"/>
+        <file name="Program.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0, 1254957691859"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.sdo.linuxutils.vicp"
+        version="1, 0, 0, 1291084314860"
+        providerId="/db/atree/library/trees/fc/fc-p01x/imports">
+        <file name="lib/vicp.a470MV"/>
+        <file name="lib/vicp.a470uC"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.catalog.arm"
+        version="1, 0, 1, 0, 1254955674790"
+        providerId="xdccore">
+        <file name="CortexM3.xs"/>
+        <file name="ILM3Sx7xx.xs"/>
+        <file name="ILM3Sx9xx.xs"/>
+        <file name="ILM3SxBxx.xs"/>
+        <file name="IOMAP2x3x.xs"/>
+        <file name="IOMAP3xxx.xs"/>
+        <file name="ITMS320DA8xx.xs"/>
+        <file name="TMS320C1030.xs"/>
+        <file name="TMS320C5912.xs"/>
+        <file name="TMS320CDM355.xs"/>
+        <file name="TMS320CDM510.xs"/>
+        <file name="TMS320CDM6446.xs"/>
+        <file name="TMS320CDM6467.xs"/>
+        <file name="TMS320CDM730.xs"/>
+        <file name="TMS320CDM740.xs"/>
+        <file name="TMS320DM357.xs"/>
+        <file name="TMS320DM365.xs"/>
+        <file name="TMS470R10.xs"/>
+        <file name="TMS570LS20216.xs"/>
+        <file name="TMS570PSF762.xs"/>
+        <file name="TNETV107X.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.utils.gtinfra"
+        version="1, 0, 0, 1291083317000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="GTINFRA.xdt"/>
+        <file name="lib/debug/gt_noOs.a470MV"/>
+        <file name="lib/debug/gt_noOs.a470uC"/>
+        <file name="lib/debug/gt_noOs.a64P"/>
+        <file name="lib/debug/gt_noOs.a9t"/>
+        <file name="lib/debug/gt_noOs.av5T"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.catalog.c6000"
+        version="1, 0, 0, 0, 1254954931976"
+        providerId="xdccore">
+        <file name="C64P.tci"/>
+        <file name="CDM6467.tci"/>
+        <file name="IAntara.xs"/>
+        <file name="IDaVinci.xs"/>
+        <file name="IHimalaya.xs"/>
+        <file name="IOMAP2x3x.xs"/>
+        <file name="IOMAP3xxx.xs"/>
+        <file name="ITMS320C642x.xs"/>
+        <file name="ITMS320C64_128K.xs"/>
+        <file name="ITMS320C64_1M.xs"/>
+        <file name="ITMS320C64_256K.xs"/>
+        <file name="ITMS320C64_512K.xs"/>
+        <file name="ITMS320C6x0x.xs"/>
+        <file name="ITMS320C6x1x.xs"/>
+        <file name="ITMS320CDM6467.xs"/>
+        <file name="ITMS320CDRA44x.xs"/>
+        <file name="ITMS320CDRA45x.xs"/>
+        <file name="ITMS320CDRx40x.xs"/>
+        <file name="ITMS320CTCI6484.xs"/>
+        <file name="ITMS320CTCI6486.xs"/>
+        <file name="ITMS320CTCI648x.xs"/>
+        <file name="ITMS320CTCI6496.xs"/>
+        <file name="ITMS320CTCI6497.xs"/>
+        <file name="ITMS320DA8xx.xs"/>
+        <file name="TMS320C6421.xs"/>
+        <file name="TMS320C6428.xs"/>
+        <file name="TMS320C6452.xs"/>
+        <file name="TMS320C6454.xs"/>
+        <file name="TMS320CDM6431.xs"/>
+        <file name="TMS320CDM647.xs"/>
+        <file name="TMS320CDM648.xs"/>
+        <file name="TMS320CDM730.xs"/>
+        <file name="TMS320CDM740.xs"/>
+        <file name="TMS320CF761990.xs"/>
+        <file name="TMS320CTNETV2685.xs"/>
+        <file name="TNETV107X.xs"/>
+        <file name="c6x.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.targets.arm"
+        version="2, 0, 1, 0, 1254761376888"
+        providerId="xdccore">
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="ti.sdo.fc.ires"
+        version="1, 0, 0, 1291166691000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="iresman.h"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.platforms.evmDM365"
+        version="1, 0, 0, 1254955785200"
+        providerId="xdccore">
+        <file name="Platform.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.bld"
+        version="1, 0, 2, 1254957676628"
+        providerId="xdccore">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.utils"
+        version="1, 0, 2, 1291083313000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="lib/debug/rmm.a470MV"/>
+        <file name="lib/debug/rmm.a470uC"/>
+        <file name="lib/debug/rmm.av5T"/>
+        <file name="lib/debug/rmmp.a470MV"/>
+        <file name="lib/debug/rmmp.a470uC"/>
+        <file name="lib/debug/rmmp.av5T"/>
+        <file name="lib/debug/shm.a470MV"/>
+        <file name="lib/debug/shm.a470uC"/>
+        <file name="lib/debug/shm.av5T"/>
+        <file name="lib/debug/smgr.a470MV"/>
+        <file name="lib/debug/smgr.a470uC"/>
+        <file name="lib/debug/smgr.av5T"/>
+        <file name="lib/debug/smgrmp.a470MV"/>
+        <file name="lib/debug/smgrmp.a470uC"/>
+        <file name="lib/debug/smgrmp.av5T"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.ires.hdvicp"
+        version="1, 0, 1, 1291166713000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="HDVICP.xdt"/>
+        <file name="ires_hdvicp.h"/>
+        <file name="iresman_hdvicp.h"/>
+        <file name="lib/debug_trace/hdvicp.a470MV"/>
+        <file name="lib/debug_trace/hdvicp.a470uC"/>
+        <file name="lib/debug_trace/hdvicp.a64P"/>
+        <file name="lib/debug_trace/hdvicp.a9t"/>
+        <file name="lib/debug_trace/hdvicp.av5T"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.runtime"
+        version="2, 0, 0, 0, 1254957688197"
+        providerId="xdccore">
+        <file name="Assert.xs"/>
+        <file name="Defaults.xs"/>
+        <file name="Diags.xs"/>
+        <file name="Error.xs"/>
+        <file name="Gate.xs"/>
+        <file name="GateNull.xs"/>
+        <file name="HeapMin.xs"/>
+        <file name="HeapStd.xs"/>
+        <file name="IGateProvider.xs"/>
+        <file name="ILogger.xs"/>
+        <file name="Log.xs"/>
+        <file name="LoggerBuf.xs"/>
+        <file name="LoggerSys.xs"/>
+        <file name="Memory.xs"/>
+        <file name="Rta.xs"/>
+        <file name="Startup.xs"/>
+        <file name="SysMin.xs"/>
+        <file name="System.xs"/>
+        <file name="Text.xs"/>
+        <file name="Timestamp.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="microsoft.targets.arm"
+        version="1, 0, 0, 0, 1254761374830"
+        providerId="xdccore">
+        <file name="WinCE.xs"/>
+    </package>
+    <package name="ti.sdo.fc.memutils"
+        version="1, 0, 0, 1291166726000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="lib/debug/memutils.a470MV"/>
+        <file name="lib/debug/memutils.a470uC"/>
+        <file name="lib/debug/memutils.av5T"/>
+        <file name="package.xs"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/opensource/buildroot/10122007/build_arm/staging_dir/usr/"
+        trgs="gnu.targets.UCArm9">
+        <file name="include/alloca.h"/>
+        <file name="include/bits/endian.h"/>
+        <file name="include/bits/initspin.h"/>
+        <file name="include/bits/kernel_types.h"/>
+        <file name="include/bits/pthreadtypes.h"/>
+        <file name="include/bits/sched.h"/>
+        <file name="include/bits/select.h"/>
+        <file name="include/bits/sigset.h"/>
+        <file name="include/bits/sigthread.h"/>
+        <file name="include/bits/stdio_lim.h"/>
+        <file name="include/bits/time.h"/>
+        <file name="include/bits/types.h"/>
+        <file name="include/bits/typesizes.h"/>
+        <file name="include/bits/uClibc_arch_features.h"/>
+        <file name="include/bits/uClibc_clk_tck.h"/>
+        <file name="include/bits/uClibc_config.h"/>
+        <file name="include/bits/uClibc_mutex.h"/>
+        <file name="include/bits/uClibc_pthread.h"/>
+        <file name="include/bits/uClibc_stdio.h"/>
+        <file name="include/bits/wordsize.h"/>
+        <file name="include/endian.h"/>
+        <file name="include/features.h"/>
+        <file name="include/pthread.h"/>
+        <file name="include/sched.h"/>
+        <file name="include/signal.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+        <file name="include/sys/cdefs.h"/>
+        <file name="include/sys/select.h"/>
+        <file name="include/sys/sysmacros.h"/>
+        <file name="include/sys/types.h"/>
+        <file name="include/time.h"/>
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stdarg.h"/>
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stddef.h"/>
+    </targetRoot>
+    <package name="gnu.targets.rts470MV"
+        version="1, 0, 0, 0, 1254762032589"
+        providerId="xdccore">
+        <file name="lib/gnu.targets.rts470MV.a470MV"/>
+    </package>
+    <package name="ti.targets.arm.rtsarm"
+        version="1, 0, 0, 0, 1254762053645"
+        providerId="xdccore">
+        <file name="lib/auto_init.a9t"/>
+        <file name="lib/boot.a9t"/>
+        <file name="lib/ti.targets.arm.rtsarm.a9t"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.targets.rts6000"
+        version="1, 0, 0, 0, 1254762093898"
+        providerId="xdccore">
+        <file name="lib/ti.targets.rts6000.a64P"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.linuxutils.cmem"
+        version="2, 2, 0, 1291084284568"
+        providerId="/db/atree/library/trees/fc/fc-p01x/imports">
+        <file name="include/cmem.h"/>
+        <file name="lib/cmem.a470MV"/>
+        <file name="lib/cmem.a470uC"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.global"
+        version="1, 0, 0, 1291166685000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="Settings.xdt"/>
+    </package>
+    <package name="xdc.platform"
+        version="1, 0, 1, 0, 1254957678104"
+        providerId="xdccore">
+        <file name="ExeContext.xs"/>
+        <file name="IPlatform.xs"/>
+        <file name="Utils.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="microsoft.targets"
+        version="1, 0, 2, 0, 1254761371234"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Win32.xs"/>
+        <file name="_utils.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="ti.sdo.fc.rman"
+        version="2, 0, 0, 1291166732000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="RMAN.xdt"/>
+        <file name="lib/debug_trace/rman.a470MV"/>
+        <file name="lib/debug_trace/rman.a470uC"/>
+        <file name="lib/debug_trace/rman.a64P"/>
+        <file name="lib/debug_trace/rman.a9t"/>
+        <file name="lib/debug_trace/rman.av5T"/>
+        <file name="package.xs"/>
+        <file name="rman.h"/>
+    </package>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 1254957708059"
+        providerId="xdccore">
+        <file name="java/antlr.jar"/>
+        <file name="java/ecj.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/jsr173_api.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+    </package>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0, 1254957699053"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="ti.targets"
+        version="1, 0, 3, 1254761375030"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="MSP430.xs"/>
+        <file name="linkUtils.xs"/>
+        <file name="linkcmd.xdt"/>
+        <file name="package.xs"/>
+        <file name="std.h"/>
+    </package>
+    <package name="ti.sdo.fc.dskt2"
+        version="1, 0, 4, 1291166671000"
+        providerId="/db/atree/library/trees/fc/fc-p01x/src">
+        <file name=".interfaces"/>
+        <file name="DSKT2.link.xdt"/>
+        <file name="DSKT2.xdt"/>
+        <file name="dskt2.h"/>
+        <file name="lib/debug/dskt2.a64P"/>
+        <file name="package.xs"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/arm/4.5.0/Linux/"
+        trgs="ti.targets.arm.Arm9t">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/stdlib.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="ti.platforms.generic"
+        version="1, 0, 0, 1, 1254955060254"
+        providerId="xdccore">
+        <file name="Platform.tcp"/>
+    </package>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod/xdcprod-l18/product/Linux/xdctools_3_16_00_18/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include/utils.tci"/>
+        <xdcCorePkg version="16, 0, 1, 0, 1254957675604" producerId="ndefined" buildCount="218" releaseName="xdc_corevers" label="default" date="1254957675604"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/atree/library/trees/fc/fc-p01x/src/config.bld"/>
+</orphans>
+</release>

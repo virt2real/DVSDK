@@ -1,0 +1,36 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== CDRA446.tci ========
+ *
+ */
+
+utils.importFile("ti/catalog/c6000/CDRA442.tci");
+
+/*
+ *  ======== CDRA446 ========
+ */
+function CDRA446(name, parent)
+{
+    /* Since DRA442 and DRA446 are same from the configuration point of view,
+     * instead of duplicating code, the DRA446 device is configured using the
+     * code for DRA442 and then only deviceName is changed.
+     */
+
+    CDRA442.apply(this, [name, parent]);
+    this.deviceName = "DRA446";
+}
+/*
+ *  @(#) ti.catalog.c6000; 1, 0, 0, 0,226; 2-23-2010 16:50:37; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

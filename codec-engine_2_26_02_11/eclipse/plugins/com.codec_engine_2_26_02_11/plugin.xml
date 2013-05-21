@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin
+      name="Codec Engine 2.26.02.11"
+      id="com.codec_engine_2_26_02_11"
+      version="2.26.02.11"
+      provider-name="Texas Instruments Incorporated">
+
+   <extension point="org.eclipse.help.toc">
+      <toc file="toc_top.xml" primary="true"/>
+      <toc file="eclipse_toc.xml"/>
+      <toc file="doxy_toc.xml"/>
+   </extension>
+
+   <extension point="org.eclipse.help.contentProducer">
+      <contentProducer>
+         <producer class="org.eclipse.rtsc.xdctools.ui.help.HelpContentProducer">
+         </producer>
+      </contentProducer>
+   </extension>
+
+   <extension
+         point="org.eclipse.rtsc.xdctools.ui.productInfo">
+      <repository
+            location="../../../packages">
+      </repository>
+      <repository
+            location="../../../examples">
+      </repository>
+      <docs location="../../../docs"/>
+      <docs location="../../../xdoc"/>
+      <docs location="../../.." />
+      <info
+            installLocation="../../../"
+            productName="Codec Engine"
+	    versionNumber="2.26.02.11">
+       </info>
+    </extension>
+
+    <extension point="org.eclipse.ui.actionSets">
+       <actionSet
+            label="Codec Engine Tools"
+            description="Codec Engine Tools"
+            visible="true"
+            id="org.eclipse.rtsc.cetools.ui.actionSet">
+            <menu
+                id="com.ti.dvt.tools.menu"
+                label="&amp;Tools">
+                <groupMarker name="additions"/>
+             </menu>
+            <menu label="Codec Engine Tools"
+                path="com.ti.dvt.tools.menu/additions"
+                id="org.eclipse.rtsc.cetools.ui.menu">
+                <separator name="CodecEngineGroup"/>
+            </menu>
+
+            <action
+                id="ti.sdo.ce.wizards.genserver"
+                label="&amp;GenServer"
+                class="org.eclipse.rtsc.xdctools.sg.WorkBenchDelegate"
+                style="push"
+                menubarPath="com.ti.dvt.tools.menu/org.eclipse.rtsc.cetools.ui.menu/CodecEngineGroup"/>
+
+            <action
+                id="ti.sdo.ce.wizards.gencodecpkg"
+                label="&amp;GenCodecPkg"
+                class="org.eclipse.rtsc.xdctools.sg.WorkBenchDelegate"
+                style="push"
+                menubarPath="com.ti.dvt.tools.menu/org.eclipse.rtsc.cetools.ui.menu/CodecEngineGroup"/>
+        </actionSet>
+    </extension>
+
+</plugin>
+

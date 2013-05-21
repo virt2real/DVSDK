@@ -1,0 +1,149 @@
+<html><head><title>module ti.sdo.ce.osal.bios.Settings</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* 
+</span>     2    <span class="comment"> * Copyright (c) 2010, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> * 
+</span>    32    <span class="comment"> */</span>
+    33    
+    34    <span class="xdoc">/*!
+</span>    35    <span class="xdoc"> *  ======== Settings ========
+</span>    36    <span class="xdoc"> *  Global OS Abstract Layer Configuration
+</span>    37    <span class="xdoc"> */</span>
+    38    @Template(<span class="string">"./Settings.xdt"</span>)
+    39    
+    40    <span class=key>metaonly</span> <span class=key>module</span> Settings <span class=key>inherits</span> ti.sdo.ce.osal.IOsal
+    41    {
+    42        <span class="xdoc">/*!
+</span>    43    <span class="xdoc">     *  ======== defaultMemSegId ========
+</span>    44    <span class="xdoc">     *  Default ID of the memory segment from which to allocate space
+</span>    45    <span class="xdoc">     *  (for Memory_alloc/free() calls, as opposed to Memory_segAlloc/Free()).
+</span>    46    <span class="xdoc">     *  Typically it's the segment where all other code and data go.
+</span>    47    <span class="xdoc">     *
+</span>    48    <span class="xdoc">     *  If left as "null", the system will try to find a BIOS segment named
+</span>    49    <span class="xdoc">     *  "DDR" or "DDR2" and assign its name to this field. In the future
+</span>    50    <span class="xdoc">     *  this auto-find feature may be removed, so it's best that user .cfg
+</span>    51    <span class="xdoc">     *  script set this value directly to what they know is appropriate
+</span>    52    <span class="xdoc">     *  segment.
+</span>    53    <span class="xdoc">     *
+</span>    54    <span class="xdoc">     *  Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+</span>    55    <span class="xdoc">     *  to set the target OS.
+</span>    56    <span class="xdoc">     */</span>
+    57        <span class=key>config</span> String defaultMemSegId = <span class=key>null</span>;
+    58    
+    59        <span class="xdoc">/*!
+</span>    60    <span class="xdoc">     *  ======== enableLogging ========
+</span>    61    <span class="xdoc">     *  If set to true, enable data generation necessary for CE benchmarking
+</span>    62    <span class="xdoc">     *  analysis.
+</span>    63    <span class="xdoc">     *
+</span>    64    <span class="xdoc">     *  Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+</span>    65    <span class="xdoc">     *  to set the target OS.
+</span>    66    <span class="xdoc">     */</span>
+    67        <span class=key>config</span> <span class=key>bool</span> enableLogging = <span class=key>true</span>;
+    68    
+    69        <span class="xdoc">/*!
+</span>    70    <span class="xdoc">     *  ======== traceBufferSize ========
+</span>    71    <span class="xdoc">     *  Size of the server trace buffer, in MAUs.
+</span>    72    <span class="xdoc">     *
+</span>    73    <span class="xdoc">     *  The server trace buffer is a circular buffer of characters written
+</span>    74    <span class="xdoc">     *  to by clients of ti.sdo.ce.osal.Trace (and ti.sdo.utils.trace.GT) and
+</span>    75    <span class="xdoc">     *  read by the Engine_*Trace() methods.
+</span>    76    <span class="xdoc">     *
+</span>    77    <span class="xdoc">     *  All the trace data in the target memory is stored into a globally
+</span>    78    <span class="xdoc">     *  visible character buffer
+</span>    79    <span class="xdoc">     *       Char Global_traceBuffer[ &lt;traceBufferSize&gt; ];
+</span>    80    <span class="xdoc">     *
+</span>    81    <span class="xdoc">     *  Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+</span>    82    <span class="xdoc">     *  to set the target OS.
+</span>    83    <span class="xdoc">     */</span>
+    84        <span class=key>config</span> Int traceBufferSize = 32768;
+    85    
+    86        <span class="xdoc">/*!
+</span>    87    <span class="xdoc">     *  ======== logName ========
+</span>    88    <span class="xdoc">     *  Name of buffer used for capturing benchmarking data.
+</span>    89    <span class="xdoc">     *
+</span>    90    <span class="xdoc">     *  In BIOS environments, this is the name of the BIOS LOG.
+</span>    91    <span class="xdoc">     *
+</span>    92    <span class="xdoc">     *  Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+</span>    93    <span class="xdoc">     *  to set the target OS.
+</span>    94    <span class="xdoc">     */</span>
+    95        <span class=key>config</span> String logName = <span class="string">"ti_sdo_ce_osal_LOG_Buffer"</span>;
+    96    
+    97        <span class="xdoc">/*!
+</span>    98    <span class="xdoc">     *  ======== logSize ========
+</span>    99    <span class="xdoc">     *  Size of buffer used for capturing benchmarking data.
+</span>   100    <span class="xdoc">     *
+</span>   101    <span class="xdoc">     *  Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+</span>   102    <span class="xdoc">     *  to set the target OS.
+</span>   103    <span class="xdoc">     */</span>
+   104        <span class=key>config</span> <span class=key>int</span> logSize = 256;
+   105    
+   106        <span class="xdoc">/*!
+</span>   107    <span class="xdoc">     *  ======== logType ========
+</span>   108    <span class="xdoc">     *  Type of buffer used for capturing benchmarking data.
+</span>   109    <span class="xdoc">     *
+</span>   110    <span class="xdoc">     *  This can be either "fixed" or "circular".
+</span>   111    <span class="xdoc">     *
+</span>   112    <span class="xdoc">     *  Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+</span>   113    <span class="xdoc">     *  to set the target OS.
+</span>   114    <span class="xdoc">     */</span>
+   115        <span class=key>config</span> String logType = <span class="string">"circular"</span>;
+   116    
+   117        <span class="xdoc">/*!
+</span>   118    <span class="xdoc">     *  ======== logSeg ========
+</span>   119    <span class="xdoc">     *  Memory segment for the buffer used for capturing benchmarking data.
+</span>   120    <span class="xdoc">     *
+</span>   121    <span class="xdoc">     *  Only set this parameter if not using ti.sdo.osal.Global.runtimeEnv
+</span>   122    <span class="xdoc">     *  to set the target OS.
+</span>   123    <span class="xdoc">     */</span>
+   124        <span class=key>config</span> String logSeg = <span class=key>null</span>;
+   125    
+   126        <span class="xdoc">/*!
+</span>   127    <span class="xdoc">     *  ======== debug ========
+</span>   128    <span class="xdoc">     *  Enable the debug profile of the osal BIOS module.
+</span>   129    <span class="xdoc">     *
+</span>   130    <span class="xdoc">     *  Deprecated, so don't document this.
+</span>   131    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   132    <span class="xdoc">     */</span>
+   133        <span class=key>config</span> Bool debug = <span class=key>false</span>;
+   134    
+   135        <span class=key>override</span> <span class=key>bool</span> supportsLogging();
+   136    }
+   137    <span class="comment">/*
+</span>   138    <span class="comment"> *  @(#) ti.sdo.ce.osal.bios; 2, 0, 1,182; 12-2-2010 21:24:43; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+</span>   139    <span class="comment">
+</span>   140    <span class="comment"> */</span>
+   141    
+</pre>
+</body></html>

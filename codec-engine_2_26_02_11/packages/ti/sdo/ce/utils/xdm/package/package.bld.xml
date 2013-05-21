@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.utils.xdm" version="1, 0, 2" producerId="codec_engine_2_26_02_11">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="XdmUtils.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/XdmUtils.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/package/package_ti.sdo.ce.utils.xdm.o86U.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/XdmUtils.o86U.dep" src="XdmUtils.c"/>
+        <srcFile name="lib/release/XdmUtils.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/package/package_ti.sdo.ce.utils.xdm.o86U.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/XdmUtils.o86U.dep" src="XdmUtils.c"/>
+        <srcFile name="lib/release/XdmUtils.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/package/package_ti.sdo.ce.utils.xdm.ov4TCE.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/XdmUtils.ov4TCE.dep" src="XdmUtils.c"/>
+        <srcFile name="lib/debug/XdmUtils.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/package/package_ti.sdo.ce.utils.xdm.ov5T.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/XdmUtils.ov5T.dep" src="XdmUtils.c"/>
+        <srcFile name="lib/release/XdmUtils.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/package/package_ti.sdo.ce.utils.xdm.ov5T.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/XdmUtils.ov5T.dep" src="XdmUtils.c"/>
+        <srcFile name="lib/release/XdmUtils.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/package/package_ti.sdo.ce.utils.xdm.o470uC.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/XdmUtils.o470uC.dep" src="XdmUtils.c"/>
+        <srcFile name="lib/debug/XdmUtils.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/package/package_ti.sdo.ce.utils.xdm.ov4TCE.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/XdmUtils.ov4TCE.dep" src="XdmUtils.c"/>
+        <srcFile name="lib/debug/XdmUtils.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/package/package_ti.sdo.ce.utils.xdm.o674.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/XdmUtils.o674.dep" src="XdmUtils.c"/>
+        <srcFile name="lib/release/XdmUtils.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/package/package_ti.sdo.ce.utils.xdm.o674.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/XdmUtils.o674.dep" src="XdmUtils.c"/>
+        <srcFile name="lib/debug/XdmUtils.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/package/package_ti.sdo.ce.utils.xdm.o470uC.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/XdmUtils.o470uC.dep" src="XdmUtils.c"/>
+        <srcFile name="lib/debug/XdmUtils.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/package/package_ti.sdo.ce.utils.xdm.o64P.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/debug/XdmUtils/XdmUtils.o64P.dep" src="XdmUtils.c"/>
+        <srcFile name="lib/release/XdmUtils.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/package/package_ti.sdo.ce.utils.xdm.o64P.dep" src="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <srcFile name="package/lib/lib/release/XdmUtils/XdmUtils.o64P.dep" src="XdmUtils.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_utils_xdm.tar.dep" src="package/rel/ti_sdo_ce_utils_xdm.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/XdmUtils"
+        pname="lib/debug/XdmUtils.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/XdmUtils"
+        pname="lib/release/XdmUtils.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/XdmUtils"
+        pname="lib/release/XdmUtils.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/XdmUtils"
+        pname="lib/debug/XdmUtils.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/XdmUtils"
+        pname="lib/release/XdmUtils.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/XdmUtils"
+        pname="lib/release/XdmUtils.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/XdmUtils"
+        pname="lib/debug/XdmUtils.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/debug/XdmUtils"
+        pname="lib/debug/XdmUtils.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/release/XdmUtils"
+        pname="lib/release/XdmUtils.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/XdmUtils"
+        pname="lib/debug/XdmUtils.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/XdmUtils"
+        pname="lib/debug/XdmUtils.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/XdmUtils"
+        pname="lib/release/XdmUtils.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_utils_xdm"
+        pname="ti_sdo_ce_utils_xdm.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/debug/XdmUtils.a86U"/>
+        <file name="lib/debug/XdmUtils.av5T"/>
+        <file name="lib/release/XdmUtils.a86U"/>
+        <file name="lib/release/XdmUtils.av5T"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/debug/XdmUtils.a674"/>
+        <file name="lib/release/XdmUtils.a674"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/debug/XdmUtils.av4TCE"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/debug/XdmUtils.a470uC"/>
+        <file name="lib/release/XdmUtils.av4TCE"/>
+        <file name="XdmUtils.c"/>
+        <file name="lib/release/XdmUtils.a470uC"/>
+        <file name="XdmUtils.h"/>
+        <file name="lib/debug/XdmUtils.a64P"/>
+        <file name="lib/release/XdmUtils.a64P"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package_ti.sdo.ce.utils.xdm.c"/>
+        <file name="package.bld"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

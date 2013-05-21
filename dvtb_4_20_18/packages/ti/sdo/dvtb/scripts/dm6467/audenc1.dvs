@@ -1,0 +1,44 @@
+############################################################
+# Encode Audio: Read from file, encode and dump
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the decoder to be used
+setp audenc1 codec aacheenc
+
+# Specify the codec parameters
+setp audenc1 seconds 10
+setp audenc1 sampleRate 44100 
+setp audenc1 bitRate 64000
+setp audenc1 channelMode 1
+setp audenc1 dataEndianness 2
+setp audenc1 encMode 0
+setp audenc1 inputFormat 1
+setp audenc1 inputBitsPerSample 16
+setp audenc1 maxBitRate 192000
+setp audenc1 dualMonoMode 0
+setp audenc1 crcFlag 0
+setp audenc1 ancFlag 1
+setp audenc1 lfeFlag 0 
+setp audenc1 dynamicparams.sampleRate 44100
+setp audenc1 dynamicparams.bitRate 64000
+setp audenc1 dynamicparams.channelMode 1
+setp audenc1 dynamicparams.lfeFlag 0
+setp audenc1 dynamicparams.dualMonoMode 0
+setp audenc1 dynamicparams.inputBitsPerSample 16
+
+# Specify the driver parameters
+#setp audio device plughw:0,0
+#setp audio format 2
+#setp audio samplerate 44100
+#setp audio channels 2
+#setp audio type 0
+
+# Trigger the decode+playback scenario
+func audenc1 -s input_44k.pcm -t test.aac

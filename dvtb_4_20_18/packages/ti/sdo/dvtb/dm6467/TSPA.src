@@ -1,0 +1,127 @@
+#
+# TSPA.src
+#
+# DM6467 Source files corresponding to TSPA codecs
+#
+# Copyright (C) 2010 Texas Instruments Incorporated - http://www.ti.com/ 
+# 
+# 
+#  Redistribution and use in source and binary forms, with or without 
+#  modification, are permitted provided that the following conditions 
+#  are met:
+#
+#    Redistributions of source code must retain the above copyright 
+#    notice, this list of conditions and the following disclaimer.
+#
+#    Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the 
+#    documentation and/or other materials provided with the   
+#    distribution.
+#
+#    Neither the name of Texas Instruments Incorporated nor the names of
+#    its contributors may be used to endorse or promote products derived
+#    from this software without specific prior written permission.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+#  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+#  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+#  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+#  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+#  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+#  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+#  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+#  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+
+#===== TSPA_SRCVPATH - list of directories to search for pal source files.
+TSPA_SRCVPATH=linux:../core/linux:../core/common
+
+#===== pal_SRC - list of common sources files
+H2641080p60VDEC_SOURCE = \
+	dvtbH2641080pPlay2.c \
+	dvtbH2641080pDec2.c \
+	dvtbH2641080pPlay2Core.c \
+
+H264DEC_SOURCE = \
+	dvtbH264Dec2.c \
+	dvtbH264Play2.c \
+	dvtbH264Play2Core.c \
+
+TSPA_SOURCE= \
+        dvtbVidPlay2.c \
+        dvtbVidLoopback1.c \
+        dvtbVidCapture1.c \
+        dvtbVdce.c \
+        dvtbV4L2VPBEOverride.c \
+	dvtbSphPlay.c \
+	dvtbSphEnc.c \
+	dvtbSphCapture.c \
+        dvtbParam.c \
+        dvtbMpeg4Play2.c \
+        dvtbMpeg4Dec2.c \
+        dvtbMpeg4Enc1.c \
+        dvtbMpeg4Capture1.c \
+        dvtbMpeg2Play2Core.c \
+        dvtbMpeg2Play2.c \
+        dvtbMpeg2Dec2.c \
+	dvtbMP3BasePlay1.c \
+	dvtbMP3BaseDec1.c \
+        dvtbJPEGEnc1.c \
+        dvtbJPEGDisplay1.c \
+        dvtbJPEGDec1.c \
+        dvtbJPEGCapture1.c \
+        dvtbImgDisplay1.c \
+        dvtbImgCapture1.c \
+        dvtbH264fhdEnc1.c \
+        dvtbH264fhdCapture1.c \
+        dvtbH264Enc1.c \
+        dvtbH264Capture1.c \
+        dvtbFuncDispatcher.c \
+	dvtbAudPlay.c \
+	dvtbAudEnc.c \
+	dvtbAudDec.c \
+        dvtbAudCapture1.c \
+	dvtbAudCapture.c \
+        dvtbAppInit.c \
+        dvtbAppExit.c \
+        dvtbApisDispatcher.c \
+        dvtbAACHEPlay1Core.c \
+        dvtbAACHEPlay1.c \
+        dvtbAACHEDec1.c \
+        dvtbAACEnc.c \
+        dvtbAACCapture.c \
+        dvtbAudCapture1Core.c \
+        dvtbAudDec1.c \
+        dvtbAudEnc1.c \
+        dvtbAudPlay1Core.c \
+        dvtbEngine.c \
+        dvtbGetParam.c \
+        dvtbImgCapture1Core.c \
+        dvtbImgDec1.c \
+        dvtbImgDisplay1Core.c \
+        dvtbImgEnc1.c \
+        dvtbMain.c \
+        dvtbMemory.c \
+        dvtbSetParam.c \
+        dvtbSphCapture1.c \
+        dvtbSphCapture1Core.c \
+        dvtbSphCaptureCore.c \
+        dvtbSphDec.c \
+        dvtbSphDec1.c \
+        dvtbSphEnc1.c \
+        dvtbSphPlay1.c \
+        dvtbSphPlay1Core.c \
+        dvtbSphPlayCore.c \
+        dvtbThread.c \
+        dvtbUtils.c \
+        dvtbVidCapture1Core.c \
+        dvtbVidDec2.c \
+        dvtbVidEnc1.c \
+        dvtbVidPlay2Core.c \
+	dvtbDispatcher.c \
+	dvtbAudPlay1.c \
+	dvtbVersion.c \
+

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="" label="" date="" buildCount="" producerId="">
+<package name="xdc.tools.configuro"
+    version="1, 0, 0, 0"/>
+<imports>
+    <package name="xdc.tools.mkpkg"
+        version=""/>
+</imports>
+<references>
+    <package name="gnu.targets"
+        version="1, 0, 1, 1250189848223"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Linux86.xs"/>
+        <file name="MVArm9.xs"/>
+        <file name="Mingw.xs"/>
+        <file name="UCArm9.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.tools.mkpkg"
+        version="1, 0, 1, 0, 1258752269000"
+        providerId="/db/ztree/library/trees/xdctools/xdctools-d08x/src">
+        <file name="Gen.xs"/>
+        <file name="ICmd.xs"/>
+        <file name="Main.xs"/>
+        <file name="Template.xs"/>
+    </package>
+    <package name="xdc.tools"
+        version="1, 0, 0, 0, 1250183942121"
+        providerId="xdccore">
+        <file name="Cmdr.xdc"/>
+        <file name="Cmdr.xs"/>
+        <file name="ICmd.xdc"/>
+        <file name="ICmd.xs"/>
+        <file name="ResourceBundle.xs"/>
+    </package>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0, 1250183924820"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="microsoft.targets"
+        version="1, 0, 2, 0, 1250189852071"
+        providerId="xdccore">
+        <file name="ITarget.xs"/>
+        <file name="Win32.xs"/>
+        <file name="_utils.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.io"
+        version="1, 0, 0, 1250183908784"
+        providerId="xdccore">
+        <file name="File.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0, 1250183889803"
+        providerId="xdccore">
+        <file name="Clock.xs"/>
+        <file name="Trace.xs"/>
+        <file name="java/package.jar"/>
+    </package>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0, 1250183901901"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0, 1250183909671"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 1, 1250183827032"
+        providerId="xdccore">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+        <file name="xmlgen2.xs"/>
+    </package>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 1250183946137"
+        providerId="xdccore">
+        <file name="java/antlr.jar"/>
+        <file name="java/ecj.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/jsr173_api.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+    </package>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0, 1250183900379"
+        providerId="xdccore">
+        <file name="java/package.jar"/>
+    </package>
+    <package name="xdc.bld"
+        version="1, 0, 2, 1250183854714"
+        providerId="xdccore">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+    </package>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod-l05/product/Linux/xdctools_3_16_00_05_eng/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include/utils.tci"/>
+        <xdcCorePkg version="16, 0, 1, 0, 1250183853288" producerId="ndefined" buildCount="202" releaseName="xdc_corevers" label="default" date="1250183853288"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/ztree/library/trees/xdctools/xdctools-d08x/src/config.bld"/>
+</orphans>
+</release>

@@ -1,0 +1,267 @@
+<html><head><title>module ti.sdo.ce.Server</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* 
+</span>     2    <span class="comment"> * Copyright (c) 2010, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> * 
+</span>    32    <span class="comment"> */</span>
+    33    <span class="xdoc">/*!
+</span>    34    <span class="xdoc"> *  ======== Server ========
+</span>    35    <span class="xdoc"> *  DSP Server Configuration interface
+</span>    36    <span class="xdoc"> */</span>
+    37    @Template(<span class="string">"./Server.xdt"</span>)
+    38    
+    39    <span class=key>metaonly</span> <span class=key>module</span> Server
+    40    {
+    41        <span class="xdoc">/*!
+</span>    42    <span class="xdoc">     *  ======== MINPRI ========
+</span>    43    <span class="xdoc">     *  Minimum priority that a thread can assume
+</span>    44    <span class="xdoc">     *
+</span>    45    <span class="xdoc">     *  All threads must have a priority value greater than or equal to
+</span>    46    <span class="xdoc">     *  {<b>@link</b> #MINPRI Server.MINPRI} and less than or equal to
+</span>    47    <span class="xdoc">     *  {<b>@link</b> #MAXPRI Server.MAXPRI}.
+</span>    48    <span class="xdoc">     */</span>
+    49        <span class=key>readonly</span> <span class=key>config</span> Int MINPRI = 1;
+    50    
+    51        <span class="xdoc">/*!
+</span>    52    <span class="xdoc">     *  ======== MAXPRI ========
+</span>    53    <span class="xdoc">     *  Maximum priority that a thread can assume
+</span>    54    <span class="xdoc">     *
+</span>    55    <span class="xdoc">     *  All threads must have a priority value greater than or equal to
+</span>    56    <span class="xdoc">     *  {<b>@link</b> #MINPRI Server.MINPRI} and less than or equal to
+</span>    57    <span class="xdoc">     *  {<b>@link</b> #MAXPRI Server.MAXPRI}.
+</span>    58    <span class="xdoc">     */</span>
+    59        <span class=key>readonly</span> <span class=key>config</span> Int MAXPRI = 15;
+    60    
+    61        <span class="xdoc">/*!
+</span>    62    <span class="xdoc">     *  ======== ThreadAttrs ========
+</span>    63    <span class="xdoc">     *  Thread attributes
+</span>    64    <span class="xdoc">     *
+</span>    65    <span class="xdoc">     *  This structure defines the thread attrubutes for any threads created
+</span>    66    <span class="xdoc">     *  by the RMS thread; see Server.threadAttrs.
+</span>    67    <span class="xdoc">     */</span>
+    68        <span class=key>struct</span> ThreadAttrs {
+    69            Int stackSize;      <span class="xdoc">/*! minimum stack size required for this thread */</span>
+    70            Int stackMemId;     <span class="xdoc">/*! MEM seg id for the thread's stack */</span>
+    71            Int priority;       <span class="xdoc">/*! priority of the thread */</span>
+    72        };
+    73    
+    74        <span class="xdoc">/*!
+</span>    75    <span class="xdoc">     *  ======== AlgDesc ========
+</span>    76    <span class="xdoc">     *  Algorithm descriptor
+</span>    77    <span class="xdoc">     *
+</span>    78    <span class="xdoc">     *  This structure describes the execution context provided by
+</span>    79    <span class="xdoc">     *  the server for an algorithm module.
+</span>    80    <span class="xdoc">     *
+</span>    81    <span class="xdoc">     *  <b>@field(name)</b>    This string specifies the "local" name used by the
+</span>    82    <span class="xdoc">     *                  server to generate instance names
+</span>    83    <span class="xdoc">     *  <b>@field(mod)</b>     This field is a module reference that identifies the
+</span>    84    <span class="xdoc">     *                  actual module implementing the algorithm to instantiate.
+</span>    85    <span class="xdoc">     *                  This module reference is often acquired by a call to
+</span>    86    <span class="xdoc">     *                  `xdc.useModule();` like this:
+</span>    87    <span class="xdoc">     *                  <b>@p(code)</b>
+</span>    88    <span class="xdoc">     *                      modReference = xdc.useModule('package.Module');
+</span>    89    <span class="xdoc">     *                  <b>@p</b>
+</span>    90    <span class="xdoc">     *  <b>@field(threadAttrs)</b>  This structure defines attributes of the "server"
+</span>    91    <span class="xdoc">     *                  thread that will handle instance processing
+</span>    92    <span class="xdoc">     *                  requests; e.g., stack size and priority.
+</span>    93    <span class="xdoc">     *                  <b>@p(blist)</b>
+</span>    94    <span class="xdoc">     *                  -{<b>@link</b> #ThreadAttrs threadAttrs.stackSize}:  This
+</span>    95    <span class="xdoc">     *                      field is optional when configuring
+</span>    96    <span class="xdoc">     *                      an algorithm in a server, though strongly
+</span>    97    <span class="xdoc">     *                      recommended.  Stack overrun is a very common
+</span>    98    <span class="xdoc">     *                      cause of system instability.  If it's not supplied
+</span>    99    <span class="xdoc">     *                      by the server integrator's script, the stack size
+</span>   100    <span class="xdoc">     *                      returned by the codec's
+</span>   101    <span class="xdoc">     *                      {<b>@link</b> ICodec#getStackSize()} method will be
+</span>   102    <span class="xdoc">     *                      added to the value of
+</span>   103    <span class="xdoc">     *                      {<b>@link</b> #stackSizePad stackSizePad}.
+</span>   104    <span class="xdoc">     *                  -{<b>@link</b> #ThreadAttrs threadAttrs.stackMemId}:  This
+</span>   105    <span class="xdoc">     *                      field is required when configuring
+</span>   106    <span class="xdoc">     *                      an algorithm in a server.
+</span>   107    <span class="xdoc">     *                  -{<b>@link</b> #ThreadAttrs threadAttrs.priority}:  This
+</span>   108    <span class="xdoc">     *                      field is optional (though strongly recommended)
+</span>   109    <span class="xdoc">     *                       when configuring an algorithm in a server.
+</span>   110    <span class="xdoc">     *                      If it's not supplied by the server integrator's
+</span>   111    <span class="xdoc">     *                      script, a default priority will be assigned, and a
+</span>   112    <span class="xdoc">     *                      remark will be printed to the console during server
+</span>   113    <span class="xdoc">     *                      configuration to indicate which priority was
+</span>   114    <span class="xdoc">     *                      assigned to the algorithm.  Note that this priority
+</span>   115    <span class="xdoc">     *                      can be overridden at runtime by the application;
+</span>   116    <span class="xdoc">     *                      see the various `*_create()` VISA APIs for more
+</span>   117    <span class="xdoc">     *                      details.
+</span>   118    <span class="xdoc">     *                  <b>@p</b>
+</span>   119    <span class="xdoc">     *  <b>@field(groupId)</b> This id specifies which resource sharing group
+</span>   120    <span class="xdoc">     *                  this codec will be placed into.  The system
+</span>   121    <span class="xdoc">     *                  integrator must ensure that codecs within the same
+</span>   122    <span class="xdoc">     *                  group can not pre-empt each other.
+</span>   123    <span class="xdoc">     *
+</span>   124    <span class="xdoc">     *                  A common technique for assigning groupId's in
+</span>   125    <span class="xdoc">     *                  systems where same-priority tasks don't pre-empt
+</span>   126    <span class="xdoc">     *                  each other (e.g. DSP/BIOS) is to use the task priority.
+</span>   127    <span class="xdoc">     *                  Some systems do not allow sharing resources.  In
+</span>   128    <span class="xdoc">     *                  those systems, this parameter is ignored.
+</span>   129    <span class="xdoc">     *
+</span>   130    <span class="xdoc">     *                  Note that this parameter is ignored if "local" is not
+</span>   131    <span class="xdoc">     *                  TRUE.
+</span>   132    <span class="xdoc">     */</span>
+   133        <span class=key>struct</span> AlgDesc {
+   134            String      name;        <span class="xdoc">/*! alg nick-name */</span>
+   135            ICodec.Module mod;       <span class="xdoc">/*! alg that implements skeletons */</span>
+   136            ThreadAttrs threadAttrs; <span class="xdoc">/*! thread properties for each alg instance */</span>
+   137            Int         groupId;     <span class="xdoc">/*! group id of the algorithm */</span>
+   138        };
+   139    
+   140        <span class="xdoc">/*!
+</span>   141    <span class="xdoc">     *  ======== threadAttrs ========
+</span>   142    <span class="xdoc">     *  Thread attributes for the Server daemon thread
+</span>   143    <span class="xdoc">     *
+</span>   144    <span class="xdoc">     *  A single Server thread is created within each DSP Server.  This thread
+</span>   145    <span class="xdoc">     *  accepts requests to create/destroy algorithm instances.
+</span>   146    <span class="xdoc">     *
+</span>   147    <span class="xdoc">     *  This thread is sometimes referred to as the Resource Manager Server
+</span>   148    <span class="xdoc">     *  (RMS) thread.
+</span>   149    <span class="xdoc">     *
+</span>   150    <span class="xdoc">     *  The `threadAttrs.stackSize` field is optional when configuring a
+</span>   151    <span class="xdoc">     *  server, though strongly recommended.  Stack overrun is a very common
+</span>   152    <span class="xdoc">     *  cause of system instability.  If the `threadAttrs.stackSize` field is
+</span>   153    <span class="xdoc">     *  not assigned by the server integrator's script, a default value of
+</span>   154    <span class="xdoc">     *  1K (1024 bytes) will be added to the value of
+</span>   155    <span class="xdoc">     *  {<b>@link</b> #stackSizePad stackSizePad} and used.
+</span>   156    <span class="xdoc">     *
+</span>   157    <span class="xdoc">     *  The `threadAttrs.priority` field is optional when configuring a
+</span>   158    <span class="xdoc">     *  server.  If it is not assigned, by the server integrator's script, a
+</span>   159    <span class="xdoc">     *  default value of {<b>@link</b> #MINPRI MINPRI} will be used.
+</span>   160    <span class="xdoc">     *
+</span>   161    <span class="xdoc">     *  The `threadAttrs.stackMemId` field is optional when configuring a
+</span>   162    <span class="xdoc">     *  server.  If it is not assigned, by the server integrator's script, a
+</span>   163    <span class="xdoc">     *  default value of 0 will be used.
+</span>   164    <span class="xdoc">     */</span>
+   165        <span class=key>config</span> ThreadAttrs threadAttrs;
+   166    
+   167        <span class="xdoc">/*!
+</span>   168    <span class="xdoc">     *  ======== algs ========
+</span>   169    <span class="xdoc">     *  Table of all algorithms supported by this DSP Server
+</span>   170    <span class="xdoc">     *
+</span>   171    <span class="xdoc">     *  See {<b>@link</b> #AlgDesc} documentation for more details.
+</span>   172    <span class="xdoc">     */</span>
+   173        <span class=key>config</span> AlgDesc algs[];
+   174    
+   175    
+   176        <span class="xdoc">/*!
+</span>   177    <span class="xdoc">     *  ======== stackSizePad ========
+</span>   178    <span class="xdoc">     *  Pad applied to unconfigured, CE-created threads.
+</span>   179    <span class="xdoc">     *
+</span>   180    <span class="xdoc">     *  This pad is only applied to algorithm stacks that are not configured,
+</span>   181    <span class="xdoc">     *  as well as the {<b>@link</b> #threadAttrs Server thread} if it is not
+</span>   182    <span class="xdoc">     *  configured.
+</span>   183    <span class="xdoc">     */</span>
+   184        <span class=key>config</span> Int stackSizePad = 8192;
+   185    
+   186    
+   187        <span class="xdoc">/*!
+</span>   188    <span class="xdoc">     *  ======== traceBufferSize ========
+</span>   189    <span class="xdoc">     *  (DEPRECATED) Size of the server trace buffer, in MAUs.
+</span>   190    <span class="xdoc">     *
+</span>   191    <span class="xdoc">     *  Trace buffer size should be set via {<b>@link</b>
+</span>   192    <span class="xdoc">     *  ti.sdo.ce.osal.Global#traceBufferSize}.  Changing
+</span>   193    <span class="xdoc">     *  traceBufferSize here is currently supported for backward
+</span>   194    <span class="xdoc">     *  compatibility, but will not be supported in the future.
+</span>   195    <span class="xdoc">     *
+</span>   196    <span class="xdoc">     *  The server trace buffer is a circular buffer of characters written
+</span>   197    <span class="xdoc">     *  to by clients of the {<b>@link</b> ti.sdo.ce.osal} Trace interface -
+</span>   198    <span class="xdoc">     *  and read by the Engine_*Trace() methods.
+</span>   199    <span class="xdoc">     *
+</span>   200    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   201    <span class="xdoc">     */</span>
+   202        <span class=key>config</span> Int traceBufferSize = 0;
+   203    
+   204        <span class="xdoc">/*!
+</span>   205    <span class="xdoc">     *  ======== autoGenScratchSizeArrays ========
+</span>   206    <span class="xdoc">     *  Enable automatic generation of {<b>@link</b> ti.sdo.fc.dskt2.DSKT2 DSKT2}
+</span>   207    <span class="xdoc">     *  scratch group size arrays.
+</span>   208    <span class="xdoc">     *
+</span>   209    <span class="xdoc">     *  This configuration flag enables/disables automatic generation of
+</span>   210    <span class="xdoc">     *  the {<b>@link</b> ti.sdo.fc.dskt2.DSKT2#DARAM_SCRATCH_SIZES} and
+</span>   211    <span class="xdoc">     *  {<b>@link</b> ti.sdo.fc.dskt2.DSKT2#SARAM_SCRATCH_SIZES} scratch group sizes
+</span>   212    <span class="xdoc">     *  arrays.
+</span>   213    <span class="xdoc">     *
+</span>   214    <span class="xdoc">     *  When enabled (1), the arrays will be automatically generated during
+</span>   215    <span class="xdoc">     *  Server configuration, based upon the
+</span>   216    <span class="xdoc">     *  {<b>@link</b> ICodec#getDaramScratchSize()} and
+</span>   217    <span class="xdoc">     *  {<b>@link</b> ICodec#getSaramScratchSize()} methods of the configured set of
+</span>   218    <span class="xdoc">     *  algorithms.
+</span>   219    <span class="xdoc">     *
+</span>   220    <span class="xdoc">     *  When disabled (0), the engine integrator needs to manually configure
+</span>   221    <span class="xdoc">     *  the scratch group sizes arrays.
+</span>   222    <span class="xdoc">     */</span>
+   223        <span class=key>config</span> Bool autoGenScratchSizeArrays = 0;
+   224    
+   225        <span class="xdoc">/*!
+</span>   226    <span class="xdoc">     *  ======== SkelCachingPolicy ========
+</span>   227    <span class="xdoc">     *  Caching behavior that all skeletons will use.
+</span>   228    <span class="xdoc">     */</span>
+   229        <span class=key>enum</span> SkelCachingPolicy {
+   230            LOCALBUFFERINVWB = 0, <span class="xdoc">/*! Invalidate before process, writeback after */</span>
+   231            WBINVALL         = 1, <span class="xdoc">/*! Writeback invalidate all after process */</span>
+   232            NONE             = 2  <span class="xdoc">/*! No cache management of buffers */</span>
+   233        };
+   234    
+   235        <span class="xdoc">/*!
+</span>   236    <span class="xdoc">     *  ======== SkelCachingPolicy ========
+</span>   237    <span class="xdoc">     *  Caching behavior that all skeletons will use.
+</span>   238    <span class="xdoc">     */</span>
+   239        <span class=key>config</span> SkelCachingPolicy skelCachingPolicy;
+   240    
+   241        <span class="xdoc">/*!
+</span>   242    <span class="xdoc">     *  ======== close ========
+</span>   243    <span class="xdoc">     *  internal close method (see package.xs)
+</span>   244    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   245    <span class="xdoc">     */</span>
+   246        <span class=key>function</span> close();
+   247    
+   248        <span class="xdoc">/*!
+</span>   249    <span class="xdoc">     *  ======== validate ========
+</span>   250    <span class="xdoc">     *  internal validate method (see package.xs)
+</span>   251    <span class="xdoc">     * <b>@_nodoc</b>
+</span>   252    <span class="xdoc">     */</span>
+   253        <span class=key>function</span> validate();
+   254    }
+   255    <span class="comment">/*
+</span>   256    <span class="comment"> *  @(#) ti.sdo.ce; 1, 0, 6,432; 12-2-2010 21:19:08; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+</span>   257    <span class="comment">
+</span>   258    <span class="comment"> */</span>
+   259    
+</pre>
+</body></html>

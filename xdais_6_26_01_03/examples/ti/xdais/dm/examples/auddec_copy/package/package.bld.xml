@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.xdais.dm.examples.auddec_copy" version="2, 0, 0" producerId="xdais_6_26_01_03">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="auddec_copy.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/profile/auddec_copy.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/auddec_copy.o674.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o674.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/debug/auddec_copy.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/auddec_copy.o64P.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o64P.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/coverage/auddec_copy.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/auddec_copy.o64P.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o64P.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program/auddec_copy.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/auddec_copy.o64P.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o64P.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/profile/auddec_copy.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/auddec_copy.ov5T.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.ov5T.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/release/auddec_copy.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/auddec_copy.o470uC.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o470uC.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/profile/auddec_copy.a28L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/auddec_copy.o28L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o28L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/debug/auddec_copy.a55H.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/auddec_copy.o55H.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55H.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/coverage/auddec_copy.a55H.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/auddec_copy.o55H.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55H.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/debug/auddec_copy.a55L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/auddec_copy.o55L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program/auddec_copy.a55H.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/auddec_copy.o55H.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55H.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program/auddec_copy.a55Pb.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/auddec_copy.o55Pb.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55Pb.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/coverage/auddec_copy.a55L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/auddec_copy.o55L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program_debug/auddec_copy.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/auddec_copy.o674.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o674.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program/auddec_copy.a55L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/auddec_copy.o55L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/profile/auddec_copy.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/auddec_copy.o86U.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o86U.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/release/auddec_copy.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/auddec_copy.ov4TCE.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.ov4TCE.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/profile/auddec_copy.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/auddec_copy.o64P.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o64P.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program_debug/auddec_copy.a28L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/auddec_copy.o28L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o28L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/debug/auddec_copy.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/auddec_copy.o470uC.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o470uC.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/release/auddec_copy.a55Pb.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/auddec_copy.o55Pb.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55Pb.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/coverage/auddec_copy.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/auddec_copy.o470uC.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o470uC.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/release/auddec_copy.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/auddec_copy.o674.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o674.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/profile/auddec_copy.a55H.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/auddec_copy.o55H.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55H.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/debug/auddec_copy.a55Pb.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/auddec_copy.o55Pb.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55Pb.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/profile/auddec_copy.a55L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/auddec_copy.o55L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/debug/auddec_copy.av4TCE.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/auddec_copy.ov4TCE.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.ov4TCE.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program_debug/auddec_copy.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/auddec_copy.o64P.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o64P.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/release/auddec_copy.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/auddec_copy.ov5T.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.ov5T.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/coverage/auddec_copy.a55Pb.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/auddec_copy.o55Pb.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55Pb.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/release/auddec_copy.a28L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/auddec_copy.o28L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o28L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program_debug/auddec_copy.a55H.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/auddec_copy.o55H.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55H.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/debug/auddec_copy.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/auddec_copy.o674.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o674.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program_debug/auddec_copy.a55L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/auddec_copy.o55L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/release/auddec_copy.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/auddec_copy.o86U.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o86U.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/coverage/auddec_copy.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/auddec_copy.o674.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o674.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program/auddec_copy.a674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/auddec_copy.o674.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o674.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/release/auddec_copy.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/auddec_copy.o64P.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o64P.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/debug/auddec_copy.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/auddec_copy.ov5T.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.ov5T.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/debug/auddec_copy.a28L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/auddec_copy.o28L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o28L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/coverage/auddec_copy.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/auddec_copy.ov5T.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.ov5T.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/coverage/auddec_copy.a28L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/auddec_copy.o28L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o28L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program/auddec_copy.a28L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/auddec_copy.o28L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o28L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/whole_program_debug/auddec_copy.a55Pb.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/auddec_copy.o55Pb.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/whole_program_debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55Pb.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/release/auddec_copy.a55H.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/auddec_copy.o55H.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55H.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/profile/auddec_copy.a55Pb.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/auddec_copy.o55Pb.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55Pb.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/release/auddec_copy.a55L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/auddec_copy.o55L.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/release/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o55L.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/debug/auddec_copy.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/auddec_copy.o86U.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/debug/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o86U.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/coverage/auddec_copy.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/auddec_copy.o86U.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/coverage/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o86U.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="lib/profile/auddec_copy.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/auddec_copy.o470uC.dep" src="auddec_copy.c"/>
+        <srcFile name="package/lib/lib/profile/auddec_copy/package/package_ti.xdais.dm.examples.auddec_copy.o470uC.dep" src="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <srcFile name="package/rel/ti_xdais_dm_examples_auddec_copy.tar.dep" src="package/rel/ti_xdais_dm_examples_auddec_copy.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C55_huge"
+            version="ti.targets.C55_huge{1,0,3.3,2"
+            platform="ti.platforms.sim55xx"
+            isa="55"
+            suffix="55H"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c55/lead3v3.3.2/Linux"
+            os="undefined"
+            rts="ti.targets.rts5500">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="huge"/>
+        </target>
+        <target name="ti.targets.C55_large"
+            version="ti.targets.C55_large{1,0,3.3,2"
+            platform="ti.platforms.sim55xx"
+            isa="55"
+            suffix="55L"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c55/lead3v3.3.2/Linux"
+            os="undefined"
+            rts="ti.targets.rts5500">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="large"/>
+        </target>
+        <target name="ti.targets.C674"
+            version="ti.targets.C674{1,0,6.1,5"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="674"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.1.5/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C55P_byte"
+            version="ti.targets.C55P_byte{1,0,4.0,0,1"
+            platform="ti.platforms.sim55xx"
+            isa="55P"
+            suffix="55Pb"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c55/lead3v4.0.0b1/Linux"
+            os="undefined"
+            rts="ti.targets.rts5500">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="huge"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="microsoft.targets.arm.WinCE"
+            version="microsoft.targets.arm.WinCE{1,0,14.01,60511"
+            platform="host.platforms.PC"
+            isa="v4T"
+            suffix="v4TCE"
+            rootDir="C:/WINCE600"
+            os="WindowsCE"
+            rts="microsoft.targets.arm.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C28_large"
+            version="ti.targets.C28_large{1,0,5.2,1"
+            platform="ti.platforms.sim28xx"
+            isa="28"
+            suffix="28L"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c28/5.2.1/Linux"
+            os="undefined"
+            rts="ti.targets.rts2800">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="large"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/profile/auddec_copy"
+        pname="lib/profile/auddec_copy.a674"
+        profile="profile"
+        target="ti.targets.C674"/>
+    <library name="lib/debug/auddec_copy"
+        pname="lib/debug/auddec_copy.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/coverage/auddec_copy"
+        pname="lib/coverage/auddec_copy.a64P"
+        profile="coverage"
+        target="ti.targets.C64P"/>
+    <library name="lib/whole_program/auddec_copy"
+        pname="lib/whole_program/auddec_copy.a64P"
+        profile="whole_program"
+        target="ti.targets.C64P"/>
+    <library name="lib/profile/auddec_copy"
+        pname="lib/profile/auddec_copy.av5T"
+        profile="profile"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/auddec_copy"
+        pname="lib/release/auddec_copy.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/profile/auddec_copy"
+        pname="lib/profile/auddec_copy.a28L"
+        profile="profile"
+        target="ti.targets.C28_large"/>
+    <library name="lib/debug/auddec_copy"
+        pname="lib/debug/auddec_copy.a55H"
+        profile="debug"
+        target="ti.targets.C55_huge"/>
+    <library name="lib/coverage/auddec_copy"
+        pname="lib/coverage/auddec_copy.a55H"
+        profile="coverage"
+        target="ti.targets.C55_huge"/>
+    <library name="lib/debug/auddec_copy"
+        pname="lib/debug/auddec_copy.a55L"
+        profile="debug"
+        target="ti.targets.C55_large"/>
+    <library name="lib/whole_program/auddec_copy"
+        pname="lib/whole_program/auddec_copy.a55H"
+        profile="whole_program"
+        target="ti.targets.C55_huge"/>
+    <library name="lib/whole_program/auddec_copy"
+        pname="lib/whole_program/auddec_copy.a55Pb"
+        profile="whole_program"
+        target="ti.targets.C55P_byte"/>
+    <library name="lib/coverage/auddec_copy"
+        pname="lib/coverage/auddec_copy.a55L"
+        profile="coverage"
+        target="ti.targets.C55_large"/>
+    <library name="lib/whole_program_debug/auddec_copy"
+        pname="lib/whole_program_debug/auddec_copy.a674"
+        profile="whole_program_debug"
+        target="ti.targets.C674"/>
+    <library name="lib/whole_program/auddec_copy"
+        pname="lib/whole_program/auddec_copy.a55L"
+        profile="whole_program"
+        target="ti.targets.C55_large"/>
+    <library name="lib/profile/auddec_copy"
+        pname="lib/profile/auddec_copy.a86U"
+        profile="profile"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/auddec_copy"
+        pname="lib/release/auddec_copy.av4TCE"
+        profile="release"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/profile/auddec_copy"
+        pname="lib/profile/auddec_copy.a64P"
+        profile="profile"
+        target="ti.targets.C64P"/>
+    <library name="lib/whole_program_debug/auddec_copy"
+        pname="lib/whole_program_debug/auddec_copy.a28L"
+        profile="whole_program_debug"
+        target="ti.targets.C28_large"/>
+    <library name="lib/debug/auddec_copy"
+        pname="lib/debug/auddec_copy.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/auddec_copy"
+        pname="lib/release/auddec_copy.a55Pb"
+        profile="release"
+        target="ti.targets.C55P_byte"/>
+    <library name="lib/coverage/auddec_copy"
+        pname="lib/coverage/auddec_copy.a470uC"
+        profile="coverage"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/auddec_copy"
+        pname="lib/release/auddec_copy.a674"
+        profile="release"
+        target="ti.targets.C674"/>
+    <library name="lib/profile/auddec_copy"
+        pname="lib/profile/auddec_copy.a55H"
+        profile="profile"
+        target="ti.targets.C55_huge"/>
+    <library name="lib/debug/auddec_copy"
+        pname="lib/debug/auddec_copy.a55Pb"
+        profile="debug"
+        target="ti.targets.C55P_byte"/>
+    <library name="lib/profile/auddec_copy"
+        pname="lib/profile/auddec_copy.a55L"
+        profile="profile"
+        target="ti.targets.C55_large"/>
+    <library name="lib/debug/auddec_copy"
+        pname="lib/debug/auddec_copy.av4TCE"
+        profile="debug"
+        target="microsoft.targets.arm.WinCE"/>
+    <library name="lib/whole_program_debug/auddec_copy"
+        pname="lib/whole_program_debug/auddec_copy.a64P"
+        profile="whole_program_debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/release/auddec_copy"
+        pname="lib/release/auddec_copy.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/coverage/auddec_copy"
+        pname="lib/coverage/auddec_copy.a55Pb"
+        profile="coverage"
+        target="ti.targets.C55P_byte"/>
+    <library name="lib/release/auddec_copy"
+        pname="lib/release/auddec_copy.a28L"
+        profile="release"
+        target="ti.targets.C28_large"/>
+    <library name="lib/whole_program_debug/auddec_copy"
+        pname="lib/whole_program_debug/auddec_copy.a55H"
+        profile="whole_program_debug"
+        target="ti.targets.C55_huge"/>
+    <library name="lib/debug/auddec_copy"
+        pname="lib/debug/auddec_copy.a674"
+        profile="debug"
+        target="ti.targets.C674"/>
+    <library name="lib/whole_program_debug/auddec_copy"
+        pname="lib/whole_program_debug/auddec_copy.a55L"
+        profile="whole_program_debug"
+        target="ti.targets.C55_large"/>
+    <library name="lib/release/auddec_copy"
+        pname="lib/release/auddec_copy.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/coverage/auddec_copy"
+        pname="lib/coverage/auddec_copy.a674"
+        profile="coverage"
+        target="ti.targets.C674"/>
+    <library name="lib/whole_program/auddec_copy"
+        pname="lib/whole_program/auddec_copy.a674"
+        profile="whole_program"
+        target="ti.targets.C674"/>
+    <library name="lib/release/auddec_copy"
+        pname="lib/release/auddec_copy.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/auddec_copy"
+        pname="lib/debug/auddec_copy.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/debug/auddec_copy"
+        pname="lib/debug/auddec_copy.a28L"
+        profile="debug"
+        target="ti.targets.C28_large"/>
+    <library name="lib/coverage/auddec_copy"
+        pname="lib/coverage/auddec_copy.av5T"
+        profile="coverage"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/coverage/auddec_copy"
+        pname="lib/coverage/auddec_copy.a28L"
+        profile="coverage"
+        target="ti.targets.C28_large"/>
+    <library name="lib/whole_program/auddec_copy"
+        pname="lib/whole_program/auddec_copy.a28L"
+        profile="whole_program"
+        target="ti.targets.C28_large"/>
+    <library name="lib/whole_program_debug/auddec_copy"
+        pname="lib/whole_program_debug/auddec_copy.a55Pb"
+        profile="whole_program_debug"
+        target="ti.targets.C55P_byte"/>
+    <library name="lib/release/auddec_copy"
+        pname="lib/release/auddec_copy.a55H"
+        profile="release"
+        target="ti.targets.C55_huge"/>
+    <library name="lib/profile/auddec_copy"
+        pname="lib/profile/auddec_copy.a55Pb"
+        profile="profile"
+        target="ti.targets.C55P_byte"/>
+    <library name="lib/release/auddec_copy"
+        pname="lib/release/auddec_copy.a55L"
+        profile="release"
+        target="ti.targets.C55_large"/>
+    <library name="lib/debug/auddec_copy"
+        pname="lib/debug/auddec_copy.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/coverage/auddec_copy"
+        pname="lib/coverage/auddec_copy.a86U"
+        profile="coverage"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/profile/auddec_copy"
+        pname="lib/profile/auddec_copy.a470uC"
+        profile="profile"
+        target="gnu.targets.UCArm9"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_xdais_dm_examples_auddec_copy"
+        pname="ti_xdais_dm_examples_auddec_copy.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="lib/whole_program/auddec_copy.a674.qti"/>
+        <file name="lib/coverage/auddec_copy.a86U.qti"/>
+        <file name="lib/debug/auddec_copy.a470uC"/>
+        <file name="lib/debug/auddec_copy.a28L"/>
+        <file name="lib/whole_program_debug/auddec_copy.a674"/>
+        <file name="lib/profile/auddec_copy.a55Pb"/>
+        <file name="lib/coverage/auddec_copy.av5T.qti"/>
+        <file name="lib/profile/auddec_copy.a55Pb.qti"/>
+        <file name="lib/coverage/auddec_copy.a55Pb"/>
+        <file name="lib/coverage/auddec_copy.a64P.qti"/>
+        <file name="lib/debug/auddec_copy.a55Pb"/>
+        <file name="lib/release/auddec_copy.a674.qti"/>
+        <file name="lib/coverage/auddec_copy.a64P"/>
+        <file name="lib/profile/auddec_copy.a64P"/>
+        <file name="lib/coverage/auddec_copy.a55Pb.qti"/>
+        <file name="lib/release/auddec_copy.a64P"/>
+        <file name="lib/debug/auddec_copy.a55L.qti"/>
+        <file name="lib/profile/auddec_copy.a55L.qti"/>
+        <file name="lib/whole_program/auddec_copy.a674"/>
+        <file name="lib/debug/auddec_copy.a28L.qti"/>
+        <file name="lib/coverage/auddec_copy.a55H.qti"/>
+        <file name="lib/whole_program_debug/auddec_copy.a28L"/>
+        <file name="auddec_copy.c"/>
+        <file name="lib/profile/auddec_copy.a28L.qti"/>
+        <file name="lib/debug/auddec_copy.a64P.qti"/>
+        <file name="lib/debug/auddec_copy.a86U.qti"/>
+        <file name="lib/release/auddec_copy.a55Pb.qti"/>
+        <file name="lib/coverage/auddec_copy.a55H"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.ext.xml"/>
+        <file name="lib/profile/auddec_copy.a55H"/>
+        <file name="lib/coverage/auddec_copy.a55L"/>
+        <file name="lib/profile/auddec_copy.a55L"/>
+        <file name="lib/release/auddec_copy.a55H"/>
+        <file name="lib/release/auddec_copy.a55L"/>
+        <file name="lib/debug/auddec_copy.av5T.qti"/>
+        <file name="lib/whole_program_debug/auddec_copy.a55L.qti"/>
+        <file name="lib/whole_program_debug/auddec_copy.a55Pb"/>
+        <file name="lib/profile/auddec_copy.av5T.qti"/>
+        <file name="lib/profile/auddec_copy.a470uC"/>
+        <file name="lib/coverage/auddec_copy.av5T"/>
+        <file name="lib/whole_program_debug/auddec_copy.a28L.qti"/>
+        <file name="lib/whole_program/auddec_copy.a55Pb"/>
+        <file name="lib/profile/auddec_copy.av5T"/>
+        <file name="auddec_copy_ti_priv.h"/>
+        <file name="lib/profile/auddec_copy.a64P.qti"/>
+        <file name="package.bld"/>
+        <file name="lib/profile/auddec_copy.a86U.qti"/>
+        <file name="lib/whole_program/auddec_copy.a28L"/>
+        <file name="lib/coverage/auddec_copy.a674.qti"/>
+        <file name="auddec_copy_ti.h"/>
+        <file name="lib/release/auddec_copy.av5T"/>
+        <file name="lib/release/auddec_copy.av4TCE"/>
+        <file name="lib/debug/auddec_copy.a55H.qti"/>
+        <file name="lib/profile/auddec_copy.a55H.qti"/>
+        <file name="lib/whole_program_debug/auddec_copy.a64P.qti"/>
+        <file name="lib/debug/auddec_copy.a674.qti"/>
+        <file name="lib/coverage/auddec_copy.a674"/>
+        <file name="lib/profile/auddec_copy.a674"/>
+        <file name="lib/coverage/auddec_copy.a470uC.qti"/>
+        <file name="lib/debug/auddec_copy.a64P"/>
+        <file name="lib/release/auddec_copy.a674"/>
+        <file name="lib/coverage/auddec_copy.a86U"/>
+        <file name="lib/whole_program_debug/auddec_copy.a55H.qti"/>
+        <file name="lib/profile/auddec_copy.a86U"/>
+        <file name="lib/debug/auddec_copy.av4TCE"/>
+        <file name="lib/profile/auddec_copy.a470uC.qti"/>
+        <file name="lib/debug/auddec_copy.a55Pb.qti"/>
+        <file name="lib/release/auddec_copy.a86U"/>
+        <file name="lib/whole_program/auddec_copy.a55L.qti"/>
+        <file name="package/package.bld.xml"/>
+        <file name="lib/profile/auddec_copy.a674.qti"/>
+        <file name="lib/debug/auddec_copy.a55H"/>
+        <file name="lib/whole_program/auddec_copy.a28L.qti"/>
+        <file name="lib/release/auddec_copy.a55Pb"/>
+        <file name="lib/debug/auddec_copy.a55L"/>
+        <file name="lib/coverage/auddec_copy.a28L"/>
+        <file name="lib/profile/auddec_copy.a28L"/>
+        <file name="lib/whole_program/auddec_copy.a55Pb.qti"/>
+        <file name="lib/release/auddec_copy.a28L"/>
+        <file name="lib/whole_program_debug/auddec_copy.a64P"/>
+        <file name="lib/debug/auddec_copy.av5T"/>
+        <file name="lib/whole_program_debug/auddec_copy.a674.qti"/>
+        <file name="lib/release/auddec_copy.a55L.qti"/>
+        <file name="package/package.rel.dot"/>
+        <file name="lib/whole_program/auddec_copy.a64P.qti"/>
+        <file name="lib/release/auddec_copy.a28L.qti"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/release/auddec_copy.a470uC.qti"/>
+        <file name="lib/whole_program_debug/auddec_copy.a55H"/>
+        <file name="lib/whole_program_debug/auddec_copy.a55L"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/whole_program_debug/auddec_copy.a55Pb.qti"/>
+        <file name="lib/whole_program/auddec_copy.a55H.qti"/>
+        <file name="pjt/auddec_copy.pjt"/>
+        <file name="lib/release/auddec_copy.a470uC"/>
+        <file name="lib/release/auddec_copy.av5T.qti"/>
+        <file name="lib/whole_program/auddec_copy.a64P"/>
+        <file name="lib/debug/auddec_copy.a674"/>
+        <file name="lib/release/auddec_copy.a64P.qti"/>
+        <file name="lib/release/auddec_copy.a86U.qti"/>
+        <file name="lib/release/auddec_copy.av4TCE.qti"/>
+        <file name="lib/debug/auddec_copy.a470uC.qti"/>
+        <file name="lib/debug/auddec_copy.a86U"/>
+        <file name="lib/debug/auddec_copy.av4TCE.qti"/>
+        <file name="package/package_ti.xdais.dm.examples.auddec_copy.c"/>
+        <file name="lib/whole_program/auddec_copy.a55H"/>
+        <file name="lib/coverage/auddec_copy.a55L.qti"/>
+        <file name="lib/whole_program/auddec_copy.a55L"/>
+        <file name="lib/coverage/auddec_copy.a470uC"/>
+        <file name="lib/release/auddec_copy.a55H.qti"/>
+        <file name="lib/coverage/auddec_copy.a28L.qti"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

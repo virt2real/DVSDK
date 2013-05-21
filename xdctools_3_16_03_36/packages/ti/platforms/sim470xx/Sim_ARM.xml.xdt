@@ -1,0 +1,38 @@
+%%{
+/* 
+ *  Copyright (c) 2008 Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ * 
+ * */
+%%}
+% var tdbPath = this.$private.ftpath + "/targetdb";
+% var winPath = this.$private.ftpath.replace(/\//g, "\\");
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configurations id="Root" XML_version="2.0">
+
+    <configuration id="SIM_TMS470R2" XML_version="2.0">
+        <include href="`tdbPath`/connections/TIsim.xml"/>
+
+        <connection id="TIsim" XML_version="2.0">
+            <include href="`tdbPath`/cpus/TMS470R2.xml"/>
+            <include href="`tdbPath`/drivers/TIsim.xml"/>
+                <property id="DrvSetupConfigFile" Value="`winPath`\simulation\tms470\arm9tdmi_little.cfg"/>
+                <property id="DrvSetupEndianess"  Value="0"/>
+        </connection>
+    </configuration>
+
+</configurations>
+
+%%{
+/*
+ * @(#) ti.platforms.sim470xx; 1, 0, 1, 1,25; 2-23-2010 17:01:41; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+
+%%}

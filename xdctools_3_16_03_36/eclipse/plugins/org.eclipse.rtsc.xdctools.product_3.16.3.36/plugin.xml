@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin
+      name="RTSC/XDCtools"
+      id="org.eclipse.rtsc.xdctools.product"
+      version="3.16.3.36"
+      provider-name="Texas Instruments">
+
+   <!-- name of table of contents XML files -->
+   <extension point="org.eclipse.help.toc">
+      <toc file="toc_top.xml" primary="true"/>
+      <toc file="toc_rtscpedia.xml"/>
+      <toc file="toc_cdoc.xml"/>
+   </extension>
+
+   <!-- contribute Eclipse help content from docs directory -->
+   <extension point="org.eclipse.help.contentProducer">
+      <contentProducer>
+         <producer class="org.eclipse.rtsc.xdctools.ui.help.HelpContentProducer"/>
+      </contentProducer>
+   </extension>
+  
+  <!-- Hooking up Icmd based scriptographic applications -->
+  <extension point="org.eclipse.ui.actionSets">
+       <actionSet
+            id="org.eclipse.rtsc.xdctools.ui.actionSet"
+            label="RTSC Tools"
+            description="RTSC Tools"
+            visible="true">
+
+        <menu
+             id="com.ti.dvt.tools.menu"
+             label="&amp;Tools">
+             <groupMarker name="additions" />
+        </menu>
+
+       <menu 
+            label="RTSC Tools"
+            path="com.ti.dvt.tools.menu/additions" 
+            id="org.eclipse.rtsc.xdctools.ui.menu">
+            <separator name="RTSCGroup"/>
+       </menu>
+            
+       <action
+            id="xdc.tools.path.sg"
+	    label="&amp;Path"
+	    class="org.eclipse.rtsc.xdctools.sg.WorkBenchDelegate"
+	    style="push"
+       	    menubarPath="com.ti.dvt.tools.menu/org.eclipse.rtsc.xdctools.ui.menu/RTSCGroup"/>
+       </actionSet>
+   </extension>   
+
+   <!-- description of product directory structure -->
+   <extension
+         point="org.eclipse.rtsc.xdctools.ui.productInfo">
+      <repository location="../../../packages"
+                  platformSearchPath="ti/platforms" 
+      />
+      <rtscTarget deviceNamePattern="MSP430*" 
+                    deviceFamilyPattern="MSP430*"
+                    packageName="ti.targets" 
+                    baseTargetName="MSP430"/>
+
+      <rtscTarget deviceNamePattern="CC430*" 
+                    deviceFamilyPattern="MSP430*"
+                    packageName="ti.targets" 
+                    baseTargetName="MSP430"/>
+
+      <rtscTarget deviceNamePattern="TMS320[CF]283[0-9]*" 
+                    deviceFamilyPattern="C2000*"
+                    packageName="ti.targets" 
+                    baseTargetName="C28_float"/>
+
+      <rtscTarget deviceNamePattern="TMS320[CF]28[01][0-9]*" 
+                    deviceFamilyPattern="C2000*"
+                    packageName="ti.targets" 
+                    baseTargetName="C28_large"/>
+
+      <rtscTarget deviceNamePattern="LM3*" 
+                    deviceFamilyPattern="ARM*"
+                    packageName="ti.targets.arm" 
+                    baseTargetName="M3"/>
+
+      <rtscTarget deviceNamePattern="TMS570LS*" 
+                    deviceFamilyPattern="ARM*"
+                    packageName="ti.targets.arm" 
+                    baseTargetName="R4Ft"/>
+      
+      <info
+            docsLocation="../../../docs/docs.zip"
+            installLocation="../../../"
+            productName="xdctools"
+            containsRTSCPlatforms="true"
+            versionNumber="3.16.03.36"
+      />
+   </extension>
+
+   <!-- XGCONF view of configurable modules -->
+   <extension
+         point="org.eclipse.rtsc.xdctools.model.productView">
+      <productview
+            moduleName="xdc.productview.ProductView"
+            repositoryPath="../../../packages">
+      </productview>
+   </extension>
+
+</plugin>

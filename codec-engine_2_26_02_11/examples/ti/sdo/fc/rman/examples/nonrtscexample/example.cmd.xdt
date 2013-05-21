@@ -1,0 +1,113 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+%%{
+    var rtsLib = this.build.target.rootDir + "/lib";
+    var chipType = prog.build.cfgArgs.chipType;
+    var debugFlag = prog.build.cfgArgs.debugFlag; 
+    var traceFlag = prog.build.profile; 
+
+    var rman = xdc.loadPackage("ti.sdo.fc.rman");
+    var dskt2 = xdc.loadPackage("ti.sdo.fc.dskt2");
+    var nullres = xdc.loadPackage("ti.sdo.fc.ires.nullresource");
+    var hdvicp = xdc.loadPackage("ti.sdo.fc.ires.hdvicp");
+    var example = xdc.loadPackage("ti.sdo.fc.rman.examples.nonrtscexample");
+    var api = xdc.loadPackage("ti.sdo.fc.utils.api");
+    var gt = xdc.loadPackage("ti.sdo.utils.trace");
+    var gtinfra = xdc.loadPackage("ti.sdo.fc.utils.gtinfra");
+    var bios = xdc.loadPackage("ti.bios");
+    var libExt = "";
+    var dir = ""
+    dir += "/" + traceFlag  + "/";
+    if (debugFlag = true) {
+        var debugdir = "/debug/";
+    }
+    else {
+        var debugdir = "/release/";
+    }
+ 
+    libExt += ".a64P";
+
+%%}
+
+-x
+
+-i"`new java.io.File(dskt2.packageBase).getCanonicalPath()`/lib`dir`"
+-i"`new java.io.File(hdvicp.packageBase).getCanonicalPath()`/lib`dir`"
+-i"`new java.io.File(rman.packageBase).getCanonicalPath()`/lib`dir`"
+-i"`new java.io.File(nullres.packageBase).getCanonicalPath()`/lib`dir`"
+-i"`new java.io.File(bios.packageBase).getCanonicalPath()`/lib/"
+-i"`new java.io.File(gt.packageBase).getCanonicalPath()`/lib`debugdir`"
+-i"`new java.io.File(gtinfra.packageBase).getCanonicalPath()`/lib`dir`"
+-i"`new java.io.File(example.packageBase).getCanonicalPath()`/package/cfg"
+-i"`new java.io.File(api.packageBase).getCanonicalPath()`/lib`dir`"
+-i"."
+
+/* RTS library search path */
+-i"`rtsLib`"
+-l nonRtscExample_`chipType`_x64Pcfg.cmd
+-l"rman`libExt`"
+-l"hdvicp`libExt`"
+-l"bios.a64P"
+-l"gt_noOs`libExt`"
+-l"gt`libExt`"
+-l"dskt2`libExt`"
+-l"nullres`libExt`"
+
+-lapi.a64P
+
+/*
+ * DSKT2 configurations
+ */
+ 
+__DSKT_DARAM0 = _L1D_HEAP;
+__DSKT_DARAM1 = _L1D_HEAP;
+__DSKT_DARAM2 = _L1D_HEAP;
+__DSKT_SARAM0 = _L1D_HEAP;
+__DSKT_SARAM1 = _L1D_HEAP;
+__DSKT_SARAM2 = _L1D_HEAP;
+__DSKT_ESDATA = _EXTMEM_HEAP;
+__DSKT_IPROG  = _EXTMEM_HEAP;
+__DSKT_EPROG  = _EXTMEM_HEAP;
+__DSKT2_HEAP  = _L1D_HEAP;
+__DSKT2_ALLOW_EXTERNAL_SCRATCH = 0;
+__DSKT2_SARAM_SCRATCH_SIZES = _SCRATCH_ARRAY; 
+__DSKT2_DARAM_SCRATCH_SIZES = _SCRATCH_ARRAY; 
+%%{
+/*
+ * @(#) ti.sdo.fc.rman.examples.nonrtscexample; 1, 0, 0,30; 12-1-2010 17:25:48; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+
+%%}

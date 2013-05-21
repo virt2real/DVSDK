@@ -1,0 +1,16 @@
+/*
+ *  Copyright 2010 by Texas Instruments Incorporated.
+ *
+ */
+
+/*  This file is necessary because we need to avoid including
+ *  microsoft.targets because this is the microsoft.targets package and
+ *  after an 'xdc clean' this package does not exist!
+ */
+xdc.loadCapsule("common.bld");
+
+Build.useTargets = null;    /* force the set of build targets to be empty */
+/*
+ *  @(#) microsoft.targets; 1, 0, 2, 0,387; 2-24-2010 16:24:02; /db/ztree/library/trees/xdctargets/xdctargets-b36x/src/
+ */
+

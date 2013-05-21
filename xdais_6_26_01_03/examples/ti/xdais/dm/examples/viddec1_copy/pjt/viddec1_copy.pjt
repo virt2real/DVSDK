@@ -1,0 +1,42 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="$(Proj_dir)"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\viddec1_copy.c"
+Source="..\viddec1_copy_ti.h"
+Source="..\viddec1_copy_ti_priv.h"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o../lib/debug/viddec1_copy.a64P
+
+["Archiver" Settings: "Release"]
+Options=-r -o../lib/release/viddec1_copy.a64P
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"%XDC_INSTALL_DIR%\packages" -i"%XDAIS_INSTALL_DIR%\packages" -d"_DEBUG" -d"xdc_target__=<ti/targets/std.h>" -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"%XDC_INSTALL_DIR%\packages" -i"%XDAIS_INSTALL_DIR%\packages" -d"xdc_target__=<ti/targets/std.h>" -mv6400+
+
+["..\viddec1_copy_ti.h" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["..\viddec1_copy_ti.h" Settings: "Release"]
+ExcludeFromBuild=true
+
+["..\viddec1_copy_ti_priv.h" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["..\viddec1_copy_ti_priv.h" Settings: "Release"]
+ExcludeFromBuild=true
+

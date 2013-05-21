@@ -1,0 +1,121 @@
+<html><head><title>module ti.bios.utils.Load</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/* 
+</span>     2    <span class="comment"> * Copyright (c) 2009, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Use of this software is controlled by the terms and conditions found in
+</span>     6    <span class="comment"> * the New BSD Software License Agreement, which is reproduced in its
+</span>     7    <span class="comment"> * entirity below.
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>    10    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>    11    <span class="comment"> * are met:
+</span>    12    <span class="comment"> *
+</span>    13    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    14    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    17    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    18    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    21    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    22    <span class="comment"> *    from this software without specific prior written permission.
+</span>    23    <span class="comment"> *
+</span>    24    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    25    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    27    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    28    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    29    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    30    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    31    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    32    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    33    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    34    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    35    <span class="comment"> * 
+</span>    36    <span class="comment"> */</span>
+    37    
+    38    <span class="xdoc">/*!
+</span>    39    <span class="xdoc"> *  ======== Load.xdc ========
+</span>    40    <span class="xdoc"> *  Load module.
+</span>    41    <span class="xdoc"> *
+</span>    42    <span class="xdoc"> *  The Load module is used for calculating the CPU load of the DSP.
+</span>    43    <span class="xdoc"> *
+</span>    44    <span class="xdoc"> *  The Load module provides an API (Load_getcpuload()) that returns the
+</span>    45    <span class="xdoc"> *  current CPU load.  The CPU load is averaged over a period of time as
+</span>    46    <span class="xdoc"> *  specified by the 'window' variable within Load.c.
+</span>    47    <span class="xdoc"> * 
+</span>    48    <span class="xdoc"> *  It is necessary to do the following in order to use Load_getcpuload()
+</span>    49    <span class="xdoc"> * 
+</span>    50    <span class="xdoc"> * (1) A BIOS IDL object which has its function set to '_Load_idlefxn' must
+</span>    51    <span class="xdoc"> *     exist.  The code to do this has already been written for the user, and
+</span>    52    <span class="xdoc"> *     exists in 2 different files:
+</span>    53    <span class="xdoc"> *     
+</span>    54    <span class="xdoc"> *     a. ti/bios/utils/Load.tci
+</span>    55    <span class="xdoc"> *     
+</span>    56    <span class="xdoc"> *         If the user's app is built using Tconf, then this file must be
+</span>    57    <span class="xdoc"> *         included into the build by adding the following statement into the
+</span>    58    <span class="xdoc"> *         *.tcf file:
+</span>    59    <span class="xdoc"> *     
+</span>    60    <span class="xdoc"> *  <b>@p(code)</b>
+</span>    61    <span class="xdoc"> *         utils.importFile('Load.tci');
+</span>    62    <span class="xdoc"> *  <b>@p</b>
+</span>    63    <span class="xdoc"> *
+</span>    64    <span class="xdoc"> *     b. ti/bios/utils/package.xs
+</span>    65    <span class="xdoc"> *     
+</span>    66    <span class="xdoc"> *         If the user's app is built using RTSC, then one must use the Load
+</span>    67    <span class="xdoc"> *         module. This is done by adding the following line to the *.cfg file:
+</span>    68    <span class="xdoc"> *     
+</span>    69    <span class="xdoc"> *  <b>@p(code)</b>
+</span>    70    <span class="xdoc"> *         var Load = xdc.useModule('ti.bios.utils.Load');
+</span>    71    <span class="xdoc"> *  <b>@p</b>
+</span>    72    <span class="xdoc"> *     
+</span>    73    <span class="xdoc"> *     NOTE: The two above mentioned methods are mutually exclusive.  One can't
+</span>    74    <span class="xdoc"> *           use both method 'a' and method 'b' in the same program build, the
+</span>    75    <span class="xdoc"> *           user must choose the appropriate one for their build.
+</span>    76    <span class="xdoc"> *
+</span>    77    <span class="xdoc"> * 
+</span>    78    <span class="xdoc"> *  (2) call 'Load_init()' from your application's main() program
+</span>    79    <span class="xdoc"> * 
+</span>    80    <span class="xdoc"> *  (3) call 'Load_getcpuload()' to return the CPU load as averaged over
+</span>    81    <span class="xdoc"> *      the pre-compiled window.  This window can be changed by modifying
+</span>    82    <span class="xdoc"> *      the Load_WINDOW value in this file and recompiling load.c.
+</span>    83    <span class="xdoc"> * 
+</span>    84    <span class="xdoc"> *  (4) compile Load.c and link it with your application.
+</span>    85    <span class="xdoc"> * 
+</span>    86    <span class="xdoc"> * 
+</span>    87    <span class="xdoc"> *  CAVEATS:
+</span>    88    <span class="xdoc"> * 
+</span>    89    <span class="xdoc"> *  (1) This implementation self-calibrates the shortest path through the
+</span>    90    <span class="xdoc"> *      IDL loop.  It does this by keeping track of the shortest time between 
+</span>    91    <span class="xdoc"> *      invocations of 'Load_idlefxn'.  This relies on the fact that the
+</span>    92    <span class="xdoc"> *      IDL loop will execute at least 2 times in a row w/o being interrupted!
+</span>    93    <span class="xdoc"> *      In the unlikely event that is a problem for your application, you can
+</span>    94    <span class="xdoc"> *      measure the shortest path through the IDL loop using the profiler and
+</span>    95    <span class="xdoc"> *      set 'minloop' to this time.  Note that the units of minloop are
+</span>    96    <span class="xdoc"> *      CLK_gethtime() units which are processor dependent; e.g., CPU/4 for
+</span>    97    <span class="xdoc"> *      'C6211, CPU/(TDDR+1) for 'C54xx, CPU for C64P, etc..
+</span>    98    <span class="xdoc"> */</span> 
+    99    <span class=key>metaonly</span> <span class=key>module</span> Load {
+   100    }
+   101    
+   102    <span class="comment">/*
+</span>   103    <span class="comment"> *  ======== Load.xdc ========
+</span>   104    <span class="comment"> *  Load Configuration interface
+</span>   105    <span class="comment"> *!
+</span>   106    <span class="comment">                        (fix for CQSDSCM00018864)
+</span>   107    <span class="comment"> *! 06-Feb-2007 connell added comments for xdoc.
+</span>   108    <span class="comment"> *! 19-Jan-2007 connell created.
+</span>   109    <span class="comment"> */</span>
+   110    <span class="comment">/*
+</span>   111    <span class="comment"> *  @(#) ti.bios.utils; 2, 0, 2, 02,31; 5-23-2009 17:29:34; /db/vtree/library/trees/biosutils/biosutils-c02x/src/
+</span>   112    <span class="comment"> */</span>
+   113    
+</pre>
+</body></html>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.ipc.linux" version="2, 0, 1" producerId="codec_engine_2_26_02_11">
+    <units>
+        <module name="Ipc"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.ce.ipc.linux.c"/>
+        <srcFile name="Processor_posix.c"/>
+        <srcFile name="Comm_posix.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/ipc_linux.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_linux/Processor_posix.o86U.dep" src="Processor_posix.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_linux/Comm_posix.o86U.dep" src="Comm_posix.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_linux/package/package_ti.sdo.ce.ipc.linux.o86U.dep" src="package/package_ti.sdo.ce.ipc.linux.c"/>
+        <srcFile name="lib/release/ipc_linux.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_linux/Processor_posix.o470uC.dep" src="Processor_posix.c"/>
+        <srcFile name="package/lib/lib/release/ipc_linux/Comm_posix.o470uC.dep" src="Comm_posix.c"/>
+        <srcFile name="package/lib/lib/release/ipc_linux/package/package_ti.sdo.ce.ipc.linux.o470uC.dep" src="package/package_ti.sdo.ce.ipc.linux.c"/>
+        <srcFile name="lib/release/ipc_linux.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_linux/Processor_posix.o86U.dep" src="Processor_posix.c"/>
+        <srcFile name="package/lib/lib/release/ipc_linux/Comm_posix.o86U.dep" src="Comm_posix.c"/>
+        <srcFile name="package/lib/lib/release/ipc_linux/package/package_ti.sdo.ce.ipc.linux.o86U.dep" src="package/package_ti.sdo.ce.ipc.linux.c"/>
+        <srcFile name="lib/debug/ipc_linux.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_linux/Processor_posix.o470uC.dep" src="Processor_posix.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_linux/Comm_posix.o470uC.dep" src="Comm_posix.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_linux/package/package_ti.sdo.ce.ipc.linux.o470uC.dep" src="package/package_ti.sdo.ce.ipc.linux.c"/>
+        <srcFile name="lib/debug/ipc_linux.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ipc_linux/Processor_posix.ov5T.dep" src="Processor_posix.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_linux/Comm_posix.ov5T.dep" src="Comm_posix.c"/>
+        <srcFile name="package/lib/lib/debug/ipc_linux/package/package_ti.sdo.ce.ipc.linux.ov5T.dep" src="package/package_ti.sdo.ce.ipc.linux.c"/>
+        <srcFile name="lib/release/ipc_linux.av5T.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ipc_linux/Processor_posix.ov5T.dep" src="Processor_posix.c"/>
+        <srcFile name="package/lib/lib/release/ipc_linux/Comm_posix.ov5T.dep" src="Comm_posix.c"/>
+        <srcFile name="package/lib/lib/release/ipc_linux/package/package_ti.sdo.ce.ipc.linux.ov5T.dep" src="package/package_ti.sdo.ce.ipc.linux.c"/>
+        <srcFile name="package/rel/ti_sdo_ce_ipc_linux.tar.dep" src="package/rel/ti_sdo_ce_ipc_linux.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv5T"
+            version="gnu.targets.arm.GCArmv5T{1,0,4.2,1"
+            platform="host.platforms.arm"
+            isa="v5T"
+            suffix="v5T"
+            rootDir="/db/toolsrc/library/tools/vendors/cs/arm/arm-2007q3"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv5T">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/ipc_linux"
+        pname="lib/debug/ipc_linux.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/release/ipc_linux"
+        pname="lib/release/ipc_linux.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/release/ipc_linux"
+        pname="lib/release/ipc_linux.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/debug/ipc_linux"
+        pname="lib/debug/ipc_linux.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/ipc_linux"
+        pname="lib/debug/ipc_linux.av5T"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv5T"/>
+    <library name="lib/release/ipc_linux"
+        pname="lib/release/ipc_linux.av5T"
+        profile="release"
+        target="gnu.targets.arm.GCArmv5T"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_ipc_linux"
+        pname="ti_sdo_ce_ipc_linux.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package.bld"/>
+        <file name="lib/release/ipc_linux.a470uC"/>
+        <file name="Processor_posix.c"/>
+        <file name="lib/release/ipc_linux.a86U"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="lib/release/ipc_linux.av5T"/>
+        <file name="package/package.rel.dot"/>
+        <file name="package/package_ti.sdo.ce.ipc.linux.c"/>
+        <file name="lib/debug/ipc_linux.a86U"/>
+        <file name="lib/debug/ipc_linux.a470uC"/>
+        <file name="package/package.bld.xml"/>
+        <file name="Comm_posix.c"/>
+        <file name="lib/debug/ipc_linux.av5T"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

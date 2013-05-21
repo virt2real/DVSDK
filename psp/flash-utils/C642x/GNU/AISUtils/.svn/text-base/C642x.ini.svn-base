@@ -1,0 +1,165 @@
+; General settings that can be overwritten in the host code
+; that calls the AISGen library.
+[General]
+busWidth=16
+BootMode=emifa
+
+
+; The PLL section allows setting the PLL1 system clock with a  
+; specified multiplier and divider as shown. The clock source
+; can also be chosen for internal or external.
+[PLL]
+PLLM = 21
+PLLDIV1 = 0
+CLK_SRC = 0
+
+
+; The DDR section allows setting the DDR clock rates (PLL2) and 
+; the needed values for the DDR control registers.  Only the 9
+; paramters shown below can be set via the AIS method.
+[DDR]
+DDRPLLM = 23
+DDRCLKDIV = 1
+VPFECLKDIV = 11
+CLK_SRC = 0
+DDRPHYCR = 0x50006405
+SDBCR = 0x00138822
+SDTIMR = 0x16492148
+SDTIMR2 = 0x000CC702
+SDRCR = 0x000004EF
+
+
+; The EMIF section allows setting the AEMIF control registers of the 
+; the DM643x device to the specified values. Only the five registers
+; shown below can be set via the AIS method.
+[EMIF]
+AB1CR = 0x3FFFFFFD
+AB2CR = 0x3FFFFFFD
+AB3CR = 0x3FFFFFFD
+AB4CR = 0x3FFFFFFD
+NANDFCR = 0x00000000
+
+
+; The PINMUX section allows setting the pinmux registers of the 
+; the DM643x device to the specified values.
+;[PINMUX]
+;PINMUX0 = 0x00148001
+;PINMUX1 = 0x01618530
+
+
+; The LPSC sections are used to set the power domain STATE of the 
+; specfied MODNUM power domain module. A seperate section must
+; exist for each power domain you want to manipulate. The entries,
+; are handled in the order present in this file, so the last 
+; state set for a particular domain is the one that is used.
+;[LPSC]
+;MODNUM = 0
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 1
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 2
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 3
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 4
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 5
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 6
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 7
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 8
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 9
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 11
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 12
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 13
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 14
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 15
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 16
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 17
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 18
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 19
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 20
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 21
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 22
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 23
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 24
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 25
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 26
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 27
+;STATE = 0x3
+
+;[LPSC]
+;MODNUM = 28
+;STATE = 0x3

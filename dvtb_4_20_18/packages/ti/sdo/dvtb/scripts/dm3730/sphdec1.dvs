@@ -1,0 +1,32 @@
+############################################################
+# Playback of speech from file
+#
+# Please ensure that you change the path of input/output files
+# used here with the path of input/output files required
+# to be used by you.
+############################################################
+
+# Specify the codec combo to be used
+setp engine name encodedecode
+
+# Specify the speech decoder to be used
+setp sphdec1 codec g711dec
+
+# Specify the speech parameters
+setp sphdec1 compandingLaw 1
+setp sphdec1 packingType 1
+setp sphdec1 codecSelection 0
+setp sphdec1 bitRate 12000
+setp sphdec1 inbufsize 80
+setp sphdec1 outbufsize 320
+
+# Specify the driver parameters
+setp audio device plughw:0,0
+setp audio format 2
+setp audio samplerate 8000
+setp audio channels 2
+setp audio type 0
+
+# Trigger the decode+playback scenario
+func sphdec1 -s davincieffect.g711
+

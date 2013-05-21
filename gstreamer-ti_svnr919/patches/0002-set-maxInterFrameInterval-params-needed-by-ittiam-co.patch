@@ -1,0 +1,24 @@
+From 588ba6f0d5f9491aa17aaac5c0f4ae244ef2438c Mon Sep 17 00:00:00 2001
+From: Brijesh Singh <bksingh@ti.com>
+Date: Wed, 9 Mar 2011 16:13:16 -0600
+Subject: [PATCH 2/3] set maxInterFrameInterval params needed by ittiam codecs
+
+---
+ .../ti_build/ticodecplugin/src/gsttividenc1.c      |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/gstreamer_ti/ti_build/ticodecplugin/src/gsttividenc1.c b/gstreamer_ti/ti_build/ticodecplugin/src/gsttividenc1.c
+index 8bf1105..1b619e9 100644
+--- a/gstreamer_ti/ti_build/ticodecplugin/src/gsttividenc1.c
++++ b/gstreamer_ti/ti_build/ticodecplugin/src/gsttividenc1.c
+@@ -1170,6 +1170,7 @@ static gboolean gst_tividenc1_codec_start (GstTIVidenc1 *videnc1)
+         #endif
+         #if defined(Platform_dm3730)
+         case Cpu_Device_DM3730:
++            params.maxInterFrameInterval = 1;
+         #endif
+         case Cpu_Device_DM6446:
+             params.inputChromaFormat = XDM_YUV_422ILE;
+-- 
+1.7.0.4
+

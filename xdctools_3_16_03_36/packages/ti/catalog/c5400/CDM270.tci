@@ -1,0 +1,257 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== CDM270.tci ========
+ *  The chip configuration settings are based on the document TMS320DM270 
+ *  Technical Reference Manual v1.3. All addresses are in words, since for c54x
+ *  words are smallest addressable units.
+ *
+ */
+  
+/*
+ *  Load C54.tci arch file
+ */
+utils.loadArch("54", "ti.catalog.c5400");
+
+/*
+ *  ======== CDM270 ========
+ */
+function CDM270(name, parent) 
+{
+    /*
+     * The 'this' refers to the cpu object created in the platform file.
+     * The apply function is a way to execute a function with a specific
+     * 'this' pointer.
+     */
+    C54.apply(this, [name, parent]);
+
+    /*
+     * This field is used to include bios settings for this device.
+     * If csl is available for this device, it will also be used to specify
+     * the csl name in the bios config file (*.cdb).
+     * The csl name will be "csl" + this.deviceName + ".lib"
+     */
+    this.deviceName = "DM270";
+
+    this.registers = [];
+
+    /* This table defines the on-chip physical memory blocks */
+    this.memBlock = [];
+
+    this.memBlock["P_DARAM"] = {
+        comment: "On-Chip DARAM",
+        name:    "P_DARAM",
+        base:    0x00000080,
+        len:     0x00007f80,
+        space:   "code"
+    };
+
+    this.memBlock["P_ROM1"] = {
+        comment: "On-Chip Program ROM not controlled by MP/MC",
+        name:    "P_ROM1",
+        base:    0x00008000,
+        len:     0x00004000,
+        space:   "code"
+    };
+
+    this.memBlock["P_ROM2"] = {
+        comment: "On-Chip Program ROM controlled by MP/MC",
+        name:    "P_ROM2",
+        base:    0x0000C000,
+        len:     0x00003F00,
+        space:   "code"
+    };
+
+    this.memBlock["VECT"] = {
+        comment: "On-Chip Interrupt Vector Table",
+        name:    "VECT",
+        base:    0x0000FF00,
+        len:     0x00000100,
+        space:   "code"
+    };
+
+    /* The address range 10080-18000 maps into P_DARAM, if overlay is enabled.
+     * Should it be listed here?
+     */
+
+    this.memBlock["P_SARAM"] = {
+        comment: "On-Chip SARAM",
+        name:    "P_SARAM",
+        base:    0x0001C000,
+        len:     0x00004000,
+        space:   "code"
+    };
+
+    this.memBlock["D_SPRAM"] = {
+        comment: "On-Chip Scratch-Pad RAM",
+        name:    "D_SPRAM",
+        base:    0x00000060,
+        len:     0x00000020,
+        space:   "data"
+    };
+
+    this.memBlock["D_DARAM"] = {
+        comment: "On-Chip DARAM",
+        name:    "D_DARAM",
+        base:    0x00000080,
+        len:     0x00007F80,
+        space:   "data"
+    };
+
+    this.memBlock["D_SARAM"] = {
+        comment: "On-Chip SARAM",
+        name:    "D_SARAM",
+        base:    0x00008000,
+        len:     0x00004000,
+        space:   "data"
+    };
+
+    this.memBlock["D_ROM"] = {
+        comment: "On-Chip Data ROM",
+        name:    "D_ROM",
+        base:    0x0000C000,
+        len:     0x00004000,
+        space:   "data"
+    };
+
+    this.memBlock["IMAGE_BUFFER"] = {
+        comment: "Co-processor Shared Memory (Image Buffer)",
+        name:    "IMAGE_BUFFER",
+        base:    0x0000C000,
+        len:     0x00004000,
+        space:   "data"
+    };
+
+    /*
+     *  Contains the On-Chip memory maps.
+     *  Each entry is indexed by a PMST value.
+     */
+    this.mem = [];
+
+    /* MP/MC = 0, OVLY = 0, DROM = 0 */
+    this.mem[0x0] = [
+        this.memBlock["P_ROM1"],
+        this.memBlock["P_ROM2"],
+        this.memBlock["VECT"],
+        this.memBlock["P_SARAM"],
+        this.memBlock["D_SPRAM"],
+        this.memBlock["D_SARAM"],
+        this.memBlock["IMAGE_BUFFER"]
+    ];
+    
+    /* MP/MC = 0, OVLY = 0, DROM = 1 */
+    this.mem[0x8] = [
+        this.memBlock["P_ROM1"],
+        this.memBlock["P_ROM2"],
+        this.memBlock["VECT"],
+        this.memBlock["P_SARAM"],
+        this.memBlock["D_SPRAM"],
+        this.memBlock["D_SARAM"],
+        this.memBlock["D_ROM"]
+    ];
+    
+    /* MP/MC = 0, OVLY = 1, DROM = 0 */
+    this.mem[0x20] = [
+        this.memBlock["P_DARAM"],
+        this.memBlock["P_ROM1"],
+        this.memBlock["P_ROM2"],
+        this.memBlock["VECT"],
+        this.memBlock["P_SARAM"],
+        this.memBlock["D_SPRAM"],
+        this.memBlock["D_DARAM"],
+        this.memBlock["D_SARAM"],
+        this.memBlock["IMAGE_BUFFER"]
+    ];
+    
+    /* MP/MC = 0, OVLY = 1, DROM = 1 */
+    this.mem[0x28] = [
+        this.memBlock["P_DARAM"],
+        this.memBlock["P_ROM1"],
+        this.memBlock["P_ROM2"],
+        this.memBlock["VECT"],
+        this.memBlock["P_SARAM"],
+        this.memBlock["D_SPRAM"],
+        this.memBlock["D_DARAM"],
+        this.memBlock["D_SARAM"],
+        this.memBlock["D_ROM"]
+    ];
+    
+    /* MP/MC = 1, OVLY = 0, DROM = 0 */
+    this.mem[0x40] = [
+        this.memBlock["P_ROM1"],
+        this.memBlock["P_SARAM"],
+        this.memBlock["D_SPRAM"],
+        this.memBlock["D_SARAM"],
+        this.memBlock["IMAGE_BUFFER"]
+    ];
+
+    /* MP/MC = 1, OVLY = 0, DROM = 1 */
+    this.mem[0x48] = [
+        this.memBlock["P_ROM1"],
+        this.memBlock["P_SARAM"],
+        this.memBlock["D_SPRAM"],
+        this.memBlock["D_SARAM"],
+        this.memBlock["D_ROM"]
+    ];
+    
+    /* MP/MC = 1, OVLY = 1, DROM = 0 */
+    this.mem[0x60] = [
+        this.memBlock["P_DARAM"],
+        this.memBlock["P_ROM1"],
+        this.memBlock["P_SARAM"],
+        this.memBlock["D_SPRAM"],
+        this.memBlock["D_DARAM"],
+        this.memBlock["D_SARAM"],
+        this.memBlock["IMAGE_BUFFER"]
+    ];
+    
+    /* MP/MC = 1, OVLY = 1, DROM = 1 */
+    this.mem[0x68] = [
+        this.memBlock["P_DARAM"],
+        this.memBlock["P_ROM1"],
+        this.memBlock["P_SARAM"],
+        this.memBlock["D_SPRAM"],
+        this.memBlock["D_DARAM"],
+        this.memBlock["D_SARAM"],
+        this.memBlock["D_ROM"]
+    ];
+
+    /*
+     * ======== getMemoryMap ========
+     * This method returns the memory map.
+     */
+    this.getMemoryMap = function ()
+    {
+        /* if pmst is null return memory map with lower pmst = 0x0 */
+        if (this.registers.pmst == null) {
+            return (this.mem[0x0]);
+        }
+
+        var lowerPmstMask = 0x68;    // care about MP/MC, OVLY, DROM bits only.
+        var pmst = this.registers.pmst & lowerPmstMask; 
+
+        /* return the memory map index by the lower pmst register value */
+        if (this.mem[pmst] != null) {
+            return (this.mem[pmst]);
+        }
+
+        throw new Error("Invalid PMST value: " + this.registers.pmst);
+
+        return (null);
+    };
+
+}
+/*
+ *  @(#) ti.catalog.c5400; 1, 0, 0, 0,226; 2-23-2010 16:53:05; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

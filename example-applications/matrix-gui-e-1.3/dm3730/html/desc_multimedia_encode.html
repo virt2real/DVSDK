@@ -1,0 +1,92 @@
+<!--                                                                           -->
+<!--                                                                           -->
+<!-- {module name} dhrystone description                                       -->
+<!--                                                                           -->
+<!-- {module description} Template for QT GUI interface                        -->
+<!--                                                                           -->
+<!-- Copyright (C) {YEAR} Texas Instruments Incorporated - http://www.ti.com/  -->
+<!--                                                                           -->
+<!--                                                                           -->
+<!--  Redistribution and use in source and binary forms, with or without       -->
+<!--  modification, are permitted provided that the following conditions       -->
+<!--  are met:                                                                 -->
+<!--                                                                           -->
+<!--    Redistributions of source code must retain the above copyright         -->
+<!--    notice, this list of conditions and the following disclaimer.          -->
+<!--                                                                           -->
+<!--    Redistributions in binary form must reproduce the above copyright      -->
+<!--    notice, this list of conditions and the following disclaimer in the    -->
+<!--    documentation and/or other materials provided with the                 -->
+<!--    distribution.                                                          -->
+<!--                                                                           -->
+<!--    Neither the name of Texas Instruments Incorporated nor the names of    -->
+<!--    its contributors may be used to endorse or promote products derived    -->
+<!--    from this software without specific prior written permission.          -->
+<!--                                                                           -->
+<!--  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS      -->
+<!--  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT        -->
+<!--  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR    -->
+<!--  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT     -->
+<!--  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,    -->
+<!--  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT         -->
+<!--  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,    -->
+<!--  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY    -->
+<!--  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT      -->
+<!--  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE    -->
+<!--  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.     -->
+<!--                                                                           -->
+<!--                                                                           -->
+<head>
+  <title>Multimedia</title>
+  <link rel="stylesheet" href="/usr/share/matrix/html/matrix.css" />
+</head>
+
+<body>
+  <div class="topBar">
+    <object>
+    </object>
+  </div>
+  <div class="topBar">
+    <object type="image/svg+xml" data="/usr/share/matrix/images/tex.svg" >
+    <img src="/usr/share/matrix/images/tex.svg" />
+  </div>
+  <div id="header">DVSDK encode demo </div>
+  <div class="topBar">
+    <object type="application/x-matrix" >
+      <param name="iconName" value="/usr/share/matrix/images/multi-icon.png" />
+      <param name="appName" value="Close" />
+    </object>
+  </div>
+  <div class="topBar">
+    <object>
+    </object>
+  </div>
+
+<h1> DVSDK Encode demo Overview </h1>
+
+<h2> Purpose: </h2>
+<p> DVSDK encode demo shows how to encode video and audio or speech using algorithms and
+ the Codec Engine Engine from Texas Instruments on the DM3730 EVM.
+ </p>
+<h2> Additional Information </h2>
+These algorithms implement the xDM interface and are packaged in a Codec Server that is managed by the Codec Engine. 
+The algorithms are executed on the C64x DSP core. The raw video and audio data is captured via Composite Input
+interface and Line respectively, and the encoded data is save on the Linux file system.
+</p>
+
+<p>
+The DM3730 ARM core runs the demos on the Linux operating system, and all peripherals are 
+controlled through Linux device drivers. The ARM also displays a user interface on the OSD (On 
+Screen Display) and takes input from touchscreen LCD,. The DSP core runs the DSP/BIOS real time operating 
+system and performs algorithm processing. 
+</p>
+
+<div class="run">
+    <object type="application/x-matrix" >
+      <param name="iconName" value="/usr/share/matrix/images/run-icon.png" />
+      <param name="appName" value="Description" />
+    </object>
+</div>
+
+</body>
+</html>

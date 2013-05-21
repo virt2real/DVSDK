@@ -1,0 +1,104 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+ %%}
+/*
+ *  ======== main.c ========
+ */
+#include <xdc/std.h>
+#include <ti/sdo/ce/CERuntime.h>
+#include <ti/sdo/ce/trace/gt.h>
+
+% if (this.configuresEdma3) {
+#include <ti/sdo/fc/rman/rman.h>
+#include <ti/sdo/fc/ires/edma3chan/iresman_edma3Chan.h>
+% var hdvicp = false;
+% for (var i = 0; i < this.iresImpl.length; i++) {
+%    if (this.iresImpl[i] == 'hdvicp') {
+%        hdvicp = true;
+%        break;
+%    }
+% }
+% if (hdvicp) {
+
+#include <ti/sdo/fc/ires/hdvicp/iresman_hdvicp.h>
+
+static IRESMAN_HdVicpParams hdvicpConfig;
+% }
+
+static IRESMAN_Edma3ChanParams edma3Config;
+% }
+
+/* trace info: module name, mask */
+static GT_Mask gtMask = {0,0};
+
+/*
+ *  ======== main ========
+ */
+Void main (Int argc, Char *argv [])
+{
+    /* init Codec Engine */
+    CERuntime_init();
+
+    /* init trace */
+    GT_init();
+
+    /* create a mask to allow a trace-print welcome message below */
+    GT_create(&gtMask, "server");
+
+    /* ...and initialize all masks in this module to "on" */
+    GT_set("server=01234567");
+
+    GT_0trace(gtMask, GT_4CLASS, "main> Welcome to DSP server's main().\n");
+
+% if (this.configuresEdma3) {
+    edma3Config.baseConfig.allocFxn = RMAN_PARAMS.allocFxn;
+    edma3Config.baseConfig.freeFxn = RMAN_PARAMS.freeFxn;
+    edma3Config.baseConfig.size = sizeof(IRESMAN_Edma3ChanParams);
+    RMAN_register(&IRESMAN_EDMA3CHAN, (IRESMAN_Params *)&edma3Config);
+% if (hdvicp) {
+
+    hdvicpConfig.numResources = 2;
+    hdvicpConfig.baseConfig.allocFxn = RMAN_PARAMS.allocFxn;
+    hdvicpConfig.baseConfig.freeFxn = RMAN_PARAMS.freeFxn;
+    RMAN_register(&IRESMAN_HDVICP, (IRESMAN_Params *)&hdvicpConfig);
+% }
+% }
+}
+%%{
+/*
+ * @(#) ti.sdo.ce.wizards.genserver; 1, 0, 0,84; 12-2-2010 21:28:48; /db/atree/library/trees/ce/ce-r11x/src/ xlibrary
+
+ */
+
+%%}

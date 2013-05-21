@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="microsoft.targets" version="1, 0, 2, 0" producerId="undefined">
+    <units>
+        <interface name="ITarget"/>
+        <module name="VC98"/>
+        <module name="Win32"/>
+        <module name="Net32"/>
+    </units>
+    <sources>
+        <srcFile name="vc_exec.xdt"/>
+        <srcFile name="_utils.xs"/>
+        <srcFile name="std.h"/>
+        <srcFile name="link"/>
+        <srcFile name="linkcmd.xdt"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/microsoft_targets.tar.gz.dep" src="package/rel/microsoft_targets.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="microsoft_targets"
+        pname="../../../exports/microsoft_targets.tar.gz"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="std.h"/>
+        <file name="linkcmd.xdt"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="link"/>
+        <file name="package/package.rel.dot"/>
+        <file name="vc_exec.xdt"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="_utils.xs"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

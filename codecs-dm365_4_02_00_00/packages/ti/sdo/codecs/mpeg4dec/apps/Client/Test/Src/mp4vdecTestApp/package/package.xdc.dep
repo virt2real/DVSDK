@@ -1,0 +1,57 @@
+clean::
+	$(RM) package/mp4vdecTestApp.ccs
+	$(RM) package/.vers_g106
+	$(RM) package/.vers_r110
+	$(RM) package/.vers_b103
+	$(RM) package/mp4vdecTestApp.sch
+	$(RM) package/mp4vdecTestApp.java
+	$(RM) package/mp4vdecTestApp.class
+	$(RM) package/package_mp4vdecTestApp.c
+	$(RM) package/package.defs.h
+	$(RM) package/package.doc.xml
+
+.interfaces: package/mp4vdecTestApp.ccs package/.vers_g106 package/.vers_r110 package/.vers_b103 package/mp4vdecTestApp.sch package/mp4vdecTestApp.java package/mp4vdecTestApp.class package/package_mp4vdecTestApp.c package/package.defs.h package/package.doc.xml 
+package/package.xdc.inc: package/.vers_g106
+package/.vers_g106:
+package/package.xdc.inc: package/.vers_r110
+package/.vers_r110:
+package/package.xdc.inc: package/.vers_b103
+package/.vers_b103:
+
+.interfaces: 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+
+# schema update dependencies
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/ecj.jar
+/db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/junit.jar:
+package/package.xdc.inc: /db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/junit.jar
+/db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/services/global/java/package.jar
+/db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/tar.jar
+/db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/xbean.jar:
+package/package.xdc.inc: /db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/xbean.jar
+/db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/services/spec/java/package.jar
+/db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/services/intern/gen/java/package.jar
+/db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/antlr.jar
+/db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/services/intern/xsr/java/package.jar
+/db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/services/intern/cmd/java/package.jar
+/db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /db/swcoe_asp/DM360_Codecs/xdctools_3_15_00_10/packages/xdc/shelf/java/js.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+

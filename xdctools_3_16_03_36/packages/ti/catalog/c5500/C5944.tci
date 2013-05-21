@@ -1,0 +1,37 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== C5944.tci ========
+ *  Configuration setting for Trinity.
+ *
+ */
+
+utils.importFile("ti/catalog/c5500/C5948.tci");
+
+/*
+ *  ======== C5944 ========
+ */
+function C5944(name, parent)
+{
+    /* Since 5944 and 5948 are same from the configuration point of view,
+     * instead of duplicating code, the 5944 device is configured using the
+     * code for 5948 and then only deviceName is changed.
+     */
+
+    C5948.apply(this, [name, parent]);
+    this.deviceName = "5944";
+}
+/*
+ *  @(#) ti.catalog.c5500; 1, 0, 0, 0,226; 2-23-2010 16:53:05; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

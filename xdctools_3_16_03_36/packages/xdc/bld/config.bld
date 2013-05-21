@@ -1,0 +1,14 @@
+/*  This file is necessary because we need to avoid including
+ *  any targets or platforms because these packages depend on this package;
+ *  without this file this package would depend on these other packages and 
+ *  we would have a circular dependency.
+ */
+Build.useTargets = null;    /* force the set of build targets to be empty */
+
+if ("compress" in Pkg.attrs) {
+    Pkg.attrs.compress = true;  /* generate a compressed release archive */
+}
+/*
+ *  @(#) xdc.bld; 1, 0, 2,238; 2-22-2010 10:33:33; /db/ztree/library/trees/xdc/xdc-u17x/src/packages/
+ */
+

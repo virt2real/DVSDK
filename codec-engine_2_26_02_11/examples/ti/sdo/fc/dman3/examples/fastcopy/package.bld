@@ -1,0 +1,280 @@
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+/*
+ *  ======== package.bld ========
+ *  Build script for DMAN3 examples.
+ */
+
+//Pkg.attrs.exportAll = true;
+Pkg.attrs.exportExe = true;
+Pkg.attrs.exportCfg = true;
+Pkg.attrs.exportSrc = true;
+
+Pkg.attrs.profile = "debug";
+
+Pkg.otherFiles = [
+    /* headers and templates */
+    "bios_rts.h",
+    "fcpy.h",
+    "fcpy_ti.h",
+    "fcpy_ti_priv.h",
+    "ifcpy.h",
+    "fastcopytest.cmd.xdt",
+    "fastcopytest_nobios.cmd.xdt",
+
+    /* and QualiTI scripts */
+    "fcpy_ti_64P.qti",
+    "fcpy_ti_674.qti",
+
+    /* and build scripts */
+    "fcpy_ti64.pjt",
+    "fcpy_ti674.pjt",
+    "package.bld"
+];
+
+
+var devices = ["2430", "dm6446", "dm6437", "dm6467", "dm648", "C6455", "3430",
+        "3530", "omapL137", "evm6748", "omapL138"];
+
+var os = ["bios", "nobios"];
+
+var lldsetting = ["lld", ""]; 
+
+for (var i in devices) {
+
+    for (var j in os) {
+
+        var dir = devices[i] + "_" + os[j];
+        Pkg.otherFiles.$add(dir + "/dman3_config.c");
+        Pkg.otherFiles.$add(dir + "/fastcopytest.pjt");
+        Pkg.otherFiles.$add(dir + "/fastcopytest.cmd");
+
+        /* unfortunate special case stragglers */
+        if (os[j] == 'nobios') {
+            Pkg.otherFiles.$add(dir + "/fastcopytest_instr.cmd");
+        }
+        else {
+            if ((devices[i] == 'dm6446') || (devices[i] == 'omapL137') || 
+                    (devices[i] == 'evm6748') || (devices[i] == 'omapL138')) {
+                Pkg.otherFiles.$add(dir + "/fastcopytest-llrm.pjt");
+                Pkg.otherFiles.$add(dir + "/dman3_lld_config.c");
+            }
+        }
+    }
+}
+
+
+/* Platforms to build for */
+var buildPlatforms = {
+    C64P: ["2430", "dm6446", "dm6437", "C6455", "3430", "3530",
+        "dm6467", "dm648"],
+    C674: ["omapL138", "evm6748", "omapL137"]
+};
+
+var outDirs = {
+    "2430"   : "2430",
+    "C6455"  : "C6455",
+    "dm648"  : "dm648",
+    "dm6446" : "dm6446",
+    "dm6437" : "dm6437",
+    "dm6467" : "dm6467",
+    "3430"   : "3430",
+    "3530"   : "3530",
+    "omapL137" : "omapL137",
+    "omapL138" : "omapL138",
+    "evm6748" : "evm6748",
+};
+
+/*
+ * Executables for all platforms (2430, davinci)
+ * To add a new program, just create a new element in the progs array and
+ * set it equal to an array listing the objects the program requires.
+ *
+ * The output will have the name "<element>_plat.<ext>" and  there
+ * must be a tconf script describing the programs configuration with the
+ * name <element>.tcf.
+ */
+
+var progs = [
+   {
+        name:    "fastcopytest",
+        sources: [
+                  "fastcopytest.c",
+                  "mySem",
+                  "fcpy.c",
+                  "ifcpy.c"
+        ],
+        tcf: "fastcopytest",
+        defs: ""
+    },
+    {
+        name:    "fastcopytest_nobios",
+        sources: [
+                  "fastcopytest.c",
+                  "fcpy.c",
+                  "mySem",
+                  "ifcpy.c",
+                  "bios_rts.c",
+                  "bios_rtsasm.s62"
+        ],
+        xdt: "fastcopytest_nobios.cmd",
+        cfgFile: "fastcopytest.cfg",
+        defs: ""
+    },
+];
+
+Pkg.uses = ["ti/bios/include"];
+
+var realPlatformName = {
+    "2430"   : "ti.platforms.sdp2430" ,
+    "dm6446" : "ti.platforms.evmDM6446",
+    "dm648"  : "ti.platforms.evmDM648",
+    "C6455"  : "ti.platforms.dsk6455",
+    "dm6467" : "ti.platforms.evmDM6467",
+    "dm6437" : "ti.platforms.evmDM6437",
+    "3430"   : "ti.platforms.sdp3430",
+    "3530"   : "ti.platforms.evm3530",
+    "omapL137" : "ti.platforms.evmOMAPL137",
+    "omapL138" : "ti.platforms.evmOMAPL138",
+    "evm6748" : "ti.platforms.evm6748",
+};
+
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+
+    if (buildPlatforms[targ.name] == null) {
+        continue;
+    }
+
+    var profName = Pkg.attrs.profile;
+
+    var lib_debug = Pkg.addLibrary("lib/debug/fcpy_ti", targ, {
+        profile: "debug"
+    });
+
+    var lib_release = Pkg.addLibrary("lib/release/fcpy_ti", targ, {
+        profile: "release"
+    });
+
+    lib_debug.addObjects(["fcpy_ti.c", "fcpy_ti_ialg.c", "fcpy_ti_idma3.c",
+            "fcpy_ti_idma3vt.c", "fcpy_ti_ifcpy.c", "fcpy_ti_ifcpyvt.c"]);
+
+    lib_release.addObjects(["fcpy_ti.c", "fcpy_ti_ialg.c", "fcpy_ti_idma3.c",
+            "fcpy_ti_idma3vt.c", "fcpy_ti_ifcpy.c", "fcpy_ti_ifcpyvt.c"]);
+
+    // for each build platform (eg, 2430,...)
+    var debugFlag;
+
+    if (Pkg.attrs.profile == "debug") {
+        debugFlag = true;
+    }
+    else {
+        debugFlag = false;
+    }
+
+    for (k = 0; k < buildPlatforms[targ.name].length; k++) {
+
+
+        var chipType = buildPlatforms[targ.name][k]; // eg, "2430"
+    
+        var Plat = realPlatformName[chipType];  /* use the target's real
+                                                       platform */
+        /* Process platform's executables */
+        for (j = 0; j < progs.length; j++) {
+
+            for (l = 0; l < lldsetting.length; l++) {
+    
+                if (lldsetting[l] == "lld") {
+                    var llddefs = " -DEDMA3_CONFIG "
+                    var llddir = "_lld";
+                    var lld = true;
+                }
+                else {
+                    var llddefs = "";
+                    var llddir = "";
+                    var lld = false;
+                }     
+        
+                var prog = progs[j];
+                var defs = prog.defs + llddefs;
+    
+                // add executable
+                if (prog.tcf != null) {
+
+                    var cfgScript = outDirs[chipType] + "_bios/" + prog.tcf;
+                    var exe = Pkg.addExecutable(outDirs[chipType] + "_bios/"
+                            + prog.name + llddir + "_" + chipType,
+                            targ, Plat, {
+                                defs: defs,
+                                lopts: "-c ",
+                                profile: profName,
+                                cfgScript: cfgScript + ".tcf",
+                                cfgArgs: "{chipType: \"" + 
+                                        chipType + "\"" +"," + "debugFlag: " + 
+                                        debugFlag + "," + "lldsetting: " + 
+                                        lld + "}"
+                            });
+                }
+                else {
+                    /*
+                     *  This is not a BIOS program, so there is no tcf file.
+                     *  Instead use .xdt file that will have the linker include
+                     *  paths to search for dman3, acpy3, and rts libraries.
+                     *  Also set compile flag to compile out BIOS functions.
+                     */
+                    var exe = Pkg.addExecutable(outDirs[chipType] +
+                            "_nobios/" + prog.name + llddir + "_" + chipType,
+                            targ, Plat, {
+                                defs: " -D_RTS_MODE" + defs,
+                                lopts: "-c ",
+                                linkTemplate: prog.xdt + ".xdt",
+                                cfgScript: outDirs[chipType] + "_nobios/" + 
+                                        prog.cfgFile,
+                                cfgArgs: "{chipType: \"" + 
+                                        chipType + "\"" +"," + "debugFlag: " + 
+                                        debugFlag + "," + "lldsetting: " + 
+                                        lld + "}"
+                            });
+                }
+    
+                exe.addObjects(prog.sources);
+            }
+        }
+    }
+}
+/*
+ *  @(#) ti.sdo.fc.dman3.examples.fastcopy; 1, 0, 0,235; 12-1-2010 17:24:31; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+

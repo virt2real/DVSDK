@@ -1,0 +1,76 @@
+%%{
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+%%}
+%/*
+% *  ======== Boot.xdt ========
+% *
+% *! Revision History
+% *! ================
+% *! 26-May-2009 agd    SDOCM00057270 don't use xdc.runtime if Program.system == null
+% *! 27-Apr-2009 cmcc   Added Xintf configuration
+% *! 17-Apr-2009 agd    Created
+% */
+% /* Don't generate Boot_init if this is a romimage */
+% if (!Program.$$isrom && (Program.build.rtsName !== null)) {
+%var Boot = xdc.module("ti.catalog.c2800.init.Boot");
+    extern ti_catalog_c2800_init_Boot_disableWatchdog();
+    extern ti_catalog_c2800_init_Boot_configurePll(UInt16 pllcrDIV, UInt16 pllstsDIVSEL);
+    extern ti_catalog_c2800_init_Boot_configEzdspXintf();
+
+#if defined(__ti__)
+#pragma CODE_SECTION(ti_catalog_c2800_init_Boot_init, ".bootCodeSection")
+#pragma CODE_SECTION(ti_catalog_c2800_init_Boot_50usDelay, ".bootCodeSection")
+#endif
+
+/*
+ *  ======== ti_catalog_c2800_init_Boot_init ========
+ */
+Void ti_catalog_c2800_init_Boot_init()
+{
+%if (Boot.disableWatchdog == true) {
+    ti_catalog_c2800_init_Boot_disableWatchdog();
+%}
+%if (Boot.configurePll == true) {
+    ti_catalog_c2800_init_Boot_configurePll(`Boot.pllcrDIV`, `Boot.pllstsDIVSEL`);
+%}
+%if (Boot.enableEzdspXintfConfig == true) {
+    ti_catalog_c2800_init_Boot_configEzdspXintf();
+%}
+}
+
+%var freq       =    Program.cpu.clockRate;
+%var loopCount  =    (50.0 * freq) / 5.0;
+%var lo16       =    loopCount & 0xffff;
+%var hi16       =    (loopCount & 0xffff0000) >> 16;
+/*
+ *  ======== ti_catalog_c2800_init_Boot_50usDelay ========
+ */
+Void ti_catalog_c2800_init_Boot_50usDelay()
+{
+asm("   MOV     @AH,#`hi16`;\n                          \
+        MOV     @AL,#`lo16`;\n                          \
+");
+asm("_ti_catalog_c2800_init_Boot_loop:\n                \
+        SUB     ACC,#1;\n                               \
+        BF      _ti_catalog_c2800_init_Boot_loop,GEQ;\n \
+");
+}
+%}
+
+%%{
+/*
+ * @(#) ti.catalog.c2800.init; 1, 0, 0,77; 2-23-2010 16:50:25; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+
+%%}

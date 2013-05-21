@@ -1,0 +1,13 @@
+Package: task-arago-toolchain-tisdk-multimedia-target
+Version: 1.0-r3.6
+Description: Task to build and install header and libs in sdk
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: all
+OE: task-arago-toolchain-tisdk-multimedia-target
+Homepage: unknown
+Build: install/afa4844
+Depends: gstreamer-dev, gst-plugins-base-dev, gst-plugins-good-dev, gst-plugins-ugly-dev, gst-plugins-bad-dev
+Source: file:///sdk/build/DVSDK_4_02/4_02_00_06/arago-install/arago/recipes/tasks/task-arago-toolchain-tisdk-multimedia-target.bb

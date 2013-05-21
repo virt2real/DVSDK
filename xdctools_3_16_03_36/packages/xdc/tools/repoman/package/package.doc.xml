@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='xdc.tools.repoman' nodoc='0' root='../../../' summary='Repository+Manager+tool'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Erequires%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Fpackage.html%22+title%3D%22xdc.tools%22%3Exdc.tools%3C%2Fa%3E%3B'/>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Erequires%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fshelf%2Fpackage.html%22+title%3D%22xdc.shelf%22%3Exdc.shelf%3C%2Fa%3E%3B'/>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Erequires%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Fservices%2Fglobal%2Fpackage.html%22+title%3D%22xdc.services.global%22%3Exdc.services.global%3C%2Fa%3E%3B'/>
+    <line blank='1' always='0'/>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Exdc.tools.repoman%3C%2Fspan%3E%3C%2Fgo%3E+%5B1%2C+0%2C+0%2C+0%5D+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='Main' kind='module' nodoc='0' metaonly='1' summary='Command+implementation' inherits='xdc.tools.ICmd'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Frepoman%2Fpackage.html%22+title%3D%22xdc.tools.repoman%22%3Exdc.tools.repoman%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMain%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%22+title%3D%22xdc.tools.ICmd%22%3EICmd%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMain%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%22+title%3D%22xdc.tools.ICmd%22%3Exdc.tools.ICmd%3C%2Fa%3E'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Main+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27xdc.tools.repoman.Main%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <docSect name='details'>
+            <docPara content='This+tool+creates+and+manages+package+repositories.++It+displays%0A++information+about+archived+packages%2C+extracts+archived+packages%2C%0A++extracts+repositories+from+bundles+and+deletes+packages+from%0A++repositories.'/>
+            <docPara content='Information+about+archived+packages+can+be+displayed+with%0A++the+%27-t%27+and+%27-n%27+options.+The+%27-p%27+argument+is+used+to+%0A++specify+a+directory+in+which+to+search.+If+the+%27-p%27+arg+is+omitted%2C%0A++the+current+directory+is+searched.+Specific+packages+can+searched%0A++for+by+specifying+one+or+more+package+names%2C+or+one+or+more+package%0A++archives+at+the+end+of+the+command+line.++If+no+packages+are+specified%2C%0A++information+on+all+packages+found+in+the+search+directory+will+be%0A++displayed.'/>
+            <docPara content='Archived+packages+can+be+extracted+to+a+repository+with+the+%27-x%27+%0A++option.+%27-x+-D%27+will+extract+dependent+packages%2C+too.+%27-x+-R%27+will%0A++recursively+extract+dependent+packages.+If+any+of+the+packages+in+%0A++the+specified+package+list+are+not+compatible%2C+the+operation+will%0A++be+aborted.+%27-F%27+can+be+used+to+force+all+packages+to+be+extracted%2C%0A++regardles+of+compatibility.+The+%27-p%27+arg+is+used+to+specify+a%0A++directory+to+search+in.+If+not+specified%2C+the+current+directory+will%0A++be+searched.+The+%27-x%27+option+also+extracts+a+repository+or+packages%0A++from+a+bundle.+In+this+case%2C+the+last+argument+specifies+the+bundle%0A++from+which+to+extract+the+repository.+The+repository+to+be+extracted%0A++is+specified+with+the+%27-b%27+arg.+If+just+packages+are+to+be+extracted%2C%0A++one+or+more+package+names+should+follow+the+name+of+the+repository%0A++that+they+should+be+extracted+from.'/>
+            <docPara content='Packages+can+be+deleted+from+a+repository+with+%27-d%27.+If+the+package%0A++has+any+subdirectores+that+contain+packages%2C+they+will+be+left+intact.%0A++After+the+package+is+deleted%2C+if+the+package+has+no+subdirectories%0A++with+packages%2C+empty+directories+that+are+part+of+the+fully+qualified%0A++package+will+be+deleted%2C+too.'/>
+            <docPara content='Packages+can+be+copied+between+repositories+with+%27-c%27.+If+the+package%0A++being+copied+already+exists+in+the+destination+repository%2C+it+will+be%0A++deleted+prior+to+being+replaced.'/>
+            <docPara content='The+%27-r%27+argument+specifies+a+destination+repository.+If+%27-r%27+is%0A++omitted%2C+the+repository+of+the+current+package+is+used.+If+there+is%0A++no+current+package%2C+the+current+directory+is+used.'/>
+            <docPara content='When+a+package+name+is+given%2C+it+can+be+specified+in+full%2C+such+as%0A++%27ti.platforms.sim6xxx%27%2C+or+the+wildcard+characters+%27*%27+and+%27%3F%27+may+be%0A++used%2C+as+in+%27ti.platforms.*%27+or+%27ti.catalog.c%3F%3F00%27.+A+version%2Fkey+can%0A++also+be+attached+to+a+package+name+in+the+following+manner%3A%0A++%27ti.platforms.c6000%5B1%2C0%2C0%2C0%2C313835%5D%27.++A+prefix+of+the+full+version%2Fkey%0A++may+also+be+used%3A+%27ti.platforms.c6000%5B1%2C0%5D%27.'/>
+            <docPara content='If+a+package+name+has+multiple+matches+either+with+or+without+a%0A++version%2Fkey+specified%2C+the+most+recent+will+be+selected.+Wildcards+may%0A++also+be+used+when+naming+a+package+archive+file.'/>
+        </docSect>
+        <docSect name='Examples'>
+            <docPara content='xs+xdc.tools.repoman+-t'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Displays+all+info+on+all+archived+packages+in+the+current+directory%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-t+-p+C%3A%5Cxdc-o19%5Cexports'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Displays+all+info+on+all+archived+packages+in+C%3A%5Cxdc-o19%5Cexports%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-t+-p+C%3A%5Cxdc-o19%5Cexports+ti.platforms.*'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Displays+all+info+on+archived+packages+whose+names+begin+with%0A++ti.platforms.+in+C%3A%5Cxdc-o19%5Cexports%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-t+-p+C%3A%5Cxdc-o19%5Cexports+ti_platforms*.tar'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Displays+all+info+on+packages+in+files+that+match+ti_platforms*.tar%0A++in+C%3A%5Cxdc-o19%5Cexports%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-t+-p+C%3A%5Cxdc-o19%5Cexports+ti.catalog.c6000+ti.catalog.sim6xxx'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Displays+all+info+on+archived+packages+ti.catalog.c6000+and%0A++ti.catalog.sim6xxx+in+C%3A%5Cxdc-o19%5Cexports%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-x'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Extracts+all+archived+packages+in+the+current+directory+to+the+current%0A++repository%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5Cmyrepo%5Cpackages+-p+C%3A%5Cexports'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Extracts+all+archived+packages+in+C%3A%5Cexports+to+C%3A%5Cmyrepo%5Cpackages%0A++repository%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5Cmyrepo%5Cpackages+-p+C%3A%5Cexports+ti.catalog.*'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Extracts+packages+matching+ti.catalog.*+from+c%3A%5Cexports+to%0A++c%3A%5Cmyrepo%5Cpackages%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5Cmyrepo%5Cpackages+C%3A%5Cexports%5Cti_catalog*.tar'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Extracts+packages+from+files+matching+C%3A%5Cexports%5Cti_catalog*.tar+%0A++to+c%3A%5Cmyrepo%5Cpackages%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5Cmyrepo%5Cpackages+C%3A%5Cexports%5Cti_catalog*.tar'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Extracts+packages+from+files+matching+C%3A%5Cexports%5Cti_catalog*.tar+%0A++to+c%3A%5Cmyrepo%5Cpackages%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-x+-R+-r+C%3A%5Cmyrepo+-p+C%3A%5Cxdc-o19%5Cexports+ti.platforms.sim6xxx'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Extracts+the+package+ti.platforms.sim6xxx+and+all+recursively%0A++dependent+packages+from+C%3A%5Cxdc-o19%5Cexports+to+C%3A%5Cmyrepo%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5C+-b+packages+C%3A%5Cexports%5Cxdc_core.tar.gz'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Extracts+the+repository+%27packages%27+from+bundle%0A++C%3A%5Cexports%5Cxdc_core.tar.gz+to+C%3A%5C%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5Cmyrepo+-b+examples+ti.xdais.dm.examples.videnc1_copy+%0A++C%3A%5Cxdais_6_24.tar.gz'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Extracts+the+package+ti.xdais.dm.examples.videnc1_copy+from+repository%0A++%27examples%27+in+bundle%0A++C%3A%5Cxdais_6_24.tar.gz+to+C%3A%5Cmyrepo%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+-c+-r+C%3A%5Cdestdir%5Cpackages+-p+C%3A%5Csrcdir%5Cpackages+ti.catalog.c6000'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Copies+the+package+ti.catalog.c6000+from+C%3A%5Csrcdir%5Cpackages+to%0A++C%3A%5Cdestdir%5Cpackages%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+--rsave+-f+c%3A%2Frepoinfo.rmn+-p+c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs+c%3A%2Fmyrepo'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Saves+package+information+for+repository+c%3A%2Fmyrepo+to+file+c%3A%2Frepoinfo.rmn.%0A++Also+saves+the+search+path+c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+--rrestore+-f+c%3A%2Frepoinfo.rmn+-p+c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Restores+all+of+the+packages+in+the+repository+referenced+in%0A++c%3A%2Frepoinfo.rmn.+Uses+the+search+path+c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs+to+find%0A++and+copy+packages.+Will+create+the+repository+if+it+doesn%27t+exist.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+--rcreate+-f+c%3A%2Frepoinfo.rmn+-p%0A+++++++++++++++++++++++c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs+c%3A%2Fmynewrepo'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Creates+the+new+repository+c%3A%2Fmynewrepo+from+the+repository+referenced+in%0A++the+file+c%3A%2Frepoinfo.rmn.++Uses+the+search+path+c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs%0A++to+find+and+copy+packages.+If+successful%2C+the+newly+created+repository%0A++will+be+identical+to+its+predecessor+referenced+in+c%3A%2Frepoinfo.rmn.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+            <docPara content='xs+xdc.tools.repoman+--providerId+my_codec_engine+c%3A%2Fcodec_engine_2_23%2Fmypackages'/>
+            <docPara content='%3CDL%3E%3CDD%3E++Assigns+the+providerId+attribute+in++c%3A%2Fcodec_engine_2_23%2Fmypackages%2F.repo.xml%0A++the+value+my_codec_engine.+If+c%3A%2Fcodec_engine_2_23%2Fmypackages%2F.repo.xml+does+not%0A++exist%2C+it+will+be+created.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        </docSect>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='struct' name='NameResults' anchor='.Name.Results' altext='xdc.tools.repoman.Main.NameResults' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ENameResults%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='array+of+PkgName+structures' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Frepoman%2FMain.html%23.Pkg.Name%22+title%3D%22xdc.tools.repoman.Main.PkgName%22%3EMain.PkgName%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpkgName%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3ENameResults%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='array+of+PkgName+structures' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpkgName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Frepoman%2FMain.html%23.Pkg.Name%22+title%3D%22xdc.tools.repoman.Main.PkgName%22%3EMain.PkgName%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='Pkg' anchor='.Pkg' altext='xdc.tools.repoman.Main.Pkg' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EPkg%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Efile%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erelease%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elabel%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eversion%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edate%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ebuildable%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ereqs%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erefs%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='1' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Frepoman%2FMain.html%23.Repo%22+title%3D%22xdc.tools.repoman.Main.Repo%22%3EMain.Repo%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erepository%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3EPkg%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Efile%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erelease%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elabel%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eversion%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Edate%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ebuildable%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ereqs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erefs%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erepository%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Frepoman%2FMain.html%23.Repo%22+title%3D%22xdc.tools.repoman.Main.Repo%22%3EMain.Repo%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='PkgName' anchor='.Pkg.Name' altext='xdc.tools.repoman.Main.PkgName' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EPkgName%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Frepoman%2FMain.html%23.Repo%22+title%3D%22xdc.tools.repoman.Main.Repo%22%3EMain.Repo%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erepository%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3EPkgName%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erepository%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Frepoman%2FMain.html%23.Repo%22+title%3D%22xdc.tools.repoman.Main.Repo%22%3EMain.Repo%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='Repo' anchor='.Repo' altext='xdc.tools.repoman.Main.Repo' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='represents+a+repository+in+a+bundle'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ERepo%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Epkg%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3ERepo%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Epkg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='Results' anchor='.Results' altext='xdc.tools.repoman.Main.Results' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EResults%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erepository%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproviderId%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproducerId%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' content='%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ewritable%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='array+of+package+info+structures' content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Frepoman%2FMain.html%23.Pkg%22+title%3D%22xdc.tools.repoman.Main.Pkg%22%3EMain.Pkg%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Epkg%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3EResults%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erepository%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproviderId%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EproducerId%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ewritable%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='array+of+package+info+structures' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Epkg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2Frepoman%2FMain.html%23.Pkg%22+title%3D%22xdc.tools.repoman.Main.Pkg%22%3EMain.Pkg%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='usage' anchor='usage' altext='xdc.tools.repoman.Main.usage' nodoc='0' external='1' overrides='1' readonly='0' instance='0' summary='Usage+for+this+command' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23usage%22+title%3D%22xdc.tools.ICmd.usage%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eoverride+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eusage%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%3D+%255B'/>
+                    <line tab='1' content='%2527-t%2B%255B-v%255D%2B%255B-p%2Bpathname%255D%2B%255Bpackagename...%257Cpackagefile...%255D%2527%252C'/>
+                    <line tab='1' content='%2527-n%2B%255B-v%255D%2B%255B-p%2Bpathname%255D%2B%255Bpackagename...%257Cpackagefile...%255D%2527%252C'/>
+                    <line tab='1' content='%2527-x%2B%255B-v%255D%2B%255B-D%255D%2B%255B-R%255D%2B%255B-F%255D%2B%255B-r%2Bdestrepo%255D%2B%255B-p%2Bpath%255D%2Bpackagename...%257Cpackagefile...%2527%252C'/>
+                    <line tab='1' content='%2527-x%2B%255B-v%255D%2B%255B-D%255D%2B%255B-R%255D%2B%255B-F%255D%2B%255B-r%2Bdestrepo%255D%2B%255B-p%2Bpath%255D%2B-b%2Bbundlerepository%2B%255Bpackagename...%255D%2BbundleFile%2527%252C'/>
+                    <line tab='1' content='%2527-d%2B%255B-v%255D%2B%255B-F%255D%2B%255B-r%2Bdestrepo%255D%2Bpackagename...%2527%252C'/>
+                    <line tab='1' content='%2527-c%2B%255B-v%255D%2B%255B-F%255D%2B%255B--providerId%255D%2B%255B-r%2Bdestrepo%255D%2B%255B-p%2Bpathname%255D%2Bpackagename...%2527%252C'/>
+                    <line tab='1' content='%2527--rsave%2B-f%2Bfile%2B%255B-p%2Bsearchpath%255D%2Brepository...%2527%252C'/>
+                    <line tab='1' content='%2527--rrestore%2B-f%2Bfile%2B%255B-p%2Bsearchpath%255D%2B%255Bindex-spec%255D%2527%252C'/>
+                    <line tab='1' content='%2527--rcreate%2B-f%2Bfile%2B%255B-p%2Bsearchpath%255D%2B%255Bindex-spec%255D%2Bdestrepository...%2527%252C'/>
+                    <line tab='1' content='%2527%255B-F%255D%2B--providerId%2BproviderId%2B%255Brepository...%255D%2527'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Eusage%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%255B'/>
+                    <line tab='1' content='%2527-t%2B%255B-v%255D%2B%255B-p%2Bpathname%255D%2B%255Bpackagename...%257Cpackagefile...%255D%2527%252C'/>
+                    <line tab='1' content='%2527-n%2B%255B-v%255D%2B%255B-p%2Bpathname%255D%2B%255Bpackagename...%257Cpackagefile...%255D%2527%252C'/>
+                    <line tab='1' content='%2527-x%2B%255B-v%255D%2B%255B-D%255D%2B%255B-R%255D%2B%255B-F%255D%2B%255B-r%2Bdestrepo%255D%2B%255B-p%2Bpath%255D%2Bpackagename...%257Cpackagefile...%2527%252C'/>
+                    <line tab='1' content='%2527-x%2B%255B-v%255D%2B%255B-D%255D%2B%255B-R%255D%2B%255B-F%255D%2B%255B-r%2Bdestrepo%255D%2B%255B-p%2Bpath%255D%2B-b%2Bbundlerepository%2B%255Bpackagename...%255D%2BbundleFile%2527%252C'/>
+                    <line tab='1' content='%2527-d%2B%255B-v%255D%2B%255B-F%255D%2B%255B-r%2Bdestrepo%255D%2Bpackagename...%2527%252C'/>
+                    <line tab='1' content='%2527-c%2B%255B-v%255D%2B%255B-F%255D%2B%255B--providerId%255D%2B%255B-r%2Bdestrepo%255D%2B%255B-p%2Bpathname%255D%2Bpackagename...%2527%252C'/>
+                    <line tab='1' content='%2527--rsave%2B-f%2Bfile%2B%255B-p%2Bsearchpath%255D%2Brepository...%2527%252C'/>
+                    <line tab='1' content='%2527--rrestore%2B-f%2Bfile%2B%255B-p%2Bsearchpath%255D%2B%255Bindex-spec%255D%2527%252C'/>
+                    <line tab='1' content='%2527--rcreate%2B-f%2Bfile%2B%255B-p%2Bsearchpath%255D%2B%255Bindex-spec%255D%2Bdestrepository...%2527%252C'/>
+                    <line tab='1' content='%2527%255B-F%255D%2B--providerId%2BproviderId%2B%255Brepository...%255D%2527'/>
+                    <line tab='0' content='%255D%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='exec' anchor='exec' altext='xdc.tools.repoman.Main.exec' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='%27xs%27+script+entry+point' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23exec%22+title%3D%22xdc.tools.ICmd.exec%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Eexec%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Eexec%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='main' anchor='main' altext='xdc.tools.repoman.Main.main' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='%27xs%27+shell+entry+point' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23main%22+title%3D%22xdc.tools.ICmd.main%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3Emain%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EMain.%3Cspan+class%3D%22xdoc-id%22%3Emain%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='$instance'>
+            <synopSpec>
+                <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A'/>
+                <line blank='1' always='0'/>
+            </synopSpec>
+        </group>
+        <group name='per-instance config parameters'>
+            <synopMeta>
+                <line tab='0' comment='Instance+config-params+object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                <line tab='1' comment='Return+an+array+of+strings' anchor='arr.Flag' altext='xdc.tools.repoman.Main.arrFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EarrFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Bundle+repository+arg' anchor='bundle.Repository.Arg' altext='xdc.tools.repoman.Main.bundleRepositoryArg' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EbundleRepositoryArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Copy+package%28s%29' anchor='copy.Flag' altext='xdc.tools.repoman.Main.copyFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcopyFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Delete+package%28s%29' anchor='delete.Flag' altext='xdc.tools.repoman.Main.deleteFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdeleteFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Include+package+dependencies' anchor='dependent.Flag' altext='xdc.tools.repoman.Main.dependentFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdependentFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Extract+package%28s%29' anchor='extract.Flag' altext='xdc.tools.repoman.Main.extractFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EextractFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='file+arg+to+save%2Frestore+repository' anchor='file.Arg' altext='xdc.tools.repoman.Main.fileArg' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EfileArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Force+incompatible+packages' anchor='force.Flag' altext='xdc.tools.repoman.Main.forceFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EforceFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Display+package+info' anchor='info.Flag' altext='xdc.tools.repoman.Main.infoFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EinfoFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Display+package+names+only' anchor='names.Flag' altext='xdc.tools.repoman.Main.namesFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EnamesFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Path+arg' anchor='path.Arg' altext='xdc.tools.repoman.Main.pathArg' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpathArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='providerId+for+a+repository' anchor='prov.Id.Arg' altext='xdc.tools.repoman.Main.provIdArg' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EprovIdArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Create+one+or+more+repositories+from+information+in+file' anchor='rcreate.Flag' altext='xdc.tools.repoman.Main.rcreateFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErcreateFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Recursive+include+package+dependencies' anchor='recursive.Dep.Flag' altext='xdc.tools.repoman.Main.recursiveDepFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErecursiveDepFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Repository+arg' anchor='repository.Arg' altext='xdc.tools.repoman.Main.repositoryArg' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErepositoryArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Restore+one+or+more+repositories+from+information+in+file' anchor='rrestore.Flag' altext='xdc.tools.repoman.Main.rrestoreFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErrestoreFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Save+a+repository%27s+information+to+file' anchor='rsave.Flag' altext='xdc.tools.repoman.Main.rsaveFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErsaveFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Print+informative+messages+during+execution' anchor='verbose.Flag' altext='xdc.tools.repoman.Main.verboseFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EverboseFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                <line tab='1' comment='Return+a+Results+struct+as+XML' anchor='xml.Flag' altext='xdc.tools.repoman.Main.xmlFlag' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ExmlFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+            </synopMeta>
+            <decl spacer='1'/>
+            <decl kind='config' name='arrFlag' anchor='arr.Flag' altext='xdc.tools.repoman.Main.arrFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Return+an+array+of+strings'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EarrFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EarrFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='bundleRepositoryArg' anchor='bundle.Repository.Arg' altext='xdc.tools.repoman.Main.bundleRepositoryArg' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Bundle+repository+arg'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EbundleRepositoryArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EbundleRepositoryArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='copyFlag' anchor='copy.Flag' altext='xdc.tools.repoman.Main.copyFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Copy+package%28s%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcopyFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EcopyFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='deleteFlag' anchor='delete.Flag' altext='xdc.tools.repoman.Main.deleteFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Delete+package%28s%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdeleteFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EdeleteFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='dependentFlag' anchor='dependent.Flag' altext='xdc.tools.repoman.Main.dependentFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Include+package+dependencies'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdependentFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EdependentFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='extractFlag' anchor='extract.Flag' altext='xdc.tools.repoman.Main.extractFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Extract+package%28s%29'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EextractFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EextractFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='fileArg' anchor='file.Arg' altext='xdc.tools.repoman.Main.fileArg' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='file+arg+to+save%2Frestore+repository'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EfileArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EfileArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='forceFlag' anchor='force.Flag' altext='xdc.tools.repoman.Main.forceFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Force+incompatible+packages'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EforceFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EforceFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='infoFlag' anchor='info.Flag' altext='xdc.tools.repoman.Main.infoFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Display+package+info'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EinfoFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EinfoFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='namesFlag' anchor='names.Flag' altext='xdc.tools.repoman.Main.namesFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Display+package+names+only'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EnamesFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EnamesFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='pathArg' anchor='path.Arg' altext='xdc.tools.repoman.Main.pathArg' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Path+arg'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EpathArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EpathArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='provIdArg' anchor='prov.Id.Arg' altext='xdc.tools.repoman.Main.provIdArg' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='providerId+for+a+repository'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EprovIdArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EprovIdArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='rcreateFlag' anchor='rcreate.Flag' altext='xdc.tools.repoman.Main.rcreateFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Create+one+or+more+repositories+from+information+in+file'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErcreateFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3ErcreateFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='recursiveDepFlag' anchor='recursive.Dep.Flag' altext='xdc.tools.repoman.Main.recursiveDepFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Recursive+include+package+dependencies'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErecursiveDepFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3ErecursiveDepFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='repositoryArg' anchor='repository.Arg' altext='xdc.tools.repoman.Main.repositoryArg' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Repository+arg'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErepositoryArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3ErepositoryArg%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Enull%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='rrestoreFlag' anchor='rrestore.Flag' altext='xdc.tools.repoman.Main.rrestoreFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Restore+one+or+more+repositories+from+information+in+file'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErrestoreFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3ErrestoreFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='rsaveFlag' anchor='rsave.Flag' altext='xdc.tools.repoman.Main.rsaveFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Save+a+repository%27s+information+to+file'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErsaveFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3ErsaveFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='verboseFlag' anchor='verbose.Flag' altext='xdc.tools.repoman.Main.verboseFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Print+informative+messages+during+execution'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EverboseFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EverboseFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+            <decl kind='config' name='xmlFlag' anchor='xml.Flag' altext='xdc.tools.repoman.Main.xmlFlag' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Return+a+Results+struct+as+XML'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ExmlFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Main.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3ExmlFlag%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EBool%3C%2Fspan%3E%3C%2Fi%3E+%253Cspan%2Bclass%253D%2522xdoc-kw2%2522%253Efalse%253C%252Fspan%253E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='per-instance creation'/>
+        <group name='per-instance functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='run' anchor='run' altext='xdc.tools.repoman.Main.run' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Underlying+implementation' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FICmd.html%23run%22+title%3D%22xdc.tools.ICmd.run%22%3EICmd%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Erun%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FCmdr.html%23.Instance%22+title%3D%22xdc.tools.Cmdr.Instance%22%3ECmdr.Instance%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecmdr%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3Erun%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2Fxdc%2Ftools%2FCmdr.html%23.Instance%22+title%3D%22xdc.tools.Cmdr.Instance%22%3ECmdr.Instance%3C%2Fa%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecmdr%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3E%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+        </group>
+    </unit>
+    <docSect name='usage'>
+        <docPara content='%3Ctt%3Exs+xdc.tools.repoman+%5B--help%5D%3Cbr+%2F%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-t+%5B-v%5D+%5B-p+pathname%5D+%5Bpackagename...%7Cpackagefile...%5D%3Cbr+%2F%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-n+%5B-v%5D+%5B-p+pathname%5D+%5Bpackagename...%7Cpackagefile...%5D%3Cbr+%2F%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-x+%5B-v%5D+%5B-D%5D+%5B-R%5D+%5B-F%5D+%5B-r+destrepo%5D+%5B-p+path%5D+packagename...%7Cpackagefile...%3Cbr+%2F%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-x+%5B-v%5D+%5B-D%5D+%5B-R%5D+%5B-F%5D+%5B-r+destrepo%5D+%5B-p+path%5D+-b+bundlerepository+%5Bpackagename...%5D+bundleFile%3Cbr+%2F%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-d+%5B-v%5D+%5B-F%5D+%5B-r+destrepo%5D+packagename...%3Cbr+%2F%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-c+%5B-v%5D+%5B-F%5D+%5B--providerId%5D+%5B-r+destrepo%5D+%5B-p+pathname%5D+packagename...%3Cbr+%2F%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B--rsave+-f+file+%5B-p+searchpath%5D+repository...%3Cbr+%2F%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B--rrestore+-f+file+%5B-p+searchpath%5D+%5Bindex-spec%5D%3Cbr+%2F%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B--rcreate+-f+file+%5B-p+searchpath%5D+%5Bindex-spec%5D+destrepository...%3Cbr+%2F%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%5B-F%5D+--providerId+providerId+%5Brepository...%5D%3C%2Ftt%3E'/>
+    </docSect>
+    <docSect name='options'>
+        <docPara content='%3Cdl%3E%3Cdt%3E%3Ctt%3E-t%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EDisplay+package+info%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-n%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EDisplay+package+names+only%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-x%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EExtract+package%28s%29%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-d%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EDelete+package%28s%29%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-p%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EPath+arg%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-r%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3ERepository+arg%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-D%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EInclude+package+dependencies%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-R%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3ERecursive+include+package+dependencies%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-a%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EReturn+an+array+of+strings%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-X%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EReturn+a+Results+struct+as+XML%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-v%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EPrint+informative+messages+during+execution%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-b%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EBundle+repository+arg%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-F%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EForce+incompatible+packages%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-c%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3ECopy+package%28s%29%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E-f%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3Efile+arg+to+save%2Frestore+repository%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E--rsave%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3ESave+a+repository%27s+information+to+file%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E--rrestore%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3ERestore+one+or+more+repositories+from+information+in+file%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E--rcreate%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3ECreate+one+or+more+repositories+from+information+in+file%3C%2Fdd%3E%3Cdt%3E%3Ctt%3E--providerId%3C%2Ftt%3E%3C%2Fdt%3E%3Cdd%3EproviderId+for+a+repository%3C%2Fdd%3E'/>
+    </docSect>
+    <docSect name='details'>
+        <docPara content='This+tool+creates+and+manages+package+repositories.++It+displays%0A++information+about+archived+packages%2C+extracts+archived+packages%2C%0A++extracts+repositories+from+bundles+and+deletes+packages+from%0A++repositories.'/>
+        <docPara content='Information+about+archived+packages+can+be+displayed+with%0A++the+%27-t%27+and+%27-n%27+options.+The+%27-p%27+argument+is+used+to+%0A++specify+a+directory+in+which+to+search.+If+the+%27-p%27+arg+is+omitted%2C%0A++the+current+directory+is+searched.+Specific+packages+can+searched%0A++for+by+specifying+one+or+more+package+names%2C+or+one+or+more+package%0A++archives+at+the+end+of+the+command+line.++If+no+packages+are+specified%2C%0A++information+on+all+packages+found+in+the+search+directory+will+be%0A++displayed.'/>
+        <docPara content='Archived+packages+can+be+extracted+to+a+repository+with+the+%27-x%27+%0A++option.+%27-x+-D%27+will+extract+dependent+packages%2C+too.+%27-x+-R%27+will%0A++recursively+extract+dependent+packages.+If+any+of+the+packages+in+%0A++the+specified+package+list+are+not+compatible%2C+the+operation+will%0A++be+aborted.+%27-F%27+can+be+used+to+force+all+packages+to+be+extracted%2C%0A++regardles+of+compatibility.+The+%27-p%27+arg+is+used+to+specify+a%0A++directory+to+search+in.+If+not+specified%2C+the+current+directory+will%0A++be+searched.+The+%27-x%27+option+also+extracts+a+repository+or+packages%0A++from+a+bundle.+In+this+case%2C+the+last+argument+specifies+the+bundle%0A++from+which+to+extract+the+repository.+The+repository+to+be+extracted%0A++is+specified+with+the+%27-b%27+arg.+If+just+packages+are+to+be+extracted%2C%0A++one+or+more+package+names+should+follow+the+name+of+the+repository%0A++that+they+should+be+extracted+from.'/>
+        <docPara content='Packages+can+be+deleted+from+a+repository+with+%27-d%27.+If+the+package%0A++has+any+subdirectores+that+contain+packages%2C+they+will+be+left+intact.%0A++After+the+package+is+deleted%2C+if+the+package+has+no+subdirectories%0A++with+packages%2C+empty+directories+that+are+part+of+the+fully+qualified%0A++package+will+be+deleted%2C+too.'/>
+        <docPara content='Packages+can+be+copied+between+repositories+with+%27-c%27.+If+the+package%0A++being+copied+already+exists+in+the+destination+repository%2C+it+will+be%0A++deleted+prior+to+being+replaced.'/>
+        <docPara content='The+%27-r%27+argument+specifies+a+destination+repository.+If+%27-r%27+is%0A++omitted%2C+the+repository+of+the+current+package+is+used.+If+there+is%0A++no+current+package%2C+the+current+directory+is+used.'/>
+        <docPara content='When+a+package+name+is+given%2C+it+can+be+specified+in+full%2C+such+as%0A++%27ti.platforms.sim6xxx%27%2C+or+the+wildcard+characters+%27*%27+and+%27%3F%27+may+be%0A++used%2C+as+in+%27ti.platforms.*%27+or+%27ti.catalog.c%3F%3F00%27.+A+version%2Fkey+can%0A++also+be+attached+to+a+package+name+in+the+following+manner%3A%0A++%27ti.platforms.c6000%5B1%2C0%2C0%2C0%2C313835%5D%27.++A+prefix+of+the+full+version%2Fkey%0A++may+also+be+used%3A+%27ti.platforms.c6000%5B1%2C0%5D%27.'/>
+        <docPara content='If+a+package+name+has+multiple+matches+either+with+or+without+a%0A++version%2Fkey+specified%2C+the+most+recent+will+be+selected.+Wildcards+may%0A++also+be+used+when+naming+a+package+archive+file.'/>
+    </docSect>
+    <docSect name='Examples'>
+        <docPara content='xs+xdc.tools.repoman+-t'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Displays+all+info+on+all+archived+packages+in+the+current+directory%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-t+-p+C%3A%5Cxdc-o19%5Cexports'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Displays+all+info+on+all+archived+packages+in+C%3A%5Cxdc-o19%5Cexports%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-t+-p+C%3A%5Cxdc-o19%5Cexports+ti.platforms.*'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Displays+all+info+on+archived+packages+whose+names+begin+with%0A++ti.platforms.+in+C%3A%5Cxdc-o19%5Cexports%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-t+-p+C%3A%5Cxdc-o19%5Cexports+ti_platforms*.tar'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Displays+all+info+on+packages+in+files+that+match+ti_platforms*.tar%0A++in+C%3A%5Cxdc-o19%5Cexports%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-t+-p+C%3A%5Cxdc-o19%5Cexports+ti.catalog.c6000+ti.catalog.sim6xxx'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Displays+all+info+on+archived+packages+ti.catalog.c6000+and%0A++ti.catalog.sim6xxx+in+C%3A%5Cxdc-o19%5Cexports%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-x'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Extracts+all+archived+packages+in+the+current+directory+to+the+current%0A++repository%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5Cmyrepo%5Cpackages+-p+C%3A%5Cexports'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Extracts+all+archived+packages+in+C%3A%5Cexports+to+C%3A%5Cmyrepo%5Cpackages%0A++repository%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5Cmyrepo%5Cpackages+-p+C%3A%5Cexports+ti.catalog.*'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Extracts+packages+matching+ti.catalog.*+from+c%3A%5Cexports+to%0A++c%3A%5Cmyrepo%5Cpackages%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5Cmyrepo%5Cpackages+C%3A%5Cexports%5Cti_catalog*.tar'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Extracts+packages+from+files+matching+C%3A%5Cexports%5Cti_catalog*.tar+%0A++to+c%3A%5Cmyrepo%5Cpackages%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5Cmyrepo%5Cpackages+C%3A%5Cexports%5Cti_catalog*.tar'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Extracts+packages+from+files+matching+C%3A%5Cexports%5Cti_catalog*.tar+%0A++to+c%3A%5Cmyrepo%5Cpackages%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-x+-R+-r+C%3A%5Cmyrepo+-p+C%3A%5Cxdc-o19%5Cexports+ti.platforms.sim6xxx'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Extracts+the+package+ti.platforms.sim6xxx+and+all+recursively%0A++dependent+packages+from+C%3A%5Cxdc-o19%5Cexports+to+C%3A%5Cmyrepo%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5C+-b+packages+C%3A%5Cexports%5Cxdc_core.tar.gz'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Extracts+the+repository+%27packages%27+from+bundle%0A++C%3A%5Cexports%5Cxdc_core.tar.gz+to+C%3A%5C%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-x+-r+C%3A%5Cmyrepo+-b+examples+ti.xdais.dm.examples.videnc1_copy+%0A++C%3A%5Cxdais_6_24.tar.gz'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Extracts+the+package+ti.xdais.dm.examples.videnc1_copy+from+repository%0A++%27examples%27+in+bundle%0A++C%3A%5Cxdais_6_24.tar.gz+to+C%3A%5Cmyrepo%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+-c+-r+C%3A%5Cdestdir%5Cpackages+-p+C%3A%5Csrcdir%5Cpackages+ti.catalog.c6000'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Copies+the+package+ti.catalog.c6000+from+C%3A%5Csrcdir%5Cpackages+to%0A++C%3A%5Cdestdir%5Cpackages%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+--rsave+-f+c%3A%2Frepoinfo.rmn+-p+c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs+c%3A%2Fmyrepo'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Saves+package+information+for+repository+c%3A%2Fmyrepo+to+file+c%3A%2Frepoinfo.rmn.%0A++Also+saves+the+search+path+c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+--rrestore+-f+c%3A%2Frepoinfo.rmn+-p+c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Restores+all+of+the+packages+in+the+repository+referenced+in%0A++c%3A%2Frepoinfo.rmn.+Uses+the+search+path+c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs+to+find%0A++and+copy+packages.+Will+create+the+repository+if+it+doesn%27t+exist.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+--rcreate+-f+c%3A%2Frepoinfo.rmn+-p%0A+++++++++++++++++++++++c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs+c%3A%2Fmynewrepo'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Creates+the+new+repository+c%3A%2Fmynewrepo+from+the+repository+referenced+in%0A++the+file+c%3A%2Frepoinfo.rmn.++Uses+the+search+path+c%3A%2Fpkgarchives%3Bc%3A%2Ftestpkgs%0A++to+find+and+copy+packages.+If+successful%2C+the+newly+created+repository%0A++will+be+identical+to+its+predecessor+referenced+in+c%3A%2Frepoinfo.rmn.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+        <docPara content='xs+xdc.tools.repoman+--providerId+my_codec_engine+c%3A%2Fcodec_engine_2_23%2Fmypackages'/>
+        <docPara content='%3CDL%3E%3CDD%3E++Assigns+the+providerId+attribute+in++c%3A%2Fcodec_engine_2_23%2Fmypackages%2F.repo.xml%0A++the+value+my_codec_engine.+If+c%3A%2Fcodec_engine_2_23%2Fmypackages%2F.repo.xml+does+not%0A++exist%2C+it+will+be+created.%0A%3C%2FDD%3E%3C%2FDL%3E'/>
+    </docSect>
+</package>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.catalog.c470" version="1, 0, 1, 1" producerId="undefined">
+    <units>
+        <interface name="TMS470xx"/>
+        <module name="TMS470R10"/>
+        <module name="TMS320C5912"/>
+        <module name="TMS320C1030"/>
+        <module name="TMS320CDM6446"/>
+        <module name="TMS320CDM6467"/>
+        <module name="TMS320CDM355"/>
+        <module name="TMS320DM357"/>
+        <module name="TMS320DM365"/>
+        <module name="TMS320CDM510"/>
+        <module name="OMAP2430"/>
+        <module name="OMAP2431"/>
+        <module name="OMAP2530"/>
+        <module name="OMAP2531"/>
+        <module name="OMAP3403"/>
+        <module name="OMAP3405"/>
+        <module name="OMAP3503"/>
+        <module name="OMAP3505"/>
+        <module name="OMAP3515"/>
+        <module name="OMAP3517"/>
+        <module name="OMAP3425"/>
+        <module name="OMAP3525"/>
+        <module name="TMS320C3430"/>
+        <module name="OMAP3530"/>
+        <module name="TMS320DA828"/>
+        <module name="TMS320DA830"/>
+        <module name="OMAPL137"/>
+        <module name="CortexM3"/>
+        <module name="TMS570PSF762"/>
+    </units>
+    <sources>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_catalog_c470.tar.dep" src="package/rel/ti_catalog_c470.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_catalog_c470"
+        pname="../../../../exports/ti_catalog_c470.tar"
+        label="default"
+        relScript="/db/ztree/library/trees/platform/platform-k32x/src/tisb/release/epl/copyright.rel">
+        <file name="package/build.cfg"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

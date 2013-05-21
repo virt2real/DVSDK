@@ -1,0 +1,441 @@
+%%{
+/* 
+ * Copyright (c) 2010, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ */
+%%}
+
+%%{
+    /*
+     *  ======== Settings.xdt ========
+     * Generates array of Initialization configuration that will be used
+     * to generate Resource Manager handles for the scratch groups etc.
+     * Will also be used to generate a system level Resource Manager handle.
+     */
+
+    var EDMA3 = this.$package.Settings;
+    var globalConfig;
+    var regionConfig;
+    var suffix = Program.build.target.findSuffix(this.$package);
+    var dsp = (((suffix == "64P") || (suffix == "674")) ? true : false);
+    function su(segName) { /* "strip underscore" */
+        return (segName.charAt(0) == "_") ? segName.substr( 1 ) : segName;
+    }
+
+    function aa(segName) { /* "add ampersand" */
+        var ampersand = "&";
+        return (segName.charAt(0) != "&") ? ampersand.concat(segName) : segName;
+    }
+
+%%}
+
+/* C code contribution from ti/sdo/fc/edma3/Settings.xdt */
+
+__FAR__ Uns ti_sdo_fc_edma3_EDMA3_physicalId = `this.controllerId`;
+
+% if (dsp) {
+
+#include <xdc/std.h>
+
+/* For BIOS based implementation of OS critical section protect functions */
+#include <ti/bios/include/std.h>
+#include <ti/bios/include/tsk.h>
+#include <ti/bios/include/hwi.h>
+
+#include <ti/sdo/fc/rman/rman.h>
+#include <ti/sdo/edma3/rm/edma3_rm.h>
+#include <ti/sdo/fc/edma3/edma3_config.h>
+
+%/* Obtain the maximum array length */
+%if (this.maxTccs.length > this.maxPaRams.length) {
+%   var maxval = this.maxTccs.length;
+% }
+% else {
+%   var maxval = this.maxPaRams.length;
+% }
+% if (maxval < this.maxQdmaChannels.length) {
+%   maxval = this.maxQdmaChannels.length;
+% }
+
+
+%if (this.globalConfig != null) {
+/* Global configuration initialization information for the EDMA3 Low level
+   Resource Manager */
+extern __FAR__ EDMA3_GblConfigParams `this.globalConfig`;
+%    globalConfig = aa(this.globalConfig);
+% }
+% else {
+%    globalConfig = "NULL";
+%}
+
+%if (this.regionConfig != null) {
+/* Region configuration initialization information for the EDMA3 Low level
+   Resource Manager */
+extern __FAR__ EDMA3_InstanceInitConfig `this.regionConfig`;
+%    regionConfig = aa(this.regionConfig);
+% }
+% else {
+%    regionConfig = "NULL";
+%}
+
+%var value = undefined;
+/* Array of maximum scratch paRam requirements of all groups */
+Uns EDMA3_paRamScratchSizes[EDMA3_MAXGROUPS] = {
+% for (var i = 0; i < this.maxPaRams.length; i++) {
+% value = ((this.maxPaRams[i] == undefined) ? 0: this.maxPaRams[i]);
+    `value``i < this.maxPaRams.length-1?",":""`
+% }
+};
+
+/* Array of maximum scratch edma channel requirements of all groups */
+Uns EDMA3_edmaChanScratchSizes[EDMA3_MAXGROUPS] = {
+% for (var i = 0; i < this.maxEdmaChannels.length; i++) {
+% value = (this.maxEdmaChannels[i]==undefined)?0:this.maxEdmaChannels[i];
+    `value``i < this.maxEdmaChannels.length-1?",":""`
+% }
+};
+
+/* Array of maximum scratch qdma channel requirements of all groups */
+Uns EDMA3_qdmaChanScratchSizes[EDMA3_MAXGROUPS] = {
+% for (var i = 0; i < this.maxQdmaChannels.length; i++) {
+% value = (this.maxQdmaChannels[i]==undefined)?0:this.maxQdmaChannels[i];
+    `value``i < this.maxQdmaChannels.length-1?",":""`
+% }
+};
+
+/* Array of maximum scratch tcc requirements of all groups */
+Uns EDMA3_tccScratchSizes[EDMA3_MAXGROUPS] = {
+% for (var i = 0; i < this.maxTccs.length; i++) {
+% value = (this.maxTccs[i]==undefined)?0:this.maxTccs[i];
+    `value``i < this.maxTccs.length-1?",":""`
+% }
+};
+
+/*
+ * Array of EDMA3 LLD RM configuration structure for all the scratch groups
+ */
+__FAR__ EDMA3_InstanceInitConfig EDMA3_scratchResourceConfig[EDMA3_MAXGROUPS];
+
+/*
+ * Declare semaphore related functions before using them
+ */
+%if (null != this.semCreateFxn) { 
+extern RMAN_SemHandle `this.semCreateFxn`(Int key, Int count);
+%}
+%if (null != this.semDeleteFxn) {
+extern Void `this.semDeleteFxn`(RMAN_SemHandle sem);
+%}
+%if (null != this.semPendFxn) {
+extern Int `this.semPendFxn`(RMAN_SemHandle sem, UInt32 count);
+%}
+%if (null != this.semPostFxn) {
+extern Void `this.semPostFxn`(RMAN_SemHandle sem);
+%}
+
+/*
+ * Declare alloc/Free functions before using them
+ */
+extern Bool `su(this.persistentAllocFxn)`(IALG_MemRec *memTab, Int numRecs);
+extern Void `su(this.persistentFreeFxn)`(IALG_MemRec *memTab, Int numRecs);
+
+/*
+ *  ======== EDMA3_semCreate ========
+ *  Function to create a Semaphore given a key
+ */
+void * EDMA3_semCreate(Int key, Int count)
+{
+    /*
+     * Call RMAN's configured semCreateFxn, cast the returned semaphore value
+     * to the Semaphore type expected by EDMA3 RM.
+     */
+    return ((void *)`this.semCreateFxn`(key, count));
+}
+
+/*
+ *  ======== EDMA3_semDelete ========
+ *  Function to delete a given Semaphore
+ */
+void EDMA3_semDelete(EDMA3_SemHandle hSem)
+{
+    `this.semDeleteFxn`((RMAN_SemHandle)hSem);
+}
+
+/*
+ *  ======== edma3OsSemGive ========
+ *  Function to Post a semaphore
+ *  This function is called internally by the EDMA3 Low level Resource Manager
+ */
+EDMA3_Result edma3OsSemGive(EDMA3_SemHandle hSem)
+{
+    EDMA3_Result semGiveResult = EDMA3_SOK;
+    if(NULL == hSem) {
+        semGiveResult = EDMA3_E_INVALID_PARAM;
+    }
+    else {
+        `this.semPostFxn`((RMAN_SemHandle)hSem);
+    }
+    return (semGiveResult);
+}
+
+/*
+ *  ======== edma3OsSemTake ========
+ *  Function to Pend on a semaphore
+ *  This function is called internally by the EDMA3 Low level Resource Manager
+ */
+EDMA3_Result edma3OsSemTake(EDMA3_SemHandle hSem, int mSecTimeout)
+{
+    EDMA3_Result semTakeResult = EDMA3_SOK;
+    unsigned short semPendResult;
+
+    if(NULL == hSem) {
+        semTakeResult = EDMA3_E_INVALID_PARAM;
+    }
+    else {
+        semPendResult = `this.semPendFxn`((RMAN_SemHandle)hSem,
+                (UInt32)mSecTimeout);
+        if (semPendResult != 0) {
+            semTakeResult = EDMA3_E_SEMAPHORE;
+        }
+    }
+
+    return (semTakeResult);
+}
+
+/*
+ *  ======== edma3OsProtectEntry ========
+ *  OS critical section protect (Entry) function
+ */
+void edma3OsProtectEntry (unsigned int edma3InstanceId, int level, 
+        unsigned int *intState)
+{
+    /* For now we ignore the instanceId */
+/*      (void)edma3InstanceId;*/
+
+    if (((level == EDMA3_OS_PROTECT_INTERRUPT)
+        || (level == EDMA3_OS_PROTECT_INTERRUPT_TC_ERROR))
+        && (intState == NULL)) {
+        return;
+    }
+    else {
+        switch (level) {
+            /* Disable all (global) interrupts */
+            case EDMA3_OS_PROTECT_INTERRUPT :
+                *intState = HWI_disable();
+                break;
+
+            /* Disable scheduler */
+            case EDMA3_OS_PROTECT_SCHEDULER :
+                TSK_disable();
+                break;
+
+            /* Disable scheduler */
+            case EDMA3_OS_PROTECT_INTERRUPT_XFER_COMPLETION :
+                TSK_disable();
+                break;
+
+            /* Disable scheduler */
+            case EDMA3_OS_PROTECT_INTERRUPT_CC_ERROR :
+                TSK_disable();
+                break;
+
+            case EDMA3_OS_PROTECT_INTERRUPT_TC_ERROR :
+                switch (*intState) {
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                        /* Fall through... */
+                        TSK_disable();
+                        break;
+
+                     default:
+                        break;
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
+}
+
+/*
+ *  ======== edma3OsProtectExit ========
+ *  OS critical section protect (Exit) function
+ */
+void edma3OsProtectExit(unsigned int edma3InstanceId, int level, 
+        unsigned int intState)
+{
+/*      (void)edma3InstanceId;*/
+
+    switch (level) {
+        /* Enable all (global) interrupts */
+        case EDMA3_OS_PROTECT_INTERRUPT :
+            HWI_restore(intState);
+            break;
+
+        /* Enable scheduler */
+        case EDMA3_OS_PROTECT_SCHEDULER :
+            break;
+
+        case EDMA3_OS_PROTECT_INTERRUPT_XFER_COMPLETION :
+            TSK_enable();
+            break;
+
+        case EDMA3_OS_PROTECT_INTERRUPT_CC_ERROR :
+            TSK_enable();
+            break;
+
+        /* Enable EDMA3 TC error interrupt only */
+        case EDMA3_OS_PROTECT_INTERRUPT_TC_ERROR :
+            switch (intState)
+                {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    /* Fall through... */
+                    /* Enable the corresponding interrupt */
+                    TSK_enable();
+                    break;
+
+                 default:
+                    break;
+                }
+
+            break;
+
+        default:
+            break;
+    }
+}
+
+
+/*
+ *  ======== EDMA3_PARAMS ========
+ *  EDMA3_PARAMS structure is created using the configured values
+ */
+EDMA3_Params EDMA3_PARAMS = {
+   `this.region`,
+   `this.globalInit == true ? 1 : 0`,
+   `this.persistentAllocFxn`,
+   `this.persistentFreeFxn`,
+   `globalConfig`,
+   `regionConfig`,
+   `maxval`,
+   `this.contiguousPaRams == true ? 1 : 0`,
+};
+
+/*
+ *  ======== EDMA3_createResourceManagerObject ========
+ *  Creates a resource manager object based on the underlying SOC
+ */
+EDMA3_Result EDMA3_createResourceManagerObject()
+{
+    EDMA3_Result status;
+    EDMA3_RM_MiscParam param = {NULL , NULL};
+
+    param.isSlave = (EDMA3_PARAMS.globalInit == 1) ? 0 : 1;
+
+    status = EDMA3_RM_create( ti_sdo_fc_edma3_EDMA3_physicalId,
+            (EDMA3_RM_GblConfigParams *)(EDMA3_PARAMS.globalConfig), &param);
+
+    return ((EDMA3_Result)status);
+}
+
+/*
+ *  ======== EDMA3_deleteResourceManagerObject ========
+ *  Deletes the resource manager object based on the underlying SOC
+ */
+EDMA3_Result EDMA3_deleteResourceManagerObject()
+{
+    EDMA3_Result status;
+
+    status = EDMA3_RM_delete(ti_sdo_fc_edma3_EDMA3_physicalId, 
+            (const void *)NULL);
+
+    return (status);
+}
+
+% } 
+% else {
+
+#include <xdc/std.h>
+#include <ti/sdo/fc/rman/rman.h>
+#include <ti/sdo/fc/edma3/edma3_config.h>
+
+/*
+ * Declare alloc/Free functions before using them
+ */
+extern Bool `su(this.persistentAllocFxn)`(IALG_MemRec *memTab, Int numRecs);
+extern Void `su(this.persistentFreeFxn)`(IALG_MemRec *memTab, Int numRecs);
+
+/*
+ *  ======== EDMA3_PARAMS ========
+ *  EDMA3_PARAMS structure is created using the configured values
+ */
+EDMA3_Params EDMA3_PARAMS = {
+   `this.region`,
+    0,
+   `su(this.persistentAllocFxn)`,
+   `su(this.persistentFreeFxn)`,
+    NULL,
+    NULL,
+    0,
+   `this.contiguousPaRams == true ? 1 : 0`,
+};
+
+/* Base key value for DMAN3 Linux IPC objects */
+% if (Program.build.target.os == "Linux") {
+UInt32 _EDMA3_ipcKeyBase = `utils.toHex(this.ipcKeyBase)`;
+% }
+
+/*
+ * Maximum size of resource table used to store requests for each scratch grp. 
+ */
+__FAR__ Int ti_sdo_fc_edma3_EDMA3_MAXEDMAREQUESTS = `this.maxRequests`;
+
+% }
+%%{
+/*
+ * @(#) ti.sdo.fc.edma3; 3, 0, 0,152; 12-1-2010 17:24:42; /db/atree/library/trees/fc/fc-p01x/src/ xlibrary
+
+ */
+
+%%}

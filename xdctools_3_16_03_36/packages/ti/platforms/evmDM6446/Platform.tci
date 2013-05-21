@@ -1,0 +1,70 @@
+/*
+ *  Copyright (c) 2010 by Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * */
+
+/*
+ *  ======== Platform.tci ========
+ *
+ */
+
+/*
+ * The following comment is used by the Graphical Config Tool:
+ * !DESCRIPTION 6XXX!  evmDM6446 (567 MHz) with 256 Mbytes DDR2
+ * !NAME! ti.platforms.evmDM6446
+ */
+
+
+/*
+ * Setup platform-specific memory map, CLK rate, etc.
+ */
+var mem_ext = [];
+
+mem_ext[0] = {
+    comment: "256Mbytes of the DSP's off-chip memory",
+    name: "DDR2",
+    base: 0x80000000,
+    len:  0x10000000,
+    space: "code/data"
+};
+
+/* Specify the L1 and L2 memory settings */
+var device_regs = {
+    l1PMode: "32k",
+    l1DMode: "32k",
+    l2Mode: "0k"
+};
+
+var params = {
+    clockRate: 567,
+    catalogName: "ti.catalog.c6000",
+    deviceName: "DM6446",
+    regs: device_regs,
+    mem: mem_ext
+};
+
+/* override the defaults with anything specified by client */
+if (utils.loadPlatform.params != null) {
+    var overrides = utils.loadPlatform.params;
+    for (var i in params) {
+        if (i in overrides) {
+            params[i] = overrides[i];
+        }
+    }
+}
+
+/*
+ * Customize generic platform with parameters specified above.
+ */
+utils.loadPlatform("ti.platforms.generic", params);
+/*
+ *  @(#) ti.platforms.evmDM6446; 1, 0, 0, 1,262; 2-23-2010 16:52:14; /db/ztree/library/trees/platform/platform-k32x/src/
+ */
+

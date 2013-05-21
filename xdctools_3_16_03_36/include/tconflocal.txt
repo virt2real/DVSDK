@@ -1,0 +1,36 @@
+/*
+ *  Copyright 2010 by Texas Instruments Incorporated.
+ *  @(#) XDC u17 02-22-2010 (xdc-u17)
+ */
+/* --COPYRIGHT--,EPL
+ *Copyright (c) 2008 Texas Instruments and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  Contributors:
+ *      Texas Instruments - initial implementation
+ *
+ * --/COPYRIGHT--*/
+/*
+ *  ======== tconflocal.tci ========
+ *  This script is used to optionally customize the execution environment
+ *  of all scripts executed by tconf.  This script is loaded by tconfini.tcf
+ *  after tconf required initializations.  Thus, the contents of this script
+ *  are executed prior to the execution of scripts named on the command 
+ *  line of tconf.
+ */
+
+/* create global context for configuration scripts */
+var config = new Config("config_0");
+
+/* create a generic Board and a Cpu object for the board */
+config.create("board_0");
+config.board("board_0").create("cpu_0");
+
+/* create a program object (and the shortcut "prog") within the default Cpu */
+var prog = config.board("board_0").cpus()[0].create(utils.getProgName());
+
+/* initialize program attributes according to environment */
+utils.setProgAttrs(prog);

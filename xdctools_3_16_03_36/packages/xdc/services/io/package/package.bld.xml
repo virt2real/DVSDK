@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xdc.services.io" version="1, 0, 0" producerId="/db/ztree/library/trees/xdc/xdc-u17x/src/">
+    <units>
+        <module name="File"/>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/release/Dos_dll.c"/>
+        <srcFile name="Dos.cpp"/>
+        <srcFile name="package/cfg/debug/path2dos_exe.c"/>
+        <srcFile name="DosApp.cpp"/>
+        <srcFile name="package/package_xdc.services.io.c"/>
+        <srcFile name="StringUtils.cpp"/>
+        <srcFile name="package/cfg/debug/Dos_dll.c"/>
+        <srcFile name="package/cfg/release/path2dos_exe.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="release/Doss.lib.mak" src="package.bld"/>
+        <srcFile name="package/lib/release/Doss/package/package_xdc.services.io.o86.dep" src="package/package_xdc.services.io.c"/>
+        <srcFile name="package/lib/release/Doss/StringUtils.o86.dep" src="StringUtils.cpp"/>
+        <srcFile name="package/lib/release/Doss/Dos.o86.dep" src="Dos.cpp"/>
+        <srcFile name="debug/Doss.lib.mak" src="package.bld"/>
+        <srcFile name="package/lib/debug/Doss/package/package_xdc.services.io.o86.dep" src="package/package_xdc.services.io.c"/>
+        <srcFile name="package/lib/debug/Doss/StringUtils.o86.dep" src="StringUtils.cpp"/>
+        <srcFile name="package/lib/debug/Doss/Dos.o86.dep" src="Dos.cpp"/>
+        <srcFile name="package/cfg/debug/Dos_dll.mak" src="package.bld"/>
+        <srcFile name="package/cfg/debug/Dos_dll.o86.dep" src="package/cfg/debug/Dos_dll.c"/>
+        <srcFile name="package/cfg/debug/Dos_dll.dep" src="package/cfg/debug/Dos_dll.cfg"/>
+        <srcFile name="package/cfg/release/Dos_dll.mak" src="package.bld"/>
+        <srcFile name="package/cfg/release/Dos_dll.o86.dep" src="package/cfg/release/Dos_dll.c"/>
+        <srcFile name="package/cfg/release/Dos_dll.dep" src="package/cfg/release/Dos_dll.cfg"/>
+        <srcFile name="package/cfg/debug/path2dos_exe.mak" src="package.bld"/>
+        <srcFile name="package/cfg/debug/path2dos_exe.o86.dep" src="package/cfg/debug/path2dos_exe.c"/>
+        <srcFile name="package/cfg/debug/path2dos/DosApp.o86.dep" src="DosApp.cpp"/>
+        <srcFile name="package/cfg/debug/path2dos_exe.dep" src="package/cfg/debug/path2dos_exe.cfg"/>
+        <srcFile name="package/cfg/release/path2dos_exe.mak" src="package.bld"/>
+        <srcFile name="package/cfg/release/path2dos_exe.o86.dep" src="package/cfg/release/path2dos_exe.c"/>
+        <srcFile name="package/cfg/release/path2dos/DosApp.o86.dep" src="DosApp.cpp"/>
+        <srcFile name="package/cfg/release/path2dos_exe.dep" src="package/cfg/release/path2dos_exe.cfg"/>
+        <srcFile name="package/rel/xdc_services_io.tar.gz.dep" src="package/rel/xdc_services_io.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="microsoft.targets.VC98"
+            version="microsoft.targets.VC98{1,0,12.00,8168"
+            platform="host.platforms.PC"
+            isa="x86"
+            suffix="86"
+            rootDir="/db/toolsrc/library/tools/vendors/msvc/6.0sp3"
+            os="Windows"
+            rts="microsoft.targets.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="release/Doss"
+        pname="release/Doss.lib"
+        profile="release"
+        target="microsoft.targets.VC98"/>
+    <library name="debug/Doss"
+        pname="debug/Doss.lib"
+        profile="debug"
+        target="microsoft.targets.VC98"/>
+    </libraries>
+    <executables>
+    <executable name="debug/Dos"
+        pname="debug/Dos.dll"
+        target="microsoft.targets.VC98"
+        platform="host.platforms.PC"
+        profile="debug"
+        xCfgScript="package/cfg/debug/Dos_dll.cfg"
+        xCfgPrefix="package/cfg/debug/Dos_dll"
+        cfgScript="null"
+        />
+    <executable name="release/Dos"
+        pname="release/Dos.dll"
+        target="microsoft.targets.VC98"
+        platform="host.platforms.PC"
+        profile="release"
+        xCfgScript="package/cfg/release/Dos_dll.cfg"
+        xCfgPrefix="package/cfg/release/Dos_dll"
+        cfgScript="null"
+        />
+    <executable name="debug/path2dos"
+        pname="debug/path2dos.exe"
+        target="microsoft.targets.VC98"
+        platform="host.platforms.PC"
+        profile="debug"
+        xCfgScript="package/cfg/debug/path2dos_exe.cfg"
+        xCfgPrefix="package/cfg/debug/path2dos_exe"
+        cfgScript="null"
+        />
+    <executable name="release/path2dos"
+        pname="release/path2dos.exe"
+        target="microsoft.targets.VC98"
+        platform="host.platforms.PC"
+        profile="release"
+        xCfgScript="package/cfg/release/path2dos_exe.cfg"
+        xCfgPrefix="package/cfg/release/path2dos_exe"
+        cfgScript="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="debug/Dos.dll"
+        args=""
+        groupName="debug/Dos.dll"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="release/Dos.dll"
+        args=""
+        groupName="release/Dos.dll"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="debug/path2dos.exe"
+        args=""
+        groupName="debug/path2dos.exe"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="release/path2dos.exe"
+        args=""
+        groupName="release/path2dos.exe"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xdc_services_io"
+        pname="xdc_services_io.tar.gz"
+        label="default"
+    >
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.rel.dot"/>
+        <file name="debug/Doss.lib"/>
+        <file name="java/package.jar"/>
+        <file name="debug/Dos.dll"/>
+        <file name="package/package.bld.xml"/>
+        <file name="release/path2dos.exe"/>
+        <file name="release/Dos.dll"/>
+        <file name="debug/path2dos.exe"/>
+        <file name="package/package.ext.xml"/>
+        <file name="release/Doss.lib"/>
+        <file name="package/build.cfg"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>
