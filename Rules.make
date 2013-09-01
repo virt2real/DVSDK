@@ -5,7 +5,7 @@ PLATFORM=dm365
 
 # The installation directory of the DVSDK.
 #DVSDK_INSTALL_DIR=/usr/local/dvsdk
-DVSDK_INSTALL_DIR=.
+DVSDK_INSTALL_DIR=$(DEVDIR)/dvsdk
 
 # For backwards compatibility
 DVEVM_INSTALL_DIR=$(DVSDK_INSTALL_DIR)
@@ -54,8 +54,9 @@ LINUXLIBS_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/linux-devkit/arm-none-linux-gnueabi/u
 
 # The prefix to be added before the GNU compiler tools (optionally including # path), i.e. "arm_v5t_le-" or "/opt/bin/arm_v5t_le-".
 #CSTOOL_DIR=/opt/codesourcery/arm-2009q1/
-#CSTOOL_DIR=/opt/codesourcery/arm-2010q1/
-#CSTOOL_PREFIX=$(CSTOOL_DIR)/bin/arm-none-linux-gnueabi-
+TOOLCHAIN_PREFIX=arm-none-linux-gnueabi-
+CSTOOL_DIR=$(DEVDIR)/codesourcery/arm-2013.05
+CSTOOL_PREFIX=$(CSTOOL_DIR)/bin/$(TOOLCHAIN_PREFIX)
 
 MVTOOL_DIR=$(CSTOOL_DIR)
 MVTOOL_PREFIX=$(CSTOOL_PREFIX)
