@@ -33,7 +33,6 @@
 #include <linux/cdev.h>
 #include <linux/mm.h>
 #include <linux/interrupt.h>
-#include <linux/slab.h>
 
 #include <asm/io.h>
 #include <asm/memory.h>
@@ -59,7 +58,8 @@
 #endif
 
 #include "irqk.h"
-
+//#include "linux/slab_def.h"
+#include "linux/slab.h"
 #if 0
 #  if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,36)
 #  define USE_UNLOCKED_IOCTL
@@ -112,6 +112,9 @@
 
 /* A "channel" is an IRQ vector */
 #define IRQK_NUMCHANNELS 64
+
+#define init_MUTEX(sem)		sema_init(sem, 1)
+#define init_MUTEX_LOCKED(sem)	sema_init(sem, 0)
 
 #if defined(LSP_210)
 /* holds physical address of ARM_INTMUX register */
@@ -348,8 +351,7 @@ static int ioctl(struct inode *inode, struct file *filp,
 
                 __D("REQUESTIRQ: ... got it\n");
 
-                //init_MUTEX_LOCKED(&channelp->completion_sem);
-                sema_init(&channelp->completion_sem, 0);
+                init_MUTEX_LOCKED(&channelp->completion_sem);
                 channelp->transfer_complete = 0;
                 channelp->resource = req.resource;
 
@@ -862,8 +864,7 @@ static int __init irqk_init(void)
 
     for (i = 0; i < IRQK_NUMCHANNELS; i++) {
         channelp = &channels[i];
-        //init_MUTEX(&channelp->resource_sem);
-        sema_init(&channelp->resource_sem, 1);
+        init_MUTEX(&channelp->resource_sem);
         channelp->transfer_complete = 0;
         channelp->resource = IRQK_NONE;
         INIT_LIST_HEAD(&channelp->users);

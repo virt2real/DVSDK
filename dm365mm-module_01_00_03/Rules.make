@@ -14,5 +14,4 @@ KERNEL_DIR=$(LINUXKERNEL_INSTALL_DIR)
 USE_UDEV=0
 
 # The maximum number of memory pools for cmem.
-MAX_POOLS=10
-
+MAX_POOLS=128

@@ -69,6 +69,8 @@ typedef struct _edma_params {
 #define DM365MMAP_IOCMEMCPY     0x7
 #define DM365MMAP_IOCWAIT       0x8
 #define DM365MMAP_IOCCLEAR_PENDING 0x9
+#define init_MUTEX(sem)		sema_init(sem, 1)
+#define init_MUTEX_LOCKED(sem)	sema_init(sem, 0)
 
 #ifdef __DEBUG
 #    define __D(fmt, args...) printk(KERN_DEBUG "DM365MMAP Debug: " fmt, ## args)
@@ -85,14 +87,7 @@ static int major = 0;
 #if (USE_UDEV==1)
 static struct class *dm365mmap_class;
 #endif
-
-//static DECLARE_MUTEX(dm365mmap_reply_mutex);
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,36)
-  static DEFINE_SEMAPHORE(dm365mmap_reply_mutex);
-#else
-  static DECLARE_MUTEX(dm365mmap_reply_mutex);
-#endif
-
+static DEFINE_SEMAPHORE(dm365mmap_reply_mutex);
 static struct completion edmacompletion;
 
 /* Forward declaration of system calls */
@@ -101,18 +96,7 @@ static int ioctl(struct inode *inode, struct file *filp, unsigned int cmd,
 static int mmap(struct file *filp, struct vm_area_struct *vma);
 static int open(struct inode *inode, struct file *filp);
 static int release(struct inode *inode, struct file *filp);
-//static struct file_operations dm365mmap_fxns = { ioctl: ioctl, mmap: mmap, open: open, release:release
-static struct file_operations dm365mmap_fxns = {
-	owner:   THIS_MODULE,
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,36)
-	unlocked_ioctl: ioctl,
-#else
-	ioctl:   ioctl,
-#endif
-	mmap: mmap,
-	open: open,
-	release:release
- 
+static struct file_operations dm365mmap_fxns = { unlocked_ioctl: ioctl, mmap: mmap, open: open, release:release
 };
 
 #ifdef MJCPCLK_ENABLE
@@ -170,8 +154,7 @@ static int ioctl(struct inode *inode, struct file *filp, unsigned int cmd,
              */
         case DM365MMAP_IOCCLEAR_PENDING:
             __D("Clear Pending Call received.\n");
-            //init_MUTEX_LOCKED(&dm365mmap_reply_mutex);
-    	    sema_init(&dm365mmap_reply_mutex, 0);
+            init_MUTEX_LOCKED(&dm365mmap_reply_mutex);
             break;
 
             /*
@@ -297,8 +280,7 @@ int __init dm365mmap_init(void)
     }
 
 #endif /*  */
-    //init_MUTEX_LOCKED(&dm365mmap_reply_mutex);
-    sema_init(&dm365mmap_reply_mutex, 0);
+    init_MUTEX_LOCKED(&dm365mmap_reply_mutex);
     return 0;
 }
 

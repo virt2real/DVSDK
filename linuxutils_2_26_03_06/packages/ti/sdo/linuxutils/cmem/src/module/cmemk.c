@@ -36,8 +36,6 @@
 #include <asm/pgtable.h>
 #include <asm/io.h>
 
-#define	VM_RESERVED	VM_DONTEXPAND | VM_DONTDUMP
-
 #include <linux/version.h>
 
 #if 0
@@ -149,6 +147,11 @@
 #define BLOCK_IOREMAP    (1 << 0)
 #define BLOCK_MEMREGION  (1 << 1)
 #define BLOCK_REGION     (1 << 2)
+
+#ifndef VM_RESERVED
+#define VM_RESERVED (VM_DONTEXPAND | VM_DONTDUMP)
+#endif
+
 static unsigned int block_flags[NBLOCKS] = {0, 0};
 
 static unsigned long block_virtp[NBLOCKS] = {0, 0};
@@ -1373,8 +1376,7 @@ static int ioctl(struct inode *inode, struct file *filp,
                              */
                             virtp_end = virtp + size;
 #ifdef USE_CACHE_VOID_ARG
-//#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34)
-#if 1
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34)
                             dmac_map_area((void *)virtp, size, DMA_FROM_DEVICE);
                             outer_inv_range(__pa((u32)(void *)virtp),
                                             __pa((u32)(void *)virtp_end));
@@ -1615,8 +1617,7 @@ static int ioctl(struct inode *inode, struct file *filp,
             switch (cmd & ~CMEM_IOCMAGIC) {
               case CMEM_IOCCACHEWB:
 #ifdef USE_CACHE_VOID_ARG
-//#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34)
-#if 1
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34)
                 dmac_map_area((void *)virtp, block.size, DMA_TO_DEVICE);
                 outer_clean_range(__pa((u32)(void *)virtp),
                                   __pa((u32)(void *)virtp + block.size));
@@ -1633,8 +1634,7 @@ static int ioctl(struct inode *inode, struct file *filp,
 
               case CMEM_IOCCACHEINV:
 #ifdef USE_CACHE_VOID_ARG
-//#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34)
-#if 1
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34)
                 dmac_map_area((void *)virtp, block.size, DMA_FROM_DEVICE);
                 outer_inv_range(__pa((u32)(void *)virtp),
                                 __pa((u32)(void *)virtp + block.size));
@@ -1651,8 +1651,7 @@ static int ioctl(struct inode *inode, struct file *filp,
 
               case CMEM_IOCCACHEWBINV:
 #ifdef USE_CACHE_VOID_ARG
-//#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34)
-#if 1
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34)
                 dmac_map_area((void *)virtp, block.size, DMA_BIDIRECTIONAL);
                 outer_flush_range(__pa((u32)(void *)virtp),
                                   __pa((u32)(void *)virtp + block.size));
