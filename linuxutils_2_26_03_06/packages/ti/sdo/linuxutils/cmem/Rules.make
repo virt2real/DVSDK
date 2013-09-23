@@ -2,14 +2,14 @@
 # install') in a proper file structure. This EXEC_DIR should either be visible
 # from the target, or you will have to copy this (whole) directory onto the
 # target filesystem.
-EXEC_DIR=/home/cmp/v2r_kernel/drivers/linux-utils/linuxutils_2_26_03_06
+EXEC_DIR=$(DEVDIR)/dvsdk/linux-utils/linuxutils_2_26_03_06
 
 
 # The prefix to be added before the GNU compiler tools (optionally including
 # path), i.e. "arm_v5t_le-" or "/opt/bin/arm_v5t_le-".
 
 # For "kernel_org" builds
-MVTOOL_PREFIX=/opt/codesourcery/arm-2013q1/bin/arm-none-linux-gnueabi-
+MVTOOL_PREFIX=$(DEVDIR)/codesourcery/arm-2013.05/bin/arm-none-linux-gnueabi-
 
 # For Davinci builds
 #MVTOOL_PREFIX=/db/toolsrc/library/vendors2005/mvl/arm/mvl5.0/montavista/pro/devkit/arm/v5t_le/bin/arm_v5t_le-
@@ -27,7 +27,7 @@ UCTOOL_PREFIX=/opt/codesourcery/arm-2013q1/bin/arm-none-linux-gnueabi-
 #LINUXKERNEL_INSTALL_DIR=/db/toolsrc/library/vendors2005/kernel_org/arm/KERNEL_DEV.DaVinciPSP.03.00.00.00/DaVinci-PSP-SDK-DEV.DaVinciPSP.03.00.00.00/kernel/dm365
 
 # For OMAP3530 2.6.37 Linux kernel
-LINUXKERNEL_INSTALL_DIR=/home/cmp/v2r_kernel/linux-davinci
+LINUXKERNEL_INSTALL_DIR=$(DEVDIR)/kernel
 
 #
 # The following are kept around for TI developer convenience ...
@@ -44,7 +44,7 @@ LINUXKERNEL_INSTALL_DIR=/home/cmp/v2r_kernel/linux-davinci
 # defaults.  The variable $(RULES_MAKE) can be overridden on the 'make'
 # command-line if the location below is not correct (for example, when this
 # module is not part of an overlying DVSDK).
-#RULES_MAKE := ../../../../../../../../Rules.make
+RULES_MAKE := ../../../../../../../../Rules.make
 #-include $(RULES_MAKE)
 
 

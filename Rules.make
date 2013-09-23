@@ -48,6 +48,7 @@ XDC_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/xdctools_3_16_03_36
 # The directory that points to your kernel source directory.
 #LINUXKERNEL_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/psp/linux-2.6.32.17-psp03.01.01.39
 #LINUXKERNEL_INSTALL_DIR=/opt/GIT/3.9/linux-davinci
+LINUXKERNEL_INSTALL_DIR=$(DEVDIR)/kernel
 
 # Where temporary Linux headers and libs are installed.
 LINUXLIBS_INSTALL_DIR=$(DVSDK_INSTALL_DIR)/linux-devkit/arm-none-linux-gnueabi/usr
