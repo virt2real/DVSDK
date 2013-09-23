@@ -34,8 +34,8 @@
 #ifndef ti_sdo_dai_linux_priv__VideoBuf_h_
 #define ti_sdo_dai_linux_priv__VideoBuf_h_
 
-#include <linux/videodev.h>
-#include <linux/videodev2.h>
+//#include <linux/videodev.h>
+#include "../../priv/videodev2.h"
 
 #include <ti/sdo/dmai/BufferGfx.h>
 

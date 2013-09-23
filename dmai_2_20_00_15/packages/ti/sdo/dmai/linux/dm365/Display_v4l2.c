@@ -40,9 +40,8 @@
 #include <errno.h>
 #include <media/davinci/videohd.h>
 #include <media/davinci/davinci_display.h>
-#include <linux/videodev.h>
-#include <linux/videodev2.h>
-
+//#include <linux/videodev.h>
+//#include <linux/videodev2.h>
 #include <xdc/std.h>
 #include <ti/sdo/dmai/Cpu.h>
 #include <ti/sdo/dmai/Dmai.h>
@@ -52,11 +51,22 @@
 #include <ti/sdo/dmai/ColorSpace.h>
 #include <ti/sdo/dmai/BufferGfx.h>
 
+typedef unsigned char __u8;
+typedef char __s8;
+typedef unsigned short __u16;
+typedef short __s16;
+typedef unsigned long __u32;
+typedef long __s32;
+typedef unsigned long long __u64;
+typedef long long __s64;
+
 #include "priv/_VideoBuf.h"
 #include "../priv/_Display.h"
 #include "priv/_SysFs.h"
 
 #define MODULE_NAME     "Display"
+
+
 
 /* Static Functions */
 static Int _Display_v4l2_streamon(Display_Handle hDisplay);

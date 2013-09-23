@@ -38,9 +38,13 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/mman.h>
-#include <linux/fb.h>
+//#include <linux/fb.h>
 #include <sys/ioctl.h>
-#include <linux/soundcard.h>
+#include "priv/soundcard.h"
+
+/********************************************
+ * IOCTL commands for /dev/dsp and /dev/audio
+ */
 
 #include <xdc/std.h>
 #include <ti/sdo/dmai/Dmai.h>

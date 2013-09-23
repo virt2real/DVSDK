@@ -31,6 +31,9 @@
  * --/COPYRIGHT--*/
 
 /* Standard Linux headers */
+//#define __ASSEMBLY__
+
+
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -40,7 +43,7 @@
 #include <sys/mman.h>
 #include <sys/ioctl.h>
 #include <asm/types.h>
-#include <linux/videodev2.h>
+//#include <linux/videodev2.h>
 #include <media/davinci/videohd.h>
 
 #include <xdc/std.h>
@@ -163,7 +166,7 @@ Capture_Handle Capture_create(BufTab_Handle hBufTab, Capture_Attrs *attrs)
     Capture_Handle              hCapture;
     VideoStd_Type               videoStd, videoStdOld;
     Int32                       width, height;
-    Uint32                      pixelFormat;
+    //Uint32                      pixelFormat;
     Bool                        halfRateCapture = FALSE;
     struct v4l2_control         ctrl;
 
@@ -307,7 +310,7 @@ Capture_Handle Capture_create(BufTab_Handle hBufTab, Capture_Attrs *attrs)
     }
     fmt.fmt.pix.bytesperline = 0;
     fmt.fmt.pix.sizeimage = 0;
-    pixelFormat = fmt.fmt.pix.pixelformat;
+    //pixelFormat = fmt.fmt.pix.pixelformat;
     
     if ((videoStd == VideoStd_CIF) || (videoStd == VideoStd_SIF_PAL) || 
         (videoStd == VideoStd_SIF_NTSC) || (videoStd == VideoStd_D1_PAL) ||
@@ -531,7 +534,7 @@ Int Capture_detectVideoStd(Capture_Handle hCapture, VideoStd_Type *videoStdPtr,
                            Capture_Attrs *attrs)
 {
     Int                 failCount  =  0;
-    Int                 firstInput;
+    //Int                 firstInput;
     Int                 queryInput;
     struct v4l2_input   v4l2Input;
     v4l2_std_id         std;
@@ -551,7 +554,7 @@ Int Capture_detectVideoStd(Capture_Handle hCapture, VideoStd_Type *videoStdPtr,
     Dmai_clear(v4l2Input);
     Dmai_clear(fmt);
     queryInput =  0;
-    firstInput = -1;
+    //firstInput = -1;
 
     if (attrs->videoStd < 0 || attrs->videoStd > VideoStd_COUNT) {
         Dmai_err1("Invalid capture standard given (%d)\n", attrs->videoStd);

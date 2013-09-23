@@ -33,10 +33,65 @@
 #ifndef ti_sdo_dmai__Display_h_
 #define ti_sdo_dmai__Display_h_
 
-#include <linux/fb.h>
+//#include <uapi/linux/fb.h>
 #if defined(Dmai_Device_omap3530)
 #include <linux/omapfb.h>
 #endif
+/* Interpretation of offset for color fields: All offsets are from the right,
+ * inside a "pixel" value, which is exactly 'bits_per_pixel' wide (means: you
+ * can use the offset as right argument to <<). A pixel afterwards is a bit
+ * stream and is written to video memory as that unmodified.
+ *
+ * For pseudocolor: offset and length should be the same for all color
+ * components. Offset specifies the position of the least significant bit
+ * of the pallette index in a pixel value. Length indicates the number
+ * of available palette entries (i.e. # of entries = 1 << length).
+ */
+struct fb_bitfield {
+	unsigned long offset;			/* beginning of bitfield	*/
+	unsigned long length;			/* length of bitfield		*/
+	unsigned long msb_right;		/* != 0 : Most significant bit is */
+					/* right */
+};
+struct fb_var_screeninfo {
+	unsigned long xres;			/* visible resolution		*/
+	unsigned long yres;
+	unsigned long xres_virtual;		/* virtual resolution		*/
+	unsigned long yres_virtual;
+	unsigned long xoffset;			/* offset from virtual to visible */
+	unsigned long yoffset;			/* resolution			*/
+
+	unsigned long bits_per_pixel;		/* guess what			*/
+	unsigned long grayscale;		/* 0 = color, 1 = grayscale,	*/
+					/* >1 = FOURCC			*/
+	struct fb_bitfield red;		/* bitfield in fb mem if true color, */
+	struct fb_bitfield green;	/* else only length is significant */
+	struct fb_bitfield blue;
+	struct fb_bitfield transp;	/* transparency			*/
+
+	unsigned long nonstd;			/* != 0 Non standard pixel format */
+
+	unsigned long activate;			/* see FB_ACTIVATE_*		*/
+
+	unsigned long height;			/* height of picture in mm    */
+	unsigned long width;			/* width of picture in mm     */
+
+	unsigned long accel_flags;		/* (OBSOLETE) see fb_info.flags */
+
+	/* Timing: All values in pixclocks, except pixclock (of course) */
+	unsigned long pixclock;			/* pixel clock in ps (pico seconds) */
+	unsigned long left_margin;		/* time from sync to picture	*/
+	unsigned long right_margin;		/* time from picture to sync	*/
+	unsigned long upper_margin;		/* time from sync to picture	*/
+	unsigned long lower_margin;
+	unsigned long hsync_len;		/* length of horizontal sync	*/
+	unsigned long vsync_len;		/* length of vertical sync	*/
+	unsigned long sync;			/* see FB_SYNC_*		*/
+	unsigned long vmode;			/* see FB_VMODE_*		*/
+	unsigned long rotate;			/* angle we rotate counter clockwise */
+	unsigned long colorspace;		/* colorspace for FOURCC-based modes */
+	unsigned long reserved[4];		/* Reserved for future compatibility */
+};
 
 typedef struct Display_Object {
     Int                  fd;
@@ -52,6 +107,7 @@ typedef struct Display_Object {
     struct fb_var_screeninfo origVarInfo;
     Display_Attrs        attrs;
 } Display_Object;
+
 
 extern int _Display_sysfsChange(Display_Output *displayOutput, 
                             char* displayDevice, VideoStd_Type *videoType, 

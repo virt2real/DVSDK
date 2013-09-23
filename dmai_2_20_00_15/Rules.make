@@ -115,7 +115,7 @@
 # This designation is required as some ARM+DSP platforms may support running
 # DMAI under multiple environments.
 #------------------------------------------------------------------------------
-PLATFORM=o3530_al
+PLATFORM=dm365_al
 
 ARAGO_SDK_INSTALL_DIR = $(HOME)/arago-2009.11-armv5te-linux-gnueabi-sdk/opt/arago-2009.11
 
@@ -285,7 +285,7 @@ LINUXLIBS_INSTALL_DIR_dm365_al = \
 LINUXKERNEL_INSTALL_DIR_dm365_al = \
     $(DVSDK_INSTALL_DIR)/psp/linux-kernel-source
 CROSS_COMPILE_dm365_al = \
-    /library/cs/arm-2009q1/bin/arm-none-linux-gnueabi-
+    /opt/codesourcery/arm-2013q1/bin/arm-none-linux-gnueabi-
 USER_XDC_PATH_dm365_al = \
     $(CE_INSTALL_DIR_dm365_al)/examples
 XDC_INSTALL_DIR_dm365_al = \

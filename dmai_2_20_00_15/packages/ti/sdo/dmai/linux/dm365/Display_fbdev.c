@@ -39,9 +39,37 @@
 #include <errno.h>
 #include <sys/mman.h>
 #include <sys/ioctl.h>
-#include <linux/fb.h>
+//#include <linux/fb.h>
 
-#include <video/davincifb_ioctl.h>
+//#include <video/davincifb_ioctl.h>
+
+/* ioctls
+   0x46 is 'F'								*/
+#define FBIOGET_VSCREENINFO	0x4600
+#define FBIOPUT_VSCREENINFO	0x4601
+#define FBIOGET_FSCREENINFO	0x4602
+#define FBIOGETCMAP		0x4604
+#define FBIOPUTCMAP		0x4605
+#define FBIOPAN_DISPLAY		0x4606
+#ifndef __KERNEL__
+#define FBIO_CURSOR            _IOWR('F', 0x08, struct fb_cursor)
+#endif
+/* 0x4607-0x460B are defined below */
+/* #define FBIOGET_MONITORSPEC	0x460C */
+/* #define FBIOPUT_MONITORSPEC	0x460D */
+/* #define FBIOSWITCH_MONIBIT	0x460E */
+#define FBIOGET_CON2FBMAP	0x460F
+#define FBIOPUT_CON2FBMAP	0x4610
+#define FBIOBLANK		0x4611		/* arg: 0 or vesa level + 1 */
+#define FBIOGET_VBLANK		_IOR('F', 0x12, struct fb_vblank)
+#define FBIO_ALLOC              0x4613
+#define FBIO_FREE               0x4614
+#define FBIOGET_GLYPH           0x4615
+#define FBIOGET_HWCINFO         0x4616
+#define FBIOPUT_MODEINFO        0x4617
+#define FBIOGET_DISPINFO        0x4618
+#define FBIO_WAITFORVSYNC	_IOW('F', 0x20, __u32)
+
 
 #include <xdc/std.h>
 #include <ti/sdo/dmai/Cpu.h>
@@ -60,6 +88,26 @@
 /* Black color in UYVY format */
 #define UYVY_BLACK      0x10801080
 
+struct fb_fix_screeninfo {
+	char id[16];			/* identification string eg "TT Builtin" */
+	unsigned long smem_start;	/* Start of frame buffer mem */
+					/* (physical address) */
+	__u32 smem_len;			/* Length of frame buffer mem */
+	__u32 type;			/* see FB_TYPE_*		*/
+	__u32 type_aux;			/* Interleave for interleaved Planes */
+	__u32 visual;			/* see FB_VISUAL_*		*/
+	__u16 xpanstep;			/* zero if no hardware panning  */
+	__u16 ypanstep;			/* zero if no hardware panning  */
+	__u16 ywrapstep;		/* zero if no hardware ywrap    */
+	__u32 line_length;		/* length of a line in bytes    */
+	unsigned long mmio_start;	/* Start of Memory Mapped I/O   */
+					/* (physical address) */
+	__u32 mmio_len;			/* Length of Memory Mapped I/O  */
+	__u32 accel;			/* Indicate to driver which	*/
+					/*  specific chip/card we have	*/
+	__u16 capabilities;		/* see FB_CAP_*			*/
+	__u16 reserved[2];		/* Reserved for future compatibility */
+};
 
 /******************************************************************************
  * setDisplayBuffer
@@ -136,11 +184,11 @@ Display_Handle Display_fbdev_create(BufTab_Handle hBufTab, Display_Attrs *attrs)
     BufferGfx_Attrs         gfxAttrs       = BufferGfx_Attrs_DEFAULT;
     struct fb_var_screeninfo varInfo;
     struct fb_fix_screeninfo fixInfo;
-    Int                      displaySize;
-    Int                      bufIdx;
-    Int8                    *virtPtr;
-    Int32                    physPtr;
-    Int32                    height, width;
+    Int                      displaySize = 0;
+    Int                      bufIdx = 0;
+    Int8                    *virtPtr = 0;
+    Int32                    physPtr = 0;
+    Int32                    height = 0, width = 0;
     Display_Handle           hDisplay;
     Buffer_Handle            hBuf;
 
