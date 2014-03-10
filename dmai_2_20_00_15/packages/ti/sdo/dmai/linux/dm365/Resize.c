@@ -251,6 +251,7 @@ Int Resize_config(Resize_Handle hResize,
     /* input params are set at the resizer */
     rsz_ss_config.input.image_width  = srcDim.width;
     rsz_ss_config.input.image_height = srcDim.height;
+    rsz_ss_config.input.line_length = srcDim.lineLength;
     rsz_ss_config.input.ppln = rsz_ss_config.input.image_width + 8;
     rsz_ss_config.input.lpfr = rsz_ss_config.input.image_height + 10;
     rsz_ss_config.input.pix_fmt = pixFormatConversion(BufferGfx_getColorSpace(hSrcBuf));
