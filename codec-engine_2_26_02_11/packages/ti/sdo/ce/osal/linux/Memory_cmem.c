@@ -972,7 +972,9 @@ static Void cleanup(Void)
 Void Memory_registerContigBuf(UInt32 virtualAddress, UInt32 sizeInBytes,
         UInt32 physicalAddress)
 {
+	Lock_acquire( moduleLock );
     addContigBuf(virtualAddress, sizeInBytes, physicalAddress);
+	Lock_release( moduleLock );
 }
 
 
@@ -981,12 +983,14 @@ Void Memory_registerContigBuf(UInt32 virtualAddress, UInt32 sizeInBytes,
  */
 Void Memory_unregisterContigBuf(UInt32 virtualAddress, UInt32 sizeInBytes)
 {
+	Lock_acquire( moduleLock );
     if (removeContigBuf(virtualAddress, sizeInBytes) < 0) {
         GT_2trace(curTrace, GT_6CLASS, "Memory_unregisterContigBuf> "
                   "Warning: buffer (addr=%d, size=%d) not found in "
                   "translation cache\n",
                   virtualAddress, sizeInBytes);
     }
+	Lock_release( moduleLock );
 }
 
 
