@@ -48,6 +48,9 @@
 #define VideoStd_QVGA_WIDTH       320     /**< Width in pixels of QVGA */
 #define VideoStd_QVGA_HEIGHT      240     /**< Height in pixels of QVGA */
 
+#define VideoStd_PRGB_WIDTH_FILE	"/sys/class/davinci_display/prgb/width"
+#define VideoStd_PRGB_HEIGHT_FILE	"/sys/class/davinci_display/prgb/height"
+
 #define VideoStd_CIF_WIDTH       352     /**< Width in pixels of CIF */
 #define VideoStd_CIF_HEIGHT      288     /**< Height in pixels of CIF */
 
@@ -102,6 +105,7 @@ typedef enum {
     VideoStd_1080P_25,      /**< 1080P @ 25 frames per second */
     VideoStd_1080P_24,      /**< 1080P @ 24 frames per second */
     VideoStd_QVGA,          /**< QVGA @ 30 frames per second */
+	VideoStd_PRGB,          /**< PRGB @ 30 frames per second */
     VideoStd_1080P_60,      /**< 1080P @ 60 frames per second */
     VideoStd_1080P_50,      /**< 1080P @ 50 frames per second */    
     VideoStd_1080I_60,      /**< 1080I @ 60 frames per second */    

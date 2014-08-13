@@ -30,6 +30,10 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
 
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <xdc/std.h>
 #include <ti/sdo/dmai/VideoStd.h>
 
@@ -46,6 +50,22 @@ Int VideoStd_getResolution(VideoStd_Type videoStd,
             *widthPtr  = VideoStd_QVGA_WIDTH;
             *heightPtr = VideoStd_QVGA_HEIGHT;
             break;
+		case VideoStd_PRGB:{
+			int fd;
+			char buf[4];
+
+			fd = open(VideoStd_PRGB_WIDTH_FILE, O_RDWR);
+			read(fd, &buf, 4);
+			close(fd);
+			*widthPtr = atoi(buf);
+
+			fd = open(VideoStd_PRGB_HEIGHT_FILE, O_RDWR);
+			read(fd, &buf, 4);
+			close(fd);
+			*heightPtr = atoi(buf);
+
+            break;
+		}
         case VideoStd_CIF:
             *widthPtr  = VideoStd_CIF_WIDTH;
             *heightPtr = VideoStd_CIF_HEIGHT;
