@@ -48,6 +48,20 @@
 /*#define ASQINT_ENABLE*/
 /*#define MJCPCLK_ENABLE*/
 
+#if 0
+#  if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,36)
+#  define USE_UNLOCKED_IOCTL
+#  else
+#  undef USE_UNLOCKED_IOCTL
+#  endif
+#else
+/*
+ * Just use it regardless of kernel version (since struct file_operations
+ * has contained unlocked_ioctl for a long time now).
+ */
+#  define USE_UNLOCKED_IOCTL
+#endif
+
 typedef struct _edma_params {
     unsigned long src;
     unsigned long dst;
@@ -91,12 +105,26 @@ static DEFINE_SEMAPHORE(dm365mmap_reply_mutex);
 static struct completion edmacompletion;
 
 /* Forward declaration of system calls */
-static int ioctl(struct inode *inode, struct file *filp, unsigned int cmd,
-                 unsigned long args);
+#ifdef USE_UNLOCKED_IOCTL
+static long ioctl(struct file *filp, unsigned int cmd, unsigned long args);
+#else
+static int ioctl(struct inode *inode, struct file *filp,
+                 unsigned int cmd, unsigned long args);
+#endif
+
 static int mmap(struct file *filp, struct vm_area_struct *vma);
 static int open(struct inode *inode, struct file *filp);
 static int release(struct inode *inode, struct file *filp);
-static struct file_operations dm365mmap_fxns = { unlocked_ioctl: ioctl, mmap: mmap, open: open, release:release
+
+static struct file_operations dm365mmap_fxns = {
+#ifdef USE_UNLOCKED_IOCTL
+    unlocked_ioctl: ioctl,
+#else
+    ioctl:   ioctl,
+#endif
+	mmap: 	 mmap,
+    open:    open,
+    release: release
 };
 
 #ifdef MJCPCLK_ENABLE
@@ -137,9 +165,12 @@ static int mmap(struct file *filp, struct vm_area_struct *vma)
     return 0;
 }
 
-
-static int ioctl(struct inode *inode, struct file *filp, unsigned int cmd,
-                 unsigned long args)
+#ifdef USE_UNLOCKED_IOCTL
+static long ioctl(struct file *filp, unsigned int cmd, unsigned long args)
+#else
+static int ioctl(struct inode *inode, struct file *filp,
+                 unsigned int cmd, unsigned long args)
+#endif
 {
     unsigned int __user *argp = (unsigned int __user *) args;
     edma_params edmaparams;
