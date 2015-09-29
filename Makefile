@@ -207,7 +207,7 @@ cmem_clean:
 
 cmem_install:
 	install -d $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
-	install $(CMEM_INSTALL_DIR)/packages/ti/sdo/linuxutils/cmem/src/module/cmemk.ko $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
+	install -m 664 $(CMEM_INSTALL_DIR)/packages/ti/sdo/linuxutils/cmem/src/module/cmemk.ko $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
 
 #==============================================================================
 # Build the irq kernel module for the configured platform, and make sure the
@@ -222,7 +222,7 @@ irq_clean:
 
 irq_install:
 	install -d $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
-	install $(CMEM_INSTALL_DIR)/packages/ti/sdo/linuxutils/irq/src/module/irqk.ko $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
+	install -m 664 $(CMEM_INSTALL_DIR)/packages/ti/sdo/linuxutils/irq/src/module/irqk.ko $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
 
 #==============================================================================
 # Build the edma kernel module for the configured platform, and make sure the
@@ -239,7 +239,7 @@ edma_clean:
 
 edma_install:
 	install -d $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
-	install $(CMEM_INSTALL_DIR)/packages/ti/sdo/linuxutils/edma/src/module/edmak.ko $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
+	install -m 664 $(CMEM_INSTALL_DIR)/packages/ti/sdo/linuxutils/edma/src/module/edmak.ko $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
 
 #==============================================================================
 # Build the dm355mm kernel module (if the configured platform is dm355). Also,
@@ -255,7 +255,7 @@ dm365mm_clean:
 
 dm365mm_install:
 	install -d $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
-	install $(DM365MM_MODULE_INSTALL_DIR)/module/dm365mmap.ko  $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
+	install -m 664 $(DM365MM_MODULE_INSTALL_DIR)/module/dm365mmap.ko  $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
 
 #==============================================================================
 # Build the Davinci Multimedia Application Interface for the configured
