@@ -30,7 +30,7 @@
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-SUBDIRS = src apps
+SUBDIRS = src
 
 DEBUGSUBDIRS = $(addsuffix .debug, $(SUBDIRS))
 RELEASESUBDIRS = $(addsuffix .release, $(SUBDIRS))

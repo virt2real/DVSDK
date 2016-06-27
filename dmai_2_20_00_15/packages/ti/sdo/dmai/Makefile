@@ -98,9 +98,9 @@ endif
 endif
 
 # If exist then include autoconf.h
-LINUXKERNEL_AUTOCONF=$(LINUXKERNEL_INSTALL_DIR)/include/linux/autoconf.h 
+LINUXKERNEL_AUTOCONF=$(LINUXKERNEL_INSTALL_DIR)/include/generated/autoconf.h 
 ifneq ($(strip $(wildcard $(LINUXKERNEL_AUTOCONF))),)
- HAVE_AUTOCONFIG =-include $(LINUXKERNEL_INSTALL_DIR)/include/linux/autoconf.h
+ HAVE_AUTOCONFIG =-include $(LINUXKERNEL_INSTALL_DIR)/include/generated/autoconf.h
 endif
 
 XDCPATH	+= $(XDC_INSTALL_DIR)/packages;$(DMAI_INSTALL_DIR)/packages;$(CODEC_INSTALL_DIR)/packages
