@@ -21,7 +21,10 @@ components: linux cmem dm365mm irq edma ceexamples dmai
 #==============================================================================
 # Clean up the targets built by 'make all'.
 #==============================================================================
-clean:	linux_clean cmem_clean dm365mm_clean irq_clean edma_clean dmai_clean psp_examples_clean ceexamples_clean demos_clean u-boot_clean matrix_clean dvtb_clean
+clean:	linux_clean cmem_clean dm365mm_clean irq_clean edma_clean dmai_clean psp_examples_clean ceexamples_clean demos_clean u-boot_clean matrix_clean dvtb_clean install_clean
+
+install_clean:
+	@rm -rf install
 
 #==============================================================================
 # Build everything rebuildable.
@@ -240,6 +243,17 @@ edma_install:
 	install -m 664 $(CMEM_INSTALL_DIR)/packages/ti/sdo/linuxutils/edma/src/module/edmak.ko $(EXEC_DIR)/lib/modules/$(KERNEL_VERSION)/kernel/drivers/dsp
 
 #==============================================================================
+# Build the VICP kernel module for the configured platform, and make sure the
+# kernel_binaries directory is kept in sync. Also, an explicit cleanup target
+# is defined.
+#==============================================================================
+vicp:
+	$(MAKE) -C $(CMEM_INSTALL_DIR)/packages/ti/sdo/linuxutils/vicp/src/interface ../../lib/vicp.a470MV
+
+vicp_clean:
+	$(MAKE) -C $(CMEM_INSTALL_DIR)/packages/ti/sdo/linuxutils/vicp clean
+
+#==============================================================================
 # Build the dm355mm kernel module (if the configured platform is dm355). Also,
 # an explicit cleanup target is defined.
 #==============================================================================
@@ -270,7 +284,7 @@ dmai:
 	LINUXKERNEL_INSTALL_DIR_$(PLATFORM)_al=$(LINUXKERNEL_INSTALL_DIR) \
 	CROSS_COMPILE_$(PLATFORM)_al=$(CSTOOL_PREFIX) \
 	XDC_INSTALL_DIR_$(PLATFORM)_al=$(XDC_INSTALL_DIR) \
-	VERBOSE=false \
+	VERBOSE=true \
 	all
 
 	
